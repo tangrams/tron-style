@@ -11,6 +11,10 @@ cameras:
     perspective:
         type: flat
 
+scene:
+    background:
+        color: black
+
 layers:
     earth:
         data: { source: mapzen}
