@@ -2,76 +2,156 @@
 
 import:
     - https://tangrams.github.io/blocks/global.yaml
+    - https://tangrams.github.io/blocks/space/tile.yaml
+    - https://tangrams.github.io/blocks/patterns/stripes.yaml
 
 sources:
-    osm:
+    mapzen:
         type: TopoJSON
-        url: https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson
-        url_params:
-            api_key: vector-tiles-JUsa0Gc
-        max_zoom: 16
-        
-cameras:
-    cam:
-        type: perspective
-        vanishing_point: [0, -500]
+        url: https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson?api_key=vector-tiles-P6dkVl4
+    # osm:
+    #     type: TopoJSON
+    #     url: https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson
+    #     url_params:
+    #         api_key: vector-tiles-JUsa0Gc
+    #     max_zoom: 16
 
-lights:
-    dir:
-        type: directional
-        direction: [.1, .5, -1]
-        diffuse: .7
-        ambient: .5
+cameras:
+    perspective:
+        type: flat
+
+scene:
+    background:
+        color: black
 
 layers:
-    water:
-        data: { source: osm }
-        draw:
-            polygons:
-                order: global.order
-                color: '#353535'
     earth:
-        data: { source: osm }
+        data: { source: mapzen}
         draw:
-            polygons:
-                order: global.order
-                color: '#555'
-    landuse:
-        data: { source: osm }
+            stripes:
+                order: 0
+                color: [0.534, 0.736, 1.000]
+    water:
+        data: { source: mapzen, layer: water }
         draw:
-            polygons:
-                order: global.order
-                color: '#666'
-    roads:
-        data: { source: osm }
-        filter: { not: { kind: [rail, ferry] } }
-        draw:
-            lines:
-                order: global.order
-                color: [0.988, 0.988, 0.988]
-                width: [[7,0.0px], [10, .5px], [15, .75px], [17, 5m]]
-        highway:
-            filter: { kind: highway }
+            stripes:
+                order: function() { return feature.sort_key; }
+                color: [0.219, 0.226, 0.529]
+
+        lakes:
+            filter:
+                all:
+                    - kind: [ocean, lake, water, riverbank, reservoir, swimming_pool]
+                # WARNING: any area filters here must match the area filters in the water_boundaries-not-ocean layer
+                any:
+                    # limit show smaller landuse areas to higher zooms
+                    - { $zoom: { min: 1 },  area: { min: 40000000000 } }
+                    - { $zoom: { min: 2 },  area: { min: 20000000000 } }
+                    # some weird natural earth scale set transition
+                    - { $zoom: { min: 3 },  area: { min: 80000000000 } }
+                    - { $zoom: { min: 4 },  area: { min: 5000000000 } }
+                    - { $zoom: { min: 5 },  area: { min: 700000000 } }
+                    - { $zoom: { min: 6 },  area: { min: 500000000 } }
+                    - { $zoom: { min: 7 },  area: { min: 160000000 } }
+                    - { $zoom: { min: 8 },  area: { min: 40000000 } }
+                    - { $zoom: { min: 9 },  area: { min: 10000000 } }
+                    - { $zoom: { min: 10 }, area: { min: 8000000 } }
+                    - { $zoom: { min: 11 }, area: { min: 2000000 } }
+                    - { $zoom: { min: 12 }, area: { min: 200000 } }
+                    - { $zoom: { min: 13 }, area: { min: 100000 } }
+                    - { $zoom: { min: 14 }, area: { min: 2000 } }
+                    - { $zoom: { min: 15 } }
             draw:
-                lines:
-                    order: global.order
-                    width: [[8,0px], [8,.25px], [11, 1.5px], [14, 2px], [16, 4px], [17, 10m]]
-            link:
-                filter: { is_link: yes } # on- and off-ramps, etc
-                draw:
-                    lines:
-                        width: [[8,0px], [14, 3px], [16, 5px], [18, 10m]]
-                tunnel-link:
-                    filter: {is_tunnel: yes, $zoom: {min: 13} }
-        tunnel:
-            filter: {is_tunnel: yes }
+                polygons:
+                    color: [0.219, 0.226, 0.529]
+
+        other-water-areas:
+            filter: { not: { kind: [ocean, lake, water, reservoir, playa] }, $zoom: { min: 11 }, area: { min: 100 } }
             draw:
-                lines:
-                    order: global.order
-    buildings:
-        data: { source: osm }
-        draw:
-            polygons:
-                order: global.order
-                color: '#999'
-                extrude: true
+                polygons:
+                    color: [0.219, 0.226, 0.529]
+
+        water-boundary:
+            filter: { boundary: yes, kind: ocean }
+            draw:
+                coast-lines:
+                    order: function() { return feature.sort_key; }
+                    width: [[4,0px],[20,20px]]
+                    color: [0.017, 1.000, 0.649]
+                    join: round
+
+
+    # landuse:
+    #     data: { source: osm }
+    #     draw:
+    #         polygons:
+    #             order: global.order
+    #             color: '#666'
+    # roads:
+    #     data: { source: osm }
+    #     filter: { not: { kind: [rail, ferry] } }
+    #     draw:
+    #         lines:
+    #             order: global.order
+    #             color: [0.988, 0.988, 0.988]
+    #             width: [[7,0.0px], [10, .5px], [15, .75px], [17, 5m]]
+    #     highway:
+    #         filter: { kind: highway }
+    #         draw:
+    #             lines:
+    #                 order: global.order
+    #                 width: [[8,0px], [8,.25px], [11, 1.5px], [14, 2px], [16, 4px], [17, 10m]]
+    #         link:
+    #             filter: { is_link: yes } # on- and off-ramps, etc
+    #             draw:
+    #                 lines:
+    #                     width: [[8,0px], [14, 3px], [16, 5px], [18, 10m]]
+    #             tunnel-link:
+    #                 filter: {is_tunnel: yes, $zoom: {min: 13} }
+    #     tunnel:
+    #         filter: {is_tunnel: yes }
+    #         draw:
+    #             lines:
+    #                 order: global.order
+    # buildings:
+    #     data: { source: osm }
+    #     draw:
+    #         polygons:
+    #             order: global.order
+    #             color: '#999'
+    #             extrude: true
+
+styles:
+    coast-lines:
+        base: lines
+        mix: [patterns-stripes, space-tile]
+        texcoords: true
+        blend: inlay
+        shaders:
+            blocks:
+                color: |
+                    vec2 st = v_texcoord.xy;
+                    color.a *= smoothstep(0.,1.972,st.x);
+                
+    stripes:
+        base: polygons
+        mix: [patterns-stripes, space-tile]
+        shaders:
+            defines:
+                STRIPES_IN: 3.
+                STRIPES_OUT: 6.
+                STRIPES_MAX_ZOOM: 20.
+                STRIPES_DIR: vec3(-0.600,-0.420,0.600)
+                STRIPES_ALPHA: .5
+                STRIPES_SCALE: 2.
+                STRIPES_PCT: 1.6
+                STRIPES_MIN: .9
+                STRIPES_MAX: -.2
+            blocks:
+                color: |
+                    color.a = stripes(getTileCoords()*STRIPES_SCALE, 
+                                      mix(STRIPES_MIN,
+                                          STRIPES_MAX,
+                                          clamp(smoothstep(STRIPES_IN/STRIPES_MAX_ZOOM, STRIPES_OUT/STRIPES_MAX_ZOOM, max(u_map_position.z/STRIPES_MAX_ZOOM,0.)*0.9), 0., 1.)), 
+                                      PI*0.25)*STRIPES_ALPHA;
+                    
