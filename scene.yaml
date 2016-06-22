@@ -1,0 +1,77 @@
+# Author @patriciogv - 2015
+
+import:
+    - https://tangrams.github.io/blocks/global.yaml
+
+sources:
+    osm:
+        type: TopoJSON
+        url: https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson
+        url_params:
+            api_key: vector-tiles-JUsa0Gc
+        max_zoom: 16
+        
+cameras:
+    cam:
+        type: perspective
+        vanishing_point: [0, -500]
+
+lights:
+    dir:
+        type: directional
+        direction: [.1, .5, -1]
+        diffuse: .7
+        ambient: .5
+
+layers:
+    water:
+        data: { source: osm }
+        draw:
+            polygons:
+                order: global.order
+                color: '#353535'
+    earth:
+        data: { source: osm }
+        draw:
+            polygons:
+                order: global.order
+                color: '#555'
+    landuse:
+        data: { source: osm }
+        draw:
+            polygons:
+                order: global.order
+                color: '#666'
+    roads:
+        data: { source: osm }
+        filter: { not: { kind: [rail, ferry] } }
+        draw:
+            lines:
+                order: global.order
+                color: [0.988, 0.988, 0.988]
+                width: [[7,0.0px], [10, .5px], [15, .75px], [17, 5m]]
+        highway:
+            filter: { kind: highway }
+            draw:
+                lines:
+                    order: global.order
+                    width: [[8,0px], [8,.25px], [11, 1.5px], [14, 2px], [16, 4px], [17, 10m]]
+            link:
+                filter: { is_link: yes } # on- and off-ramps, etc
+                draw:
+                    lines:
+                        width: [[8,0px], [14, 3px], [16, 5px], [18, 10m]]
+                tunnel-link:
+                    filter: {is_tunnel: yes, $zoom: {min: 13} }
+        tunnel:
+            filter: {is_tunnel: yes }
+            draw:
+                lines:
+                    order: global.order
+    buildings:
+        data: { source: osm }
+        draw:
+            polygons:
+                order: global.order
+                color: '#999'
+                extrude: true

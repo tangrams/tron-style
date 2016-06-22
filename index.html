@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Tron 2.0</title>
+
+    <!-- 3rd party libraries -->
+        <!-- Leaflet -->
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v1.0.0-rc.1/leaflet.css" />
+        <script src="http://cdn.leafletjs.com/leaflet/v1.0.0-rc.1/leaflet.js"></script>
+        <!-- bog-standard leaflet URL hash -->
+        <script type="text/javascript" src="https://cdn.rawgit.com/mlevans/leaflet-hash/master/leaflet-hash.js"></script>
+        <!-- Main tangram library -->
+        <script src="https://mapzen.com/tangram/0.8/tangram.min.js"></script>
+        <!-- <script src="http://localhost:8002/dist/tangram.debug.js"></script> -->
+    <!-- End of 3rd party libraries -->
+
+    <style>
+            body {
+                margin: 0px;
+                border: 0px;
+                padding: 0px;
+                overflow: hidden;
+            }
+
+            #map {
+                position: absolute;
+                background: black;
+                height: 100%;
+                width: 100%;
+                margin: 0px;
+                padding: 0px;
+                background: rgba(0, 0, 0, 0);
+                z-index:0;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="map"></div>
+
+        <!-- Demo module -->
+        <script type="text/javascript">
+            var map = (function () {
+                'use strict';
+
+                var map_start_location = [40.70531887544228, -74.00976419448853, 16];
+
+                /*** URL parsing ***/
+
+                // leaflet-style URL hash pattern:
+                // ?style.yaml#[zoom],[lat],[lng]
+                var url_hash = window.location.hash.slice(1).split('/');
+                if (url_hash.length == 3) {
+                    map_start_location = [url_hash[1],url_hash[2], url_hash[0]];
+                    // convert from strings
+                    map_start_location = map_start_location.map(Number);
+                }
+
+                var style_file = 'scene.yaml';
+                var info_file = '';
+                var url_search = window.location.search.slice(1);
+                if (url_search.length > 0) {
+                    var ext = url_search.substr(url_search.lastIndexOf('.') + 1);
+                    if (ext == "yaml" || ext == "yaml/") {
+                        style_file = url_search;
+                    } else {
+                        style_file = url_search+'.yaml';
+                    }
+                }
+
+                /*** Map ***/
+                var map = L.map('map', {
+                    maxZoom: 20,
+                    trackResize: true,
+                    keyboard: false
+                });
+
+                var layer = Tangram.leafletLayer({
+                    scene: style_file,
+                    attribution: '| &copy; OSM contributors | <a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | <a href="https://twitter.com/sensescape" target="_blank">@sensescape</a> | <a href="https://twitter.com/patriciogv" target="_blank">@patriciogv</a>'
+                });
+
+                window.layer = layer;
+                var scene = layer.scene;
+                window.scene = scene;
+
+                map.setView(map_start_location.slice(0, 2), map_start_location[2]);
+                var hash = new L.Hash(map);
+
+                // Resize map to window
+                function resizeMap() {
+                    document.getElementById('map').style.width = window.innerWidth + 'px';
+                    document.getElementById('map').style.height = window.innerHeight + 'px';
+                    map.invalidateSize(false);
+                }
+
+                window.addEventListener('resize', resizeMap);
+                resizeMap();
+
+                window.addEventListener('load', function () {
+                    // Scene initialized
+                    layer.addTo(map);
+                });
+
+                //disable mousewheel zoom if iframed
+                if (window.self !== window.top) {
+                  map.scrollWheelZoom.disable();
+                }
+                return map;
+            }());
+
+            
+            </script>
+
+        <!-- Adding a script block to post message to the parent container (think iframed demos) -->
+        <script type="text/javascript">
+          window.addEventListener("hashchange",function(){parent.postMessage(window.location.hash, "*")});
+        </script>
+        <!-- Mapzen bug & search bar -->
+        <script src='https://mapzen.com/common/ui/mapzen-ui.min.js'></script>
+        <script>
+                MPZN.bug({
+                name: 'Tron 2.0',
+                tweet: 'Tron 2.0 by @sensescape @patriciogv',
+                repo: 'https://github.com/tangrams/tron/'
+            });
+        </script>
+    </body>
+</html>
