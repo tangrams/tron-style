@@ -7,6 +7,10 @@ sources:
         type: TopoJSON
         url: https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson
 
+scene:
+    background:
+        color: black
+
 cameras:
     perspective:
         type: flat
