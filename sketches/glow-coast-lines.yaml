@@ -1,0 +1,66 @@
+﻿import:
+    - https://tangrams.github.io/blocks/space/tile.yaml
+    - https://tangrams.github.io/blocks/patterns/stripes.yaml
+
+sources:
+    mapzen:
+        type: TopoJSON
+        url: https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson?api_key=vector-tiles-P6dkVl4
+
+cameras:
+    perspective:
+        type: flat
+
+layers:
+    earth:
+        data: { source: mapzen}
+        draw:
+            stripes:
+                order: 0
+                color: [0.534, 0.736, 1.000]
+            coast-lines:
+                order: 2
+                width: [[6,0px],[20,20px]]
+                color: [0.017, 1.000, 0.649]
+    water:
+        data: { source: mapzen }
+        draw:
+            stripes:
+                order: 1
+                color: [0.219, 0.226, 0.529]
+            
+
+styles:
+    coast-lines:
+        base: lines
+        mix: [patterns-stripes, space-tile]
+        texcoords: true
+        blend: inlay
+        shaders:
+            blocks:
+                color: |
+                    vec2 st = v_texcoord.xy;
+                    color.a *= smoothstep(0.,1.472,st.x);
+                
+    stripes:
+        base: polygons
+        mix: [patterns-stripes, space-tile]
+        shaders:
+            defines:
+                STRIPES_IN: 5.
+                STRIPES_OUT: 10.
+                STRIPES_MAX_ZOOM: 20.
+                STRIPES_DIR: vec3(-0.600,-0.420,0.600)
+                STRIPES_ALPHA: .5
+                STRIPES_SCALE: 2.
+                STRIPES_PCT: 1.6
+                STRIPES_MIN: .9
+                STRIPES_MAX: -.2
+            blocks:
+                color: |
+                    color.a = stripes(getTileCoords()*STRIPES_SCALE, 
+                                      mix(STRIPES_MIN,
+                                          STRIPES_MAX,
+                                          clamp(smoothstep(STRIPES_IN/STRIPES_MAX_ZOOM, STRIPES_OUT/STRIPES_MAX_ZOOM, max(u_map_position.z/STRIPES_MAX_ZOOM,0.)*0.9), 0., 1.)), 
+                                      PI*0.25)*STRIPES_ALPHA;
+                    
