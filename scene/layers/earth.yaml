@@ -1,0 +1,7 @@
+layers:
+    earth:
+        data: { source: mapzen}
+        draw:
+            stripes:
+                order: global.order
+                color: [0.534, 0.736, 1.000]

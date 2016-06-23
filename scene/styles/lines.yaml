@@ -1,0 +1,10 @@
+styles:
+    coast-lines:
+        base: lines
+        mix: [patterns-stripes, space-tile]
+        texcoords: true
+        blend: inlay
+        shaders:
+            blocks:
+                color: |
+                    color.a *= smoothstep(0.,1.972,v_texcoord.x);

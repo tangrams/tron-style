@@ -1,0 +1,22 @@
+import:
+    - https://tangrams.github.io/blocks/global.yaml
+    - layers/water.yaml
+    - layers/earth.yaml
+    # - layers/roads.yaml
+    # - layers/buildings.yaml
+    # - layers/boundaries.yaml
+    - styles/lines.yaml
+    - styles/polygons.yaml
+
+sources:
+    mapzen:
+        type: TopoJSON
+        url: https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson?api_key=vector-tiles-P6dkVl4
+
+cameras:
+    perspective:
+        type: flat
+
+scene:
+    background:
+        color: black

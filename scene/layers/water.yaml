@@ -1,0 +1,48 @@
+layers:
+    water:
+        data: { source: mapzen, layer: water }
+        draw:
+            stripes:
+                order: global.order
+                color: [0.219, 0.226, 0.529]
+        lakes:
+            filter:
+                all:
+                    - kind: [ocean, lake, water, riverbank, reservoir, swimming_pool]
+                # WARNING: any area filters here must match the area filters in the water_boundaries-not-ocean layer
+                any:
+                    # limit show smaller landuse areas to higher zooms
+                    - { $zoom: { min: 1 },  area: { min: 40000000000 } }
+                    - { $zoom: { min: 2 },  area: { min: 20000000000 } }
+                    # some weird natural earth scale set transition
+                    - { $zoom: { min: 3 },  area: { min: 80000000000 } }
+                    - { $zoom: { min: 4 },  area: { min: 5000000000 } }
+                    - { $zoom: { min: 5 },  area: { min: 700000000 } }
+                    - { $zoom: { min: 6 },  area: { min: 500000000 } }
+                    - { $zoom: { min: 7 },  area: { min: 160000000 } }
+                    - { $zoom: { min: 8 },  area: { min: 40000000 } }
+                    - { $zoom: { min: 9 },  area: { min: 10000000 } }
+                    - { $zoom: { min: 10 }, area: { min: 8000000 } }
+                    - { $zoom: { min: 11 }, area: { min: 2000000 } }
+                    - { $zoom: { min: 12 }, area: { min: 200000 } }
+                    - { $zoom: { min: 13 }, area: { min: 100000 } }
+                    - { $zoom: { min: 14 }, area: { min: 2000 } }
+                    - { $zoom: { min: 15 } }
+            draw:
+                polygons:
+                    color: [0.219, 0.226, 0.529]
+
+        other-water-areas:
+            filter: { not: { kind: [ocean, lake, water, reservoir, playa] }, $zoom: { min: 11 }, area: { min: 100 } }
+            draw:
+                polygons:
+                    color: [0.219, 0.226, 0.529]
+
+        water-boundary:
+            filter: { boundary: yes, kind: ocean }
+            draw:
+                coast-lines:
+                    order: global.order
+                    width: [[4,0px],[20,20px]]
+                    color: [0.017, 1.000, 0.649]
+                    join: round
