@@ -1,12 +1,13 @@
 import:
     - https://tangrams.github.io/blocks/global.yaml
+    - styles/lines.yaml
+    - styles/polygons.yaml
     - layers/water.yaml
     - layers/earth.yaml
     # - layers/roads.yaml
     # - layers/buildings.yaml
+    - layers/landuse.yaml
     - layers/boundaries.yaml
-    - styles/lines.yaml
-    - styles/polygons.yaml
 
 sources:
     mapzen:
