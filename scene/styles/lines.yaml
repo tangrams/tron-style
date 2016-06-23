@@ -7,4 +7,4 @@ styles:
         shaders:
             blocks:
                 color: |
-                    color.a *= smoothstep(0.,1.972,v_texcoord.x);
+                    color.a *= smoothstep(0.,1.972,1.-v_texcoord.x);

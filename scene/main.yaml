@@ -4,7 +4,7 @@ import:
     - layers/earth.yaml
     # - layers/roads.yaml
     # - layers/buildings.yaml
-    # - layers/boundaries.yaml
+    - layers/boundaries.yaml
     - styles/lines.yaml
     - styles/polygons.yaml
 

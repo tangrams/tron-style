@@ -1,0 +1,8 @@
+layers:
+    boundaries:
+        data: { source: mapzen }
+        draw:
+            lines:
+                order: global.order
+                color: black
+                width: [[4,0px],[5,1px]]
