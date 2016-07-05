@@ -33,9 +33,9 @@ layers:
                     color: [0.219, 0.226, 0.529]
 
         other-water-areas:
-            filter: { not: { kind: [ocean, lake, water, reservoir, playa] }, $zoom: { min: 11 }, area: { min: 100 } }
+            filter: { not: { kind: [ocean, lake, water, reservoir, playa] }, $zoom: { min: 10 }, area: { min: 100 } }
             draw:
-                polygons:
+                stripes:
                     color: [0.219, 0.226, 0.529]
 
         water-boundary:

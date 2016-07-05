@@ -3,9 +3,9 @@ layers:
         data: { source: mapzen }
         filter: { kind: [national_park, "park or protected land", battlefield], not: { operator: [ "United States Forest Service", "US Forest Service", "U.S. Forest Service", "USDA Forest Service" ] } }
         draw:
-            landuse-stripes:
+            landuse-elevation-stripes:
                 order: global.order
-                color: red
+                color: [0.263,0.933,0.494]
 
 styles:
     landuse-stripes:
@@ -18,3 +18,11 @@ styles:
                 STRIPES_MIN: 1.
                 STRIPES_MAX: -.2
                 STRIPES_ANGLE: -0.25
+    landuse-elevation-stripes:
+        base: polygons
+        mix: [elevation-stripes]
+        shaders:
+            defines:
+                STRIPES_ALPHA: .5
+                STRIPES_SCALE: 4.
+                STRIPES_PCT: 1.7

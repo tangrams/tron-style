@@ -9,7 +9,7 @@ styles:
         shaders:
             defines:
                 STRIPES_IN: 3.
-                STRIPES_OUT: 6.
+                STRIPES_OUT: 16.
                 STRIPES_MAX_ZOOM: 20.
                 STRIPES_DIR: vec3(-0.600,-0.420,0.600)
                 STRIPES_ALPHA: .5
