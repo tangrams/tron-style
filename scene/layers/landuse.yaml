@@ -1,11 +1,43 @@
 layers:
     landuse:
         data: { source: mapzen }
-        filter: { kind: [national_park, "park or protected land", battlefield], not: { operator: [ "United States Forest Service", "US Forest Service", "U.S. Forest Service", "USDA Forest Service" ] } }
         draw:
             landuse-elevation-stripes:
                 order: global.order
-                color: [0.263,0.933,0.494]
+                visible: false
+        tier1:
+            filter:
+                any:
+                    # limit show smaller landuse areas to higher zooms
+                    - { $zoom: { min: 3 },  area: { min: 300000000 } }
+                    - { $zoom: { min: 4 },  area: { min: 300000000 } }
+                    - { $zoom: { min: 5 },  area: { min: 150000000 } }
+                    - { $zoom: { min: 6 },  area: { min: 150000000 } }
+                    - { $zoom: { min: 7 },  area: { min: 100000000 } }
+                    - { $zoom: { min: 8 },  area: { min: 10000000 } }
+                    - { $zoom: { min: 9 },  area: { min: 5000000 } }
+                    - { $zoom: { min: 10 }, area: { min: 1000000 } }
+                    - { $zoom: { min: 11 }, area: { min: 500000 } }
+                    - { $zoom: { min: 12 }, area: { min: 500000 } }
+                    - { $zoom: { min: 13 }, area: { min: 100000 } }
+                    - { $zoom: { min: 14 }, area: { min: 50000 } }
+                    - { $zoom: { min: 15 }, area: { min: 20000 } }
+                    - { $zoom: { min: 15 }, area: { min: 2000 } }
+                    - { $zoom: { min: 16 } }
+            national_park:
+                filter: { kind: [national_park, "park or protected land", battlefield], not: { operator: [ "United States Forest Service", "US Forest Service", "U.S. Forest Service", "USDA Forest Service" ] } }
+                draw:
+                    landuse-elevation-stripes:
+                        color: [0.263,0.933,0.494]
+                        order: 18
+                        visible: true
+                us_national_park:
+                    # yosemite national park, death valley national park, grand canyon national park
+                    filter: { operator: [ "United States National Park Service", "US National Park Service" ] }
+                    draw:
+                        landuse-elevation-stripes:
+                            color: [0.214,0.690,0.611]
+                            visible: true
 
 styles:
     landuse-stripes:
@@ -13,11 +45,11 @@ styles:
         blend: overlay
         shaders:
             defines:
-                STRIPES_IN: 3.
-                STRIPES_OUT: 10.
-                STRIPES_MIN: 1.
-                STRIPES_MAX: -.2
-                STRIPES_ANGLE: -0.25
+                STRIPES_IN: 4.
+                STRIPES_OUT: 18.
+                STRIPES_ANGLE: 0.45
+                STRIPES_MAX: -.025
+                STRIPES_ALPHA: .25
     landuse-elevation-stripes:
         base: polygons
         mix: [elevation-stripes]

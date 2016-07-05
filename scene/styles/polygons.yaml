@@ -15,8 +15,10 @@ styles:
                 STRIPES_DIR: vec3(-0.600,-0.420,0.600)
                 STRIPES_ALPHA: .5
                 STRIPES_SCALE: 2.
+                # higher value increases the no. of lines, and width gets thinner
                 STRIPES_PCT: 1.6
                 STRIPES_MIN: .9
+                #spacing between lines? anything over 1.0 makes the lines disappear
                 STRIPES_MAX: -.2
                 STRIPES_ANGLE: 0.25
             blocks:
