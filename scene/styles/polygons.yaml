@@ -1,6 +1,7 @@
 import:
     - https://tangrams.github.io/blocks/space/tile.yaml
     - https://tangrams.github.io/blocks/patterns/stripes.yaml
+    - https://tangrams.github.io/blocks/elevation/stripes.yaml
 
 styles:                
     stripes:

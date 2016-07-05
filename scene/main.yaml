@@ -1,6 +1,6 @@
 import:
     - https://tangrams.github.io/blocks/global.yaml
-    - https://tangrams.github.io/blocks/elevation/stripes-full.yaml
+    - https://tangrams.github.io/blocks/source-elevation.yaml
     - styles/lines.yaml
     - styles/polygons.yaml
     - layers/water.yaml
@@ -14,6 +14,7 @@ sources:
     mapzen:
         type: TopoJSON
         url: https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson?api_key=vector-tiles-P6dkVl4
+        rasters: [normals-elevation]
 
 cameras:
     perspective:
