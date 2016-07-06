@@ -1,6 +1,6 @@
 layers:
     earth:
-        data: { source: mapzen}
+        data: { source: mapzen }
         # draw:
         #     polygons:
         #         order: global.order
