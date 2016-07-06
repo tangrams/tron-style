@@ -19,3 +19,28 @@ layers:
                 draw:
                     lines:
                         visible: false
+
+        region:
+            filter:
+                any:
+                    - type: state
+                    # territorial here is probably a hack
+                    - kind: [state, department, region, provincial, territorial]
+                    - admin_level: 4
+                not:
+                    # deal with bogus Hungary data
+                    - scalerank: 0
+            draw:
+                lines:
+                    color: black
+                    width: [[0, 0px], [5, 0px], [6, 1px], [8, 1.5px], [14, 4.0px], [16, 5.0px], [17, 10m]]
+            water:
+                filter: { maritime_boundary: yes }
+                draw:
+                    lines:
+                        visible: false
+            early:
+                filter: { scalerank: [0,3,4,5,6,7,8,9,10], $zoom: { max: 5 } }
+                draw:
+                    lines:
+                        visible: false

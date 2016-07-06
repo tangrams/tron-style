@@ -62,21 +62,80 @@ layers:
                     kind: [conservation, protected_area, nature_reserve]
                     $zoom: { min: 4 }
                 draw:
-                    landuse-stripes:
-                        color: [[8,[0.216,0.612,0.447]], [12,[0.342,0.248,0.714]]]
+                    landuse-elevation-stripes:
+                        color: [0.214,0.690,0.611]
+                        visible: true
+                wilderness-areas:
+                    filter: function() { return feature.name && feature.name.indexOf("Wilderness") > -1 }
+                    draw:
+                        landuse-stripes:
+                            order: 25
+                            color: [0.239,0.329,0.463]
+                            visible: true
+                # national_forest_level_6:
+                #     filter: { protect_class: ["6",6] }
+                #     draw:
+                #         landuse-stripes:
+                #             color: red
+                #             visible: true
+            farm:
+                filter:
+                    kind: [farm, farmland]
+                    $zoom: { min: 10}
+                draw:
+                    farm-stripes:
+                        color: [0.174,0.462,0.527]
+                        visible: true
+            forest:
+                filter: { kind: [forest,wood], $zoom: { min: 6 } }
+                national-forest:
+                    filter:
+                        operator: [ "United States Forest Service", "US Forest Service", "U.S. Forest Service", "USDA Forest Service" ]
+                    draw:
+                        polygons:
+                            color: red
+                            visible: true
+
+                landuse-forest:
+                    filter:
+                        not: { operator: [ "United States Forest Service", "US Forest Service", "U.S. Forest Service", "USDA Forest Service" ] }
+                        $zoom: { min: 6 }
+                    draw:
+                        landuse-elevation-stripes:
+                            color: [0.214,0.690,0.611]
+                            visible: true
+
+            parks-and-national-forests-not-national-park:
+                filter: { $zoom: { min: 4 }, kind: [park, national_park, "park or protected land", battlefield], not: { operator: [ "United States National Park Service", "US National Park Service" ] } }
+                # default for national forests and more?
+                draw:
+                    landuse-elevation-stripes:
+                        color: [0.225,0.597,0.681]
                         visible: true
 
+
+
 styles:
+    farm-stripes:
+        mix: [stripes]
+        blend: overlay
+        shaders:
+            defines:
+                STRIPES_IN: 10.
+                STRIPES_OUT: 20.
+                STRIPES_ANGLE: 0.95
+                STRIPES_MAX: -.025
+                STRIPES_ALPHA: .5
     landuse-stripes:
         mix: [stripes]
         blend: overlay
         shaders:
             defines:
-                STRIPES_IN: 4.
-                STRIPES_OUT: 18.
+                STRIPES_IN: 10.
+                STRIPES_OUT: 20.
                 STRIPES_ANGLE: 0.45
                 STRIPES_MAX: -.025
-                STRIPES_ALPHA: .75
+                STRIPES_ALPHA: .8
     landuse-elevation-stripes:
         base: polygons
         mix: [elevation-stripes]
