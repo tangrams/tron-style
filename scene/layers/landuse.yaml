@@ -112,7 +112,26 @@ layers:
                     landuse-elevation-stripes:
                         color: [0.225,0.597,0.681]
                         visible: true
+        tier4:
+            filter:
+                any:
+                    # limit show smaller landuse areas to higher zooms
+                    - { $zoom: { min: 10 }, area: { min: 1000000 } }
+                    - { $zoom: { min: 11 }, area: { min: 500000 } }
+                    - { $zoom: { min: 12 }, area: { min: 500000 } }
+                    - { $zoom: { min: 13 }, area: { min: 100000 } }
+                    - { $zoom: { min: 14 }, area: { min: 50000 } }
+                    - { $zoom: { min: 15 }, area: { min: 20000 } }
+                    - { $zoom: { min: 15 }, area: { min: 2000 } }
+                    - { $zoom: { min: 16 } }
 
+            golf_course:
+                filter:
+                    kind: golf_course
+                draw:
+                    landuse-stripes:
+                        color: [0.217,0.307,0.442]
+                        visible: true
 
 
 styles:

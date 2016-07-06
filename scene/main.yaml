@@ -1,6 +1,7 @@
 import:
     - https://tangrams.github.io/blocks/global.yaml
     - https://tangrams.github.io/blocks/source-elevation.yaml
+    - https://tangrams.github.io/blocks/generative/random.yaml
     - styles/lines.yaml
     - styles/polygons.yaml
     - layers/water.yaml

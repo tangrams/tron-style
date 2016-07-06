@@ -5,6 +5,13 @@ layers:
             stripes:
                 order: global.order
                 color: [0.219, 0.226, 0.529]
+
+        later:
+            filter: { $zoom: { min: 15 } }
+            draw:
+                pixel-pattern:
+                    order: function() { return feature.sort_key + 1; }
+                    color: red
         lakes:
             filter:
                 all:
@@ -41,7 +48,7 @@ layers:
         swimming_pool:
             filter: { kind: swimming_pool }
             draw:
-                stripes:
+                polygons:
                     color: red
 
         water-boundary:
@@ -91,3 +98,13 @@ layers:
                     coast-lines:
                         color: [0.017, 1.000, 0.649]
                         width: [[8,0px],[20,10px]]
+
+styles:
+    pixel-pattern:
+        mix: [space-tile, generative-random]
+        base: polygons
+        shaders:
+            blocks:
+                filter: |
+                    vec3 pos = vec3(getTileCoords()*280.0,1.0);
+                    color.rgb = vec3(random(abs(floor(pos)))+0.995);
