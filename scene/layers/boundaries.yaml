@@ -1,8 +1,21 @@
 layers:
     boundaries:
-        data: { source: mapzen }
+        data: { source: mapzen, layer: boundaries }
         draw:
             lines:
                 order: global.order
                 color: black
-                width: [[4,0px],[5,1px]]
+        country:
+            filter:
+                any:
+                    - type: country
+                    - kind: nation
+                    - admin_level: 2
+            draw:
+                lines:
+                    width: [[1, 0px], [3, 0px], [4, 1.5px], [9, 2.5px], [14, 3.5px], [16, 4.5px], [17, 14m]]
+            water:
+                filter: { maritime_boundary: yes }
+                draw:
+                    lines:
+                        visible: false

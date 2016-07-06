@@ -1,10 +1,23 @@
 layers:
     earth:
         data: { source: mapzen}
-        draw:
-            earth-stripes:
-                order: global.order
-                color: [0.534, 0.736, 1.000]
+        # draw:
+        #     polygons:
+        #         order: global.order
+        #         color: [0.534, 0.736, 1.000]
+
+        early:
+            filter: { $zoom: { max: 6 } }
+            draw:
+                earth-stripes:
+                    order: global.order
+                    color: [0.534, 0.736, 1.000]
+        later:
+            filter: { $zoom: { min: 5 } }
+            draw:
+                terrain:
+                    color: [0.227,0.318,0.455]
+
 
 styles:
     earth-stripes:
@@ -18,3 +31,28 @@ styles:
                 STRIPES_MIN: .9
                 STRIPES_MAX: -.2
                 STRIPES_SCALE: 2.5
+
+    terrain:
+        base: polygons
+        raster: normal
+        shaders:
+            uniforms:
+                u_scale: 2 # higher values are more exaggerated
+                u_envmap: ../images/tron-terrain.jpg
+            blocks:
+                global: |
+                    vec4 terrainEnvmap (in sampler2D _tex, in vec3 _normal) {
+                        const vec3 eye = vec3(0.,0.,-1.);
+                        vec3 r = reflect(eye, _normal);
+                        r.z += 1.0;
+                        float m = 2. * length(r);
+                        vec2 uv = r.xy / m + .5;
+                        return texture2D(_tex, uv);
+                    }
+                color: |              
+                    // color = v_color;
+                    normal.z /= u_scale; // turn terrain exaggeration up/down
+                    normal = normalize(normal);
+                    color = terrainEnvmap(u_envmap, normal);
+                    
+                    // color *= v_color; // apply layer color to envmap

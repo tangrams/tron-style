@@ -38,6 +38,12 @@ layers:
                 stripes:
                     color: [0.219, 0.226, 0.529]
 
+        swimming_pool:
+            filter: { kind: swimming_pool }
+            draw:
+                stripes:
+                    color: red
+
         water-boundary:
             filter: { boundary: yes, kind: ocean }
             draw:

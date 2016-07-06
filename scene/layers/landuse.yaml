@@ -28,7 +28,8 @@ layers:
                 filter: { kind: [national_park, "park or protected land", battlefield], not: { operator: [ "United States Forest Service", "US Forest Service", "U.S. Forest Service", "USDA Forest Service" ] } }
                 draw:
                     landuse-elevation-stripes:
-                        color: [0.263,0.933,0.494]
+                        # color: [0.263,0.933,0.494]
+                        color: [0.402,0.568,0.818]
                         order: 18
                         visible: true
                 us_national_park:

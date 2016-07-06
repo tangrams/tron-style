@@ -8,7 +8,7 @@ import:
     # - layers/roads.yaml
     # - layers/buildings.yaml
     - layers/landuse.yaml
-    # - layers/boundaries.yaml
+    - layers/boundaries.yaml
 
 sources:
     mapzen:
