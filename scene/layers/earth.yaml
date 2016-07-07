@@ -16,7 +16,7 @@ layers:
             filter: { $zoom: { min: 5 } }
             draw:
                 polygons:
-                    color: [0.227,0.318,0.455]
+                    color: [[5,[0.267,0.365,0.502]],[8,[0.213,0.302,0.433]]]
 
 
 styles:

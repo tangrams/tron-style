@@ -28,8 +28,8 @@ layers:
             filter: { source: 'naturalearthdata.com' }
             draw:
                 lines:
-                    color: [0.541,0.969,0.949]
-                    width: [[5,0.5px],[6,1px]]
+                    color: [[5,[0.463,0.800,0.824]],[6,[0.541,0.969,0.949]]]
+                    width: [[5,0.5px],[6,0.75px]]
                     # outline:
                     #     color: [0.541,0.969,0.949]
                     #     width: [[5,0px],[6,0px]]
@@ -37,19 +37,22 @@ layers:
                 filter: { type: ['Secondary Highway','Road'] }
                 draw:
                     lines:
-                        color: [0.541,0.969,0.949]
-                        width: [[5,0.5px],[6,1px]]
+                        color: [[5,[0.463,0.800,0.824]],[6,[0.541,0.969,0.949]]]
+                        width: [[5,0.5px],[6,0.75px]]
                         # outline:
                         #     width: 1px
             minor_road:
                 filter: { type: 'Unknown' }
                 draw:
                     lines:
-                        color: red
-                        width: 2px
-        # highway:
-        #     filter: { kind: highway }
-        #     draw:
-        #         lines:
-        #             color: white
-        #             width: 1px
+                        color: [0.333,0.518,0.612]
+                        width: 0.5px
+        highway:
+            filter: { kind: highway }
+            draw:
+                lines:
+                    color: [0.086,0.135,0.260]
+                    width: [[8,0px],[9,0.25px],[10,2px]]
+                    outline:
+                        color: [0.541,0.969,0.949]
+                        width: [[8,0.5px],[9,1px]]
