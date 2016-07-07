@@ -7,7 +7,7 @@ layers:
             polygons:
                 visible: false
                 order: 329
-                color: red
+                color: [0.212,0.302,0.431]
             lines:
                 style: lines
                 order: 330
@@ -18,7 +18,8 @@ layers:
         footprints:
             draw:
                 polygons:
-                    visible: false
+                    color: [[13,[0.212,0.302,0.431]],[14,[0.181,0.259,0.370]]]
+                    visible: true
                 lines:
                     visible: true
-                    width: [[13,0.25px],[14,0.75px]]
+                    width: [[13,0.25px],[14,0.5px],[15,1px]]
