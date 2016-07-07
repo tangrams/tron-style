@@ -1,11 +1,55 @@
 layers:
-	roads:
+    roads:
         data: { source: mapzen, layer: roads }
         filter: { not: { kind: rail } }
+        draw:
+            lines:
+                width: 1px
+                order: global.order
+                outline:
+                    order: 352
 
-        highway:
-        	filter: { kind: highway }
-        	draw:
-        		lines:
-        			color: white
-        			width: 1px
+        early:
+            filter: { $zoom: { max: 15} }
+            draw:
+                lines:
+                    outline:
+                        order: global.order
+
+        bridges-tunnels:
+            filter: { any: [is_bridge: yes, is_tunnel: yes] }
+            draw:
+                lines:
+                    outline:
+                        order: global.order
+
+
+        natural_earth_highways:
+            filter: { source: 'naturalearthdata.com' }
+            draw:
+                lines:
+                    color: [0.541,0.969,0.949]
+                    width: [[5,0.5px],[6,1px]]
+                    # outline:
+                    #     color: [0.541,0.969,0.949]
+                    #     width: [[5,0px],[6,0px]]
+            major_road:
+                filter: { type: ['Secondary Highway','Road'] }
+                draw:
+                    lines:
+                        color: [0.541,0.969,0.949]
+                        width: [[5,0.5px],[6,1px]]
+                        # outline:
+                        #     width: 1px
+            minor_road:
+                filter: { type: 'Unknown' }
+                draw:
+                    lines:
+                        color: red
+                        width: 2px
+        # highway:
+        #     filter: { kind: highway }
+        #     draw:
+        #         lines:
+        #             color: white
+        #             width: 1px

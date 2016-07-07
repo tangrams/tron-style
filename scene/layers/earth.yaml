@@ -15,7 +15,7 @@ layers:
         later:
             filter: { $zoom: { min: 5 } }
             draw:
-                terrain:
+                polygons:
                     color: [0.227,0.318,0.455]
 
 
