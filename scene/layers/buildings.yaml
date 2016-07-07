@@ -1,0 +1,24 @@
+layers:
+    buildings:
+        data: { source: mapzen, layer: buildings }
+        filter:
+            not: { location: underground }
+        draw:
+            polygons:
+                visible: false
+                order: 329
+                color: red
+            lines:
+                style: lines
+                order: 330
+                visible: false
+                color: [0.412,0.686,0.859]
+                width: 1px
+
+        footprints:
+            draw:
+                polygons:
+                    visible: false
+                lines:
+                    visible: true
+                    width: [[13,0.25px],[14,0.75px]]

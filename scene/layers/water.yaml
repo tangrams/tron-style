@@ -9,9 +9,10 @@ layers:
         later:
             filter: { $zoom: { min: 15 } }
             draw:
-                pixel-pattern:
+                polygons:
+                # pixel-pattern:
                     order: function() { return feature.sort_key + 1; }
-                    color: red
+                    color: [0.106,0.110,0.263]
         lakes:
             filter:
                 all:

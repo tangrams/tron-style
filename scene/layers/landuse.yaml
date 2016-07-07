@@ -37,7 +37,8 @@ layers:
                     filter: { operator: [ "United States National Park Service", "US National Park Service" ] }
                     draw:
                         landuse-elevation-stripes:
-                            color: [0.214,0.690,0.611]
+                            # color: [0.214,0.690,0.611]
+                            color: [0.340,0.703,1.000]
                             visible: true
         tier2:
             filter:
@@ -63,7 +64,8 @@ layers:
                     $zoom: { min: 4 }
                 draw:
                     landuse-elevation-stripes:
-                        color: [0.214,0.690,0.611]
+                        # color: [0.214,0.690,0.611]
+                        color: [0.000,0.649,0.829]
                         visible: true
                 wilderness-areas:
                     filter: function() { return feature.name && feature.name.indexOf("Wilderness") > -1 }
@@ -102,7 +104,8 @@ layers:
                         $zoom: { min: 6 }
                     draw:
                         landuse-elevation-stripes:
-                            color: [0.214,0.690,0.611]
+                            # color: [0.617,0.800,0.950]
+                            color: [0.238,0.529,0.820]
                             visible: true
 
             parks-and-national-forests-not-national-park:
@@ -110,7 +113,8 @@ layers:
                 # default for national forests and more?
                 draw:
                     landuse-elevation-stripes:
-                        color: [0.225,0.597,0.681]
+                        # color: [0.243,0.769,0.623]
+                        color: [0.243,0.769,0.949]
                         visible: true
         tier4:
             filter:
