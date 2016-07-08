@@ -2,8 +2,52 @@ import:
     - https://tangrams.github.io/blocks/space/tile.yaml
     - https://tangrams.github.io/blocks/patterns/stripes.yaml
     - https://tangrams.github.io/blocks/elevation/stripes.yaml
+    - https://tangrams.github.io/blocks/generative/noise.yaml
+    - https://tangrams.github.io/blocks/space/constant.yaml
 
 styles:
+    shimmering:
+        base: polygons
+        mix: [generative-noise, space-constant]
+        animated: true
+        shaders:
+            defines:
+                SHIMMERING_IN: 14.
+                SHIMMERING_OUT: 20.
+                SHIMMERING_MAX_ZOOM: 20.
+                SHIMMERING_SCALE_IN: 10.0
+                SHIMMERING_SCALE_OUT: 20.0
+                SHIMMERING_SPEED: 0.1
+            blocks:
+                global: |
+                    vec2 skew (vec2 st) {
+                        st *= 1.733;
+                        vec2 r = vec2(1.1547*st.x);
+                        r.y = st.y+0.5*r.x;
+                        return r;
+                    }
+
+                    vec3 simplexCoord (vec2 st, float td) {
+                        return 1.0-mix(vec3(st.x,1.0-vec2(st.x-st.y,st.y)),vec3(1.0-vec2(st.x,st.y-st.x),st.y),td);
+                    }
+                color: |
+                    //vec2 st = getConstantCoords()*SHIMMERING_SCALE;
+                    vec2 st = gl_FragCoord.xy/u_resolution.xy;
+                    float z = clamp(smoothstep(SHIMMERING_IN/SHIMMERING_MAX_ZOOM, SHIMMERING_OUT/SHIMMERING_MAX_ZOOM, max(u_map_position.z/SHIMMERING_MAX_ZOOM,0.)*0.9), 0., 1.);
+                    
+                    st = (st-.5)*mix(SHIMMERING_SCALE_IN,SHIMMERING_SCALE_OUT,z)+.5;
+                    if (u_resolution.y > u_resolution.x ) {
+                        st.y *= u_resolution.y/u_resolution.x;
+                    } else {
+                        st.x *= u_resolution.x/u_resolution.y;
+                    }
+                    
+                    vec2 s = skew(st);
+                    vec2 s_f = fract(s);
+                    color.rgb = mix(color.rgb,
+                                    color.rgb+snoise(vec3(floor(s+step(s_f.x,s_f.y)*5.),u_time*SHIMMERING_SPEED)),
+                                    z);
+
     thin_stripes:
         base: polygons
         mix: [patterns-stripes, space-tile]
@@ -29,3 +73,4 @@ styles:
                                             THIN_STRIPES_MAX,
                                             clamp(smoothstep(THIN_STRIPES_IN/THIN_STRIPES_MAX_ZOOM, THIN_STRIPES_OUT/THIN_STRIPES_MAX_ZOOM, max(u_map_position.z/THIN_STRIPES_MAX_ZOOM,0.)*0.9), 0., 1.)), 
                                       PI*THIN_STRIPES_ANGLE)*THIN_STRIPES_ALPHA;
+

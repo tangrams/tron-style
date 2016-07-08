@@ -12,6 +12,7 @@ layers:
             draw:
                 polygons:
                     style: water-later
+                    # color: red
                     color: [0.106,0.110,0.263]
 
         water-lakes:
@@ -110,10 +111,9 @@ styles:
         mix: [thin_stripes]
     water-later:
         base: polygons
-
+        mix: [shimmering]
     water-swimming_pool:
         base: polygons
-
     water-boundaries:
         base: lines
         mix: [coast-lines]
