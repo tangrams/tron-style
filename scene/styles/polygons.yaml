@@ -11,7 +11,7 @@ import:
 styles:
     shimmering:
         base: polygons
-        mix: [generative-noise, tron-palette, space-constant]
+        mix: [generative-noise, space-constant]
         animated: true
         shaders:
             defines:
@@ -51,7 +51,7 @@ styles:
                     vec2 s_f = fract(s);
                     float n = snoise(vec3(floor(s+step(s_f.x,s_f.y)*5.),u_time*SHIMMERING_SPEED));
                     color.rgb = mix(color.rgb,
-                                    palette(mix(0.,.6,n)),
+                                    color.rgb*n,
                                     z);
 
     thin_stripes:
