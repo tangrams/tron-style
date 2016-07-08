@@ -51,7 +51,7 @@ styles:
                     vec2 s_f = fract(s);
                     float n = snoise(vec3(floor(s+step(s_f.x,s_f.y)*5.),u_time*SHIMMERING_SPEED));
                     color.rgb = mix(color.rgb,
-                                    palette(mix(0.,.5,n)),
+                                    palette(mix(0.,.6,n)),
                                     z);
 
     thin_stripes:

@@ -117,7 +117,7 @@ styles:
                 SHIMMERING_IN: 14.
                 SHIMMERING_OUT: 20.
                 SHIMMERING_MAX_ZOOM: 20.
-                SHIMMERING_SCALE_IN: 20.0
+                SHIMMERING_SCALE_IN: 30.0
                 SHIMMERING_SCALE_OUT: 1.
                 SHIMMERING_SPEED: 0.1
     water-swimming_pool:
