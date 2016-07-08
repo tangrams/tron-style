@@ -18,8 +18,8 @@ styles:
                 SHIMMERING_IN: 14.
                 SHIMMERING_OUT: 20.
                 SHIMMERING_MAX_ZOOM: 20.
-                SHIMMERING_SCALE_IN: 100.0
-                SHIMMERING_SCALE_OUT: 1.0
+                SHIMMERING_SCALE_IN: 10.0
+                SHIMMERING_SCALE_OUT: 10.0
                 SHIMMERING_SPEED: 0.1
             blocks:
                 global: |
