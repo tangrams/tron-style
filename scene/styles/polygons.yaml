@@ -1,22 +1,25 @@
 import:
+    # Blocks
     - https://tangrams.github.io/blocks/space/tile.yaml
     - https://tangrams.github.io/blocks/patterns/stripes.yaml
     - https://tangrams.github.io/blocks/elevation/stripes.yaml
     - https://tangrams.github.io/blocks/generative/noise.yaml
     - https://tangrams.github.io/blocks/space/constant.yaml
+    # Custom Commons
+    - ./common.yaml
 
 styles:
     shimmering:
         base: polygons
-        mix: [generative-noise, space-constant]
+        mix: [generative-noise, tron-palette, space-constant]
         animated: true
         shaders:
             defines:
                 SHIMMERING_IN: 14.
                 SHIMMERING_OUT: 20.
                 SHIMMERING_MAX_ZOOM: 20.
-                SHIMMERING_SCALE_IN: 10.0
-                SHIMMERING_SCALE_OUT: 20.0
+                SHIMMERING_SCALE_IN: 100.0
+                SHIMMERING_SCALE_OUT: 1.0
                 SHIMMERING_SPEED: 0.1
             blocks:
                 global: |
@@ -31,21 +34,24 @@ styles:
                         return 1.0-mix(vec3(st.x,1.0-vec2(st.x-st.y,st.y)),vec3(1.0-vec2(st.x,st.y-st.x),st.y),td);
                     }
                 color: |
-                    //vec2 st = getConstantCoords()*SHIMMERING_SCALE;
-                    vec2 st = gl_FragCoord.xy/u_resolution.xy;
                     float z = clamp(smoothstep(SHIMMERING_IN/SHIMMERING_MAX_ZOOM, SHIMMERING_OUT/SHIMMERING_MAX_ZOOM, max(u_map_position.z/SHIMMERING_MAX_ZOOM,0.)*0.9), 0., 1.);
-                    
-                    st = (st-.5)*mix(SHIMMERING_SCALE_IN,SHIMMERING_SCALE_OUT,z)+.5;
+                    float scale = mix(SHIMMERING_SCALE_IN, SHIMMERING_SCALE_OUT, z);
+                    /*
+                    vec2 st = gl_FragCoord.xy/u_resolution.xy;
+                    st = (st-.5)*scale+ .5;
                     if (u_resolution.y > u_resolution.x ) {
                         st.y *= u_resolution.y/u_resolution.x;
                     } else {
                         st.x *= u_resolution.x/u_resolution.y;
                     }
+                    */
+                    vec2 st = getConstantCoords()*scale;
                     
                     vec2 s = skew(st);
                     vec2 s_f = fract(s);
+                    float n = snoise(vec3(floor(s+step(s_f.x,s_f.y)*5.),u_time*SHIMMERING_SPEED));
                     color.rgb = mix(color.rgb,
-                                    color.rgb+snoise(vec3(floor(s+step(s_f.x,s_f.y)*5.),u_time*SHIMMERING_SPEED)),
+                                    palette(mix(0.,.5,n)),
                                     z);
 
     thin_stripes:
