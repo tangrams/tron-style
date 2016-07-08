@@ -1,0 +1,19 @@
+layers:
+    subway-light-rail:
+        data: { source: mapzen, layer: transit }
+        filter: { not: { kind: [platform] }, $zoom: { min: 14 } }
+        draw:
+            lines:
+                order: global.order
+        railway:
+            filter: { kind: [railway,train] }
+            draw:
+                lines:
+                    color: red
+                    width: 1px
+        subway:
+            filter: { kind: subway }
+            draw:
+                lines:
+                    color: red
+                    width: 1px
