@@ -7,7 +7,7 @@ import:
     - layers/water.yaml
     - layers/earth.yaml
     - layers/roads.yaml
-    # - layers/rail.yaml
+    - layers/rail.yaml
     - layers/buildings.yaml
     - layers/landuse.yaml
     - layers/boundaries.yaml
