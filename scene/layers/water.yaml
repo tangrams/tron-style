@@ -63,7 +63,7 @@ layers:
                 lines:
                     style: water-boundaries
                     order: global.order
-                    width: [[4,0px],[20,20px]]
+                    width: [[4,0px],[16,7px],[20,10]]
                     color: [0.017, 1.000, 0.649]
                     join: round
 
@@ -112,8 +112,16 @@ styles:
     water-later:
         base: polygons
         mix: [shimmering]
+        shaders:
+            defines:
+                SHIMMERING_IN: 14.
+                SHIMMERING_OUT: 20.
+                SHIMMERING_MAX_ZOOM: 20.
+                SHIMMERING_SCALE_IN: 10.0
+                SHIMMERING_SCALE_OUT: 20.0
+                SHIMMERING_SPEED: 0.1
     water-swimming_pool:
         base: polygons
     water-boundaries:
         base: lines
-        mix: [coast-lines]
+        mix: [coast]

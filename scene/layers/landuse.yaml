@@ -5,7 +5,8 @@ layers:
             polygons:
                 style: landuse
                 order: global.order
-                visible: false
+                # visible: false
+                color: red
         landuse-tier1:
             filter:
                 any:
@@ -136,7 +137,6 @@ layers:
                     - { $zoom: { min: 15 }, area: { min: 20000 } }
                     - { $zoom: { min: 15 }, area: { min: 2000 } }
                     - { $zoom: { min: 16 } }
-
             landuse-tier4-golf_course:
                 filter:
                     kind: golf_course
@@ -145,7 +145,6 @@ layers:
                         style: landuse-tier4-golf_course
                         color: [0.217,0.307,0.442]
                         visible: true
-
 styles:
     landuse:
         base: polygons
