@@ -1,29 +1,25 @@
 layers:
     roads:
-        data: { source: mapzen, layer: roads }
+        data: { source: mapzen }
         filter: { not: { kind: rail } }
         draw:
             lines:
                 width: 1px
                 order: global.order
                 outline:
-                    order: 352
-
+                order: 352
         early:
             filter: { $zoom: { max: 15} }
             draw:
                 lines:
                     outline:
                         order: global.order
-
         bridges-tunnels:
             filter: { any: [is_bridge: yes, is_tunnel: yes] }
             draw:
                 lines:
                     outline:
                         order: global.order
-
-
         natural_earth_highways:
             filter: { source: 'naturalearthdata.com' }
             draw:

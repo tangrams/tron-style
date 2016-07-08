@@ -1,23 +1,24 @@
 layers:
     water:
-        data: { source: mapzen, layer: water }
+        data: { source: mapzen }
         draw:
-            stripes:
+            polygons:
+                style: water
                 order: global.order
                 color: [0.219, 0.226, 0.529]
 
-        later:
+        water-later:
             filter: { $zoom: { min: 15 } }
             draw:
                 polygons:
-                # pixel-pattern:
-                    order: function() { return feature.sort_key + 1; }
+                    style: water-later
                     color: [0.106,0.110,0.263]
-        lakes:
+
+        water-lakes:
             filter:
                 all:
                     - kind: [ocean, lake, water, riverbank, reservoir, swimming_pool]
-                # WARNING: any area filters here must match the area filters in the water_boundaries-not-ocean layer
+                # WARNING: any area filters here must match the area filters in the water-boundaries-not_ocean layer
                 any:
                     # limit show smaller landuse areas to higher zooms
                     - { $zoom: { min: 1 },  area: { min: 40000000000 } }
@@ -37,35 +38,39 @@ layers:
                     - { $zoom: { min: 14 }, area: { min: 2000 } }
                     - { $zoom: { min: 15 } }
             draw:
-                stripes:
+                polygons:
+                    style: water
                     color: [0.219, 0.226, 0.529]
 
-        other-water-areas:
+        water-other_areas:
             filter: { not: { kind: [ocean, lake, water, reservoir, playa] }, $zoom: { min: 10 }, area: { min: 100 } }
             draw:
-                stripes:
+                polygons:
+                    style: water
                     color: [0.219, 0.226, 0.529]
 
-        swimming_pool:
+        water-swimming_pool:
             filter: { kind: swimming_pool }
             draw:
                 polygons:
+                    style: water-swimming_pool
                     color: red
 
-        water-boundary:
+        water-boundaries:
             filter: { boundary: yes, kind: ocean }
             draw:
-                coast-lines:
+                lines:
+                    style: water-boundaries
                     order: global.order
                     width: [[4,0px],[20,20px]]
                     color: [0.017, 1.000, 0.649]
                     join: round
 
-        water_boundaries-not-ocean:
+        water-boundaries-not_ocean:
             filter:
                 all:
                     - boundary: yes
-                    - not: { kind: [ocean,playa] }
+                    - not: { kind: [ocean, playa] }
                     - $zoom: { min: 8}
                 # WARNING: any area filters here must match the area filters in the lakes layer
                 any:
@@ -87,25 +92,28 @@ layers:
                     - { $zoom: { min: 14 }, area: { min: 2000 } }
                     - { $zoom: { min: 15 } }
             draw:
-                coast-lines:
-                    order: global.order
+                lines:
                     color: [0.017, 1.000, 0.649]
                     width: [[8,0px],[20,10px]]
                     join: round
-            riverbank:
+            water-boundaries-not_ocean-riverbank:
                 # river boundaries like the thames in london, la seine in paris
                 filter: { kind: riverbank }
                 draw:
-                    coast-lines:
+                    lines:
                         color: [0.017, 1.000, 0.649]
                         width: [[8,0px],[20,10px]]
 
 styles:
-    pixel-pattern:
-        mix: [space-tile, generative-random]
+    water:
         base: polygons
-        shaders:
-            blocks:
-                filter: |
-                    vec3 pos = vec3(getTileCoords()*280.0,1.0);
-                    color.rgb = vec3(random(abs(floor(pos)))+0.995);
+        mix: [thin_stripes]
+    water-later:
+        base: polygons
+
+    water-swimming_pool:
+        base: polygons
+
+    water-boundaries:
+        base: lines
+        mix: [coast-lines]

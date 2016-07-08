@@ -1,6 +1,6 @@
 layers:
-    subway-light-rail:
-        data: { source: mapzen, layer: transit }
+    transit:
+        data: { source: mapzen }
         filter: { not: { kind: [platform] }, $zoom: { min: 14 } }
         draw:
             lines:

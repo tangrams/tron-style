@@ -3,28 +3,29 @@ import:
     - https://tangrams.github.io/blocks/patterns/stripes.yaml
     - https://tangrams.github.io/blocks/elevation/stripes.yaml
 
-styles:                
-    stripes:
+styles:
+    thin_stripes:
         base: polygons
         mix: [patterns-stripes, space-tile]
+        raster: custom
         shaders:
             defines:
-                STRIPES_IN: 3.
-                STRIPES_OUT: 16.
-                STRIPES_MAX_ZOOM: 20.
-                STRIPES_DIR: vec3(-0.600,-0.420,0.600)
-                STRIPES_ALPHA: .5
-                STRIPES_SCALE: 2.
+                THIN_STRIPES_IN: 3.
+                THIN_STRIPES_OUT: 16.
+                THIN_STRIPES_MAX_ZOOM: 20.
+                THIN_STRIPES_DIR: vec3(-0.600,-0.420,0.600)
+                THIN_STRIPES_ALPHA: .5
+                THIN_STRIPES_SCALE: 2.
                 # higher value increases the no. of lines, and width gets thinner
-                STRIPES_PCT: 1.6
-                STRIPES_MIN: .9
+                THIN_STRIPES_PCT: 1.6
+                THIN_STRIPES_MIN: .9
                 #spacing between lines? anything over 1.0 makes the lines disappear
-                STRIPES_MAX: -.2
-                STRIPES_ANGLE: 0.25
+                THIN_STRIPES_MAX: -.2
+                THIN_STRIPES_ANGLE: 0.25
             blocks:
                 color: |
-                    color.a = stripes(getTileCoords()*STRIPES_SCALE, 
-                                      mix(STRIPES_MIN,
-                                          STRIPES_MAX,
-                                          clamp(smoothstep(STRIPES_IN/STRIPES_MAX_ZOOM, STRIPES_OUT/STRIPES_MAX_ZOOM, max(u_map_position.z/STRIPES_MAX_ZOOM,0.)*0.9), 0., 1.)), 
-                                      PI*STRIPES_ANGLE)*STRIPES_ALPHA;
+                    color.a = stripes(  getTileCoords()*THIN_STRIPES_SCALE, 
+                                        mix(THIN_STRIPES_MIN,
+                                            THIN_STRIPES_MAX,
+                                            clamp(smoothstep(THIN_STRIPES_IN/THIN_STRIPES_MAX_ZOOM, THIN_STRIPES_OUT/THIN_STRIPES_MAX_ZOOM, max(u_map_position.z/THIN_STRIPES_MAX_ZOOM,0.)*0.9), 0., 1.)), 
+                                      PI*THIN_STRIPES_ANGLE)*THIN_STRIPES_ALPHA;

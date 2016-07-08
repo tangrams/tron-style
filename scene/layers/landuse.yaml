@@ -2,10 +2,10 @@ layers:
     landuse:
         data: { source: mapzen }
         draw:
-            landuse-elevation-stripes:
+            landuse:
                 order: global.order
                 visible: false
-        tier1:
+        landuse-tier1:
             filter:
                 any:
                     # limit show smaller landuse areas to higher zooms
@@ -24,10 +24,10 @@ layers:
                     - { $zoom: { min: 15 }, area: { min: 20000 } }
                     - { $zoom: { min: 15 }, area: { min: 2000 } }
                     - { $zoom: { min: 16 } }
-            national_park:
+            landuse-tier1-national_park:
                 filter: { kind: [national_park, "park or protected land", battlefield], not: { operator: [ "United States Forest Service", "US Forest Service", "U.S. Forest Service", "USDA Forest Service" ] } }
                 draw:
-                    landuse-elevation-stripes:
+                    landuse:
                         # color: [0.263,0.933,0.494]
                         color: [0.402,0.568,0.818]
                         order: 18
@@ -36,11 +36,11 @@ layers:
                     # yosemite national park, death valley national park, grand canyon national park
                     filter: { operator: [ "United States National Park Service", "US National Park Service" ] }
                     draw:
-                        landuse-elevation-stripes:
+                        landuse:
                             # color: [0.214,0.690,0.611]
                             color: [0.340,0.703,1.000]
                             visible: true
-        tier2:
+        landuse-tier2:
             filter:
                 any:
                     # limit show smaller landuse areas to higher zooms
@@ -58,37 +58,37 @@ layers:
                     - { $zoom: { min: 15 }, area: { min: 20000 } }
                     - { $zoom: { min: 15 }, area: { min: 2000 } }
                     - { $zoom: { min: 16 } }
-            conservation:
+            landuse-tier2-conservation:
                 filter:
                     kind: [conservation, protected_area, nature_reserve]
                     $zoom: { min: 4 }
                 draw:
-                    landuse-elevation-stripes:
+                    landuse:
                         # color: [0.214,0.690,0.611]
                         color: [0.000,0.649,0.829]
                         visible: true
-                wilderness-areas:
+                landuse-tier2-conservation-wilderness_areas:
                     filter: function() { return feature.name && feature.name.indexOf("Wilderness") > -1 }
                     draw:
-                        landuse-stripes:
+                        landuse-tier2-conservation:
                             order: 25
                             color: [0.239,0.329,0.463]
                             visible: true
-                # national_forest_level_6:
+                # landuse-tier2-conservation-national_forest_level_6:
                 #     filter: { protect_class: ["6",6] }
                 #     draw:
-                #         landuse-stripes:
+                #         landuse-tier2-conservation:
                 #             color: red
                 #             visible: true
-            farm:
+            landuse-tier2-farm:
                 filter:
                     kind: [farm, farmland]
                     $zoom: { min: 10}
                 draw:
-                    farm-stripes:
+                    landuse-tier2-farm:
                         color: [0.174,0.462,0.527]
                         visible: true
-            forest:
+            landuse-tier2-forest:
                 filter: { kind: [forest,wood], $zoom: { min: 6 } }
                 national-forest:
                     filter:
@@ -103,7 +103,7 @@ layers:
                         not: { operator: [ "United States Forest Service", "US Forest Service", "U.S. Forest Service", "USDA Forest Service" ] }
                         $zoom: { min: 6 }
                     draw:
-                        landuse-elevation-stripes:
+                        landuse:
                             # color: [0.617,0.800,0.950]
                             color: [0.238,0.529,0.820]
                             visible: true
@@ -112,11 +112,11 @@ layers:
                 filter: { $zoom: { min: 4 }, kind: [park, national_park, "park or protected land", battlefield], not: { operator: [ "United States National Park Service", "US National Park Service" ] } }
                 # default for national forests and more?
                 draw:
-                    landuse-elevation-stripes:
+                    landuse:
                         # color: [0.243,0.769,0.623]
                         color: [0.243,0.769,0.949]
                         visible: true
-        tier4:
+        landuse-tier4:
             filter:
                 any:
                     # limit show smaller landuse areas to higher zooms
@@ -129,37 +129,16 @@ layers:
                     - { $zoom: { min: 15 }, area: { min: 2000 } }
                     - { $zoom: { min: 16 } }
 
-            golf_course:
+            landuse-tier4-golf_course:
                 filter:
                     kind: golf_course
                 draw:
-                    landuse-stripes:
+                    landuse-tier4-golf_course:
                         color: [0.217,0.307,0.442]
                         visible: true
 
-
 styles:
-    farm-stripes:
-        mix: [stripes]
-        blend: overlay
-        shaders:
-            defines:
-                STRIPES_IN: 10.
-                STRIPES_OUT: 20.
-                STRIPES_ANGLE: 0.95
-                STRIPES_MAX: -.025
-                STRIPES_ALPHA: .5
-    landuse-stripes:
-        mix: [stripes]
-        blend: overlay
-        shaders:
-            defines:
-                STRIPES_IN: 10.
-                STRIPES_OUT: 20.
-                STRIPES_ANGLE: 0.45
-                STRIPES_MAX: -.025
-                STRIPES_ALPHA: .8
-    landuse-elevation-stripes:
+    landuse:
         base: polygons
         mix: [elevation-stripes]
         shaders:
@@ -167,3 +146,34 @@ styles:
                 STRIPES_ALPHA: .5
                 STRIPES_SCALE: 4.
                 STRIPES_PCT: 1.7
+    landuse-tier2-farm:
+        mix: [thin_stripes]
+        blend: overlay
+        shaders:
+            defines:
+                THIN_STRIPES_IN: 10.
+                THIN_STRIPES_OUT: 20.
+                THIN_STRIPES_ANGLE: 0.95
+                THIN_STRIPES_MAX: -.025
+                THIN_STRIPES_ALPHA: .5
+    landuse-tier2-conservation:
+        mix: [thin_stripes]
+        blend: overlay
+        shaders:
+            defines:
+                THIN_STRIPES_IN: 10.
+                THIN_STRIPES_OUT: 20.
+                THIN_STRIPES_ANGLE: 0.45
+                THIN_STRIPES_MAX: -.025
+                THIN_STRIPES_ALPHA: .8
+    landuse-tier4-golf_course:
+        mix: [thin_stripes]
+        blend: overlay
+        shaders:
+            defines:
+                THIN_STRIPES_IN: 10.
+                THIN_STRIPES_OUT: 20.
+                THIN_STRIPES_ANGLE: 0.45
+                THIN_STRIPES_MAX: -.025
+                THIN_STRIPES_ALPHA: .8
+    

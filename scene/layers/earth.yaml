@@ -1,58 +1,57 @@
 layers:
     earth:
         data: { source: mapzen }
-        # draw:
-        #     polygons:
-        #         order: global.order
-        #         color: [0.534, 0.736, 1.000]
-
-        early:
+        earth-early:
             filter: { $zoom: { max: 6 } }
             draw:
-                earth-stripes:
+                earth-early:
                     order: global.order
                     color: [0.534, 0.736, 1.000]
-        later:
+        earth-later:
             filter: { $zoom: { min: 5 } }
             draw:
-                polygons:
+                earth-later:
+                    order: global.order
                     color: [[5,[0.267,0.365,0.502]],[8,[0.213,0.302,0.433]]]
 
-
 styles:
-    earth-stripes:
-        mix: [stripes]
+    earth-early:
+        base: polygons
+        mix: [thin_stripes]
         shaders:
             defines:
-                STRIPES_IN: 3.
-                STRIPES_OUT: 4.
-                STRIPES_MAX_ZOOM: 6.
-                STRIPES_PCT: 1.9
-                STRIPES_MIN: .9
-                STRIPES_MAX: -.2
-                STRIPES_SCALE: 2.5
+                THIN_STRIPES_IN: 3.
+                THIN_STRIPES_OUT: 4.
+                THIN_STRIPES_MAX_ZOOM: 6.
+                THIN_STRIPES_PCT: 1.9
+                THIN_STRIPES_MIN: .9
+                THIN_STRIPES_MAX: -.2
+                THIN_STRIPES_SCALE: 2.5
 
-    terrain:
+    earth-later:
         base: polygons
-        raster: normal
-        shaders:
-            uniforms:
-                u_scale: 2 # higher values are more exaggerated
-                u_envmap: ../images/tron-terrain.jpg
-            blocks:
-                global: |
-                    vec4 terrainEnvmap (in sampler2D _tex, in vec3 _normal) {
-                        const vec3 eye = vec3(0.,0.,-1.);
-                        vec3 r = reflect(eye, _normal);
-                        r.z += 1.0;
-                        float m = 2. * length(r);
-                        vec2 uv = r.xy / m + .5;
-                        return texture2D(_tex, uv);
-                    }
-                color: |              
-                    // color = v_color;
-                    normal.z /= u_scale; // turn terrain exaggeration up/down
-                    normal = normalize(normal);
-                    color = terrainEnvmap(u_envmap, normal);
+
+    # terrain:
+    #     base: polygons
+    #     raster: normal
+    #     shaders:
+    #         uniforms:
+    #             u_scale: 2 # higher values are more exaggerated
+    #             u_envmap: ../images/tron-terrain.jpg
+    #         blocks:
+    #             global: |
+    #                 vec4 terrainEnvmap (in sampler2D _tex, in vec3 _normal) {
+    #                     const vec3 eye = vec3(0.,0.,-1.);
+    #                     vec3 r = reflect(eye, _normal);
+    #                     r.z += 1.0;
+    #                     float m = 2. * length(r);
+    #                     vec2 uv = r.xy / m + .5;
+    #                     return texture2D(_tex, uv);
+    #                 }
+    #             color: |              
+    #                 // color = v_color;
+    #                 normal.z /= u_scale; // turn terrain exaggeration up/down
+    #                 normal = normalize(normal);
+    #                 color = terrainEnvmap(u_envmap, normal);
                     
-                    // color *= v_color; // apply layer color to envmap
+    #                 // color *= v_color; // apply layer color to envmap

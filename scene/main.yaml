@@ -1,13 +1,14 @@
 import:
     - https://tangrams.github.io/blocks/global.yaml
     - https://tangrams.github.io/blocks/source-elevation.yaml
-    - https://tangrams.github.io/blocks/generative/random.yaml
+    # Styles
     - styles/lines.yaml
     - styles/polygons.yaml
+    # Layers
     - layers/water.yaml
     - layers/earth.yaml
     - layers/roads.yaml
-    - layers/rail.yaml
+    - layers/transit.yaml
     - layers/buildings.yaml
     - layers/landuse.yaml
     - layers/boundaries.yaml
