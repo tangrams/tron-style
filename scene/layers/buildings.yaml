@@ -3,21 +3,31 @@ layers:
         data: { source: mapzen }
         filter:
             not: { location: underground }
-        footprints:
+        draw:
+            polygons:
+                visible: false
+                order: global.order
+                color: [0.212,0.302,0.431]
+            lines:
+                style: lines
+                order: global.order-top
+                visible: false
+                color: [0.412,0.686,0.859]
+                width: 1px
+        buildings-footprints:
             draw:
-                footprints-ply:
+                polygons:
+                    style: buildings-footprints-ply
                     color: [[13,[0.212,0.302,0.431]],[14,[0.181,0.259,0.370]]]
-                    order: global.order
                     visible: true
-                footprints-lns:
-                    order: global.order-top
-                    color: [0.412,0.686,0.859]
+                lines:
+                    style: buildings-footprints-lns
                     width: [[13,0.25px],[14,0.5px],[15,1px]]
                     visible: true
 
 styles:
-    footprints-ply:
+    buildings-footprints-ply:
         base: polygons
 
-    footprints-lns:
+    buildings-footprints-lns:
         base: lines

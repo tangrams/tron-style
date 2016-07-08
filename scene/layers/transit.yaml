@@ -4,16 +4,21 @@ layers:
         filter: { not: { kind: [platform] }, $zoom: { min: 14 } }
         draw:
             lines:
+                styles: transit
                 order: global.order
-        railway:
+        transit-railway:
             filter: { kind: [railway,train] }
             draw:
                 lines:
                     color: red
                     width: 1px
-        subway:
+        transit-subway:
             filter: { kind: subway }
             draw:
                 lines:
                     color: red
                     width: 1px
+
+styles:
+    transit:
+        base: lines
