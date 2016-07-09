@@ -3,7 +3,7 @@ styles:
         base: lines
         mix: [patterns-stripes, space-tile]
         texcoords: true
-        animate: false
+        animate: true
         blend: add
         shaders:
             defines:
