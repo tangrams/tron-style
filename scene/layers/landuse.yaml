@@ -3,10 +3,8 @@ layers:
         data: { source: mapzen }
         draw:
             polygons:
-                style: landuse
                 order: global.order
-                # visible: false
-                color: red
+                visible: false
         landuse-tier1:
             filter:
                 any:
@@ -30,9 +28,10 @@ layers:
                 filter: { kind: [national_park, "park or protected land", battlefield], not: { operator: [ "United States Forest Service", "US Forest Service", "U.S. Forest Service", "USDA Forest Service" ] } }
                 draw:
                     polygons:
+                        style: landuse
                         # color: [0.263,0.933,0.494]
                         color: [0.402,0.568,0.818]
-                        # order: 18
+                        order: 18
                         visible: true
                 us_national_park:
                     # yosemite national park, death valley national park, grand canyon national park
@@ -66,6 +65,7 @@ layers:
                     $zoom: { min: 4 }
                 draw:
                     polygons:
+                        style: landuse
                         # color: [0.214,0.690,0.611]
                         color: [0.000,0.649,0.829]
                         visible: true
@@ -74,7 +74,7 @@ layers:
                     draw:
                         polygons:
                             style: landuse-tier2-conservation
-                            # order: 25
+                            order: 25
                             color: [0.239,0.329,0.463]
                             visible: true
                 # landuse-tier2-conservation-national_forest_level_6:
@@ -87,7 +87,7 @@ layers:
             landuse-tier2-farm:
                 filter:
                     kind: [farm, farmland]
-                    $zoom: { min: 10}
+                    $zoom: { min: 10 }
                 draw:
                     polygons:
                         style: landuse-tier2-farm
@@ -95,7 +95,7 @@ layers:
                         visible: true
             landuse-tier2-forest:
                 filter: { kind: [forest,wood], $zoom: { min: 6 } }
-                landuse-tier2-forest-national:
+                landuse-tier2-national-forest:
                     filter:
                         operator: [ "United States Forest Service", "US Forest Service", "U.S. Forest Service", "USDA Forest Service" ]
                     draw:
@@ -109,6 +109,7 @@ layers:
                         $zoom: { min: 6 }
                     draw:
                         polygons:
+                            style: landuse
                             # color: [0.617,0.800,0.950]
                             color: [0.238,0.529,0.820]
                             visible: true
@@ -118,10 +119,11 @@ layers:
                     kind: [park, national_park, "park or protected land", battlefield]
                     not: { operator: [ "United States National Park Service", "US National Park Service" ] }
                     $zoom: { min: 4 }
-                    
+
                 # default for national forests and more?
                 draw:
                     polygons:
+                        style: landuse
                         # color: [0.243,0.769,0.623]
                         color: [0.243,0.769,0.949]
                         visible: true
