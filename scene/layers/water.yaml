@@ -5,14 +5,15 @@ layers:
             polygons:
                 style: water
                 order: global.order
-                color: [0.219, 0.226, 0.529]
+                # color: [0.219, 0.226, 0.529]
+                color: [0.304,0.310,0.660]
 
         water-later:
             filter: { $zoom: { min: 14 } }
             draw:
                 polygons:
                     style: water-later
-                    color: [0.106,0.110,0.263]
+                    color: [0.164,0.168,0.350]
 
         water-lakes:
             filter:
@@ -40,14 +41,15 @@ layers:
             draw:
                 polygons:
                     style: water
-                    color: [0.219, 0.226, 0.529]
+                    # color: [0.219, 0.226, 0.529]
+                    color: [0.304,0.310,0.660]
 
         water-other_areas:
             filter: { not: { kind: [ocean, lake, water, reservoir, playa] }, $zoom: { min: 10 }, area: { min: 100 } }
             draw:
                 polygons:
                     style: water
-                    color: [0.219, 0.226, 0.529]
+                    color: [0.304,0.310,0.660]
 
         water-swimming_pool:
             filter: { kind: swimming_pool }
