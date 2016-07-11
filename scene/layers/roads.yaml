@@ -49,10 +49,32 @@ layers:
             draw:
                 lines:
                     color: [0.086,0.135,0.260]
-                    width: [[8,0px],[9,0.25px],[10,2px]]
+                    width: [[8,0px],[9,0.25px],[10,1px],[12,1px],[13,2px],[14,3px],[15,4px]]
                     outline:
                         color: [0.541,0.969,0.949]
-                        width: [[8,0.5px],[9,1px]]
+                        width: [[8,0.5px],[9,0.6px],[12,1px]]
+            roads-highway-link:
+                filter: { is_link: yes } # on- and off-ramps, etc
+                draw:
+                    lines:
+                        width: [[8,0px],[9,0px],[11,0.25px],[12,0.25px],[13,1px],[14,1.5px],[15,2px]]
+                        outline:
+                            width: [[8,0px],[9,0.5px]]
+                roads-highway-link-early:
+                    filter: { $zoom: { min: 13, max: 15 } }
+                    draw:
+                        lines:
+                            order: 352
+            roads-highway-tunnel:
+                filter: { is_tunnel: yes, $zoom: { min: 13 } }
+                draw:
+                    lines:
+                        color: [0.201,0.286,0.409]
+                        outline:
+                            # color: [0.373,0.673,0.657]
+                            color: [0.259,0.482,0.678]
+
+
 
 styles:
     roads:

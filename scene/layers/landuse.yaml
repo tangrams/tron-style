@@ -95,7 +95,7 @@ layers:
                         visible: true
             landuse-tier2-forest:
                 filter: { kind: [forest,wood], $zoom: { min: 6 } }
-                landuse-tier2-national-forest:
+                landuse-tier2-forest-national:
                     filter:
                         operator: [ "United States Forest Service", "US Forest Service", "U.S. Forest Service", "USDA Forest Service" ]
                     draw:

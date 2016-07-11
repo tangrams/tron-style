@@ -65,7 +65,11 @@ layers:
                     style: water-boundaries
                     order: global.order
                     width: [[4,0px],[16,7px],[20,10]]
-                    color: [0.017, 1.000, 0.649]
+                    # color: [0.017, 1.000, 0.649]
+                    # color: [0.055,0.176,0.949]
+                    # color: [0.051,0.158,0.850]
+                    # color: [0.043,0.133,0.720]
+                    color: [0.091,0.329,0.692]
                     join: round
 
         water-boundaries-not_ocean:
@@ -103,7 +107,7 @@ layers:
                 filter: { kind: riverbank }
                 draw:
                     lines:
-                        color: [0.017, 1.000, 0.649]
+                        color: [0.091,0.329,0.692]
                         width: [[8,0px],[20,10px]]
 
 styles:
