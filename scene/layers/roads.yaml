@@ -50,7 +50,7 @@ layers:
             draw:
                 lines:
                     color: [0.086,0.135,0.260]
-                    width: [[8,0px],[9,0.25px],[10,1px],[12,1px],[13,2px],[14,3px],[15,4px],[16,4px],[17,2px],[18,3px]]
+                    width: [[8,0px],[9,0.25px],[10,1px],[12,1px],[13,2px],[14,3px],[15,4px],[16,4px],[17,5px],[18,6px]]
                     outline:
                         color: [0.541,0.969,0.949]
                         width: [[8,0.5px],[9,0.6px],[12,1px],[16,1px],[17,0px]]
@@ -58,7 +58,7 @@ layers:
                     order: function () { return (feature.sort_key * 10 - 1); }
                     #order: 540
                     color: [0.557,0.909,0.887]
-                    width: [[8,0px],[16,0px],[17,4px],[18,5px]]
+                    width: [[8,0px],[16,0px],[17,7px],[18,8px]]
 
             # Show 0 width roads one zoom before they have width, so they can scale up instead of popping in
             roads-highway-z17:
@@ -161,8 +161,12 @@ styles:
 
     dashed:
         base: lines
-        dash: [0.5,0.5]
+        dash: [1,1]
         dash_background_color: [0.086,0.149,0.290]
+        shaders:
+            blocks:
+                position: |
+                    v_texcoord.y *= 3.;
 
     casing1:
         base: lines
