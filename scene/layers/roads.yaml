@@ -57,6 +57,9 @@ layers:
                     order: 40
                     color: [0.557,0.909,0.887]
                     width: [[8,0px],[16,0px],[17,4px],[18,5px]]
+
+            ## I've added filters and draw groups for these layers and renamed them to match the
+            ## naming convention:
             roads-highway-z17-dark:
                 filter: {$zoom: 17}
                 draw:
@@ -97,29 +100,64 @@ layers:
                             width: [[8,0px],[9,0.5px]]
                     dashed:
                         visible: false
-                    lines-highway-z17-dark:
-                        visible: false
-                    lines-highway-z17-casing-light:
-                        visible: false
-                    lines-highway-z18-dark:
-                        visible: false
-                    lines-highway-z18-casing-light:
-                        visible: false
-                roads-highway-link-early:
-                    filter: { $zoom: { min: 13, max: 15 } }
+
+                ## all of the commented layers in this block can be replaced
+                ## with the following layer:
+
+                roads-highway-z17-18:
+                    filter: { $zoom: [17, 18] }
                     draw:
                         lines:
-                            order: 352
-                        dashed:
                             visible: false
-                        lines-highway-z17-dark:
-                            visible: false
-                        lines-highway-z17-casing-light:
-                            visible: false
-                        lines-highway-z18-dark:
-                            visible: false
-                        lines-highway-z18-casing-light:
-                            visible: false
+
+                # roads-highway-z17-dark:
+                #     filter: { $zoom: 17}
+                #     draw:
+                #         lines:
+                #             visible: false
+                # roads-highway-z17-casing-light:
+                #     filter: { $zoom: 17}
+                #     draw:
+                #         lines:
+                #             visible: false
+                # roads-highway-z18-dark:
+                #     filter: { $zoom: 18}
+                #     draw:
+                #         lines:
+                #             visible: false
+                # roads-highway-z18-casing-light:
+                #     filter: { $zoom: 18}
+                #     draw:
+                #         lines:
+                #             visible: false
+                # roads-highway-link-early:
+                #     filter: { $zoom: { min: 13, max: 15 } }
+                #     draw:
+                #         lines:
+                #             order: 352
+                #         dashed:
+                #             visible: false
+                #         roads-highway-z17-dark:
+                #             filter: { $zoom: 17}
+                #             draw:
+                #                 lines:
+                #                     visible: false
+                #         roads-highway-z17-casing-light:
+                #             filter: { $zoom: 17}
+                #             draw:
+                #                 lines:
+                #                     visible: false
+                #         roads-highway-z18-dark:
+                #             filter: { $zoom: 18}
+                #             draw:
+                #                 lines:
+                #                     visible: false
+                #         roads-highway-z18-casing-light:
+                #             filter: { $zoom: 18}
+                #             draw:
+                #                 lines:
+                #                     visible: false
+
             roads-highway-tunnel:
                 filter: { is_tunnel: yes, $zoom: { min: 13 } }
                 draw:
@@ -130,14 +168,35 @@ layers:
                             color: [0.259,0.482,0.678]
                     dashed:
                         visible: false
-                    lines-highway-z17-dark:
-                        visible: false
-                    lines-highway-z17-casing-light:
-                        visible: false
-                    lines-highway-z18-dark:
-                        visible: false
-                    lines-highway-z18-casing-light:
-                        visible: false
+
+                ## the "visible: false" layers below can be replaced with the following layer:
+                roads-highway-z17-18:
+                    filter: { $zoom: [17, 18]}
+                    draw:
+                        lines:
+                            visible: false
+
+                # roads-highway-z17-dark:
+                #     filter: { $zoom: 17}
+                #     draw:
+                #         lines:
+                #             visible: false
+                # roads-highway-z17-casing-light:
+                #     filter: { $zoom: 17}
+                #     draw:
+                #         lines:
+                #             visible: false
+                # roads-highway-z18-dark:
+                #     filter: { $zoom: 18}
+                #     draw:
+                #         lines:
+                #             visible: false
+                # roads-highway-z18-casing-light:
+                #     filter: { $zoom: 18}
+                #     draw:
+                #         lines:
+                #             visible: false
+
         roads-major_road:
             filter: { kind: major_road }
             draw:
