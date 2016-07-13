@@ -5,10 +5,14 @@ import:
     - https://tangrams.github.io/blocks/elevation/stripes.yaml
     - https://tangrams.github.io/blocks/generative/noise.yaml
     - https://tangrams.github.io/blocks/space/constant.yaml
+    - https://tangrams.github.io/blocks/patterns/dots.yaml
     # Custom Commons
     - ./common.yaml
 
 styles:
+    dots:
+        base: polygons
+        mix: [patterns-dots]
     shimmering:
         base: polygons
         mix: [generative-noise, space-constant]
