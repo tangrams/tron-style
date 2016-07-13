@@ -13,6 +13,9 @@ import:
     - layers/landuse.yaml
     - layers/boundaries.yaml
 
+global:
+     order: function () { return (feature.sort_key * 10); }
+
 sources:
     mapzen:
         type: TopoJSON

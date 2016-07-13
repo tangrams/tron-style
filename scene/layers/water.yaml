@@ -9,11 +9,12 @@ layers:
                 color: [0.304,0.310,0.660]
 
         water-later:
-            filter: { $zoom: { min: 14 } }
+            filter: { $zoom: { min: 13 } }
             draw:
                 polygons:
                     style: water-later
                     color: [0.164,0.168,0.350]
+                    # color: [0.219,0.226,0.430]
 
         water-lakes:
             filter:
@@ -116,18 +117,18 @@ styles:
         mix: [thin_stripes]
         shaders:
             defines:
-                THIN_STRIPES_OUT: 13.
-                THIN_STRIPES_MAX_ZOOM: 15.
+                THIN_STRIPES_OUT: 12.
+                THIN_STRIPES_MAX_ZOOM: 14.
     water-later:
         base: polygons
         mix: [shimmering]
         shaders:
             defines:
-                SHIMMERING_IN: 12.
-                SHIMMERING_OUT: 17.
-                SHIMMERING_MAX_ZOOM: 18.
+                SHIMMERING_IN: 11.
+                SHIMMERING_OUT: 16.
+                SHIMMERING_MAX_ZOOM: 17.
                 SHIMMERING_SCALE_IN: 30.0
-                SHIMMERING_SCALE_OUT: 1.
+                SHIMMERING_SCALE_OUT: 10.
                 SHIMMERING_SPEED: 0.1
     water-swimming_pool:
         base: polygons
