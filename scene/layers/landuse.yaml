@@ -142,13 +142,14 @@ layers:
                     - { $zoom: { min: 15 }, area: { min: 2000 } }
                     - { $zoom: { min: 16 } }
 
-            # university:
-            #     filter:
-            #         kind: [university, college]
-            #     draw:
-            #         polygons:
-            #             color: yellow
-            #             visible: true
+            university:
+                filter:
+                    kind: [university, college]
+                draw:
+                    polygons:
+                        style: landuse-tier3-university
+                        color: yellow
+                        visible: true
         landuse-tier4:
             filter:
                 any:
@@ -208,4 +209,7 @@ styles:
                 THIN_STRIPES_ANGLE: 0.45
                 THIN_STRIPES_MAX: -.025
                 THIN_STRIPES_ALPHA: .8
+    landuse-tier3-university:
+        mix: [dots]
+        blend: overlay
     

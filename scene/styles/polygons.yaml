@@ -13,6 +13,11 @@ styles:
     dots:
         base: polygons
         mix: [patterns-dots]
+        shaders:
+            blocks:
+                color: |
+                    color.rgb = mix(vec(0.5), color.rgb, TileDots(45. 0.21));
+
     shimmering:
         base: polygons
         mix: [generative-noise, space-constant]
