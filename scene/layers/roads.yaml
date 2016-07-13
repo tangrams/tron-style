@@ -54,7 +54,7 @@ layers:
                     outline:
                         color: [0.541,0.969,0.949]
                         width: [[8,0.5px],[9,0.6px],[12,1px],[16,1px],[17,0px]]
-                dashed:
+                roads-highway-dashed:
                     order: function () { return (feature.sort_key * 10 - 1); }
                     #order: 540
                     color: [0.557,0.909,0.887]
@@ -65,12 +65,12 @@ layers:
                 filter: 
                     $zoom: { min: 16 }
                 draw:
-                    casing1:
+                    roads-highway-casing1:
                         #order: 538
                         order: function () { return (feature.sort_key * 10 - 2); }
                         color: [0.086,0.135,0.260]
                         width: [[8,0px],[16,0px],[17,12px],[18,15px]]
-                    casing2:
+                    roads-highway-casing2:
                         #order: 536
                         order: function () { return (feature.sort_key * 10 - 3); }
                         color: [0.541,0.969,0.949]
@@ -79,12 +79,12 @@ layers:
                     filter: 
                         $zoom: { min: 17 }
                     draw:
-                        casing3:
+                        roads-highway-casing3:
                             #order: 534
                             order: function () { return (feature.sort_key * 10 - 4); }
                             color: [0.086,0.135,0.260]
                             width: [[8,0px],[16,0px],[17,15px],[18,22px]]
-                        casing4:
+                        roads-highway-casing4:
                             #order: 532
                             order: function () { return (feature.sort_key * 10 - 5); }
                             color: [0.800,1.000,0.987]
@@ -97,15 +97,15 @@ layers:
                             width: [[8,0px],[9,0px],[11,0.25px],[12,0.25px],[13,1px],[14,1.5px],[15,2px]]
                             outline:
                                 width: [[8,0px],[9,0.5px]]
-                        dashed:
+                        roads-highway-dashed:
                             visible: false
-                        casing1:
+                        roads-highway-casing1:
                             visible: false
-                        casing2:
+                        roads-highway-casing2:
                             visible: false
-                        casing3:
+                        roads-highway-casing3:
                             visible: false
-                        casing4:
+                        roads-highway-casing4:
                             visible: false
 
                     roads-highway-link-early:
@@ -113,7 +113,7 @@ layers:
                         draw:
                             lines:
                                 order: 352
-                            dashed:
+                            roads-highway-dashed:
                                 visible: false
                         roads-highway-link-early-z17-18:
                             filter: { $zoom: [17, 18]}
@@ -129,7 +129,7 @@ layers:
                         outline:
                             # color: [0.373,0.673,0.657]
                             color: [0.259,0.482,0.678]
-                    dashed:
+                    roads-highway-dashed:
                         visible: false
                 roads-highway-tunnel-z17-18:
                     filter: { $zoom: [17, 18]}
@@ -159,7 +159,7 @@ styles:
     roads:
         base: lines
 
-    dashed:
+    roads-highway-dashed:
         base: lines
         dash: [1,1]
         dash_background_color: [0.086,0.149,0.290]
@@ -168,14 +168,14 @@ styles:
                 position: |
                     v_texcoord.y *= 3.;
 
-    casing1:
+    roads-highway-casing1:
         base: lines
 
-    casing2:
+    roads-highway-casing2:
         base: lines
 
-    casing3:
+    roads-highway-casing3:
         base: lines
 
-    casing4:
+    roads-highway-casing4:
         base: lines
