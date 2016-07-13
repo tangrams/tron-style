@@ -62,21 +62,18 @@ layers:
             roads-highway-nolink:
                 filter:
                     not: {is_link: yes}
-                        # - $zoom: { min: 17 }
                 roads-highway-nolink-z17:
                     # filter: { $zoom: { min: 17 } }
                     draw:
                         roads-highway-nolink-z17-dark:
                             style: lines
                             order: 38
-                            # color: [0.086,0.135,0.260]
-                            color: pink
+                            color: [0.086,0.135,0.260]
                             width: [[8,0px],[16,0px],[17,12px],[18,15px]]
                         roads-highway-nolink-z17-light:
                             style: lines
                             order: 36
-                            # color: [0.541,0.969,0.949]
-                            color: red
+                            color: [0.541,0.969,0.949]
                             width: [[8,0px],[16,0px],[17,15px],[18,18px]]
                 roads-highway-nolink-z18:
                     # filter: { $zoom: { min: 18 } }
@@ -84,14 +81,12 @@ layers:
                         roads-highway-nolink-z18-dark:
                             style: lines
                             order: 34
-                            # color: [0.086,0.135,0.260]
-                            color: lightblue
+                            color: [0.086,0.135,0.260]
                             width: [[8,0px],[16,0px],[17,15px],[18,22px]]
                         roads-highway-nolink-z18-light:
                             style: lines
                             order: 32
-                            # color: [0.800,1.000,0.987]
-                            color: blue
+                            color: [0.800,1.000,0.987]
                             width: [[8,0px],[16,0px],[17,15px],[18,25px]]
 
             roads-highway-link:
