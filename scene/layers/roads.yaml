@@ -57,26 +57,35 @@ layers:
                     order: 40
                     color: [0.557,0.909,0.887]
                     width: [[8,0px],[16,0px],[17,4px],[18,5px]]
-                lines-highway-z17-dark:
-                    order: 38
-                    style: lines
-                    color: [0.086,0.135,0.260]
-                    width: [[8,0px],[16,0px],[17,12px],[18,15px]]
-                lines-highway-z17-casing-light:
-                    order: 36
-                    style: lines
-                    color: [0.541,0.969,0.949]
-                    width: [[8,0px],[16,0px],[17,15px],[18,18px]]
-                lines-highway-z18-dark:
-                    order: 34
-                    style: lines
-                    color: [0.086,0.135,0.260]
-                    width: [[8,0px],[16,0px],[17,15px],[18,22px]]
-                lines-highway-z18-casing-light:
-                    order: 32
-                    style: lines
-                    color: [0.800,1.000,0.987]
-                    width: [[8,0px],[16,0px],[17,15px],[18,25px]]
+            roads-highway-z17-dark:
+                filter: {$zoom: 17}
+                draw:
+                    lines:
+                        order: 38
+                        color: [0.086,0.135,0.260]
+                        width: [[8,0px],[16,0px],[17,12px],[18,15px]]
+            roads-highway-z17-casing-light:
+                filter: {$zoom: 17}
+                draw:
+                    lines:
+                        order: 36
+                        color: [0.541,0.969,0.949]
+                        width: [[8,0px],[16,0px],[17,15px],[18,18px]]
+            roads-highway-z18-dark:
+                filter: {$zoom: 18}
+                draw:
+                    lines:
+                        order: 34
+                        color: [0.086,0.135,0.260]
+                        width: [[8,0px],[16,0px],[17,15px],[18,22px]]
+            roads-highway-z18-casing-light:
+                filter: {$zoom: 18}
+                draw:
+                    lines:
+                        style: 
+                        order: 32
+                        color: [0.800,1.000,0.987]
+                        width: [[8,0px],[16,0px],[17,15px],[18,25px]]
 
 
             roads-highway-link:
