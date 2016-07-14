@@ -50,10 +50,11 @@ layers:
             draw:
                 lines:
                     color: [0.086,0.135,0.260]
-                    width: [[8,0px],[9,0.25px],[10,1px],[12,1px],[13,2px],[14,3px],[15,4px],[16,4px],[17,5px],[18,6px]]
+                    width: [[8,0px],[9,0.25px],[10,1px],[12,1px],[13,2px],[14,3px],[15,4px],[16,5px],[17,5px],[18,6px]]
                     outline:
-                        color: [0.541,0.969,0.949]
-                        width: [[8,0.5px],[9,0.6px],[12,1px],[16,1px],[17,0px]]
+                        # color: [0.541,0.969,0.949]
+                        color: [0.689,0.970,0.956]
+                        width: [[8,0.5px],[9,0.6px],[12,1px],[15,1px],[16,1.5px],[17,0px]]
                 roads-highway-dashed:
                     order: function () { return (feature.sort_key * 10 - 1); }
                     #order: 540
@@ -74,7 +75,7 @@ layers:
                         #order: 536
                         order: function () { return (feature.sort_key * 10 - 3); }
                         color: [0.541,0.969,0.949]
-                        width: [[8,0px],[16,0px],[17,15px],[18,18px]]
+                        width: [[8,0px],[16,0px],[17,16px],[18,18px]]
                 roads-highway-nolink-z18:
                     filter: 
                         $zoom: { min: 17 }
@@ -88,7 +89,7 @@ layers:
                             #order: 532
                             order: function () { return (feature.sort_key * 10 - 5); }
                             color: [0.800,1.000,0.987]
-                            width: [[8,0px],[16,0px],[17,15px],[18,25px]]
+                            width: [[8,0px],[16,0px],[17,15px],[18,26px]]
 
                 roads-highway-link:
                     filter: { is_link: yes } # on- and off-ramps, etc
