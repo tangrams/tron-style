@@ -103,9 +103,9 @@ layers:
                         draw:
                             lines:
                                 order: 352
-                            roads-highway-dashed:
+                            highway-dashed:
                                 visible: false
-                        roads-highway-link-early-z17-18:
+                        highway-link-early-z17-18:
                             filter: { $zoom: [17, 18]}
                             draw:
                                 lines:
@@ -155,7 +155,7 @@ layers:
                         outline:
                             # color: [0.373,0.673,0.657]
                             color: [0.259,0.482,0.678]
-                    roads-highway-dashed:
+                    highway-dashed:
                         visible: false
                 highway-tunnel-z17-18:
                     filter: { $zoom: [17, 18]}
