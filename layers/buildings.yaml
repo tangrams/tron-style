@@ -17,17 +17,8 @@ layers:
         buildings-footprints:
             draw:
                 polygons:
-                    style: buildings-footprints-ply
                     color: [[13,[0.212,0.302,0.431]],[14,[0.181,0.259,0.370]]]
                     visible: true
                 lines:
-                    style: buildings-footprints-lns
                     width: [[13,0.25px],[14,0.5px],[15,1px]]
                     visible: true
-
-styles:
-    buildings-footprints-ply:
-        base: polygons
-
-    buildings-footprints-lns:
-        base: lines

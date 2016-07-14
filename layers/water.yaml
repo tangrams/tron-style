@@ -56,7 +56,6 @@ layers:
             filter: { kind: swimming_pool }
             draw:
                 polygons:
-                    style: water-swimming_pool
                     color: red
 
         water-boundaries:
@@ -130,8 +129,6 @@ styles:
                 SHIMMERING_SCALE_IN: 30.0
                 SHIMMERING_SCALE_OUT: 10.
                 SHIMMERING_SPEED: 0.1
-    water-swimming_pool:
-        base: polygons
     water-boundaries:
         base: lines
         mix: [coast]

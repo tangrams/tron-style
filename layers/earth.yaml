@@ -2,19 +2,19 @@ layers:
     earth:
         data: { source: mapzen }
         draw:
-            earth:
+            polygons:
                 style: polygons
                 order: global.order
                 color: [0.534, 0.736, 1.000]
-        early:
+        earth-early:
             filter: { $zoom: { max: 6 } }
             draw:
-                earth:
+                polygons:
                     style: earth-early
-        later:
+        earth-later:
             filter: { $zoom: { min: 5 } }
             draw:
-                earth:
+                polygons:
                     color: [[5,[0.267,0.365,0.502]],[8,[0.213,0.302,0.433]]]
 
 styles:
@@ -30,10 +30,6 @@ styles:
                 THIN_STRIPES_MIN: .9
                 THIN_STRIPES_MAX: -.2
                 THIN_STRIPES_SCALE: 2.5
-
-    # earth-later:
-        # base: polygons
-        # mix: [terrain]
 
     # terrain:
     #     base: polygons

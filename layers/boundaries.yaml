@@ -3,7 +3,6 @@ layers:
         data: { source: mapzen }
         draw:
             lines:
-                style: boundaries
                 order: global.order
                 color: black
 
@@ -46,8 +45,3 @@ layers:
                 draw:
                     lines:
                         visible: false
-
-styles:
-    boundaries:
-        base: lines
-
