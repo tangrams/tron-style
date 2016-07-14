@@ -3,7 +3,6 @@ layers:
         data: { source: mapzen }
         draw:
             polygons:
-                style: polygons
                 order: global.order
                 color: [0.534, 0.736, 1.000]
         earth-early:
@@ -15,6 +14,7 @@ layers:
             filter: { $zoom: { min: 5 } }
             draw:
                 polygons:
+                    style: polygons
                     color: [[5,[0.267,0.365,0.502]],[8,[0.213,0.302,0.433]]]
 
 styles:
