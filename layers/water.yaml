@@ -128,7 +128,7 @@ styles:
                 SHIMMERING_MAX_ZOOM: 17.
                 SHIMMERING_SCALE_IN: 30.0
                 SHIMMERING_SCALE_OUT: 10.
-                SHIMMERING_SPEED: 0.1
+                SHIMMERING_SPEED: .5
     water-boundaries:
         base: lines
         mix: [coast]

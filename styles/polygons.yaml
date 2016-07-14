@@ -21,7 +21,7 @@ styles:
     shimmering:
         base: polygons
         mix: [generative-noise, space-constant]
-        animated: false
+        animated: true
         shaders:
             defines:
                 SHIMMERING_IN: 14.
