@@ -67,60 +67,64 @@ layers:
                     $zoom: { min: 16 }
                 draw:
                     roads-highway-casing1:
+                        style: lines
                         #order: 538
                         order: function () { return (feature.sort_key * 10 - 2); }
                         color: [0.086,0.135,0.260]
                         width: [[8,0px],[16,0px],[17,12px],[18,15px]]
                     roads-highway-casing2:
+                        style: lines
                         #order: 536
                         order: function () { return (feature.sort_key * 10 - 3); }
                         color: [0.541,0.969,0.949]
                         width: [[8,0px],[16,0px],[17,16px],[18,18px]]
-                roads-highway-nolink-z18:
-                    filter: 
-                        $zoom: { min: 17 }
-                    draw:
-                        roads-highway-casing3:
-                            #order: 534
-                            order: function () { return (feature.sort_key * 10 - 4); }
-                            color: [0.086,0.135,0.260]
-                            width: [[8,0px],[16,0px],[17,15px],[18,22px]]
-                        roads-highway-casing4:
-                            #order: 532
-                            order: function () { return (feature.sort_key * 10 - 5); }
-                            color: [0.800,1.000,0.987]
-                            width: [[8,0px],[16,0px],[17,15px],[18,26px]]
+            roads-highway-z18:
+                filter: 
+                    $zoom: { min: 17 }
+                draw:
+                    roads-highway-casing3:
+                        style: lines
+                        #order: 534
+                        order: function () { return (feature.sort_key * 10 - 4); }
+                        color: [0.086,0.135,0.260]
+                        width: [[8,0px],[16,0px],[17,15px],[18,22px]]
+                    roads-highway-casing4:
+                        style: lines
+                        #order: 532
+                        order: function () { return (feature.sort_key * 10 - 5); }
+                        color: [0.800,1.000,0.987]
+                        width: [[8,0px],[16,0px],[17,15px],[18,26px]]
 
-                roads-highway-link:
-                    filter: { is_link: yes } # on- and off-ramps, etc
+            roads-highway-link:
+                filter: { is_link: yes } # on- and off-ramps, etc
+                draw:
+                    lines:
+                        width: [[8,0px],[9,0px],[11,0.25px],[12,0.25px],[13,1px],[14,1.5px],[15,2px]]
+                        outline:
+                            width: [[8,0px],[9,0.5px]]
+                    roads-highway-dashed:
+                        visible: false
+                    roads-highway-casing1:
+                        visible: false
+                    roads-highway-casing2:
+                        visible: false
+                    roads-highway-casing3:
+                        visible: false
+                    roads-highway-casing4:
+                        visible: false
+
+                roads-highway-link-early:
+                    filter: { $zoom: { min: 13, max: 15 } }
                     draw:
                         lines:
-                            width: [[8,0px],[9,0px],[11,0.25px],[12,0.25px],[13,1px],[14,1.5px],[15,2px]]
-                            outline:
-                                width: [[8,0px],[9,0.5px]]
+                            order: 352
                         roads-highway-dashed:
                             visible: false
-                        roads-highway-casing1:
-                            visible: false
-                        roads-highway-casing2:
-                            visible: false
-                        roads-highway-casing3:
-                            visible: false
-                        roads-highway-casing4:
-                            visible: false
-
-                    roads-highway-link-early:
-                        filter: { $zoom: { min: 13, max: 15 } }
+                    roads-highway-link-early-z17-18:
+                        filter: { $zoom: [17, 18]}
                         draw:
                             lines:
-                                order: 352
-                            roads-highway-dashed:
                                 visible: false
-                        roads-highway-link-early-z17-18:
-                            filter: { $zoom: [17, 18]}
-                            draw:
-                                lines:
-                                    visible: false
 
             roads-highway-tunnel:
                 filter: { is_tunnel: yes, $zoom: { min: 13 } }
@@ -168,15 +172,3 @@ styles:
             blocks:
                 position: |
                     v_texcoord.y *= 3.;
-
-    roads-highway-casing1:
-        base: lines
-
-    roads-highway-casing2:
-        base: lines
-
-    roads-highway-casing3:
-        base: lines
-
-    roads-highway-casing4:
-        base: lines

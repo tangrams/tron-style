@@ -17,3 +17,26 @@ styles:
                     // waves
                     pct += (1.-fract(v_texcoord.x*COAST_WAVES_AMOUNT+(fract(u_time*COAST_WAVES_SPEED))))*pct;
                     color *= pct;
+
+    glow_lines:
+        base: lines
+        texcoords: true
+        blend: inlay
+        shaders:
+            defines:
+                GLOW_LINES_WIDTH: 0.2
+                GLOW_LINES_AMOUNT: .75
+            blocks:
+                global: |
+                    float pulse(float c, float w, float x ) {
+                        x = abs(x - c);
+                        if( x>w ) return 0.0;
+                        x /= w;
+                        return 1.0 - x*x*(3.0-2.0*x);
+                    }
+                color: |
+                    vec4 line_color = color;
+                    color = vec4(0.0);
+                    // color = mix(color, line_color*GLOW_LINES_AMOUNT, sin(v_texcoord.x*3.145));
+                    color = mix(color, line_color,pulse(.5,GLOW_LINES_WIDTH,v_texcoord.x));
+                    color += line_color*GLOW_LINES_AMOUNT*sin(v_texcoord.x*3.145);
