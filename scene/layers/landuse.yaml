@@ -33,7 +33,7 @@ layers:
                         color: [0.402,0.568,0.818]
                         order: 18
                         visible: true
-                us_national_park:
+                landuse-tier1-us_national_park:
                     # yosemite national park, death valley national park, grand canyon national park
                     filter: { operator: [ "United States National Park Service", "US National Park Service" ] }
                     draw:
@@ -142,7 +142,7 @@ layers:
                     - { $zoom: { min: 15 }, area: { min: 2000 } }
                     - { $zoom: { min: 16 } }
 
-            university:
+            landuse-tier3-university:
                 filter:
                     kind: [university, college]
                 draw:
@@ -212,4 +212,3 @@ styles:
     landuse-tier3-university:
         mix: [dots]
         blend: overlay
-    
