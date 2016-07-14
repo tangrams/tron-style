@@ -21,7 +21,7 @@ styles:
     glow_lines:
         base: lines
         texcoords: true
-        blend: inlay
+        blend: add
         shaders:
             defines:
                 GLOW_LINES_WIDTH: 0.2
