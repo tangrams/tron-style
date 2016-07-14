@@ -5,12 +5,12 @@ layers:
             polygons:
                 order: global.order
                 color: [0.534, 0.736, 1.000]
-        earth-early:
+        early:
             filter: { $zoom: { max: 6 } }
             draw:
                 polygons:
                     style: earth-early
-        earth-later:
+        later:
             filter: { $zoom: { min: 5 } }
             draw:
                 polygons:

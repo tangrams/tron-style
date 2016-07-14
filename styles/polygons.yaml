@@ -21,7 +21,7 @@ styles:
     shimmering:
         base: polygons
         mix: [generative-noise, space-constant]
-        animated: true
+        animated: false
         shaders:
             defines:
                 SHIMMERING_IN: 14.
@@ -29,7 +29,7 @@ styles:
                 SHIMMERING_MAX_ZOOM: 20.
                 SHIMMERING_SCALE_IN: 10.0
                 SHIMMERING_SCALE_OUT: 10.0
-                SHIMMERING_BACKGROUND: vec3(0.018,0.248,0.194)
+                SHIMMERING_BACKGROUND: vec3(0.000,0.00,0.94)
                 SHIMMERING_SPEED: 0.1
             blocks:
                 global: |

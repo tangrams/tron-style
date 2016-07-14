@@ -13,10 +13,10 @@ layers:
             draw:
                 polygons:
                     style: water-later
-                    color: [0.164,0.168,0.350]
+                    color: [0.194,0.198,0.380]
                     # color: [0.219,0.226,0.430]
 
-        water-lakes:
+        lakes:
             filter:
                 all:
                     - kind: [ocean, lake, water, riverbank, reservoir, swimming_pool]
@@ -45,20 +45,20 @@ layers:
                     # color: [0.219, 0.226, 0.529]
                     color: [0.304,0.310,0.660]
 
-        water-other_areas:
+        other_areas:
             filter: { not: { kind: [ocean, lake, water, reservoir, playa] }, $zoom: { min: 10 }, area: { min: 100 } }
             draw:
                 polygons:
                     style: water
                     color: [0.304,0.310,0.660]
 
-        water-swimming_pool:
+        swimming_pool:
             filter: { kind: swimming_pool }
             draw:
                 polygons:
                     color: red
 
-        water-boundaries:
+        boundaries:
             filter: { boundary: yes, kind: ocean }
             draw:
                 lines:
@@ -72,7 +72,7 @@ layers:
                     color: [0.091,0.329,0.692]
                     join: round
 
-        water-boundaries-not_ocean:
+        boundaries-not_ocean:
             filter:
                 all:
                     - boundary: yes
@@ -102,7 +102,7 @@ layers:
                     color: [0.017, 1.000, 0.649]
                     width: [[8,0px],[20,10px]]
                     join: round
-            water-boundaries-not_ocean-riverbank:
+            boundaries-not_ocean-riverbank:
                 # river boundaries like the thames in london, la seine in paris
                 filter: { kind: riverbank }
                 draw:

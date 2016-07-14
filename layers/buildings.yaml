@@ -14,7 +14,7 @@ layers:
                 visible: false
                 color: [0.412,0.686,0.859]
                 width: 1px
-        buildings-footprints:
+        footprints:
             draw:
                 polygons:
                     color: [[13,[0.212,0.302,0.431]],[14,[0.181,0.259,0.370]]]

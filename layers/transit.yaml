@@ -5,13 +5,13 @@ layers:
         draw:
             lines:
                 order: global.order
-        transit-railway:
+        railway:
             filter: { kind: [railway,train] }
             draw:
                 lines:
                     color: red
                     width: 1px
-        transit-subway:
+        subway:
             filter: { kind: subway }
             draw:
                 lines:
