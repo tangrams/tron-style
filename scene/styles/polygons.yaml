@@ -88,4 +88,23 @@ styles:
                                             THIN_STRIPES_MAX,
                                             clamp(smoothstep(THIN_STRIPES_IN/THIN_STRIPES_MAX_ZOOM, THIN_STRIPES_OUT/THIN_STRIPES_MAX_ZOOM, max(u_map_position.z/THIN_STRIPES_MAX_ZOOM,0.)*0.9), 0., 1.)), 
                                       PI*THIN_STRIPES_ANGLE)*THIN_STRIPES_ALPHA;
+    side_grid:
+        base: polygons
+        mix: [space-tile]
+        shaders:
+            defines:
+                SIDE_GRID_SCALE: 10.
+                SIDE_GRID_WIDTH: .05
+            blocks:
+                global: |
+                    float X(vec2 st, float width){
+                        float pct0 = smoothstep(st.x-width,st.x,st.y);
+                        pct0 *= 1.-smoothstep(st.x,st.x+width,st.y);
 
+                        float pct1 = smoothstep(st.x-width,st.x,1.0-st.y);
+                        pct1 *= 1.-smoothstep(st.x,st.x+width,1.0-st.y);
+
+                        return step(.5,max(pct0,pct1));
+                    }
+                color: |
+                    color *= X(fract(getTileCoords()*SIDE_GRID_SCALE),0.001+SIDE_GRID_WIDTH);
