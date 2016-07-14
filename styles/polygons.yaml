@@ -29,6 +29,7 @@ styles:
                 SHIMMERING_MAX_ZOOM: 20.
                 SHIMMERING_SCALE_IN: 10.0
                 SHIMMERING_SCALE_OUT: 10.0
+                SHIMMERING_BACKGROUND: vec3(0.018,0.248,0.194)
                 SHIMMERING_SPEED: 0.1
             blocks:
                 global: |
@@ -60,7 +61,7 @@ styles:
                     vec2 s_f = fract(s);
                     float n = snoise(vec3(floor(s+step(s_f.x,s_f.y)*5.),u_time*SHIMMERING_SPEED));
                     color.rgb = mix(color.rgb,
-                                    color.rgb*n,
+                                    mix(SHIMMERING_BACKGROUND,color.rgb,n),
                                     z);
 
     thin_stripes:

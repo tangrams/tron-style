@@ -129,6 +129,7 @@ styles:
                 SHIMMERING_SCALE_IN: 30.0
                 SHIMMERING_SCALE_OUT: 10.
                 SHIMMERING_SPEED: .5
+                SHIMMERING_BACKGROUND: vec3(0.145,0.157,0.247)
     water-boundaries:
         base: lines
         mix: [coast]
