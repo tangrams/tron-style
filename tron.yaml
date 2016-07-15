@@ -14,25 +14,25 @@ import:
     - layers/boundaries.yaml
 
 global:
-    order_add_9: function () { return (feature.sort_key * 10 + 9); }
-    order_add_8: function () { return (feature.sort_key * 10 + 8); }
-    order_add_7: function () { return (feature.sort_key * 10 + 7); }
-    order_add_6: function () { return (feature.sort_key * 10 + 6); }
-    order_add_5: function () { return (feature.sort_key * 10 + 5); }
-    order_add_4: function () { return (feature.sort_key * 10 + 4); }
-    order_add_3: function () { return (feature.sort_key * 10 + 3); }
-    order_add_2: function () { return (feature.sort_key * 10 + 2); }
-    order_add_1: function () { return (feature.sort_key * 10 + 1); }
-    order: function () { return (feature.sort_key * 10); }
-    order_sub_1: function () { return (feature.sort_key * 10 - 1); }
-    order_sub_2: function () { return (feature.sort_key * 10 - 2); }
-    order_sub_3: function () { return (feature.sort_key * 10 - 3); }
-    order_sub_4: function () { return (feature.sort_key * 10 - 4); }
-    order_sub_5: function () { return (feature.sort_key * 10 - 5); }
-    order_sub_6: function () { return (feature.sort_key * 10 - 6); }
-    order_sub_7: function () { return (feature.sort_key * 10 - 7); }
-    order_sub_8: function () { return (feature.sort_key * 10 - 8); }
-    order_sub_9: function () { return (feature.sort_key * 10 - 9); }
+    order_add_9: function () { return (feature.sort_key * 20 + 9); }
+    order_add_8: function () { return (feature.sort_key * 20 + 8); }
+    order_add_7: function () { return (feature.sort_key * 20 + 7); }
+    order_add_6: function () { return (feature.sort_key * 20 + 6); }
+    order_add_5: function () { return (feature.sort_key * 20 + 5); }
+    order_add_4: function () { return (feature.sort_key * 20 + 4); }
+    order_add_3: function () { return (feature.sort_key * 20 + 3); }
+    order_add_2: function () { return (feature.sort_key * 20 + 2); }
+    order_add_1: function () { return (feature.sort_key * 20 + 1); }
+    order: function () { return (feature.sort_key * 20); }
+    order_sub_1: function () { return (feature.sort_key * 20 - 1); }
+    order_sub_2: function () { return (feature.sort_key * 20 - 2); }
+    order_sub_3: function () { return (feature.sort_key * 20 - 3); }
+    order_sub_4: function () { return (feature.sort_key * 20 - 4); }
+    order_sub_5: function () { return (feature.sort_key * 20 - 5); }
+    order_sub_6: function () { return (feature.sort_key * 20 - 6); }
+    order_sub_7: function () { return (feature.sort_key * 20 - 7); }
+    order_sub_8: function () { return (feature.sort_key * 20 - 8); }
+    order_sub_9: function () { return (feature.sort_key * 20 - 9); }
 
 sources:
     mapzen:

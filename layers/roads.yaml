@@ -70,11 +70,16 @@ layers:
                             # color: [0.541,0.969,0.949]
                             color: [0.689,0.970,0.956]
                             width: [[8,0.5px],[9,1px],[12,1.25px],[15,1.5px],[16,1.5px],[17,0px]]
-                    highway-dashed:
+                    highway_dashed:
                         order: global.order_sub_1
                         # color: [0.557,0.909,0.887]
                         color: [0.306,0.361,0.949]
                         width: [[8,0px],[16,0px],[17,7px],[18,10px],[19,20px]]
+                    highway-glow:
+                        style: glow_lines_casing
+                        order: global.order_sub_6
+                        color: [0.800,1.000,0.987]
+                        width: [[11,8px],[13,12px],[16,25px],[17,40px],[18,50px],[19,80px]]
 
                 highway-link:
                     filter: { is_link: yes } # on- and off-ramps, etc
@@ -84,7 +89,7 @@ layers:
                             outline:
                                 color: [0.481,0.842,0.890]
                                 width: [[8,0px],[9,0.5px],[15,1px]]
-                        highway-dashed:
+                        highway_dashed:
                             visible: false
                         highway-casing1:
                             visible: false
@@ -103,7 +108,7 @@ layers:
                         draw:
                             lines:
                                 order: 352
-                            highway-dashed:
+                            highway_dashed:
                                 visible: false
                         highway-link-early-z17-18:
                             filter: { $zoom: [17, 18]}
@@ -129,7 +134,7 @@ layers:
 
             highway-z18:
                 filter: 
-                    $zoom: { min: 11 }
+                    $zoom: { min: 17 }
                 draw:
                     highway-casing3:
                         style: lines
@@ -141,11 +146,6 @@ layers:
                         order: global.order_sub_5
                         color: [0.800,1.000,0.987]
                         width: [[8,0px],[16,0px],[17,15px],[18,26px],[19,45px]]
-                    highway-glow:
-                        style: glow_lines-casing
-                        order: global.order_sub_6
-                        color: [0.800,1.000,0.987]
-                        width: [[11,8px],[13,12px],[16,25px],[17,40px],[18,50px],[19,80px]]
 
             highway-tunnel:
                 filter: { is_tunnel: yes, $zoom: { min: 13 } }
@@ -155,7 +155,7 @@ layers:
                         outline:
                             # color: [0.373,0.673,0.657]
                             color: [0.259,0.482,0.678]
-                    highway-dashed:
+                    highway_dashed:
                         visible: false
                 highway-tunnel-z17-18:
                     filter: { $zoom: [17, 18]}
@@ -182,7 +182,7 @@ layers:
                             width: [[8,0.25px],[10,0.3px],[11,0.3px],[12,0.75px]]
 
 styles:
-    highway-dashed:
+    highway_dashed:
         base: lines
         dash: [1,1]
         dash_background_color: [0.086,0.149,0.290]
@@ -213,7 +213,7 @@ styles:
                     color = mix(color, line_color*GLOW_LINES_BRIGHTNESS,pulse(.5,GLOW_LINES_WIDTH,v_texcoord.x));
                     color += line_color*GLOW_LINES_BRIGHTNESS*GLOW_LINES_GLOW*sin(v_texcoord.x*3.145);
 
-    glow_lines-casing:
+    glow_lines_casing:
         base: lines
         texcoords: true
         blend: add

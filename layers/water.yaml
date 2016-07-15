@@ -64,7 +64,7 @@ layers:
                 lines:
                     style: water-boundaries
                     order: global.order
-                    width: [[4,0px],[16,7px],[20,10]]
+                    width: [[4,0px],[11,4px],[14,12px],[16,16px],[18,24px],[20,30]]
                     # color: [0.017, 1.000, 0.649]
                     # color: [0.055,0.176,0.949]
                     # color: [0.051,0.158,0.850]
