@@ -16,7 +16,7 @@ styles:
         shaders:
             blocks:
                 color: |
-                    color.rgb = mix(vec3(0.5), color.rgb, TileDots(45., 0.21));
+                    color.rgb = mix(color.rgb, vec3(0.212,0.302,0.431), TileDots(10., 0.41));
 
     polygons-shimmering:
         base: polygons

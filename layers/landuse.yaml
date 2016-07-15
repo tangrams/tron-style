@@ -120,7 +120,7 @@ layers:
                     filter: function() { return feature.name && feature.name.indexOf("Wilderness") > -1 }
                     draw:
                         polygons:
-                            color: green
+                            color: [0.151,0.240,0.560]
 
             parks_and_national_forests_not_national_park:
                 filter:
@@ -133,7 +133,9 @@ layers:
                     polygons:
                         style: landuse
                         # color: [0.243,0.769,0.623]
-                        color: [0.243,0.769,0.949]
+                        # color: [0.243,0.769,0.949]
+                        # color: [0.200,1.000,1.000]
+                        color: [0.250,0.820,1.000]
                         visible: true
         tier3:
             filter:
@@ -150,14 +152,14 @@ layers:
                     - { $zoom: { min: 15 }, area: { min: 2000 } }
                     - { $zoom: { min: 16 } }
 
-            university:
-                filter:
-                    kind: [university, college]
-                draw:
-                    polygons:
-                        style: landuse-tier3-university
-                        color: yellow
-                        visible: true
+            # university:
+            #     filter:
+            #         kind: [university, college]
+            #     draw:
+            #         polygons:
+            #             style: landuse-tier3-university
+            #             color: yellow
+            #             visible: true
         tier4:
             filter:
                 any:
@@ -170,13 +172,21 @@ layers:
                     - { $zoom: { min: 15 }, area: { min: 20000 } }
                     - { $zoom: { min: 15 }, area: { min: 2000 } }
                     - { $zoom: { min: 16 } }
-            golf_course:
+            # golf_course:
+            #     filter:
+            #         kind: golf_course
+            #     draw:
+            #         polygons:
+            #             style: landuse-tier4-golf_course
+            #             color: [0.217,0.307,0.442]
+            #             visible: true
+            power:
                 filter:
-                    kind: golf_course
+                    kind: [plant, generator, substation]
                 draw:
                     polygons:
-                        style: landuse-tier4-golf_course
-                        color: [0.217,0.307,0.442]
+                        style: landuse-tier3-power
+                        color: [0.243,0.243,0.871]
                         visible: true
 styles:
     landuse:
@@ -217,6 +227,6 @@ styles:
                 STRIPES_ANGLE: 0.45
                 STRIPES_MAX: -.025
                 STRIPES_ALPHA: .8
-    landuse-tier3-university:
+    landuse-tier3-power:
         mix: [polygons-dots]
         blend: overlay

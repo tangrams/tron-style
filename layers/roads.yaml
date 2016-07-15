@@ -115,6 +115,34 @@ layers:
                                 lines:
                                     visible: false
 
+                highway-tunnel:
+                    filter: { is_tunnel: yes, $zoom: { min: 13 } }
+                    draw:
+                        lines:
+                            color: [0.201,0.286,0.409]
+                            outline:
+                                # color: [0.373,0.673,0.657]
+                                color: [[13,[0.276,0.568,0.950]],[18,[0.073,0.435,0.908]]]
+                        highway-dashed:
+                            visible: false
+                        highway-glow:
+                            color: [0.059,0.000,0.953]
+                        highway-casing1:
+                            visible: false
+                        highway-casing2:
+                            visible: false
+                        highway-casing3:
+                            visible: false
+                        highway-casing4:
+                            visible: false
+                    highway-tunnel-z17-18:
+                        filter: { $zoom: { min: 16 } }
+                        draw:
+                            lines:
+                                width: [[16,5px],[17,12px],[18,15px],[19,28px]]
+                                outline:
+                                    width: [[16,1.5px],[17,2px],[18,6px],[19,9px]]
+
             # Show 0 width roads one zoom before they have width, so they can scale up instead of popping in
             highway-z17:
                 filter: 
@@ -131,6 +159,7 @@ layers:
                         color: [0.541,0.969,0.949]
                         width: [[8,0px],[16,0px],[17,16px],[18,18px],[19,31px]]
 
+
             highway-z18:
                 filter: 
                     $zoom: { min: 17 }
@@ -146,21 +175,7 @@ layers:
                         color: [0.800,1.000,0.987]
                         width: [[8,0px],[16,0px],[17,15px],[18,26px],[19,45px]]
 
-            highway-tunnel:
-                filter: { is_tunnel: yes, $zoom: { min: 13 } }
-                draw:
-                    lines:
-                        color: [0.201,0.286,0.409]
-                        outline:
-                            # color: [0.373,0.673,0.657]
-                            color: [0.259,0.482,0.678]
-                    highway-dashed:
-                        visible: false
-                highway-tunnel-z17-18:
-                    filter: { $zoom: [17, 18]}
-                    draw:
-                        lines:
-                            visible: false
+
         major_road:
             filter: { kind: major_road }
             draw:
