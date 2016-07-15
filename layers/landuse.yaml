@@ -188,35 +188,35 @@ styles:
                 STRIPES_SCALE: 4.
                 STRIPES_PCT: 1.7
     landuse-tier2-farm:
-        mix: [thin_stripes]
+        mix: [polygons-stripes]
         blend: overlay
         shaders:
             defines:
-                THIN_STRIPES_IN: 10.
-                THIN_STRIPES_OUT: 20.
-                THIN_STRIPES_ANGLE: 0.95
-                THIN_STRIPES_MAX: -.025
-                THIN_STRIPES_ALPHA: .5
+                STRIPES_IN: 10.
+                STRIPES_OUT: 20.
+                STRIPES_ANGLE: 0.95
+                STRIPES_MAX: -.025
+                STRIPES_ALPHA: .5
     landuse-tier2-conservation:
-        mix: [thin_stripes]
+        mix: [polygons-stripes]
         blend: overlay
         shaders:
             defines:
-                THIN_STRIPES_IN: 10.
-                THIN_STRIPES_OUT: 20.
-                THIN_STRIPES_ANGLE: 0.45
-                THIN_STRIPES_MAX: -.025
-                THIN_STRIPES_ALPHA: .8
+                STRIPES_IN: 10.
+                STRIPES_OUT: 20.
+                STRIPES_ANGLE: 0.45
+                STRIPES_MAX: -.025
+                STRIPES_ALPHA: .8
     landuse-tier4-golf_course:
-        mix: [thin_stripes]
+        mix: [polygons-stripes]
         blend: overlay
         shaders:
             defines:
-                THIN_STRIPES_IN: 10.
-                THIN_STRIPES_OUT: 20.
-                THIN_STRIPES_ANGLE: 0.45
-                THIN_STRIPES_MAX: -.025
-                THIN_STRIPES_ALPHA: .8
+                STRIPES_IN: 10.
+                STRIPES_OUT: 20.
+                STRIPES_ANGLE: 0.45
+                STRIPES_MAX: -.025
+                STRIPES_ALPHA: .8
     landuse-tier3-university:
-        mix: [dots]
+        mix: [polygons-dots]
         blend: overlay

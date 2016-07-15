@@ -113,14 +113,14 @@ layers:
 styles:
     water:
         base: polygons
-        mix: [thin_stripes]
+        mix: [polygons-stripes]
         shaders:
             defines:
-                THIN_STRIPES_OUT: 12.
-                THIN_STRIPES_MAX_ZOOM: 14.
+                STRIPES_OUT: 12.
+                STRIPES_MAX_ZOOM: 14.
     water-later:
         base: polygons
-        mix: [shimmering]
+        mix: [polygons-shimmering]
         shaders:
             defines:
                 SHIMMERING_IN: 11.
@@ -132,4 +132,4 @@ styles:
                 SHIMMERING_BACKGROUND: vec3(0.145,0.157,0.247)
     water-boundaries:
         base: lines
-        mix: [coast]
+        mix: [lines-coast]

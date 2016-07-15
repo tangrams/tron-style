@@ -20,16 +20,16 @@ layers:
 styles:
     earth-early:
         base: polygons
-        mix: [thin_stripes]
+        mix: [polygons-stripes]
         shaders:
             defines:
-                THIN_STRIPES_IN: 3.
-                THIN_STRIPES_OUT: 4.
-                THIN_STRIPES_MAX_ZOOM: 6.
-                THIN_STRIPES_PCT: 1.9
-                THIN_STRIPES_MIN: .9
-                THIN_STRIPES_MAX: -.2
-                THIN_STRIPES_SCALE: 2.5
+                STRIPES_IN: 3.
+                STRIPES_OUT: 4.
+                STRIPES_MAX_ZOOM: 6.
+                STRIPES_PCT: 1.9
+                STRIPES_MIN: .9
+                STRIPES_MAX: -.2
+                STRIPES_SCALE: 2.5
 
     # terrain:
     #     base: polygons

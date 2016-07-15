@@ -24,7 +24,7 @@ layers:
             filter: { source: 'naturalearthdata.com' }
             draw:
                 lines:
-                    style: glow_lines
+                    style: roads-glow
                     # color: [[5,[0.463,0.800,0.824]],[6,[0.541,0.969,0.949]]]
                     # width: [[5,0.5px],[6,10px]]
                     color: [0.463,0.800,0.824]
@@ -55,7 +55,7 @@ layers:
                     $zoom: { min: 8, max: 11 }
                 draw:
                     lines:
-                        style: glow_lines
+                        style: roads-glow
                         color: [0.463,0.800,0.824]
                         width: [[8,5px],[11,9px]]
 
@@ -70,13 +70,12 @@ layers:
                             # color: [0.541,0.969,0.949]
                             color: [0.689,0.970,0.956]
                             width: [[8,0.5px],[9,1px],[12,1.25px],[15,1.5px],[16,1.5px],[17,0px]]
-                    highway_dashed:
+                    highway-dashed:
                         order: global.order_sub_1
                         # color: [0.557,0.909,0.887]
                         color: [0.306,0.361,0.949]
                         width: [[8,0px],[16,0px],[17,7px],[18,10px],[19,20px]]
                     highway-glow:
-                        style: glow_lines_casing
                         order: global.order_sub_6
                         color: [0.800,1.000,0.987]
                         width: [[11,8px],[13,12px],[16,25px],[17,40px],[18,50px],[19,80px]]
@@ -89,7 +88,7 @@ layers:
                             outline:
                                 color: [0.481,0.842,0.890]
                                 width: [[8,0px],[9,0.5px],[15,1px]]
-                        highway_dashed:
+                        highway-dashed:
                             visible: false
                         highway-casing1:
                             visible: false
@@ -108,7 +107,7 @@ layers:
                         draw:
                             lines:
                                 order: 352
-                            highway_dashed:
+                            highway-dashed:
                                 visible: false
                         highway-link-early-z17-18:
                             filter: { $zoom: [17, 18]}
@@ -155,7 +154,7 @@ layers:
                         outline:
                             # color: [0.373,0.673,0.657]
                             color: [0.259,0.482,0.678]
-                    highway_dashed:
+                    highway-dashed:
                         visible: false
                 highway-tunnel-z17-18:
                     filter: { $zoom: [17, 18]}
@@ -182,7 +181,7 @@ layers:
                             width: [[8,0.25px],[10,0.3px],[11,0.3px],[12,0.75px]]
 
 styles:
-    highway_dashed:
+    highway-dashed:
         base: lines
         dash: [1,1]
         dash_background_color: [0.086,0.149,0.290]
@@ -190,48 +189,20 @@ styles:
             blocks:
                 position: |
                     v_texcoord.y *= 4.;
-    glow_lines:
+    roads-glow:
         base: lines
-        texcoords: true
-        blend: add
+        mix: [lines-glow]
         shaders:
             defines:
-                GLOW_LINES_WIDTH: 0.1
-                GLOW_LINES_BRIGHTNESS: .25
-                GLOW_LINES_GLOW: .75
-            blocks:
-                global: |
-                    float pulse(float c, float w, float x ) {
-                        x = abs(x - c);
-                        if( x>w ) return 0.0;
-                        x /= w;
-                        return 1.0 - x*x*(3.0-2.0*x);
-                    }
-                color: |
-                    vec4 line_color = color;
-                    color = vec4(0.0);
-                    color = mix(color, line_color*GLOW_LINES_BRIGHTNESS,pulse(.5,GLOW_LINES_WIDTH,v_texcoord.x));
-                    color += line_color*GLOW_LINES_BRIGHTNESS*GLOW_LINES_GLOW*sin(v_texcoord.x*3.145);
+                GLOW_WIDTH: 0.1
+                GLOW_BRIGHTNESS: .25
+                GLOW_GLOW: .75
 
-    glow_lines_casing:
+    highway-glow:
         base: lines
-        texcoords: true
-        blend: add
+        mix: [lines-glow]
         shaders:
             defines:
-                GLOW_LINES_WIDTH: 0.4
-                GLOW_LINES_BRIGHTNESS: .18
-                GLOW_LINES_GLOW: .65
-            blocks:
-                global: |
-                    float pulse(float c, float w, float x ) {
-                        x = abs(x - c);
-                        if( x>w ) return 0.0;
-                        x /= w;
-                        return 1.0 - x*x*(3.0-2.0*x);
-                    }
-                color: |
-                    vec4 line_color = color;
-                    color = vec4(0.0);
-                    color = mix(color, line_color*GLOW_LINES_BRIGHTNESS,pulse(.5,GLOW_LINES_WIDTH,v_texcoord.x));
-                    color += line_color*GLOW_LINES_BRIGHTNESS*GLOW_LINES_GLOW*sin(v_texcoord.x*3.145);
+                GLOW_WIDTH: 0.4
+                GLOW_BRIGHTNESS: .18
+                GLOW_GLOW: .65
