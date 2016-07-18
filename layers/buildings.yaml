@@ -6,13 +6,16 @@ layers:
         draw:
             polygons:
                 visible: false
-                order: global.order
+                # order: global.order
+                order: 6580
                 color: [0.212,0.302,0.431]
             lines:
                 style: lines
-                order: global.order-top
+                # order: global.order-top
+                order: 6600
                 visible: false
-                color: [0.412,0.686,0.859]
+                # color: [0.412,0.686,0.859]
+                color: [0.004,0.165,0.933]
                 width: 1px
         footprints:
             draw:
@@ -20,5 +23,6 @@ layers:
                     color: [[13,[0.212,0.302,0.431]],[14,[0.181,0.259,0.370]]]
                     visible: true
                 lines:
-                    width: [[13,0.25px],[14,0.5px],[15,1px]]
+                    color: [[13,[0.004,0.165,0.933]],[16,[0.004,0.165,0.933]],[17,[0.074,0.217,0.930]]]
+                    width: [[13,0px],[14,0px],[15,0.15px],[16,0.35px],[17,1px],[18,1px]]
                     visible: true
