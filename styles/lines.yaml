@@ -2,7 +2,7 @@ styles:
     lines-coast:
         base: lines
         texcoords: true
-        animated: false
+        animated: true
         blend: add
         shaders:
             defines:
