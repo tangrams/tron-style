@@ -31,11 +31,10 @@ layers:
                         style: landuse
                         # color: [0.263,0.933,0.494]
                         color: [0.402,0.568,0.818]
-                        order: 18
                         visible: true
                 us_national_park:
                     # yosemite national park, death valley national park, grand canyon national park
-                    filter: { operator: [ "United States National Park Service", "US National Park Service" ] }
+                    filter: { operator: [ "United States National Park Service", "US National Park Service", "U.S. National Park Service" ] }
                     draw:
                         polygons:
                             # color: [0.214,0.690,0.611]
@@ -69,14 +68,14 @@ layers:
                         # color: [0.214,0.690,0.611]
                         color: [0.000,0.649,0.829]
                         visible: true
-                wilderness_areas:
-                    filter: function() { return feature.name && feature.name.indexOf("Wilderness") > -1 }
-                    draw:
-                        polygons:
-                            style: landuse-tier2-conservation
-                            order: 25
-                            color: [0.239,0.329,0.463]
-                            visible: true
+                # wilderness_areas:
+                #     filter: function() { return feature.name && feature.name.indexOf("Wilderness") > -1 }
+                #     draw:
+                #         polygons:
+                #             style: landuse-tier2-conservation
+                #             order: 25
+                #             color: [0.216,0.392,0.720]
+                #             visible: true
                 # national_forest_level_6:
                 #     filter: { protect_class: ["6",6] }
                 #     draw:
@@ -91,7 +90,7 @@ layers:
                 draw:
                     polygons:
                         style: landuse-tier2-farm
-                        color: [0.174,0.462,0.527]
+                        color: [0.186,0.214,0.600]
                         visible: true
             forest:
                 filter: { kind: [forest,wood], $zoom: { min: 6 } }
@@ -180,14 +179,37 @@ layers:
             #             style: landuse-tier4-golf_course
             #             color: [0.217,0.307,0.442]
             #             visible: true
+            # industrial:
+            #     filter:
+            #         kind: industrial
+            #     draw:
+            #         polygons:
+            #             style: landuse-tier4-industrial
+            #             # color: [0.186,0.214,0.600]
+            #             color: [0.191,0.316,0.490]
+            #             # color: [0.240,0.264,0.600]
+            #             visible: true
             power:
                 filter:
                     kind: [plant, generator, substation]
                 draw:
                     polygons:
-                        style: landuse-tier3-power
+                        style: landuse-tier4-power
                         color: [0.243,0.243,0.871]
                         visible: true
+            man-made:
+                filter: { kind: [pier,wastewater_plant,works,bridge,tower,breakwater,water_works,groyne,dike,cutline] }
+                draw: 
+                    polygons:
+                        style: landuse-tier4-manmade
+                        color: [0.048,0.301,0.631]
+                        visible: true
+                pier:
+                    filter: { kind: [pier,bridge,breakwater,groyne,dike,cutline] }
+                    draw:
+                        dots2:
+                            color: red
+                            visible: true
 styles:
     landuse:
         base: polygons
@@ -227,6 +249,50 @@ styles:
                 STRIPES_ANGLE: 0.45
                 STRIPES_MAX: -.025
                 STRIPES_ALPHA: .8
-    landuse-tier3-power:
+    landuse-tier4-power:
         mix: [polygons-dots]
         blend: overlay
+    landuse-tier4-manmade:
+        base: polygons
+        mix: [space-tile]
+        shaders:
+            defines:
+                SIDE_GRID_SCALE: 20.
+                SIDE_GRID_WIDTH: .05
+            blocks:
+                global: |
+                    float X(vec2 st, float width){
+                        float pct0 = smoothstep(st.x-width,st.x,st.y);
+                        pct0 *= 1.-smoothstep(st.x,st.x+width,st.y);
+
+                        float pct1 = smoothstep(st.x-width,st.x,1.0-st.y);
+                        pct1 *= 1.-smoothstep(st.x,st.x+width,1.0-st.y);
+
+                        return step(.5,max(pct0,pct1));
+                    }
+                color: |
+                    color -= X(fract(getTileCoords()*SIDE_GRID_SCALE),0.001+SIDE_GRID_WIDTH);
+    landuse-tier4-industrial:
+        base: polygons
+        mix: [space-tile]
+        raster: custom
+        shaders:
+            defines:
+                NORMAL_TEXTURE_INDEX: 0
+                SIDE_GRID_SCALE: 30.
+                SIDE_GRID_WIDTH: .3
+                STRIPES_DIR: vec3(-0.600,-0.420,0.600)
+            blocks:
+                global: |
+                    float X(vec2 st, float width){
+                        float pct0 = smoothstep(st.x-width,st.x,st.y);
+                        pct0 *= 1.-smoothstep(st.x,st.x+width,st.y);
+
+                        float pct1 = smoothstep(st.x-width,st.x,1.0-st.y);
+                        pct1 *= 1.-smoothstep(st.x,st.x+width,1.0-st.y);
+
+                        return step(.5,max(pct0,pct1));
+                    }
+                color: |
+                    color -= X(fract(getTileCoords()*SIDE_GRID_SCALE),0.001+dot((sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2., 
+                        STRIPES_DIR)*SIDE_GRID_WIDTH);
