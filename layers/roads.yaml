@@ -213,6 +213,15 @@ layers:
                             color: [[8,[0.329,0.588,0.784]],[11,[0.418,0.754,0.736]],[14,[0.510,0.920,0.897]]]
                             width: [[8,0px],[12,0px],[13,0.5px],[14,0.75px],[15,1px],[17,1.25px],[18,1.5px]]
 
+            tertiary:
+                filter: { highway: [tertiary, tertiary_link] }
+                draw:
+                    lines:
+                        color: [0.329,0.525,0.580]
+                        width: [[12,0.5px],[13,1px]]
+                        outline:
+                            width: 0px
+
 styles:
     highway-dashed:
         base: lines
