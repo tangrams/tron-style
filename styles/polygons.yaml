@@ -26,19 +26,6 @@ styles:
                 STRIPES_MAX: -.2
                 STRIPES_ANGLE: 0.25
 
-    polygons-diagonal-stripes:
-        shaders:
-            defines:
-                STRIPES_IN: 3.
-                STRIPES_OUT: 16.
-                STRIPES_MAX_ZOOM: 20.
-                STRIPES_ALPHA: .5
-                STRIPES_SCALE: 2.
-                # higher value increases the no. of lines, and width gets thinner
-                STRIPES_MIN: .9
-                #spacing between lines? anything over 1.0 makes the lines disappear
-                STRIPES_MAX: -.2
-
     polygons-diagonal-grid:
         shaders:
             defines:

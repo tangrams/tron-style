@@ -20,12 +20,16 @@ layers:
 styles:
     earth-early:
         base: polygons
-        mix: [polygons-diagonal-stripes]
+        mix: [functions-zoom, polygons-diagonal-stripes]
         shaders:
             defines:
-                STRIPES_IN: 3.
-                STRIPES_OUT: 4.
-                STRIPES_MAX_ZOOM: 6.
-                STRIPES_MIN: .9
-                STRIPES_MAX: -.2
-                STRIPES_SCALE: 2.5
+                ZOOM_START: 3.
+                ZOOM_END: 4.
+                ZOOM_MAX: 6.
+                ZOOM: linear
+                ZOOM_IN: .9
+                ZOOM_OUT: -.2
+                
+                STRIPES_ALPHA: .5
+                STRIPES_SCALE: 1.5
+                STRIPES_WIDTH: zoom()

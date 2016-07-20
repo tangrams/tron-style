@@ -114,11 +114,20 @@ layers:
 styles:
     water:
         base: polygons
-        mix: [polygons-diagonal-stripes]
+        mix: [functions-zoom, polygons-diagonal-stripes]
         shaders:
             defines:
-                STRIPES_OUT: 12.
-                STRIPES_MAX_ZOOM: 14.
+                ZOOM_START: 3.
+                ZOOM_END: 12.
+                ZOOM_MAX: 14.
+                ZOOM: linear
+                ZOOM_IN: .9
+                ZOOM_OUT: -.2
+                
+                STRIPES_ALPHA: .5
+                STRIPES_SCALE: 1.5
+                STRIPES_WIDTH: zoom()
+                
     water-later:
         base: polygons
         mix: [functions-zoom, polygons-shimmering]
@@ -129,7 +138,7 @@ styles:
                 ZOOM: linear
                 ZOOM_IN: 0.0
                 ZOOM_OUT: 1.0
-                
+
                 SHIMMERING_SCALE: mix(10.,30.,zoom())
                 SHIMMERING_BACKGROUND: vec3(0.145,0.157,0.247)
                 SHIMMERING_SPEED: .5
