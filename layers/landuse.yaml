@@ -220,35 +220,38 @@ styles:
                 STRIPES_SCALE: 4.
                 STRIPES_PCT: 1.7
     landuse-tier2-farm:
-        mix: [polygons-stripes]
+        mix: [function-zoom, polygons-stripes]
         blend: overlay
         shaders:
             defines:
-                STRIPES_IN: 10.
-                STRIPES_OUT: 20.
-                STRIPES_ANGLE: 0.95
+                ZOOM_START: 10.
+                ZOOM_END: 20.
+                STRIPES_ANGLE: PI*0.95
                 STRIPES_MAX: -.025
                 STRIPES_ALPHA: .5
+                STRIPES_WIDTH: zoom()
     landuse-tier2-conservation:
-        mix: [polygons-stripes]
+        mix: [function-zoom, polygons-stripes]
         blend: overlay
         shaders:
             defines:
-                STRIPES_IN: 10.
-                STRIPES_OUT: 20.
-                STRIPES_ANGLE: 0.45
+                ZOOM_START: 10.
+                ZOOM_END: 20.
+                STRIPES_ANGLE: PI*0.45
                 STRIPES_MAX: -.025
                 STRIPES_ALPHA: .8
+                STRIPES_WIDTH: zoom()
     landuse-tier4-golf_course:
-        mix: [polygons-stripes]
+        mix: [function-zoom, polygons-stripes]
         blend: overlay
         shaders:
             defines:
-                STRIPES_IN: 10.
-                STRIPES_OUT: 20.
-                STRIPES_ANGLE: 0.45
+                ZOOM_START: 10.
+                ZOOM_END: 20.
+                STRIPES_ANGLE: PI*0.45
                 STRIPES_MAX: -.025
                 STRIPES_ALPHA: .8
+                STRIPES_WIDTH: zoom()
     landuse-tier4-power:
         mix: [polygons-dots]
         blend: overlay
