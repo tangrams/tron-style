@@ -220,7 +220,7 @@ styles:
                 STRIPES_SCALE: 4.
                 STRIPES_PCT: 1.7
     landuse-tier2-farm:
-        mix: [function-zoom, polygons-stripes]
+        mix: [functions-zoom, polygons-stripes]
         blend: overlay
         shaders:
             defines:
@@ -231,7 +231,7 @@ styles:
                 STRIPES_ALPHA: .5
                 STRIPES_WIDTH: zoom()
     landuse-tier2-conservation:
-        mix: [function-zoom, polygons-stripes]
+        mix: [functions-zoom, polygons-stripes]
         blend: overlay
         shaders:
             defines:
@@ -242,7 +242,7 @@ styles:
                 STRIPES_ALPHA: .8
                 STRIPES_WIDTH: zoom()
     landuse-tier4-golf_course:
-        mix: [function-zoom, polygons-stripes]
+        mix: [functions-zoom, polygons-stripes]
         blend: overlay
         shaders:
             defines:

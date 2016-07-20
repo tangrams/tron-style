@@ -1,3 +1,6 @@
+import:
+    - https://tangrams.github.io/blocks/functions/zoom.yaml
+
 styles:
     tron-palette:
         shaders:
