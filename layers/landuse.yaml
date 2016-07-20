@@ -254,45 +254,18 @@ styles:
         blend: overlay
     landuse-tier4-manmade:
         base: polygons
-        mix: [space-tile]
-        shaders:
-            defines:
-                SIDE_GRID_SCALE: 20.
-                SIDE_GRID_WIDTH: .05
-            blocks:
-                global: |
-                    float X(vec2 st, float width){
-                        float pct0 = smoothstep(st.x-width,st.x,st.y);
-                        pct0 *= 1.-smoothstep(st.x,st.x+width,st.y);
-
-                        float pct1 = smoothstep(st.x-width,st.x,1.0-st.y);
-                        pct1 *= 1.-smoothstep(st.x,st.x+width,1.0-st.y);
-
-                        return step(.5,max(pct0,pct1));
-                    }
-                color: |
-                    color -= X(fract(getTileCoords()*SIDE_GRID_SCALE),0.001+SIDE_GRID_WIDTH);
+        mix: [polygons-diagonal-grid]
     landuse-tier4-industrial:
         base: polygons
-        mix: [space-tile]
+        mix: [space-tile, patterns-diagonal-grid]
         raster: custom
         shaders:
             defines:
                 NORMAL_TEXTURE_INDEX: 0
-                SIDE_GRID_SCALE: 30.
-                SIDE_GRID_WIDTH: .3
-                STRIPES_DIR: vec3(-0.600,-0.420,0.600)
+                GRID_SCALE: 30.
+                GRID_WIDTH: .3
+                LIGHT_DIR: vec3(-0.600,-0.420,0.600)
             blocks:
-                global: |
-                    float X(vec2 st, float width){
-                        float pct0 = smoothstep(st.x-width,st.x,st.y);
-                        pct0 *= 1.-smoothstep(st.x,st.x+width,st.y);
-
-                        float pct1 = smoothstep(st.x-width,st.x,1.0-st.y);
-                        pct1 *= 1.-smoothstep(st.x,st.x+width,1.0-st.y);
-
-                        return step(.5,max(pct0,pct1));
-                    }
                 color: |
-                    color -= X(fract(getTileCoords()*SIDE_GRID_SCALE),0.001+dot((sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2., 
-                        STRIPES_DIR)*SIDE_GRID_WIDTH);
+                    color -= diagonalGrid(fract(getTileCoords()*GRID_SCALE),0.001+dot((sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2., 
+                        LIGHT_DIR)*GRID_WIDTH);

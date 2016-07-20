@@ -67,17 +67,14 @@ styles:
     polygons-stripes:
         base: polygons
         mix: [patterns-stripes, space-tile]
-        raster: custom
         shaders:
             defines:
                 STRIPES_IN: 3.
                 STRIPES_OUT: 16.
                 STRIPES_MAX_ZOOM: 20.
-                STRIPES_DIR: vec3(-0.600,-0.420,0.600)
                 STRIPES_ALPHA: .5
                 STRIPES_SCALE: 2.
                 # higher value increases the no. of lines, and width gets thinner
-                STRIPES_PCT: 1.6
                 STRIPES_MIN: .9
                 #spacing between lines? anything over 1.0 makes the lines disappear
                 STRIPES_MAX: -.2
@@ -89,23 +86,46 @@ styles:
                                             STRIPES_MAX,
                                             clamp(smoothstep(STRIPES_IN/STRIPES_MAX_ZOOM, STRIPES_OUT/STRIPES_MAX_ZOOM, max(u_map_position.z/STRIPES_MAX_ZOOM,0.)*0.9), 0., 1.)), 
                                       PI*STRIPES_ANGLE)*STRIPES_ALPHA;
-    side_grid:
+    polygons-diagonal-stripes:
         base: polygons
-        mix: [space-tile]
+        mix: [patterns-stripes, space-tile]
         shaders:
             defines:
-                SIDE_GRID_SCALE: 10.
-                SIDE_GRID_WIDTH: .05
+                STRIPES_IN: 3.
+                STRIPES_OUT: 16.
+                STRIPES_MAX_ZOOM: 20.
+                STRIPES_ALPHA: .5
+                STRIPES_SCALE: 2.
+                # higher value increases the no. of lines, and width gets thinner
+                STRIPES_MIN: .9
+                #spacing between lines? anything over 1.0 makes the lines disappear
+                STRIPES_MAX: -.2
             blocks:
                 global: |
-                    float X(vec2 st, float width){
-                        float pct0 = smoothstep(st.x-width,st.x,st.y);
-                        pct0 *= 1.-smoothstep(st.x,st.x+width,st.y);
-
-                        float pct1 = smoothstep(st.x-width,st.x,1.0-st.y);
-                        pct1 *= 1.-smoothstep(st.x,st.x+width,1.0-st.y);
-
-                        return step(.5,max(pct0,pct1));
+                    float diagonalStripes (vec2 st, float width) {
+                        st.y -= st.x;
+                        return stripes(st*STRIPE_SCALE, width);
                     }
                 color: |
-                    color *= X(fract(getTileCoords()*SIDE_GRID_SCALE),0.001+SIDE_GRID_WIDTH);
+                    color.a = diagonalStripes(  (getTileCoords()*0.707)*(STRIPES_SCALE), 
+                                                mix(STRIPES_MIN,
+                                                    STRIPES_MAX,
+                                                    clamp( smoothstep(  STRIPES_IN/STRIPES_MAX_ZOOM, 
+                                                                        STRIPES_OUT/STRIPES_MAX_ZOOM, 
+                                                                        max(u_map_position.z/STRIPES_MAX_ZOOM, 0.) * 0.9), 
+                                                            0., 1.))) * STRIPES_ALPHA;
+    polygons-diagonal-grid:
+        base: polygons
+        mix: [space-tile, patterns-diagonal-grid]
+        shaders:
+            defines:
+                GRID_SCALE: 20.
+                GRID_WIDTH: .05
+            blocks:
+                shaders:
+            defines:
+                GRID_SCALE: 20.
+                GRID_WIDTH: .05
+            blocks:
+                color: |
+                    color -= diagonalGrid(fract(getTileCoords()*GRID_SCALE),0.001+GRID_WIDTH);
