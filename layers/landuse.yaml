@@ -260,20 +260,28 @@ styles:
                 DOTS_COLOR: vec3(0.212,0.302,0.431)
                 DOTS_SCALE: 10.
                 DOTS_SIZE: 0.41
-    landuse-tier4-manmade:
-        base: polygons
-        mix: [polygons-diagonal-grid]
     landuse-tier4-industrial:
         base: polygons
-        mix: [space-tile, patterns-grid]
-        raster: custom
+        mix: [functions-zoom, polygons-diagonal-grid]
         shaders:
             defines:
-                NORMAL_TEXTURE_INDEX: 0
-                GRID_SCALE: 30.
-                GRID_WIDTH: .3
-                LIGHT_DIR: vec3(-0.600,-0.420,0.600)
-            blocks:
-                color: |
-                    color -= diagonalGrid(fract(getTileCoords()*GRID_SCALE),0.001+dot((sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2., 
-                        LIGHT_DIR)*GRID_WIDTH);
+                ZOOM_START: 14.
+                ZOOM_END: 18.
+                ZOOM_IN: .0
+                ZOOM_OUT: 1.
+
+                GRID_SCALE: 20.
+                GRID_WIDTH: zoom()*.5
+
+    landuse-tier4-industrial:
+        base: polygons
+        mix: [functions-zoom, polygons-diagonal-grid]
+        shaders:
+            defines:
+                ZOOM_START: 14.
+                ZOOM_END: 18.
+                ZOOM_IN: .0
+                ZOOM_OUT: 1.
+
+                GRID_SCALE: 20.
+                GRID_WIDTH: zoom()*.5

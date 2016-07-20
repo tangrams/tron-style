@@ -9,10 +9,3 @@ import:
     - https://tangrams.github.io/blocks/polygons/diagonal-grid.yaml
     # Custom Commons
     - ./common.yaml
-
-styles:
-    polygons-diagonal-grid:
-        shaders:
-            defines:
-                GRID_SCALE: 20.
-                GRID_WIDTH: .05
