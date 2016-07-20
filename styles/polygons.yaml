@@ -1,11 +1,31 @@
 import:
     # Blocks
     - https://tangrams.github.io/blocks/elevation/stripes.yaml
-    - https://tangrams.github.io/blocks/elevation/stripes.yaml
     - https://tangrams.github.io/blocks/polygons/dots.yaml
     - https://tangrams.github.io/blocks/polygons/shimmering.yaml
     - https://tangrams.github.io/blocks/polygons/stripes.yaml
     - https://tangrams.github.io/blocks/polygons/diagonal-stripes.yaml
     - https://tangrams.github.io/blocks/polygons/diagonal-grid.yaml
+    # Utils
+    - https://tangrams.github.io/blocks/geometry/normal.yaml
     # Custom Commons
     - ./common.yaml
+
+styles:
+    polygons-linewall:
+        base: polygons
+        mix: [geometry-normal]
+        texcoords: true
+        blend: add
+        shaders:
+            blocks:
+                color: |
+                    if (isWall()) {
+                        float lineWidth = 0.003*(u_tile_origin.z/20.0);
+                        color = mix(vec4(0.),
+                                    color,
+                                    1.0-(step(lineWidth,v_texcoord.x)-step(1.0-lineWidth,v_texcoord.x))*
+                                        (step(lineWidth,v_texcoord.y)-step(1.0-lineWidth,v_texcoord.y)) );
+                    } else {
+                        color = vec4(0.);
+                    }

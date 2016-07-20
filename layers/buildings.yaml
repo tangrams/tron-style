@@ -18,8 +18,8 @@ layers:
                 color: [0.004,0.165,0.933]
                 width: 1px
         footprints:
-            # filter:
-            #     $zoom: { max: 16 }
+            filter:
+                $zoom: { max: 16 }
             draw:
                 polygons:
                     color: [[13,[0.212,0.302,0.431]],[14,[0.181,0.259,0.370]]]
@@ -29,17 +29,39 @@ layers:
                     width: [[13,0px],[14,0px],[15,0.15px],[16,0.35px],[17,1px],[18,1px]]
                     visible: true
 
-        # extrude:
-        #     filter:
-        #         $zoom: { min: 16 }
-        #     draw:
-        #         polygons:
-        #             visible: true
-        #             order: 8760
-        #             color: [0.181,0.259,0.370]
-        #             extrude: function() { return feature.height || 20; }
-        #         lines:
-        #             visible: true
-        #             order: 8780
-        #             color: [0.592,0.827,0.851]
-        #             extrude: function() { return feature.height || 20; }
+        extrude:
+            filter:
+                $zoom: { min: 16 }
+            draw:
+                polygons:
+                    visible: true
+                    style: buildings-wall
+                    color: [0.181,0.259,0.370]
+                    # color: [0.592,0.827,0.851]
+                    extrude: function() { return feature.height || 20; }
+                lines:
+                    visible: true
+                    color: [0.592,0.827,0.851]
+                    extrude: function() { return feature.height || 20; }
+
+styles:
+    buildings-wall:
+        base: polygons
+        mix: [functions-zoom, geometry-normal,generative-random]
+        texcoords: true
+        blend: add
+        shaders:
+            defines:
+                ZOOM_START: 16.
+                ZOOM_END: 20.
+            blocks:
+                color: |
+                    if (isWall()) {
+                        float lineWidth = 0.003*(u_tile_origin.z/20.0);
+                        color = mix(vec4(0.),
+                                    color,
+                                    1.0-(step(lineWidth,v_texcoord.x)-step(1.0-lineWidth,v_texcoord.x))*
+                                        (step(lineWidth,v_texcoord.y)-step(1.0-lineWidth,v_texcoord.y)) );
+                    } else {
+                        color = vec4(0.);
+                    }
