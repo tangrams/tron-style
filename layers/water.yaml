@@ -125,9 +125,9 @@ styles:
                 ZOOM_OUT: -.2
                 
                 STRIPES_ALPHA: .5
-                STRIPES_SCALE: 1.5
+                STRIPES_SCALE: 20.
                 STRIPES_WIDTH: zoom()
-                
+
     water-later:
         base: polygons
         mix: [functions-zoom, polygons-shimmering]

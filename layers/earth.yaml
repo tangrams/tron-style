@@ -31,5 +31,5 @@ styles:
                 ZOOM_OUT: -.2
                 
                 STRIPES_ALPHA: .5
-                STRIPES_SCALE: 1.5
+                STRIPES_SCALE: 25.
                 STRIPES_WIDTH: zoom()
