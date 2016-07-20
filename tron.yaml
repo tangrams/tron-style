@@ -41,7 +41,7 @@ sources:
         rasters: [normals-elevation]
 
 cameras:
-    perspective:
+    cam:
         type: perspective
 
 scene:
