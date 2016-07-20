@@ -267,7 +267,7 @@ styles:
                 DOTS_COLOR: vec3(0.212,0.302,0.431)
                 DOTS_SCALE: 10.
                 DOTS_SIZE: 0.41
-    landuse-tier4-industrial:
+    landuse-tier4-manmade:
         base: polygons
         mix: [functions-zoom, polygons-diagonal-grid]
         shaders:
