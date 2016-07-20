@@ -217,8 +217,8 @@ styles:
         shaders:
             defines:
                 STRIPES_ALPHA: .5
-                STRIPES_SCALE: 4.
-                STRIPES_PCT: 1.7
+                STRIPES_SCALE: 40.
+                STRIPES_PCT: 1.8
     landuse-tier2-farm:
         mix: [functions-zoom, polygons-stripes]
         blend: overlay
