@@ -121,16 +121,19 @@ styles:
                 STRIPES_MAX_ZOOM: 14.
     water-later:
         base: polygons
-        mix: [polygons-shimmering]
+        mix: [functions-zoom, polygons-shimmering]
         shaders:
             defines:
-                SHIMMERING_IN: 11.
-                SHIMMERING_OUT: 16.
-                SHIMMERING_MAX_ZOOM: 17.
-                SHIMMERING_SCALE_IN: 30.0
-                SHIMMERING_SCALE_OUT: 10.
-                SHIMMERING_SPEED: .5
+                ZOOM_START: 11.
+                ZOOM_END: 16.
+                ZOOM: linear
+                ZOOM_IN: 0.0
+                ZOOM_OUT: 1.0
+                
+                SHIMMERING_SCALE: mix(10.,30.,zoom())
                 SHIMMERING_BACKGROUND: vec3(0.145,0.157,0.247)
+                SHIMMERING_SPEED: .5
+                SHIMMERING_AMOUNT: zoom()
     water-boundaries:
         base: lines
         mix: [lines-coast]

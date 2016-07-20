@@ -1,72 +1,18 @@
 import:
     # Blocks
-    - https://tangrams.github.io/blocks/space/tile.yaml
-    - https://tangrams.github.io/blocks/patterns/stripes.yaml
+    - https://tangrams.github.io/blocks/functions/zoom.yaml
     - https://tangrams.github.io/blocks/elevation/stripes.yaml
-    - https://tangrams.github.io/blocks/generative/noise.yaml
-    - https://tangrams.github.io/blocks/space/constant.yaml
-    - https://tangrams.github.io/blocks/patterns/dots.yaml
+    - https://tangrams.github.io/blocks/elevation/stripes.yaml
+    - https://tangrams.github.io/blocks/polygons/dots.yaml
+    - https://tangrams.github.io/blocks/polygons/shimmering.yaml
+    - https://tangrams.github.io/blocks/polygons/stripes.yaml
+    - https://tangrams.github.io/blocks/polygons/diagonal-stripes.yaml
+    - https://tangrams.github.io/blocks/polygons/diagonal-grid.yaml
     # Custom Commons
     - ./common.yaml
 
 styles:
-    polygons-dots:
-        base: polygons
-        mix: [patterns-dots]
-        shaders:
-            blocks:
-                color: |
-                    color.rgb = mix(color.rgb, vec3(0.212,0.302,0.431), TileDots(10., 0.41));
-
-    polygons-shimmering:
-        base: polygons
-        mix: [generative-noise, space-constant]
-        animated: true
-        shaders:
-            defines:
-                SHIMMERING_IN: 14.
-                SHIMMERING_OUT: 20.
-                SHIMMERING_MAX_ZOOM: 20.
-                SHIMMERING_SCALE_IN: 10.0
-                SHIMMERING_SCALE_OUT: 10.0
-                SHIMMERING_BACKGROUND: vec3(0.000,0.00,0.94)
-                SHIMMERING_SPEED: 0.1
-            blocks:
-                global: |
-                    vec2 skew (vec2 st) {
-                        st *= 1.733;
-                        vec2 r = vec2(1.1547*st.x);
-                        r.y = st.y+0.5*r.x;
-                        return r;
-                    }
-
-                    vec3 simplexCoord (vec2 st, float td) {
-                        return 1.0-mix(vec3(st.x,1.0-vec2(st.x-st.y,st.y)),vec3(1.0-vec2(st.x,st.y-st.x),st.y),td);
-                    }
-                color: |
-                    float z = clamp(smoothstep(SHIMMERING_IN/SHIMMERING_MAX_ZOOM, SHIMMERING_OUT/SHIMMERING_MAX_ZOOM, max(u_map_position.z/SHIMMERING_MAX_ZOOM,0.)*0.9), 0., 1.);
-                    float scale = mix(SHIMMERING_SCALE_IN, SHIMMERING_SCALE_OUT, z);
-                    /*
-                    vec2 st = gl_FragCoord.xy/u_resolution.xy;
-                    st = (st-.5)*scale+ .5;
-                    if (u_resolution.y > u_resolution.x ) {
-                        st.y *= u_resolution.y/u_resolution.x;
-                    } else {
-                        st.x *= u_resolution.x/u_resolution.y;
-                    }
-                    */
-                    vec2 st = getConstantCoords()*scale;
-                    
-                    vec2 s = skew(st);
-                    vec2 s_f = fract(s);
-                    float n = snoise(vec3(floor(s+step(s_f.x,s_f.y)*5.),u_time*SHIMMERING_SPEED));
-                    color.rgb = mix(color.rgb,
-                                    mix(SHIMMERING_BACKGROUND,color.rgb,n),
-                                    z);
-
     polygons-stripes:
-        base: polygons
-        mix: [patterns-stripes, space-tile]
         shaders:
             defines:
                 STRIPES_IN: 3.
@@ -79,16 +25,8 @@ styles:
                 #spacing between lines? anything over 1.0 makes the lines disappear
                 STRIPES_MAX: -.2
                 STRIPES_ANGLE: 0.25
-            blocks:
-                color: |
-                    color.a = stripes(  getTileCoords()*STRIPES_SCALE, 
-                                        mix(STRIPES_MIN,
-                                            STRIPES_MAX,
-                                            clamp(smoothstep(STRIPES_IN/STRIPES_MAX_ZOOM, STRIPES_OUT/STRIPES_MAX_ZOOM, max(u_map_position.z/STRIPES_MAX_ZOOM,0.)*0.9), 0., 1.)), 
-                                      PI*STRIPES_ANGLE)*STRIPES_ALPHA;
+
     polygons-diagonal-stripes:
-        base: polygons
-        mix: [patterns-stripes, space-tile]
         shaders:
             defines:
                 STRIPES_IN: 3.
@@ -100,32 +38,9 @@ styles:
                 STRIPES_MIN: .9
                 #spacing between lines? anything over 1.0 makes the lines disappear
                 STRIPES_MAX: -.2
-            blocks:
-                global: |
-                    float diagonalStripes (vec2 st, float width) {
-                        st.y -= st.x;
-                        return stripes(st*STRIPE_SCALE, width);
-                    }
-                color: |
-                    color.a = diagonalStripes(  (getTileCoords()*0.707)*(STRIPES_SCALE), 
-                                                mix(STRIPES_MIN,
-                                                    STRIPES_MAX,
-                                                    clamp( smoothstep(  STRIPES_IN/STRIPES_MAX_ZOOM, 
-                                                                        STRIPES_OUT/STRIPES_MAX_ZOOM, 
-                                                                        max(u_map_position.z/STRIPES_MAX_ZOOM, 0.) * 0.9), 
-                                                            0., 1.))) * STRIPES_ALPHA;
+
     polygons-diagonal-grid:
-        base: polygons
-        mix: [space-tile, patterns-diagonal-grid]
         shaders:
             defines:
                 GRID_SCALE: 20.
                 GRID_WIDTH: .05
-            blocks:
-                shaders:
-            defines:
-                GRID_SCALE: 20.
-                GRID_WIDTH: .05
-            blocks:
-                color: |
-                    color -= diagonalGrid(fract(getTileCoords()*GRID_SCALE),0.001+GRID_WIDTH);

@@ -1,3 +1,7 @@
+import:
+    # Blocks
+    - https://tangrams.github.io/blocks/lines/glow.yaml
+
 styles:
     lines-coast:
         base: lines
@@ -16,25 +20,3 @@ styles:
                     // waves
                     pct += (1.-fract(v_texcoord.x*COAST_WAVES_AMOUNT+(fract(u_time*COAST_WAVES_SPEED))))*pct;
                     color *= pct;
-    lines-glow:
-        base: lines
-        texcoords: true
-        blend: add
-        shaders:
-            defines:
-                GLOW_WIDTH: 0.1
-                GLOW_BRIGHTNESS: .25
-                GLOW_GLOW: .75
-            blocks:
-                global: |
-                    float pulse(float c, float w, float x ) {
-                        x = abs(x - c);
-                        if( x>w ) return 0.0;
-                        x /= w;
-                        return 1.0 - x*x*(3.0-2.0*x);
-                    }
-                color: |
-                    vec4 line_color = color;
-                    color = vec4(0.0);
-                    color = mix(color, line_color*GLOW_BRIGHTNESS,pulse(.5,GLOW_WIDTH,v_texcoord.x));
-                    color += line_color*GLOW_BRIGHTNESS*GLOW_GLOW*sin(v_texcoord.x*3.145);

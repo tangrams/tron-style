@@ -252,12 +252,17 @@ styles:
     landuse-tier4-power:
         mix: [polygons-dots]
         blend: overlay
+        shaders:
+            defines:
+                DOTS_COLOR: vec3(0.212,0.302,0.431)
+                DOTS_SCALE: 10.
+                DOTS_SIZE: 0.41
     landuse-tier4-manmade:
         base: polygons
         mix: [polygons-diagonal-grid]
     landuse-tier4-industrial:
         base: polygons
-        mix: [space-tile, patterns-diagonal-grid]
+        mix: [space-tile, patterns-grid]
         raster: custom
         shaders:
             defines:

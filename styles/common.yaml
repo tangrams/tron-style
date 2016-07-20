@@ -10,12 +10,3 @@ styles:
                                         sin(x*2.806), 
                                         smoothstep(-0.512,1.072,x)))*(1.0-sin(-0.196+x*3.950)*0.380);
                     }
-    patterns-diagonal-grid:
-        mix: [functions-aastep]
-        shaders:
-            blocks:
-                global: |
-                    float diagonalGrid(vec2 st, float width){
-                        return step(.5,max( smoothstep(st.x-width,st.x,st.y)*(1.-smoothstep(st.x,st.x+width,st.y)),
-                                            smoothstep(st.x-width,st.x,1.0-st.y)*(1.-smoothstep(st.x,st.x+width,1.0-st.y))));
-                    }
