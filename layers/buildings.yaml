@@ -18,6 +18,8 @@ layers:
                 color: [0.004,0.165,0.933]
                 width: 1px
         footprints:
+            # filter:
+            #     $zoom: { max: 16 }
             draw:
                 polygons:
                     color: [[13,[0.212,0.302,0.431]],[14,[0.181,0.259,0.370]]]
@@ -26,3 +28,18 @@ layers:
                     color: [[13,[0.004,0.165,0.933]],[16,[0.004,0.165,0.933]],[17,[0.074,0.217,0.930]]]
                     width: [[13,0px],[14,0px],[15,0.15px],[16,0.35px],[17,1px],[18,1px]]
                     visible: true
+
+        # extrude:
+        #     filter:
+        #         $zoom: { min: 16 }
+        #     draw:
+        #         polygons:
+        #             visible: true
+        #             order: 8760
+        #             color: [0.181,0.259,0.370]
+        #             extrude: function() { return feature.height || 20; }
+        #         lines:
+        #             visible: true
+        #             order: 8780
+        #             color: [0.592,0.827,0.851]
+        #             extrude: function() { return feature.height || 20; }

@@ -42,7 +42,7 @@ sources:
 
 cameras:
     perspective:
-        type: flat
+        type: perspective
 
 scene:
     background:
