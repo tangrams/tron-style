@@ -1,5 +1,4 @@
 import:
-    - https://tangrams.github.io/blocks/global.yaml
     - https://tangrams.github.io/blocks/source-elevation.yaml
     # Styles
     - styles/lines.yaml
@@ -33,6 +32,15 @@ global:
     order_sub_7: function () { return (feature.sort_key * 20 - 7); }
     order_sub_8: function () { return (feature.sort_key * 20 - 8); }
     order_sub_9: function () { return (feature.sort_key * 20 - 9); }
+    pseudoRandomColor: |
+        function() {
+            return [
+                0.7 * (parseInt(feature.id, 16) / 100 % 1),     // jshint ignore:line
+                0.7 * (parseInt(feature.id, 16) / 10000 % 1),   // jshint ignore:line
+                0.7 * (parseInt(feature.id, 16) / 1000000 % 1), // jshint ignore:line
+                1
+            ];
+        }
 
 sources:
     mapzen:

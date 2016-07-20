@@ -36,7 +36,7 @@ layers:
                 polygons:
                     visible: true
                     style: buildings
-                    color: [0.181,0.259,0.370]
+                    color: global.pseudoRandomColor
                     # color: [0.592,0.827,0.851]
                     extrude: function() { return feature.height || 20; }
                 lines:
