@@ -217,10 +217,21 @@ layers:
                 filter: { highway: [tertiary, tertiary_link] }
                 draw:
                     lines:
-                        color: [0.329,0.525,0.580]
-                        width: [[12,0.5px],[13,1px]]
-                        outline:
-                            width: 0px
+                        color: [[12,[0.248,0.397,0.439]],[13,[0.248,0.397,0.439]],[14,[0.082,0.133,0.259]],[15,[0.082,0.133,0.259]]]
+                        width: [[12,0.5px],[13,0.5px],[14,0.1px],[15,1.5px],[16,3px],[17,8px]]
+                    outline:
+                        color: [[15,[0.248,0.397,0.439]],[16,[0.285,0.457,0.506]]]
+                        width: [[12,0px],[14,0.3px],[15,1px]]
+
+        minor_road:
+            filter: { kind: minor_road, not: { highway: service, aeroway: [runway, taxiway] } }
+            draw:
+                lines:
+                    color: [[12,[0.248,0.397,0.439]],[13,[0.248,0.397,0.439]],[14,[0.082,0.133,0.259]],[15,[0.082,0.133,0.259]]]
+                    width: [[12,0.5px],[13,0.5px],[14,0.1px],[15,1.5px],[16,3px],[17,8px]]
+                    outline:
+                        color: [[12,[0.248,0.397,0.439]],[15,[0.248,0.397,0.439]],[16,[0.285,0.457,0.506]]]
+                        width: [[12,0px],[14,0.4px],[15,1px]]
 
 styles:
     highway-dashed:

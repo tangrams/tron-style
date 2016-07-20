@@ -207,8 +207,8 @@ layers:
                 pier:
                     filter: { kind: [pier,bridge,breakwater,groyne,dike,cutline] }
                     draw:
-                        dots2:
-                            color: red
+                        polygons:
+                            color: [0.048,0.301,0.631]
                             visible: true
 styles:
     landuse:
