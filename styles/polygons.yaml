@@ -8,7 +8,6 @@ import:
     - https://tangrams.github.io/blocks/polygons/diagonal-stripes.yaml
     - https://tangrams.github.io/blocks/polygons/diagonal-grid.yaml
     # Utils
-    - https://tangrams.github.io/blocks/color/palette.yaml
     - https://tangrams.github.io/blocks/geometry/normal.yaml
     # Custom Commons
     - ./common.yaml
