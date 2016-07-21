@@ -4,18 +4,18 @@ layers:
         draw:
             polygons:
                 order: global.order
-                color: [0.534, 0.736, 1.000]
+                color: [0.267,0.365,0.502]
         early:
-            filter: { $zoom: { max: 6 } }
+            filter: { $zoom: { max: 7 } }
             draw:
                 polygons:
                     style: earth-early
         later:
-            filter: { $zoom: { min: 5 } }
+            filter: { $zoom: { min: 7 } }
             draw:
                 polygons:
                     style: polygons
-                    color: [[5,[0.267,0.365,0.502]],[8,[0.213,0.302,0.433]]]
+                    color: [[7,[0.267,0.365,0.502]],[8,[0.213,0.302,0.433]]]
 
 styles:
     earth-early:
@@ -24,12 +24,11 @@ styles:
         shaders:
             defines:
                 ZOOM_START: 3.
-                ZOOM_END: 4.
+                ZOOM_END: 6.5
                 ZOOM_MAX: 6.
-                ZOOM: linear
                 ZOOM_IN: .9
                 ZOOM_OUT: -.2
                 
-                STRIPES_ALPHA: .5
+                STRIPES_ALPHA: 1.
                 STRIPES_SCALE: 25.
                 STRIPES_WIDTH: zoom()

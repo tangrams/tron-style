@@ -244,11 +244,13 @@ styles:
                     v_texcoord.y *= 4.;
     roads-glow:
         base: lines
-        mix: [lines-glow]
+        mix: [functions-zoom, lines-glow]
         shaders:
             defines:
-                GLOW_WIDTH: 0.5
-                GLOW_BRIGHTNESS: .2
+                ZOOM_START: 5
+                ZOOM_END: 6.
+                GLOW_WIDTH: mix(1.,.45,zoom())
+                GLOW_BRIGHTNESS: zoom()*.25
 
     highway-glow:
         base: lines
