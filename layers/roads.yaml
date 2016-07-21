@@ -247,15 +247,13 @@ styles:
         mix: [lines-glow]
         shaders:
             defines:
-                GLOW_WIDTH: 0.1
-                GLOW_BRIGHTNESS: .25
-                GLOW_GLOW: .75
+                GLOW_WIDTH: 0.5
+                GLOW_BRIGHTNESS: .2
 
     highway-glow:
         base: lines
         mix: [lines-glow]
         shaders:
             defines:
-                GLOW_WIDTH: 0.4
-                GLOW_BRIGHTNESS: .18
-                GLOW_GLOW: .65
+                GLOW_WIDTH: 0.45
+                GLOW_BRIGHTNESS: .25
