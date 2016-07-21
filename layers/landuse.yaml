@@ -219,7 +219,7 @@ styles:
                 ZOOM_START: 0.
                 ZOOM_END: 13.
                 STRIPES_ALPHA: .5
-                STRIPES_SCALE: 40.
+                STRIPES_SCALE: 60.
                 STRIPES_PCT: 1.8
                 STRIPES_WIDTH: mix( (1.-zoom()),
                                     dot((sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2.,
