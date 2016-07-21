@@ -1,12 +1,14 @@
 import:
     # Blocks
     - https://tangrams.github.io/blocks/elevation/stripes.yaml
+    - https://tangrams.github.io/blocks/elevation/contours.yaml
     - https://tangrams.github.io/blocks/polygons/dots.yaml
     - https://tangrams.github.io/blocks/polygons/shimmering.yaml
     - https://tangrams.github.io/blocks/polygons/stripes.yaml
     - https://tangrams.github.io/blocks/polygons/diagonal-stripes.yaml
     - https://tangrams.github.io/blocks/polygons/diagonal-grid.yaml
     # Utils
+    - https://tangrams.github.io/blocks/color/palette.yaml
     - https://tangrams.github.io/blocks/geometry/normal.yaml
     # Custom Commons
     - ./common.yaml
@@ -29,3 +31,13 @@ styles:
                     } else {
                         color = vec4(0.);
                     }
+    elevation-color-contours:
+        mix: [color-palette, elevation-contours]
+        shaders:
+            defines:
+                PI: 3.1415926535897932384626433832795
+                CONTOURS_BACKGROUND_COLOR: vec4(0.)
+                CONTOURS_COLOR: vec4(palette(0.380+normal_elv_raster.a+u_time*.5,vec3(.5),vec3(.5),vec3(2.,1.,0.),vec3(.5,.2,0.25)), 1.)
+                CONTOURS_SCALE: 60.
+                CONTOURS_SPEED: -0.1
+                CONTOURS_OFFSET: u_time*CONTOURS_SPEED
