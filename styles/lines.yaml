@@ -6,7 +6,7 @@ styles:
     lines-coast:
         base: lines
         texcoords: true
-        animated: true
+        animated: false
         blend: add
         shaders:
             defines:
@@ -20,3 +20,8 @@ styles:
                     // waves
                     pct += (1.-fract(v_texcoord.x*COAST_WAVES_AMOUNT+(fract(u_time*COAST_WAVES_SPEED))))*pct;
                     color *= pct;
+
+    lines-coast-animated:
+        base: lines
+        mix: [lines-coast]
+        animated: global.enable_animation

@@ -22,12 +22,22 @@ layers:
                 $zoom: { max: 16 }
             draw:
                 polygons:
-                    color: [[13,[0.212,0.302,0.431]],[14,[0.181,0.259,0.370]]]
+                    color: [0.212,0.302,0.431]
                     visible: true
                 lines:
-                    color: [[13,[0.004,0.165,0.933]],[15,[0.592,0.827,0.851]]]
-                    width: [[13,0px],[14,0.25px],[15,0.5px]]
+                    color: [0.592,0.827,0.851]
+                    width: [[14,0px],[15,0.25px]]
                     visible: true
+            # before zoom 15, we want buidings to be below roads...
+            # (once they extrude, then we want them to be above roads, which is the default data value)
+            before_z15:
+                filter:
+                    $zoom: { max: 16 }
+                draw:
+                    polygons:
+                        order: 5800 #290 * 20
+                    lines:
+                        order: 5820 #291 * 20
 
         extrude:
             filter:

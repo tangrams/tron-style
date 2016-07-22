@@ -60,17 +60,29 @@ layers:
 
         boundaries:
             filter: { boundary: yes, kind: ocean }
-            draw:
-                lines:
-                    style: water-boundaries
-                    order: global.order
-                    width: [[4,0px],[11,4px],[14,12px],[16,16px],[18,24px],[20,30]]
-                    # color: [0.017, 1.000, 0.649]
-                    # color: [0.055,0.176,0.949]
-                    # color: [0.051,0.158,0.850]
-                    # color: [0.043,0.133,0.720]
-                    color: [0.091,0.329,0.692]
-                    join: round
+            # don't animate early, save the fan, save the planet!
+            early:
+                filter: { $zoom: { max: 16 } }
+                draw:
+                    lines:
+                        style: water-boundaries
+                        order: global.order
+                        width: [[4,0px],[11,4px],[14,12px],[16,16px],[18,24px],[20,30]]
+                        color: [0.091,0.329,0.692]
+                        join: round
+            animated:
+                filter: { $zoom: { min: 16 } }
+                draw:
+                    lines:
+                        style: water-boundaries-animated
+                        order: global.order
+                        width: [[4,0px],[11,4px],[14,12px],[16,16px],[18,24px],[20,30]]
+                        # color: [0.017, 1.000, 0.649]
+                        # color: [0.055,0.176,0.949]
+                        # color: [0.051,0.158,0.850]
+                        # color: [0.043,0.133,0.720]
+                        color: [0.091,0.329,0.692]
+                        join: round
 
         boundaries-not_ocean:
             filter:
@@ -122,13 +134,14 @@ styles:
                 ZOOM_MAX: 14.
                 ZOOM_IN: .9
                 ZOOM_OUT: -.2
-                
+
                 STRIPES_ALPHA: .5
                 STRIPES_SCALE: 20.
                 STRIPES_WIDTH: zoom()
 
     water-later:
         base: polygons
+        animated: global.enable_animation
         mix: [functions-zoom, polygons-shimmering]
         shaders:
             defines:
@@ -142,3 +155,6 @@ styles:
     water-boundaries:
         base: lines
         mix: [lines-coast]
+    water-boundaries-animated:
+        base: lines
+        mix: [lines-coast-animated]

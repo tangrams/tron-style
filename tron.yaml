@@ -13,6 +13,7 @@ import:
     - layers/boundaries.yaml
 
 global:
+    enable_animation: true
     order_add_9: function () { return (feature.sort_key * 20 + 9); }
     order_add_8: function () { return (feature.sort_key * 20 + 8); }
     order_add_7: function () { return (feature.sort_key * 20 + 7); }

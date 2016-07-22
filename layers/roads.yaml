@@ -65,7 +65,7 @@ layers:
                 draw:
                     lines:
                         color: [0.086,0.135,0.260]
-                        width: [[8,0px],[9,0.25px],[10,1px],[12,1px],[13,2px],[14,3px],[15,4px],[16,5px],[17,3px],[18,6px],[19,12px]]
+                        width: [[8,0px],[9,0.25px],[10,1px],[12,1px],[13,2px],[14,3px],[15,5px],[16,5px],[17,9px],[18,16px],[19,12px]]
                         outline:
                             # color: [0.541,0.969,0.949]
                             color: [0.689,0.970,0.956]
@@ -73,12 +73,13 @@ layers:
                     highway-dashed:
                         order: global.order_sub_1
                         # color: [0.557,0.909,0.887]
-                        color: [0.306,0.361,0.949]
-                        width: [[8,0px],[16,0px],[17,7px],[18,10px],[19,20px]]
+                        # color: [0.306,0.361,0.949]
+                        color: [0.035,0.976,1.000]
+                        width: [[8,0px],[16,8px],[17,13px],[18,20px],[19,20px]]
                     highway-glow:
                         order: global.order_sub_6
                         color: [0.800,1.000,0.987]
-                        width: [[11,8px],[13,12px],[16,25px],[17,40px],[18,50px],[19,80px]]
+                        width: [[11,8px],[13,12px],[16,30px],[17,40px],[18,50px],[19,80px]]
 
                 highway-link:
                     filter: { is_link: yes } # on- and off-ramps, etc
@@ -86,7 +87,7 @@ layers:
                         lines:
                             width: [[8,0px],[9,0px],[11,0.25px],[12,0.25px],[13,1px],[14,1.5px],[15,2px],[17,3px],[18,9px],[19,12px]]
                             outline:
-                                color: [0.481,0.842,0.890]
+                                color: [[8,[0.481,0.842,0.890]],[16,[0.481,0.842,0.890]],[18,[0.035,0.976,1.000]]]
                                 width: [[8,0px],[9,0.5px],[15,1px],[18,1.5px]]
                         highway-dashed:
                             visible: false
@@ -153,12 +154,12 @@ layers:
                         style: lines
                         order: global.order_sub_2
                         color: [0.086,0.135,0.260]
-                        width: [[8,0px],[16,0px],[17,12px],[18,15px],[19,28px]]
+                        width: [[8,0px],[16,0px],[17,14px],[18,25px],[19,28px]]
                     highway-casing2:
                         style: lines
                         order: global.order_sub_3
                         color: [0.541,0.969,0.949]
-                        width: [[8,0px],[16,0px],[17,16px],[18,18px],[19,31px]]
+                        width: [[8,0px],[16,0px],[17,18px],[18,28px],[19,31px]]
 
 
             highway-z18:
@@ -169,40 +170,42 @@ layers:
                         style: lines
                         order: global.order_sub_4
                         color: [0.086,0.135,0.260]
-                        width: [[8,0px],[16,0px],[17,15px],[18,22px],[19,40px]]
+                        width: [[8,0px],[16,0px],[17,15px],[18,31px],[19,40px]]
                     highway-casing4:
                         style: lines
                         order: global.order_sub_5
                         color: [0.800,1.000,0.987]
-                        width: [[8,0px],[16,0px],[17,15px],[18,26px],[19,45px]]
+                        width: [[8,0px],[16,0px],[17,15px],[18,34px],[19,45px]]
 
 
         major_road:
             filter: { kind: major_road }
             draw:
                 lines:
-                    color: [0.086,0.135,0.260]
-                    width: 0.15px
+                    # color: [0.086,0.135,0.260]
+                    color: [0.255,0.455,0.627]
+                    width: 0.75px
                     outline:
-                        color: [[8,[0.278,0.499,0.667]],[12,[0.329,0.588,0.784]]]
-                        width: 0.3px
+                        width: 0px
             trunk_primary:
                 filter: { highway: [trunk, primary] }
                 draw:
                     lines:
                         color: [[8,[0.418,0.754,0.736]],[12,[0.418,0.754,0.736]],[13,[0.086,0.135,0.260]]]
-                        width: [[8,0.25px],[9,0.3px],[11,0.5px],[12,0.75px],[13,0.1px],[14,2px],[15,5px],[16,6px],[17,9px],[18,17px],[19,27px],[20,40px]]
+                        width: [[8,0.25px],[9,0.3px],[11,0.3px],[12,0.75px],[13,0.1px],[14,2px],[15,5px],[16,6px],[17,9px],[18,17px],[19,27px],[20,40px]]
                         outline:
-                            color: [[8,[0.329,0.588,0.784]],[13,[0.418,0.754,0.736]],[14,[0.510,0.920,0.897]]]
-                            width: [[8,0px],[12,0px],[13,0.6px],[14,0.75px],[15,1px],[17,1.25px],[18,1.5px]]
+                            color: [[8,[0.418,0.754,0.736]],[14,[0.416,1.000,1.000]],[18,[0.039,0.980,1.000]]]
+                            width: [[8,0px],[12,0px],[13,0.6px],[14,0.75px],[15,1px],[17,1.25px],[18,1.5px],[19,2px]]
                 routes:
                     filter: { ref: true }
                     draw:
                         lines:
-                            width: [[8,0.25px],[9,0.3px],[11,0.5px],[12,2px],[13,0.1px],[14,2px],[15,5px],[16,7px],[17,9px],[18,17px],[19,27px],[20,40px]]
+                            color: [[8,[1.00,1.00,1.00]],[11,[1.00,1.00,1.00]],[12,[0.086,0.135,0.260]],[13,[0.086,0.135,0.260]]]
+                            width: [[8,0.15px],[11,0.4px],[12,0.1px],[13,0.1px],[14,2px],[15,5px],[16,7px],[17,9px],[18,17px],[19,27px],[20,40px]]
                             outline:
-                                color: [[8,[0.329,0.588,0.784]],[11,[0.418,0.754,0.736]],[14,[0.510,0.920,0.897]]]
-                                width: [[8,0px],[12,0px],[13,1px],[15,1.5px]]
+                                # color: [[8,[0.329,0.588,0.784]],[11,[0.418,0.754,0.736]],[14,[0.510,0.920,0.897]]]
+                                color: [1.00,1.00,1.00]
+                                width: [[8,0px],[11,0px],[12,0.30px],[13,0.5px],[15,1.5px]]
             secondary:
                 filter: { highway: secondary }
                 draw:
@@ -221,7 +224,7 @@ layers:
                         width: [[12,0.5px],[13,0.5px],[14,0.1px],[15,2px],[16,4px],[17,8px],[18,14px],[19,20px],[20,40px]]
                         outline:
                             color: [[15,[0.248,0.397,0.439]],[16,[0.285,0.457,0.506]]]
-                            width: [[12,0px],[14,0.4px],[15,1px],[18,1.5px]]
+                            width: [[12,0px],[14,0.4px],[15,1px],[17,1.25px],[18,1.5px]]
 
         minor_road:
             filter: { kind: minor_road, not: { highway: service, aeroway: [runway, taxiway] } }
@@ -231,7 +234,7 @@ layers:
                     width: [[12,0.5px],[13,0.5px],[14,0.1px],[15,2px],[16,4px],[17,8px],[18,14px],[19,20px],[20,40px]]
                     outline:
                         color: [[12,[0.248,0.397,0.439]],[15,[0.248,0.397,0.439]],[16,[0.285,0.457,0.506]]]
-                        width: [[12,0px],[14,0.4px],[15,1px],[18,1.5px]]
+                        width: [[12,0px],[14,0.4px],[15,1px],[17,1.25px],[18,1.5px]]
 
 styles:
     highway-dashed:
@@ -241,7 +244,7 @@ styles:
         shaders:
             blocks:
                 position: |
-                    v_texcoord.y *= 4.;
+                    v_texcoord.y *= 6.;
     roads-glow:
         base: lines
         mix: [functions-zoom, lines-glow]

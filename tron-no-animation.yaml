@@ -1,0 +1,5 @@
+import:
+    - tron.yaml
+
+global:
+    enable_animation: false
