@@ -56,7 +56,8 @@ layers:
             filter: { kind: swimming_pool }
             draw:
                 polygons:
-                    color: red
+                    style: polygons
+                    color: [0.000,0.804,0.776]
 
         boundaries:
             filter: { boundary: yes, kind: ocean }
@@ -115,6 +116,13 @@ layers:
                     color: [0.155,0.482,0.910]
                     width: [[8,0px],[13,1px],[15,1.25px],[20,8px]]
                     join: round
+            swimming_pool:
+                filter: { kind: swimming_pool }
+                draw:
+                    lines:
+                        style: swimming-pool-glow
+                        color: [0.557,0.996,1.000]
+                        width: [[8,0px],[13,3px],[15,4px],[20,12px]]
             boundaries-not_ocean-riverbank:
                 # river boundaries like the thames in london, la seine in paris
                 filter: { kind: riverbank }
@@ -158,3 +166,10 @@ styles:
     water-boundaries-animated:
         base: lines
         mix: [lines-coast-animated]
+    swimming-pool-glow:
+        base: lines
+        mix: [lines-glow]
+        shaders:
+            defines:
+                GLOW_WIDTH: .75
+                GLOW_BRIGHTNESS: .25

@@ -26,7 +26,7 @@ layers:
                     visible: true
                 lines:
                     color: [0.592,0.827,0.851]
-                    width: [[14,0px],[15,0.25px]]
+                    width: [[14,0px],[15,0.35px]]
                     visible: true
             # before zoom 15, we want buidings to be below roads...
             # (once they extrude, then we want them to be above roads, which is the default data value)
