@@ -15,7 +15,7 @@ layers:
             draw:
                 polygons:
                     style: polygons
-                    color: [[7,[0.267,0.365,0.502]],[8,[0.213,0.302,0.433]]]
+                    color: [[7,[0.242,0.332,0.456]],[8,[0.213,0.302,0.433]]]
 
 styles:
     earth-early:
@@ -28,7 +28,7 @@ styles:
                 ZOOM_MAX: 6.
                 ZOOM_IN: .9
                 ZOOM_OUT: -.2
-                
+
                 STRIPES_ALPHA: 1.
                 STRIPES_SCALE: 25.
                 STRIPES_WIDTH: zoom()

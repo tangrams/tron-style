@@ -159,7 +159,7 @@ layers:
                         style: lines
                         order: global.order_sub_3
                         color: [0.541,0.969,0.949]
-                        width: [[8,0px],[16,0px],[17,18px],[18,28px],[19,31px]]
+                        width: [[8,0px],[16,10px],[17,18px],[18,28px],[19,31px]]
 
 
             highway-z18:
