@@ -60,14 +60,11 @@
                     map_start_location = map_start_location.map(Number);
                 }
 
-                var style_file = 'tron.yaml';
+                var animated = true;
                 var url_search = window.location.search.slice(1);
                 if (url_search.length > 0) {
-                    var ext = url_search.substr(url_search.lastIndexOf('.') + 1);
-                    if (ext == "yaml" || ext == "yaml/") {
-                        style_file = url_search;
-                    } else {
-                        style_file = url_search+'.yaml';
+                    if (url_search.indexOf('animated=false') > -1) {
+                        animated = false;
                     }
                 }
 
@@ -79,7 +76,7 @@
                 });
 
                 var layer = Tangram.leafletLayer({
-                    scene: style_file,
+                    scene: 'tron.yaml',
                     attribution: '| &copy; OSM contributors | <a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | <a href="https://twitter.com/sensescape" target="_blank">@sensescape</a> | <a href="https://twitter.com/patriciogv" target="_blank">@patriciogv</a>'
                 });
 
@@ -102,6 +99,11 @@
 
                 window.addEventListener('load', function () {
                     // Scene initialized
+                    layer.scene.subscribe({
+                        load: function (data) {
+                            data.config.scene.animated = animated;
+                        }
+                    });
                     layer.addTo(map);
                 });
 
