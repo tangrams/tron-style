@@ -1,5 +1,20 @@
 import:
     - tron.yaml
 
-global:
-    enable_animation: false
+styles:
+    water-later:
+        animated: false
+        shaders:
+            defines:
+                SHIMMERING_ANIMATED: false
+    water-boundaries-animated:
+        animated: false
+        shaders:
+            defines:
+                COAST_WAVES_ANIMATED: false
+    elevation-color-contours:
+        animated: false
+        shaders:
+            defines:
+                CONTOURS_COLOR: vec4(palette(normal_elv_raster.a*PI*CONTOURS_PALETTE_RANGE), 1.)
+                CONTOURS_OFFSET: 0.

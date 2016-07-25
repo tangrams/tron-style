@@ -6,22 +6,23 @@ styles:
     lines-coast:
         base: lines
         texcoords: true
-        animated: false
         blend: add
         shaders:
             defines:
                 COAST_WAVES_AMOUNT: 5.
                 COAST_WAVES_SPEED: 0.1
+                COAST_WAVES_ANIMATED: true
             blocks:
                 color: |
                     float pct = 0.0;
                     // glow
                     pct = smoothstep(0.,2.,1.-v_texcoord.x);
                     // waves
+                    #ifdef COAST_WAVES_ANIMATED
                     pct += (1.-fract(v_texcoord.x*COAST_WAVES_AMOUNT+(fract(u_time*COAST_WAVES_SPEED))))*pct;
-                    color *= pct;
+                    #else
+                    pct += (1.-fract(v_texcoord.x*COAST_WAVES_AMOUNT))*pct;
+                    #endif
 
-    lines-coast-animated:
-        base: lines
-        mix: [lines-coast]
-        animated: global.enable_animation
+                    color *= pct;
+        
