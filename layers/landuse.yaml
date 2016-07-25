@@ -239,6 +239,7 @@ styles:
                 STRIPES_WIDTH: zoom()
     landuse-tier2-conservation-contours:
         mix: [tron-palette, elevation-contours]
+        animated: global.enable_animation
         shaders:
             defines:
                 PI: 3.1415926535897932384626433832795

@@ -1,6 +1,9 @@
 import:
     - tron.yaml
 
+global:
+    enable_animation: false
+
 styles:
     water-later:
         animated: false
