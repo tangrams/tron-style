@@ -280,6 +280,7 @@ styles:
 
                 GRID_SCALE: 20.
                 GRID_WIDTH: zoom()*.5
+                GRID_BACKGROUND_COLOR: vec3(0.212,0.302,0.431)
 
     landuse-tier4-industrial:
         base: polygons
@@ -293,3 +294,4 @@ styles:
 
                 GRID_SCALE: 20.
                 GRID_WIDTH: zoom()*.5
+                GRID_BACKGROUND_COLOR: vec3(0.212,0.302,0.431)
