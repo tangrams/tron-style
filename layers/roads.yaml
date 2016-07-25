@@ -85,7 +85,7 @@ layers:
                     filter: { is_link: yes } # on- and off-ramps, etc
                     draw:
                         lines:
-                            width: [[8,0px],[9,0px],[11,0.25px],[12,0.25px],[13,1px],[14,1.5px],[15,2px],[17,3px],[18,9px],[19,12px]]
+                            width: [[8,0px],[9,0px],[11,0.25px],[12,0.25px],[13,1px],[14,1.5px],[15,2px],[17,3px],[18,9px],[19,12px],[20,20px]]
                             outline:
                                 color: [[8,[0.481,0.842,0.890]],[16,[0.481,0.842,0.890]],[18,[0.035,0.976,1.000]]]
                                 width: [[8,0px],[9,0.5px],[15,1px],[18,1.5px]]
@@ -206,6 +206,22 @@ layers:
                                 # color: [[8,[0.329,0.588,0.784]],[11,[0.418,0.754,0.736]],[14,[0.510,0.920,0.897]]]
                                 color: [1.00,1.00,1.00]
                                 width: [[8,0px],[11,0px],[12,0.30px],[13,0.5px],[15,1.5px]]
+                    tunnel:
+                        filter: { is_tunnel: yes, $zoom: { min: 13 } }
+                        draw:
+                            lines:
+                                color: [0.201,0.286,0.409]
+                                outline:
+                                    color: [0.276,0.568,0.950]
+            link:
+                filter: { is_link: yes }
+                draw:
+                    lines:
+                        color: [0.086,0.135,0.260]
+                        width: [[8,0px],[12,0.0px],[13,0.25px],[14,1.5px],[15,2px],[17,3px],[18,9px],[19,12px],[20,20px]]
+                        outline:
+                            color: [0.039,0.980,1.000]
+                            width: [[10,0px],[13,0.3px],[16,1px],[17,1.5px]]
             tunnel:
                 filter: { is_tunnel: yes, $zoom: { min: 13 } }
                 draw:
