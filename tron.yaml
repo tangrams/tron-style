@@ -13,9 +13,6 @@ import:
     - layers/landuse.yaml
     - layers/boundaries.yaml
 
-global:
-    enable_animation: true
-
 # Sources
 sources:
     mapzen:
