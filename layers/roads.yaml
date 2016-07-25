@@ -265,6 +265,27 @@ layers:
                             # color: [[15,[0.248,0.397,0.439]],[16,[0.285,0.457,0.506]]]
                             color: [[12,[0.245,0.351,0.500]],[15,[0.482,0.671,0.831]],[17,[0.275,0.392,0.560]]]
                             width: [[12,0px],[14,0.4px],[15,1px],[17,2px],[18,2px]]
+                routes:
+                    filter: { ref: true, $zoom: { min: 12 } }
+                    draw:
+                        lines:
+                            width: [[12,0.5px],[13,0.5px],[14,0.1px],[15,2px],[16,4px],[17,8px],[18,14px],[19,20px],[20,40px]]
+                            outline:
+                                width: [[12,0px],[14,0.4px],[15,1px],[17,2px],[18,2px]]
+                    tunnel:
+                        filter: { is_tunnel: yes, $zoom: { min: 13 } }
+                        draw:
+                            lines:
+                                color: [0.201,0.286,0.409]
+                                outline:
+                                    color: [0.276,0.568,0.950]
+                link:
+                    filter: { is_link: yes }
+                    draw:
+                        lines:
+                            width: [[13,0px],[15,1px],[16,2px],[17,4px],[18,7px],[19,10px],[20,20px]]
+                            outline:
+                                width: [[12,0px],[14,0.4px],[15,1px],[17,2px],[18,2px]]
 
         minor_road:
             filter: { kind: minor_road, not: { highway: service, aeroway: [runway, taxiway] } }
