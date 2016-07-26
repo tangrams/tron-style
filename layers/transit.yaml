@@ -9,11 +9,29 @@ layers:
             filter: { kind: [railway,train] }
             draw:
                 lines:
-                    color: red
-                    width: 1px
+                    color: [1.00,1.00,1.00]
+                    width: [[14,0.15px],[17,1px],[18,2px],[20,12px]]
+            railway-z18:
+                filter:
+                    $zoom: { min: 18 }
+                draw:
+                    lines:
+                        style: transit-glow
+                        color: [1.00,1.00,1.00]
+                        width: [[18,5px],[20,7px]]
         subway:
             filter: { kind: subway }
             draw:
                 lines:
-                    color: red
-                    width: 1px
+                    style: transit-glow
+                    color: [0.329,0.843,1.000]
+                    width: [[14,3px],[16,5px],[18,9px],[20,12px]]
+
+styles:
+    transit-glow:
+        base: lines
+        mix: [lines-glow]
+        shaders:
+            defines:
+                GLOW_WIDTH: 0.5
+                GLOW_BRIGHTNESS: .4
