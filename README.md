@@ -28,7 +28,7 @@ If you want to try something new with Tron 2.0 style:
 #### Some shaders prototypes that compose this map:
 
 [![](http://thebookofshaders.com/log/160726003844.png) Generative Tron Palette](http://player.thebookofshaders.com/?log=160726003844)
-[![](http://thebookofshaders.com/log/160714133247.png) Glow lines ](http://player.thebookofshaders.com/?log=160714133247)
+[![](http://thebookofshaders.com/log/160726010850.png) Glow lines ](http://player.thebookofshaders.com/?log=160726010850)
 [![](http://thebookofshaders.com/log/160706191515.png) Grid animation](http://player.thebookofshaders.com/?log=160706191515)
 [![](http://thebookofshaders.com/log/160705205611.png) Grid animation](http://player.thebookofshaders.com/?log=160705205611)
 [![](http://thebookofshaders.com/log/160229221706.png) Stripes](http://player.thebookofshaders.com/?log=160229221706)
