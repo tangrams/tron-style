@@ -25,6 +25,23 @@ If you want to try something new with Tron 2.0 style:
 
 - [Inspiration Pintboard](https://www.pinterest.com/patriciogonzv/tron-20/)
 
+#### Some shaders prototypes that compose this map:
+
+[![](http://thebookofshaders.com/log/160726003844.png) Generative Tron Palette](http://player.thebookofshaders.com/?log=160726003844)
+[![](http://thebookofshaders.com/log/160714133247.png) Glow lines ](http://player.thebookofshaders.com/?log=160714133247)
+[![](http://thebookofshaders.com/log/160706191515.png) Grid animation](http://player.thebookofshaders.com/?log=160706191515)
+[![](http://thebookofshaders.com/log/160705205611.png) Grid animation](http://player.thebookofshaders.com/?log=160705205611)
+[![](http://thebookofshaders.com/log/160229221706.png) Stripes](http://player.thebookofshaders.com/?log=160229221706)
+[![](http://thebookofshaders.com/log/160705204919.png) Stripes animation](http://player.thebookofshaders.com/?log=160705204919)
+[![](http://thebookofshaders.com/log/160313020334.png) Simplex Grid animation](http://player.thebookofshaders.com/?log=160313020334)
+[![](http://thebookofshaders.com/log/160621211003.png) Dots pattern](http://player.thebookofshaders.com/?log=160621211003)
+[![](http://thebookofshaders.com/log/160622150357.png) Mosaic-dots transition](http://player.thebookofshaders.com/?log=160622150357)
+[![](http://thebookofshaders.com/log/160621210032.png) Stripes](http://player.thebookofshaders.com/?log=160621210032)
+[![](http://thebookofshaders.com/log/160621170831.png) Stripes-char transition](http://player.thebookofshaders.com/?log=160621170831)
+[![](http://thebookofshaders.com/log/160626213924.png) Contours](http://player.thebookofshaders.com/?log=160626213924)
+[![](http://thebookofshaders.com/log/160705083231.png) Hill Shading](http://player.thebookofshaders.com/?log=160705083231)
+[![](http://thebookofshaders.com/log/160707203604.png) Buildings window](http://player.thebookofshaders.com/?log=160707203604)
+
 ### Authors
 
 - [Geraldine Sarmiento](https://twitter.com/sensescape)
