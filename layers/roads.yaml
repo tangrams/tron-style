@@ -314,6 +314,29 @@ layers:
                         color: [[12,[0.245,0.351,0.500]],[15,[0.482,0.671,0.831]],[17,[0.275,0.392,0.560]]]
                         width: [[12,0px],[14,0.4px],[15,0.5px],[17,1.25px],[18,1.5px]]
 
+        path:
+            filter:
+                all:
+                    - kind: [path,portage_way]
+                not:
+                    - highway: [steps,track]
+                    - man_made: [pier]
+            draw:
+                lines:
+                    color: [[14,[0.400,0.561,0.718]],[15,[0.082,0.133,0.259]]]
+                    width: [[13,0px],[14,0.35px],[15,0.1px],[16,1.5px],[17,2px],[18,4px],[19,8px],[20,14px]]
+                    outline:
+                        color: [[14,[0.400,0.561,0.718]],[16,[0.220,0.314,0.449]]]
+                        width: [[14,0px],[15,0.35px],[16,1px],[17,2px]]
+            pedestrian:
+                filter: { highway: pedestrian }
+                draw:
+                    lines:
+                        color: [[14,[0.400,0.561,0.718]],[15,[0.082,0.133,0.259]]]
+                        width: [[13,0px],[14,0.35px],[15,0.1px],[16,1.5px],[17,2px],[18,4px],[19,8px],[20,14px]]
+                        outline:
+                            color: [[14,[0.400,0.561,0.718]],[16,[0.220,0.314,0.449]]]
+                            width: [[14,0px],[15,0.35px],[16,1px],[17,2px]]
 styles:
     highway-dashed:
         base: lines
