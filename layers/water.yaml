@@ -156,7 +156,7 @@ styles:
                 SHIMMERING_BACKGROUND: vec3(0.145,0.157,0.247)
                 SHIMMERING_SPEED: .5
                 SHIMMERING_AMOUNT: zoom()
-                SHIMMERING_ANIMATED: true
+                SHIMMERING_ANIMATED: global.animated
 
     water-boundaries:
         base: lines
@@ -171,7 +171,7 @@ styles:
         animated: true
         shaders:
             defines:
-                COAST_WAVES_ANIMATED: true
+                COAST_WAVES_ANIMATED: global.animated
     swimming-pool-glow:
         base: lines
         mix: [lines-glow]

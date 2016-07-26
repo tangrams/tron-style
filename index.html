@@ -15,7 +15,7 @@
         <script type="text/javascript" src="https://cdn.rawgit.com/mlevans/leaflet-hash/master/leaflet-hash.js"></script>
         <!-- Main tangram library -->
         <script src="https://mapzen.com/tangram/0.8.1/tangram.min.js"></script>
-        <!-- <script src="http://localhost:8002/dist/tangram.debug.js"></script> -->
+        <!-- <script src="http://localhost:8000/dist/tangram.debug.js"></script> -->
     <!-- End of 3rd party libraries -->
 
     <style>
@@ -101,7 +101,10 @@
                     // Scene initialized
                     layer.scene.subscribe({
                         load: function (data) {
+                            // TODO:
+                            // - this is not really working yet
                             data.config.scene.animated = animated;
+                            data.config.global.animated = animated;
                         }
                     });
                     layer.addTo(map);
