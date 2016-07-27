@@ -51,6 +51,12 @@ layers:
                 polygons:
                     style: water
                     color: [0.304,0.310,0.660]
+            later:
+                filter: { $zoom: { min: 13 } }
+                draw:
+                    polygons:
+                        style: water-later
+                        color: [0.194,0.198,0.380]
 
         swimming_pool:
             filter: { kind: swimming_pool }
