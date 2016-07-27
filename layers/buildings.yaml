@@ -51,14 +51,24 @@ layers:
                     extrude: function() { return feature.height || 20; }
                 lines:
                     visible: true
+                    style: buildings-lns
                     color: [0.592,0.827,0.851]
-                    width: [[16,0.5px],[17,1px]]
+                    # width: [[16,0.5px],[17,1px]]
+                    width: [[12, .1px], [14, 0.1px], [15, 0.5px], [17, 1.0px], [18, 1px]]
                     extrude: function() { return feature.height || 20; }
 
 styles:
+    geometry-dynamic-height:
+        shaders:
+            defines:
+                ZOOM_START: 16.0
+                ZOOM_END: 20.0
+                HEIGHT_MIN: .0
+                HEIGHT_MAX: 2.0
+                
     buildings:
         base: polygons
-        mix: [functions-zoom, geometry-normal,generative-random, tron-palette]
+        mix: [functions-zoom, geometry-normal,generative-random, tron-palette, geometry-dynamic-height]
         texcoords: true
         blend: add
         shaders:
@@ -94,3 +104,14 @@ styles:
                     } else {
                         color = vec4(0.);
                     }
+
+    buildings-lns:
+        base: lines
+        mix: [geometry-dynamic-width, geometry-dynamic-height]
+        shaders:
+            defines:
+                ZOOM_START: 16
+                ZOOM_END: 20
+                WIDTH_MIN: .2
+                WIDTH_MAX: 1.
+
