@@ -376,7 +376,7 @@ styles:
                 ZOOM_END: 18.
                 DATASTREAM_SPEED: 20.0 
                 DATASTREAM_ROADS: 5.0 
-                DATASTREAM_MARGIN: 0.4 
+                DATASTREAM_MARGIN: zoom()*.2
                 DATASTREAM_COLOR: palette( fract(floor(v_texcoord.x*DATASTREAM_ROADS)/DATASTREAM_ROADS)*zoom() )
                 DATASTREAM_AMOUNT: .8
             blocks:
