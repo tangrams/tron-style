@@ -374,10 +374,10 @@ styles:
             defines:
                 ZOOM_START: 15.
                 ZOOM_END: 18.
-                DATASTREAM_SPEED: 20.0 
+                DATASTREAM_SPEED: 20.
                 DATASTREAM_ROADS: 5.0 
-                DATASTREAM_MARGIN: zoom()*.2
-                DATASTREAM_COLOR: palette( fract(floor(v_texcoord.x*DATASTREAM_ROADS)/DATASTREAM_ROADS)*zoom() )
+                DATASTREAM_MARGIN: z*.3
+                DATASTREAM_COLOR: palette( fract(floor(v_texcoord.x*DATASTREAM_ROADS)/DATASTREAM_ROADS+u_time*.1)*z )
                 DATASTREAM_AMOUNT: .8
             blocks:
                 global: |
@@ -386,15 +386,16 @@ styles:
                         return step(t, (random(p*.000001)+random(p))*.5 );
                     }
                 color: |
+                    float z = zoom();
                     float datastream_speed = (-.5 * random(floor(v_texcoord.x*DATASTREAM_ROADS)) - .5);
                     color.rgb = mix(color.rgb,
                                     DATASTREAM_COLOR,
-                                    zoom()*
+                                    z*
                                     datastream_pattern( v_texcoord.xy, 
-                                                        (u_time*DATASTREAM_SPEED)*datastream_speed, 
-                                                        DATASTREAM_AMOUNT)* 
-                                    (step(DATASTREAM_MARGIN,1.-fract(v_texcoord.x*DATASTREAM_ROADS))*
-                                     step(DATASTREAM_MARGIN,fract(v_texcoord.x*DATASTREAM_ROADS))));
+                                                        (u_time*DATASTREAM_SPEED)*datastream_speed,
+                                                        DATASTREAM_AMOUNT)*
+                                                    smoothstep(DATASTREAM_MARGIN,1.,sin(fract(v_texcoord.x*DATASTREAM_ROADS)*3.1415))
+                                    );
 
     highway-dashed:
         base: lines
