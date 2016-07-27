@@ -368,15 +368,33 @@ layers:
 styles:
     traffic-animation:
         base: lines
-        mix: [lines-datastream, tron-palette]
+        mix: [generative-random, tron-palette, functions-zoom]
         texcoords: true
         shaders:
             defines:
+                ZOOM_START: 15.
+                ZOOM_END: 18.
                 DATASTREAM_SPEED: 20.0 
                 DATASTREAM_ROADS: 5.0 
                 DATASTREAM_MARGIN: 0.4 
-                DATASTREAM_COLOR: palette(random(floor(v_texcoord.x*DATASTREAM_ROADS)/DATASTREAM_ROADS))
+                DATASTREAM_COLOR: palette( fract(floor(v_texcoord.x*DATASTREAM_ROADS)/DATASTREAM_ROADS)*zoom() )
                 DATASTREAM_AMOUNT: .8
+            blocks:
+                global: |
+                    float datastream_pattern(vec2 st, float v, float t) {
+                        float p = floor(st.y+v);
+                        return step(t, (random(p*.000001)+random(p))*.5 );
+                    }
+                color: |
+                    float datastream_speed = (-.5 * random(floor(v_texcoord.x*DATASTREAM_ROADS)) - .5);
+                    color.rgb = mix(color.rgb,
+                                    DATASTREAM_COLOR,
+                                    zoom()*
+                                    datastream_pattern( v_texcoord.xy, 
+                                                        (u_time*DATASTREAM_SPEED)*datastream_speed, 
+                                                        DATASTREAM_AMOUNT)* 
+                                    (step(DATASTREAM_MARGIN,1.-fract(v_texcoord.x*DATASTREAM_ROADS))*
+                                     step(DATASTREAM_MARGIN,fract(v_texcoord.x*DATASTREAM_ROADS))));
 
     highway-dashed:
         base: lines
