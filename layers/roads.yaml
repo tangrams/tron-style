@@ -320,6 +320,7 @@ layers:
                 lines:
                     color: [[12,[0.248,0.397,0.439]],[13,[0.248,0.397,0.439]],[14,[0.082,0.133,0.259]]]
                     width: [[12,0.5px],[13,0.5px],[14,0.15px],[15,2px],[16,4px],[17,8px],[18,14px],[19,30px],[20,60px]]
+                    style: traffic-animation
                     outline:
                         # color: [[12,[0.248,0.397,0.439]],[15,[0.248,0.397,0.439]],[16,[0.285,0.457,0.506]]]
                         color: [[12,[0.245,0.351,0.500]],[15,[0.482,0.671,0.831]],[17,[0.275,0.392,0.560]]]
@@ -365,6 +366,18 @@ layers:
                             color: [[14,[0.400,0.561,0.718]],[16,[0.220,0.314,0.449]]]
                             width: [[14,0px],[15,0.35px],[16,1px],[17,2px]]
 styles:
+    traffic-animation:
+        base: lines
+        mix: [lines-datastream, tron-palette]
+        texcoords: true
+        shaders:
+            defines:
+                DATASTREAM_SPEED: 20.0 
+                DATASTREAM_ROADS: 5.0 
+                DATASTREAM_MARGIN: 0.4 
+                DATASTREAM_COLOR: palette(random(floor(v_texcoord.x*DATASTREAM_ROADS)/DATASTREAM_ROADS))
+                DATASTREAM_AMOUNT: .8
+
     highway-dashed:
         base: lines
         dash: [1,1]
