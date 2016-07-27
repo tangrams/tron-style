@@ -1,0 +1,19 @@
+layers:
+    places:
+        data: { source: mapzen, layer: places }
+        filter: { not: { kind: [ocean,sea] } }
+        draw:
+            text:
+                visible: false
+                font:
+                    family: Ubuntu
+                    fill: white
+        country:
+            filter: { name: true, population: true, kind: [country], $zoom: { min: 4 } }
+            draw:
+                text:
+                    visible: true
+                    font:
+                        family: Orbitron
+                        size: 12px
+                        fill: white

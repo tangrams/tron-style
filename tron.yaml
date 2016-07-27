@@ -12,6 +12,7 @@ import:
     - layers/buildings.yaml
     - layers/landuse.yaml
     - layers/boundaries.yaml
+    # - layers/places.yaml
 
 # Sources
 sources:
@@ -28,6 +29,22 @@ sources:
 cameras:
     cam:
         type: perspective
+
+# Fonts
+fonts:
+    Audiowide:
+        url: https://fonts.gstatic.com/s/audiowide/v4/8XtYtNKEyyZh481XVWfVOrO3LdcAZYWl9Si6vvxL-qU.woff
+    Inconsolata:
+        url: https://fonts.gstatic.com/s/inconsolata/v12/BjAYBlHtW3CJxDcjzrnZCLrIa-7acMAeDBVuclsi6Gc.woff
+    Monoton:
+        url: https://fonts.gstatic.com/s/monoton/v6/E1qpC-_4m0LngvlMPmKrlgLUuEpTyoUstqEm5AMlJo4.woff
+    Offside:
+        url: https://fonts.gstatic.com/s/offside/v4/kXtToyuSIeDzSauH8LQwXALUuEpTyoUstqEm5AMlJo4.woff
+    Orbitron:
+        url: https://fonts.gstatic.com/s/orbitron/v7/94ug0rEgQO_WuI_xKJMFc3YhjbSpvc47ee6xR_80Hnw.woff
+    Ubuntu:
+        url: https://fonts.gstatic.com/s/ubuntu/v9/vRvZYZlUaogOuHbBTT1SNevvDin1pK8aKteLpeZ5c0A.woff
+
 
 # Scene
 scene:
