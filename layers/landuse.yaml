@@ -189,6 +189,14 @@ layers:
             #             color: [0.191,0.316,0.490]
             #             # color: [0.240,0.264,0.600]
             #             visible: true
+            hospital:
+                filter:
+                    kind: hospital
+                draw:
+                    polygons:
+                        style: landuse-tier4-hospital
+                        color: [0.697,0.130,0.183]
+                        visible: true
             power:
                 filter:
                     kind: [plant, generator, substation]
@@ -210,6 +218,24 @@ layers:
                         polygons:
                             color: [0.004,0.165,0.929]
                             visible: true
+        tier6:
+            filter:
+                any:
+                    # limit show smaller landuse areas to higher zooms
+                    - { $zoom: { min: 12 }, area: { min: 500000 } }
+                    - { $zoom: { min: 13 }, area: { min: 100000 } }
+                    - { $zoom: { min: 14 }, area: { min: 50000 } }
+                    - { $zoom: { min: 15 }, area: { min: 20000 } }
+                    - { $zoom: { min: 15 }, area: { min: 2000 } }
+                    - { $zoom: { min: 16 } }
+            parking:
+                filter:
+                    kind: parking
+                draw:
+                    polygons:
+                        style: landuse-tier6-parking
+                        color: [0.616,0.800,0.949]
+                        visible: true
 styles:
     landuse:
         base: polygons
@@ -268,6 +294,31 @@ styles:
                 DOTS_COLOR: vec3(0.212,0.302,0.431)
                 DOTS_SCALE: 10.
                 DOTS_SIZE: 0.41
+    landuse-tier4-hospital:
+        mix: [functions-zoom, polygons-dots]
+        shaders:
+            defines:
+                ZOOM_START: 14.
+                ZOOM_END: 20.
+                ZOOM_IN: .0
+                ZOOM_OUT: 1.
+
+                DOTS_COLOR: vec3(0.212,0.302,0.431)
+                DOTS_SCALE: 28.
+                DOTS_SIZE: 0.15
+    landuse-tier6-parking:
+        base: polygons
+        mix: [functions-zoom, polygons-diagonal-grid]
+        shaders:
+            defines:
+                ZOOM_START: 14.
+                ZOOM_END: 18.
+                ZOOM_IN: .0
+                ZOOM_OUT: 1.
+
+                GRID_SCALE: 20.
+                GRID_WIDTH: zoom()*.5
+                GRID_BACKGROUND_COLOR: vec3(0.212,0.302,0.431)
     landuse-tier4-manmade:
         base: polygons
         mix: [functions-zoom, polygons-diagonal-grid]

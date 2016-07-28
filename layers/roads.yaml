@@ -317,6 +317,11 @@ layers:
                             width: [[13,0px],[15,1px],[16,2px],[17,4px],[18,7px],[19,10px],[20,20px]]
                             outline:
                                 width: [[12,0px],[14,0.4px],[15,1px],[17,2px],[18,2px]]
+                in-hospital:
+                    filter: { landuse_kind: hospital }
+                    draw:
+                        lines:
+                            color: red
 
         minor_road:
             filter: { kind: minor_road, not: { highway: service, aeroway: [runway, taxiway] } }
@@ -335,6 +340,11 @@ layers:
                         color: [0.201,0.286,0.409]
                         outline:
                             color: [0.276,0.568,0.950]
+            in-hospital:
+                filter: { landuse_kind: hospital }
+                draw:
+                    lines:
+                        color: red
         service_road:
             filter: { kind: minor_road, highway: service }
             draw:
@@ -344,6 +354,11 @@ layers:
                     outline:
                         color: [[12,[0.245,0.351,0.500]],[15,[0.482,0.671,0.831]],[17,[0.275,0.392,0.560]]]
                         width: [[12,0px],[14,0.4px],[15,0.5px],[17,1.25px],[18,1.5px]]
+            in-hospital:
+                filter: { landuse_kind: hospital }
+                draw:
+                    lines:
+                        color: red
 
         path:
             filter:
@@ -368,6 +383,11 @@ layers:
                         outline:
                             color: [[14,[0.400,0.561,0.718]],[16,[0.078,0.464,0.582]]]
                             width: [[14,0px],[15,0.35px],[16,1px],[17,2px]]
+            in-hospital:
+                filter: { landuse_kind: hospital }
+                draw:
+                    lines:
+                        color: [0.630,0.120,0.273]
 styles:
     traffic-animation:
         base: lines
