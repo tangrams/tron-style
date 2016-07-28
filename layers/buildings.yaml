@@ -19,14 +19,24 @@ layers:
                 width: 1px
         footprints:
             filter:
-                $zoom: { min: 15, max: 16 }
+                $zoom: { min: 14, max: 16 }
+                any:
+                    # show footprints for buildings at least one zoom level before they will be extruded
+                    - { $zoom: [14], area: { min: 5000 } }
+                    - { $zoom: [14], height: { min: 190 } }
+                    - { $zoom: [14], volume: { min: 150000 } }
+                    - { $zoom: [15], height: { min: 100 } }
+                    - { $zoom: [15], area: { min: 2500 } }
+                    - { $zoom: [15], volume: { min: 100000 } }
             draw:
                 polygons:
                     color: [0.212,0.302,0.431]
                     visible: true
                 lines:
-                    color: [0.508,0.711,0.735]
-                    width: [[14,0px],[15,0.25px]]
+                    # color: [[14,[0.334,0.536,0.630]],[16,[0.508,0.711,0.735]]]
+                    # color: [0.661,0.926,0.957]
+                    color: [[14,[0.592,0.827,0.851]],[16,[0.669,0.940,0.970]]]
+                    width: [[14,0.65px],[16,0.5px]]
                     visible: true
             # before zoom 15, we want buidings to be below roads...
             # (once they extrude, then we want them to be above roads, which is the default data value)
@@ -42,6 +52,11 @@ layers:
         extrude:
             filter:
                 $zoom: { min: 16 }
+                any:
+                    - { $zoom: [16], height: { min: 60 } }
+                    - { $zoom: [16], area: { min: 1200 } }
+                    - { $zoom: [16], volume: { min: 70000 } }
+                    - { $zoom: { min: 17 } }
             draw:
                 polygons:
                     visible: true
@@ -52,9 +67,10 @@ layers:
                 lines:
                     visible: true
                     style: buildings-lns
-                    color: [0.592,0.827,0.851]
+                    # color: [0.592,0.827,0.851]
+                    color: [[16,[0.669,0.940,0.970]],[18,[0.786,0.952,0.970]]]
                     # width: [[16,0.5px],[17,1px]]
-                    width: [[12, .1px], [14, 0.1px], [15, 0.5px], [17, 1px], [18, 1px]]
+                    width: [[12, .1px], [14, 0.1px], [16, 0.75px], [17, 0.85px], [18, 1.0px]]
                     extrude: function() { return feature.height || 20; }
 
 styles:
@@ -112,6 +128,6 @@ styles:
             defines:
                 ZOOM_START: 16
                 ZOOM_END: 20
-                WIDTH_MIN: .2
-                WIDTH_MAX: 1.
+                WIDTH_MIN: .7
+                WIDTH_MAX: 1.0
 
