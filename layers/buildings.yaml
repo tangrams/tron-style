@@ -19,14 +19,14 @@ layers:
                 width: 1px
         footprints:
             filter:
-                $zoom: { max: 16 }
+                $zoom: { min: 15, max: 16 }
             draw:
                 polygons:
                     color: [0.212,0.302,0.431]
                     visible: true
                 lines:
-                    color: [0.592,0.827,0.851]
-                    width: [[14,0px],[15,0.35px]]
+                    color: [0.508,0.711,0.735]
+                    width: [[14,0px],[15,0.25px]]
                     visible: true
             # before zoom 15, we want buidings to be below roads...
             # (once they extrude, then we want them to be above roads, which is the default data value)
@@ -54,7 +54,7 @@ layers:
                     style: buildings-lns
                     color: [0.592,0.827,0.851]
                     # width: [[16,0.5px],[17,1px]]
-                    width: [[12, .1px], [14, 0.1px], [15, 0.5px], [17, 1.0px], [18, 1px]]
+                    width: [[12, .1px], [14, 0.1px], [15, 0.5px], [17, 1px], [18, 1px]]
                     extrude: function() { return feature.height || 20; }
 
 styles:
@@ -65,7 +65,7 @@ styles:
                 ZOOM_END: 20.0
                 HEIGHT_MIN: .0
                 HEIGHT_MAX: 2.0
-                
+
     buildings:
         base: polygons
         mix: [functions-zoom, geometry-normal,generative-random, tron-palette, geometry-dynamic-height]

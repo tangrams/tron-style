@@ -116,7 +116,7 @@ layers:
                 lines:
                     order: global.order
                     color: [0.155,0.482,0.910]
-                    width: [[8,0px],[13,1px],[15,1.25px],[20,8px]]
+                    width: [[8,0px],[13,1px],[15,1.25px],[20,3px]]
                     join: round
             swimming_pool:
                 filter: { kind: swimming_pool }
