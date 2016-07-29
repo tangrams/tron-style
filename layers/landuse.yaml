@@ -64,10 +64,17 @@ layers:
                     $zoom: { min: 4 }
                 draw:
                     polygons:
-                        style: landuse-tier2-conservation-contours
-                        # color: [0.214,0.690,0.611]
-                        color: [0.000,0.649,0.829]
+                        style: landuse
+                        color: [0.263,0.933,0.494]
                         visible: true
+                conservation-z12:
+                    filter:
+                        $zoom: { min: 12 }
+                    draw:
+                        polygons:
+                            style: landuse-tier2-conservation-contours
+                            visible: true
+
                 # wilderness_areas:
                 #     filter: function() { return feature.name && feature.name.indexOf("Wilderness") > -1 }
                 #     draw:
