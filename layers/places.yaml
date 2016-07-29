@@ -9,11 +9,17 @@ layers:
                     family: Ubuntu
                     fill: white
         country:
-            filter: { name: true, population: true, kind: [country], $zoom: { min: 4 } }
+            filter: { name: true, population: true, kind: [country], $zoom: { min: 3 } }
             draw:
                 text:
                     visible: true
+                    style: text-filter-tv
                     font:
-                        family: Orbitron
-                        size: 12px
+                        family: Audiowide
+                        size: 18px
                         fill: white
+
+styles:
+    text-filter-tv:
+        base: text
+        mix: filter-tv

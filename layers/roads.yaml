@@ -126,24 +126,37 @@ layers:
                                 # color: [0.373,0.673,0.657]
                                 color: [[13,[0.276,0.568,0.950]],[18,[0.073,0.435,0.908]]]
                         highway-dashed:
-                            visible: false
+                            visible: true
+                            color: [0.073,0.435,0.908]
                         highway-glow:
+                            visible: true
                             color: [0.059,0.000,0.953]
                         highway-casing1:
-                            visible: false
+                            visible: true
                         highway-casing2:
-                            visible: false
+                            visible: true
+                            color: [0.282,0.675,0.910]
                         highway-casing3:
-                            visible: false
+                            visible: true
                         highway-casing4:
-                            visible: false
-                    highway-tunnel-z17-18:
-                        filter: { not: { is_link: yes }, $zoom: { min: 16 } }
+                            visible: true
+                            color: [0.073,0.435,0.908]
+                    highway-tunnel-link:
+                        filter:
+                            is_link: yes
                         draw:
-                            lines:
-                                width: [[16,5px],[17,12px],[18,15px],[19,28px]]
-                                outline:
-                                    width: [[16,1.5px],[17,2px],[18,6px],[19,9px]]
+                            highway-dashed:
+                                visible: false
+                            highway-casing1:
+                                visible: false
+                            highway-casing2:
+                                visible: false
+                            highway-casing3:
+                                visible: false
+                            highway-casing4:
+                                visible: false
+                            highway-glow:
+                                visible: false
 
 
             # Show 0 width roads one zoom before they have width, so they can scale up instead of popping in
