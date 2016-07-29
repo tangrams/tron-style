@@ -93,11 +93,11 @@ layers:
             farm:
                 filter:
                     kind: [farm, farmland]
-                    $zoom: { min: 10 }
+                    $zoom: { min: 8 }
                 draw:
                     polygons:
-                        style: landuse-tier2-farm
-                        color: [0.186,0.214,0.600]
+                        style: landuse
+                        color: [0.024,0.189,0.238]
                         visible: true
             forest:
                 filter: { kind: [forest,wood], $zoom: { min: 6 } }
@@ -258,18 +258,6 @@ styles:
                                     dot((sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2.,
                                         STRIPES_DIR),
                                     zoom())*STRIPES_PCT
-
-    landuse-tier2-farm:
-        mix: [functions-zoom, polygons-stripes]
-        blend: overlay
-        shaders:
-            defines:
-                ZOOM_START: 10.
-                ZOOM_END: 20.
-                STRIPES_ANGLE: PI*0.95
-                STRIPES_MAX: -.025
-                STRIPES_ALPHA: .5
-                STRIPES_WIDTH: zoom()
     landuse-tier2-conservation-contours:
         mix: [tron-palette, elevation-contours]
         animated: true
@@ -282,20 +270,8 @@ styles:
                 CONTOURS_SCALE: 60.
                 CONTOURS_SPEED: -0.1
                 CONTOURS_OFFSET: u_time*CONTOURS_SPEED
-    landuse-tier4-golf_course:
-        mix: [functions-zoom, polygons-stripes]
-        blend: overlay
-        shaders:
-            defines:
-                ZOOM_START: 10.
-                ZOOM_END: 20.
-                STRIPES_ANGLE: PI*0.45
-                STRIPES_MAX: -.025
-                STRIPES_ALPHA: .8
-                STRIPES_WIDTH: zoom()
     landuse-tier4-power:
         mix: [polygons-dots]
-        blend: overlay
         shaders:
             defines:
                 DOTS_COLOR: vec3(0.212,0.302,0.431)

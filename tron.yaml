@@ -23,7 +23,7 @@ sources:
     normals-elevation:
         type: Raster
         url: https://s3.amazonaws.com/elevation-tiles-prod/normal/{z}/{x}/{y}.png
-        max_zoom: 15    
+        max_zoom: 15   
 
 # Camera
 cameras:
