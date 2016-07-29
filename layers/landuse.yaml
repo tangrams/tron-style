@@ -65,14 +65,15 @@ layers:
                 draw:
                     polygons:
                         style: landuse
-                        color: [0.263,0.933,0.494]
+                        color: [0.090,0.409,1.000]
                         visible: true
                 conservation-z12:
                     filter:
-                        $zoom: { min: 12 }
+                        $zoom: { min: 13 }
                     draw:
                         polygons:
                             style: landuse-tier2-conservation-contours
+                            color: [0.263,0.933,0.494]
                             visible: true
 
                 # wilderness_areas:
@@ -252,7 +253,8 @@ styles:
                 ZOOM_START: 0.
                 ZOOM_END: 13.
                 STRIPES_ALPHA: .5
-                STRIPES_SCALE: 60.
+                STRIPES_SCALE: 70.
+                STRIPES_DIR: vec3(-0.600,-0.420,0.560)
                 STRIPES_PCT: 1.8
                 STRIPES_WIDTH: mix( (1.-zoom()),
                                     dot((sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2.,
@@ -264,10 +266,11 @@ styles:
         shaders:
             defines:
                 PI: 3.1415926535897932384626433832795
-                CONTOURS_PALETTE_RANGE: 2.
+                CONTOURS_PALETTE_RANGE: 1.
                 CONTOURS_BACKGROUND_COLOR: vec4(0.)
-                CONTOURS_COLOR: vec4(palette(normal_elv_raster.a*PI*CONTOURS_PALETTE_RANGE+u_time*.5), 1.)
-                CONTOURS_SCALE: 60.
+                # CONTOURS_COLOR: vec4(palette(normal_elv_raster.a*PI*CONTOURS_PALETTE_RANGE+u_time*.5), 1.)
+                CONTOURS_COLOR: vec4(0.035,0.106,0.569,1.0)
+                CONTOURS_SCALE: 120.
                 CONTOURS_SPEED: -0.1
                 CONTOURS_OFFSET: u_time*CONTOURS_SPEED
     landuse-tier4-power:
