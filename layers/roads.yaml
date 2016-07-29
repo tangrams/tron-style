@@ -440,7 +440,7 @@ styles:
         shaders:
             blocks:
                 position: |
-                    v_texcoord.y *= 6.;
+                    v_texcoord.y *= 11.;
     roads-glow:
         base: lines
         mix: [functions-zoom, lines-glow]
