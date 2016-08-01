@@ -158,7 +158,6 @@ layers:
                     - { $zoom: { min: 15 }, area: { min: 20000 } }
                     - { $zoom: { min: 15 }, area: { min: 2000 } }
                     - { $zoom: { min: 16 } }
-
             # university:
             #     filter:
             #         kind: [university, college]
@@ -244,6 +243,21 @@ layers:
                         style: landuse-tier6-parking
                         color: [0.616,0.800,0.949]
                         visible: true
+
+    landuse-not-filtered:
+        data: { source: mapzen, layer: landuse }
+        filter:
+            kind:
+                - runway
+        runway:
+            filter:
+                kind: runway
+            draw:
+                polygons:
+                    visible: true
+                    order: global.order
+                    color: [0.215,1.000,1.000]
+
 styles:
     landuse:
         base: polygons

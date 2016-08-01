@@ -358,6 +358,7 @@ layers:
                 draw:
                     lines:
                         color: red
+
         service_road:
             filter: { kind: minor_road, highway: service }
             draw:
@@ -401,6 +402,33 @@ layers:
                 draw:
                     lines:
                         color: [0.630,0.120,0.273]
+
+        airport-lines:
+            filter: { kind: minor_road, aeroway: [runway,taxiway] }
+            draw:
+                lines:
+                    order: global.order
+                    color: [0.000,0.902,0.839]
+                    width: 2px
+            taxiway:
+                filter: { aeroway: taxiway }
+                draw:
+                    lines:
+                        style: airport-glow
+                        color: [[12,[0.196,0.859,0.918]],[14,[0.000,0.902,0.839]]]
+                        width: [[12,0px],[13,1px],[15,6px],[17,30px],[20,60px]]
+                        outline:
+                            width: 0px
+            runway:
+                filter: { aeroway: runway }
+                draw:
+                    lines:
+                        color: [0.215,1.000,1.000]
+                        width: [[9,0px],[11,1px],[13,3px],[15,12px],[17,60px],[20,70m]]
+                        outline:
+                            style: airport-glow
+                            width: [[9,2px],[20,20px]]
+
 styles:
     traffic-animation:
         base: lines
@@ -465,4 +493,12 @@ styles:
         shaders:
             defines:
                 GLOW_WIDTH: 0.45
+                GLOW_BRIGHTNESS: .25
+
+    airport-glow:
+        base: lines
+        mix: [lines-glow]
+        shaders:
+            defines:
+                GLOW_WIDTH: 0.40
                 GLOW_BRIGHTNESS: .25
