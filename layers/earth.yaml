@@ -15,18 +15,18 @@ layers:
             draw:
                 polygons:
                     style: polygons
-                    color: [[7,[0.242,0.332,0.456]],[8,[0.121,0.173,0.247]]]
+                    color: [[7,[0.242,0.332,0.456]],[8,[0.212,0.302,0.431]]]
 
-    landuse-urban-area-early:
-        data: { source: mapzen, layer: landuse }
-        filter:
-            kind: ['urban area']
-            $zoom: { max: 6 }
-        draw:
-            polygons:
-                style: urban-early
-                order: global.order
-                color: [[4,[0.031,0.973,1.000]],[6,[0.139,0.198,0.283]]]
+    # landuse-urban-area-early:
+    #     data: { source: mapzen, layer: landuse }
+    #     filter:
+    #         kind: ['urban area']
+    #         $zoom: { max: 6 }
+    #     draw:
+    #         polygons:
+    #             style: urban-early
+    #             order: global.order
+    #             color: [[4,[0.031,0.973,1.000]],[6,[0.139,0.198,0.283]]]
 
 styles:
     earth-early:
