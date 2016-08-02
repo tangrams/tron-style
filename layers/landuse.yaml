@@ -165,7 +165,7 @@ layers:
             #     draw:
             #         polygons:
             #             style: landuse-tier3-university
-            #             color: yellow
+            #             color: [0.212,0.302,0.431]
             #             visible: true
         tier4:
             filter:
@@ -244,6 +244,14 @@ layers:
                         style: landuse-tier6-parking
                         color: [0.616,0.800,0.949]
                         visible: true
+            pedestrian:
+                filter:
+                    kind: [pedestrian,common]
+                draw:
+                    polygons:
+                        style: landuse-tier6-pedestrian
+                        color: [0.212,0.302,0.431]
+                        visible: true
 
     landuse-not-filtered:
         data: { source: mapzen, layer: landuse }
@@ -288,6 +296,19 @@ styles:
                 CONTOURS_SCALE: 120.
                 CONTOURS_SPEED: -0.1
                 CONTOURS_OFFSET: u_time*CONTOURS_SPEED
+    landuse-tier6-pedestrian:
+        base: polygons
+        mix: [functions-zoom, polygons-diagonal-grid]
+        shaders:
+            defines:
+                ZOOM_START: 14.
+                ZOOM_END: 18.
+                ZOOM_IN: .0
+                ZOOM_OUT: 1.
+
+                GRID_SCALE: 15.
+                GRID_WIDTH: zoom()*.025
+                GRID_BACKGROUND_COLOR: vec3(0.179,0.940,0.724)
     landuse-tier4-power:
         mix: [polygons-dots]
         shaders:
