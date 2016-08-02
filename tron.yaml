@@ -12,7 +12,7 @@ import:
     - layers/buildings.yaml
     - layers/landuse.yaml
     - layers/boundaries.yaml
-    # - layers/places.yaml
+    - layers/places.yaml
 
 # Sources
 sources:

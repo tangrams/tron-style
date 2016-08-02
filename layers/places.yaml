@@ -8,16 +8,77 @@ layers:
                 font:
                     family: Ubuntu
                     fill: white
-        country:
-            filter: { name: true, population: true, kind: [country], $zoom: { min: 3 } }
+
+        country-z4:
+            filter:
+                all:
+                    - kind: [country]
+                    - $zoom: [4]
+                    - name: ["United Kingdom","United States of America","Brasil","中华人民共和国","Россия","Canada","Kalaallit Nunaat","Ísland","Australia","India","日本","Guam","Indonesia","South Africa","مصر","Nigeria","Kenya"]
             draw:
                 text:
+                    text_source: function() { return feature["name:en"] || feature["name"]; }
                     visible: true
+                    font:
+                        family: Audiowide
+                        size: 12px
+                        fill: white
+        country-z5:
+            filter: { name: true, population: true, kind: [country], $zoom: [5] }
+            draw:
+                text:
+                    text_source: function() { return feature["name:en"] || feature["name"]; }
+                    visible: true
+                    font:
+                        family: Audiowide
+                        size: 12px
+                        fill: white
+            z5-dont-label:
+                filter: { name: [Nederland,Luxembourg,Liechtenstein,San Marino,Civitatis Vaticanæ,Crna Gora,Македонија,The Gambia,Burundi,Swaziland,الإمارات العربية المتحدة,العراق,Singapore,El Salvador,Belize,Trinidad and Tobago, Saint Lucia, Montserrat,Anguilla,República Dominicana,Bahamas,British Virgin Islands,Antigua and Barbuda,Grenada,Sint Maarten,Saint Kitts and Nevis,Cayman Islands,België - Belgique - Belgien], $zoom: {min: 5, max: 6} }
+                draw:
+                    text:
+                        visible: false
+        country-z6:
+            filter:
+                all:
+                    - name: true
+                    - population: true
+                    - kind: [country]
+                    - $zoom: [6]
+                any:
+                    - { population: { min: 5000000 } }
+            draw:
+                text:
+                    text_source: function() { return feature["name:en"] || feature["name"]; }
+                    visible: true
+                    priority: 3
                     style: text-filter-tv
                     font:
                         family: Audiowide
                         size: 18px
                         fill: white
+            z6-dont-label:
+                filter: { name: [Luxembourg,Liechtenstein,San Marino,Civitatis Vaticanæ,El Salvador,Belize,België - Belgique - Belgien], $zoom: {min: 6, max: 7} }
+                draw:
+                    text:
+                        visible: false
+        country-z7:
+            filter: { name: true, kind: [country], $zoom: [7] }
+            draw:
+                text:
+                    text_source: function() { return feature["name:en"] || feature["name"]; }
+                    visible: true
+                    priority: 3
+                    style: text-filter-tv
+                    font:
+                        family: Audiowide
+                        size: 20px
+                        fill: white
+            z7-dont-label:
+                filter: { name: [Luxembourg,Liechtenstein,San Marino,Civitatis Vaticanæ,België - Belgique - Belgien,Хуссар Ирыстон,Аҧсны - Абхазия], $zoom: {min: 7, max: 8} }
+                draw:
+                    text:
+                        visible: false
 
 styles:
     text-filter-tv:
