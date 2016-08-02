@@ -57,6 +57,14 @@ layers:
                     polygons:
                         style: water-later
                         color: [0.194,0.198,0.380]
+                swimming-pool-later:
+                    filter:
+                        kind: swimming_pool
+                    draw:
+                        polygons:
+                            style: polygons
+                            color: [0.000,0.804,0.776]
+
 
         swimming_pool:
             filter: { kind: swimming_pool }

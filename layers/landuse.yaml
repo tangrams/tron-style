@@ -107,7 +107,8 @@ layers:
                         operator: [ "United States Forest Service", "US Forest Service", "U.S. Forest Service", "USDA Forest Service" ]
                     draw:
                         polygons:
-                            color: red
+                            style: landuse
+                            color: [0.000,0.812,0.408]
                             visible: true
 
                 landuse-forest:
