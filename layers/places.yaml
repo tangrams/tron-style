@@ -52,10 +52,9 @@ layers:
                     text_source: function() { return feature["name:en"] || feature["name"]; }
                     visible: true
                     priority: 3
-                    style: text-filter-tv
                     font:
                         family: Audiowide
-                        size: 18px
+                        size: 14px
                         fill: white
             z6-dont-label:
                 filter: { name: [Luxembourg,Liechtenstein,San Marino,Civitatis Vaticanæ,El Salvador,Belize,België - Belgique - Belgien], $zoom: {min: 6, max: 7} }
@@ -72,7 +71,7 @@ layers:
                     style: text-filter-tv
                     font:
                         family: Audiowide
-                        size: 20px
+                        size: 18px
                         fill: white
             z7-dont-label:
                 filter: { name: [Luxembourg,Liechtenstein,San Marino,Civitatis Vaticanæ,België - Belgique - Belgien,Хуссар Ирыстон,Аҧсны - Абхазия], $zoom: {min: 7, max: 8} }
