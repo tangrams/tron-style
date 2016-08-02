@@ -159,14 +159,14 @@ layers:
                     - { $zoom: { min: 15 }, area: { min: 20000 } }
                     - { $zoom: { min: 15 }, area: { min: 2000 } }
                     - { $zoom: { min: 16 } }
-            # university:
-            #     filter:
-            #         kind: [university, college]
-            #     draw:
-            #         polygons:
-            #             style: landuse-tier3-university
-            #             color: [0.212,0.302,0.431]
-            #             visible: true
+            university:
+                filter:
+                    kind: [university, college]
+                draw:
+                    polygons:
+                        style: landuse-tier3-university
+                        color: [0.275,0.282,0.600]
+                        visible: true
         tier4:
             filter:
                 any:
@@ -197,6 +197,7 @@ layers:
             #             color: [0.191,0.316,0.490]
             #             # color: [0.240,0.264,0.600]
             #             visible: true
+
             hospital:
                 filter:
                     kind: hospital
@@ -296,6 +297,17 @@ styles:
                 CONTOURS_SCALE: 120.
                 CONTOURS_SPEED: -0.1
                 CONTOURS_OFFSET: u_time*CONTOURS_SPEED
+    landuse-tier3-university:
+        base: polygons
+        mix: [space-tile, tiling-brick, tiling-tile, shapes-circle]
+        shaders:
+            defines:
+                DOTS_COLOR: vec3(0.0,0.8,0.5)
+                DOTS_SCALE: 5.
+                DOTS_SIZE: 0.41
+                DOTS_STROKE: 0.15
+                DOTS_TYPE: stroke
+                DOTS_TILE_STYLE: tile
     landuse-tier6-pedestrian:
         base: polygons
         mix: [functions-zoom, polygons-diagonal-grid]

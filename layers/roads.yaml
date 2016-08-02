@@ -405,7 +405,7 @@ layers:
                     lines:
                         color: [0.630,0.120,0.273]
             in-pedestrian:
-                filter: { landuse_kind: pedestrian }
+                filter: { landuse_kind: [pedestrian,common] }
                 draw:
                     lines:
                         color: [0.141,0.886,0.231]
