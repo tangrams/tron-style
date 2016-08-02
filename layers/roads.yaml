@@ -373,6 +373,8 @@ layers:
                 draw:
                     lines:
                         color: red
+                        outline:
+                            width: 0px
 
         path:
             filter:
