@@ -385,7 +385,7 @@ layers:
                     - man_made: [pier]
             draw:
                 lines:
-                    color: [[14,[0.400,0.561,0.718]],[15,[0.275,0.282,0.600]]]
+                    color: [[14,[0.400,0.561,0.718]],[15,[0.428,0.696,0.930]]]
                     width: [[13,0px],[14,0.35px],[15,0.1px],[16,1.5px],[18,2.5px],[19,4px],[20,5px]]
                     outline:
                         color: [[14,[0.400,0.561,0.718]],[16,[0.078,0.464,0.582]]]
@@ -408,7 +408,7 @@ layers:
                 filter: { landuse_kind: [pedestrian,common] }
                 draw:
                     lines:
-                        color: [0.141,0.886,0.231]
+                        color: [0.465,0.385,0.820]
 
         airport-lines:
             filter: { kind: minor_road, aeroway: [runway,taxiway] }
