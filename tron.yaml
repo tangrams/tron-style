@@ -33,6 +33,8 @@ cameras:
 
 # Fonts
 fonts:
+    Abel:
+        url: https://fonts.gstatic.com/s/abel/v6/wnJbeWILdr-ZMJJAMsiXsvesZW2xOQ-xsNqO47m55DA.woff
     Audiowide:
         url: https://fonts.gstatic.com/s/audiowide/v4/8XtYtNKEyyZh481XVWfVOrO3LdcAZYWl9Si6vvxL-qU.woff
     Inconsolata:

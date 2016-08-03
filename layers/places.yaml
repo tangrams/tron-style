@@ -20,7 +20,7 @@ layers:
                     text_source: function() { return feature["name:en"] || feature["name"]; }
                     visible: true
                     font:
-                        family: Audiowide
+                        family: Orbitron
                         size: 12px
                         fill: white
         country-z5:
@@ -30,7 +30,7 @@ layers:
                     text_source: function() { return feature["name:en"] || feature["name"]; }
                     visible: true
                     font:
-                        family: Audiowide
+                        family: Orbitron
                         size: 12px
                         fill: white
             z5-dont-label:
@@ -53,7 +53,7 @@ layers:
                     visible: true
                     priority: 3
                     font:
-                        family: Audiowide
+                        family: Orbitron
                         size: 14px
                         fill: white
             z6-dont-label:
@@ -68,9 +68,9 @@ layers:
                     text_source: function() { return feature["name:en"] || feature["name"]; }
                     visible: true
                     priority: 3
-                    style: text-filter-tv
+                    # style: text-filter-tv
                     font:
-                        family: Audiowide
+                        family: Orbitron
                         size: 18px
                         fill: white
             z7-dont-label:

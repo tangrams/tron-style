@@ -328,17 +328,20 @@ styles:
                 DOTS_SCALE: 10.
                 DOTS_SIZE: 0.41
     landuse-tier4-hospital:
-        mix: [functions-zoom, polygons-dots]
+        mix: [ polygons-dots]
+        raster: custom
         shaders:
             defines:
-                ZOOM_START: 14.
-                ZOOM_END: 20.
-                ZOOM_IN: .0
-                ZOOM_OUT: 1.
+                NORMAL_TEXTURE_INDEX: 0
+                DOTS_DIR: vec3(-0.600,-0.420,0.600)
 
                 DOTS_COLOR: vec3(0.697,0.130,0.183)
-                DOTS_SCALE: 28.
-                DOTS_SIZE: 0.15
+                DOTS_SCALE: 30.
+                DOTS_SIZE: shade*2.
+            blocks:
+                normal: |
+                    float shade = dot((sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2., DOTS_DIR);
+                    shade = shade*shade*shade;
     landuse-tier6-parking:
         base: polygons
         mix: [functions-zoom, polygons-diagonal-grid]
