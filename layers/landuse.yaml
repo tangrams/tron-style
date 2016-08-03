@@ -299,7 +299,7 @@ styles:
                 CONTOURS_OFFSET: u_time*CONTOURS_SPEED
     landuse-tier3-university:
         base: polygons
-        mix: [space-tile, tiling-brick, tiling-tile, shapes-circle]
+        mix: [polygons-dots]
         shaders:
             defines:
                 DOTS_COLOR: vec3(0.0,0.8,0.5)
