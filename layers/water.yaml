@@ -167,7 +167,7 @@ styles:
                 ZOOM_END: 16.
 
                 SHIMMERING_SCALE: mix(10.,30.,zoom())
-                SHIMMERING_BACKGROUND: vec3(0.145,0.157,0.247)
+                SHIMMERING_BACKGROUND_COLOR: vec3(0.145,0.157,0.247)
                 SHIMMERING_SPEED: .5
                 SHIMMERING_AMOUNT: zoom()
                 SHIMMERING_ANIMATED: global.animated
