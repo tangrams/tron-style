@@ -204,7 +204,7 @@ layers:
                 draw:
                     polygons:
                         style: landuse-tier4-hospital
-                        color: [0.697,0.130,0.183]
+                        color: [0.212,0.302,0.427]
                         visible: true
             power:
                 filter:
@@ -336,7 +336,7 @@ styles:
                 ZOOM_IN: .0
                 ZOOM_OUT: 1.
 
-                DOTS_COLOR: vec3(0.212,0.302,0.431)
+                DOTS_COLOR: vec3(0.697,0.130,0.183)
                 DOTS_SCALE: 28.
                 DOTS_SIZE: 0.15
     landuse-tier6-parking:
