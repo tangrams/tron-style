@@ -82,4 +82,4 @@ layers:
 styles:
     text-filter-tv:
         base: text
-        mix: filter-tv
+        mix: [filter-tv]

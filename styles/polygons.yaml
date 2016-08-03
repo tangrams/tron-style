@@ -35,10 +35,9 @@ styles:
         animated: true
         shaders:
             defines:
-                PI: 3.1415926535897932384626433832795
                 CONTOURS_PALETTE_RANGE: 2.
-                CONTOURS_BACKGROUND_COLOR: vec4(0.)
-                CONTOURS_COLOR: vec4(palette(normal_elv_raster.a*PI*CONTOURS_PALETTE_RANGE+u_time*.5), 1.)
+                CONTOURS_BACKGROUND_COLOR: vec3(0.)
+                CONTOURS_COLOR: palette(normal_elv_raster.a*PI*CONTOURS_PALETTE_RANGE+u_time*.5)
                 CONTOURS_SCALE: 60.
                 CONTOURS_SPEED: -0.1
                 CONTOURS_OFFSET: u_time*CONTOURS_SPEED
