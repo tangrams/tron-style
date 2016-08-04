@@ -332,7 +332,7 @@ styles:
                 DOTS_SIZE: 0.21
                 DOTS_BACKGROUND_COLOR: color.rgb
                 DOTS_TYPE: fill
-                DOTS_TILE_STYLE: tile
+                DOTS_TILE_STYLE: brick
             blocks:
                 color: |
                     float sdf = circleDF(vec2(0.5)-DOTS_TILE_STYLE(getTileCoords()*DOTS_SCALE,2.));

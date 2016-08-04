@@ -191,29 +191,6 @@ layers:
                         color: [0.800,1.000,0.987]
                         width: [[8,0px],[16,0px],[17,15px],[18,34px],[19,45px]]
 
-            labels-highway-z8:
-                filter: { $zoom: { min: 8 }, $zoom: { max: 14 } }
-                draw:
-                    text:
-                        priority: 50
-                        text_source: ref
-                        font:
-                            family: Exo2
-                            size: [[8,9px],[12,12px]]
-                            fill: white
-                            stroke: { color: blue, width: 3px }
-            labels-highway-z14:
-                filter: { $zoom: { min: 14 } }
-                draw:
-                    text:
-                        priority: 50
-                        text_source: function() { if( feature.ref && feature.name ) { return feature.ref + " " + feature.name; } else { return feature.name; } }
-                        font:
-                            family: Exo2
-                            size: [[14,12px],[19,16px]]
-                            fill: white
-                            stroke: { color: blue, width: 3px }
-
 
 
         major_road:
@@ -322,6 +299,7 @@ layers:
                                 color: [0.201,0.286,0.409]
                                 outline:
                                     color: [0.276,0.568,0.950]
+
 
             tertiary:
                 filter: { highway: [tertiary, tertiary_link] }

@@ -8,6 +8,7 @@ import:
     - layers/water.yaml
     - layers/earth.yaml
     - layers/roads.yaml
+    - layers/roads-labels.yaml
     - layers/transit.yaml
     - layers/buildings.yaml
     - layers/landuse.yaml
@@ -41,6 +42,8 @@ fonts:
         url: https://fonts.gstatic.com/s/audiowide/v4/8XtYtNKEyyZh481XVWfVOrO3LdcAZYWl9Si6vvxL-qU.woff
     Cairo:
         url: https://fonts.gstatic.com/s/cairo/v1/ZA_4ooaF_Dfdn26t_IoQOaCWcynf_cDxXwCLxiixG1c.woff
+    Cairo-Light:
+        url: https://fonts.gstatic.com/s/cairo/v1/kjh52RWXSUbTPMXEhLHVFHYhjbSpvc47ee6xR_80Hnw.woff
     Exo2:
         url: https://fonts.gstatic.com/s/exo2/v3/KzoFUeaQw_faskDsymvVJqCWcynf_cDxXwCLxiixG1c.woff
     Inconsolata:
