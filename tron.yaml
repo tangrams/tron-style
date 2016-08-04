@@ -13,7 +13,7 @@ import:
     - layers/landuse.yaml
     - layers/boundaries.yaml
     - layers/places.yaml
-    - layers/telecom.yaml
+    # - layers/telecom.yaml
 
 # Sources
 sources:
