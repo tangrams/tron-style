@@ -212,7 +212,7 @@ layers:
                 draw:
                     polygons:
                         style: landuse-tier4-power
-                        color: [0.243,0.243,0.871]
+                        color: [0.212,0.302,0.427]
                         visible: true
             man-made:
                 filter: { kind: [pier,wastewater_plant,works,bridge,tower,breakwater,water_works,groyne,dike,cutline] }
@@ -324,11 +324,11 @@ styles:
         mix: [polygons-dots]
         shaders:
             defines:
-                DOTS_COLOR: vec3(0.212,0.302,0.431)
+                DOTS_COLOR: vec3(1.000,0.467,0.000)
                 DOTS_SCALE: 10.
                 DOTS_SIZE: 0.41
     landuse-tier4-hospital:
-        mix: [ polygons-dots]
+        mix: [polygons-dots]
         raster: custom
         shaders:
             defines:
