@@ -508,7 +508,7 @@ styles:
         mix: [functions-zoom, lines-glow]
         shaders:
             defines:
-                ZOOM_START: 5
+                ZOOM_START: 5.
                 ZOOM_END: 6.
                 GLOW_WIDTH: mix(1.,.45,zoom())
                 GLOW_BRIGHTNESS: zoom()*.25

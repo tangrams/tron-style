@@ -126,8 +126,8 @@ styles:
         mix: [geometry-dynamic-width, geometry-dynamic-height]
         shaders:
             defines:
-                ZOOM_START: 16
-                ZOOM_END: 20
+                ZOOM_START: 16.
+                ZOOM_END: 20.
                 WIDTH_MIN: .7
                 WIDTH_MAX: 1.0
 
