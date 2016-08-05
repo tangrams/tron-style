@@ -1,0 +1,3 @@
+[submodule "blocks"]
+	path = blocks
+	url = https://github.com/tangrams/blocks
