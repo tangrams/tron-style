@@ -1,14 +1,14 @@
 import:
     # Blocks
-    - https://tangrams.github.io/blocks/elevation/stripes.yaml
-    - https://tangrams.github.io/blocks/elevation/contours.yaml
-    - https://tangrams.github.io/blocks/polygons/dots.yaml
-    - https://tangrams.github.io/blocks/polygons/shimmering.yaml
-    - https://tangrams.github.io/blocks/polygons/stripes.yaml
-    - https://tangrams.github.io/blocks/polygons/diagonal-stripes.yaml
-    - https://tangrams.github.io/blocks/polygons/diagonal-grid.yaml
+    - ../blocks/elevation/stripes.yaml
+    - ../blocks/elevation/contours.yaml
+    - ../blocks/polygons/dots.yaml
+    - ../blocks/polygons/shimmering.yaml
+    - ../blocks/polygons/stripes.yaml
+    - ../blocks/polygons/diagonal-stripes.yaml
+    - ../blocks/polygons/diagonal-grid.yaml
     # Utils
-    - https://tangrams.github.io/blocks/geometry/normal.yaml
+    - ../blocks/geometry/normal.yaml
     # Custom Commons
     - ./common.yaml
 
