@@ -41,7 +41,8 @@ If you want to try something new with Tron 2.0 style:
 [![](http://thebookofshaders.com/log/160626213924.png) Contours](http://player.thebookofshaders.com/?log=160626213924)
 [![](http://thebookofshaders.com/log/160705083231.png) Hill Shading](http://player.thebookofshaders.com/?log=160705083231)
 [![](http://thebookofshaders.com/log/160707203604.png) Buildings window](http://player.thebookofshaders.com/?log=160707203604)
-[![](http://thebookofshaders.com/log/160805190306.png) Tron Icons](http://player.thebookofshaders.com/?log=160805190306)
+[![](http://thebookofshaders.com/log/160805190306.png) Generative Icons](http://player.thebookofshaders.com/?log=160805190306)
+[![](http://thebookofshaders.com/log/160805194757.png) Animated Icons](http://player.thebookofshaders.com/?log=160805194757)
 
 ### Authors
 
