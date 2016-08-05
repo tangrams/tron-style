@@ -79,6 +79,22 @@ layers:
                     text:
                         visible: false
 
+        populated-places:
+            populated-places-natural-earth-z5:
+                filter: { name: true, source: naturalearthdata.com, $zoom: [5] }
+                z5places-1:
+                    filter: { scalerank: [0,1] }
+                    draw:
+                        text:
+                            visible: true
+                            priority: 8
+                            offset: [0, 3px]
+                            font:
+                                family: Orbitron
+                                size: 11px
+                                fill: white
+                        icons:
+
 styles:
     text-filter-tv:
         base: text

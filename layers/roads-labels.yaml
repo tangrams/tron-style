@@ -14,7 +14,7 @@ layers:
                             family: Aldrich
                             size: [[8,8px],[12,10px]]
                             fill: [0.082,0.133,0.259]
-                            stroke: { color: [1.000,0.000,0.741], width: 5px }
+                            stroke: { color: [0.000,0.533,1.000], width: 4px }
             labels-highway-z14:
                 filter: { $zoom: { min: 15 } }
                 draw:
@@ -23,9 +23,9 @@ layers:
                         text_source: function() { if( feature.ref && feature.name ) { return feature.ref + " " + feature.name; } else { return feature.name; } }
                         font:
                             family: Aldrich
-                            size: [[15,12px],[20,14px]]
+                            size: [[15,11px],[20,14px]]
                             fill: [0.082,0.133,0.259]
-                            stroke: { color: [1.000,0.000,0.741], width: 8px }
+                            stroke: { color: [0.000,0.533,1.000], width: 6px }
 
 
 
