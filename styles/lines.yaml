@@ -1,6 +1,6 @@
 import:
     # Blocks
-    - ../blocks/lines/glow.yaml
+    - https://tangrams.github.io/blocks/lines/glow.yaml
 
 styles:
     lines-coast:
