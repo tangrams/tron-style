@@ -22,7 +22,7 @@ layers:
                     font:
                         family: Orbitron
                         size: 12px
-                        fill: white
+                        fill: [0.594,0.990,0.944]
         country-z5:
             filter: { name: true, population: true, kind: [country], $zoom: [5] }
             draw:
@@ -32,7 +32,7 @@ layers:
                     font:
                         family: Orbitron
                         size: 12px
-                        fill: white
+                        fill: [0.594,0.990,0.944]
             z5-dont-label:
                 filter: { name: [Nederland,Luxembourg,Liechtenstein,San Marino,Civitatis Vaticanæ,Crna Gora,Македонија,The Gambia,Burundi,Swaziland,الإمارات العربية المتحدة,العراق,Singapore,El Salvador,Belize,Trinidad and Tobago, Saint Lucia, Montserrat,Anguilla,República Dominicana,Bahamas,British Virgin Islands,Antigua and Barbuda,Grenada,Sint Maarten,Saint Kitts and Nevis,Cayman Islands,België - Belgique - Belgien], $zoom: {min: 5, max: 6} }
                 draw:
@@ -55,7 +55,7 @@ layers:
                     font:
                         family: Orbitron
                         size: 14px
-                        fill: white
+                        fill: [0.594,0.990,0.944]
             z6-dont-label:
                 filter: { name: [Luxembourg,Liechtenstein,San Marino,Civitatis Vaticanæ,El Salvador,Belize,België - Belgique - Belgien], $zoom: {min: 6, max: 7} }
                 draw:
@@ -72,7 +72,7 @@ layers:
                     font:
                         family: Orbitron
                         size: 18px
-                        fill: white
+                        fill: [0.594,0.990,0.944]
             z7-dont-label:
                 filter: { name: [Luxembourg,Liechtenstein,San Marino,Civitatis Vaticanæ,België - Belgique - Belgien,Хуссар Ирыстон,Аҧсны - Абхазия], $zoom: {min: 7, max: 8} }
                 draw:
@@ -90,7 +90,7 @@ layers:
                             priority: 8
                             offset: [0, 3px]
                             font:
-                                family: Orbitron
+                                family: Exo2
                                 size: 11px
                                 fill: white
                         icons:
