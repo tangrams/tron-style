@@ -21,14 +21,14 @@ layers:
         data: { source: mapzen, layer: landuse }
         filter:
             kind: ['urban area']
-            $zoom: { max: 8 }
+            $zoom: { max: 6 }
         draw:
             polygons:
                 style: urban-early
                 order: global.order
                 # color: [[4,[0.031,0.973,1.000]],[6,[0.139,0.198,0.283]]]
                 # color: [0.031,0.973,1.000]
-                color: [0.267,0.365,0.502]
+                color: [0.000,0.463,0.820]
 
 styles:
     earth-early:
@@ -51,7 +51,7 @@ styles:
         mix: [functions-zoom, polygons-diagonal-stripes]
         shaders:
             defines:
-                ZOOM_START: 4.
+                ZOOM_START: 3.
                 ZOOM_END: 7.5
 
                 STRIPES_ALPHA: 1.
@@ -59,7 +59,7 @@ styles:
                 STRIPES_WIDTH: .5-(zoom())
 
                 COLOR_A: color.rgb
-                COLOR_B: vec3(0.031,0.973,1.000)
+                COLOR_B: vec3(0.165,0.765,0.765)
             blocks:
                 color: |
                     color.rgb = mix(COLOR_A, COLOR_B, sin(zoom()*3.1415));

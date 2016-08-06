@@ -243,7 +243,7 @@ layers:
                 draw:
                     polygons:
                         style: landuse-tier6-parking
-                        color: [0.616,0.800,0.949]
+                        color: [0.521,0.677,0.799]
                         visible: true
             pedestrian:
                 filter:
@@ -361,7 +361,7 @@ styles:
         mix: [functions-zoom, polygons-diagonal-grid]
         shaders:
             defines:
-                ZOOM_START: 14.
+                ZOOM_START: 12.
                 ZOOM_END: 18.
                 ZOOM_IN: .0
                 ZOOM_OUT: 1.

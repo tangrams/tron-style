@@ -35,7 +35,7 @@ layers:
                 lines:
                     # color: [[14,[0.334,0.536,0.630]],[16,[0.508,0.711,0.735]]]
                     # color: [0.661,0.926,0.957]
-                    color: [[14,[0.392,0.627,0.651]],[16,[0.669,0.940,0.970]]]
+                    color: [0.392,0.627,0.651]
                     width: [[14,0.55px],[16,0.5px]]
                     visible: true
             # before zoom 15, we want buidings to be below roads...
@@ -68,7 +68,7 @@ layers:
                     visible: true
                     style: buildings-lns
                     # color: [0.592,0.827,0.851]
-                    color: [[16,[0.669,0.940,0.970]],[18,[0.786,0.952,0.970]]]
+                    color: [[16,[0.428,0.687,0.717]],[18,[0.786,0.952,0.970]]]
                     # width: [[16,0.5px],[17,1px]]
                     width: [[12, .1px], [14, 0.1px], [16, 0.75px], [17, 0.85px], [18, 1.0px]]
                     extrude: function() { return feature.height || 20; }
