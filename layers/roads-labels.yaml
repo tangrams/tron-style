@@ -29,45 +29,45 @@ layers:
 
 
 
-        # major_road:
-        #     filter: { kind: major_road }
-        #     trunk_primary:
-        #         filter: { highway: [trunk, primary] }
-        #         routes:
-        #             filter: { ref: true }
-        #             labels-trunk-primary-route:
-        #                 filter: { $zoom: { min: 13 } }
-        #                 draw:
-        #                     text:
-        #                         priority: 50
-        #                         text_source: function() { if( feature.ref && feature.name ) { return feature.ref + " " + feature.name; } else { return feature.name; } }
-        #                         font:
-        #                             family: Aldrich
-        #                             size: [[13,12px],[19,14px]]
-        #                             fill: [0.082,0.133,0.259]
-        #                             stroke: { color: [0.003,0.510,0.667], width: 3px }
-            #     labels-trunk-primary-z14:
-            #         filter: { $zoom: [13,14] }
-            #         draw:
-            #             text:
-            #                 priority: 53
-            #                 text_source: function() { if( feature.ref && feature.name ) { if( feature.ref.length < 6 ) { return feature.ref + " " + feature.name; } else { return feature.name; } } else { return feature.name; } }
-            #                 font:
-            #                     family: Cairo
-            #                     size: 9px
-            #                     fill: [0.515,0.859,0.920]
-            #                     stroke: { color: [0.212,0.302,0.427], width: 4px }
-            #     labels-trunk-primary-z16:
-            #         filter: { $zoom: { min: 15 } }
-            #         draw:
-            #             text:
-            #                 priority: 53
-            #                 text_source: function() { if( feature.ref && feature.name ) { if( feature.ref.length < 6 ) { return feature.ref + " " + feature.name; } else { return feature.name; } } else { return feature.name; } }
-            #                 font:
-            #                     family: Cairo
-            #                     size: [[15,12px],[18,14px]]
-            #                     fill: [0.389,0.747,0.810]
-            #                     stroke: { color: [0.082,0.133,0.259], width: 4px }
+        major_road:
+            filter: { kind: major_road }
+            trunk_primary:
+                filter: { highway: [trunk, primary] }
+                routes:
+                    filter: { ref: true }
+                    labels-trunk-primary-route:
+                        filter: { $zoom: { min: 13 } }
+                        draw:
+                            text:
+                                priority: 50
+                                text_source: function() { if( feature.ref && feature.name ) { return feature.ref + " " + feature.name; } else { return feature.name; } }
+                                font:
+                                    family: Aldrich
+                                    size: [[13,10px],[15,11px],[19,14px]]
+                                    fill: [0.016,0.737,0.851]
+                                    stroke: { color: [0.212,0.302,0.427], width: 5px }
+                labels-trunk-primary-z14:
+                    filter: { $zoom: [13,14] }
+                    draw:
+                        text:
+                            priority: 53
+                            text_source: function() { if( feature.ref && feature.name ) { if( feature.ref.length < 6 ) { return feature.ref + " " + feature.name; } else { return feature.name; } } else { return feature.name; } }
+                            font:
+                                family: Cairo
+                                size: 10px
+                                fill: white #[0.515,0.859,0.920]
+                                # stroke: { color: [0.212,0.302,0.427], width: 4px }
+                labels-trunk-primary-z16:
+                    filter: { $zoom: { min: 15 } }
+                    draw:
+                        text:
+                            priority: 53
+                            text_source: function() { if( feature.ref && feature.name ) { if( feature.ref.length < 6 ) { return feature.ref + " " + feature.name; } else { return feature.name; } } else { return feature.name; } }
+                            font:
+                                family: Cairo
+                                size: [[15,13px],[18,14px]]
+                                fill: white #[0.389,0.747,0.810]
+                                # stroke: { color: [0.082,0.133,0.259], width: 7px }
 
             # secondary:
             #     filter: { highway: secondary }
