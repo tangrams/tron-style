@@ -55,8 +55,8 @@ layers:
                             font:
                                 family: Cairo
                                 size: 10px
-                                fill: white #[0.515,0.859,0.920]
-                                # stroke: { color: [0.212,0.302,0.427], width: 4px }
+                                fill: white
+
                 labels-trunk-primary-z16:
                     filter: { $zoom: { min: 15 } }
                     draw:
@@ -66,19 +66,34 @@ layers:
                             font:
                                 family: Cairo
                                 size: [[15,13px],[18,14px]]
-                                fill: white #[0.389,0.747,0.810]
-                                # stroke: { color: [0.082,0.133,0.259], width: 7px }
+                                fill: white
 
-            # secondary:
-            #     filter: { highway: secondary }
-            #     labels-secondary:
-            #         filter: { $zoom: { min: 15 } }
-            #         draw:
-            #             text:
-            #                 priority: 54
-            #                 text_source: function() { if( feature.ref && feature.name ) { if( feature.ref.length < 6 ) { return feature.ref + " " + feature.name; } else { return feature.name; } } else { return feature.name; } }
-            #                 font:
-            #                     family: Cairo
-            #                     size: 12px
-            #                     fill: [0.389,0.747,0.810]
-            #                     stroke: { color: [0.082,0.133,0.259], width: 4px }
+
+            secondary:
+                filter: { highway: secondary }
+                labels-secondary:
+                    draw:
+                        text:
+                            priority: 54
+                            text_source: function() { if( feature.ref && feature.name ) { if( feature.ref.length < 6 ) { return feature.ref + " " + feature.name; } else { return feature.name; } } else { return feature.name; } }
+                            font:
+                                family: Cairo
+                                size: [[15,13px],[18,14px]]
+                                # fill: [[15,[0.686,0.848,0.980]],[18,[1.00,1.00,1.00]]]
+                                fill: [0.686,0.848,0.980]
+                    early:
+                        filter: { $zoom: [11,12,13,14] }
+                        draw:
+                            text:
+                                visible: false
+                    routes:
+                        filter: { ref: true, $zoom: { min: 13 } }
+                        draw:
+                            text:
+                                visible: true
+                                priority: 54
+                                text_source: function() { if( feature.ref && feature.name ) { if( feature.ref.length < 6 ) { return feature.ref + " " + feature.name; } else { return feature.name; } } else { return feature.name; } }
+                                font:
+                                    family: Cairo
+                                    size: [[13,10px],[15,13px],[18,14px]]
+                                    fill: white
