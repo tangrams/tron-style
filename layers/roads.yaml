@@ -158,7 +158,6 @@ layers:
                             highway-glow:
                                 visible: false
 
-
             # Show 0 width roads one zoom before they have width, so they can scale up instead of popping in
             highway-z17:
                 filter: 
@@ -175,7 +174,6 @@ layers:
                         color: [0.541,0.969,0.949]
                         width: [[8,0px],[16,10px],[17,18px],[18,28px],[19,31px]]
 
-
             highway-z18:
                 filter: 
                     $zoom: { min: 17 }
@@ -190,8 +188,6 @@ layers:
                         order: global.order_sub_5
                         color: [0.800,1.000,0.987]
                         width: [[8,0px],[16,0px],[17,15px],[18,34px],[19,45px]]
-
-
 
         major_road:
             filter: { kind: major_road }
@@ -498,6 +494,15 @@ styles:
             defines:
                 GLOW_WIDTH: 0.45
                 GLOW_BRIGHTNESS: .25
+
+    highway-casing1:
+        base: lines
+    highway-casing2:
+        base: lines
+    highway-casing3:
+        base: lines
+    highway-casing4:
+        base: lines
 
     center-glow:
         base: lines
