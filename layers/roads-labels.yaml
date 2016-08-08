@@ -79,10 +79,10 @@ layers:
                             font:
                                 family: Cairo
                                 size: [[15,13px],[18,14px]]
-                                # fill: [[15,[0.686,0.848,0.980]],[18,[1.00,1.00,1.00]]]
-                                fill: [0.686,0.848,0.980]
-                    early:
-                        filter: { $zoom: [11,12,13,14] }
+                                # fill: [[15,[0.750,0.888,1.000]],[18,[1.00,1.00,1.00]]]
+                                fill: [0.750,0.888,1.000]
+                    early-dont-draw:
+                        filter: { $zoom: { min: 11 }, $zoom: { max: 15 } }
                         draw:
                             text:
                                 visible: false
@@ -97,3 +97,40 @@ layers:
                                     family: Cairo
                                     size: [[13,10px],[15,13px],[18,14px]]
                                     fill: white
+
+            tertiary:
+                filter: { highway: [tertiary, tertiary_link] }
+                labels-tertiary:
+                    draw:
+                        text:
+                            visible: true
+                            priority: 55
+                            text_source: function() { if( feature.ref && feature.name ) { if( feature.ref.length < 6 ) { return feature.ref + " " + feature.name; } else { return feature.name; } } else { return feature.name; } }
+                            font:
+                                family: Cairo
+                                size: [[15,10px],[18,14px]]
+                                fill: [0.581,0.718,0.830]
+                    early-dont-draw:
+                        filter: { $zoom: { min: 11 }, $zoom: { max: 15 } }
+                        draw:
+                            text: 
+                                visible: false
+
+        minor_road:
+            filter: { kind: minor_road, not: { highway: service, aeroway: [runway, taxiway] } }
+            labels-minor-road:
+                draw:
+                    text:
+                        visible: true
+                        priority: 56
+                        text_source: name
+                        font:
+                            family: Cairo
+                            size: [[15,10px],[18,14px]]
+                            fill: [0.581,0.718,0.830]
+                early-dont-draw:
+                    filter: { $zoom: { min: 11 }, $zoom: { max: 15 } }
+                    draw:
+                        text: 
+                            visible: false
+
