@@ -16,6 +16,17 @@ import:
     - layers/places.yaml
     # - layers/telecom.yaml
 
+global:
+    ux_application_mode: navigation
+
+    #label visibility
+    text_visible_admin: true
+    text_visible_populated_places: true
+    icon_visible_populated_places: true
+    text_visible_neighbourhoods: true
+    text_visible_neighbourhoods_e: true
+
+
 # Sources
 sources:
     mapzen:

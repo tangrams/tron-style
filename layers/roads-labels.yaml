@@ -129,7 +129,7 @@ layers:
                             size: [[15,10px],[18,14px]]
                             fill: [0.581,0.718,0.830]
                 early-dont-draw:
-                    filter: { $zoom: { min: 11 }, $zoom: { max: 15 } }
+                    filter: { $zoom: { min: 11, max: 15 } }
                     draw:
                         text: 
                             visible: false
