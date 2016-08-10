@@ -9,22 +9,27 @@ layers:
             filter: { kind: [railway,train] }
             draw:
                 lines:
-                    color: [0.820,0.770,1.000]
-                    width: [[14,0.15px],[17,1px],[18,2px],[20,12px]]
-            railway-z18:
-                filter:
-                    $zoom: { min: 18 }
-                draw:
-                    lines:
-                        style: transit-glow
-                        color: [1.00,1.00,1.00]
-                        width: [[18,5px],[20,7px]]
+                    style: railway-dashed
+                    # color: [0.820,0.770,1.000]
+                    color: [0.199,0.189,0.332]
+                    # width: [[14,0.15px],[17,1px],[18,2px],[20,12px]]
+                    width: [[14,0.5px],[16,1px],[17,2px],[19,3px]]
+            # railway-z18:
+            #     filter:
+            #         $zoom: { min: 18 }
+            #     draw:
+            #         lines:
+            #             style: transit-glow
+            #             color: [1.00,1.00,1.00]
+            #             width: [[18,5px],[20,7px]]
         subway:
             filter: { kind: subway }
             draw:
                 lines:
                     style: transit-glow
-                    color: [0.627,0.525,1.000]
+                    # color: [0.627,0.525,1.000]
+                    color: [1.00,0.000,0.250]
+                    # color: [0.000,0.580,0.000]
                     width: [[14,3px],[16,5px],[18,9px],[20,12px]]
 
 styles:
@@ -35,3 +40,12 @@ styles:
             defines:
                 GLOW_WIDTH: 0.5
                 GLOW_BRIGHTNESS: .4
+
+    railway-dashed:
+        base: lines
+        dash: [3,2]
+        dash_background_color: [0.212,0.302,0.427]
+        # shaders:
+        #     blocks:
+        #         position: |
+        #             v_texcoord.y *= 11.;

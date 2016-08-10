@@ -349,7 +349,7 @@ styles:
                 NORMAL_TEXTURE_INDEX: 0
                 DOTS_DIR: vec3(-0.600,-0.420,0.600)
 
-                DOTS_COLOR: vec3(0.697,0.130,0.183)
+                DOTS_COLOR: vec3(0.730,0.000,0.304)
                 DOTS_SCALE: 30.
                 DOTS_SIZE: shade*2.
             blocks:
