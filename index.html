@@ -1,10 +1,16 @@
 <!doctype html>
+<!--
+    Tangram: real-time WebGL rendering for OpenStreetMap
+
+    http://github.com/tangrams/tangram
+    http://mapzen.com
+-->
 <html lang="en-us">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+    
     <title>Tron 2.0</title>
 
     <!-- 3rd party libraries -->
@@ -18,113 +24,96 @@
         <!-- <script src="http://localhost:8000/dist/tangram.debug.js"></script> -->
     <!-- End of 3rd party libraries -->
 
-    <style>
-            body {
-                margin: 0px;
-                border: 0px;
-                padding: 0px;
-                overflow: hidden;
-            }
 
-            #map {
-                position: absolute;
-                background: black;
-                height: 100%;
-                width: 100%;
-                margin: 0px;
-                padding: 0px;
-                background: rgba(0, 0, 0, 0);
-                z-index:0;
-            }
-        </style>
-    </head>
+    <style>
+        body {
+            margin: 0px;
+            border: 0px;
+            padding: 0px;
+        }
+
+        #map {
+            background: rgba(0, 0, 0, 0);
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+
+
+    .label {
+        width: auto;
+        /*margin-left: -100px;*/
+        position: absolute;
+        z-index: 500;
+        text-align: left;
+        margin: 10px;
+        background: #E1E1E1;
+        opacity: 0.9;
+        padding: 2px;
+        visibility: hidden;
+        /*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
+        /*word-wrap: break-word;*/
+    }
+    .label a {
+        color: white;
+    }
+
+    .label a:hover {
+        color: lightblue;
+    }
+
+    .labelInner {
+        padding: 3px 0px;
+        font-family: Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 12px;
+        color: #666;
+        opacity: 2.0;
+        margin: 0px;
+    }
+
+    .labelLine {
+        /*border: 2px solid gold;*/
+    }
+
+    .labelLine:hover {
+        /* border: 2px solid gold; */
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: default;
+    }
+
+    </style>
+
+    <!-- A lightweight graphical user interface for changing variables in JavaScript.  -->
+    <script src="src/dat.gui.min.js"></script>
+
+    <!-- FileSaver.js implements the HTML5 W3C saveAs(), used in the demo to save screenshots -->
+    <script src="src/FileSaver.js"></script>
+
+      <!-- Keymaster handles keyboard input -->
+    <script src="src/keymaster.js"></script>
+
+</head>
 
     <body>
+        <div class="label" id="popup"></div>
         <div id="map"></div>
 
+
         <!-- Demo module -->
-        <script type="text/javascript">
-            var map = (function () {
-                'use strict';
-
-                var map_start_location = [40.70531887544228, -74.00976419448853, 16];
-
-                /*** URL parsing ***/
-
-                // leaflet-style URL hash pattern:
-                // ?style.yaml#[zoom],[lat],[lng]
-                var url_hash = window.location.hash.slice(1).split('/');
-                if (url_hash.length == 3) {
-                    map_start_location = [url_hash[1],url_hash[2], url_hash[0]];
-                    // convert from strings
-                    map_start_location = map_start_location.map(Number);
-                }
-
-                var animated = true;
-                var url_search = window.location.search.slice(1);
-                if (url_search.length > 0) {
-                    if (url_search.indexOf('animated=false') > -1) {
-                        animated = false;
-                    }
-                }
-
-                /*** Map ***/
-                var map = L.map('map', {
-                    maxZoom: 20,
-                    trackResize: true,
-                    keyboard: false
-                });
-
-                var layer = Tangram.leafletLayer({
-                    scene: 'tron.yaml',
-                    attribution: '| &copy; OSM contributors | <a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | <a href="https://twitter.com/sensescape" target="_blank">@sensescape</a> | <a href="https://twitter.com/patriciogv" target="_blank">@patriciogv</a>'
-                });
-
-                window.layer = layer;
-                var scene = layer.scene;
-                window.scene = scene;
-
-                map.setView(map_start_location.slice(0, 2), map_start_location[2]);
-                var hash = new L.Hash(map);
-
-                // Resize map to window
-                function resizeMap() {
-                    document.getElementById('map').style.width = window.innerWidth + 'px';
-                    document.getElementById('map').style.height = window.innerHeight + 'px';
-                    map.invalidateSize(false);
-                }
-
-                window.addEventListener('resize', resizeMap);
-                resizeMap();
-
-                window.addEventListener('load', function () {
-                    // Scene initialized
-                    layer.scene.subscribe({
-                        load: function (data) {
-                            // TODO:
-                            // - this is not really working yet
-                            data.config.scene.animated = animated;
-                            data.config.global.animated = animated;
-                        }
-                    });
-                    layer.addTo(map);
-                });
-
-                //disable mousewheel zoom if iframed
-                if (window.self !== window.top) {
-                  map.scrollWheelZoom.disable();
-                }
-                return map;
-            }());
-
-            
-            </script>
+        <script src="main.js"></script>
 
         <!-- Adding a script block to post message to the parent container (think iframed demos) -->
         <script type="text/javascript">
           window.addEventListener("hashchange",function(){parent.postMessage(window.location.hash, "*")});
         </script>
-        <!-- Mapzen bug & search bar -->
+
+        <!-- Mapzen map UI -->
         <script src='https://mapzen.com/common/ui/mapzen-ui.min.js'></script>
         <script>
                 MPZN.bug({
@@ -133,5 +122,6 @@
                 repo: 'https://github.com/tangrams/tron/'
             });
         </script>
-    </body>
+
+  </body>
 </html>

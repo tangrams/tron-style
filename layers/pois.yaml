@@ -1,0 +1,1471 @@
+import:
+    - globals.yaml
+
+textures:
+    pois:
+        url: ../images/poi_icons_18@2x.png
+        filtering: mipmap
+        sprites:
+            # define sprites: [x origin, y origin, width, height]
+            airport: [874, 0, 38, 38]
+            aquarium: [736, 176, 38, 38]
+            art-gallery: [644, 176, 40, 38]
+            athletics-sports: [184, 176, 38, 38]
+            atm: [920, 132, 38, 38]
+            automotive-shop: [0, 176, 38, 38]
+            bakery: [552, 176, 40, 38]
+            bank: [966, 132, 38, 38]
+            bar: [230, 176, 40, 38]
+            baseball-field: [506, 88, 38, 38]
+            basketball-court: [460, 88, 38, 38]
+            beach: [644, 88, 38, 38]
+            beer-garden: [276, 220, 40, 38]
+            bench: [552, 0, 38, 38]
+            bicycle-parking: [644, 132, 38, 38]
+            bike-shop: [874, 132, 38, 38]
+            boat-ferry: [828, 0, 38, 38]
+            boat-ramp: [138, 88, 38, 38]
+            bookstore: [828, 132, 38, 38]
+            bridge: [920, 88, 38, 38]
+            buddhism: [782, 88, 38, 38]
+            building: [414, 176, 38, 38]
+            burger: [138, 220, 40, 38]
+            bus-station: [782, 0, 38, 38]
+            butcher: [920, 44, 40, 38]
+            campground: [828, 88, 38, 38]
+            candy-store: [0, 220, 40, 38]
+            capital-l: [514, 222, 16, 14]
+            capital-m: [494, 222, 14, 10]
+            capital-s: [474, 222, 12, 8]
+            capital-xl: [538, 222, 22, 18]
+            capital-xs: [460, 222, 8, 6]
+            car-dealership: [782, 132, 38, 38]
+            castle: [414, 44, 38, 38]
+            cemetery: [736, 88, 38, 38]
+            church: [230, 132, 38, 38]
+            clothing-store: [828, 176, 38, 38]
+            coffee-shop: [506, 176, 40, 38]
+            college-university: [874, 176, 38, 38]
+            convenience-store: [46, 88, 40, 38]
+            courthouse: [368, 0, 38, 38]
+            current-location: [80, 352, 88, 86]
+            department-store: [736, 132, 38, 38]
+            drinking-water: [230, 220, 40, 38]
+            dry-cleaning: [0, 88, 38, 38]
+            electronics-store: [598, 132, 38, 38]
+            factory: [368, 176, 38, 38]
+            fire-station: [322, 0, 38, 38]
+            fitness: [874, 44, 38, 38]
+            flower-shop: [184, 132, 40, 38]
+            forest: [46, 220, 38, 38]
+            fountain: [322, 132, 38, 38]
+            garden: [690, 88, 38, 38]
+            gas-station: [964, 176, 38, 38]
+            generic: [414, 220, 38, 38]
+            gift-shop: [138, 132, 38, 38]
+            golf-course: [414, 88, 38, 38]
+            government-building: [138, 176, 38, 38]
+            grocery-store: [552, 132, 40, 38]
+            harbor-marina: [92, 176, 40, 38]
+            hardware-store: [828, 44, 38, 38]
+            historic-site: [92, 132, 38, 38]
+            hospital: [184, 0, 38, 38]
+            hotel: [736, 0, 38, 38]
+            ice-cream-shop: [322, 220, 40, 38]
+            information: [368, 220, 38, 38]
+            jewelry-store: [736, 44, 38, 38]
+            landmark: [276, 0, 38, 38]
+            laundry: [690, 44, 38, 38]
+            library: [0, 0, 38, 38]
+            light-rail: [690, 0, 38, 38]
+            lighthouse: [276, 88, 38, 38]
+            liquor-store: [506, 132, 40, 38]
+            locate-off: [414, 352, 72, 70]
+            locate-on: [334, 352, 72, 70]
+            mall: [644, 44, 38, 38]
+            market: [598, 44, 38, 38]
+            mine: [782, 44, 40, 38]
+            mobile-phone-shop: [506, 44, 38, 38]
+            mosque: [92, 0, 38, 38]
+            mountain: [230, 88, 38, 38]
+            movie-theatre: [782, 176, 40, 38]
+            museum: [46, 132, 38, 38]
+            music-store: [368, 44, 38, 38]
+            newsstand: [322, 44, 38, 38]
+            office: [598, 88, 38, 38]
+            optical-shop: [276, 44, 38, 38]
+            park: [276, 132, 38, 38]
+            parking: [690, 132, 38, 38]
+            performing-arts: [598, 176, 40, 38]
+            pet-store: [230, 44, 38, 38]
+            pharmacy: [966, 44, 38, 38]
+            photography-lab: [184, 44, 38, 38]
+            pier: [644, 0, 38, 38]
+            playground: [460, 44, 38, 38]
+            police: [230, 0, 38, 38]
+            pool: [184, 88, 38, 38]
+            post-office: [322, 176, 38, 38]
+            real-estate: [138, 44, 38, 38]
+            recycling-facility: [92, 44, 38, 38]
+            rental-car: [598, 0, 38, 38]
+            restaurant: [92, 220, 40, 38]
+            route-arrow: [786, 220, 128, 128]
+            route-start: [0, 352, 72, 92]
+            route-stop: [922, 220, 72, 92]
+            ruin: [506, 0, 38, 38]
+            salon-barber: [46, 44, 38, 38]
+            school: [552, 88, 38, 38]
+            search-active: [174, 352, 72, 108]
+            search-inactive: [254, 352, 72, 108]
+            shoe-store: [552, 44, 38, 38]
+            ski-area: [368, 132, 38, 38]
+            soccer-field: [368, 88, 40, 38]
+            spiritual-center: [276, 176, 38, 38]
+            sporting-goods-shop: [0, 44, 38, 38]
+            spring: [322, 88, 38, 38]
+            stadium: [460, 132, 38, 38]
+            subway-entrance: [460, 0, 38, 38]
+            synagogue: [46, 0, 38, 38]
+            tailor-shop: [966, 0, 38, 38]
+            tennis: [414, 132, 38, 38]
+            theme-park: [0, 132, 38, 38]
+            toilets: [874, 88, 38, 38]
+            townspot-l: [730, 220, 18, 18]
+            townspot-l-rev: [618, 222, 16, 14]
+            townspot-m: [708, 220, 14, 14]
+            townspot-m-rev: [598, 222, 12, 10]
+            townspot-s: [688, 220, 12, 12]
+            townspot-s-rev: [580, 222, 12, 8]
+            townspot-xl: [756, 220, 22, 22]
+            townspot-xl-rev: [642, 222, 20, 18]
+            townspot-xs: [670, 220, 10, 10]
+            townspot-xs-rev: [566, 222, 6, 4]
+            toy-game-store: [920, 0, 38, 38]
+            traffic-signal: [920, 176, 36, 34]
+            train-station: [414, 0, 38, 38]
+            veterinarian: [138, 0, 38, 38]
+            view-point: [690, 176, 38, 38]
+            vineyard: [46, 176, 38, 38]
+            volcano: [92, 88, 38, 38]
+            wine-bar: [184, 220, 40, 38]
+            winery: [460, 176, 40, 38]
+            zoo: [966, 88, 38, 38]
+            #
+            # UX/UI icons for map interactivity & app chrome
+            #
+            ux-current-location: [158, 342, 88, 88]
+            ux-route-arrow: [822, 210, 128, 128]
+            ux-route-start: [78, 342, 72, 92]
+            ux-route-stop: [0, 342, 72, 92]
+            ux-search-active: [252, 342, 72, 108]
+            ux-search-inactive: [332, 342, 72, 108]
+            # ux-transit-stop is currently reusing capital-xl artwork, please customize
+            ux-transit-stop: [584, 210, 20, 20]
+
+layers:
+    # pois:
+    #     data: { source: mapzen }
+    #     visible: true
+    #     draw:
+    #         icons:
+    #             size: 18px
+
+    #     has-name:
+    #         filter: { name: true }
+    #         station-train-subway:
+    #             filter: { kind: [station, train-station, train_station], $zoom: { min: 11 } }
+    #             visible: true
+    #             draw:
+    #                 icons:
+    #                     visible: true
+    #                     sprite: train-station
+    #                     size: 18px
+    #                     priority: 42
+
+    pois_and_landuse_labels:
+        data: { source: mapzen, layer: [pois,landuse] }
+        visible: true
+        filter:
+            all:
+                - not: { kind: [building,address,farm,tree,apron,residential,commercial,industrial] }
+                - $geometry: point
+                # White list a few kinds to "always" show per the tile zoom inclusion, else test feature's min_zoom
+                #- function() { return feature.min_zoom <= $zoom }
+                - function() { if( feature.kind == 'restaurant' || feature.kind == 'landmark' || feature.kind == 'cafe' ) { return true } else { return feature.min_zoom <= $zoom } }
+                - any:
+                    - area: false
+                      all:
+                          - $zoom: { min: 12 }
+                    - area: true
+                      all:
+                          - kind: true
+        draw:
+            icons:
+                size: 18px
+                interactive: true
+                visible: true
+                priority: 65
+                repeat_group: abc
+                text:
+                    text_source: global.ux_language_text_source
+                    visible: false    # labels are enabled by each layer below
+                    move_into_tile: false # preserves text alignment w/icons in JS
+                    interactive: true
+                    priority: 66
+                    font:
+                        family: Cairo
+                        fill: red
+                        size: 10px
+            text:
+                text_source: global.ux_language_text_source
+                visible: false    # labels are enabled by each layer below
+                move_into_tile: false # preserves text alignment w/icons in JS
+                interactive: true
+                priority: 66
+                font:
+                    family: Cairo
+                    fill: red
+                    size: 10px
+        poi_labels-z14:
+            filter: { $zoom: [14] }
+            draw: { icons: { text: { font: { size: 11px } } } }
+        poi_labels-z15:
+            filter: { $zoom: [15,16,17] }
+            draw: { icons: { text: { font: { size: 12px } } } }
+        poi_labels-z18:
+            filter: { $zoom: [18,19] }
+            draw: { icons: { text: { font: { size: 12px } } } }
+        poi_labels-z20-up:
+            filter: { $zoom: { min: 20 } }
+            draw: { icons: { text: { font: { size: 14px } } } }
+
+        no-name:
+            filter: { name: false }
+            sports-pitch:
+                filter: { kind: [grass, pitch], $geometry: point, area: true, $zoom: { min: 17 } }
+                draw:
+                    icons:
+                        sprite: function() { return feature.sport; }
+                        visible: true
+                        priority: 69
+                baseball:
+                    filter: { sport: baseball }
+                    draw: { icons: { sprite: baseball-field } }
+                basketball:
+                    filter: { sport: basketball }
+                    draw: { icons: { sprite: basketball-court } }
+                football:
+                    filter: { sport: football }
+                    draw: { icons: { sprite: football-stadium } }
+                hockey:
+                    filter: { sport: hockey-field }
+                    draw: { icons: { sprite: hockey-field } }
+                soccer:
+                    filter: { sport: soccer }
+                    draw: { icons: { sprite: soccer-field } }
+                tennis:
+                    filter: { sport: tennis }
+                    draw: { icons: { sprite: tennis } }
+            toilets:
+                filter: { kind: toilets, $zoom: { min: 18 }  }
+                draw: { icons: { sprite: toilets, visible: true } }
+            playground:
+                filter: { kind: playground, $zoom: { min: 18 }  }
+                draw: { icons: { sprite: playground, visible: true } }
+            picnic_site:
+                filter: { kind: picnic_site, $zoom: { min: 18 }  }
+                draw: { icons: { sprite: picnic-spot, visible: true } }
+            information:
+                filter: { kind: information, $zoom: { min: 18 }  }
+                draw: { icons: { sprite: information, visible: true } }
+            drinking-water:
+                filter: { kind: drinking_water, $zoom: { min: 18 }  }
+                draw: { icons: { sprite: drinking-water, visible: true } }
+            traffic-signal:
+                filter: { kind: traffic_signals, $zoom: { min: 18 } }
+                draw:   { icons: { sprite: traffic-signal, visible: true } }
+            bicycle-parking:
+                filter: { kind: [bicycle_parking], $zoom: { min: 19 } }
+                draw:   { icons: { sprite: bicycle-parking, visible: true } }
+            car-parking:
+                filter: { kind: [parking], $zoom: { min: 17 } }
+                draw:   { icons: { sprite: parking, visible: true } }
+        has-name:
+            filter: { name: true }
+            # match 1:1 correlations between data and sprite name
+            direct-match:
+                filter:
+                    all:
+                        - area: false
+                draw:
+                    icons:
+                        # sprite_source: kind
+                        sprite: function() { return feature.kind; }
+                        visible: true
+
+            # add generic icon at high zoom, if direct match fails
+            generic-icons:
+                filter: { $zoom: { min: 18 }, area: false }
+                draw:
+                    icons:
+                        priority: 67
+                        sprite_default: generic
+                        visible: true
+
+            # add generic icon at high zoom
+            default-label-names:
+                filter: { $zoom: { min: 13 }, area: false }
+                draw:
+                    icons:
+                        text:
+                            visible: true
+#                            priority: 68
+
+            landuse-labels-green-areas-national-park:
+                filter:
+                    all:
+                        - area: true
+                        - $geometry: point
+                        - kind: [national_park, "park or protected land"]
+                    any:
+                        # show labels for smaller landuse areas at higher zooms
+                        - { $zoom: [4],  area: { min: 3000000000 } }
+                        - { $zoom: [5],  area: { min: 3000000000 } }
+                        - { $zoom: [6],  area: { min: 500000000 } }
+                        - { $zoom: [7,8,9],  area: { min: 100000000 } }
+                        - { $zoom: [10], area: { min: 50000000 } }
+                        - { $zoom: [11], area: { min: 25000000 } }
+                        - { $zoom: [12], area: { min: 5000000 } }
+                        - { $zoom: [13], area: { min: 200000 } }
+                        - { $zoom: [14], area: { min: 50000 } }
+                        - { $zoom: { min: 15 } }
+                national-park:
+                    # yosemite national park, joshua tree national park
+                    filter: function() { return feature.name && ((feature.name.indexOf("National Park") > -1) || feature.name.indexOf("National Monument") > -1); }
+                    visible: true
+                    draw:
+                        icons:
+                            visible: true
+                            sprite: park
+                            priority: 41
+                            text:
+                                visible: true
+                                font:
+                                    fill: red
+                    natl-park-labels-z4-z6:
+                        filter: { $zoom: [4,5,6] }
+                        draw:
+                            icons:
+                                visible: false
+                                text: { font: { size: 10px } }
+                    natl-park-labels-z7:
+                        filter: { $zoom: [7] }
+                        draw:
+                            icons:
+                                text: { font: { size: 10px } }
+                    natl-park-labels-z8:
+                        filter: { $zoom: [8,9] }
+                        draw:
+                            icons:
+                                text: { font: { size: 11px } }
+                    natl-park-labels-z10:
+                        filter: { $zoom: {min: 10, max: 14 } }
+                        draw:
+                            icons:
+                                text: { font: { size: 12px } }
+
+            landuse-labels-green-areas-not-national-park:
+                filter:
+                    all:
+                        - area: true
+                        - $geometry: point
+                        - kind: [park, national_park, "park or protected land", conservation, protected_area, nature_reserve, forest, grass]
+                    any:
+                        # show labels for smaller landuse areas at higher zooms
+                        - { $zoom: [5],    area: { min: 10000000000 } }
+                        - { $zoom: [6,7],  area: { min: 5000000000 } }
+                        - { $zoom: [8],    area: { min: 1000000000 } }
+                        - { $zoom: [9],    area: { min: 100000000 } }
+                        - { $zoom: [10],   area: { min: 50000000 } }
+                        - { $zoom: [11],   area: { min: 25000000 } }
+                        - { $zoom: [12],   area: { min: 5000000 } }
+                        - { $zoom: [13],   area: { min: 200000 } }
+                        - { $zoom: [14],   area: { min: 50000 } }
+                        - { $zoom: [15],   area: { min: 10000 } }
+                        - { $zoom: [16],   area: { min: 1000 } }
+                        - { $zoom: { min: 17, area: true } }
+                not-national-park:
+                    filter: function() { return feature.name && !((feature.name.indexOf("National Park") > -1) || feature.name.indexOf("National Monument") > -1); }
+                    draw:
+                        icons:
+                            visible: true
+                            sprite: park
+                            priority: 41
+                            text:
+                                visible: true
+                                priority: 42
+                                font:
+                                    fill: red
+                    green-areas-z6:
+                        # mojave national preserve
+                        filter: { $zoom: [6] }
+                        draw:
+                            icons:
+                                visible: false
+                                text: { font: { size: 10px } }
+                    green-areas-z7:
+                        filter: { $zoom: [7] }
+                        draw:
+                            icons:
+                                visible: false
+                                text: { font: { size: 10px } }
+                    green-areas-z8-z9:
+                        filter: { $zoom: { min: 8, max: 14 } }
+                        draw:
+                            icons:
+                                text: { font: { size: 11px } }
+                    wilderness-areas-early:
+                        filter: function() { return $zoom < 10 && feature.name && (feature.name.indexOf("Wilderness") > -1 || feature.name.indexOf("BLM") > -1) }
+                        draw:
+                            icons:
+                                visible: false
+                                text: { visible: false }
+                    early-not-national-park:
+                        filter: { not: { kind: [national_park] }, $zoom: { max: 6 } }
+                        draw:
+                            icons:
+                                visible: false
+                                text: { visible: false }
+                    not-national-park:
+                        filter: function() { return feature.name && !((feature.name.indexOf("National Park") > -1) || feature.name.indexOf("National Monument") > -1); }
+                        # draw:
+                        #     icons:
+                        #         sprite: park
+                        early:
+                            filter: { $zoom: { max: 8 } }
+                            draw:
+                                icons:
+                                    visible: false
+                                    text: { visible: false }
+                    forest:
+                        filter: function() { return ( (feature.name && feature.name.indexOf("Forest") > -1) || ((feature.protect_class == 6 || feature.protect_class == '6') && feature.name.indexOf("Park") < 0) ) }
+                        draw:
+                            icons:
+                                sprite: forest
+                    hide-till-later:
+                        filter: { kind: [grass], $zoom: { max: 16 } }
+                        draw:
+                            icons:
+                                visible: false
+                                text: { visible: false }
+                    only-text-later:
+                        filter: { kind: [grass], $zoom: { min: 16 } }
+                        draw:
+                            icons:
+                                visible: false
+                                text: { font: { style: italic } }
+
+            battlefield:
+                filter:
+                    all:
+                        - area: true
+                        - $geometry: point
+                        - kind: [battlefield]
+                    any:
+                        # show labels for smaller landuse areas at higher zooms
+                        - { $zoom: [4],  area: { min: 3000000000 } }
+                        - { $zoom: [5],  area: { min: 3000000000 } }
+                        - { $zoom: [6],  area: { min: 500000000 } }
+                        - { $zoom: [7,8,9],  area: { min: 10000000 } }
+                        - { $zoom: [10], area: { min: 5000000 } }
+                        - { $zoom: [11], area: { min: 5000000 } }
+                        - { $zoom: [12], area: { min: 5000000 } }
+                        - { $zoom: [13], area: { min: 200000 } }
+                        - { $zoom: [14], area: { min: 50000 } }
+                        - { $zoom: { min: 15 }, area: true }
+                draw:
+                    icons:
+                        visible: true
+                        sprite: battlefield
+                        priority: 41
+                        text:
+                            visible: true
+                            font:
+                                fill: red
+
+            beach:
+                filter:
+                    all:
+                        - area: true
+                        - $geometry: point
+                        - kind: [beach]
+                    any:
+                        # show labels for smaller landuse areas at higher zooms
+                        - { $zoom: [10],   area: { min: 300000 } }
+                        - { $zoom: [11],   area: { min: 100000 } }
+                        - { $zoom: [12],   area: { min: 50000 } }
+                        - { $zoom: [13],   area: { min: 50000 } }
+                        - { $zoom: [14],   area: { min: 20000 } }
+                        - { $zoom: [15],   area: { min: 10000 } }
+                        - { $zoom: [16],   area: { min: 1000 } }
+                        - { $zoom: { min: 17 } }
+                draw:
+                    icons:
+                        visible: true
+                        interactive: true
+                        sprite: beach
+                        text:
+                            visible: true
+                            interactive: true
+                            font:
+                                fill: red
+            airport:
+                filter:
+                    all:
+                        - kind: [airport, aerodrome]
+                        - area: true
+                        - $geometry: point
+                    any:
+                        # show labels for smaller landuse areas at higher zooms
+                        - { $zoom: [9],  area: { min: 10000000 } }
+                        - { $zoom: [10], area: { min: 10000000 } }
+                        - { $zoom: [11], area: { min: 5000000 } }
+                        - { $zoom: [12], area: { min: 5000000 } }
+                        - { $zoom: [13], area: { min: 500000 } }
+                        - { $zoom: [14], area: { min: 20000 } }
+                        # show labels for smaller landuse areas at higher zooms
+                        - { $zoom: [15], area: { min: 10000 } }
+                        - { $zoom: [16], area: { min: 5000 } }
+                        - { $zoom: [17], area: { min: 2000 } }
+                        - { $zoom: { min: 18 } }
+                draw:
+                    icons:
+                        sprite: airport
+                        visible: true
+                        priority: 42
+                        text:
+                            visible: true
+                            priority: 41
+                            text_source: global.ux_language_text_source_iata
+                            font:
+                                fill: red
+
+                early:
+                    filter: { $zoom: [9,10,11] }
+                    draw: { icons: { text: { text_source: iata, font: { size: 11px } } } }
+                early2:
+                    filter: { $zoom: { min: 12, max: 14 } }
+                    draw: { icons: { text: { font: { size: 11px } } } }
+            university:
+                filter:
+                    all:
+                        - kind: [university, college]
+                        - area: true
+                        - $geometry: point
+                        - not: { $layer: buildings }
+                    any:
+                        # show labels for smaller landuse areas at higher zooms
+                        - { $zoom: [9],   area: { min: 10000000 } }
+                        - { $zoom: [10], area: { min: 5000000 } }
+                        - { $zoom: [11], area: { min: 2000000 } }
+                        - { $zoom: [12], area: { min: 500000 } }
+                        - { $zoom: [13], area: { min: 100000 } }
+                        - { $zoom: [14], area: { min: 100000 } }
+                        # show labels for smaller landuse areas at higher zooms
+                        - { $zoom: [15], area: { min: 40000 } }
+                        - { $zoom: [16], area: { min: 5000 } }
+                        - { $zoom: [17], area: { min: 2000 } }
+                        - { $zoom: { min: 18 } }
+                visible: true
+                draw:
+                    icons:
+                        sprite: college-university
+                        visible: true
+                        priority: 41
+                        text:
+                            visible: true
+                            font:
+                                fill: red
+                early:
+                    filter: { $zoom: { max: 12 } }
+                    draw: { text: { visible: false } }
+                early2:
+                    filter: { $zoom: { min: 12, max: 14 } }
+                    draw: { icons: { text: { size: 11px } } }
+            school:
+                filter:
+                    all:
+                        - kind: [school, kindergarten]
+                        - area: true
+                        - $geometry: point
+                        - not: { $layer: buildings }
+                    any:
+                        # show labels for smaller landuse areas at higher zooms
+                        - { $zoom: [13], area: { min: 100000 } }
+                        - { $zoom: [14], area: { min: 50000 } }
+                        # show labels for smaller landuse areas at higher zooms
+                        - { $zoom: [15], area: { min: 10000 } }
+                        - { $zoom: [16], area: { min: 5000 } }
+                        - { $zoom: [17], area: { min: 2000 } }
+                        - { $zoom: { min: 18, area: true } }
+                draw:
+                    icons:
+                        sprite: school
+                        visible: true
+                        priority: 41
+                        text:
+                            visible: true
+                            font:
+                                fill: red
+
+            winter_sports:
+                filter:
+                    all:
+                        - kind: winter_sports
+                        - area: true
+                        - $geometry: point
+                    any:
+                        # show labels for smaller landuse areas at higher zooms
+                        - { $zoom: [10], area: { min: 5000000 } }
+                        - { $zoom: [11], area: { min: 2000000 } }
+                        - { $zoom: [12], area: { min: 500000 } }
+                        - { $zoom: [13], area: { min: 100000 } }
+                        - { $zoom: [14], area: { min: 100000 } }
+                        # show labels for smaller landuse areas at higher zooms
+                        - { $zoom: [15], area: { min: 40000 } }
+                        - { $zoom: [16], area: { min: 5000 } }
+                        - { $zoom: [17], area: { min: 2000 } }
+                        - { $zoom: { min: 18 } }
+                draw:
+                    icons:
+                        sprite: ski-area
+                        visible: true
+                        priority: 41
+                        text:
+                            visible: true
+                            font:
+                                fill: red
+                early:
+                    filter: { $zoom: { max: 14 } }
+                    draw: { icons: { text: { font: { size: 10px } } } }
+            tourism-related:
+                filter:
+                    all:
+                        - kind: [zoo, theme_park, resort, aquarium, winery, maze, stadium, enclosure, animal]
+                        - area: true
+                        - $geometry: point
+                    any:
+                        # show labels for smaller landuse areas at higher zooms
+                        - { $zoom: { min: 11 }, area: { min: 400000 } }
+                        - { $zoom: { min: 12 }, area: { min: 200000 } }
+                        - { $zoom: { min: 13 }, area: { min: 50000 } }
+                        - { $zoom: { min: 14 }, area: { min: 20000 } }
+                        - { $zoom: { min: 15 }, area: { min: 10000 } }
+                        - { $zoom: { min: 15 }, area: { min: 2000 } }
+                        - { $zoom: { min: 16 }, area: true }
+                draw:
+                    icons:
+                        sprite: function() { return feature.kind; }
+                        sprite_default: generic
+                        visible: true
+                        priority: 43
+                        text:
+                            visible: true
+                            priority: 44
+                            font:
+                                fill: red
+                enclosure:
+                    filter: { kind: [enclosure, animal] }
+                    draw:
+                        icons:
+                            visible: false
+                            sprite_default: dot-black
+                        text:
+                            text_wrap: 10
+                            font:
+                                style: italic
+                                weight: 400
+                early-sizing:
+                    filter: { $zoom: { max: 14 } }
+                    draw: { icons: { text: { size: 11px } } }
+            playgrounds_allotments_attraction_landmark_supermarket:
+                filter:
+                    all:
+                        - kind: [playground, allotments, attraction, landmark, supermarket]
+                        - area: true
+                        - $geometry: point
+                    any:
+                        - { $zoom: [15], area: { min: 600 } }
+                        - { $zoom: [16], area: { min: 300 } }
+                        - { $zoom: { min: 17 } }
+                draw:
+                    icons:
+                        visible: true
+                        priority: 41
+                        text:
+                            visible: true
+                            font:
+                                size: 10px
+                                stroke: { color: red, width: 4 }
+                attraction:
+                    filter: { kind: [attraction] }
+                    draw:
+                        icons:
+                            sprite: attraction
+                landmark:
+                    filter: { kind: [landmark] }
+                    draw:
+                        icons:
+                            sprite: landmark
+            glacier:
+                filter:
+                    all:
+                        - kind: glacier
+                        - area: true
+                        - $geometry: point
+                    any:
+                        # show labels for smaller landuse areas at higher zooms
+                        - { $zoom: [10],    area: { min: 20000000 } }
+                        - { $zoom: [11],    area: { min: 5000000 } }
+                        - { $zoom: [12],    area: { min: 2000000 } }
+                        - { $zoom: [13],    area: { min: 500000 } }
+                        # show labels for smaller landuse areas at higher zooms
+                        - { $zoom: { min: 14 } }
+                draw:
+                    icons:
+                        visible: false
+                    text:
+                        visible: true
+                        priority: 44
+                        interactive: true
+                        text_wrap: 10
+                        font:
+                            fill: red
+
+            station-train-subway:
+                filter: { kind: [station, train-station, train_station], $zoom: { min: 11 } }
+                visible: true
+                draw:
+                    icons:
+                        visible: true
+                        sprite: train-station
+                        size: [[13, 12px], [14, 12px], [15, 16px], [17, 18px], [18, 20px]]
+                        priority: 42
+                        text:
+                            visible: true
+                            fill: red
+                low-priority-early:
+                    filter: { kind_tile_rank: { min: 5 }, $zoom: { min: 0, max: 13 } }
+                    draw:
+                        icons:
+                            visible: false
+                            text: { visible: false }
+                low-priority-early-z13:
+                    filter: { kind_tile_rank: { min: 5 }, $zoom: [13] }
+                    draw:
+                        icons:
+                            visible: false
+                            text: { visible: false }
+                low-priority-early-z14:
+                    filter: { kind_tile_rank: { min: 7 }, $zoom: [14] }
+                    draw:
+                        icons:
+                            text: { visible: false }
+
+            landuse-labels-not-any-above:
+                filter:
+                    all:
+                        - $zoom: { min: 6 }
+                        - area: true
+                        - $geometry: point
+                        - not: { kind: [park, national_park, "park or protected land", battlefield, conservation, protected_area, nature_reserve, forest, grass, beach, airport, aerodrome, university, college, school, kindergarten, winter_sports, zoo, theme_park, resort, aquarium, winery, maze, stadium, playground, allotments, attraction, landmark, glacier, station] }
+                    any:
+                        # show labels for smaller landuse areas at higher zooms
+                        - { $zoom: [5,6,7], area: { min: 5000000000 } }
+                        - { $zoom: [8],     area: { min: 1600000000 } }
+                        - { $zoom: [9],     area: { min: 400000000 } }
+                        - { $zoom: [10],    area: { min: 100000000 } }
+                        - { $zoom: [11],    area: { min: 25000000 } }
+                        - { $zoom: [12],    area: { min: 5000000 } }
+                        - { $zoom: [13],    area: { min: 1000000 } }
+                        - { $zoom: [14],    area: { min: 100000 } }
+                        # show labels for smaller landuse areas at higher zooms
+                        - { $zoom: [15],    area: { min: 5000 } }
+                        - { $zoom: [16],    area: { min: 2000 } }
+                        - { $zoom: { min: 17 }, area: true }
+                draw:
+                    icons:
+                        sprite: function() { return feature.kind; }
+                        sprite_default: generic
+                        visible: true
+                        priority: 43
+                        text:
+                            visible: true
+                            font:
+                                fill: red
+                early-sizing:
+                    filter: { $zoom: { max: 14 } }
+                    draw: { text: { size: 11px } }
+                building-like:
+                    filter: { kind: [commercial,residential,warehouse,public,dormitory], osm_relation: false }
+                    draw:
+                        icons:
+                            sprite: building
+                hide-till-later:
+                    filter: { kind: [pedestrian,common,railway,ship,houseboat,common,grass,wetland,pitch], $zoom: { max: 17 } }
+                    draw:
+                        icons:
+                            visible: false
+                            text: { visible: false }
+                only-text-later:
+                    filter: { kind: [pedestrian,common,railway,ship,houseboat,common,grass,wetland,pitch], $zoom: { min: 17 } }
+                    draw:
+                        icons:
+                            visible: false
+                            text: { font: { style: italic } }
+                burial_vault-early:
+                    filter: { kind: [burial_vault], $zoom: { max: 19 } }
+                    draw:
+                        icons:
+                            visible: false
+                            text:  { visible: false }
+            university-poi:
+                filter: { kind: [university, college], area: false, $zoom: { max: 16 } }
+                draw:
+                    icons:
+                        visible: false
+                        text:  { visible: false }
+            office-early:
+                filter:
+                    any:
+                        - { kind: [insurance, office, company], $zoom: [15], area: { max: 10000 } }
+                        - { kind: [insurance, office, company], $zoom: [16], area: { max: 5000 } }
+                draw:
+                    icons:
+                        visible: false
+                        text:  { visible: false }
+            bank-early:
+                filter: { kind: [bank], $zoom: { max: 17 } }
+                draw:
+                    icons:
+                        visible: false
+                        text:  { visible: false }
+            post-office-early:
+                filter: { kind: [post_office], $zoom: { max: 14 } }
+                draw:
+                    icons:
+                        visible: false
+                        text:  { visible: false }
+            atm-early:
+                filter: { kind: [atm], $zoom: { max: 18 } }
+                draw:
+                    icons:
+                        visible: false
+                        text:  { visible: false }
+            bicycle-parking-early:
+                filter: { kind: [bicycle_parking], $zoom: { max: 19 } }
+                draw:
+                    icons:
+                        visible: false
+                        text:  { visible: false }
+            yes-early:
+                filter: { kind: [yes], $zoom: { max: 18 } }
+                draw:
+                    icons:
+                        visible: false
+                        text:  { visible: false }
+            peak-early:
+                filter: { kind: [peak], $zoom: { max: 16 } }
+                draw:
+                    icons:
+                        visible: false
+                        text:  { visible: false }
+            drinking-water-early:
+                filter: { kind: [drinking_water], $zoom: { max: 18 } }
+                draw:
+                    icons:
+                        visible: false
+                        text:  { visible: false }
+            memorial-early:
+                filter: { kind: [memorial], $zoom: { max: 13 } }
+                draw:
+                    icons:
+                        visible: false
+                        text:  { visible: false }
+            animal-points-early:
+                filter: { kind: [animal], area: false, $zoom: { max: 18 } }
+                draw:
+                    icons:
+                        visible: false
+                        text:  { visible: false }
+            parking-labels-early:
+                filter:
+                    kind: [parking]
+                    $zoom: { max: 18 }
+                draw:
+                    icons:
+                        visible: false
+                        text:
+                            visible: false
+            parking-labels:
+                filter:
+                    kind: [parking]
+                    $zoom: { min: 18 }
+                draw:
+                    icons:
+                        text:
+                            visible: true
+                            font:
+                                fill: red
+            landuse-funky:
+                filter: { kind: [commercial, residential, wood], $zoom: { max: 17 } }
+                draw:
+                    icons:
+                        text:
+                            visible: false
+            car-sharing:
+                filter: { kind: car_sharing }
+                icons-early:
+                    filter: { $zoom: { max: 17 } }
+                    draw:
+                        icons:
+                            visible: false
+                text-labels-early:
+                    filter: { $zoom: { max: 19 } }
+                    draw:
+                        icons:
+                            text:
+                                visible: false
+            tower:
+                filter: { kind: [tower], label_placement: yes }
+                draw:
+                    icons:
+                        visible: false
+                        text:
+                            font:
+                                style: italic
+            tram-stop-early:
+                filter: { kind: tram_stop, $zoom: { max: 15 } }
+                draw:
+                    icons:
+                        visible: false
+            tram-stop-early-z15:
+                filter: { kind: tram_stop, $zoom: [15] }
+                draw:
+                    icons:
+                        text:
+                            visible: false
+            tram-stop:
+                filter: { kind: tram_stop, $zoom: { min: 15 } }
+                draw:
+                    icons:
+                        size: [[13, 12px], [16, 18px]]
+                        #text:
+                        #    offset: [[13, [0, 6px]], [16, [0, 9px]]]
+            glaciers-pois:
+                filter: { $zoom: { min: 14 }, kind: glacier, area: false }
+                draw:
+                    icons:
+                        visible: false
+                        text:
+                            visible: false
+                    text:
+                        visible: false
+                        priority: 45
+                        interactive: true
+                        text_wrap: 10
+                        font:
+                            fill: red
+            bus-stop-bus-station-labels:
+                filter:
+                    kind: [bus_stop, bus_station]
+                draw:
+                    icons:
+                        text:
+                            visible: true
+                            font:
+                                fill: red
+                bus-stop-early1:
+                    filter:
+                        kind: [bus_stop]
+                        $zoom: { max: 18 }
+                    draw:
+                        icons:
+                            visible: false
+                bus_stop-early2:
+                    filter:
+                        kind: [bus_stop]
+                        $zoom: { max: 19 }
+                    draw:
+                        icons:
+                            size: [[13, 8px], [19, 18px]]
+                            text:
+                                visible: false
+            minor-z17-early:
+                filter:
+                    kind: [accountant, administrative, advertising_agency, architect, association, atm, bakery, bed_and_breakfast, bicycle, bicycle_parking, bicycle_rental_station, books, butcher, car, car_repair, chalet, clothes, company, computer, consulting, convenience, doityourself, drinking_water, dry_cleaning, educational_institution, emergency_phone, employment_agency, estate_agent, fashion, financial, florist, foundation, gift, government, greengrocer, guest_house, hairdresser, hostel, hotel, insurance, it, jewelry, lawyer, mast, memorial, mobile_phone, motel, newspaper, ngo, notary, optician, parking, pet, physician, playground, political_party, post_box, religion, research, subway_entrance, tax_advisor, telecommunication, telephone, theatre, therapist, toilets, traffic_signals, travel_agent, water_tower, yes]
+                    area: false
+                    $zoom: { max: 17 }
+                draw:
+                    icons:
+                        visible: false
+                        text:  { visible: false }
+            minor-z18-early:
+                filter:
+                    kind: [bench, waste_basket]
+                    area: false
+                    $zoom: { max: 18 }
+                draw:
+                    icons:
+                        visible: false
+                        text:  { visible: false }
+
+            icons:
+                adult-boutique:
+                    filter: { kind: [erotic, adult_boutique] }
+                    draw:   { icons: { sprite: adult-boutique } }
+                allotments:
+                    filter: { kind: [allotments] }
+                    draw:   { icons: { sprite: garden } }
+                airport:
+                    filter: { kind: [airport, aerodrome] }
+                    draw:   { icons: { sprite: airport } }
+                animal-shelter:
+                    filter: { kind: [animal_shelter, animal-shelter, animal_boarding] }
+                    draw:   { icons: { sprite: animal-shelter } }
+                antique-shop:
+                    filter: { kind: [antiques, antique-shop] }
+                    draw:   { icons: { sprite: antique-shop } }
+                art-gallery:
+                    filter: { kind: [art_gallery, art-gallery, art, artwork] }
+                    draw:   { icons: { sprite: art-gallery } }
+                athletics-sports:
+                    filter: { kind: [athletic_sports, recreation_ground, sports_centre] }
+                    draw:   { icons: { sprite: athletics-sports } }
+                automotive-shop:
+                    filter: { kind: [car_repair, automotive-shop, automotive, tyres] }
+                    draw:   { icons: { sprite: automotive-shop } }
+                bakery:
+                    filter: { kind: [bakery, pastry, chocolate] }
+                    draw:   { icons: { sprite: bakery } }
+                bar:
+                    filter: { kind: [pub, bar] }
+                    draw:   { icons: { sprite: bar } }
+                beer-garden:
+                    filter: { kind: [biergarten, beer-garden, brewery] }
+                    draw:   { icons: { sprite: beer-garden } }
+                bike-shop:
+                    filter: { kind: [bicycle, bicycle_rental, bike, bike_shop, bicycle_rental_station] }
+                    draw:   { icons: { sprite: bike-shop } }
+                bicycle-parking:
+                    filter: { kind: [bicycle_parking] }
+                    draw:   { icons: { sprite: bicycle-parking } }
+                boat-ferry:
+                    filter: { kind: [ferry_terminal, boat-ferry, ferry-boat, ferry] }
+                    draw:   { icons: { sprite: boat-ferry } }
+                boat-ramp:
+                    filter: { kind: [slipway, boat-ramp, boat_ramp] }
+                    draw:   { icons: { sprite: boat-ramp } }
+                bookstore:
+                    filter: { kind: [books, bookstore] }
+                    draw:   { icons: { sprite: bookstore } }
+                bowling-alley:
+                    filter: { kind: [bowling_alley, bowling-alley] }
+                    draw:   { icons: { sprite: bowling-alley } }
+                bridal-shop:
+                    filter: { kind: [bridal, bridal-shop] }
+                    draw:   { icons: { sprite: bridal-shop } }
+                building-icon:
+                    filter: { kind: [building, auditorium, terminal, hangar, retirement_home, manor, recreation_center, apartments] }
+                    draw:   { icons: { sprite: building } }
+                    early:
+                        filter:
+                            any:
+                                # show labels for smaller landuse areas at higher zooms
+                                - { $zoom: [14], area: { max: 200000 } }
+                                - { $zoom: [15], area: { max: 20000 } }
+                                - { $zoom: [16], area: { max: 5000 } }
+                                - { $zoom: [17], area: { max: 1000 } }
+                        draw:
+                            icons:
+                                visible: false
+                                text:
+                                    visible: false
+                burger:
+                    filter: { kind: [fast_food, burger] }
+                    draw:   { icons: { sprite: burger } }
+                taqueria:
+                    filter: { kind: [burrito,taqueria] }
+                    draw:   { icons: { sprite: taqueria } }
+                bus-station:
+                    filter: { kind: [bus_stop, bus_station] }
+                    draw:   { icons: { sprite: bus-station } }
+                camera-store:
+                    filter: { kind: [camera, camera-store, photo] }
+                    draw:   { icons: { sprite: camera-store } }
+                campground:
+                    filter: { kind: [campground, camp_site, caravan_site] }
+                    draw:   { icons: { sprite: campground } }
+                candy-store:
+                    filter: { kind: [candy, candy-store, confectionery] }
+                    draw:   { icons: { sprite: candy-store } }
+                car-dealership:
+                    filter: { kind: [car, car-dealership] }
+                    draw:   { icons: { sprite: car-dealership } }
+                car-wash:
+                    filter: { kind: [car_wash, car-wash] }
+                    draw:   { icons: { sprite: car-wash } }
+                castle:
+                    filter: { kind: [castle, fort] }
+                    draw:   { icons: { sprite: castle } }
+                cemetery:
+                    filter: { kind: [grave_yard, cemetery] }
+                    draw:   { icons: { sprite: cemetery } }
+                cheese-shop:
+                    filter: { kind: [cheese, cheese-shop] }
+                    draw:   { icons: { sprite: cheese-shop } }
+                clothing-store:
+                    filter: { kind: [clothes, chothing-store, "clothes store", fashion] }
+                    draw:   { icons: { sprite: clothing-store } }
+                coffee-shop:
+                    filter: { kind: [cafe, coffee-shop] }
+                    draw:   { icons: { sprite: coffee-shop } }
+                college-university:
+                    filter: { kind: [university, college, college-university], area: false }
+                    draw:   { icons: { sprite: college-university } }
+                concert-hall:
+                    filter: { kind: [music_venue] }
+                    draw:   { icons: { sprite: concert-hall } }
+                convenience-store:
+                    filter: { kind: [convenience, convenience-store, convenience_store, beverages] }
+                    draw:   { icons: { sprite: convenience-store } }
+                cosmetics-shop:
+                    filter: { kind: [cosmetics, cosmetics-shop, beauty] }
+                    draw:   { icons: { sprite: cosmetics-shop } }
+                department-store:
+                    filter: { kind: [department_store, department-store] }
+                    draw:   { icons: { sprite: department-store } }
+                doctors:
+                    filter: { kind: [doctors, clinic] }
+                    draw:   { icons: { sprite: doctors } }
+                dog-park:
+                    filter: { kind: [dog_park, dog_run, dog-run] }
+                    draw:   { icons: { sprite: dog-park } }
+                drinking-water:
+                    filter: { kind: drinking_water }
+                    draw: { icons: { sprite: drinking-water } }
+                dry-cleaning:
+                    filter: { kind: [dry_cleaning] }
+                    draw:   { icons: { sprite: dry-cleaning } }
+                electronics-store:
+                    filter: { kind: [electronics, electronics-store, computer] }
+                    draw:   { icons: { sprite: electronics-store } }
+                factory:
+                    filter: { kind: [factory, industrial, chimney, sub_station, substation, wastewater_plant, works, water_works, plant, generator] }
+                    draw:   { icons: { sprite: factory } }
+                farmers-market:
+                    filter: { kind: [farmers_market, farmers-market] }
+                    draw:   { icons: { sprite: farmers-market } }
+                fire-station:
+                    filter: { kind: [fire_station, fire-station] }
+                    draw:   { icons: { sprite: fire-station } }
+                fish-market:
+                    filter: { kind: [fish, fish-market, seafood, fishmonger] }
+                    draw:   { icons: { sprite: fish-market } }
+                fishing-area:
+                    filter: { kind: [fishing_area, fishing-spot, fishing] }
+                    draw:   { icons: { sprite: fishing-area } }
+                fitness:
+                    filter: { kind: [gym, fitness, fitness_center] }
+                    draw:   { icons: { sprite: fitness } }
+                flea-market:
+                    filter: { kind: [flea_market, flea-market] }
+                    draw:   { icons: { sprite: flea-market } }
+                flower-shop:
+                    filter: { kind: [florist, flower-shop] }
+                    draw:   { icons: { sprite: flower-shop } }
+                forest:
+                    filter: { kind: [forest, conservation, wood] }
+                    draw:   { icons: { sprite: forest } }
+                furniture-store:
+                    filter: { kind: [furniture, furniture-store] }
+                    draw:   { icons: { sprite: furniture-store } }
+                garden-center:
+                    filter: { kind: [garden_centre, garden_center] }
+                    draw:   { icons: { sprite: garden-center } }
+                gas:
+                    filter: { kind: [gas, gas_canister] }
+                    draw:   { icons: { sprite: gas } }
+                gas-station:
+                    filter: { kind: [fuel, gas-station] }
+                    draw:   { icons: { sprite: gas-station } }
+                general-entertainment:
+                    filter: { kind: [ticket, general_entertainment] }
+                    draw:   { icons: { sprite: general-entertainment } }
+                generic:
+                    filter: { kind: [generic] }
+                    draw:   { icons: { sprite: generic } }
+                gift-shop:
+                    filter: { kind: [gift, gift-shop] }
+                    draw:   { icons: { sprite: gift-shop } }
+                golf-course:
+                    filter: { kind: [golf-course, golf_course] }
+                    draw:   { icons: { sprite: golf-course } }
+                government-building:
+                    filter: { kind: [townhall, public_building, embassy] }
+                    draw:   { icons: { sprite: government-building } }
+                grocery-store:
+                    filter: { kind: [supermarket, grocery-store, health_food, greengrocer] }
+                    draw:   { icons: { sprite: grocery-store } }
+                harbor-marina:
+                    filter: { kind: [marina, harbor, harbor-marina, harbor_marina, dock, mooring] }
+                    draw:   { icons: { sprite: harbor-marina } }
+                hardware-store:
+                    filter: { kind: [hardware, hardware-store, doityourself, paint] }
+                    draw:   { icons: { sprite: hardware-store } }
+                hotel:
+                    filter: { kind: [hotel, motel, hostel] }
+                    draw:   { icons: { sprite: hotel } }
+                hot_spring:
+                    filter: { kind: [hot_spring] }
+                    draw:   { icons: { sprite: hot-spring } }
+                hunting:
+                    filter: { kind: [hunting] }
+                    draw:   { icons: { sprite: hunting } }
+                ice-cream-shop:
+                    filter: { kind: [ice_cream] }
+                    draw:   { icons: { sprite: ice-cream-shop } }
+                information:
+                    filter: { kind: [info, information] }
+                    draw:   { icons: { sprite: information } }
+                jewelry-store:
+                    filter: { kind: [jewelry, jewelry_store, jewelry-store] }
+                    draw:   { icons: { sprite: jewelry-store } }
+                landmark:
+                    filter: { kind: [landmark, memorial, monument, wayside_shrine, beacon] }
+                    draw:   { icons: { sprite: landmark } }
+                tower:
+                    filter: { kind: [tower], label_placement: false }
+                    draw:   { icons: { sprite: landmark } }
+                laundry:
+                    filter: { kind: [laundry] }
+                    draw:   { icons: { sprite: laundry } }
+                light-rail:
+                    filter: { kind: [light-rail, light_rail, tram_stop] }
+                    draw:   { icons: { sprite: light-rail } }
+                liquor-store:
+                    filter: { kind: [alcohol, liquor-store, liquor] }
+                    draw:   { icons: { sprite: liquor-store } }
+                market:
+                    filter: { kind: [market, variety_store, boutique, dairy, retail] }
+                    draw:   { icons: { sprite: market } }
+                mine:
+                    filter: { kind: [mine, quarry, mineshaft, adit] }
+                    draw:   { icons: { sprite: mine } }
+                miscellaneous-shop:
+                    filter: { kind: [houseware, miscellaneous-shop] }
+                    draw:   { icons: { sprite: miscellaneous-shop } }
+                mobile-phone-shop:
+                    filter: { kind: [mobile_phone] }
+                    draw:   { icons: { sprite: mobile-phone-shop } }
+                motorcycle-shop:
+                    filter: { kind: [motorcycle, motorcycle_shop, motorcycle_repair] }
+                    draw:   { icons: { sprite: motorcycle-shop } }
+                mountain:
+                    filter: { kind: [mountain, peak] }
+                    draw:   { icons: { sprite: mountain } }
+                movie-theatre:
+                    filter: { kind: [cinema, movie-theatre, movie-theater] }
+                    draw:   { icons: { sprite: movie-theatre } }
+                museum:
+                    filter: { kind: [museum, observatory] }
+                    draw:   { icons: { sprite: museum } }
+                music-store:
+                    filter: { kind: [music, music-store, musical_instrument] }
+                    draw:   { icons: { sprite: music-store } }
+                newsstand:
+                    filter: { kind: [kiosk, newsstand, newsagent] }
+                    draw:   { icons: { sprite: newsstand } }
+                nightlife:
+                    filter: { kind: [nightclub, nightlife] }
+                    draw:   { icons: { sprite: nightlife } }
+                office:
+                    filter: { kind: [insurance, office, company] }
+                    draw:   { icons: { sprite: office } }
+                office-supplies:
+                    filter: { kind: [office_supplies, office-supplies, stationery] }
+                    draw:   { icons: { sprite: office-supplies } }
+                optical-shop:
+                    filter: { kind: [optician, optical_shop, optical-shop] }
+                    draw:   { icons: { sprite: optical-shop } }
+                outdoor:
+                    filter: { kind: [outdoor] }
+                    draw:   { icons: { sprite: outdoor } }
+                performing-arts:
+                    filter: { kind: [theater, theatre, performing-arts] }
+                    draw:   { icons: { sprite: performing-arts } }
+                pet-store:
+                    filter: { kind: [pet, pet-store, pet-service, pet_store] }
+                    draw:   { icons: { sprite: pet-store } }
+                pharmacy:
+                    filter: { kind: [pharmacy, chemist] }
+                    draw:   { icons: { sprite: pharmacy } }
+                photography-lab:
+                    filter: { kind: [photo_studio, photography_lab, photographer] }
+                    draw:   { icons: { sprite: photography-lab } }
+                picnic-spot:
+                    filter: { kind: [picnic_site, picnic_spot, picnic-spot, picnic_table] }
+                    draw:   { icons: { sprite: picnic-spot } }
+                pool:
+                    filter: { kind: [pool, swimming_pool, water_park] }
+                    draw:   { icons: { sprite: pool } }
+                pool-hall:
+                    filter: { kind: [billiards, pool-hall] }
+                    draw:   { icons: { sprite: pool-hall } }
+                post-office:
+                    filter: { kind: [post_office, post-office] }
+                    draw:   { icons: { sprite: post-office } }
+                power-pylon:
+                    filter: { kind: [tower, power-pylon, pylon] }
+                    draw:   { icons: { sprite: power-pylon } }
+                real-estate:
+                    filter: { kind: [estate_agent, real_estate] }
+                    draw:   { icons: { sprite: real-estate } }
+                recreation-track:
+                    filter: { kind: [recreation_track] }
+                    draw:   { icons: { sprite: recreation-track } }
+                recycling-facility:
+                    filter: { kind: [recycling, recycling-facility] }
+                    draw:   { icons: { sprite: recycling-facility } }
+                rental-car:
+                    filter: { kind: [rental-car, car_rental, car_sharing] }
+                    draw:   { icons: { sprite: rental-car } }
+                rest-area:
+                    filter: { kind: [rest_area, rest-area] }
+                    draw:   { icons: { sprite: rest-area } }
+                restaurant:
+                    filter: { kind: [restaurant, deli] }
+                    draw:   { icons: { sprite: restaurant } }
+                ruin:
+                    filter: { kind: [ruins, archaeological_site] }
+                    draw:   { icons: { sprite: ruin } }
+                salon-barber:
+                    filter: { kind: [hairdresser, salon-barber, salon, beauty_salon] }
+                    draw:   { icons: { sprite: salon-barber } }
+                scuba-diving:
+                    filter: { kind: [scuba_diving,dive_centre] }
+                    draw:   { icons: { sprite: scuba-diving } }
+                ship-wreck:
+                    filter: { kind: [wreck] }
+                    draw:   { icons: { sprite: ship-wreck } }
+                shoe-store:
+                    filter: { kind: [shoes, shoe-store, shoe_store] }
+                    draw:   { icons: { sprite: shoe-store } }
+                slipway:
+                    filter: { kind: [slipway] }
+                    draw:   { icons: { sprite: slipway } }
+                smoke-shop:
+                    filter: { kind: [smoke_shop, tobacco] }
+                    draw:   { icons: { sprite: smoke-shop } }
+                spa-massage:
+                    filter: { kind: [spa, spa-massage, sauna, massage] }
+                    draw:   { icons: { sprite: spa-massage } }
+                # prefix with "a-" here to allow Tangram to sort the generic style 1st, allowing more specific religion tags to win later
+                a-spiritual-center:
+                    filter:
+                        all:
+                            - kind: [spiritual_center, spiritual-center, place_of_worship, wayside_chapel]
+                    draw:   { icons: { sprite: spiritual-center } }
+                church:
+                    filter: { kind: [spiritual_center, spiritual-center, place_of_worship, wayside_chapel], religion: christian }
+                    draw:   { icons: { sprite: church } }
+                synagogue:
+                    filter: { kind: [spiritual_center, spiritual-center, place_of_worship, wayside_chapel], religion: jewish }
+                    draw:   { icons: { sprite: synagogue } }
+                buddhist:
+                    filter: { kind: [spiritual_center, spiritual-center, place_of_worship, wayside_chapel], religion: buddhist }
+                    draw:   { icons: { sprite: buddhism } }
+                mosque:
+                    filter: { kind: [spiritual_center, spiritual-center, place_of_worship, wayside_chapel], religion: muslim }
+                    draw:   { icons: { sprite: mosque } }
+                sporting-goods-shop:
+                    filter: { kind: [sporting_goods, sporting-goods-shop, sports] }
+                    draw:   { icons: { sprite: sporting-goods-shop } }
+                stable:
+                    filter: { kind: [stable, horse_riding, horse] }
+                    draw:   { icons: { sprite: stable } }
+                storage-facility:
+                    filter: { kind: [storage, storage-facility] }
+                    draw:   { icons: { sprite: storage-facility } }
+                subway-entrance:
+                    filter: { kind: [subway_entrance] }
+                    draw:   { icons: { sprite: subway-entrance } }
+                summer-camp:
+                    filter: { kind: [summer_camp] }
+                    draw:   { icons: { sprite: summer-camp } }
+                tailor-shop:
+                    filter: { kind: [tailor, tailor-shop] }
+                    draw:   { icons: { sprite: tailor-shop } }
+                tattoo-parlor:
+                    filter: { kind: [tattoo, tattoo_parlor, tattoo-parlor] }
+                    draw:   { icons: { sprite: tattoo-parlor } }
+                telescope:
+                    filter: { kind: [telescope] }
+                    draw:   { icons: { sprite: telescope } }
+                theme-park:
+                    filter: { kind: [theme_park, theme-park, miniature_golf] }
+                    draw:   { icons: { sprite: theme-park } }
+                thrift-vintage-store:
+                    filter: { kind: [thrift, thrift-vintage-store, second_hand] }
+                    draw:   { icons: { sprite: thrift-vintage-store } }
+                toll-booth:
+                    filter: { kind: [toll_booth, checkpoint, border_control] }
+                    draw:   { icons: { sprite: toll-booth } }
+                toy-game-store:
+                    filter: { kind: [toys, toy-game-store, baby_goods] }
+                    draw:   { icons: { sprite: toy-game-store } }
+                toilets:
+                    filter: { kind: [toilets] }
+                    draw:   { icons: { sprite: toilets } }
+                trailhead:
+                    filter: { kind: [trailhead, hiking_trail] }
+                    draw:   { icons: { sprite: trailhead } }
+                # because: JAPAN
+                traffic-signal:
+                    filter: { kind: traffic_signals }
+                    draw:   { icons: { sprite: traffic-signal } }
+                veterinarian:
+                    filter: { kind: [pet_care, veterinarian, veterinary] }
+                    draw:   { icons: { sprite: veterinarian } }
+                video-game-store:
+                    filter: { kind: [video_games] }
+                    draw:   { icons: { sprite: video-game-store } }
+                video-store:
+                    filter: { kind: [video, video_store] }
+                    draw:   { icons: { sprite: video-store } }
+                view-point:
+                    filter: { kind: [viewpoint, view_point, view-point, vista] }
+                    draw:   { icons: { sprite: view-point } }
+                waterfall:
+                    filter: { kind: [waterfall] }
+                    draw:   { icons: { sprite: waterfall } }
+                waterpark:
+                    filter: { kind: [water_park] }
+                    draw:   { icons: { sprite: waterpark } }
+                well:
+                    filter: { kind: [well, water_well] }
+                    draw:   { icons: { sprite: well } }
+                wine-shop:
+                    filter: { kind: [wine, wine-shop] }
+                    draw:   { icons: { sprite: wine-shop } }
+                winery:
+                    filter: { kind: [winery, wine] }
+                    draw:   { icons: { sprite: winery } }
+                winter_sport:
+                    filter: { kind: [ski, ski_rental, ski_school, ski_jumping, skiing] }
+                    draw:   { icons: { sprite: ski-area } }
+
+styles:
+    icons:
+        base: points
+        texture: pois
