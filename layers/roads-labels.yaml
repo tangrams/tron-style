@@ -3,7 +3,6 @@ import:
 
 layers:
     roads:
-        data: { source: mapzen }
         draw:
             lines:
                 interactive: true
@@ -32,8 +31,6 @@ layers:
                             size: [[15,12px],[20,14px]]
                             fill: [0.082,0.133,0.259]
                             stroke: { color: [0.000,0.533,1.000], width: 6px }
-
-
 
         major_road:
             filter: { kind: major_road }
