@@ -405,7 +405,7 @@ layers:
                                 visible: true
                                 priority: 42
                                 font:
-                                    fill: red
+                                    fill: yellow
                     green-areas-z6:
                         # mojave national preserve
                         filter: { $zoom: [6] }
