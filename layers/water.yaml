@@ -8,14 +8,10 @@ layers:
                 color: [0.149,0.153,0.329]
 
         later:
-            filter: { $zoom: { min: 13 } }
+            filter: { $zoom: { min: 11 } }
             draw:
                 polygons:
                     style: water-later
-                    # color: [0.304,0.310,0.660]
-                    # color: [0.194,0.198,0.380]
-                    # color: [0.219,0.226,0.430]
-
         lakes:
             filter:
                 all:
@@ -42,21 +38,19 @@ layers:
             draw:
                 polygons:
                     style: water
-                    # color: [0.219, 0.226, 0.529]
-                    color: [0.304,0.310,0.660]
 
         other_areas:
             filter: { not: { kind: [ocean, lake, water, reservoir, playa] }, $zoom: { min: 10 }, area: { min: 100 } }
             draw:
                 polygons:
                     style: water
-                    color: [0.304,0.310,0.660]
+
             later:
                 filter: { $zoom: { min: 13 } }
                 draw:
                     polygons:
                         style: water-later
-                        color: [0.194,0.198,0.380]
+
                 swimming-pool-later:
                     filter:
                         kind: swimming_pool
@@ -126,6 +120,7 @@ layers:
                     color: [0.155,0.482,0.910]
                     width: [[8,0px],[13,1px],[15,1.25px],[20,3px]]
                     join: round
+
             swimming_pool:
                 filter: { kind: swimming_pool }
                 draw:
@@ -133,6 +128,7 @@ layers:
                         style: swimming-pool-glow
                         color: [0.557,0.996,1.000]
                         width: [[8,0px],[13,3px],[15,4px],[20,12px]]
+
             boundaries-not_ocean-riverbank:
                 # river boundaries like the thames in london, la seine in paris
                 filter: { kind: riverbank }
@@ -145,6 +141,7 @@ styles:
     water:
         base: polygons
         mix: [functions-zoom, polygons-diagonal-stripes]
+        blend: opaque
         shaders:
             defines:
                 ZOOM_START: 3.
@@ -163,12 +160,12 @@ styles:
         animated: true
         shaders:
             defines:
-                ZOOM_START: 13.
+                ZOOM_START: 11.
                 ZOOM_END: 16.
 
                 SHIMMERING_SCALE: mix(10.,30.,zoom())
-                # SHIMMERING_COLOR: color.rgb
-                # SHIMMERING_BACKGROUND_COLOR: vec3(0.145,0.157,0.247)
+                SHIMMERING_COLOR: color.rgb
+                SHIMMERING_BACKGROUND_COLOR: vec3(0.128,0.257,0.446)
                 SHIMMERING_SPEED: .5
                 SHIMMERING_AMOUNT: zoom()
                 SHIMMERING_ANIMATED: global.animated
