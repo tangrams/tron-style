@@ -46,7 +46,7 @@ layers:
                     style: water
 
             later:
-                filter: { $zoom: { min: 13 } }
+                filter: { $zoom: { min: 11 } }
                 draw:
                     polygons:
                         style: water-later
