@@ -5,7 +5,7 @@ layers:
             polygons:
                 style: water
                 order: global.order
-                color: [0.304,0.310,0.660]
+                color: [0.149,0.153,0.329]
 
         later:
             filter: { $zoom: { min: 13 } }
@@ -153,7 +153,7 @@ styles:
                 ZOOM_IN: .9
                 ZOOM_OUT: -.2
 
-                STRIPES_ALPHA: .5
+                STRIPES_ALPHA: 1.
                 STRIPES_SCALE: 20.
                 STRIPES_WIDTH: zoom()
 
