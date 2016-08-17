@@ -161,9 +161,9 @@ styles:
         shaders:
             defines:
                 ZOOM_START: 11.
-                ZOOM_END: 16.
+                ZOOM_END: 20.
 
-                SHIMMERING_SCALE: mix(10.,30.,zoom())
+                SHIMMERING_SCALE: mix(35.,10.,zoom())
                 SHIMMERING_COLOR: color.rgb
                 # SHIMMERING_BACKGROUND_COLOR: vec3(0.128,0.257,0.446)
                 SHIMMERING_BACKGROUND_COLOR: vec3(0.092,0.101,0.145)
