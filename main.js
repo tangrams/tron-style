@@ -118,17 +118,17 @@ map = (function () {
     }
 
     window.addEventListener('load', function () {
-                    // Scene initialized
-                    layer.scene.subscribe({
-                        load: function (data) {
-                            // TODO:
-                            // - this is not really working yet
-                            data.config.scene.animated = animated;
-                            data.config.global.animated = animated;
-                        }
-                    });
-                    layer.addTo(map);
-                });
+        // Scene initialized
+        layer.scene.subscribe({
+            load: function (data) {
+                // TODO:
+                // - this is not really working yet
+                data.config.scene.animated = animated;
+                data.config.global.animated = animated;
+            }
+        });
+        layer.addTo(map);
+    });
 
     // Feature selection
     function initFeatureSelection () {
