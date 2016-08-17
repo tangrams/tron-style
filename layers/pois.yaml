@@ -163,24 +163,6 @@ textures:
             ux-transit-stop: [584, 210, 20, 20]
 
 layers:
-    pois:
-        data: { source: mapzen }
-        visible: true
-        draw:
-            icons:
-                size: 18px
-
-        has-name:
-            filter: { name: true }
-            station-train-subway:
-                filter: { kind: [station, train-station, train_station], $zoom: { min: 11 } }
-                visible: true
-                draw:
-                    icons:
-                        visible: true
-                        sprite: train-station
-                        size: 18px
-                        priority: 42
 
     pois_and_landuse_labels:
         data: { source: mapzen, layer: [pois,landuse] }
@@ -206,38 +188,38 @@ layers:
                 visible: true
                 priority: 65
                 repeat_group: abc
-                # text:
-                #     text_source: global.ux_language_text_source
-                #     visible: false    # labels are enabled by each layer below
-                #     move_into_tile: false # preserves text alignment w/icons in JS
-                #     interactive: true
-                #     priority: 66
-                #     font:
-                #         family: Cairo
-                #         fill: red
-                #         size: 10px
-        #     text:
-        #         text_source: global.ux_language_text_source
-        #         visible: false    # labels are enabled by each layer below
-        #         move_into_tile: false # preserves text alignment w/icons in JS
-        #         interactive: true
-        #         priority: 66
-        #         font:
-        #             family: Cairo
-        #             fill: red
-        #             size: 10px
-        # poi_labels-z14:
-        #     filter: { $zoom: [14] }
-        #     draw: { icons: { text: { font: { size: 11px } } } }
-        # poi_labels-z15:
-        #     filter: { $zoom: [15,16,17] }
-        #     draw: { icons: { text: { font: { size: 12px } } } }
-        # poi_labels-z18:
-        #     filter: { $zoom: [18,19] }
-        #     draw: { icons: { text: { font: { size: 12px } } } }
-        # poi_labels-z20-up:
-        #     filter: { $zoom: { min: 20 } }
-        #     draw: { icons: { text: { font: { size: 14px } } } }
+                text:
+                    text_source: global.ux_language_text_source
+                    visible: false    # labels are enabled by each layer below
+                    move_into_tile: false # preserves text alignment w/icons in JS
+                    interactive: true
+                    priority: 66
+                    font:
+                        family: Cairo
+                        fill: [0.290,0.902,0.910]
+                        size: 10px
+            text:
+                text_source: global.ux_language_text_source
+                visible: false    # labels are enabled by each layer below
+                move_into_tile: false # preserves text alignment w/icons in JS
+                interactive: true
+                priority: 66
+                font:
+                    family: Cairo
+                    fill: [0.290,0.902,0.910]
+                    size: 10px
+        poi_labels-z14:
+            filter: { $zoom: [14] }
+            draw: { icons: { text: { font: { size: 11px } } } }
+        poi_labels-z15:
+            filter: { $zoom: [15,16,17] }
+            draw: { icons: { text: { font: { size: 12px } } } }
+        poi_labels-z18:
+            filter: { $zoom: [18,19] }
+            draw: { icons: { text: { font: { size: 12px } } } }
+        poi_labels-z20-up:
+            filter: { $zoom: { min: 20 } }
+            draw: { icons: { text: { font: { size: 14px } } } }
 
         no-name:
             filter: { name: false }
@@ -348,10 +330,10 @@ layers:
                             visible: true
                             sprite: park
                             priority: 41
-                            # text:
-                            #     visible: true
-                            #     font:
-                            #         fill: red
+                            text:
+                                visible: true
+                                font:
+                                    fill: [0.290,0.902,0.910]
                     natl-park-labels-z4-z6:
                         filter: { $zoom: [4,5,6] }
                         draw:
@@ -401,11 +383,11 @@ layers:
                             visible: true
                             sprite: park
                             priority: 41
-                            # text:
-                            #     visible: true
-                            #     priority: 42
-                            #     font:
-                            #         fill: yellow
+                            text:
+                                visible: true
+                                priority: 42
+                                font:
+                                    fill: [0.290,0.902,0.910]
                     green-areas-z6:
                         # mojave national preserve
                         filter: { $zoom: [6] }
@@ -514,11 +496,11 @@ layers:
                         visible: true
                         interactive: true
                         sprite: beach
-                        # text:
-                        #     visible: true
-                        #     interactive: true
-                        #     font:
-                        #         fill: red
+                        text:
+                            visible: true
+                            interactive: true
+                            font:
+                                fill: [0.290,0.902,0.910]
             airport:
                 filter:
                     all:
@@ -543,12 +525,12 @@ layers:
                         sprite: airport
                         visible: true
                         priority: 42
-                        # text:
-                        #     visible: true
-                        #     priority: 41
-                        #     text_source: global.ux_language_text_source_iata
-                        #     font:
-                        #         fill: red
+                        text:
+                            visible: true
+                            priority: 41
+                            text_source: global.ux_language_text_source_iata
+                            font:
+                                fill: [0.290,0.902,0.910]
 
                 early:
                     filter: { $zoom: [9,10,11] }
@@ -582,10 +564,10 @@ layers:
                         sprite: college-university
                         visible: true
                         priority: 41
-                        # text:
-                        #     visible: true
-                        #     font:
-                        #         fill: red
+                        text:
+                            visible: true
+                            font:
+                                fill: [0.290,0.902,0.910]
                 early:
                     filter: { $zoom: { max: 12 } }
                     draw: { text: { visible: false } }
@@ -613,10 +595,10 @@ layers:
                         sprite: school
                         visible: true
                         priority: 41
-                        # text:
-                        #     visible: true
-                        #     font:
-                        #         fill: red
+                        text:
+                            visible: true
+                            font:
+                                fill: [0.290,0.902,0.910]
 
             winter_sports:
                 filter:
@@ -641,10 +623,10 @@ layers:
                         sprite: ski-area
                         visible: true
                         priority: 41
-                        # text:
-                        #     visible: true
-                        #     font:
-                        #         fill: red
+                        text:
+                            visible: true
+                            font:
+                                fill: [0.290,0.902,0.910]
                 early:
                     filter: { $zoom: { max: 14 } }
                     draw: { icons: { text: { font: { size: 10px } } } }
@@ -669,22 +651,22 @@ layers:
                         sprite_default: generic
                         visible: true
                         priority: 43
-                        # text:
-                        #     visible: true
-                        #     priority: 44
-                        #     font:
-                        #         fill: red
+                        text:
+                            visible: true
+                            priority: 44
+                            font:
+                                fill: [0.290,0.902,0.910]
                 enclosure:
                     filter: { kind: [enclosure, animal] }
                     draw:
                         icons:
                             visible: false
                             sprite_default: dot-black
-                        # text:
-                        #     text_wrap: 10
-                        #     font:
-                        #         style: italic
-                        #         weight: 400
+                        text:
+                            text_wrap: 10
+                            font:
+                                style: italic
+                                weight: 400
                 early-sizing:
                     filter: { $zoom: { max: 14 } }
                     draw: { icons: { text: { size: 11px } } }
@@ -702,11 +684,11 @@ layers:
                     icons:
                         visible: true
                         priority: 41
-                        # text:
-                        #     visible: true
-                        #     font:
-                        #         fill: blue
-                        #         size: 10px
+                        text:
+                            visible: true
+                            font:
+                                fill: [0.290,0.902,0.910]
+                                size: 10px
                 attraction:
                     filter: { kind: [attraction] }
                     draw:
@@ -734,13 +716,13 @@ layers:
                 draw:
                     icons:
                         visible: false
-                    # text:
-                    #     visible: true
-                    #     priority: 44
-                    #     interactive: true
-                    #     text_wrap: 10
-                    #     font:
-                    #         fill: red
+                    text:
+                        visible: true
+                        priority: 44
+                        interactive: true
+                        text_wrap: 10
+                        font:
+                            fill: [0.290,0.902,0.910]
 
             station-train-subway:
                 filter: { kind: [station, train-station, train_station], $zoom: { min: 11 } }
@@ -751,9 +733,9 @@ layers:
                         sprite: train-station
                         size: [[13, 12px], [14, 12px], [15, 16px], [17, 18px], [18, 20px]]
                         priority: 42
-                        # text:
-                        #     visible: true
-                        #     fill: red
+                        text:
+                            visible: true
+                            fill: [0.290,0.902,0.910]
                 low-priority-early:
                     filter: { kind_tile_rank: { min: 5 }, $zoom: { min: 0, max: 13 } }
                     draw:
@@ -799,10 +781,10 @@ layers:
                         sprite_default: generic
                         visible: true
                         priority: 43
-                        # text:
-                        #     visible: true
-                        #     font:
-                        #         fill: red
+                        text:
+                            visible: true
+                            font:
+                                fill: [0.290,0.902,0.910]
                 early-sizing:
                     filter: { $zoom: { max: 14 } }
                     draw: { text: { size: 11px } }
@@ -913,10 +895,10 @@ layers:
                     $zoom: { min: 18 }
                 draw:
                     icons:
-                        # text:
-                        #     visible: true
-                        #     font:
-                        #         fill: red
+                        text:
+                            visible: true
+                            font:
+                                fill: [0.290,0.902,0.910]
             landuse-funky:
                 filter: { kind: [commercial, residential, wood], $zoom: { max: 17 } }
                 draw:
@@ -969,22 +951,22 @@ layers:
                         visible: false
                         text:
                             visible: false
-                    # text:
-                    #     visible: false
-                    #     priority: 45
-                    #     interactive: true
-                    #     text_wrap: 10
-                    #     font:
-                    #         fill: red
+                    text:
+                        visible: false
+                        priority: 45
+                        interactive: true
+                        text_wrap: 10
+                        font:
+                            fill: [0.290,0.902,0.910]
             bus-stop-bus-station-labels:
                 filter:
                     kind: [bus_stop, bus_station]
                 draw:
                     icons:
-                        # text:
-                        #     visible: true
-                        #     font:
-                        #         fill: red
+                        text:
+                            visible: true
+                            font:
+                                fill: [0.290,0.902,0.910]
                 bus-stop-early1:
                     filter:
                         kind: [bus_stop]

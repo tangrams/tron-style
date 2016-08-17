@@ -15,7 +15,7 @@ import:
     - layers/boundaries.yaml
     - layers/places.yaml
     # - layers/telecom.yaml
-    # - layers/pois.yaml
+    - layers/pois.yaml
 
 global:
     ux_application_mode: navigation
