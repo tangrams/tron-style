@@ -43,6 +43,8 @@ If you want to try something new with Tron 2.0 style:
 [![](http://thebookofshaders.com/log/160707203604.png) Buildings window](http://player.thebookofshaders.com/?log=160707203604)
 [![](http://thebookofshaders.com/log/160805190306.png) Generative Icons](http://player.thebookofshaders.com/?log=160805190306)
 [![](http://thebookofshaders.com/log/160805194757.png) Animated Icons](http://player.thebookofshaders.com/?log=160805194757)
+[![](http://thebookofshaders.com/log/160818140257.png) Animating Icons w POIs SDF's](http://player.thebookofshaders.com/?log=160818140257)
+[![](http://thebookofshaders.com/log/160817211857.png) Animating Icons w POIs SDF's](http://player.thebookofshaders.com/?log=160817211857)
 
 ### Authors
 
