@@ -29,7 +29,7 @@ textures:
             bridge: [920, 88, 38, 38]
             buddhism: [782, 88, 38, 38]
             building: [414, 176, 38, 38]
-            burger: [138, 220, 40, 38]
+            burger: [138, 216, 40, 38]
             bus-station: [782, 0, 38, 38]
             butcher: [920, 44, 40, 38]
             campground: [828, 88, 38, 38]
@@ -44,12 +44,12 @@ textures:
             cemetery: [728, 84, 38, 38]
             church: [226, 128, 38, 38]
             clothing-store: [828, 176, 38, 38]
-            coffee-shop: [500, 170, 40, 38]
+            coffee-shop: [500, 172, 40, 38]
             college-university: [868, 170, 38, 38]
             convenience-store: [46, 88, 40, 38]
             courthouse: [362, 0, 38, 38]
             current-location: [80, 352, 88, 86]
-            department-store: [736, 132, 38, 38]
+            department-store: [728, 129, 38, 38]
             drinking-water: [230, 220, 40, 38]
             dry-cleaning: [0, 88, 38, 38]
             electronics-store: [598, 132, 38, 38]
@@ -70,7 +70,7 @@ textures:
             hardware-store: [828, 44, 38, 38]
             historic-site: [92, 132, 38, 38]
             hospital: [182, 0, 38, 38]
-            hotel: [736, 0, 38, 38]
+            hotel: [728, 2, 38, 38]
             ice-cream-shop: [322, 220, 40, 38]
             information: [368, 220, 38, 38]
             jewelry-store: [736, 44, 38, 38]
@@ -94,7 +94,7 @@ textures:
             newsstand: [322, 44, 38, 38]
             office: [598, 88, 38, 38]
             optical-shop: [276, 44, 38, 38]
-            park: [272, 128, 38, 38]
+            park: [272, 130, 38, 38]
             parking: [690, 132, 38, 38]
             performing-arts: [590, 169, 40, 38]
             pet-store: [230, 44, 38, 38]
@@ -108,7 +108,7 @@ textures:
             real-estate: [138, 44, 38, 38]
             recycling-facility: [92, 44, 38, 38]
             rental-car: [598, 0, 38, 38]
-            restaurant: [91, 214, 40, 38]
+            restaurant: [91, 216, 40, 38]
             route-arrow: [786, 220, 128, 128]
             route-start: [0, 352, 72, 92]
             route-stop: [922, 220, 72, 92]
@@ -142,7 +142,7 @@ textures:
             townspot-xs-rev: [566, 222, 6, 4]
             toy-game-store: [920, 0, 38, 38]
             traffic-signal: [920, 176, 36, 34]
-            train-station: [406, 0, 38, 38]
+            train-station: [406, 3, 38, 38]
             veterinarian: [138, 0, 38, 38]
             view-point: [690, 176, 38, 38]
             vineyard: [46, 176, 38, 38]
@@ -196,7 +196,7 @@ layers:
                     priority: 66
                     font:
                         family: Cairo
-                        fill: [0.290,0.902,0.910]
+                        fill: white
                         size: 10px
             text:
                 text_source: global.ux_language_text_source
@@ -538,9 +538,12 @@ layers:
                 early2:
                     filter: { $zoom: { min: 12, max: 14 } }
                     draw: { icons: { text: { font: { size: 11px } } } }
+
             restaurant:
                 filter:
-                    kind: [restaurant,cafe,fast_food]
+                    all:
+                        - kind: [restaurant,cafe,fast_food]
+                        - $zoom: { min: 15 }
                 draw:
                     text:
                         visible: true
