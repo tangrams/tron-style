@@ -212,7 +212,8 @@ layers:
                 draw:
                     polygons:
                         style: landuse-tier4-power
-                        color: [0.000,0.580,0.522]
+                        # color: [0.000,0.580,0.522]
+                        color: [0.365,0.106,0.678]
                         visible: true
             man-made:
                 filter: { kind: [pier,wastewater_plant,works,bridge,tower,breakwater,water_works,groyne,dike,cutline] }
@@ -266,7 +267,7 @@ layers:
                 polygons:
                     visible: true
                     order: global.order
-                    color: [0.215,1.000,1.000]
+                    color: [1.000,0.247,0.239]
 
 styles:
     landuse:
@@ -324,10 +325,12 @@ styles:
         mix: [polygons-dots]
         shaders:
             defines:
-                DOTS_COLOR: vec3(1.000,0.467,0.000)
-                DOTS_GLOW_COLOR: vec3(1.000,0.467,0.000)
+                # DOTS_COLOR: vec3(1.000,0.467,0.000)
+                # DOTS_GLOW_COLOR: vec3(1.000,0.467,0.000)
+                DOTS_COLOR: vec3(0.808,0.216,1.000)
+                DOTS_GLOW_COLOR: vec3(0.808,0.216,1.000)
                 DOTS_GLOW_SIZE: 2.
-                DOTS_GLOW_AMOUNT: 1.
+                DOTS_GLOW_AMOUNT: 0.25
                 DOTS_SCALE: 16.
                 DOTS_SIZE: 0.21
                 DOTS_BACKGROUND_COLOR: color.rgb
