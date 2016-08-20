@@ -433,7 +433,7 @@ layers:
                 draw:
                     lines:
                         style: airport-glow
-                        color: [[12,[1.000,0.518,0.424]],[16,[1.000,0.247,0.239]]]
+                        color: [[12,[1.000,0.518,0.424]],[16,[0.748,0.000,0.748]]]
                         width: [[12,0px],[13,1px],[15,6px],[17,30px],[20,60px]]
                         outline:
                             width: 0px
@@ -441,11 +441,11 @@ layers:
                 filter: { aeroway: runway }
                 draw:
                     lines:
-                        color: [1.000,0.247,0.239]
+                        color: [0.748,0.000,0.748]
                         width: [[9,0px],[11,1px],[13,3px],[15,12px],[17,60px],[20,70m]]
                         outline:
                             style: airport-glow
-                            color: [1.000,0.247,0.239]
+                            color: [0.748,0.000,0.748]
                             width: [[9,2px],[20,10px]]
 
 styles:

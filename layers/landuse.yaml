@@ -267,7 +267,7 @@ layers:
                 polygons:
                     visible: true
                     order: global.order
-                    color: [1.000,0.247,0.239]
+                    color: [0.748,0.000,0.748]
 
 styles:
     landuse:
