@@ -179,14 +179,14 @@ layers:
                     - { $zoom: { min: 15 }, area: { min: 20000 } }
                     - { $zoom: { min: 15 }, area: { min: 2000 } }
                     - { $zoom: { min: 16 } }
-            # golf_course:
-            #     filter:
-            #         kind: golf_course
-            #     draw:
-            #         polygons:
-            #             style: landuse-tier4-golf_course
-            #             color: [0.217,0.307,0.442]
-            #             visible: true
+            golf_course:
+                filter:
+                    kind: golf_course
+                draw:
+                    polygons:
+                        style: landuse
+                        color: [0.599,0.350,1.000]
+                        visible: true
             # industrial:
             #     filter:
             #         kind: industrial
@@ -252,7 +252,7 @@ layers:
                 draw:
                     polygons:
                         style: landuse-tier6-pedestrian
-                        color: [0.212,0.302,0.431]
+                        color: [0.160,0.229,0.420]
                         visible: true
 
     landuse-not-filtered:
@@ -267,7 +267,7 @@ layers:
                 polygons:
                     visible: true
                     order: global.order
-                    color: [0.748,0.000,0.748]
+                    color: [1.000,0.564,0.312]
 
 styles:
     landuse:
@@ -313,14 +313,14 @@ styles:
         mix: [functions-zoom, polygons-diagonal-grid]
         shaders:
             defines:
-                ZOOM_START: 14.
-                ZOOM_END: 18.
+                ZOOM_START: 11.
+                ZOOM_END: 16.
                 ZOOM_IN: .0
                 ZOOM_OUT: 1.
 
                 GRID_SCALE: 15.
-                GRID_WIDTH: zoom()*.025
-                GRID_BACKGROUND_COLOR: vec3(0.588,0.529,1.000)
+                GRID_WIDTH: zoom()*.7
+                GRID_BACKGROUND_COLOR: vec3(0.339,0.233,0.630)
     landuse-tier4-power:
         mix: [polygons-dots]
         shaders:
