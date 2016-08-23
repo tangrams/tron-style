@@ -17,15 +17,15 @@ textures:
             pitch: [88, 168, 40, 36]
             athletic_sports: [88, 168, 40, 36]
             recreation_ground: [88, 168, 40, 36]
-            atm: [814, 126, 36, 34]
+            atm: [814, 126, 36, 36]
             automotive-shop: [902, 126, 36, 34]
             car_repair: [902, 126, 36, 34]
             automotive: [902, 126, 36, 34]
             tyres: [902, 126, 36, 34]
-            bakery: [442, 168, 36, 34]
-            pastry: [442, 168, 36, 34]
+            bakery: [442, 168, 36, 36]
+            pastry: [442, 168, 36, 36]
             chocolate: [442, 168, 36, 34]
-            bank: [858, 128, 36, 32]
+            bank: [858, 128, 36, 36]
             bar: [134, 168, 36, 36]
             pub: [134, 168, 36, 36]
             baseball-field: [448, 84, 40, 36]
@@ -708,7 +708,7 @@ layers:
 
             text_colors:
                 restaurant:
-                    filter: { kind: [restaurant,cafe,fast_food] }
+                    filter: { kind: [restaurant,cafe,fast_food,bakery] }
                     draw: { icons: { text: { font: { fill: [1.000,0.898,0.392] } } } }
                 hotel:
                     filter: { kind: hotel }
