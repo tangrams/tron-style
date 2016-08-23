@@ -290,11 +290,11 @@ textures:
             townspot-xl-rev: [520, 212, 20, 18]
             townspot-xs: [548, 210, 10, 10]
             townspot-xs-rev: [444, 212, 6, 4]
-            toy-game-store: [880, 0, 40, 36]
-            toys: [880, 0, 40, 36]
-            baby_goods: [880, 0, 40, 36]
-            traffic-signal: [796, 168, 36, 34]
-            traffic_signals: [796, 168, 36, 34]
+            toy-game-store: [880, 0, 36, 36]
+            toys: [880, 0, 36, 36]
+            baby_goods: [880, 0, 36, 36]
+            traffic-signal: [796, 168, 36, 36]
+            traffic_signals: [796, 168, 36, 36]
             train-station: [396, 0, 36, 36]
             station: [396, 0, 36, 36]
             train-staion: [396, 0, 36, 36]
@@ -730,13 +730,13 @@ layers:
                     filter: { kind: hospital }
                     draw: { icons: { text: { font: { fill: [1.000,1.000,1.000] } } } }
                 courthouse:
-                    filter: { kind: [courthouse,library,museum,post_office,police] }
+                    filter: { kind: [courthouse,library,museum,post_office,police,embassy] }
                     draw: { icons: { text: { font: { fill: [0.149,0.871,0.992] } } } }
                 school:
                     filter: { kind: [school,university] }
                     draw: { icons: { text: { font: { fill: [0.530,0.835,1.000] } } } }
                 retail:
-                    filter: { kind: [books,computer,outdoor,supermarket,department_store,electronics] }
+                    filter: { kind: [books,computer,outdoor,supermarket,department_store,electronics,mall,clothes,toys] }
                     draw: { icons: { text: { font: { fill: [0.941,0.482,0.953] } } } }
 
 
@@ -935,7 +935,7 @@ layers:
                     icons:
                         visible: true
                         sprite: train-station
-                        size: [[13, 12px], [14, 12px], [15, 16px], [17, 18px], [18, 22px]]
+                        size: [[13, 12px], [14, 12px], [15, 16px], [17, 18px], [18, 22px], [20, 72px]]
                         priority: 42
                         text:
                             visible: true
