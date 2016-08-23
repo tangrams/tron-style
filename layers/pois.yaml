@@ -141,7 +141,7 @@ textures:
             public_building: [44, 168, 36, 36]
             embassy: [44, 168, 36, 36]
             grocery-store: [452, 126, 40, 36]
-            supermarket: [452, 126, 40, 36]
+            supermarket: [452, 126, 36, 36]
             health_food: [452, 126, 40, 36]
             greengrocer: [452, 126, 40, 36]
             harbor-marina: [0, 168, 36, 36]
@@ -253,11 +253,11 @@ textures:
             salon-barber: [0, 42, 36, 36]
             hairdresser: [0, 42, 36, 36]
             salon: [0, 42, 36, 34]
-            beauty_salon: [0, 42, 36, 34]
-            school: [494, 84, 36, 34]
-            kindergarten: [494, 84, 36, 34]
-            shoe-store: [490, 42, 40, 36]
-            shoes: [490, 42, 40, 36]
+            beauty_salon: [0, 42, 36, 36]
+            school: [494, 84, 36, 36]
+            kindergarten: [494, 84, 36, 36]
+            shoe-store: [490, 42, 36, 36]
+            shoes: [490, 42, 36, 36]
             shoe_store: [490, 42, 40, 36]
             ski-area: [268, 126, 40, 36]
             soccer-field: [310, 84, 40, 36]
@@ -709,7 +709,7 @@ layers:
             text_colors:
                 restaurant:
                     filter: { kind: [restaurant,cafe,fast_food,bakery] }
-                    draw: { icons: { text: { font: { fill: [1.000,0.898,0.392] } } } }
+                    draw: { icons: { text: { font: { fill: [0.212,1.000,0.882] } } } }
                 hotel:
                     filter: { kind: hotel }
                     draw: { icons: { text: { font: { fill: [0.851,0.643,0.990] } } } }
@@ -722,6 +722,9 @@ layers:
                 courthouse:
                     filter: { kind: [courthouse,library,museum,post_office] }
                     draw: { icons: { text: { font: { fill: [0.149,0.871,0.992] } } } }
+                school:
+                    filter: { kind: school }
+                    draw: { icons: { text: { font: { fill: [1.000,0.634,0.757] } } } }
 
 
 
@@ -754,7 +757,7 @@ layers:
                         text:
                             visible: true
                             font:
-                                fill: [0.290,0.902,0.910]
+                                fill: [0.953,0.604,0.608]
                 early:
                     filter: { $zoom: { max: 12 } }
                     draw: { text: { visible: false } }
@@ -777,6 +780,7 @@ layers:
                         - { $zoom: [16], area: { min: 5000 } }
                         - { $zoom: [17], area: { min: 2000 } }
                         - { $zoom: { min: 18, area: true } }
+                visible: true
                 draw:
                     icons:
                         sprite: school
@@ -785,7 +789,7 @@ layers:
                         text:
                             visible: true
                             font:
-                                fill: [0.290,0.902,0.910]
+                                fill: [1.000,0.634,0.757]
 
             winter_sports:
                 filter:
@@ -923,7 +927,7 @@ layers:
                         text:
                             visible: true
                             font: 
-                                fill: [0.212,1.000,0.882]
+                                fill: [0.965,0.929,0.341]
                                 size: 10px
                 low-priority-early:
                     filter: { kind_tile_rank: { min: 5 }, $zoom: { min: 0, max: 13 } }
