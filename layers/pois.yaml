@@ -26,8 +26,8 @@ textures:
             pastry: [442, 168, 36, 34]
             chocolate: [442, 168, 36, 34]
             bank: [858, 128, 36, 32]
-            bar: [134, 168, 36, 34]
-            pub: [134, 168, 36, 34]
+            bar: [134, 168, 36, 36]
+            pub: [134, 168, 36, 36]
             baseball-field: [448, 84, 40, 36]
             basketball-court: [402, 84, 40, 36]
             beach: [582, 84, 36, 34]
@@ -62,9 +62,9 @@ textures:
             apartments: [310, 168, 36, 36]
             burger: [0, 210, 36, 34]
             fast_food: [0, 210, 36, 36]
-            bus-station: [748, 0, 36, 34]
+            bus-station: [748, 0, 36, 36]
             bus_stop: [748, 0, 36, 34]
-            bus_station: [748, 0, 36, 34]
+            bus_station: [748, 0, 36, 36]
             butcher: [854, 42, 40, 36]
             campground: [758, 84, 36, 34]
             camp_site: [758, 84, 36, 34]
@@ -81,9 +81,9 @@ textures:
             car: [678, 126, 36, 34]
             castle: [356, 42, 36, 34]
             fort: [356, 42, 36, 34]
-            cemetery: [670, 84, 36, 34]
-            grave_yard: [670, 84, 36, 34]
-            church: [136, 126, 36, 34]
+            cemetery: [670, 84, 36, 36]
+            grave_yard: [670, 84, 36, 36]
+            church: [136, 126, 36, 36]
             clothing-store: [706, 168, 36, 36]
             clothes: [706, 168, 36, 36]
             chothing-store: [706, 168, 36, 36]
@@ -155,7 +155,7 @@ textures:
             doityourself: [762, 42, 40, 36]
             paint: [762, 42, 40, 36]
             historic-site: [0, 126, 36, 36]
-            hospital: [176, 0, 36, 34]
+            hospital: [176, 0, 36, 36]
             hotel: [704, 0, 36, 34]
             motel: [704, 0, 36, 34]
             hostel: [704, 0, 36, 34]
@@ -250,8 +250,8 @@ textures:
             ruin: [484, 0, 36, 34]
             ruins: [484, 0, 36, 34]
             archaeological_site: [484, 0, 36, 34]
-            salon-barber: [0, 42, 36, 34]
-            hairdresser: [0, 42, 36, 34]
+            salon-barber: [0, 42, 36, 36]
+            hairdresser: [0, 42, 36, 36]
             salon: [0, 42, 36, 34]
             beauty_salon: [0, 42, 36, 34]
             school: [494, 84, 36, 34]
@@ -261,10 +261,10 @@ textures:
             shoe_store: [490, 42, 40, 36]
             ski-area: [268, 126, 40, 36]
             soccer-field: [310, 84, 40, 36]
-            spiritual-center: [178, 168, 36, 34]
-            spiritual_center: [178, 168, 36, 34]
-            place_of_worship: [178, 168, 36, 34]
-            wayside_chapel: [178, 168, 36, 34]
+            spiritual-center: [178, 168, 36, 36]
+            spiritual_center: [178, 168, 36, 36]
+            place_of_worship: [178, 168, 36, 36]
+            wayside_chapel: [178, 168, 36, 36]
             sporting-goods-shop: [972, 0, 40, 36]
             sporting_goods: [972, 0, 40, 36]
             sports: [972, 0, 40, 36]
@@ -295,9 +295,9 @@ textures:
             baby_goods: [880, 0, 40, 36]
             traffic-signal: [796, 168, 36, 34]
             traffic_signals: [796, 168, 36, 34]
-            train-station: [396, 0, 36, 34]
-            station: [396, 0, 36, 34]
-            train-staion: [396, 0, 36, 34]
+            train-station: [396, 0, 36, 36]
+            station: [396, 0, 36, 36]
+            train-staion: [396, 0, 36, 36]
             ux-current-location: [0, 342, 88, 86]
             current-location: [0, 342, 88, 86]
             ux-locate-off: [334, 342, 72, 70]
@@ -373,20 +373,20 @@ layers:
                 priority: 66
                 font:
                     family: Cairo
-                    fill: [0.290,0.902,0.910]
+                    fill: white
                     size: 10px
-        poi_labels-z14:
-            filter: { $zoom: [14] }
-            draw: { icons: { text: { font: { size: 11px } } } }
-        poi_labels-z15:
-            filter: { $zoom: [15,16,17] }
-            draw: { icons: { text: { font: { size: 12px } } } }
-        poi_labels-z18:
-            filter: { $zoom: [18,19] }
-            draw: { icons: { text: { font: { size: 12px } } } }
-        poi_labels-z20-up:
-            filter: { $zoom: { min: 20 } }
-            draw: { icons: { text: { font: { size: 14px } } } }
+        # poi_labels-z14:
+        #     filter: { $zoom: [14] }
+        #     draw: { icons: { text: { font: { size: 11px } } } }
+        # poi_labels-z15:
+        #     filter: { $zoom: [15,16,17] }
+        #     draw: { icons: { text: { font: { size: 12px } } } }
+        # poi_labels-z18:
+        #     filter: { $zoom: [18,19] }
+        #     draw: { icons: { text: { font: { size: 12px } } } }
+        # poi_labels-z20-up:
+        #     filter: { $zoom: { min: 20 } }
+        #     draw: { icons: { text: { font: { size: 14px } } } }
 
         no-name:
             filter: { name: false }
@@ -516,12 +516,12 @@ layers:
                         filter: { $zoom: [8,9] }
                         draw:
                             icons:
-                                text: { font: { size: 11px } }
+                                text: { font: { size: 10px } }
                     natl-park-labels-z10:
                         filter: { $zoom: {min: 10, max: 14 } }
                         draw:
                             icons:
-                                text: { font: { size: 12px } }
+                                text: { font: { size: 10px } }
 
             landuse-labels-green-areas-not-national-park:
                 filter:
@@ -572,7 +572,7 @@ layers:
                         filter: { $zoom: { min: 8, max: 14 } }
                         draw:
                             icons:
-                                text: { font: { size: 11px } }
+                                text: { font: { size: 10px } }
                     wilderness-areas-early:
                         filter: function() { return $zoom < 10 && feature.name && (feature.name.indexOf("Wilderness") > -1 || feature.name.indexOf("BLM") > -1) }
                         draw:
@@ -709,13 +709,21 @@ layers:
             text_colors:
                 restaurant:
                     filter: { kind: [restaurant,cafe,fast_food] }
-                    draw: { icons: { text: { font: { fill: [1.000,0.898,0.392], size: 10px } } } }
+                    draw: { icons: { text: { font: { fill: [1.000,0.898,0.392] } } } }
                 hotel:
                     filter: { kind: hotel }
-                    draw: { icons: { text: { font: { fill: [0.851,0.643,0.990], size: 10px } } } }
+                    draw: { icons: { text: { font: { fill: [0.851,0.643,0.990] } } } }
                 pharmacy:
                     filter: { kind: pharmacy }
-                    draw: { icons: { text: { font: { fill: [0.451,1.000,0.302], size: 10px } } } }
+                    draw: { icons: { text: { font: { fill: [0.451,1.000,0.302] } } } }
+                hospital:
+                    filter: { kind: hospital }
+                    draw: { icons: { text: { font: { fill: [1.000,1.000,1.000] } } } }
+                courthouse:
+                    filter: { kind: [courthouse,library,museum,post_office] }
+                    draw: { icons: { text: { font: { fill: [0.149,0.871,0.992] } } } }
+
+
 
             university:
                 filter:
@@ -914,7 +922,9 @@ layers:
                         priority: 42
                         text:
                             visible: true
-                            fill: [0.290,0.902,0.910]
+                            font: 
+                                fill: [0.212,1.000,0.882]
+                                size: 10px
                 low-priority-early:
                     filter: { kind_tile_rank: { min: 5 }, $zoom: { min: 0, max: 13 } }
                     draw:
@@ -963,10 +973,11 @@ layers:
                         text:
                             visible: true
                             font:
-                                fill: [0.290,0.902,0.910]
+                                fill: [0.471,0.992,0.353]
+                                size: 10px
                 early-sizing:
                     filter: { $zoom: { max: 14 } }
-                    draw: { text: { size: 11px } }
+                    draw: { text: { size: 10px } }
                 building-like:
                     filter: { kind: [commercial,residential,warehouse,public,dormitory], osm_relation: false }
                     draw:
