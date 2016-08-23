@@ -140,10 +140,10 @@ textures:
             townhall: [44, 168, 36, 36]
             public_building: [44, 168, 36, 36]
             embassy: [44, 168, 36, 36]
-            grocery-store: [452, 126, 40, 36]
+            grocery-store: [452, 126, 36, 36]
             supermarket: [452, 126, 36, 36]
-            health_food: [452, 126, 40, 36]
-            greengrocer: [452, 126, 40, 36]
+            health_food: [452, 126, 36, 36]
+            greengrocer: [452, 126, 36, 36]
             harbor-marina: [0, 168, 36, 36]
             marina: [0, 168, 36, 36]
             harbor: [0, 168, 36, 36]
@@ -166,9 +166,9 @@ textures:
             jewelry-store: [672, 42, 40, 36]
             jewelry: [672, 42, 40, 36]
             jewelry_store: [672, 42, 40, 36]
-            landmark: [264, 0, 36, 34]
-            memorial: [264, 0, 36, 34]
-            monument: [264, 0, 36, 34]
+            landmark: [264, 0, 36, 36]
+            memorial: [264, 0, 36, 36]
+            monument: [264, 0, 36, 36]
             wayside_shrine: [264, 0, 36, 34]
             tower: [264, 0, 36, 34]
             beacon: [264, 0, 36, 34]
@@ -265,10 +265,10 @@ textures:
             spiritual_center: [178, 168, 36, 36]
             place_of_worship: [178, 168, 36, 36]
             wayside_chapel: [178, 168, 36, 36]
-            sporting-goods-shop: [972, 0, 40, 36]
-            sporting_goods: [972, 0, 40, 36]
-            sports: [972, 0, 40, 36]
-            outdoor: [972, 0, 40, 36]
+            sporting-goods-shop: [972, 0, 36, 36]
+            sporting_goods: [972, 0, 36, 36]
+            sports: [972, 0, 36, 36]
+            outdoor: [972, 0, 36, 36]
             spring: [266, 84, 36, 34]
             stadium: [360, 126, 40, 36]
             subway-entrance: [440, 0, 36, 34]
@@ -279,7 +279,7 @@ textures:
             theme-park: [934, 84, 36, 34]
             theme_park: [934, 84, 36, 34]
             miniature_golf: [934, 84, 36, 34]
-            toilets: [802, 84, 36, 34]
+            toilets: [802, 84, 36, 36]
             townspot-l: [608, 210, 18, 18]
             townspot-l-rev: [496, 212, 16, 14]
             townspot-m: [586, 210, 14, 14]
@@ -324,10 +324,10 @@ textures:
             vista: [574, 168, 36, 34]
             vineyard: [946, 126, 36, 34]
             volcano: [46, 84, 36, 34]
-            wine-bar: [44, 210, 36, 34]
-            winery: [354, 168, 36, 34]
-            wine: [354, 168, 36, 34]
-            zoo: [890, 84, 36, 34]
+            wine-bar: [44, 210, 36, 36]
+            winery: [354, 168, 36, 36]
+            wine: [354, 168, 36, 36]
+            zoo: [890, 84, 36, 36]
 
 layers:
 
@@ -375,6 +375,16 @@ layers:
                     family: Cairo
                     fill: white
                     size: 10px
+        poi-scale-z18:
+            filter: { $zoom: [18] }
+            draw:
+                icons:
+                    size: 22px
+        poi-scale-z20:
+            filter: { $zoom: [20] }
+            draw:
+                icons:
+                    size: 28px
         # poi_labels-z14:
         #     filter: { $zoom: [14] }
         #     draw: { icons: { text: { font: { size: 11px } } } }
@@ -518,7 +528,7 @@ layers:
                             icons:
                                 text: { font: { size: 10px } }
                     natl-park-labels-z10:
-                        filter: { $zoom: {min: 10, max: 14 } }
+                        filter: { $zoom: { min: 10, max: 14 } }
                         draw:
                             icons:
                                 text: { font: { size: 10px } }
@@ -708,7 +718,7 @@ layers:
 
             text_colors:
                 restaurant:
-                    filter: { kind: [restaurant,cafe,fast_food,bakery] }
+                    filter: { kind: [restaurant,cafe,fast_food,bakery,pub,bar] }
                     draw: { icons: { text: { font: { fill: [0.212,1.000,0.882] } } } }
                 hotel:
                     filter: { kind: hotel }
@@ -720,11 +730,14 @@ layers:
                     filter: { kind: hospital }
                     draw: { icons: { text: { font: { fill: [1.000,1.000,1.000] } } } }
                 courthouse:
-                    filter: { kind: [courthouse,library,museum,post_office] }
+                    filter: { kind: [courthouse,library,museum,post_office,police] }
                     draw: { icons: { text: { font: { fill: [0.149,0.871,0.992] } } } }
                 school:
-                    filter: { kind: school }
-                    draw: { icons: { text: { font: { fill: [1.000,0.634,0.757] } } } }
+                    filter: { kind: [school,university] }
+                    draw: { icons: { text: { font: { fill: [0.530,0.835,1.000] } } } }
+                retail:
+                    filter: { kind: [books,computer,outdoor,supermarket,department_store,electronics] }
+                    draw: { icons: { text: { font: { fill: [0.941,0.482,0.953] } } } }
 
 
 
@@ -757,7 +770,7 @@ layers:
                         text:
                             visible: true
                             font:
-                                fill: [0.953,0.604,0.608]
+                                fill: [0.530,0.835,1.000]
                 early:
                     filter: { $zoom: { max: 12 } }
                     draw: { text: { visible: false } }
@@ -789,7 +802,7 @@ layers:
                         text:
                             visible: true
                             font:
-                                fill: [1.000,0.634,0.757]
+                                fill: [0.530,0.835,1.000]
 
             winter_sports:
                 filter:
@@ -922,7 +935,7 @@ layers:
                     icons:
                         visible: true
                         sprite: train-station
-                        size: [[13, 12px], [14, 12px], [15, 16px], [17, 18px], [18, 20px]]
+                        size: [[13, 12px], [14, 12px], [15, 16px], [17, 18px], [18, 22px]]
                         priority: 42
                         text:
                             visible: true
