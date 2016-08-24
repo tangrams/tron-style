@@ -35,7 +35,7 @@ textures:
             biergarten: [132, 210, 36, 34]
             brewery: [132, 210, 36, 34]
             bench: [528, 0, 36, 34]
-            bicycle-parking: [544, 126, 36, 34]
+            bicycle-parking: [544, 126, 36, 36]
             bike-shop: [768, 126, 40, 36]
             bicycle: [768, 126, 40, 36]
             bicycle_rental: [768, 126, 40, 36]
@@ -215,10 +215,10 @@ textures:
             optician: [220, 42, 36, 34]
             optical_shop: [220, 42, 36, 34]
             park: [180, 126, 36, 36]
-            parking: [588, 126, 36, 34]
-            performing-arts: [486, 168, 36, 34]
-            theater: [486, 168, 36, 34]
-            theatre: [486, 168, 36, 34]
+            parking: [588, 126, 36, 36]
+            performing-arts: [486, 168, 36, 36]
+            theater: [486, 168, 36, 36]
+            theatre: [486, 168, 36, 36]
             pet-store: [176, 42, 36, 34]
             pet: [176, 42, 36, 34]
             pet-service: [176, 42, 36, 34]
@@ -734,18 +734,22 @@ layers:
                     draw: { icons: { text: { font: { fill: [0.149,0.871,0.992] } } } }
                 school:
                     filter: { kind: [school,university] }
-                    draw: { icons: { text: { font: { fill: [0.530,0.835,1.000] } } } }
+                    draw: { icons: { text: { font: { fill: [0.400,0.882,0.988] } } } }
                 retail:
-                    filter: { kind: [books,computer,outdoor,supermarket,department_store,electronics,mall,clothes,toys] }
-                    draw: { icons: { text: { font: { fill: [0.941,0.482,0.953] } } } }
+                    filter: { kind: [books,computer,outdoor,supermarket,department_store,electronics,mall,clothes,toys,fashion,jewelry] }
+                    draw: { icons: { text: { font: { fill: [1.000,0.714,0.976] } } } }
                 place-of-worship:
                     filter: { kind: [place_of_worship] }
                     draw: { icons: { text: { font: { fill: [0.719,0.806,0.839] } } } }
                 airport:
                     filter: { kind: [aerodrome] }
                     draw: { icons: { text: { font: { fill: [0.965,0.929,0.341] } } } }
-
-
+                theatre:
+                    filter: { kind: [theatre,performing-arts] }
+                    draw: { icons: { text: { font: { fill: [1.000,0.800,0.710] } } } }
+                parking:
+                    filter: { kind: [parking] }
+                    draw: { icons: { text: { font: { fill: [0.965,0.929,0.341] } } } }
 
 
             university:

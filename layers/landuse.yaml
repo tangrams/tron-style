@@ -244,7 +244,7 @@ layers:
                 draw:
                     polygons:
                         style: landuse-tier6-parking
-                        color: [0.061,0.363,0.619]
+                        color: [0.431,0.098,0.439]
                         visible: true
             pedestrian:
                 filter:
@@ -371,7 +371,7 @@ styles:
 
                 GRID_SCALE: 20.
                 GRID_WIDTH: zoom()*.5
-                GRID_BACKGROUND_COLOR: vec3(0.195,0.279,0.394)
+                GRID_BACKGROUND_COLOR: vec3(0.286,0.239,0.400)
     landuse-tier4-manmade:
         base: polygons
         mix: [functions-zoom, polygons-diagonal-grid]
