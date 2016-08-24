@@ -65,7 +65,7 @@ textures:
             bus-station: [748, 0, 36, 36]
             bus_stop: [748, 0, 36, 34]
             bus_station: [748, 0, 36, 36]
-            butcher: [854, 42, 40, 36]
+            butcher: [854, 42, 36, 36]
             campground: [758, 84, 36, 34]
             camp_site: [758, 84, 36, 34]
             caravan_site: [758, 84, 36, 34]
@@ -94,7 +94,7 @@ textures:
             university: [752, 168, 36, 36]
             college: [752, 168, 36, 36]
             convenience-store: [0, 84, 36, 36]
-            convenience: [0, 84, 40, 36]
+            convenience: [0, 84, 36, 36]
             convenience_store: [0, 84, 40, 36]
             beverages: [0, 84, 40, 36]
             courthouse: [352, 0, 36, 36]
@@ -722,7 +722,7 @@ layers:
                     draw: { icons: { text: { font: { fill: [0.212,1.000,0.882] } } } }
                 hotel:
                     filter: { kind: [hotel,hostel] }
-                    draw: { icons: { text: { font: { fill: [0.851,0.643,0.990] } } } }
+                    draw: { icons: { text: { font: { fill: [0.900,0.750,1.000] } } } }
                 pharmacy:
                     filter: { kind: pharmacy }
                     draw: { icons: { text: { font: { fill: [0.451,1.000,0.302] } } } }
@@ -750,7 +750,9 @@ layers:
                 parking:
                     filter: { kind: [parking] }
                     draw: { icons: { text: { font: { fill: [1.000,0.714,0.976] } } } }
-
+                stadium:
+                    filter: { kind: [stadium] }
+                    draw: { icons: { text: { font: { fill: [1.000,0.766,0.460] } } } }
 
             university:
                 filter:
