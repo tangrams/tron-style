@@ -354,8 +354,9 @@ layers:
                 interactive: true
                 visible: true
                 priority: 65
-                repeat_group: abc
                 text:
+                    repeat_group: abc
+                    repeat_distance: 100px
                     text_source: global.ux_language_text_source
                     visible: false    # labels are enabled by each layer below
                     move_into_tile: false # preserves text alignment w/icons in JS
@@ -366,6 +367,8 @@ layers:
                         fill: white
                         size: 10px
             text:
+                repeat_group: abc
+                repeat_distance: 100px
                 text_source: global.ux_language_text_source
                 visible: false    # labels are enabled by each layer below
                 move_into_tile: false # preserves text alignment w/icons in JS
@@ -376,7 +379,7 @@ layers:
                     fill: white
                     size: 10px
         poi-scale-z18:
-            filter: { $zoom: [18] }
+            filter: { $zoom: { min: 18 } }
             draw:
                 icons:
                     size: 22px
@@ -736,7 +739,7 @@ layers:
                     filter: { kind: [school,university] }
                     draw: { icons: { text: { font: { fill: [0.400,0.882,0.988] } } } }
                 retail:
-                    filter: { kind: [books,computer,outdoor,supermarket,department_store,electronics,mall,clothes,toys,fashion,jewelry,convenience,gift,music,bicycle,alcohol,sports] }
+                    filter: { kind: [books,computer,outdoor,supermarket,department_store,electronics,mall,clothes,toys,fashion,jewelry,convenience,gift,music,bicycle,alcohol,sports,florist] }
                     draw: { icons: { text: { font: { fill: [1.000,0.714,0.976] } } } }
                 place-of-worship:
                     filter: { kind: [place_of_worship] }

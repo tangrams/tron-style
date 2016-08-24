@@ -11,9 +11,10 @@ layers:
                 lines:
                     style: railway-dashed
                     # color: [0.820,0.770,1.000]
-                    color: [0.199,0.189,0.332]
+                    # color: [0.199,0.189,0.332]
+                    color: [1.000,0.365,0.141]
                     # width: [[14,0.15px],[17,1px],[18,2px],[20,12px]]
-                    width: [[14,0.5px],[16,1px],[17,2px],[19,3px]]
+                    width: [[14,0.5px],[16,1px],[18,1px],[19,2px]]
             # railway-z18:
             #     filter:
             #         $zoom: { min: 18 }
@@ -43,7 +44,7 @@ styles:
 
     railway-dashed:
         base: lines
-        dash: [3,2]
+        dash: [6,2]
         dash_background_color: [0.212,0.302,0.427]
         # shaders:
         #     blocks:
