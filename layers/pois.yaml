@@ -63,7 +63,7 @@ textures:
             burger: [0, 210, 36, 34]
             fast_food: [0, 210, 36, 36]
             bus-station: [748, 0, 36, 36]
-            bus_stop: [748, 0, 36, 34]
+            bus_stop: [748, 0, 36, 36]
             bus_station: [748, 0, 36, 36]
             butcher: [854, 42, 36, 36]
             campground: [758, 84, 36, 34]
@@ -721,7 +721,7 @@ layers:
                     filter: { kind: [restaurant,cafe,fast_food,bakery,pub,bar] }
                     draw: { icons: { text: { font: { fill: [0.212,1.000,0.882] } } } }
                 hotel:
-                    filter: { kind: [hotel,hostel] }
+                    filter: { kind: [hotel,hostel,motel] }
                     draw: { icons: { text: { font: { fill: [0.900,0.750,1.000] } } } }
                 pharmacy:
                     filter: { kind: pharmacy }
@@ -736,7 +736,7 @@ layers:
                     filter: { kind: [school,university] }
                     draw: { icons: { text: { font: { fill: [0.400,0.882,0.988] } } } }
                 retail:
-                    filter: { kind: [books,computer,outdoor,supermarket,department_store,electronics,mall,clothes,toys,fashion,jewelry,convenience] }
+                    filter: { kind: [books,computer,outdoor,supermarket,department_store,electronics,mall,clothes,toys,fashion,jewelry,convenience,gift,music,bicycle,alcohol] }
                     draw: { icons: { text: { font: { fill: [1.000,0.714,0.976] } } } }
                 place-of-worship:
                     filter: { kind: [place_of_worship] }
@@ -751,7 +751,7 @@ layers:
                     filter: { kind: [parking] }
                     draw: { icons: { text: { font: { fill: [1.000,0.714,0.976] } } } }
                 stadium:
-                    filter: { kind: [stadium] }
+                    filter: { kind: [stadium,fitness] }
                     draw: { icons: { text: { font: { fill: [1.000,0.766,0.460] } } } }
 
             university:
@@ -1083,7 +1083,7 @@ layers:
                         text:
                             visible: true
                             font:
-                                fill: [0.290,0.902,0.910]
+                                fill: [0.965,0.929,0.341]
                 bus-stop-early1:
                     filter:
                         kind: [bus_stop]
@@ -1097,7 +1097,7 @@ layers:
                         $zoom: { max: 19 }
                     draw:
                         icons:
-                            size: [[13, 8px], [19, 18px]]
+                            size: [[13, 8px], [18, 18px], [19,22px]]
                             text:
                                 visible: false
             college-university:
