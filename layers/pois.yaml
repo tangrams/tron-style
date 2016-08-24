@@ -7,9 +7,9 @@ textures:
         filtering: mipmap
         sprites:
             # define sprites: [x origin, y origin, width, height]
-            airport: [836, 0, 36, 34]
-            aerodrome: [836, 0, 36, 34]
-            aquarium: [618, 168, 36, 34]
+            airport: [836, 0, 36, 36]
+            aerodrome: [836, 0, 36, 36]
+            aquarium: [618, 168, 36, 36]
             art-gallery: [530, 168, 36, 34]
             art_gallery: [530, 168, 36, 34]
             art: [530, 168, 36, 34]
@@ -156,16 +156,16 @@ textures:
             paint: [762, 42, 40, 36]
             historic-site: [0, 126, 36, 36]
             hospital: [176, 0, 36, 36]
-            hotel: [704, 0, 36, 34]
-            motel: [704, 0, 36, 34]
-            hostel: [704, 0, 36, 34]
-            ice-cream-shop: [176, 210, 36, 34]
-            ice_cream: [176, 210, 36, 34]
-            information: [220, 210, 36, 34]
-            info: [220, 210, 36, 34]
-            jewelry-store: [672, 42, 40, 36]
-            jewelry: [672, 42, 40, 36]
-            jewelry_store: [672, 42, 40, 36]
+            hotel: [704, 0, 36, 36]
+            motel: [704, 0, 36, 36]
+            hostel: [704, 0, 36, 36]
+            ice-cream-shop: [176, 210, 36, 36]
+            ice_cream: [176, 210, 36, 36]
+            information: [220, 210, 36, 36]
+            info: [220, 210, 36, 36]
+            jewelry-store: [672, 42, 36, 36]
+            jewelry: [672, 42, 36, 36]
+            jewelry_store: [672, 42, 36, 36]
             landmark: [264, 0, 36, 36]
             memorial: [264, 0, 36, 36]
             monument: [264, 0, 36, 36]
@@ -741,6 +741,9 @@ layers:
                 place-of-worship:
                     filter: { kind: [place_of_worship] }
                     draw: { icons: { text: { font: { fill: [0.719,0.806,0.839] } } } }
+                airport:
+                    filter: { kind: [aerodrome] }
+                    draw: { icons: { text: { font: { fill: [0.965,0.929,0.341] } } } }
 
 
 
