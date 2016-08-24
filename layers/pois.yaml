@@ -25,7 +25,7 @@ textures:
             bakery: [442, 168, 36, 36]
             pastry: [442, 168, 36, 36]
             chocolate: [442, 168, 36, 34]
-            bank: [858, 128, 36, 36]
+            bank: [863, 126, 36, 36]
             bar: [134, 168, 36, 36]
             pub: [134, 168, 36, 36]
             baseball-field: [448, 84, 40, 36]
@@ -736,7 +736,7 @@ layers:
                     filter: { kind: [school,university] }
                     draw: { icons: { text: { font: { fill: [0.400,0.882,0.988] } } } }
                 retail:
-                    filter: { kind: [books,computer,outdoor,supermarket,department_store,electronics,mall,clothes,toys,fashion,jewelry,convenience,gift,music,bicycle,alcohol] }
+                    filter: { kind: [books,computer,outdoor,supermarket,department_store,electronics,mall,clothes,toys,fashion,jewelry,convenience,gift,music,bicycle,alcohol,sports] }
                     draw: { icons: { text: { font: { fill: [1.000,0.714,0.976] } } } }
                 place-of-worship:
                     filter: { kind: [place_of_worship] }
