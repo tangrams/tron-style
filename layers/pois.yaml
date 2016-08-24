@@ -198,8 +198,8 @@ textures:
             mountain: [178, 84, 36, 34]
             peak: [178, 84, 36, 34]
             movie-theatre: [662, 168, 36, 36]
-            cinema: [662, 168, 36, 34]
-            movie-theater: [662, 168, 36, 34]
+            cinema: [662, 168, 36, 36]
+            movie-theater: [662, 168, 36, 36]
             museum: [978, 84, 36, 36]
             observatory: [978, 84, 36, 36]
             music-store: [310, 42, 40, 36]
@@ -721,7 +721,7 @@ layers:
                     filter: { kind: [restaurant,cafe,fast_food,bakery,pub,bar] }
                     draw: { icons: { text: { font: { fill: [0.212,1.000,0.882] } } } }
                 hotel:
-                    filter: { kind: hotel }
+                    filter: { kind: [hotel,hostel] }
                     draw: { icons: { text: { font: { fill: [0.851,0.643,0.990] } } } }
                 pharmacy:
                     filter: { kind: pharmacy }
@@ -736,7 +736,7 @@ layers:
                     filter: { kind: [school,university] }
                     draw: { icons: { text: { font: { fill: [0.400,0.882,0.988] } } } }
                 retail:
-                    filter: { kind: [books,computer,outdoor,supermarket,department_store,electronics,mall,clothes,toys,fashion,jewelry] }
+                    filter: { kind: [books,computer,outdoor,supermarket,department_store,electronics,mall,clothes,toys,fashion,jewelry,convenience] }
                     draw: { icons: { text: { font: { fill: [1.000,0.714,0.976] } } } }
                 place-of-worship:
                     filter: { kind: [place_of_worship] }
@@ -745,11 +745,11 @@ layers:
                     filter: { kind: [aerodrome] }
                     draw: { icons: { text: { font: { fill: [0.965,0.929,0.341] } } } }
                 theatre:
-                    filter: { kind: [theatre,performing-arts] }
+                    filter: { kind: [theatre,performing-arts,cinema] }
                     draw: { icons: { text: { font: { fill: [1.000,0.800,0.710] } } } }
                 parking:
                     filter: { kind: [parking] }
-                    draw: { icons: { text: { font: { fill: [0.965,0.929,0.341] } } } }
+                    draw: { icons: { text: { font: { fill: [1.000,0.714,0.976] } } } }
 
 
             university:
