@@ -208,7 +208,7 @@ textures:
             newsstand: [264, 42, 40, 36]
             kiosk: [264, 42, 40, 36]
             newsagent: [264, 42, 40, 36]
-            office: [538, 84, 36, 34]
+            office: [538, 84, 36, 36]
             insurance: [538, 84, 36, 34]
             company: [538, 84, 36, 34]
             optical-shop: [220, 42, 36, 34]
@@ -730,7 +730,7 @@ layers:
                     filter: { kind: hospital }
                     draw: { icons: { text: { font: { fill: [1.000,1.000,1.000] } } } }
                 courthouse:
-                    filter: { kind: [courthouse,library,museum,post_office,police,embassy] }
+                    filter: { kind: [courthouse,library,museum,post_office,police,embassy,bank] }
                     draw: { icons: { text: { font: { fill: [0.149,0.871,0.992] } } } }
                 school:
                     filter: { kind: [school,university] }
@@ -738,6 +738,10 @@ layers:
                 retail:
                     filter: { kind: [books,computer,outdoor,supermarket,department_store,electronics,mall,clothes,toys] }
                     draw: { icons: { text: { font: { fill: [0.941,0.482,0.953] } } } }
+                place-of-worship:
+                    filter: { kind: [place_of_worship] }
+                    draw: { icons: { text: { font: { fill: [0.719,0.806,0.839] } } } }
+
 
 
 
