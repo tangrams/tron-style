@@ -42,10 +42,10 @@ textures:
             bike: [768, 126, 40, 36]
             bike_shop: [768, 126, 40, 36]
             boat-ferry: [792, 0, 36, 34]
-            ferry_terminal: [792, 0, 36, 34]
-            ferry-boat: [792, 0, 36, 34]
-            ferry: [792, 0, 36, 34]
-            boat-ramp: [90, 84, 36, 34]
+            ferry_terminal: [792, 0, 36, 36]
+            ferry-boat: [792, 0, 36, 36]
+            ferry: [792, 0, 36, 36]
+            boat-ramp: [90, 84, 36, 36]
             slipway: [90, 84, 36, 34]
             boat_ramp: [90, 84, 36, 34]
             bookstore: [722, 126, 36, 36]
@@ -175,13 +175,13 @@ textures:
             laundry: [628, 42, 36, 34]
             dry_cleaning: [628, 42, 36, 34]
             library: [0, 0, 36, 36]
-            light-rail: [660, 0, 36, 34]
-            light_rail: [660, 0, 36, 34]
-            tram_stop: [660, 0, 36, 34]
-            lighthouse: [222, 84, 36, 34]
-            liquor-store: [406, 126, 40, 36]
-            alcohol: [406, 126, 40, 36]
-            liquor: [406, 126, 40, 36]
+            light-rail: [660, 0, 36, 36]
+            light_rail: [660, 0, 36, 36]
+            tram_stop: [660, 0, 36, 36]
+            lighthouse: [222, 84, 36, 36]
+            liquor-store: [406, 126, 36, 36]
+            alcohol: [406, 126, 36, 36]
+            liquor: [406, 126, 36, 36]
             mall: [582, 42, 38, 36]
             market: [536, 42, 40, 36]
             variety_store: [536, 42, 40, 36]
@@ -721,7 +721,7 @@ layers:
 
             text_colors:
                 restaurant:
-                    filter: { kind: [restaurant,cafe,fast_food,bakery,pub,bar] }
+                    filter: { kind: [restaurant,cafe,fast_food,bakery,pub,bar,ice_cream] }
                     draw: { icons: { text: { font: { fill: [0.212,1.000,0.882] } } } }
                 hotel:
                     filter: { kind: [hotel,hostel,motel] }
@@ -745,7 +745,7 @@ layers:
                     filter: { kind: [place_of_worship] }
                     draw: { icons: { text: { font: { fill: [0.719,0.806,0.839] } } } }
                 airport:
-                    filter: { kind: [aerodrome] }
+                    filter: { kind: [aerodrome,ferry_terminal,tram_stop] }
                     draw: { icons: { text: { font: { fill: [0.965,0.929,0.341] } } } }
                 theatre:
                     filter: { kind: [theatre,performing-arts,cinema] }
@@ -875,7 +875,7 @@ layers:
                             visible: true
                             priority: 44
                             font:
-                                fill: [0.290,0.902,0.910]
+                                fill: [0.530,0.835,1.000]
                 enclosure:
                     filter: { kind: [enclosure, animal] }
                     draw:
