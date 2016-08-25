@@ -435,21 +435,29 @@ layers:
                 filter: { aeroway: taxiway }
                 draw:
                     lines:
-                        style: airport-glow
-                        color: [[12,[1.000,0.518,0.424]],[16,[1.000,0.564,0.312]]]
-                        width: [[12,0px],[13,1px],[15,6px],[17,30px],[20,60px]]
+                        # color: [[12,[1.000,0.518,0.424]],[16,[1.000,0.564,0.312]]]
+                        color: [[9,[0.215,1.000,1.000]],[13,[0.039,0.184,0.443]],[16,[0.078,0.129,0.259]]]
+                        width: [[12,0px],[13,1px],[15,1.5px],[17,6px],[20,20px]]
                         outline:
                             width: 0px
             runway:
                 filter: { aeroway: runway }
                 draw:
                     lines:
-                        color: [1.000,0.564,0.312]
+                        # color: [1.000,0.564,0.312]
+                        color: [[9,[0.215,1.000,1.000]],[13,[0.000,0.259,0.694]],[16,[0.078,0.129,0.259]]]
                         width: [[9,0px],[11,1px],[13,3px],[15,12px],[17,60px],[20,70m]]
                         outline:
-                            style: airport-glow
-                            color: [1.000,0.564,0.312]
-                            width: [[9,2px],[20,10px]]
+                            style: runway-glow
+                            # color: [[9,[0.965,0.929,0.341]],[16,[1.000,0.247,0.239]]]
+                            color: [[9,[0.215,1.000,1.000]],[13,[0.000,0.259,0.694]],[16,[0.078,0.129,0.259]]]
+                            width: [[9,1px],[20,10px]]
+                runway-detail1:
+                    filter: { $zoom: { min: 13 } }
+                    draw:
+                        runway-dots:
+                            color: [0.215,1.000,1.000]
+                            width: [[13,7px],[20,30px]]
 
 styles:
     traffic-animation:
@@ -526,10 +534,29 @@ styles:
                 GLOW_WIDTH: 0.45
                 GLOW_BRIGHTNESS: .25
 
-    airport-glow:
+    runway-glow:
         base: lines
         mix: [lines-glow]
         shaders:
             defines:
                 GLOW_WIDTH: 0.40
                 GLOW_BRIGHTNESS: .25
+
+    taxiway-glow:
+        base: lines
+        mix: [lines-glow]
+        shaders:
+            defines:
+                GLOW_WIDTH: 0.10
+                GLOW_BRIGHTNESS: .3
+
+    runway-dots:
+        base: lines
+        mix:
+            - lines-dots
+        shaders:
+            defines:
+                DOTS_SIZE: 0.85
+            blocks:
+                position: |
+                    v_texcoord.y *= 2.;
