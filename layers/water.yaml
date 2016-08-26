@@ -57,7 +57,8 @@ layers:
                     draw:
                         polygons:
                             style: polygons
-                            color: [0.000,0.804,0.776]
+                            # color: [0.000,0.804,0.776]
+                            color: [0.020,0.616,1.000]
 
 
         swimming_pool:
@@ -65,7 +66,8 @@ layers:
             draw:
                 polygons:
                     style: polygons
-                    color: [0.000,0.804,0.776]
+                    # color: [0.000,0.804,0.776]
+                    color: [0.020,0.616,1.000]
 
         boundaries:
             filter: { boundary: yes, kind: ocean }

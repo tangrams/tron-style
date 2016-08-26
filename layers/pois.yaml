@@ -354,9 +354,11 @@ layers:
                 interactive: true
                 visible: true
                 priority: 65
+                #buffer: 100px
                 text:
                     repeat_group: abc
                     repeat_distance: 100px
+                    buffer: 5px
                     text_source: global.ux_language_text_source
                     visible: false    # labels are enabled by each layer below
                     move_into_tile: false # preserves text alignment w/icons in JS
@@ -513,7 +515,7 @@ layers:
                             text:
                                 visible: true
                                 font:
-                                    fill: [0.451,1.000,0.302]
+                                    fill: [0.356,0.990,0.789]
                     natl-park-labels-z4-z6:
                         filter: { $zoom: [4,5,6] }
                         draw:
@@ -567,7 +569,7 @@ layers:
                                 visible: true
                                 priority: 42
                                 font:
-                                    fill: [0.451,1.000,0.302]
+                                    fill: [0.356,0.990,0.789]
                     green-areas-z6:
                         # mojave national preserve
                         filter: { $zoom: [6] }
@@ -723,26 +725,29 @@ layers:
                 restaurant:
                     filter: { kind: [restaurant,cafe,fast_food,bakery,pub,bar,ice_cream] }
                     draw: { icons: { text: { font: { fill: [0.212,1.000,0.882] } } } }
+                    # draw: { icons: { text: { font: { fill: [0.174,0.830,0.732] } } } }
                 hotel:
                     filter: { kind: [hotel,hostel,motel] }
                     draw: { icons: { text: { font: { fill: [0.900,0.750,1.000] } } } }
                 pharmacy:
                     filter: { kind: pharmacy }
-                    draw: { icons: { text: { font: { fill: [0.451,1.000,0.302] } } } }
+                    draw: { icons: { text: { font: { fill: [0.382,0.830,0.501] } } } }
+                    # draw: { icons: { text: { font: { fill: [0.512,0.790,0.435] } } } }
                 hospital:
                     filter: { kind: hospital }
-                    draw: { icons: { text: { font: { fill: [1.000,1.000,1.000] } } } }
+                    draw: { icons: { text: { font: { fill: [0.932,0.737,0.932] } } } }
                 courthouse:
-                    filter: { kind: [courthouse,library,museum,post_office,police,embassy,bank] }
+                    filter: { kind: [courthouse,library,museum,post_office,police,embassy,bank,observatory] }
                     draw: { icons: { text: { font: { fill: [0.149,0.871,0.992] } } } }
                 school:
-                    filter: { kind: [school,university] }
-                    draw: { icons: { text: { font: { fill: [0.400,0.882,0.988] } } } }
+                    filter: { kind: [school,university,kindergarten,college] }
+                    draw: { icons: { text: { font: { fill: [0.320,0.696,0.780] } } } }
+                    # draw: { icons: { text: { font: { fill: [0.334,0.726,0.814] } } } }
                 retail:
                     filter: { kind: [books,computer,outdoor,supermarket,department_store,electronics,mall,clothes,toys,fashion,jewelry,convenience,gift,music,bicycle,alcohol,sports,florist] }
                     draw: { icons: { text: { font: { fill: [1.000,0.714,0.976] } } } }
                 place-of-worship:
-                    filter: { kind: [place_of_worship] }
+                    filter: { kind: [place_of_worship,cemetery] }
                     draw: { icons: { text: { font: { fill: [0.719,0.806,0.839] } } } }
                 airport:
                     filter: { kind: [aerodrome,ferry_terminal,tram_stop] }
@@ -754,8 +759,55 @@ layers:
                     filter: { kind: [parking] }
                     draw: { icons: { text: { font: { fill: [1.000,0.714,0.976] } } } }
                 stadium:
-                    filter: { kind: [stadium,fitness] }
+                    filter: { kind: [stadium,fitness,golf_course] }
                     draw: { icons: { text: { font: { fill: [1.000,0.766,0.460] } } } }
+                memorial:
+                    filter: { kind: memorial }
+                    draw: { icons: { text: { font: { fill: [0.817,0.752,0.857] } } } }
+                bridge:
+                    filter: { kind: bridge }
+                    draw: { icons: { text: { font: { fill: [0.851,0.796,0.851] } } } }
+                garden:
+                    filter: { kind: garden }
+                    draw: { icons: { text: { font: { fill: [0.554,0.770,0.702] } } } }
+
+            # text_colors:
+            #     restaurant:
+            #         filter: { kind: [restaurant,cafe,fast_food,bakery,pub,bar,ice_cream] }
+            #         draw: { icons: { text: { font: { fill: [0.561,0.890,0.813] } } } }
+            #     hotel:
+            #         filter: { kind: [hotel,hostel,motel] }
+            #         draw: { icons: { text: { font: { fill: [0.561,0.890,0.813] } } } }
+            #     pharmacy:
+            #         filter: { kind: pharmacy }
+            #         draw: { icons: { text: { font: { fill: [0.561,0.890,0.813] } } } }
+            #     hospital:
+            #         filter: { kind: hospital }
+            #         draw: { icons: { text: { font: { fill: [0.561,0.890,0.813] } } } }
+            #     courthouse:
+            #         filter: { kind: [courthouse,library,museum,post_office,police,embassy,bank] }
+            #         draw: { icons: { text: { font: { fill: [0.561,0.890,0.813] } } } }
+            #     school:
+            #         filter: { kind: [school,university,kindergarten] }
+            #         draw: { icons: { text: { font: { fill: [0.561,0.890,0.813] } } } }
+            #     retail:
+            #         filter: { kind: [books,computer,outdoor,supermarket,department_store,electronics,mall,clothes,toys,fashion,jewelry,convenience,gift,music,bicycle,alcohol,sports,florist] }
+            #         draw: { icons: { text: { font: { fill: [0.561,0.890,0.813] } } } }
+            #     place-of-worship:
+            #         filter: { kind: [place_of_worship,cemetery] }
+            #         draw: { icons: { text: { font: { fill: [0.561,0.890,0.813] } } } }
+            #     airport:
+            #         filter: { kind: [aerodrome,ferry_terminal,tram_stop] }
+            #         draw: { icons: { text: { font: { fill: [0.561,0.890,0.813] } } } }
+            #     theatre:
+            #         filter: { kind: [theatre,performing-arts,cinema] }
+            #         draw: { icons: { text: { font: { fill: [0.561,0.890,0.813] } } } }
+            #     parking:
+            #         filter: { kind: [parking] }
+            #         draw: { icons: { text: { font: { fill: [0.561,0.890,0.813] } } } }
+            #     stadium:
+            #         filter: { kind: [stadium,fitness,golf_course] }
+            #         draw: { icons: { text: { font: { fill: [0.561,0.890,0.813] } } } }
 
             university:
                 filter:
@@ -1006,7 +1058,10 @@ layers:
                         text:
                             visible: true
                             font:
-                                fill: [0.471,0.992,0.353]
+                                # default area text color
+                                # (versus specific area text colors above, 
+                                #  and no-area text colors in style's root draw section)
+                                fill: [0.850,0.850,0.850]
                                 size: 10px
                 early-sizing:
                     filter: { $zoom: { max: 14 } }
