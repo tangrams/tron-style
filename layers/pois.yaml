@@ -72,7 +72,7 @@ textures:
             candy-store: [884, 168, 40, 36]
             candy: [884, 168, 40, 36]
             confectionery: [884, 168, 40, 36]
-            capital-l: [364, 212, 18, 14]
+            capital-l: [364, 210, 18, 18]
             capital-m: [344, 212, 14, 10]
             capital-s: [324, 212, 12, 8]
             capital-xl: [416, 212, 22, 18]
@@ -283,9 +283,9 @@ textures:
             townspot-l: [608, 210, 18, 18]
             townspot-l-rev: [496, 212, 16, 14]
             townspot-m: [586, 210, 14, 14]
-            townspot-m-rev: [476, 212, 12, 10]
+            townspot-m-rev: [477, 209, 15, 15]
             townspot-s: [566, 210, 12, 12]
-            townspot-s-rev: [458, 212, 12, 8]
+            townspot-s-rev: [458, 210, 12, 12]
             townspot-xl: [634, 210, 22, 22]
             townspot-xl-rev: [520, 212, 20, 18]
             townspot-xs: [548, 210, 10, 10]
@@ -737,7 +737,7 @@ layers:
                     filter: { kind: hospital }
                     draw: { icons: { text: { font: { fill: [0.932,0.737,0.932] } } } }
                 courthouse:
-                    filter: { kind: [courthouse,library,museum,post_office,police,embassy,bank,observatory] }
+                    filter: { kind: [courthouse,library,museum,post_office,police,embassy,bank,observatory,recycling] }
                     draw: { icons: { text: { font: { fill: [0.149,0.871,0.992] } } } }
                 school:
                     filter: { kind: [school,university,kindergarten,college] }

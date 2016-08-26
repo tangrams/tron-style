@@ -27,7 +27,8 @@ layers:
                     style: roads-glow
                     # color: [[5,[0.463,0.800,0.824]],[6,[0.541,0.969,0.949]]]
                     # width: [[5,0.5px],[6,10px]]
-                    color: [0.463,0.800,0.824]
+                    # color: [0.463,0.800,0.824]
+                    color: [0.000,0.535,0.630]
                     width: [[5,1.5px],[7,5px]]
 
                     # outline:
@@ -56,8 +57,10 @@ layers:
                 draw:
                     lines:
                         style: roads-glow
-                        color: [0.463,0.800,0.824]
-                        width: [[8,5px],[11,9px]]
+                        # color: [0.463,0.800,0.824]
+                        # color: [0.000,0.535,0.630]
+                        color: [0.000,0.312,0.367]
+                        width: [[8,4px],[11,9px]]
 
             highway-z11:
                 filter:
@@ -79,7 +82,8 @@ layers:
                         width: [[8,0px],[16,8px],[17,13px],[18,20px],[19,20px]]
                     highway-glow:
                         order: global.order_sub_6
-                        color: [0.800,1.000,0.987]
+                        # color: [0.800,1.000,0.987]
+                        color: [0.000,0.535,0.630]
                         width: [[11,8px],[13,12px],[16,30px],[17,40px],[18,50px],[19,80px]]
 
                 highway-link:
@@ -507,7 +511,7 @@ styles:
                 ZOOM_START: 5.
                 ZOOM_END: 6.
                 GLOW_WIDTH: mix(1.,.45,zoom())
-                GLOW_BRIGHTNESS: zoom()*.25
+                GLOW_BRIGHTNESS: zoom()*.22
 
     highway-glow:
         base: lines
