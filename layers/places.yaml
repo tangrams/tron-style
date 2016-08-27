@@ -1335,6 +1335,7 @@ layers:
                         text_wrap: 10
                         visible: true
                         font:
+                            family: Audiowide
                             size: 9px
                             weight: 400
                             fill: white
@@ -1360,6 +1361,7 @@ layers:
                         text_wrap: 10
                         visible: true
                         font:
+                            family: Audiowide
                             size: 10px
                             weight: 400
                             fill: white
@@ -1385,6 +1387,7 @@ layers:
                         text_wrap: 10
                         visible: true
                         font:
+                            family: Audiowide
                             size: 11px
                             weight: 400
                             fill: white
@@ -1410,7 +1413,8 @@ layers:
                         text_wrap: 12
                         visible: true
                         font:
-                            size: 13px
+                            family: Audiowide
+                            size: 12px
                             weight: 400
                             fill: white
                             transform: uppercase
@@ -1435,7 +1439,8 @@ layers:
                         text_wrap: 12
                         visible: true
                         font:
-                            size: 16px
+                            family: Audiowide
+                            size: 14px
                             weight: 300
                             fill: white
                             transform: uppercase
@@ -1448,7 +1453,7 @@ layers:
                         text:
                             priority: 19
                             font:
-                                size: 13px
+                                size: 10px
             neighborhood-z16:
                 filter:
                     all:
@@ -1468,7 +1473,8 @@ layers:
                         visible: true
                         priority: 18
                         font:
-                            size: 17px
+                            family: Audiowide
+                            size: 14px
                             weight: 300
                             fill: white
                             transform: uppercase
