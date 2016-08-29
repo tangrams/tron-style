@@ -31,7 +31,7 @@ layers:
                     visible: true
                     font:
                         family: Orbitron
-                        size: 16px
+                        size: 17px
                         fill: [0.594,0.990,0.944]
             z5-dont-label:
                 filter: { name: [Nederland,Luxembourg,Liechtenstein,San Marino,Civitatis Vaticanæ,Crna Gora,Македонија,The Gambia,Burundi,Swaziland,الإمارات العربية المتحدة,العراق,Singapore,El Salvador,Belize,Trinidad and Tobago, Saint Lucia, Montserrat,Anguilla,República Dominicana,Bahamas,British Virgin Islands,Antigua and Barbuda,Grenada,Sint Maarten,Saint Kitts and Nevis,Cayman Islands,België - Belgique - Belgien], $zoom: {min: 5, max: 6} }
@@ -54,7 +54,7 @@ layers:
                     priority: 3
                     font:
                         family: Orbitron
-                        size: 14px
+                        size: 19px
                         fill: [0.594,0.990,0.944]
             z6-dont-label:
                 filter: { name: [Luxembourg,Liechtenstein,San Marino,Civitatis Vaticanæ,El Salvador,Belize,België - Belgique - Belgien], $zoom: {min: 6, max: 7} }
@@ -240,7 +240,7 @@ layers:
                                 visible: true
                                 font:
                                     fill: white
-                                    size: 15px
+                                    size: 18px
                     capital:
                         filter: { capital: yes }
                         draw:
@@ -261,7 +261,7 @@ layers:
                                 visible: true
                                 font:
                                     fill: white
-                                    size: 12px
+                                    size: 13px
                     capital:
                         filter: { capital: yes }
                         draw:
