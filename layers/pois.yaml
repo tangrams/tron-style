@@ -749,8 +749,8 @@ layers:
                 place-of-worship:
                     filter: { kind: [place_of_worship,cemetery] }
                     draw: { icons: { text: { font: { fill: [0.719,0.806,0.839] } } } }
-                airport:
-                    filter: { kind: [aerodrome,ferry_terminal,tram_stop] }
+                ferry:
+                    filter: { kind: [ferry_terminal,tram_stop] }
                     draw: { icons: { text: { font: { fill: [0.965,0.929,0.341] } } } }
                 theatre:
                     filter: { kind: [theatre,performing-arts,cinema] }
@@ -770,6 +770,16 @@ layers:
                 garden:
                     filter: { kind: garden }
                     draw: { icons: { text: { font: { fill: [0.554,0.770,0.702] } } } }
+                airport:
+                    filter: { kind: [aerodrome] }
+                    draw:
+                        icons:
+                            size: 24px
+                            text:
+                                font:
+                                    family: Aldrich
+                                    fill: [0.977,0.830,1.000]
+                                    size: 12px
 
             # text_colors:
             #     restaurant:

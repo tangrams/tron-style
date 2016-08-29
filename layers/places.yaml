@@ -444,7 +444,7 @@ layers:
                             text:
                                 visible: true
                                 font:
-                                    fill: white
+                                    fill: [0.886,0.898,0.914]
                                     size: 10px
                     capital:
                         filter: { capital: yes }
@@ -469,7 +469,7 @@ layers:
                             text:
                                 visible: true
                                 font:
-                                    fill: white
+                                    fill: [0.886,0.898,0.914]
                                     size: 10px
                     capital:
                         filter: { capital: yes }
