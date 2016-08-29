@@ -777,9 +777,9 @@ layers:
                             size: 24px
                             text:
                                 font:
-                                    family: Aldrich
+                                    family: Orbitron
                                     fill: [0.977,0.830,1.000]
-                                    size: 12px
+                                    size: 14px
 
             # text_colors:
             #     restaurant:
