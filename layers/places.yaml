@@ -21,7 +21,7 @@ layers:
                     visible: true
                     font:
                         family: Orbitron
-                        size: 12px
+                        size: 14px
                         fill: [0.594,0.990,0.944]
         country-z5:
             filter: { name: true, population: true, kind: [country], $zoom: [5] }
@@ -31,7 +31,7 @@ layers:
                     visible: true
                     font:
                         family: Orbitron
-                        size: 12px
+                        size: 16px
                         fill: [0.594,0.990,0.944]
             z5-dont-label:
                 filter: { name: [Nederland,Luxembourg,Liechtenstein,San Marino,Civitatis Vaticanæ,Crna Gora,Македонија,The Gambia,Burundi,Swaziland,الإمارات العربية المتحدة,العراق,Singapore,El Salvador,Belize,Trinidad and Tobago, Saint Lucia, Montserrat,Anguilla,República Dominicana,Bahamas,British Virgin Islands,Antigua and Barbuda,Grenada,Sint Maarten,Saint Kitts and Nevis,Cayman Islands,België - Belgique - Belgien], $zoom: {min: 5, max: 6} }
@@ -117,7 +117,7 @@ layers:
                             text:
                                 visible: true
                                 font:
-                                    size: 15px
+                                    size: 14px
                                     fill: white
                 z3places-2:
                     filter: { scalerank: [1] }
@@ -144,7 +144,7 @@ layers:
                             text:
                                 visible: true
                                 font:
-                                    size: 30px
+                                    size: 16px
                                     fill: white
                                     # stroke: { color: global.text_stroke, width: 4 }
 
@@ -176,7 +176,7 @@ layers:
                             text:
                                 visible: true
                                 font:
-                                    size: 13px
+                                    size: 18px
                     capital:
                         filter: { capital: yes }
                         draw:
@@ -196,7 +196,8 @@ layers:
                             text:
                                 visible: true
                                 font:
-                                    size: 11px
+                                    fill: [0.886,0.898,0.914]
+                                    size: 13px
                     capital:
                         filter: { capital: yes }
                         draw:
@@ -215,8 +216,8 @@ layers:
                             text:
                                 visible: true
                                 font:
-                                    fill: white
-                                    size: 9px
+                                    fill: [0.886,0.898,0.914]
+                                    size: 10px
                     capital:
                         filter: { capital: yes }
                         draw:

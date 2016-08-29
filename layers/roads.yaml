@@ -461,7 +461,7 @@ layers:
                     draw:
                         runway-dots:
                             color: [0.215,1.000,1.000]
-                            width: [[13,7px],[20,30px]]
+                            width: [[13,2px],[20,10px]]
 
 styles:
     traffic-animation:
@@ -560,7 +560,7 @@ styles:
             - lines-dots
         shaders:
             defines:
-                DOTS_SIZE: 0.85
-            blocks:
-                position: |
-                    v_texcoord.y *= 2.;
+                DOTS_SIZE: 0.15
+            # blocks:
+            #     position: |
+            #         v_texcoord.y *= 2.;

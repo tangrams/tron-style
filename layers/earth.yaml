@@ -59,7 +59,8 @@ styles:
                 STRIPES_WIDTH: .5-(zoom())
 
                 COLOR_A: color.rgb
-                COLOR_B: vec3(0.031,0.973,1.000)
+                # COLOR_B: vec3(0.031,0.973,1.000)
+                COLOR_B: vec3(0.000,0.576,0.667)
             blocks:
                 color: |
                     color.rgb = mix(COLOR_A, COLOR_B, sin(zoom()*3.1415));
