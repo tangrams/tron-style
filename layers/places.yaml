@@ -305,7 +305,7 @@ layers:
                                 visible: true
                                 font:
                                     fill: white
-                                    size: 16px
+                                    size: 18px
                     capital:
                         filter: { capital: yes }
                         draw:
@@ -378,7 +378,7 @@ layers:
                             text:
                                 visible: true
                                 font:
-                                    size: 16px
+                                    size: 20px
                     capital:
                         filter: { capital: yes }
                         draw:
@@ -399,7 +399,7 @@ layers:
                             text:
                                 visible: true
                                 font:
-                                    size: 13px
+                                    size: 15px
                     capital:
                         filter: { capital: yes }
                         draw:
@@ -422,7 +422,7 @@ layers:
                                 visible: true
                                 font:
                                     fill: white
-                                    size: 11px
+                                    size: 12px
                     capital:
                         filter: { capital: yes }
                         draw:
@@ -431,53 +431,53 @@ layers:
                                 sprite: capital-m
                                 priority: 13
 
-                # z8places-4:
-                #     filter:
-                #         any:
-                #             - { population: { min: 50000, max: 84999 } }
-                #     draw:
-                #         icons:
-                #             size: 5px
-                #             visible: true
-                #             sprite: townspot-s-rev
-                #             priority: 19
-                #             text:
-                #                 visible: true
-                #                 font:
-                #                     fill: white
-                #                     size: 10px
-                #     capital:
-                #         filter: { capital: yes }
-                #         draw:
-                #             icons:
-                #                 size: 5px
-                #                 sprite: capital-m
-                #                 priority: 17
-                # z8places-5:
-                #     filter:
-                #         all:
-                #             - { population: { max: 50000 } }
-                #         any:
-                #             - { capital: yes }
-                #             - { state_capital: yes }
-                #     draw:
-                #         icons:
-                #             size: 5px
-                #             visible: true
-                #             sprite: townspot-s-rev
-                #             priority: 19
-                #             text:
-                #                 visible: true
-                #                 font:
-                #                     fill: white
-                #                     size: 10px
-                #     capital:
-                #         filter: { capital: yes }
-                #         draw:
-                #             icons:
-                #                 size: 5px
-                #                 sprite: capital-s
-                #                 priority: 17
+                z8places-4:
+                    filter:
+                        any:
+                            - { population: { min: 50000, max: 84999 } }
+                    draw:
+                        icons:
+                            size: 5px
+                            visible: true
+                            sprite: townspot-s-rev
+                            priority: 19
+                            text:
+                                visible: true
+                                font:
+                                    fill: white
+                                    size: 10px
+                    capital:
+                        filter: { capital: yes }
+                        draw:
+                            icons:
+                                size: 5px
+                                sprite: capital-m
+                                priority: 17
+                z8places-5:
+                    filter:
+                        all:
+                            - { population: { max: 50000 } }
+                        any:
+                            - { capital: yes }
+                            - { state_capital: yes }
+                    draw:
+                        icons:
+                            size: 5px
+                            visible: true
+                            sprite: townspot-s-rev
+                            priority: 19
+                            text:
+                                visible: true
+                                font:
+                                    fill: white
+                                    size: 10px
+                    capital:
+                        filter: { capital: yes }
+                        draw:
+                            icons:
+                                size: 5px
+                                sprite: capital-s
+                                priority: 17
 
             populated-places-natural-earth-z8-backfill:
                 filter: { name: true, source: naturalearthdata.com, $zoom: [8], population: { max: 50000 } }
