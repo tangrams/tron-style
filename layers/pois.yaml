@@ -230,7 +230,7 @@ textures:
             photography_lab: [132, 42, 36, 34]
             photographer: [132, 42, 36, 34]
             pier: [616, 0, 36, 34]
-            playground: [400, 42, 36, 34]
+            playground: [400, 42, 36, 36]
             police: [220, 0, 36, 36]
             pool: [134, 84, 36, 34]
             swimming_pool: [134, 84, 36, 34]
@@ -768,8 +768,8 @@ layers:
                     filter: { kind: bridge }
                     draw: { icons: { text: { font: { fill: [0.851,0.796,0.851] } } } }
                 garden:
-                    filter: { kind: garden }
-                    draw: { icons: { text: { font: { fill: [0.554,0.770,0.702] } } } }
+                    filter: { kind: [garden,playground] }
+                    draw: { icons: { text: { font: { fill: [0.345,0.953,0.769] } } } }
                 airport:
                     filter: { kind: [aerodrome] }
                     draw:
