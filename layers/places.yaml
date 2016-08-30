@@ -479,28 +479,28 @@ layers:
                                 sprite: capital-s
                                 priority: 17
 
-            populated-places-natural-earth-z8-backfill:
-                filter: { name: true, source: naturalearthdata.com, $zoom: [8], population: { max: 50000 } }
-                draw: { icons: { text: { font: { fill: white } } } }
-                z8places-1-ne:
-                    filter: { scalerank: [0,1] }
-                    draw:
-                        icons:
-                            size: 8px
-                            visible: true
-                            sprite: townspot-l-rev
-                            priority: 23
-                            text:
-                                visible: true
-                                font:
-                                    size: 16px
-                    capital:
-                        filter: { capital: yes }
-                        draw:
-                            icons:
-                                size: 8px
-                                sprite: capital-l
-                                priority: 21
+            # populated-places-natural-earth-z8-backfill:
+            #     filter: { name: true, source: naturalearthdata.com, $zoom: [8], population: { max: 50000 } }
+            #     draw: { icons: { text: { font: { fill: white } } } }
+            #     z8places-1-ne:
+            #         filter: { scalerank: [0,1] }
+            #         draw:
+            #             icons:
+            #                 size: 8px
+            #                 visible: true
+            #                 sprite: townspot-l-rev
+            #                 priority: 23
+            #                 text:
+            #                     visible: true
+            #                     font:
+            #                         size: 16px
+            #         capital:
+            #             filter: { capital: yes }
+            #             draw:
+            #                 icons:
+            #                     size: 8px
+            #                     sprite: capital-l
+            #                     priority: 21
 
                 # z8places-2-ne:
                 #     filter: { scalerank: [2,3,4,5] }
@@ -558,7 +558,7 @@ layers:
                             priority: 6
                             font:
                                 family: Play
-                                size: 17px
+                                size: 20px
                                 fill: white
 
                 z9places-2a:
@@ -572,7 +572,7 @@ layers:
                             priority: 8
                             font:
                                 family: Play
-                                size: 13px
+                                size: 15px
                                 fill: white
 
                 z9places-2b:
@@ -587,7 +587,7 @@ layers:
                             text:
                                 visible: true
                                 font:
-                                    size: 13px
+                                    size: 15px
                                     fill: white
                     capital:
                         filter: { capital: yes }
@@ -609,7 +609,7 @@ layers:
                             text:
                                 visible: true
                                 font:
-                                    size: 11px
+                                    size: 12px
                                     fill: white
                     capital:
                         filter: { capital: yes }
@@ -635,8 +635,8 @@ layers:
                             text:
                                 visible: true
                                 font:
-                                    fill: [0.816,0.827,0.851]
-                                    size: 9px
+                                    fill: [0.886,0.898,0.914]
+                                    size: 10px
                     capital:
                         filter: { capital: yes }
                         draw:
@@ -659,8 +659,8 @@ layers:
                             text:
                                 visible: true
                                 font:
-                                    fill: [0.816,0.827,0.851]
-                                    size: 9px
+                                    fill: [0.886,0.898,0.914]
+                                    size: 10px
                     capital:
                         filter: { capital: yes }
                         draw:
@@ -771,7 +771,7 @@ layers:
                             priority: 5
                             font:
                                 family: Play
-                                size: 18px
+                                size: 20px
 
                 z10places-2a:
                     filter:
@@ -785,7 +785,7 @@ layers:
                             priority: 6
                             font:
                                 family: Play
-                                size: 13px
+                                size: 14px
 
                 z10places-2b:
                     filter:
@@ -799,7 +799,7 @@ layers:
                             text:
                                 visible: true
                                 font:
-                                    size: 13px
+                                    size: 12px
 
                 z10places-3:
                     filter:
@@ -814,7 +814,7 @@ layers:
                             text:
                                 visible: true
                                 font:
-                                    size: 10px
+                                    size: 12px
 
                 # z10places-4:
                 #     filter:
@@ -928,7 +928,7 @@ layers:
                             priority: 5
                             font:
                                 family: Play
-                                size: 18px
+                                size: 20px
 
 
                 z11places-2:
@@ -941,7 +941,8 @@ layers:
                             priority: 6
                             font:
                                 family: Play
-                                size: 14px
+                                fill: [0.886,0.898,0.914]
+                                size: 13px
 
                 z11places-3:
                     filter:
@@ -953,6 +954,7 @@ layers:
                             priority: 7
                             font:
                                 family: Play
+                                fill: [0.886,0.898,0.914]
                                 size: 10px
 
 
