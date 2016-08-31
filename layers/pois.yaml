@@ -243,8 +243,8 @@ textures:
             recycling-facility: [44, 42, 36, 36]
             recycling: [44, 42, 36, 36]
             rental-car: [572, 0, 36, 34]
-            car_rental: [572, 0, 36, 34]
-            car_sharing: [572, 0, 36, 34]
+            car_rental: [572, 0, 36, 36]
+            car_sharing: [572, 0, 36, 36]
             restaurant: [974, 168, 36, 36]
             deli: [974, 168, 36, 34]
             ruin: [484, 0, 36, 34]
@@ -727,7 +727,7 @@ layers:
                     draw: { icons: { text: { font: { fill: [0.212,1.000,0.882] } } } }
                     # draw: { icons: { text: { font: { fill: [0.174,0.830,0.732] } } } }
                 hotel:
-                    filter: { kind: [hotel,hostel,motel] }
+                    filter: { kind: [hotel,hostel,motel,company] }
                     draw: { icons: { text: { font: { fill: [0.900,0.750,1.000] } } } }
                 pharmacy:
                     filter: { kind: pharmacy }
