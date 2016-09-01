@@ -765,7 +765,7 @@ layers:
                     filter: { kind: bridge }
                     draw: { icons: { text: { font: { fill: [0.851,0.796,0.851] } } } }
                 garden:
-                    filter: { kind: [garden,playground] }
+                    filter: { kind: [garden,playground,zoo] }
                     draw: { icons: { text: { font: { fill: [0.345,0.953,0.769] } } } }
                 airport:
                     filter: { kind: [aerodrome] }
