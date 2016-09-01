@@ -867,7 +867,7 @@ layers:
                         - { $zoom: [15], area: { min: 10000 } }
                         - { $zoom: [16], area: { min: 5000 } }
                         - { $zoom: [17], area: { min: 2000 } }
-                        - { $zoom: { min: 18, area: true } }
+                        - { $zoom: { min: 18}, area: true }
                 visible: true
                 draw:
                     icons:
