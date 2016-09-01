@@ -747,7 +747,7 @@ layers:
                     filter: { kind: [place_of_worship,cemetery] }
                     draw: { icons: { text: { font: { fill: [0.719,0.806,0.839] } } } }
                 ferry:
-                    filter: { kind: [ferry_terminal,tram_stop] }
+                    filter: { kind: [ferry_terminal,tram_stop,subway_entrance] }
                     draw: { icons: { text: { font: { fill: [0.965,0.929,0.341] } } } }
                 theatre:
                     filter: { kind: [theatre,performing-arts,cinema] }
@@ -777,44 +777,6 @@ layers:
                                     family: Orbitron
                                     fill: [0.977,0.830,1.000]
                                     size: 14px
-
-            # text_colors:
-            #     restaurant:
-            #         filter: { kind: [restaurant,cafe,fast_food,bakery,pub,bar,ice_cream] }
-            #         draw: { icons: { text: { font: { fill: [0.561,0.890,0.813] } } } }
-            #     hotel:
-            #         filter: { kind: [hotel,hostel,motel] }
-            #         draw: { icons: { text: { font: { fill: [0.561,0.890,0.813] } } } }
-            #     pharmacy:
-            #         filter: { kind: pharmacy }
-            #         draw: { icons: { text: { font: { fill: [0.561,0.890,0.813] } } } }
-            #     hospital:
-            #         filter: { kind: hospital }
-            #         draw: { icons: { text: { font: { fill: [0.561,0.890,0.813] } } } }
-            #     courthouse:
-            #         filter: { kind: [courthouse,library,museum,post_office,police,embassy,bank] }
-            #         draw: { icons: { text: { font: { fill: [0.561,0.890,0.813] } } } }
-            #     school:
-            #         filter: { kind: [school,university,kindergarten] }
-            #         draw: { icons: { text: { font: { fill: [0.561,0.890,0.813] } } } }
-            #     retail:
-            #         filter: { kind: [books,computer,outdoor,supermarket,department_store,electronics,mall,clothes,toys,fashion,jewelry,convenience,gift,music,bicycle,alcohol,sports,florist] }
-            #         draw: { icons: { text: { font: { fill: [0.561,0.890,0.813] } } } }
-            #     place-of-worship:
-            #         filter: { kind: [place_of_worship,cemetery] }
-            #         draw: { icons: { text: { font: { fill: [0.561,0.890,0.813] } } } }
-            #     airport:
-            #         filter: { kind: [aerodrome,ferry_terminal,tram_stop] }
-            #         draw: { icons: { text: { font: { fill: [0.561,0.890,0.813] } } } }
-            #     theatre:
-            #         filter: { kind: [theatre,performing-arts,cinema] }
-            #         draw: { icons: { text: { font: { fill: [0.561,0.890,0.813] } } } }
-            #     parking:
-            #         filter: { kind: [parking] }
-            #         draw: { icons: { text: { font: { fill: [0.561,0.890,0.813] } } } }
-            #     stadium:
-            #         filter: { kind: [stadium,fitness,golf_course] }
-            #         draw: { icons: { text: { font: { fill: [0.561,0.890,0.813] } } } }
 
             university:
                 filter:
@@ -1356,6 +1318,11 @@ layers:
                 #         icons:
                 #             visible: false
                 #             text:  { visible: false }
+
+                icons:
+                    subway-entrance:
+                        filter: { kind: [subway_entrance] }
+                        draw:   { icons: { sprite: subway-entrance } }
 
                 # building-icon:
                 #     filter: { kind: [building, auditorium, terminal, hangar, retirement_home, manor, recreation_center, apartments] }
