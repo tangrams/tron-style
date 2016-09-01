@@ -556,7 +556,7 @@ layers:
                         - { $zoom: [14],   area: { min: 50000 } }
                         - { $zoom: [15],   area: { min: 10000 } }
                         - { $zoom: [16],   area: { min: 1000 } }
-                        - { $zoom: { min: 17, area: true } }
+                        - { $zoom: { min: 17 }, area: true }
                 not-national-park:
                     filter: function() { return feature.name && !((feature.name.indexOf("National Park") > -1) || feature.name.indexOf("National Monument") > -1); }
                     draw:
