@@ -1324,6 +1324,10 @@ layers:
                         filter: { kind: [subway_entrance] }
                         draw:   { icons: { sprite: subway-entrance } }
 
+                    pier:
+                        filter: { kind: pier }
+                        draw:   { icons: { sprite: generic } }
+
                 # building-icon:
                 #     filter: { kind: [building, auditorium, terminal, hangar, retirement_home, manor, recreation_center, apartments] }
                 #     draw:   { icons: { sprite: building } }
