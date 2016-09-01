@@ -734,7 +734,7 @@ layers:
                     filter: { kind: hospital }
                     draw: { icons: { text: { font: { fill: [0.932,0.737,0.932] } } } }
                 courthouse:
-                    filter: { kind: [courthouse,library,museum,post_office,police,embassy,bank,observatory,recycling,information,bicycle_rental_station,fire_station] }
+                    filter: { kind: [courthouse,library,museum,post_office,police,embassy,bank,observatory,recycling,information,bicycle_rental_station,fire_station,townhall,assisted_living,group_home,community_centre,attraction,artwork,sports_centre,historical,fitness_station] }
                     draw: { icons: { text: { font: { fill: [0.149,0.871,0.992] } } } }
                 school:
                     filter: { kind: [school,university,kindergarten,college] }
@@ -762,11 +762,14 @@ layers:
                     filter: { kind: [memorial,monument] }
                     draw: { icons: { text: { font: { fill: [0.817,0.752,0.857] } } } }
                 bridge:
-                    filter: { kind: bridge }
+                    filter: { kind: [bridge,toilets,fuel,optician,car] }
                     draw: { icons: { text: { font: { fill: [0.851,0.796,0.851] } } } }
                 garden:
                     filter: { kind: [garden,playground,zoo] }
                     draw: { icons: { text: { font: { fill: [0.345,0.953,0.769] } } } }
+                vet:
+                    filter: { kind: [veterinary,pet,pet_store] }
+                    draw: { icons: { text: { font: { fill: [0.838,0.815,0.970] } } } }
                 airport:
                     filter: { kind: [aerodrome] }
                     draw:
