@@ -64,7 +64,7 @@ styles:
 
     elevation-diagonal-dash:
         base: polygons
-        mix: [functions-zoom, polygons-diagonal-dash]
+        mix: [polygons-diagonal-dash]
         raster: custom
         shaders:
             defines:
