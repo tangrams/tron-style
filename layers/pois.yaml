@@ -734,7 +734,7 @@ layers:
                     filter: { kind: hospital }
                     draw: { icons: { text: { font: { fill: [0.932,0.737,0.932] } } } }
                 courthouse:
-                    filter: { kind: [courthouse,library,museum,post_office,police,embassy,bank,observatory,recycling] }
+                    filter: { kind: [courthouse,library,museum,post_office,police,embassy,bank,observatory,recycling,information] }
                     draw: { icons: { text: { font: { fill: [0.149,0.871,0.992] } } } }
                 school:
                     filter: { kind: [school,university,kindergarten,college] }
@@ -759,7 +759,7 @@ layers:
                     filter: { kind: [stadium,fitness,golf_course] }
                     draw: { icons: { text: { font: { fill: [1.000,0.766,0.460] } } } }
                 memorial:
-                    filter: { kind: memorial }
+                    filter: { kind: [memorial,monument] }
                     draw: { icons: { text: { font: { fill: [0.817,0.752,0.857] } } } }
                 bridge:
                     filter: { kind: bridge }
@@ -1030,7 +1030,7 @@ layers:
                                 # default area text color
                                 # (versus specific area text colors above, 
                                 #  and no-area text colors in style's root draw section)
-                                fill: [0.850,0.850,0.850]
+                                fill: [0.149,0.871,0.992]
                                 size: 10px
                 early-sizing:
                     filter: { $zoom: { max: 14 } }
