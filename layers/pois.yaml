@@ -765,7 +765,7 @@ layers:
                     filter: { kind: [bridge,toilets,fuel,optician,car,car_repair] }
                     draw: { icons: { text: { font: { fill: [0.851,0.796,0.851] } } } }
                 garden:
-                    filter: { kind: [garden,playground,zoo] }
+                    filter: { kind: [garden,playground,zoo,camp_site] }
                     draw: { icons: { text: { font: { fill: [0.345,0.953,0.769] } } } }
                 vet:
                     filter: { kind: [veterinary,pet,pet_store] }
