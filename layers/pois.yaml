@@ -756,7 +756,7 @@ layers:
                     filter: { kind: [parking] }
                     draw: { icons: { text: { font: { fill: [1.000,0.714,0.976] } } } }
                 stadium:
-                    filter: { kind: [stadium,fitness,golf_course,winter_sports] }
+                    filter: { kind: [stadium,fitness,golf_course,winter_sports,pitch] }
                     draw: { icons: { text: { font: { fill: [1.000,0.766,0.460] } } } }
                 memorial:
                     filter: { kind: [memorial,monument] }
