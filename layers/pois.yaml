@@ -734,7 +734,7 @@ layers:
                     filter: { kind: hospital }
                     draw: { icons: { text: { font: { fill: [0.932,0.737,0.932] } } } }
                 courthouse:
-                    filter: { kind: [courthouse,library,museum,post_office,police,embassy,bank,observatory,recycling,information,bicycle_rental_station,fire_station,townhall,assisted_living,group_home,community_centre,attraction,artwork,sports_centre,historical,fitness_station,drinking_water,ngo,plumber,lawyer,it,doctors,guest_house] }
+                    filter: { kind: [courthouse,library,museum,post_office,police,embassy,bank,observatory,recycling,information,bicycle_rental_station,fire_station,townhall,assisted_living,group_home,community_centre,attraction,artwork,sports_centre,historical,fitness_station,drinking_water,ngo,plumber,lawyer,it,doctors,guest_house,clinic,shelter] }
                     draw: { icons: { text: { font: { fill: [0.149,0.871,0.992] } } } }
                 school:
                     filter: { kind: [school,university,kindergarten,college] }
@@ -756,7 +756,7 @@ layers:
                     filter: { kind: [parking] }
                     draw: { icons: { text: { font: { fill: [1.000,0.714,0.976] } } } }
                 stadium:
-                    filter: { kind: [stadium,fitness,golf_course] }
+                    filter: { kind: [stadium,fitness,golf_course,winter_sports] }
                     draw: { icons: { text: { font: { fill: [1.000,0.766,0.460] } } } }
                 memorial:
                     filter: { kind: [memorial,monument] }
