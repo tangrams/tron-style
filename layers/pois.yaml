@@ -714,7 +714,7 @@ layers:
                     draw: { icons: { text: { font: { fill: [0.212,1.000,0.882] } } } }
                     # draw: { icons: { text: { font: { fill: [0.174,0.830,0.732] } } } }
                 hotel:
-                    filter: { kind: [hotel,hostel,motel,company] }
+                    filter: { kind: [hotel,hostel,motel,company,office] }
                     draw: { icons: { text: { font: { fill: [0.900,0.750,1.000] } } } }
                 pharmacy:
                     filter: { kind: pharmacy }
@@ -728,7 +728,7 @@ layers:
                     draw: { icons: { text: { font: { fill: [0.149,0.871,0.992] } } } }
                 school:
                     filter: { kind: [school,university,kindergarten,college] }
-                    draw: { icons: { text: { font: { fill: [0.320,0.696,0.780] } } } }
+                    draw: { icons: { text: { font: { fill: [0.461,0.885,0.980] } } } }
                     # draw: { icons: { text: { font: { fill: [0.334,0.726,0.814] } } } }
                 retail:
                     filter: { kind: [books,computer,outdoor,supermarket,department_store,electronics,mall,clothes,toys,fashion,jewelry,convenience,gift,music,bicycle,alcohol,sports,florist,mobile_phone,tailor,bicycle_rental,hardware,retail] }
