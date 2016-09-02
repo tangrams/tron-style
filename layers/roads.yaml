@@ -336,7 +336,7 @@ layers:
                     filter: { landuse_kind: hospital }
                     draw:
                         lines:
-                            color: [0.803,0.000,0.335]
+                            color: [0.208,0.106,0.271]
 
         minor_road:
             filter: { kind: minor_road, not: { highway: service, aeroway: [runway, taxiway] } }
@@ -359,7 +359,7 @@ layers:
                 filter: { landuse_kind: hospital }
                 draw:
                     lines:
-                        color: [0.803,0.000,0.335]
+                        color: [0.208,0.106,0.271]
 
         service_road:
             filter: { kind: minor_road, highway: service }
@@ -374,7 +374,7 @@ layers:
                 filter: { landuse_kind: hospital }
                 draw:
                     lines:
-                        color: [0.803,0.000,0.335]
+                        color: [0.208,0.106,0.271]
                         outline:
                             width: 0px
 
@@ -408,7 +408,7 @@ layers:
                 filter: { landuse_kind: hospital }
                 draw:
                     lines:
-                        color: [0.630,0.120,0.273]
+                        color: [0.188,0.114,0.510]
             in-pedestrian:
                 filter: { landuse_kind: [pedestrian,common] }
                 draw:

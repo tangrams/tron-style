@@ -245,7 +245,7 @@ layers:
                     polygons:
                         style: landuse-tier6-parking
                         # color: [0.431,0.098,0.439]
-                        color: [0.387,0.317,0.440]
+                        color: [0.314,0.322,0.424]
                         visible: true
             pedestrian:
                 filter:
@@ -304,7 +304,7 @@ styles:
         mix: [polygons-dots]
         shaders:
             defines:
-                DOTS_COLOR: vec3(0.229,0.169,0.770)
+                DOTS_COLOR: vec3(0.224,0.192,0.702)
                 DOTS_SCALE: 10.
                 DOTS_SIZE: 0.41
                 DOTS_STROKE: 0.15
@@ -322,15 +322,15 @@ styles:
 
                 GRID_SCALE: 15.
                 GRID_WIDTH: zoom()*.7
-                GRID_BACKGROUND_COLOR: vec3(0.339,0.233,0.630)
+                GRID_BACKGROUND_COLOR: vec3(0.275,0.267,0.529)
     landuse-tier4-power:
         mix: [polygons-dots]
         shaders:
             defines:
                 # DOTS_COLOR: vec3(1.000,0.467,0.000)
                 # DOTS_GLOW_COLOR: vec3(1.000,0.467,0.000)
-                DOTS_COLOR: vec3(0.808,0.216,1.000)
-                DOTS_GLOW_COLOR: vec3(0.808,0.216,1.000)
+                DOTS_COLOR: vec3(0.227,0.169,0.769)
+                DOTS_GLOW_COLOR: vec3(0.227,0.169,0.769)
                 DOTS_GLOW_SIZE: 2.
                 DOTS_GLOW_AMOUNT: 0.25
                 DOTS_SCALE: 16.
@@ -354,7 +354,7 @@ styles:
                 NORMAL_TEXTURE_INDEX: 0
                 DOTS_DIR: vec3(-0.600,-0.420,0.600)
 
-                DOTS_COLOR: vec3(0.730,0.000,0.304)
+                DOTS_COLOR: vec3(0.392,0.196,0.384)
                 DOTS_SCALE: 30.
                 DOTS_SIZE: shade*2.
             blocks:
