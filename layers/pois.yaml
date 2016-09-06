@@ -709,14 +709,25 @@ layers:
                             visible: true
                             text_source: global.ux_language_text_source_iata
                             font:
-                                fill: [0.290,0.902,0.910]
+                                fill: [0.977,0.830,1.000]
 
                 early:
-                    filter: { $zoom: [9,10,11,12] }
-                    draw: { icons: { text: { text_source: iata, font: { size: 11px } } } }
+                    filter: { $zoom: [9,10,11,12,13,14] }
+                    draw:
+                        icons:
+                            text:
+                                text_source: iata
+                                font:
+                                    family: Orbitron
+                                    size: 14px
                 early2:
-                    filter: { $zoom: { min: 13, max: 14 } }
-                    draw: { icons: { text: { font: { size: 11px } } } }
+                    filter: { $zoom: { min: 15, max: 18 } }
+                    draw: 
+                        icons:
+                            text:
+                                font:
+                                    family: Cairo
+                                    size: 11px
 
             text_colors:
                 restaurant:
@@ -780,9 +791,7 @@ layers:
                             size: 24px
                             text:
                                 font:
-                                    family: Orbitron
                                     fill: [0.977,0.830,1.000]
-                                    size: 14px
 
             university:
                 filter:
