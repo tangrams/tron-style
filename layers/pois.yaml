@@ -28,9 +28,9 @@ textures:
             bank: [860, 126, 36, 36]
             bar: [134, 168, 36, 36]
             pub: [134, 168, 36, 36]
-            baseball-field: [446, 84, 36, 36]
-            basketball-court: [402, 84, 36, 36]
-            beach: [580, 84, 36, 36]
+            baseball-field: [444, 84, 36, 36]
+            basketball-court: [400, 84, 36, 36]
+            beach: [578, 84, 36, 36]
             beer-garden: [132, 210, 36, 36]
             biergarten: [132, 210, 36, 36]
             brewery: [132, 210, 36, 36]
@@ -50,8 +50,8 @@ textures:
             boat_ramp: [90, 84, 36, 36]
             bookstore: [724, 126, 36, 36]
             books: [724, 126, 36, 36]
-            bridge: [844, 84, 36, 36]
-            buddhism: [712, 84, 36, 36]
+            bridge: [842, 84, 36, 36]
+            buddhism: [710, 84, 36, 36]
             building: [310, 168, 36, 36]
             auditorium: [310, 168, 36, 36]
             terminal: [310, 168, 36, 36]
@@ -66,9 +66,9 @@ textures:
             bus_stop: [742, 0, 36, 36]
             bus_station: [742, 0, 36, 36]
             butcher: [852, 42, 36, 36]
-            campground: [756, 84, 36, 36]
-            camp_site: [756, 84, 36, 36]
-            caravan_site: [756, 84, 36, 36]
+            campground: [754, 84, 36, 36]
+            camp_site: [754, 84, 36, 36]
+            caravan_site: [754, 84, 36, 36]
             candy-store: [884, 168, 36, 36]
             candy: [884, 168, 36, 36]
             confectionery: [884, 168, 36, 36]
@@ -81,8 +81,8 @@ textures:
             car: [680, 126, 36, 36]
             castle: [354, 42, 36, 36]
             fort: [354, 42, 36, 36]
-            cemetery: [668, 84, 36, 36]
-            grave_yard: [668, 84, 36, 36]
+            cemetery: [666, 84, 36, 36]
+            grave_yard: [666, 84, 36, 36]
             church: [136, 126, 36, 36]
             clothing-store: [706, 168, 36, 36]
             clothes: [706, 168, 36, 36]
@@ -127,15 +127,15 @@ textures:
             conservation: [930, 168, 36, 36]
             nature_reserve: [930, 168, 36, 36]
             fountain: [224, 126, 36, 36]
-            garden: [624, 84, 36, 36]
+            garden: [622, 84, 36, 36]
             gas-station: [840, 168, 36, 36]
             fuel: [840, 168, 36, 36]
             generic: [266, 210, 36, 36]
             subway_entrance: [266, 210, 36, 36]
             gift-shop: [44, 126, 36, 36]
             gift: [44, 126, 36, 36]
-            golf-course: [356, 84, 36, 36]
-            golf_course: [356, 84, 36, 36]
+            golf-course: [354, 84, 36, 36]
+            golf_course: [354, 84, 36, 36]
             government-building: [44, 168, 36, 36]
             townhall: [44, 168, 36, 36]
             public_building: [44, 168, 36, 36]
@@ -178,7 +178,7 @@ textures:
             light-rail: [654, 0, 36, 36]
             light_rail: [654, 0, 36, 36]
             tram_stop: [654, 0, 36, 36]
-            lighthouse: [222, 84, 36, 36]
+            lighthouse: [220, 84, 36, 36]
             liquor-store: [404, 126, 36, 36]
             alcohol: [404, 126, 36, 36]
             liquor: [404, 126, 36, 36]
@@ -195,22 +195,22 @@ textures:
             mobile-phone-shop: [442, 42, 36, 36]
             mobile_phone: [442, 42, 36, 36]
             mosque: [88, 0, 36, 36]
-            mountain: [178, 84, 36, 36]
-            peak: [178, 84, 36, 36]
+            mountain: [176, 84, 36, 36]
+            peak: [176, 84, 36, 36]
             movie-theatre: [662, 168, 36, 36]
             cinema: [662, 168, 36, 36]
             movie-theater: [662, 168, 36, 36]
-            museum: [976, 84, 36, 36]
-            observatory: [976, 84, 36, 36]
+            museum: [972, 84, 36, 36]
+            observatory: [972, 84, 36, 36]
             music-store: [308, 42, 36, 36]
             music: [308, 42, 36, 36]
             musical_instrument: [308, 42, 36, 36]
             newsstand: [262, 42, 36, 36]
             kiosk: [262, 42, 36, 36]
             newsagent: [262, 42, 36, 36]
-            office: [536, 84, 36, 36]
-            insurance: [536, 84, 36, 36]
-            company: [536, 84, 36, 36]
+            office: [534, 84, 36, 36]
+            insurance: [534, 84, 36, 36]
+            company: [534, 84, 36, 36]
             optical-shop: [220, 42, 36, 36]
             optician: [220, 42, 36, 36]
             optical_shop: [220, 42, 36, 36]
@@ -254,13 +254,13 @@ textures:
             hairdresser: [0, 42, 36, 36]
             salon: [0, 42, 36, 36]
             beauty_salon: [0, 42, 36, 36]
-            school: [492, 84, 36, 36]
-            kindergarten: [492, 84, 36, 36]
+            school: [490, 84, 36, 36]
+            kindergarten: [490, 84, 36, 36]
             shoe-store: [488, 42, 36, 36]
             shoes: [488, 42, 36, 36]
             shoe_store: [488, 42, 36, 36]
             ski-area: [268, 126, 36, 36]
-            soccer-field: [310, 84, 36, 36]
+            soccer-field: [308, 84, 36, 36]
             spiritual-center: [178, 168, 36, 36]
             spiritual_center: [178, 168, 36, 36]
             place_of_worship: [178, 168, 36, 36]
@@ -269,17 +269,17 @@ textures:
             sporting_goods: [964, 0, 36, 36]
             sports: [964, 0, 36, 36]
             outdoor: [964, 0, 36, 36]
-            spring: [266, 84, 36, 36]
+            spring: [264, 84, 36, 36]
             stadium: [358, 126, 36, 36]
             subway-entrance: [436, 0, 36, 36]
             synagogue: [44, 0, 36, 36]
             tailor-shop: [918, 0, 36, 36]
             tailor: [918, 0, 36, 36]
             tennis: [314, 126, 36, 36]
-            theme-park: [932, 84, 36, 36]
-            theme_park: [932, 84, 36, 36]
-            miniature_golf: [932, 84, 36, 36]
-            toilets: [800, 84, 36, 36]
+            theme-park: [930, 84, 36, 36]
+            theme_park: [930, 84, 36, 36]
+            miniature_golf: [930, 84, 36, 36]
+            toilets: [798, 84, 36, 36]
             townspot-l: [610, 210, 18, 18]
             townspot-l-rev: [498, 212, 16, 16]
             townspot-m: [588, 210, 14, 14]
@@ -327,7 +327,7 @@ textures:
             wine-bar: [44, 210, 36, 36]
             winery: [354, 168, 36, 36]
             wine: [354, 168, 36, 36]
-            zoo: [888, 84, 36, 36]
+            zoo: [886, 84, 36, 36]
 
 layers:
 
@@ -724,7 +724,7 @@ layers:
                     draw: { icons: { text: { font: { fill: [0.212,1.000,0.882] } } } }
                     # draw: { icons: { text: { font: { fill: [0.174,0.830,0.732] } } } }
                 hotel:
-                    filter: { kind: [hotel,hostel,motel,company,office] }
+                    filter: { kind: [hotel,hostel,motel,company,office,substation] }
                     draw: { icons: { text: { font: { fill: [0.900,0.750,1.000] } } } }
                 pharmacy:
                     filter: { kind: pharmacy }
@@ -734,14 +734,14 @@ layers:
                     filter: { kind: hospital }
                     draw: { icons: { text: { font: { fill: [0.932,0.737,0.932] } } } }
                 courthouse:
-                    filter: { kind: [courthouse,library,museum,post_office,police,embassy,bank,observatory,recycling,information,bicycle_rental_station,fire_station,townhall,assisted_living,group_home,community_centre,attraction,artwork,sports_centre,historical,fitness_station,drinking_water,ngo,plumber,lawyer,it,doctors,guest_house,clinic,shelter,social_facility,government,post_box,research,aquarium] }
+                    filter: { kind: [courthouse,library,museum,post_office,police,embassy,bank,observatory,recycling,information,bicycle_rental_station,fire_station,townhall,assisted_living,group_home,community_centre,attraction,artwork,sports_centre,historical,fitness_station,drinking_water,ngo,plumber,lawyer,it,doctors,guest_house,clinic,shelter,social_facility,government,post_box,research,aquarium,telecommunication,dentist,gate,telephone,shoemaker,childcare,atm] }
                     draw: { icons: { text: { font: { fill: [0.149,0.871,0.992] } } } }
                 school:
                     filter: { kind: [school,university,kindergarten,college] }
                     draw: { icons: { text: { font: { fill: [0.461,0.885,0.980] } } } }
                     # draw: { icons: { text: { font: { fill: [0.334,0.726,0.814] } } } }
                 retail:
-                    filter: { kind: [books,computer,outdoor,supermarket,department_store,electronics,mall,clothes,toys,fashion,jewelry,convenience,gift,music,bicycle,alcohol,sports,florist,mobile_phone,tailor,bicycle_rental,hardware,retail,confectionery,greengrocer] }
+                    filter: { kind: [books,computer,outdoor,supermarket,department_store,electronics,mall,clothes,toys,fashion,jewelry,convenience,gift,music,bicycle,alcohol,sports,florist,mobile_phone,tailor,bicycle_rental,hardware,retail,confectionery,greengrocer,doityourself] }
                     draw: { icons: { text: { font: { fill: [1.000,0.714,0.976] } } } }
                 place-of-worship:
                     filter: { kind: [place_of_worship,cemetery] }
@@ -765,13 +765,13 @@ layers:
                     filter: { kind: [bridge,toilets,fuel,optician,car,car_repair] }
                     draw: { icons: { text: { font: { fill: [0.851,0.796,0.851] } } } }
                 garden:
-                    filter: { kind: [garden,playground,zoo,camp_site,marina] }
+                    filter: { kind: [garden,playground,zoo,camp_site,marina,peak,volcano,theme_park] }
                     draw: { icons: { text: { font: { fill: [0.345,0.953,0.769] } } } }
                 vet:
                     filter: { kind: [veterinary,pet,pet_store] }
                     draw: { icons: { text: { font: { fill: [0.838,0.815,0.970] } } } }
                 hairdresser:
-                    filter: { kind: [hairdresser,laundry,dry_cleaning] }
+                    filter: { kind: [hairdresser,laundry,dry_cleaning,viewpoint] }
                     draw: { icons: { text: { font: { fill: [0.988,0.851,0.820] } } } }
                 airport:
                     filter: { kind: [aerodrome] }
