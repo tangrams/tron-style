@@ -184,8 +184,9 @@ layers:
                     kind: golf_course
                 draw:
                     polygons:
-                        style: landuse
-                        color: [0.599,0.350,1.000]
+                        style: landuse-tier4-golf-course
+                        # color: [0.599,0.350,1.000]
+                        color: [0.407,0.459,0.690]
                         visible: true
             # industrial:
             #     filter:
@@ -401,3 +402,48 @@ styles:
                 GRID_SCALE: 20.
                 GRID_WIDTH: zoom()*.5
                 GRID_BACKGROUND_COLOR: vec3(0.212,0.302,0.431)
+
+    polygons-diagonal-dash:
+        base: polygons
+        mix: [block, space-tile, tiling-brick, tiling-tile, shapes-type]
+        shaders:
+            defines:
+                DASH_COLOR: color.rgb*.5
+                DASH_BACKGROUND_COLOR: color.rgb
+                DASH_SCALE: 10.
+                DASH_SIZE: 0.9
+                DASH_TYPE: fill
+                DASH_TILE_STYLE: tile
+            blocks:
+                global: |
+                    float dashDF(vec2 st) {
+                        return min(cos((st.x-st.y)*PI),-cos((st.x+st.y+.5)*PI*.6666)*5.);
+                    }
+                color: |
+                    color.rgb = mix(DASH_BACKGROUND_COLOR, 
+                                    DASH_COLOR, 
+                                    DASH_TYPE( DASH_SIZE, dashDF(DASH_TILE_STYLE(getTileCoords()*DASH_SCALE,3.))) );
+
+    landuse-tier4-golf-course:
+        base: polygons
+        mix: [functions-zoom, polygons-diagonal-dash]
+        raster: custom
+        shaders:
+            defines:
+                ZOOM_START: 0.
+                ZOOM_END: 13.
+                DASH_COLOR: vec3(0.208,0.290,0.416)
+                DASH_BACKGROUND_COLOR: vec3(0.149,0.353,0.714)
+                DASH_SCALE: 10.
+                DASH_SIZE: 0.9
+                DASH_TYPE: fill
+                DASH_TILE_STYLE: tile
+                DASH_DIR: vec3(-0.600,-0.420,0.560)
+                NORMAL_TEXTURE_INDEX: 0
+                DASH_MIN_SIZE: .8
+                DASH_MAX_SIZE: 1.
+                DASH_SIZE: shade
+            blocks:
+                normal: |
+                    float shade = dot((sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2., DASH_DIR);
+                    shade = mix(DASH_MIN_SIZE, DASH_MAX_SIZE, (shade*shade*shade)*4.);
