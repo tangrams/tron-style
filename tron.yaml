@@ -11,7 +11,7 @@ import:
     - layers/roads-labels.yaml
     - layers/transit.yaml
     - layers/buildings.yaml
-    #- layers/building-labels.yaml
+    - layers/buildings-labels.yaml
     - layers/landuse.yaml
     - layers/boundaries.yaml
     - layers/places.yaml

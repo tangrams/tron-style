@@ -745,7 +745,7 @@ layers:
                     filter: { kind: hospital }
                     draw: { icons: { text: { font: { fill: [0.932,0.737,0.932] } } } }
                 courthouse:
-                    filter: { kind: [courthouse,library,museum,post_office,police,embassy,bank,observatory,recycling,information,bicycle_rental_station,fire_station,townhall,assisted_living,group_home,community_centre,attraction,artwork,sports_centre,historical,fitness_station,drinking_water,ngo,plumber,lawyer,it,doctors,guest_house,clinic,shelter,social_facility,government,post_box,research,aquarium,telecommunication,dentist,gate,telephone,shoemaker,childcare,atm,association,platform,foundation,stop,bicycle_parking,nursing_home,animal] }
+                    filter: { kind: [courthouse,library,museum,post_office,police,embassy,bank,observatory,recycling,information,bicycle_rental_station,fire_station,townhall,assisted_living,group_home,community_centre,attraction,artwork,sports_centre,historical,fitness_station,drinking_water,ngo,plumber,lawyer,it,doctors,guest_house,clinic,shelter,social_facility,government,post_box,research,aquarium,telecommunication,dentist,gate,telephone,shoemaker,childcare,atm,association,platform,foundation,stop,bicycle_parking,nursing_home,animal,level_crossing,motorcycle] }
                     draw: { icons: { text: { font: { fill: [0.149,0.871,0.992] } } } }
                 school:
                     filter: { kind: [school,university,kindergarten,college] }
@@ -773,7 +773,7 @@ layers:
                     filter: { kind: [memorial,monument] }
                     draw: { icons: { text: { font: { fill: [0.817,0.752,0.857] } } } }
                 bridge:
-                    filter: { kind: [bridge,toilets,fuel,optician,car,car_repair,viewpoint] }
+                    filter: { kind: [bridge,toilets,fuel,optician,car,car_repair,viewpoint,car_sharing] }
                     draw: { icons: { text: { font: { fill: [0.851,0.796,0.851] } } } }
                 garden:
                     filter: { kind: [garden,playground,zoo,camp_site,marina,peak,volcano,theme_park,water_park,caravan_site] }
