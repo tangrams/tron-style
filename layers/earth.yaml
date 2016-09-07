@@ -36,14 +36,12 @@ styles:
         mix: [functions-zoom, polygons-diagonal-stripes]
         shaders:
             defines:
-                ZOOM_START: 3.
+                ZOOM_START: 0.
                 ZOOM_END: 6.5
                 ZOOM_MAX: 6.
-                ZOOM_IN: .9
-                ZOOM_OUT: -.2
 
                 STRIPES_ALPHA: 1.
-                STRIPES_SCALE: 25.
+                STRIPES_SCALE: mix(25.,50.,smoothstep(0.,1.,zoom()))
                 STRIPES_WIDTH: zoom()
 
     urban-early:

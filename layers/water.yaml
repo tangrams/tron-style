@@ -152,7 +152,7 @@ styles:
                 ZOOM_OUT: -.2
 
                 STRIPES_ALPHA: 1.
-                STRIPES_SCALE: 20.
+                STRIPES_SCALE: 25.
                 STRIPES_WIDTH: zoom()
 
     water-later:
