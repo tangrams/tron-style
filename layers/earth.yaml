@@ -49,16 +49,17 @@ styles:
         mix: [functions-zoom, polygons-diagonal-stripes]
         shaders:
             defines:
-                ZOOM_START: 4.
-                ZOOM_END: 7.5
+                ZOOM_START: 0.
+                ZOOM_END: 6.5
+                ZOOM_MAX: 6.
 
                 STRIPES_ALPHA: 1.
-                STRIPES_SCALE: 25.
-                STRIPES_WIDTH: .5-(zoom())
+                STRIPES_SCALE: mix(25.,50.,smoothstep(0.,1.,1.-zoom()))
+                STRIPES_WIDTH: 1.-zoom()-.2
 
                 COLOR_A: color.rgb
                 # COLOR_B: vec3(0.031,0.973,1.000)
-                COLOR_B: vec3(0.000,0.576,0.667)
+                COLOR_B: vec3(0.000,0.676,0.767)
             blocks:
                 color: |
                     color.rgb = mix(COLOR_A, COLOR_B, sin(zoom()*3.1415));
