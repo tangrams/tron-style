@@ -69,7 +69,7 @@ layers:
                     style: buildings-lns
                     # color: [0.592,0.827,0.851]
                     # color: [[16,[0.428,0.687,0.717]],[18,[0.786,0.952,0.970]]]
-                    color: [[16,[0.428,0.687,0.717]],[18,[0.529,0.736,0.840]]]
+                    color: [[16,[0.428,0.687,0.717]],[18,[0.512,0.594,0.840]]]
                     # width: [[16,0.5px],[17,1px]]
                     width: [[12, .1px], [14, 0.1px], [16, 0.75px], [17, 0.85px], [18, 1.0px]]
                     extrude: function() { return feature.height || 20; }
@@ -117,7 +117,7 @@ styles:
                                     mix(vec4(WALLLINES_COLOR, n),
                                         vec4(palette(r), 1.)*n,
                                         z),
-                                    mix(.15,1.,z)-v_texcoord.y*.85);
+                                    mix(.15,0.85,z)-v_texcoord.y*.85);
                     } else {
                         color = vec4(0.);
                     }
