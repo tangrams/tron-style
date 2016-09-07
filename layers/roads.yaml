@@ -388,45 +388,63 @@ layers:
             draw:
                 lines:
                     # color: [[14,[0.400,0.561,0.718]],[15,[0.239,0.145,0.627]]]
-                    color: [0.192,0.115,0.510]
-                    width: [[13,0px],[14,0.35px],[15,0.1px],[16,1.5px],[18,2.5px],[19,4px],[20,5px]]
+                    color: [0.196,0.196,0.312]
+                    width: [[13,0px],[14,0.35px],[15,1px],[16,1.25px],[17,1.5px],[19,4px],[20,5px]]
                     outline:
                         # color: [[14,[0.400,0.561,0.718]],[16,[0.263,0.467,0.690]]]
-                        color: [0.000,0.414,0.539]
-                        width: [[14,0px],[15,0.35px],[16,1px],[17,2px],[19,4px]]
+                        color: [0.141,0.337,0.463]
+                        width: [[14,0px],[15,0.35px],[16,1px],[17,2px],[19,3px]]
             pedestrian:
                 filter: { highway: pedestrian }
                 draw:
                     lines:
                         # color: [[14,[0.400,0.561,0.718]],[15,[0.109,0.169,0.320]]]
-                        color: [0.192,0.115,0.510]
-                        width: [[13,0px],[14,0.35px],[15,0.1px],[16,1.5px],[18,2.5px],[19,6px],[20,12px]]
-                        outline:
-                            color: [[14,[0.400,0.561,0.718]],[16,[0.078,0.464,0.582]]]
-                            width: [[14,0px],[15,0.35px],[16,1px],[17,2px]]
+                        color: [0.196,0.196,0.312]
+                        width: [[13,0px],[14,0.35px],[15,1px],[16,1.25px],[17,1.5px],[19,4px],[20,5px]]
+                        # outline:
+                        #     color: [[14,[0.400,0.561,0.718]],[16,[0.078,0.464,0.582]]]
+                        #     width: [[14,0px],[15,0.35px],[16,1px],[17,2px]]
             in-hospital:
                 filter: { landuse_kind: hospital }
                 draw:
                     lines:
                         color: [0.188,0.114,0.510]
+            in-park-pitch:
+                filter: { landuse_kind: [park,pitch,parking] }
+                draw:
+                    lines:
+                        color: [0.211,0.174,0.381]
+                        outline:
+                            width: 0px
             in-pedestrian:
                 filter: { landuse_kind: [pedestrian,common] }
                 draw:
                     lines:
-                        color: [0.192,0.115,0.510]
+                        color: [0.211,0.174,0.381]
+            tunnel:
+                filter: { is_tunnel: yes }
+                draw:
+                    lines:
+                        color: [0.184,0.263,0.373]
                         outline:
-                            color: [[14,[0.400,0.561,0.718]],[16,[0.078,0.464,0.582]]]
-                            width: [[14,0px],[15,0.35px],[16,1px],[17,2px],[19,4px]]
+                            width: 0px
 
         track:
             filter: { kind: path, highway: track }
             draw:
                 lines:
-                    color: [[14,[0.400,0.561,0.718]],[15,[0.428,0.696,0.930]]]
-                    width: [[13,0px],[14,0.35px],[15,0.1px],[16,1.5px],[18,2.5px],[19,4px],[20,5px]]
-                    outline:
-                        color: [[14,[0.400,0.561,0.718]],[16,[0.078,0.464,0.582]]]
-                        width: [[14,0px],[15,0.35px],[16,1px],[17,2px],[19,4px]]
+                    color: [0.196,0.196,0.312]
+                    width: [[13,0px],[14,0.35px],[15,1px],[16,1.25px],[17,1.5px],[19,4px],[20,5px]]
+                    # outline:
+                    #     color: [[14,[0.400,0.561,0.718]],[16,[0.078,0.464,0.582]]]
+                    #     width: [[14,0px],[15,0.35px],[16,1px],[17,2px],[19,4px]]
+            in-park-pitch:
+                filter: { landuse_kind: [park,pitch,parking] }
+                draw:
+                    lines:
+                        color: [0.211,0.174,0.381]
+                        outline:
+                            width: 0px
 
         airport-lines:
             filter: { kind: minor_road, aeroway: [runway,taxiway] }

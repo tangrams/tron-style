@@ -214,7 +214,8 @@ layers:
                     polygons:
                         style: landuse-tier4-power
                         # color: [0.000,0.580,0.522]
-                        color: [0.365,0.106,0.678]
+                        color: [0.304,0.107,0.670]
+                        # color: [0.212,0.302,0.427]
                         visible: true
             man-made:
                 filter: { kind: [pier,wastewater_plant,works,bridge,tower,breakwater,water_works,groyne,dike,cutline] }
