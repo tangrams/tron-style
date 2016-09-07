@@ -41,8 +41,8 @@ styles:
                 ZOOM_MAX: 6.
 
                 STRIPES_ALPHA: 1.
-                STRIPES_SCALE: mix(25.,50.,smoothstep(0.,1.,zoom()))
-                STRIPES_WIDTH: zoom()
+                STRIPES_SCALE: mix(25.,50.,smoothstep(0.,1.,1.-zoom()))
+                STRIPES_WIDTH: 1.-zoom()-.2
 
     urban-early:
         base: polygons

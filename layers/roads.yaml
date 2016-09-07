@@ -572,11 +572,23 @@ styles:
 
     runway-dots:
         base: lines
-        mix:
-            - lines-dots
+        mix: []
+        texcoords: true
+        blend: overlay
+        animated: true
         shaders:
             defines:
+                DOTS_SCALE: 2.
                 DOTS_SIZE: 0.15
-            # blocks:
-            #     position: |
-            #         v_texcoord.y *= 2.;
+                DOTS_GLOW: .5
+                DOTS_ANIMATE: color.a *=abs(sin(v_texcoord.y+u_time))*.5
+            blocks:
+                color: |
+                    vec2 st = (fract(v_texcoord.xy)-.5)*DOTS_SCALE;
+                    float df = dot(st,st);
+                    color.a = 1.-step(DOTS_SIZE, df);
+                    color.a += smoothstep(1.,0.,df)*(DOTS_GLOW);
+
+                    #ifdef DOTS_ANIMATE
+                    DOTS_ANIMATE;
+                    #endif
