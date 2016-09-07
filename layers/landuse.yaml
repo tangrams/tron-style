@@ -67,14 +67,6 @@ layers:
                         style: landuse
                         color: [0.090,0.409,1.000]
                         visible: true
-                # conservation-z12:
-                #     filter:
-                #         $zoom: { min: 13 }
-                #     draw:
-                #         polygons:
-                #             style: landuse-tier2-conservation-contours
-                #             color: [0.263,0.933,0.494]
-                #             visible: true
 
                 # wilderness_areas:
                 #     filter: function() { return feature.name && feature.name.indexOf("Wilderness") > -1 }
@@ -289,18 +281,6 @@ styles:
                                     dot((sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2.,
                                         STRIPES_DIR),
                                     zoom())*STRIPES_PCT
-    landuse-tier2-conservation-contours:
-        mix: [tron-palette, elevation-contours]
-        animated: true
-        shaders:
-            defines:
-                CONTOURS_PALETTE_RANGE: 1.
-                CONTOURS_BACKGROUND_COLOR: vec3(0.)
-                # CONTOURS_COLOR: palette(normal_elv_raster.a*PI*CONTOURS_PALETTE_RANGE+u_time*.5)
-                CONTOURS_COLOR: vec3(0.035,0.106,0.569)
-                CONTOURS_SCALE: 120.
-                CONTOURS_SPEED: -0.1
-                CONTOURS_OFFSET: u_time*CONTOURS_SPEED
     landuse-tier3-university:
         base: polygons
         mix: [polygons-dots]
@@ -404,35 +384,10 @@ styles:
                 GRID_WIDTH: zoom()*.5
                 GRID_BACKGROUND_COLOR: vec3(0.212,0.302,0.431)
 
-    polygons-diagonal-dash:
-        base: polygons
-        mix: [block, space-tile, tiling-brick, tiling-tile, shapes-type]
-        shaders:
-            defines:
-                DASH_COLOR: color.rgb*.5
-                DASH_BACKGROUND_COLOR: color.rgb
-                DASH_SCALE: 10.
-                DASH_SIZE: 0.9
-                DASH_TYPE: fill
-                DASH_TILE_STYLE: tile
-            blocks:
-                global: |
-                    float dashDF(vec2 st) {
-                        return min(cos((st.x-st.y)*PI),-cos((st.x+st.y+.5)*PI*.6666)*5.);
-                    }
-                color: |
-                    color.rgb = mix(DASH_BACKGROUND_COLOR, 
-                                    DASH_COLOR, 
-                                    DASH_TYPE( DASH_SIZE, dashDF(DASH_TILE_STYLE(getTileCoords()*DASH_SCALE,3.))) );
-
     landuse-tier4-golf-course:
-        base: polygons
-        mix: [functions-zoom, polygons-diagonal-dash]
-        raster: custom
+        mix: [elevation-dash]
         shaders:
             defines:
-                ZOOM_START: 0.
-                ZOOM_END: 13.
                 DASH_COLOR: vec3(0.208,0.290,0.416)
                 DASH_BACKGROUND_COLOR: vec3(0.149,0.353,0.714)
                 DASH_SCALE: 10.
@@ -444,7 +399,3 @@ styles:
                 DASH_MIN_SIZE: .8
                 DASH_MAX_SIZE: 1.
                 DASH_SIZE: shade
-            blocks:
-                normal: |
-                    float shade = dot((sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2., DASH_DIR);
-                    shade = mix(DASH_MIN_SIZE, DASH_MAX_SIZE, (shade*shade*shade)*4.);
