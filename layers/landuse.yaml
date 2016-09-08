@@ -25,7 +25,12 @@ layers:
                     - { $zoom: { min: 15 }, area: { min: 2000 } }
                     - { $zoom: { min: 16 } }
             national_park:
-                filter: { kind: [national_park, "park or protected land", battlefield], not: { operator: [ "United States Forest Service", "US Forest Service", "U.S. Forest Service", "USDA Forest Service" ] } }
+                filter:
+                    all:
+                        - kind: [national_park,battlefield,protected_area]
+                    any:
+                        - not: { operator: ["United States Forest Service", "US Forest Service", "U.S. Forest Service", "USDA Forest Service", "United States Department of Agriculture", "US National Forest Service", "United State Forest Service", "U.S. National Forest Service"] }
+                        - protect_class: ['2','3','5']
                 draw:
                     polygons:
                         style: landuse
@@ -34,7 +39,10 @@ layers:
                         visible: true
                 us_national_park:
                     # yosemite national park, death valley national park, grand canyon national park
-                    filter: { operator: [ "United States National Park Service", "US National Park Service", "U.S. National Park Service" ] }
+                    filter:
+                        any:
+                            - operator: [ "United States National Park Service", "National Park Service", "US National Park Service", "U.S. National Park Service", "US National Park service"]
+                            - protect_class: ['2','3','5']
                     draw:
                         polygons:
                             # color: [0.214,0.690,0.611]
@@ -60,73 +68,57 @@ layers:
                     - { $zoom: { min: 16 } }
             conservation:
                 filter:
-                    kind: [conservation, protected_area, nature_reserve]
-                    $zoom: { min: 4 }
+                    all:
+                        - $zoom: { min: 4 }
+                        - kind: [conservation, protected_area, nature_reserve, national_park]
+                        - not: { protect_class: ['2','3','5'] }
+
                 draw:
                     polygons:
                         style: landuse
                         color: [0.090,0.409,1.000]
+                        # color: [0.125,0.376,0.820]
                         visible: true
 
-                # wilderness_areas:
-                #     filter: function() { return feature.name && feature.name.indexOf("Wilderness") > -1 }
-                #     draw:
-                #         polygons:
-                #             style: landuse-tier2-conservation
-                #             order: 25
-                #             color: [0.216,0.392,0.720]
-                #             visible: true
-                # national_forest_level_6:
-                #     filter: { protect_class: ["6",6] }
-                #     draw:
-                #         polygons:
-                #             style: landuse-tier2-conservation
-                #             color: red
-                #             visible: true
+                national_forest_level_6:
+                    filter: { protect_class: ['6'] }
+                    draw:
+                        polygons:
+                            style: landuse
+                            color: [0.149,0.353,0.714]
+                            visible: true
             farm:
                 filter:
                     kind: [farm, farmland]
-                    $zoom: { min: 8 }
+                    $zoom: { min: 10 }
                 draw:
                     polygons:
                         style: landuse
                         color: [0.024,0.189,0.238]
                         visible: true
             forest:
-                filter: { kind: [forest,wood], $zoom: { min: 6 } }
-                national-forest:
-                    filter:
-                        operator: [ "United States Forest Service", "US Forest Service", "U.S. Forest Service", "USDA Forest Service" ]
-                    draw:
-                        polygons:
-                            style: landuse
-                            color: [0.000,0.812,0.408]
-                            visible: true
+                filter: { kind: [forest, natural_forest, wood, natural_wood, natural_park], $zoom: { min: 6 } }
 
                 landuse-forest:
                     filter:
-                        not: { operator: [ "United States Forest Service", "US Forest Service", "U.S. Forest Service", "USDA Forest Service" ] }
-                        $zoom: { min: 6 }
+                        not: { operator: ["United States Forest Service", "US Forest Service", "U.S. Forest Service", "USDA Forest Service", "United States Department of Agriculture", "US National Forest Service", "United State Forest Service", "U.S. National Forest Service"] }
+                        $zoom: { min: 10 }
                     draw:
                         polygons:
                             style: landuse
                             # color: [0.617,0.800,0.950]
+                            # color: [0.000,0.812,0.408]
                             color: [0.238,0.529,0.820]
                             visible: true
 
-            nature_reserve:
-                filter: { kind: nature_reserve, $zoom: { min: 7 } }
-                wilderness-areas:
-                    filter: function() { return feature.name && feature.name.indexOf("Wilderness") > -1 }
-                    draw:
-                        polygons:
-                            color: [0.151,0.240,0.560]
-
             parks_and_national_forests_not_national_park:
                 filter:
-                    kind: [park, national_park, "park or protected land", battlefield]
-                    not: { operator: [ "United States National Park Service", "US National Park Service" ] }
-                    $zoom: { min: 4 }
+                    all:
+                        - $zoom: { min: 4 }
+                        - kind: [park, national_park]
+                    any:
+                        - not: { operator: ["United States National Park Service", "National Park Service", "US National Park Service", "U.S. National Park Service", "US National Park service"] }
+                        - not: { protect_class: ['2','3','5','6'] }
 
                 # default for national forests and more?
                 draw:
@@ -137,6 +129,17 @@ layers:
                         # color: [0.200,1.000,1.000]
                         color: [0.250,0.820,1.000]
                         visible: true
+
+                national_park:
+                    filter:
+                        all:
+                            - kind: national_park
+                            - not: { protect_class: ['2','3','5','6'], operator: ["United States National Park Service", "National Park Service", "US National Park Service", "U.S. National Park Service", "US National Park service"] }
+                    draw:
+                        polygons:
+                            style: landuse
+                            color: [0.238,0.529,0.820]
+                            visible: true
         tier3:
             filter:
                 any:
