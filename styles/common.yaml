@@ -2,7 +2,6 @@ import:
     - https://tangrams.github.io/blocks/functions/zoom.yaml
     - https://tangrams.github.io/blocks/geometry/dynamic-width.yaml
     - https://tangrams.github.io/blocks/geometry/dynamic-height.yaml
-    - https://tangrams.github.io/blocks/filter/tv.yaml
 
 styles:
     tron-palette:

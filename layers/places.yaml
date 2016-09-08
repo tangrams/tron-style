@@ -68,7 +68,6 @@ layers:
                     text_source: function() { return feature["name:en"] || feature["name"]; }
                     visible: true
                     priority: 3
-                    # style: text-filter-tv
                     font:
                         family: Orbitron
                         size: 18px
@@ -1482,8 +1481,3 @@ layers:
                             fill: white
                             transform: uppercase
                             # stroke: { color: global.text_stroke, width: 3 }
-
-styles:
-    text-filter-tv:
-        base: text
-        mix: [filter-tv]

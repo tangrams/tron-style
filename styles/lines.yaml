@@ -2,6 +2,7 @@ import:
     # Blocks
     - https://tangrams.github.io/blocks/lines/glow.yaml
     - https://tangrams.github.io/blocks/lines/dots.yaml
+    - https://tangrams.github.io/blocks/lines/dots-glow.yaml
 
 styles:
     lines-coast:
