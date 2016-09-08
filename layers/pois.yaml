@@ -376,7 +376,7 @@ layers:
                     interactive: true
                     font:
                         family: Cairo
-                        fill: white
+                        fill: [0.149,0.871,0.992]
                         size: 10px
             text:
                 repeat_group: abc
@@ -388,7 +388,7 @@ layers:
                 priority: 66
                 font:
                     family: Cairo
-                    fill: white
+                    fill: [0.149,0.871,0.992]
                     size: 10px
         poi-scale-z18:
             filter: { $zoom: { min: 18 } }
@@ -420,6 +420,7 @@ layers:
                 draw:
                     icons:
                         sprite: function() { return feature.sport; }
+                        sprite_default: generic-sport
                         visible: true
                         priority: 69
                 baseball:
@@ -492,6 +493,7 @@ layers:
                 draw:
                     icons:
                         text:
+                            fill: red #[0.149,0.871,0.992]
                             visible: true
 #                            priority: 68
 
@@ -755,9 +757,9 @@ layers:
                 hospital:
                     filter: { kind: hospital }
                     draw: { icons: { text: { font: { fill: [0.932,0.737,0.932] } } } }
-                courthouse:
-                    filter: { kind: [courthouse,library,museum,post_office,police,embassy,bank,observatory,recycling,information,bicycle_rental_station,fire_station,townhall,assisted_living,group_home,community_centre,attraction,artwork,sports_centre,historical,fitness_station,drinking_water,ngo,plumber,lawyer,it,doctors,guest_house,clinic,shelter,social_facility,government,post_box,research,aquarium,telecommunication,dentist,gate,telephone,shoemaker,childcare,atm,association,platform,foundation,stop,bicycle_parking,nursing_home,animal,level_crossing,motorcycle,swimming_area] }
-                    draw: { icons: { text: { font: { fill: [0.149,0.871,0.992] } } } }
+                # courthouse:
+                #     filter: { kind: [courthouse,library,museum,post_office,police,embassy,bank,observatory,recycling,information,bicycle_rental_station,fire_station,townhall,assisted_living,group_home,community_centre,attraction,artwork,sports_centre,historical,fitness_station,drinking_water,ngo,plumber,lawyer,it,doctors,guest_house,clinic,shelter,social_facility,government,post_box,research,aquarium,telecommunication,dentist,gate,telephone,shoemaker,childcare,atm,association,platform,foundation,stop,bicycle_parking,nursing_home,animal,level_crossing,motorcycle,swimming_area] }
+                #     draw: { icons: { text: { font: { fill: [0.149,0.871,0.992] } } } }
                 school:
                     filter: { kind: [school,university,kindergarten,college] }
                     draw: { icons: { text: { font: { fill: [0.461,0.885,0.980] } } } }

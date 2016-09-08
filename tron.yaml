@@ -17,7 +17,7 @@ import:
     - layers/places.yaml
     # - layers/telecom.yaml
     - layers/pois.yaml
-    - layers/overlay.yaml
+    - layers/ux-sdk-overlay.yaml
 
 global:
     ux_application_mode: navigation
