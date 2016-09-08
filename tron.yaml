@@ -123,6 +123,7 @@ sources:
         type: TopoJSON
         url: https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson?api_key=vector-tiles-uP4vdQc
         rasters: [normals-elevation]
+        max_zoom: 16
     normals-elevation:
         type: Raster
         url: https://s3.amazonaws.com/elevation-tiles-prod/normal/{z}/{x}/{y}.png
