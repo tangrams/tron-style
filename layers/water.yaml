@@ -58,7 +58,7 @@ layers:
                         polygons:
                             style: polygons
                             # color: [0.000,0.804,0.776]
-                            color: [0.202,0.263,0.404]
+                            color: [0.020,0.616,1.000]
 
         playas:
             filter: { kind: playa, $zoom: { min: 4 } }
