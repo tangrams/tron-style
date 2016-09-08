@@ -265,16 +265,16 @@ textures:
             spiritual_center: [178, 168, 36, 36]
             place_of_worship: [178, 168, 36, 36]
             wayside_chapel: [178, 168, 36, 36]
-            sporting-goods-shop: [962, 0, 36, 36]
-            sporting_goods: [962, 0, 36, 36]
-            sports: [962, 0, 36, 36]
-            outdoor: [962, 0, 36, 36]
+            sporting-goods-shop: [964, 0, 36, 36]
+            sporting_goods: [964, 0, 36, 36]
+            sports: [964, 0, 36, 36]
+            outdoor: [964, 0, 36, 36]
             spring: [264, 84, 36, 36]
             stadium: [358, 126, 36, 36]
             subway-entrance: [436, 0, 36, 36]
             synagogue: [44, 0, 36, 36]
-            tailor-shop: [916, 0, 36, 36]
-            tailor: [916, 0, 36, 36]
+            tailor-shop: [918, 0, 36, 36]
+            tailor: [918, 0, 36, 36]
             tennis: [314, 126, 36, 36]
             theme-park: [930, 84, 36, 36]
             theme_park: [930, 84, 36, 36]
@@ -283,16 +283,16 @@ textures:
             townspot-l: [626, 210, 18, 18]
             townspot-l-rev: [506, 210, 24, 24]
             townspot-m: [604, 210, 14, 14]
-            townspot-m-rev: [480, 210, 20, 20]
+            townspot-m-rev: [482, 210, 20, 20]
             townspot-s: [584, 210, 12, 12]
             townspot-s-rev: [464, 210, 12, 12]
             townspot-xl: [652, 210, 22, 22]
             townspot-xl-rev: [538, 212, 20, 20]
             townspot-xs: [566, 210, 10, 10]
             townspot-xs-rev: [450, 212, 6, 6]
-            toy-game-store: [870, 0, 36, 36]
-            toys: [870, 0, 36, 36]
-            baby_goods: [870, 0, 36, 36]
+            toy-game-store: [872, 0, 36, 36]
+            toys: [872, 0, 36, 36]
+            baby_goods: [872, 0, 36, 36]
             traffic-signal: [796, 168, 36, 36]
             traffic_signals: [796, 168, 36, 36]
             train-station: [392, 0, 36, 36]
@@ -746,7 +746,7 @@ layers:
                     draw: { icons: { text: { font: { fill: [0.212,1.000,0.882] } } } }
                     # draw: { icons: { text: { font: { fill: [0.174,0.830,0.732] } } } }
                 hotel:
-                    filter: { kind: [hotel,hostel,motel,company,office,substation,plant,generator,wastewater_plant] }
+                    filter: { kind: [hotel,hostel,motel,company,office,substation,plant,generator,wastewater_plant,bench] }
                     draw: { icons: { text: { font: { fill: [0.900,0.750,1.000] } } } }
                 pharmacy:
                     filter: { kind: pharmacy }
@@ -756,7 +756,7 @@ layers:
                     filter: { kind: hospital }
                     draw: { icons: { text: { font: { fill: [0.932,0.737,0.932] } } } }
                 courthouse:
-                    filter: { kind: [courthouse,library,museum,post_office,police,embassy,bank,observatory,recycling,information,bicycle_rental_station,fire_station,townhall,assisted_living,group_home,community_centre,attraction,artwork,sports_centre,historical,fitness_station,drinking_water,ngo,plumber,lawyer,it,doctors,guest_house,clinic,shelter,social_facility,government,post_box,research,aquarium,telecommunication,dentist,gate,telephone,shoemaker,childcare,atm,association,platform,foundation,stop,bicycle_parking,nursing_home,animal,level_crossing,motorcycle] }
+                    filter: { kind: [courthouse,library,museum,post_office,police,embassy,bank,observatory,recycling,information,bicycle_rental_station,fire_station,townhall,assisted_living,group_home,community_centre,attraction,artwork,sports_centre,historical,fitness_station,drinking_water,ngo,plumber,lawyer,it,doctors,guest_house,clinic,shelter,social_facility,government,post_box,research,aquarium,telecommunication,dentist,gate,telephone,shoemaker,childcare,atm,association,platform,foundation,stop,bicycle_parking,nursing_home,animal,level_crossing,motorcycle,swimming_area] }
                     draw: { icons: { text: { font: { fill: [0.149,0.871,0.992] } } } }
                 school:
                     filter: { kind: [school,university,kindergarten,college] }
@@ -787,7 +787,7 @@ layers:
                     filter: { kind: [bridge,toilets,fuel,optician,car,car_repair,viewpoint,car_sharing] }
                     draw: { icons: { text: { font: { fill: [0.851,0.796,0.851] } } } }
                 garden:
-                    filter: { kind: [garden,playground,zoo,camp_site,marina,peak,volcano,theme_park,water_park,caravan_site] }
+                    filter: { kind: [garden,playground,zoo,camp_site,marina,peak,volcano,theme_park,water_park,caravan_site,pier] }
                     draw: { icons: { text: { font: { fill: [0.345,0.953,0.769] } } } }
                 vet:
                     filter: { kind: [veterinary,pet,pet_store] }
@@ -1352,7 +1352,7 @@ layers:
 
                     pier:
                         filter: { kind: pier }
-                        draw:   { icons: { sprite: generic } }
+                        draw:   { icons: { sprite: pier } }
 
                 # building-icon:
                 #     filter: { kind: [building, auditorium, terminal, hangar, retirement_home, manor, recreation_center, apartments] }
