@@ -784,7 +784,7 @@ layers:
                     filter: { kind: [memorial,monument] }
                     draw: { icons: { text: { font: { fill: [0.817,0.752,0.857] } } } }
                 bridge:
-                    filter: { kind: [bridge,toilets,fuel,optician,car,car_repair,viewpoint,car_sharing] }
+                    filter: { kind: [bridge,toilets,fuel,optician,car,car_repair,viewpoint,car_sharing,landmark] }
                     draw: { icons: { text: { font: { fill: [0.851,0.796,0.851] } } } }
                 garden:
                     filter: { kind: [garden,playground,zoo,camp_site,marina,peak,volcano,theme_park,water_park,caravan_site,pier] }
