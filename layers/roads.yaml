@@ -353,13 +353,13 @@ layers:
                 filter: { $zoom: { min: 18 } }
                 draw:
                     lines:
-                        style: traffic-animation
+                        style: traffic-animation-twoways
 
                 oneway:
                     filter: { oneway: yes } # should be `true` for 1.0 tiles
                     draw:
                         lines:
-                            style: traffic-animation-oneway
+                            style: traffic-animation
 
             tunnel:
                 filter: { is_tunnel: yes, $zoom: { min: 13 } }
@@ -493,6 +493,41 @@ layers:
                             width: [[12,2px],[20,10px]]
 
 styles:
+    traffic-animation-twoways:
+        base: lines
+        mix: [generative-random, tron-palette, functions-zoom]
+        texcoords: true
+        shaders:
+            defines:
+                ZOOM_START: 15.
+                ZOOM_END: 18.
+                DATASTREAM_SPEED: 20.
+                DATASTREAM_ROADS: 5.0 
+                DATASTREAM_MARGIN: z*.3
+                DATASTREAM_COLOR: palette( fract(floor(v_texcoord.x*DATASTREAM_ROADS)/DATASTREAM_ROADS+u_time*.1)*z )
+                DATASTREAM_AMOUNT: .8
+            blocks:
+                global: |
+                    float datastream_pattern(vec2 st, float v, float t) {
+                        float p = floor(st.y+v);
+                        return step(t, (random(p*.000001)+random(p))*.5 );
+                    }
+                color: |
+                    vec2 st = v_texcoord.xy;
+                    float z = zoom();
+                    float datastream_speed = (-.5 * random(floor(v_texcoord.x*DATASTREAM_ROADS)) - .5);
+                    if (st.x < 0.5) {
+                      datastream_speed *= -1.;
+                    }
+                    
+                    color.rgb = mix(color.rgb,
+                                    DATASTREAM_COLOR,
+                                    z*
+                                    datastream_pattern( st, 
+                                                        (u_time*DATASTREAM_SPEED)*datastream_speed,
+                                                        DATASTREAM_AMOUNT)*
+                                                    smoothstep(DATASTREAM_MARGIN,1.,sin(fract(v_texcoord.x*DATASTREAM_ROADS)*3.1415))
+                                    );
     traffic-animation:
         base: lines
         mix: [generative-random, tron-palette, functions-zoom]
