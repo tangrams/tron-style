@@ -1,0 +1,145 @@
+layers:
+	# Map overlays for styling the server response (using special source layer names) for route line, current location, and search result pins
+    mz_route_line:
+        data: { source: mz_route_line }
+        draw:
+            ux-route-line-overlay:
+                color: '#06a6d4'
+                order: 500
+                width: [[0,3.5px],[5,5px],[9,7px],[10,6px],[11,6px],[13,8px],[14,9px],[15,10px],[16,11px],[17,12px],[18,10px]]
+    mz_route_line_dash:
+        data: { source: mz_dash_line }
+        draw:
+            ux-route-line-dash-overlay:
+                color: '#06a6d4'
+                order: 500
+                width: [[2,2px],[5,2.5px],[11,3px],[16,7px],[17,9px]]
+    mz_route_line_transit:
+        data: { source: mz_route_line_transit }
+        draw:
+            ux-transit-line-overlay:
+                # each transit route segment could be a different "line" each with it's own color
+                # but some transit lines don't define a color, in those cases default to blue
+                # and since the color is coming from Transit.land they call it "color" instead of "colour"
+                color: function() { return feature.color || '#06a6d4'; }
+                order: 500
+                width: [[0,3.5px],[5,5px],[9,7px],[10,6px],[11,6px],[13,8px],[14,9px],[15,10px],[16,11px],[17,12px],[18,10px]]
+    mz_current_location_gem:
+        data: { source: mz_current_location }
+        draw:
+            ux-location-gem-overlay:
+                interactive: true
+                sprite: ux-current-location
+                size: 36px
+                collide: false
+                transition:
+                    [show, hide]:
+                        time: 0s
+    mz_route_location:
+        data: { source: mz_route_location }
+        draw:
+            ux-location-gem-overlay:
+                interactive: true
+                sprite: ux-route-arrow
+                size: [60px,60px]
+                collide: false
+                transition:
+                    [show, hide]:
+                        time: 0s
+    mz_route_start:
+        data: { source: mz_route_start }
+        draw:
+            ux-icons-overlay:
+                interactive: true
+                priority: 1
+                sprite: ux-route-start
+                size: [36px,46px]
+                collide: false
+                anchor: top
+                transition:
+                    [show, hide]:
+                        time: 0s
+    mz_route_destination:
+        data: { source: mz_route_destination }
+        draw:
+            ux-icons-overlay:
+                interactive: true
+                priority: 1
+                sprite: ux-route-stop
+                size: [36px,46px]
+                collide: false
+                anchor: top
+                transition:
+                    [show, hide]:
+                        time: 0s
+    mz_route_transit_stop:
+        data: { source: mz_route_transit_stop }
+        draw:
+            ux-icons-overlay:
+                interactive: true
+                sprite: ux-transit-stop
+                size: [15px,15px]
+                collide: false
+                transition:
+                     [show, hide]:
+                         time: 0s
+    mz_search_result:
+        data: { source: mz_search_result }
+        draw:
+            ux-icons-overlay:
+                interactive: true
+                sprite: ux-search-active
+                size: [36px,54px]
+                collide: false
+                anchor: top
+                transition:
+                    [show, hide]:
+                        time: 0s
+        inactive:
+            filter: { state: inactive }
+            draw:
+                ux-icons-overlay:
+                    sprite: ux-search-inactive
+    mz_dropped_pin:
+        data: { source: mz_dropped_pin }
+        draw:
+            ux-icons-overlay:
+                interactive: true
+                sprite: ux-search-active
+                size: [36px,54px]
+                collide: false
+                anchor: top
+                transition:
+                    [show, hide]:
+                        time: 0s
+
+    # Used by the SDK to place point, line, and polygon overlays on the map
+    mz_default_point:
+        data: { source: mz_default_point }
+        draw:
+            sdk-point-overlay:
+                interactive: true
+                sprite: ux-search-active
+                size: [36px,54px]
+                collide: false
+                anchor: top
+                transition:
+                    [show, hide]:
+                        time: 0s
+    mz_default_line:
+        data: { source: mz_default_line }
+        draw:
+            sdk-line-overlay:
+                color: '#06a6d4'
+                order: 503
+                width: 3px
+    mz_default_polygon:
+        data: { source: mz_default_polygon }
+        draw:
+            sdk-polygon-overlay:
+                color: [0.02,0.65,0.82,0.5]  #'#06b1e2'
+                order: 501
+            sdk-line-overlay:
+                color: '#06a6d4'
+                order: 502
+                width: 0px

@@ -329,6 +329,17 @@ textures:
             wine: [354, 168, 36, 36]
             zoo: [886, 84, 36, 36]
 
+            # UX/UI icons for map interactivity & app chrome
+            #
+            ux-current-location: [158, 342, 88, 88]
+            ux-route-arrow: [822, 210, 128, 128]
+            ux-route-start: [78, 342, 72, 92]
+            ux-route-stop: [0, 342, 72, 92]
+            ux-search-active: [252, 342, 72, 108]
+            ux-search-inactive: [332, 342, 72, 108]
+            # ux-transit-stop is currently reusing capital-xl artwork, please customize
+            ux-transit-stop: [584, 210, 20, 20]
+
 layers:
 
     pois_and_landuse_labels:
