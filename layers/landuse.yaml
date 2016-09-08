@@ -214,7 +214,7 @@ layers:
                 draw: 
                     polygons:
                         style: landuse-tier4-manmade
-                        color: [0.004,0.165,0.929]
+                        color: [[13,[0.212,0.302,0.427]],[16,[0.204,0.292,0.730]]]
                         visible: true
                 pier:
                     filter: { kind: [pier,bridge,breakwater,groyne,dike,cutline] }
