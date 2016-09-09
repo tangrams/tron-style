@@ -9,38 +9,38 @@ textures:
             # define sprites: [x origin, y origin, width, height]
             airport: [828, 0, 36, 36]
             aerodrome: [828, 0, 36, 36]
-            aquarium: [618, 168, 36, 36]
-            art-gallery: [530, 168, 36, 36]
-            art_gallery: [530, 168, 36, 36]
-            art: [530, 168, 36, 36]
-            athletics-sports: [88, 168, 36, 36]
-            pitch: [88, 168, 36, 36]
-            athletic_sports: [88, 168, 36, 36]
-            recreation_ground: [88, 168, 36, 36]
-            atm: [816, 126, 36, 36]
-            automotive-shop: [902, 126, 36, 36]
-            car_repair: [902, 126, 36, 36]
-            automotive: [902, 126, 36, 36]
-            tyres: [902, 126, 36, 36]
-            bakery: [442, 168, 36, 36]
-            pastry: [442, 168, 36, 36]
-            chocolate: [442, 168, 36, 36]
-            bank: [858, 126, 36, 36]
-            bar: [134, 168, 36, 36]
-            pub: [134, 168, 36, 36]
+            aquarium: [662, 168, 36, 36]
+            art-gallery: [574, 168, 36, 36]
+            art_gallery: [574, 168, 36, 36]
+            art: [574, 168, 36, 36]
+            athletics-sports: [132, 168, 36, 36]
+            pitch: [132, 168, 36, 36]
+            athletic_sports: [132, 168, 36, 36]
+            recreation_ground: [132, 168, 36, 36]
+            atm: [862, 126, 36, 36]
+            automotive-shop: [948, 126, 36, 36]
+            car_repair: [948, 126, 36, 36]
+            automotive: [948, 126, 36, 36]
+            tyres: [948, 126, 36, 36]
+            bakery: [486, 168, 36, 36]
+            pastry: [486, 168, 36, 36]
+            chocolate: [486, 168, 36, 36]
+            bank: [904, 126, 36, 36]
+            bar: [178, 168, 36, 36]
+            pub: [178, 168, 36, 36]
             baseball-field: [444, 84, 36, 36]
             basketball-court: [400, 84, 36, 36]
             beach: [578, 84, 36, 36]
-            beer-garden: [132, 210, 36, 36]
-            biergarten: [132, 210, 36, 36]
-            brewery: [132, 210, 36, 36]
+            beer-garden: [174, 210, 36, 36]
+            biergarten: [174, 210, 36, 36]
+            brewery: [174, 210, 36, 36]
             bench: [522, 0, 36, 36]
-            bicycle-parking: [542, 126, 36, 36]
-            bike-shop: [770, 126, 36, 36]
-            bicycle: [770, 126, 36, 36]
-            bicycle_rental: [770, 126, 36, 36]
-            bike: [770, 126, 36, 36]
-            bike_shop: [770, 126, 36, 36]
+            bicycle-parking: [588, 126, 36, 36]
+            bike-shop: [816, 126, 36, 36]
+            bicycle: [816, 126, 36, 36]
+            bicycle_rental: [816, 126, 36, 36]
+            bike: [816, 126, 36, 36]
+            bike_shop: [816, 126, 36, 36]
             boat-ferry: [784, 0, 36, 36]
             ferry_terminal: [784, 0, 36, 36]
             ferry-boat: [784, 0, 36, 36]
@@ -48,20 +48,20 @@ textures:
             boat-ramp: [90, 84, 36, 36]
             slipway: [90, 84, 36, 36]
             boat_ramp: [90, 84, 36, 36]
-            bookstore: [724, 126, 36, 36]
-            books: [724, 126, 36, 36]
+            bookstore: [770, 126, 36, 36]
+            books: [770, 126, 36, 36]
             bridge: [842, 84, 36, 36]
             buddhism: [710, 84, 36, 36]
-            building: [310, 168, 36, 36]
-            auditorium: [310, 168, 36, 36]
-            terminal: [310, 168, 36, 36]
-            hangar: [310, 168, 36, 36]
-            retirement_home: [310, 168, 36, 36]
-            manor: [310, 168, 36, 36]
-            recreation_center: [310, 168, 36, 36]
-            apartments: [310, 168, 36, 36]
-            burger: [0, 210, 36, 36]
-            fast_food: [0, 210, 36, 36]
+            building: [354, 168, 36, 36]
+            auditorium: [354, 168, 36, 36]
+            terminal: [354, 168, 36, 36]
+            hangar: [354, 168, 36, 36]
+            retirement_home: [354, 168, 36, 36]
+            manor: [354, 168, 36, 36]
+            recreation_center: [354, 168, 36, 36]
+            apartments: [354, 168, 36, 36]
+            burger: [42, 210, 36, 36]
+            fast_food: [42, 210, 36, 36]
             bus-station: [740, 0, 36, 36]
             bus_stop: [740, 0, 36, 36]
             bus_station: [740, 0, 36, 36]
@@ -69,53 +69,53 @@ textures:
             campground: [754, 84, 36, 36]
             camp_site: [754, 84, 36, 36]
             caravan_site: [754, 84, 36, 36]
-            candy-store: [884, 168, 36, 36]
-            candy: [884, 168, 36, 36]
-            confectionery: [884, 168, 36, 36]
-            capital-l: [368, 210, 18, 18]
-            capital-m: [346, 210, 14, 14]
-            capital-s: [326, 212, 10, 10]
-            capital-xl: [422, 210, 22, 22]
-            capital-xs: [312, 212, 8, 8]
-            car-dealership: [680, 126, 36, 36]
-            car: [680, 126, 36, 36]
+            candy-store: [928, 168, 36, 36]
+            candy: [928, 168, 36, 36]
+            confectionery: [928, 168, 36, 36]
+            capital-l: [410, 210, 18, 18]
+            capital-m: [388, 210, 14, 14]
+            capital-s: [368, 212, 10, 10]
+            capital-xl: [464, 210, 22, 22]
+            capital-xs: [354, 212, 8, 8]
+            car-dealership: [726, 126, 36, 36]
+            car: [726, 126, 36, 36]
             castle: [354, 42, 36, 36]
             fort: [354, 42, 36, 36]
             cemetery: [666, 84, 36, 36]
             grave_yard: [666, 84, 36, 36]
             church: [136, 126, 36, 36]
-            clothing-store: [706, 168, 36, 36]
-            clothes: [706, 168, 36, 36]
-            chothing-store: [706, 168, 36, 36]
-            fashion: [706, 168, 36, 36]
-            coffee-shop: [398, 168, 36, 36]
-            cafe: [398, 168, 36, 36]
-            college-university: [752, 168, 36, 36]
-            university: [752, 168, 36, 36]
-            college: [752, 168, 36, 36]
+            clothing-store: [750, 168, 36, 36]
+            clothes: [750, 168, 36, 36]
+            chothing-store: [750, 168, 36, 36]
+            fashion: [750, 168, 36, 36]
+            coffee-shop: [442, 168, 36, 36]
+            cafe: [442, 168, 36, 36]
+            college-university: [796, 168, 36, 36]
+            university: [796, 168, 36, 36]
+            college: [796, 168, 36, 36]
             convenience-store: [0, 84, 36, 36]
             convenience: [0, 84, 36, 36]
             convenience_store: [0, 84, 36, 36]
             beverages: [0, 84, 36, 36]
             courthouse: [348, 0, 36, 36]
-            department-store: [634, 126, 36, 36]
-            department_store: [634, 126, 36, 36]
-            drinking-water: [88, 210, 36, 36]
+            department-store: [680, 126, 36, 36]
+            department_store: [680, 126, 36, 36]
+            drinking-water: [130, 210, 36, 36]
             dry-cleaning: [942, 42, 36, 36]
             dry_cleaning: [942, 42, 36, 36]
-            electronics-store: [496, 126, 36, 36]
-            electronics: [496, 126, 36, 36]
-            computer: [496, 126, 36, 36]
-            factory: [266, 168, 36, 36]
-            industrial: [266, 168, 36, 36]
-            chimney: [266, 168, 36, 36]
-            sub_station: [266, 168, 36, 36]
-            substation: [266, 168, 36, 36]
-            wastewater_plant: [266, 168, 36, 36]
-            works: [266, 168, 36, 36]
-            water_works: [266, 168, 36, 36]
-            plant: [266, 168, 36, 36]
-            generator: [266, 168, 36, 36]
+            electronics-store: [542, 126, 36, 36]
+            electronics: [542, 126, 36, 36]
+            computer: [542, 126, 36, 36]
+            factory: [310, 168, 36, 36]
+            industrial: [310, 168, 36, 36]
+            chimney: [310, 168, 36, 36]
+            sub_station: [310, 168, 36, 36]
+            substation: [310, 168, 36, 36]
+            wastewater_plant: [310, 168, 36, 36]
+            works: [310, 168, 36, 36]
+            water_works: [310, 168, 36, 36]
+            plant: [310, 168, 36, 36]
+            generator: [310, 168, 36, 36]
             fire-station: [304, 0, 36, 36]
             fire_station: [304, 0, 36, 36]
             fitness: [806, 42, 36, 36]
@@ -123,33 +123,34 @@ textures:
             fitness_center: [806, 42, 36, 36]
             flower-shop: [90, 126, 36, 36]
             florist: [90, 126, 36, 36]
-            forest: [930, 168, 36, 36]
-            conservation: [930, 168, 36, 36]
-            nature_reserve: [930, 168, 36, 36]
+            forest: [974, 168, 36, 36]
+            conservation: [974, 168, 36, 36]
+            nature_reserve: [974, 168, 36, 36]
             fountain: [224, 126, 36, 36]
             garden: [622, 84, 36, 36]
-            gas-station: [840, 168, 36, 36]
-            fuel: [840, 168, 36, 36]
-            generic: [266, 210, 36, 36]
-            subway_entrance: [266, 210, 36, 36]
+            gas-station: [884, 168, 36, 36]
+            fuel: [884, 168, 36, 36]
+            generic: [308, 210, 36, 36]
+            subway_entrance: [308, 210, 36, 36]
+            generic-sport: [268, 126, 36, 36]
             gift-shop: [44, 126, 36, 36]
             gift: [44, 126, 36, 36]
             golf-course: [354, 84, 36, 36]
             golf_course: [354, 84, 36, 36]
-            government-building: [44, 168, 36, 36]
-            townhall: [44, 168, 36, 36]
-            public_building: [44, 168, 36, 36]
-            embassy: [44, 168, 36, 36]
-            grocery-store: [450, 126, 36, 36]
-            supermarket: [450, 126, 36, 36]
-            health_food: [450, 126, 36, 36]
-            greengrocer: [450, 126, 36, 36]
-            harbor-marina: [0, 168, 36, 36]
-            marina: [0, 168, 36, 36]
-            harbor: [0, 168, 36, 36]
-            harbor_marina: [0, 168, 36, 36]
-            dock: [0, 168, 36, 36]
-            mooring: [0, 168, 36, 36]
+            government-building: [88, 168, 36, 36]
+            townhall: [88, 168, 36, 36]
+            public_building: [88, 168, 36, 36]
+            embassy: [88, 168, 36, 36]
+            grocery-store: [496, 126, 36, 36]
+            supermarket: [496, 126, 36, 36]
+            health_food: [496, 126, 36, 36]
+            greengrocer: [496, 126, 36, 36]
+            harbor-marina: [44, 168, 36, 36]
+            marina: [44, 168, 36, 36]
+            harbor: [44, 168, 36, 36]
+            harbor_marina: [44, 168, 36, 36]
+            dock: [44, 168, 36, 36]
+            mooring: [44, 168, 36, 36]
             hardware-store: [760, 42, 36, 36]
             hardware: [760, 42, 36, 36]
             doityourself: [760, 42, 36, 36]
@@ -159,10 +160,10 @@ textures:
             hotel: [696, 0, 36, 36]
             motel: [696, 0, 36, 36]
             hostel: [696, 0, 36, 36]
-            ice-cream-shop: [176, 210, 36, 36]
-            ice_cream: [176, 210, 36, 36]
-            information: [220, 210, 36, 36]
-            info: [220, 210, 36, 36]
+            ice-cream-shop: [218, 210, 36, 36]
+            ice_cream: [218, 210, 36, 36]
+            information: [262, 210, 36, 36]
+            info: [262, 210, 36, 36]
             jewelry-store: [670, 42, 36, 36]
             jewelry: [670, 42, 36, 36]
             jewelry_store: [670, 42, 36, 36]
@@ -179,9 +180,9 @@ textures:
             light_rail: [652, 0, 36, 36]
             tram_stop: [652, 0, 36, 36]
             lighthouse: [220, 84, 36, 36]
-            liquor-store: [404, 126, 36, 36]
-            alcohol: [404, 126, 36, 36]
-            liquor: [404, 126, 36, 36]
+            liquor-store: [450, 126, 36, 36]
+            alcohol: [450, 126, 36, 36]
+            liquor: [450, 126, 36, 36]
             mall: [580, 42, 36, 36]
             market: [534, 42, 36, 36]
             variety_store: [534, 42, 36, 36]
@@ -197,9 +198,9 @@ textures:
             mosque: [88, 0, 36, 36]
             mountain: [176, 84, 36, 36]
             peak: [176, 84, 36, 36]
-            movie-theatre: [662, 168, 36, 36]
-            cinema: [662, 168, 36, 36]
-            movie-theater: [662, 168, 36, 36]
+            movie-theatre: [706, 168, 36, 36]
+            cinema: [706, 168, 36, 36]
+            movie-theater: [706, 168, 36, 36]
             museum: [972, 84, 36, 36]
             observatory: [972, 84, 36, 36]
             music-store: [308, 42, 36, 36]
@@ -215,10 +216,10 @@ textures:
             optician: [220, 42, 36, 36]
             optical_shop: [220, 42, 36, 36]
             park: [180, 126, 36, 36]
-            parking: [588, 126, 36, 36]
-            performing-arts: [486, 168, 36, 36]
-            theater: [486, 168, 36, 36]
-            theatre: [486, 168, 36, 36]
+            parking: [634, 126, 36, 36]
+            performing-arts: [530, 168, 36, 36]
+            theater: [530, 168, 36, 36]
+            theatre: [530, 168, 36, 36]
             pet-store: [176, 42, 36, 36]
             pet: [176, 42, 36, 36]
             pet-service: [176, 42, 36, 36]
@@ -235,8 +236,8 @@ textures:
             pool: [134, 84, 36, 36]
             swimming_pool: [134, 84, 36, 36]
             water_park: [134, 84, 36, 36]
-            post-office: [222, 168, 36, 36]
-            post_office: [222, 168, 36, 36]
+            post-office: [266, 168, 36, 36]
+            post_office: [266, 168, 36, 36]
             real-estate: [88, 42, 36, 36]
             estate_agent: [88, 42, 36, 36]
             real_estate: [88, 42, 36, 36]
@@ -245,8 +246,8 @@ textures:
             rental-car: [564, 0, 36, 36]
             car_rental: [564, 0, 36, 36]
             car_sharing: [564, 0, 36, 36]
-            restaurant: [974, 168, 36, 36]
-            deli: [974, 168, 36, 36]
+            restaurant: [0, 210, 36, 36]
+            deli: [0, 210, 36, 36]
             ruin: [478, 0, 36, 36]
             ruins: [478, 0, 36, 36]
             archaeological_site: [478, 0, 36, 36]
@@ -259,42 +260,42 @@ textures:
             shoe-store: [488, 42, 36, 36]
             shoes: [488, 42, 36, 36]
             shoe_store: [488, 42, 36, 36]
-            ski-area: [268, 126, 36, 36]
+            ski-area: [314, 126, 36, 36]
             soccer-field: [308, 84, 36, 36]
-            spiritual-center: [178, 168, 36, 36]
-            spiritual_center: [178, 168, 36, 36]
-            place_of_worship: [178, 168, 36, 36]
-            wayside_chapel: [178, 168, 36, 36]
+            spiritual-center: [222, 168, 36, 36]
+            spiritual_center: [222, 168, 36, 36]
+            place_of_worship: [222, 168, 36, 36]
+            wayside_chapel: [222, 168, 36, 36]
             sporting-goods-shop: [964, 0, 36, 36]
             sporting_goods: [964, 0, 36, 36]
             sports: [964, 0, 36, 36]
             outdoor: [964, 0, 36, 36]
             spring: [264, 84, 36, 36]
-            stadium: [358, 126, 36, 36]
+            stadium: [404, 126, 36, 36]
             subway-entrance: [436, 0, 36, 36]
             synagogue: [44, 0, 36, 36]
             tailor-shop: [918, 0, 36, 36]
             tailor: [918, 0, 36, 36]
-            tennis: [314, 126, 36, 36]
+            tennis: [360, 126, 36, 36]
             theme-park: [930, 84, 36, 36]
             theme_park: [930, 84, 36, 36]
             miniature_golf: [930, 84, 36, 36]
             toilets: [798, 84, 36, 36]
-            townspot-l: [626, 210, 18, 18]
-            townspot-l-rev: [506, 210, 24, 24]
-            townspot-m: [604, 210, 14, 14]
-            townspot-m-rev: [482, 210, 20, 20]
-            townspot-s: [584, 210, 12, 12]
-            townspot-s-rev: [464, 210, 12, 12]
-            townspot-xl: [652, 210, 22, 22]
-            townspot-xl-rev: [538, 212, 20, 20]
-            townspot-xs: [566, 210, 10, 10]
-            townspot-xs-rev: [450, 212, 6, 6]
+            townspot-l: [668, 210, 18, 18]
+            townspot-l-rev: [548, 210, 24, 24]
+            townspot-m: [646, 210, 14, 14]
+            townspot-m-rev: [524, 210, 20, 20]
+            townspot-s: [626, 210, 12, 12]
+            townspot-s-rev: [506, 210, 12, 12]
+            townspot-xl: [694, 210, 22, 22]
+            townspot-xl-rev: [580, 212, 20, 20]
+            townspot-xs: [608, 210, 10, 10]
+            townspot-xs-rev: [492, 212, 6, 6]
             toy-game-store: [872, 0, 36, 36]
             toys: [872, 0, 36, 36]
             baby_goods: [872, 0, 36, 36]
-            traffic-signal: [796, 168, 36, 36]
-            traffic_signals: [796, 168, 36, 36]
+            traffic-signal: [840, 168, 36, 36]
+            traffic_signals: [840, 168, 36, 36]
             train-station: [392, 0, 36, 36]
             station: [392, 0, 36, 36]
             train-staion: [392, 0, 36, 36]
@@ -304,29 +305,29 @@ textures:
             locate-off: [334, 342, 72, 72]
             ux-locate-on: [254, 342, 72, 72]
             locate-on: [254, 342, 72, 72]
-            ux-route-arrow: [682, 210, 128, 128]
-            route-arrow: [682, 210, 128, 128]
-            ux-route-start: [896, 210, 72, 92]
-            route-start: [896, 210, 72, 92]
-            ux-route-stop: [818, 210, 72, 92]
-            route-stop: [818, 210, 72, 92]
+            ux-route-arrow: [724, 210, 128, 128]
+            route-arrow: [724, 210, 128, 128]
+            ux-route-start: [938, 210, 72, 92]
+            route-start: [938, 210, 72, 92]
+            ux-route-stop: [860, 210, 72, 92]
+            route-stop: [860, 210, 72, 92]
             ux-search-active: [94, 342, 72, 108]
             search-active: [94, 342, 72, 108]
             ux-search-inactive: [174, 342, 72, 108]
             search-inactive: [174, 342, 72, 108]
-            ux-transit-stop: [394, 212, 20, 20]
+            ux-transit-stop: [436, 212, 20, 20]
             veterinarian: [132, 0, 36, 36]
             pet_care: [132, 0, 36, 36]
             veterinary: [132, 0, 36, 36]
-            view-point: [574, 168, 36, 36]
-            viewpoint: [574, 168, 36, 36]
-            view_point: [574, 168, 36, 36]
-            vista: [574, 168, 36, 36]
-            vineyard: [946, 126, 36, 36]
+            view-point: [618, 168, 36, 36]
+            viewpoint: [618, 168, 36, 36]
+            view_point: [618, 168, 36, 36]
+            vista: [618, 168, 36, 36]
+            vineyard: [0, 168, 36, 36]
             volcano: [46, 84, 36, 36]
-            wine-bar: [44, 210, 36, 36]
-            winery: [354, 168, 36, 36]
-            wine: [354, 168, 36, 36]
+            wine-bar: [86, 210, 36, 36]
+            winery: [398, 168, 36, 36]
+            wine: [398, 168, 36, 36]
             zoo: [886, 84, 36, 36]
 
             # UX/UI icons for map interactivity & app chrome
@@ -423,24 +424,57 @@ layers:
                         sprite_default: generic-sport
                         visible: true
                         priority: 69
+                        text:
+                            font:
+                                fill: [1.000,0.766,0.460]
                 baseball:
-                    filter: { sport: baseball }
-                    draw: { icons: { sprite: baseball-field } }
+                        filter: { sport: baseball }
+                        draw:
+                            icons:
+                                sprite: baseball-field
+                                text:
+                                    font:
+                                        fill: [1.000,0.766,0.460]
                 basketball:
                     filter: { sport: basketball }
-                    draw: { icons: { sprite: basketball-court } }
+                    draw:
+                        icons:
+                            sprite: basketball-court
+                            text:
+                                font:
+                                    fill: [1.000,0.766,0.460]
                 football:
                     filter: { sport: football }
-                    draw: { icons: { sprite: football-stadium } }
+                    draw:
+                        icons:
+                            sprite: football-stadium
+                            text:
+                                font:
+                                    fill: [1.000,0.766,0.460]
                 hockey:
                     filter: { sport: hockey-field }
-                    draw: { icons: { sprite: hockey-field } }
+                    draw:
+                        icons:
+                            sprite: hockey-field
+                            text:
+                                font:
+                                    fill: [1.000,0.766,0.460]
                 soccer:
                     filter: { sport: soccer }
-                    draw: { icons: { sprite: soccer-field } }
+                    draw:
+                        icons:
+                            sprite: soccer-field
+                            text:
+                                font:
+                                    fill: [1.000,0.766,0.460]
                 tennis:
                     filter: { sport: tennis }
-                    draw: { icons: { sprite: tennis } }
+                    draw:
+                        icons:
+                            sprite: tennis
+                            text:
+                                font:
+                                    fill: [1.000,0.766,0.460]
             toilets:
                 filter: { kind: toilets  }
                 draw: { icons: { sprite: toilets, visible: true } }
@@ -493,7 +527,7 @@ layers:
                 draw:
                     icons:
                         text:
-                            fill: red #[0.149,0.871,0.992]
+                            fill: [0.149,0.871,0.992]
                             visible: true
 #                            priority: 68
 
@@ -780,7 +814,7 @@ layers:
                     filter: { kind: [parking] }
                     draw: { icons: { text: { font: { fill: [1.000,0.714,0.976] } } } }
                 stadium:
-                    filter: { kind: [stadium,fitness,golf_course,winter_sports,pitch,recreation_ground] }
+                    filter: { kind: [stadium,fitness,golf_course,winter_sports,recreation_ground] }
                     draw: { icons: { text: { font: { fill: [1.000,0.766,0.460] } } } }
                 memorial:
                     filter: { kind: [memorial,monument] }
@@ -1092,26 +1126,60 @@ layers:
                     draw:
                         icons:
                             sprite: function() { return feature.sport; }
+                            sprite_default: generic-sport
                             visible: true
                             priority: 69
+                            text:
+                                font:
+                                    fill: [1.000,0.766,0.460]
                     baseball:
                         filter: { sport: baseball }
-                        draw: { icons: { sprite: baseball-field } }
+                        draw:
+                            icons:
+                                sprite: baseball-field
+                                text:
+                                    font:
+                                        fill: [1.000,0.766,0.460]
                     basketball:
                         filter: { sport: basketball }
-                        draw: { icons: { sprite: basketball-court } }
+                        draw:
+                            icons:
+                                sprite: basketball-court
+                                text:
+                                    font:
+                                        fill: [1.000,0.766,0.460]
                     football:
                         filter: { sport: football }
-                        draw: { icons: { sprite: football-stadium } }
+                        draw:
+                            icons:
+                                sprite: football-stadium
+                                text:
+                                    font:
+                                        fill: [1.000,0.766,0.460]
                     hockey:
                         filter: { sport: hockey-field }
-                        draw: { icons: { sprite: hockey-field } }
+                        draw:
+                            icons:
+                                sprite: hockey-field
+                                text:
+                                    font:
+                                        fill: [1.000,0.766,0.460]
                     soccer:
                         filter: { sport: soccer }
-                        draw: { icons: { sprite: soccer-field } }
+                        draw:
+                            icons:
+                                sprite: soccer-field
+                                text:
+                                    font:
+                                        fill: [1.000,0.766,0.460]
                     tennis:
                         filter: { sport: tennis }
-                        draw: { icons: { sprite: tennis } }
+                        draw:
+                            icons:
+                                sprite: tennis
+                                text:
+                                    font:
+                                        fill: [1.000,0.766,0.460]
 
             text_label_only_no_icon:
                 glaciers-pois:
