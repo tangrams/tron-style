@@ -823,7 +823,7 @@ layers:
                     filter: { kind: [bridge,toilets,fuel,optician,car,car_repair,viewpoint,car_sharing,landmark,quarry] }
                     draw: { icons: { text: { font: { fill: [0.851,0.796,0.851] } } } }
                 garden:
-                    filter: { kind: [garden,playground,zoo,camp_site,marina,peak,volcano,theme_park,water_park,caravan_site,pier,fort,castle,spring] }
+                    filter: { kind: [garden,playground,zoo,camp_site,marina,peak,volcano,theme_park,water_park,caravan_site,pier,fort,castle,spring,beach] }
                     draw: { icons: { text: { font: { fill: [0.345,0.953,0.769] } } } }
                 vet:
                     filter: { kind: [veterinary,pet,pet_store] }

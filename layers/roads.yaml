@@ -475,22 +475,36 @@ layers:
                             width: 0px
             runway:
                 filter: { aeroway: runway }
+                # draw:
+                #     lines:
+                #         # color: [1.000,0.564,0.312]
+                #         color: [[9,[0.215,1.000,1.000]],[14,[0.000,0.259,0.694]],[16,[0.078,0.129,0.259]]]
+                #         width: [[9,0px],[11,2px],[13,6px],[15,12px],[17,60px],[20,70m]]
+                #         outline:
+                #             style: runway-glow
+                #             # color: [[9,[0.965,0.929,0.341]],[16,[1.000,0.247,0.239]]]
+                #             color: [[9,[0.215,1.000,1.000]],[15,[0.000,0.259,0.694]]]
+                #             width: [[9,1px],[11,1.5px],[20,22px]]
+                # runway-detail1:
+                #     filter: { $zoom: { min: 12 } }
+                #     draw:
+                #         runway-dots:
+                #             color: [0.215,1.000,1.000]
+                #             width: [[12,2px],[15,7px],[20,10px]]
                 draw:
                     lines:
-                        # color: [1.000,0.564,0.312]
-                        color: [[9,[0.215,1.000,1.000]],[14,[0.000,0.259,0.694]],[16,[0.078,0.129,0.259]]]
-                        width: [[9,0px],[11,2px],[13,6px],[15,12px],[17,60px],[20,70m]]
+                        color: [[9,[0.215,1.000,1.000]],[11,[0.215,1.000,1.000]],[13,[0.078,0.129,0.259]]]
+                        width: [[9,0px],[11,1px],[13,3px],[15,12px],[17,60px],[20,70m]]
                         outline:
                             style: runway-glow
-                            # color: [[9,[0.965,0.929,0.341]],[16,[1.000,0.247,0.239]]]
-                            color: [[9,[0.215,1.000,1.000]],[15,[0.000,0.259,0.694]]]
-                            width: [[9,1px],[11,1.5px],[20,22px]]
-                runway-detail1:
+                            color: [[9,[0.215,1.000,1.000]],[15,[0.078,0.129,0.259]]]
+                            width: [[9,2px],[12,2px],[20,12px]]
+                runway-detail:
                     filter: { $zoom: { min: 12 } }
                     draw:
                         runway-dots:
                             color: [0.215,1.000,1.000]
-                            width: [[12,2px],[20,10px]]
+                            width: [[12,2px],[15,7px],[20,30px]]
 
 styles:
     traffic-animation-twoways:
@@ -623,7 +637,7 @@ styles:
         mix: [lines-dots-glow]
         shaders:
             defines:
-                DOTS_ANIMATE: color.a *=abs(sin(v_texcoord.y+u_time))*.5
+                DOTS_ANIMATE: color.a *=abs(sin(v_texcoord.y+u_time))*.9
             blocks:
                 filter: |
                     #ifdef DOTS_ANIMATE

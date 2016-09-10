@@ -127,7 +127,8 @@ layers:
                         # color: [0.243,0.769,0.623]
                         # color: [0.243,0.769,0.949]
                         # color: [0.200,1.000,1.000]
-                        color: [0.250,0.820,1.000]
+                        # color: [0.250,0.820,1.000]
+                        color: [0.280,0.762,1.000]
                         visible: true
 
                 national_park:
@@ -242,7 +243,7 @@ layers:
                     polygons:
                         style: landuse-tier6-parking
                         # color: [0.431,0.098,0.439]
-                        color: [0.314,0.322,0.424]
+                        color: [0.251,0.310,0.427]
                         visible: true
             pedestrian:
                 filter:
@@ -395,7 +396,7 @@ styles:
             defines:
                 DASH_COLOR: vec3(0.208,0.290,0.416)
                 DASH_BACKGROUND_COLOR: vec3(0.149,0.353,0.714)
-                DASH_SCALE: 10.
+                DASH_SCALE: 12.
                 DASH_SIZE: 0.9
                 DASH_TYPE: fill
                 DASH_TILE_STYLE: tile

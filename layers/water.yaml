@@ -5,7 +5,8 @@ layers:
             polygons:
                 style: water
                 order: global.order
-                color: [0.149,0.153,0.329]
+                # color: [0.149,0.153,0.329]
+                color: [0.189,0.193,0.369]
 
         later:
             filter: { $zoom: { min: 11 } }
