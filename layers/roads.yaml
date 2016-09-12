@@ -504,7 +504,7 @@ layers:
                     draw:
                         runway-dots:
                             color: [0.215,1.000,1.000]
-                            width: [[12,2px],[15,7px],[20,30px]]
+                            width: [[12,2px],[15,5px],[20,25px]]
 
 styles:
     traffic-animation-twoways:
