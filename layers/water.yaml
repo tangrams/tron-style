@@ -84,10 +84,11 @@ layers:
                 filter: { $zoom: { max: 16 } }
                 draw:
                     lines:
-                        style: water-boundaries
+                        style: coastline-glow
                         order: global.order
-                        width: [[4,0px],[11,4px],[14,12px],[16,16px],[18,24px],[20,30]]
-                        color: [0.091,0.329,0.692]
+                        width: [[4,0px],[11,2.5px],[14,6px],[16,10px]]
+                        # color: [0.091,0.329,0.692]
+                        color: [0.370,0.622,1.000]
                         join: round
             animated:
                 filter: { $zoom: { min: 16 } }
@@ -95,7 +96,7 @@ layers:
                     lines:
                         style: water-boundaries-animated
                         order: global.order
-                        width: [[4,0px],[11,4px],[14,12px],[16,16px],[18,24px],[20,30]]
+                        width: [[16,21px],[18,30px],[20,36]]
                         color: [0.091,0.329,0.692]
                         join: round
 
@@ -180,14 +181,6 @@ styles:
                 SHIMMERING_SPEED: .5
                 SHIMMERING_AMOUNT: zoom()
                 SHIMMERING_ANIMATED: global.animated
-
-    water-boundaries:
-        base: lines
-        mix: [lines-coast]
-        animated: false
-        shaders:
-            defines:
-                COAST_WAVES_ANIMATED: false
     water-boundaries-animated:
         base: lines
         mix: [lines-coast]
@@ -202,3 +195,10 @@ styles:
             defines:
                 GLOW_WIDTH: .75
                 GLOW_BRIGHTNESS: .25
+    coastline-glow:
+        base: lines
+        mix: [lines-glow]
+        shaders:
+            defines:
+                GLOW_WIDTH: .5
+                GLOW_BRIGHTNESS: .5
