@@ -782,7 +782,7 @@ layers:
                     draw: { icons: { text: { font: { fill: [0.212,1.000,0.882] } } } }
                     # draw: { icons: { text: { font: { fill: [0.174,0.830,0.732] } } } }
                 hotel:
-                    filter: { kind: [hotel,hostel,motel,company,office,substation,plant,generator,wastewater_plant,bench,slipway,insurance] }
+                    filter: { kind: [hotel,hostel,motel,company,office,substation,plant,generator,wastewater_plant,bench,slipway,insurance,archaeological_site] }
                     draw: { icons: { text: { font: { fill: [0.900,0.750,1.000] } } } }
                 pharmacy:
                     filter: { kind: pharmacy }
@@ -820,7 +820,7 @@ layers:
                     filter: { kind: [memorial,monument] }
                     draw: { icons: { text: { font: { fill: [0.817,0.752,0.857] } } } }
                 bridge:
-                    filter: { kind: [bridge,toilets,fuel,optician,car,car_repair,viewpoint,car_sharing,landmark,quarry] }
+                    filter: { kind: [bridge,toilets,fuel,optician,car,car_repair,viewpoint,car_sharing,landmark,quarry,lighthouse] }
                     draw: { icons: { text: { font: { fill: [0.851,0.796,0.851] } } } }
                 garden:
                     filter: { kind: [garden,playground,zoo,camp_site,marina,peak,volcano,theme_park,water_park,caravan_site,pier,fort,castle,spring,beach] }
