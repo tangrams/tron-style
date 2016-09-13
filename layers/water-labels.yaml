@@ -161,3 +161,38 @@ layers:
 #            size: [[13, 12px], [15, 18px]]
 #            interactive: true
 #            sprite: global.townspot_sprite
+
+
+    water-line-labels:
+        data: { source: mapzen, layer: water }
+        filter:
+            all:
+                - name: true
+                - $geometry: line
+                - kind: [river,canal,stream,dam,ditch,drain]
+                - $zoom: { min: 14 }
+        draw:
+            text:
+                text_source: global.ux_language_text_source
+                font:
+                    fill: [0.370,0.622,1.000]
+                    family: Aldrich
+                    size: 12px
+        water-line-labels-z14:
+            filter: { $zoom: [14] }
+            draw:
+                text: { font: { size: 10px } }
+        water-line-labels-z17:
+            filter: { $zoom: [17] }
+            draw:
+                text: { font: { size: 14px } }
+        not-river-not-stream:
+            filter: { kind: [canal,dam,ditch,drain], $zoom: { max: 16 } }
+            draw:
+                text:
+                    visible: false
+        stream:
+            filter: { kind: [stream], $zoom: { max: 17 } }
+            draw:
+                text:
+                    visible: false
