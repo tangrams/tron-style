@@ -152,3 +152,9 @@ global:
     icon_visible_populated_places: true
     text_visible_neighbourhoods: true
     text_visible_neighbourhoods_e: true
+    text_visible_water: true
+    text_visible_roads: true
+    text_visible_buildings: true
+    text_visible_addresses: true
+    text_visible_pois_landuse: true
+    icon_visible_pois_landuse: true

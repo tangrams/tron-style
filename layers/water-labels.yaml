@@ -1,0 +1,163 @@
+import:
+    - globals.yaml
+
+layers:
+    water-area-labels:
+        data: { source: mapzen }
+        visible: global.text_visible_water
+        filter:
+            all:
+                - name: true
+                - $geometry: point
+                - not: { kind: [riverbank, dock, playa] }
+                - area: true
+            any:
+                # show labels for smaller landuse areas at higher zooms
+                - { $zoom: { min: 5 },  area: { min: 10000000000 } }
+                - { $zoom: { min: 6 },  area: { min: 5000000000 } }
+                - { $zoom: { min: 7 },  area: { min: 400000000 } }
+                - { $zoom: { min: 8 },  area: { min: 200000000 } }
+                - { $zoom: { min: 9 },  area: { min: 100000000 } }
+                - { $zoom: { min: 10 }, area: { min: 100000000 } }
+                - { $zoom: { min: 11 }, area: { min: 10000000 } }
+                - { $zoom: { min: 12 }, area: { min: 2000000 } }
+                - { $zoom: { min: 13 }, area: { min: 1000000 } }
+                - { $zoom: { min: 14 }, area: { min: 500000 } }
+                - { $zoom: { min: 15 }, area: { min: 100000 } }
+                - { $zoom: { min: 15 }, area: { min: 50000 } }
+                - { $zoom: { min: 16 }, area: { min: 20000 } }
+                - { $zoom: { min: 17 } }
+        default-label-text:
+            draw:
+                text:
+                    text_source: global.ux_language_text_source
+                    font:
+                        fill: white
+                        family: Abel
+                        size: 12px
+                        # stroke: { color: [0.878,0.929,0.980], width: 2 }
+        lakes-z5:
+            filter: { $zoom: [5] }
+            draw:
+                text: { font: { size: 9px } }
+        lakes-z6:
+            filter: { $zoom: [6] }
+            draw:
+                text: { font: { size: 11px } }
+        lakes-z8:
+            filter: { $zoom: [8] }
+            draw:
+                text: { font: { size: 12px } }
+
+    ocean-sea-labels:
+        data: { source: mapzen }
+        visible: global.text_visible_water
+        filter: { name: true, kind: [sea, ocean] }
+        draw:
+            text:
+                text_source: global.ux_language_text_source
+                font:
+                    fill: white
+                    family: Abel
+                    size: 12px
+                    transform: uppercase
+        sea-early:
+            filter: { $zoom: [3], kind: sea }
+            draw: { text: { visible: false } }
+        ocean-spacer:
+            filter: { kind: ocean }
+            ocean-spacer-z1-z4:
+                filter: { $zoom: { min: 1, max: 4 } }
+                draw:
+                    text:
+                        text_source: global.ux_language_text_source_ocean
+                        text_wrap: false
+            ocean-spacer-z4-up:
+                filter: { $zoom: { min: 4 } }
+                draw:
+                    text:
+                        text_source: global.ux_language_text_source_ocean
+                        text_wrap: false
+        ocean-labels-z1:
+            filter: { $zoom: [1] }
+            draw:
+                text: { font: { size: 8px } }
+        ocean-labels-z2:
+            filter: { $zoom: [2] }
+            draw:
+                text: { font: { size: 10px } }
+        ocean-labels-z3:
+            filter: { $zoom: [3] }
+            draw:
+                text: { font: { size: 13px } }
+        ocean-labels-z4-up:
+            filter: { $zoom: { min: 4} }
+            draw:
+                text: { font: { size: 16px } }
+
+        sea-spacer:
+            filter: { not: { kind: [ocean] }, $zoom: { min: 5 } }
+            draw:
+                text:
+                    text_source: global.ux_language_text_source_sea
+                    text_wrap: false
+
+        sea-labels:
+            filter: { not: { kind: [ocean] } }
+            sea-labels-z4:
+                filter: { $zoom: [4] }
+                draw:
+                    text: { font: { size: 9px } }
+            sea-labels-z5:
+                filter: { $zoom: [5] }
+                draw:
+                    text: { font: { size: 10px } }
+            sea-labels-z6:
+                filter: { $zoom: [6] }
+                draw:
+                    text: { font: { size: 11px } }
+            sea-labels-z7:
+                filter: { $zoom: [7] }
+                draw:
+                    text: { font: { size: 12px } }
+            sea-labels-z8:
+                filter: { $zoom: { min: 8} }
+                draw:
+                    text: { font: { size: 14px } }
+
+    playa-labels:
+        data: { source: mapzen }
+        visible: global.text_visible_water_labels
+        filter:
+            all:
+                - name: true
+                - $geometry: point
+                - kind: playa
+                - area: true
+            any:
+                # show labels for smaller landuse areas at higher zooms
+                - { $zoom: { min: 7 },  area: { min: 1500000000 } }
+                - { $zoom: { min: 8 },  area: { min: 200000000 } }
+                - { $zoom: { min: 9 },  area: { min: 100000000 } }
+                - { $zoom: { min: 10 }, area: { min: 100000000 } }
+                - { $zoom: { min: 11 }, area: { min: 10000000 } }
+                - { $zoom: { min: 12 }, area: { min: 2000000 } }
+                - { $zoom: { min: 13 }, area: { min: 1000000 } }
+                - { $zoom: { min: 14 }, area: { min: 500000 } }
+                - { $zoom: { min: 15 }, area: { min: 100000 } }
+                - { $zoom: { min: 15 }, area: { min: 50000 } }
+                - { $zoom: { min: 16 }, area: { min: 20000 } }
+                - { $zoom: { min: 17 } }
+        draw:
+            text:
+                text_source: global.ux_language_text_source
+                font:
+                    fill: grey
+                    family: Abel
+                    size: 12px
+                    stroke: { color: global.text_stroke_water, width: 3 }
+        # debug only
+#        icons:
+#            size: [[13, 12px], [15, 18px]]
+#            interactive: true
+#            sprite: global.townspot_sprite

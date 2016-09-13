@@ -248,6 +248,36 @@ map = (function () {
             scene.updateConfig();
             //window.location.search = 'language=' + value;
         });
+        // Language selector
+        var labels = {
+            '(default)': 'true',
+            'Yes': 'true',
+            'None': 'false'
+        };
+        // use query language, else default to English
+        gui.labels = query.labels || 'true';
+        gui.add(gui, 'labels', labels).onChange(function(value) {
+            scene.config.global.text_visible_admin = value;
+            scene.config.global.text_visible_populated_places = value;
+            scene.config.global.icon_visible_populated_places = value;
+            scene.config.global.text_visible_neighbourhoods = value;
+            scene.config.global.text_visible_neighbourhoods_e = value;
+            scene.config.global.text_visible_water = value;
+            scene.config.global.text_visible_roads = value;
+            scene.config.global.text_visible_buildings = value;
+            scene.config.global.text_visible_addresses = value;
+            scene.config.global.text_visible_pois_landuse = value;
+            scene.config.global.icon_visible_pois_landuse = value;
+            if( value == 'false') {
+                scene.config.global.building_style = 'buildings_no_labels';
+                scene.config.global.building_lines_with_or_without_labels = '[0.512,0.594,0.840]';
+            } else {
+                scene.config.global.building_style = 'buildings_with_labels';
+                scene.config.global.building_lines_with_or_without_labels = '[0.512,0.594,0.840]';
+            }
+            scene.updateConfig();
+            //window.location.search = 'language=' + value;
+        });
 
         // Take a screenshot and save to file
         gui.save_screenshot = function () {

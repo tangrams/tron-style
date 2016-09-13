@@ -1,12 +1,15 @@
+import:
+    - textures.yaml
+
 layers:
 	# Map overlays for styling the server response (using special source layer names) for route line, current location, and search result pins
     mz_route_line:
         data: { source: mz_route_line }
         draw:
             ux-route-line-overlay:
-                color: '#06a6d4'
+                color: [1.000, 1.000, 0.000, 1.00]
                 order: 500
-                width: [[0,3.5px],[5,5px],[9,7px],[10,6px],[11,6px],[13,8px],[14,9px],[15,10px],[16,11px],[17,12px],[18,10px]]
+                width: [[0,5px],[5,12px],[11,12px],[13,14px],[14,18px],[15,24px],[16,28px],[17,30px],[18,30px]]
     mz_route_line_dash:
         data: { source: mz_dash_line }
         draw:
@@ -23,7 +26,7 @@ layers:
                 # and since the color is coming from Transit.land they call it "color" instead of "colour"
                 color: function() { return feature.color || '#06a6d4'; }
                 order: 500
-                width: [[0,3.5px],[5,5px],[9,7px],[10,6px],[11,6px],[13,8px],[14,9px],[15,10px],[16,11px],[17,12px],[18,10px]]
+                width: [[0,5px],[5,12px],[11,12px],[13,14px],[14,18px],[15,24px],[16,28px],[17,30px],[18,30px]]
     mz_current_location_gem:
         data: { source: mz_current_location }
         draw:
@@ -143,3 +146,54 @@ layers:
                 color: '#06a6d4'
                 order: 502
                 width: 0px
+
+styles:
+    ux-route-line-overlay:
+        base: lines
+        mix: [lines-glow]
+        blend: overlay
+        blend_order: 0
+        shaders:
+            defines:
+                GLOW_WIDTH: 0.45
+                GLOW_BRIGHTNESS: .5
+    ux-route-line-dash-overlay:
+        base: lines
+        blend: overlay
+        blend_order: 0
+        dash: [2, 1]
+    ux-transit-line-overlay:
+        base: lines
+        mix: [lines-glow]
+        blend: overlay
+        blend_order: 0
+        shaders:
+            defines:
+                GLOW_WIDTH: 0.45
+                GLOW_BRIGHTNESS: .5
+    ux-location-gem-overlay:
+        base: points
+        texture: pois
+        interactive: true
+        blend: overlay
+        blend_order: 2
+    ux-icons-overlay:
+        base: points
+        texture: pois
+        interactive: true
+        blend: overlay
+        blend_order: 3
+    sdk-point-overlay:
+        base: points
+        texture: pois
+        interactive: true
+        blend: overlay
+        blend_order: 3
+    sdk-line-overlay:
+        base: lines
+        blend: overlay
+        blend_order: 0
+    sdk-polygon-overlay:
+        base: polygons
+        blend: overlay
+        blend_order: 0

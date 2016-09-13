@@ -27,7 +27,7 @@ layers:
                 interactive: true
                 move_into_tile: true
                 priority: 70
-                visible: true
+                visible: global.text_visible_buildings
                 order: 7
                 font:
                     fill: [0.882,0.894,0.914]
@@ -69,7 +69,7 @@ layers:
                 text_source: global.ux_language_text_source
                 interactive: true
                 order: 7
-                visible: true
+                visible: global.text_visible_addresses
                 text_source: addr_housenumber
                 font:
                     fill: [0.882,0.894,0.914]

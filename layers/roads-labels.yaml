@@ -4,6 +4,8 @@ import:
 layers:
     roads:
         draw:
+            text:
+                visible: global.text_visible_roads
             lines:
                 interactive: true
 
@@ -93,7 +95,7 @@ layers:
                         filter: { ref: true, $zoom: { min: 13 } }
                         draw:
                             text:
-                                visible: true
+                                #visible: true
                                 priority: 54
                                 text_source: global.ux_language_text_source_road_ref_and_name_short
                                 font:
@@ -106,7 +108,7 @@ layers:
                 labels-tertiary:
                     draw:
                         text:
-                            visible: true
+                            visible: global.text_visible_roads
                             priority: 55
                             text_source: global.ux_language_text_source_road_ref_and_name_short
                             font:
@@ -124,7 +126,7 @@ layers:
             labels-minor-road:
                 draw:
                     text:
-                        visible: true
+                        visible: global.text_visible_roads
                         priority: 56
                         text_source: name
                         font:
