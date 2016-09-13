@@ -348,7 +348,7 @@ layers:
                         # color: [[12,[0.248,0.397,0.439]],[15,[0.248,0.397,0.439]],[16,[0.285,0.457,0.506]]]
                         color: [[12,[0.082,0.133,0.259]],[14,[0.082,0.133,0.259]],[15,[0.212,0.302,0.427]],[17,[0.212,0.302,0.427]]]
                         width: [[12,0px],[13,0px],[14,0.4px],[15,0.5px],[17,2px],[18,2px]]
-            
+
             traffic:
                 filter: { $zoom: { min: 18 } }
                 draw:
@@ -368,6 +368,13 @@ layers:
                         color: [0.184,0.263,0.373]
                         # outline:
                         #     color: [0.276,0.568,0.950]
+            minor_road_bridge:
+                filter: { is_bridge: true }
+                draw:
+                    lines:
+                        cap: round
+                        outline:
+                            cap: butt
             in-hospital:
                 filter: { landuse_kind: hospital }
                 draw:
@@ -400,23 +407,42 @@ layers:
                     - man_made: [pier]
             draw:
                 lines:
-                    # color: [[14,[0.400,0.561,0.718]],[15,[0.239,0.145,0.627]]]
                     color: [0.175,0.175,0.283]
                     width: [[13,0px],[14,0.35px],[15,1px],[16,1.25px],[17,1.5px],[19,4px],[20,5px]]
                     outline:
-                        # color: [[14,[0.400,0.561,0.718]],[16,[0.263,0.467,0.690]]]
                         color: [0.236,0.337,0.477]
                         width: [[14,0px],[15,0.35px],[16,1px],[17,2px],[19,3px]]
             pedestrian:
                 filter: { highway: pedestrian }
                 draw:
                     lines:
-                        # color: [[14,[0.400,0.561,0.718]],[15,[0.109,0.169,0.320]]]
                         color: [0.175,0.175,0.283]
                         width: [[13,0px],[14,0.35px],[15,1px],[16,1.25px],[17,1.5px],[19,4px],[20,5px]]
                         outline:
                             color: [0.236,0.337,0.477]
                             width: [[14,0px],[15,0.35px],[16,1px],[17,2px],[19,3px]]
+
+            corridor:
+                filter: { highway: corridor }
+                draw:
+                    lines:
+                        order: 1000
+                early:
+                    filter: { $zoom: { max: 17 } }
+                    draw:
+                        lines:
+                            visible: false
+            bridge:
+                filter: { is_bridge: true }
+                draw:
+                    lines:
+                        color: [0.175,0.175,0.283]
+                        width: [[13,0px],[14,0.35px],[15,1px],[16,1.25px],[17,1.5px],[19,4px],[20,5px]]
+                        cap: round
+                        outline:
+                            color: [0.236,0.337,0.477]
+                            width: [[14,0px],[15,0.35px],[16,1px],[17,2px],[19,3px]]
+                            cap: butt
             in-hospital:
                 filter: { landuse_kind: hospital }
                 draw:
@@ -456,6 +482,52 @@ layers:
                 draw:
                     lines:
                         color: [0.192,0.159,0.351]
+            bridge:
+                filter: { is_bridge: true }
+                draw:
+                    lines:
+                        color: [0.175,0.175,0.283]
+                        width: [[13,0px],[14,0.35px],[15,1px],[16,1.25px],[17,1.5px],[19,4px],[20,5px]]
+                        cap: round
+                        outline:
+                            color: [0.236,0.337,0.477]
+                            width: [[14,0px],[15,0.35px],[16,1px],[17,2px],[19,3px]]
+                            cap: butt
+
+        steps:
+            filter:
+                all:
+                    - kind: path
+                    - highway: steps
+            draw:
+                lines:
+                    style: steps-dashed
+                    color: [0.175,0.175,0.283]
+                    width: [[13,0px],[14,0.35px],[15,1px],[16,1.25px],[17,1.5px],[19,4px],[20,5px]]
+                    outline:
+                        color: [0.236,0.337,0.477]
+                        width: [[14,0px],[15,0.35px],[16,1px],[17,2px],[19,3px]]
+
+        pier:
+            filter: { kind: path, man_made: pier }
+            draw:
+                lines:
+                    style: pier-overlay
+                    # color: [0.212,0.302,0.427]
+                    color: [0.267,0.498,0.843,0.5]
+                    width: [[13, 0px], [14, 0.5px],[15, 1.5px], [16, 2.5px],[17, 3px],[18, 3m]]
+                    # outline:
+                    #     color: [0.675,0.855,0.886]
+                    #     width: [[15, 0px],[16,0.65px], [17, 0.75px], [18, 1px], [19, 1.5px]]
+
+        # ferry:
+        #     filter: { kind: ferry }
+        #     draw:
+        #         lines:
+        #             color: [0.259,0.878,0.980,0.75]
+        #             width: [[12, 0.5px], [14, 1.0px], [15, 1.0px], [16, 1.25px]]
+        #             outline:
+        #                 width: 0px
 
         airport-lines:
             filter: { kind: minor_road, aeroway: [runway,taxiway] }
@@ -643,3 +715,16 @@ styles:
                     #ifdef DOTS_ANIMATE
                     DOTS_ANIMATE;
                     #endif
+
+    steps-dashed:
+        base: lines
+        dash: [1,1]
+        dash_background_color: [0.212,0.302,0.427]
+
+    pier-overlay:
+        base: lines
+        blend: overlay
+
+    ferry-overlay:
+        base: lines
+        blend: overlay
