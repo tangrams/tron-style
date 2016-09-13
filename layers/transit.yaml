@@ -11,42 +11,27 @@ layers:
             draw:
                 lines:
                     style: railway-dashed
-                    # color: [0.820,0.770,1.000]
-                    # color: [0.199,0.189,0.332]
-                    # color: [1.000,0.365,0.141]
-                    # color: [0.541,0.322,0.920]
                     color: [0.267,0.000,0.427]
-                    # width: [[14,0.15px],[17,1px],[18,2px],[20,12px]]
-                    width: [[14,0.5px],[16,0.5px],[18,0.75px],[19,2px]]
-            # railway-z18:
-            #     filter:
-            #         $zoom: { min: 18 }
-            #     draw:
-            #         lines:
-            #             style: transit-glow
-            #             color: [1.00,1.00,1.00]
-            #             width: [[18,5px],[20,7px]]
+                    width: [[9,0.5px],[14,0.5px],[16,0.5px],[18,0.75px],[19,2px]]
         subway:
             filter: { kind: [subway,tram,light_rail] }
             draw:
                 lines:
                     style: transit-glow
-                    # color: [0.627,0.525,1.000]
                     color: [1.00,0.000,0.250]
-                    # color: [0.000,0.580,0.000]
-                    width: [[13,2px],[16,5px],[18,9px],[20,12px]]
+                    width: [[9,0.5px],[13,2px],[16,5px],[18,9px],[20,12px]]
             color-light_rail:
                 filter: { kind: [light_rail] }
                 draw:
                     lines:
-                        color: purple
-                        width: [[13,1px],[16,3px],[18,7px],[20,10px]]
+                        color: [0.817,0.000,1.000]
+                        width: [[9,0.5px],[13,1px],[16,3px],[18,7px],[20,10px]]
             color-tram:
                 filter: { kind: [tram] }
                 draw:
                     lines:
-                        color: [1.,0.,0.,0.15]
-                        width: [[13,0.75px],[16,2px],[18,6px],[20,9px]]
+                        color: [0.817,0.000,1.000]
+                        width: [[9,0.5px],[13,0.75px],[16,2px],[18,6px],[20,9px]]
             early-light_rail:
                 filter: { kind: [light_rail], $zoom: { max: 11 } }
                 draw:

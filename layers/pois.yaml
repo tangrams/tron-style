@@ -30,7 +30,7 @@ layers:
                 text:
                     repeat_group: abc
                     repeat_distance: 100px
-                    buffer: 5px
+                    buffer: 7px
                     text_source: global.ux_language_text_source
                     visible: false    # labels are enabled by each layer below
                     move_into_tile: false # preserves text alignment w/icons in JS
@@ -55,12 +55,12 @@ layers:
             filter: { $zoom: { min: 18 } }
             draw:
                 icons:
-                    size: 22px
+                    size: 18px
         poi-scale-z20:
             filter: { $zoom: [20] }
             draw:
                 icons:
-                    size: 28px
+                    size: 20px
         # poi_labels-z14:
         #     filter: { $zoom: [14] }
         #     draw: { icons: { text: { font: { size: 11px } } } }
@@ -513,7 +513,7 @@ layers:
                         - { $zoom: [10], area: { min: 5000000 } }
                         - { $zoom: [11], area: { min: 2000000 } }
                         - { $zoom: [12], area: { min: 500000 } }
-                        - { $zoom: [13], area: { min: 100000 } }
+                        - { $zoom: [13], area: { min: 250000 } }
                         - { $zoom: [14], area: { min: 100000 } }
                         # show labels for smaller landuse areas at higher zooms
                         - { $zoom: [15], area: { min: 40000 } }
@@ -531,10 +531,10 @@ layers:
                             font:
                                 fill: [0.530,0.835,1.000]
                 early:
-                    filter: { $zoom: { max: 12 } }
-                    draw: { text: { visible: false } }
+                    filter: { $zoom: { max: 13 } }
+                    draw: { icons: { text: { visible: false } } }
                 early2:
-                    filter: { $zoom: { min: 12, max: 14 } }
+                    filter: { $zoom: { min: 13, max: 14 } }
                     draw: { icons: { text: { size: 11px } } }
             school:
                 filter:
@@ -548,7 +548,7 @@ layers:
                         - { $zoom: [13], area: { min: 100000 } }
                         - { $zoom: [14], area: { min: 50000 } }
                         # show labels for smaller landuse areas at higher zooms
-                        - { $zoom: [15], area: { min: 10000 } }
+                        - { $zoom: [15], area: { min: 12000 } }
                         - { $zoom: [16], area: { min: 5000 } }
                         - { $zoom: [17], area: { min: 2000 } }
                         - { $zoom: { min: 18}, area: true }
@@ -562,6 +562,45 @@ layers:
                             visible: global.text_visible_pois_landuse
                             font:
                                 fill: [0.530,0.835,1.000]
+                early:
+                    filter: { $zoom: { max: 15 } }
+                    draw: { icons: { text: { visible: false } } }
+
+            golf-course:
+                filter:
+                    all:
+                        - kind: golf_course
+                        - area: true
+                        - $geometry: point
+                    any:
+                        # show labels for smaller landuse areas at higher zooms
+                        - { $zoom: [10],   area: { min: 2000000 } }
+                        - { $zoom: [11],   area: { min: 2000000 } }
+                        - { $zoom: [12],   area: { min: 2000000 } }
+                        - { $zoom: [13],   area: { min: 1000000 } }
+                        - { $zoom: [14],   area: { min: 500000 } }
+                        - { $zoom: [15],   area: { min: 250000 } }
+                        - { $zoom: [16],   area: { min: 10000 } }
+                        - { $zoom: { min: 17 } }
+                draw:
+                    icons:
+                        sprite: golf_course
+                        visible: global.icon_visible_pois_landuse
+                        priority: 41
+                        text:
+                            visible: global.text_visible_pois_landuse
+                            font:
+                                fill: [1.000,0.766,0.460]
+                early:
+                    filter: { $zoom: { max: 12 } }
+                    draw:
+                        icons:
+                            visible: false
+                            text: 
+                                visible: false
+                early2:
+                    filter: { $zoom: { max: 15 } }
+                    draw: { icons: { text: { visible: false } } }
 
             winter_sports:
                 filter:
@@ -694,7 +733,7 @@ layers:
                     icons:
                         visible: global.icon_visible_pois_landuse
                         sprite: train-station
-                        size: [[13, 12px], [14, 12px], [15, 16px], [17, 18px], [18, 22px], [19, 56px]]
+                        size: [[13, 12px], [14, 12px], [15, 16px], [17, 18px], [18, 30px], [19, 36px]]
                         priority: 42
                         text:
                             visible: global.text_visible_pois_landuse
@@ -728,8 +767,8 @@ layers:
                     draw:
                         icons:
                             text: { visible: false }
-                z19-stations:
-                    filter: { $zoom: { min: 19 } }
+                z18-stations:
+                    filter: { $zoom: { min: 18 } }
                     draw:
                         icons:
                             sprite: train-station-xl

@@ -386,10 +386,10 @@ layers:
             draw:
                 lines:
                     color: [[12,[0.248,0.397,0.439]],[13,[0.248,0.397,0.439]],[14,[0.082,0.133,0.259]]]
-                    width: [[12,0.5px],[13,0.5px],[14,0.15px],[15,1px],[16,2px],[18,5px],[19,10px],[20,25px]]
+                    width: [[12,0px],[13,0px],[14,0.10px],[15,1px],[16,2px],[18,5px],[19,10px],[20,25px]]
                     outline:
                         color: [[12,[0.082,0.133,0.259]],[14,[0.082,0.133,0.259]],[15,[0.212,0.302,0.427]],[17,[0.212,0.302,0.427]]]
-                        width: [[12,0px],[14,0.4px],[15,0.5px],[17,1.25px],[18,1.5px]]
+                        width: [[12,0px],[13,0px],[14,0.2px],[15,0.5px],[17,1.25px],[18,1.5px]]
             in-hospital:
                 filter: { landuse_kind: hospital }
                 draw:
@@ -507,6 +507,11 @@ layers:
                     outline:
                         color: [0.236,0.337,0.477]
                         width: [[14,0px],[15,0.35px],[16,1px],[17,2px],[19,3px]]
+            in-hospital:
+                filter: { landuse_kind: hospital }
+                draw:
+                    lines:
+                        color: [0.208,0.106,0.271]
 
         pier:
             filter: { kind: path, man_made: pier }
