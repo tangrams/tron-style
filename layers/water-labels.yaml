@@ -81,11 +81,11 @@ layers:
         ocean-labels-z1:
             filter: { $zoom: [1] }
             draw:
-                text: { font: { size: 8px } }
+                text: { visible: false }
         ocean-labels-z2:
             filter: { $zoom: [2] }
             draw:
-                text: { font: { size: 10px } }
+                text: { visible: false }
         ocean-labels-z3:
             filter: { $zoom: [3] }
             draw:
