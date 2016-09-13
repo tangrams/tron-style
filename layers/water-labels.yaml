@@ -3,7 +3,7 @@ import:
 
 layers:
     water-area-labels:
-        data: { source: mapzen }
+        data: { source: mapzen, layer: water }
         visible: global.text_visible_water
         filter:
             all:
@@ -32,8 +32,8 @@ layers:
                 text:
                     text_source: global.ux_language_text_source
                     font:
-                        fill: white
-                        family: Abel
+                        fill: [0.370,0.622,1.000]
+                        family: Aldrich
                         size: 12px
                         # stroke: { color: [0.878,0.929,0.980], width: 2 }
         lakes-z5:
@@ -50,15 +50,15 @@ layers:
                 text: { font: { size: 12px } }
 
     ocean-sea-labels:
-        data: { source: mapzen }
+        data: { source: mapzen, layer: water }
         visible: global.text_visible_water
         filter: { name: true, kind: [sea, ocean] }
         draw:
             text:
                 text_source: global.ux_language_text_source
                 font:
-                    fill: white
-                    family: Abel
+                    fill: [0.370,0.622,1.000]
+                    family: Aldrich
                     size: 12px
                     transform: uppercase
         sea-early:
@@ -126,7 +126,7 @@ layers:
                     text: { font: { size: 14px } }
 
     playa-labels:
-        data: { source: mapzen }
+        data: { source: mapzen, layer: water }
         visible: global.text_visible_water_labels
         filter:
             all:
