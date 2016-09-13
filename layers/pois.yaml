@@ -688,7 +688,7 @@ layers:
                             fill: [0.290,0.902,0.910]
 
             station-train-subway:
-                filter: { kind: [station, train-station, train_station], $zoom: { min: 11 } }
+                filter: { kind: station, $zoom: { min: 11 } }
                 #visible: true
                 draw:
                     icons:
@@ -701,20 +701,30 @@ layers:
                             font: 
                                 fill: [0.965,0.929,0.341]
                                 size: 10px
+                high-priority-early:
+                    filter: { kind_tile_rank: { max: 4 }, $zoom: { min: 0, max: 13 } }
+                    draw:
+                        icons:
+                            text: { visible: false }
                 low-priority-early:
-                    filter: { kind_tile_rank: { min: 5 }, $zoom: { min: 0, max: 13 } }
+                    filter: { kind_tile_rank: { min: 4 }, $zoom: { min: 0, max: 13 } }
                     draw:
                         icons:
                             visible: false
                             text: { visible: false }
+                high-priority-early-z13:
+                    filter: { kind_tile_rank: { min: 2 }, $zoom: [13] }
+                    draw:
+                        icons:
+                            text: { visible: false }
                 low-priority-early-z13:
-                    filter: { kind_tile_rank: { min: 5 }, $zoom: [13] }
+                    filter: { kind_tile_rank: { min: 4 }, $zoom: [13] }
                     draw:
                         icons:
                             visible: false
                             text: { visible: false }
                 low-priority-early-z14:
-                    filter: { kind_tile_rank: { min: 7 }, $zoom: [14] }
+                    filter: { kind_tile_rank: { min: 4 }, $zoom: [14] }
                     draw:
                         icons:
                             text: { visible: false }
@@ -724,13 +734,80 @@ layers:
                         icons:
                             sprite: train-station-xl
 
+            #icon_sourcing_from_not_kind:
+                # prefix with "z-" here to allow Tangram to sort the generic style 1st, allowing more specific religion tags to win later
+            z-spiritual-center:
+                filter: { kind: [spiritual_center, place_of_worship, wayside_chapel] }
+                draw:
+                    icons:
+                        sprite: function() { return feature.religion; }
+                        sprite: spiritual-center
+                        #visible: global.icon_visible_pois_landuse
+                        priority: 42
+                        text:
+                            #visible: global.text_visible_pois_landuse
+                            font:
+                                fill: [1.000,0.766,0.460]
+                                size: 10px
+                church:
+                    filter: { religion: christian }
+                    draw:   { icons: { sprite: church } }
+                synagogue:
+                    filter: { religion: jewish }
+                    draw:   { icons: { sprite: synagogue } }
+                buddhist:
+                    filter: { religion: buddhist }
+                    draw:   { icons: { sprite: buddhism } }
+                mosque:
+                    filter: { religion: muslim }
+                    draw:   { icons: { sprite: mosque } }
+
+                z-hide-small-early-spiritual-center:
+                    filter:
+                        all:
+                            - area: true
+                            - $geometry: point
+                        any:
+                            # show labels for smaller landuse areas at higher zooms
+                            - $zoom: { max: 13 }
+                            - { $zoom: [13],    area: { max: 10000 } }
+                            - { $zoom: [14],    area: { max: 4000 } }
+                            - { $zoom: [15],    area: { max: 3000 } }
+                    draw:
+                        icons: 
+                            visible: false
+                            text:
+                                visible: false
+                z-show-small-early-spiritual-center:
+                    filter:
+                        all:
+                            - area: true
+                            - $geometry: point
+                        any:
+                            # show labels for smaller landuse areas at higher zooms
+                            - { $zoom: [13],    area: { min: 10000 } }
+                            - { $zoom: [14],    area: { min: 4000 } }
+                            - { $zoom: [15],    area: { min: 3000 } }
+                    draw:
+                        icons: 
+                            visible: global.icon_visible_pois_landuse
+                            text:
+                                visible: global.text_visible_pois_landuse
+
+                z-later-text:
+                    filter: { $zoom: { min: 16 } }
+                    draw:
+                        icons:
+                            visible: global.icon_visible_pois_landuse
+                            text:
+                                visible: global.text_visible_pois_landuse
             landuse-labels-not-any-above:
                 filter:
                     all:
                         - $zoom: { min: 6 }
                         - area: true
                         - $geometry: point
-                        - not: { kind: [park, national_park, "park or protected land", battlefield, conservation, protected_area, nature_reserve, forest, grass, beach, airport, aerodrome, university, college, school, kindergarten, winter_sports, zoo, theme_park, resort, aquarium, winery, maze, stadium, playground, allotments, attraction, landmark, glacier, station] }
+                        - not: { kind: [park, national_park, "park or protected land", battlefield, conservation, protected_area, nature_reserve, forest, grass, beach, airport, aerodrome, university, college, school, kindergarten, winter_sports, zoo, theme_park, resort, aquarium, winery, maze, stadium, playground, allotments, attraction, landmark, glacier, station, spiritual_center, place_of_worship, wayside_chapel] }
                     any:
                         # show labels for smaller landuse areas at higher zooms
                         - { $zoom: [5,6,7], area: { min: 5000000000 } }
@@ -869,25 +946,6 @@ layers:
                             size: [[13, 12px], [16, 18px]]
                             #text:
                             #    offset: [[13, [0, 6px]], [16, [0, 9px]]]
-            icon_sourcing_from_not_kind:
-                # prefix with "z-" here to allow Tangram to sort the generic style 1st, allowing more specific religion tags to win later
-                z-spiritual-center:
-                    filter:
-                        all:
-                            - kind: [spiritual_center, spiritual-center, place_of_worship, wayside_chapel]
-                    draw:   { icons: { sprite: spiritual-center } }
-                z-spiritual-center-church:
-                    filter: { kind: [spiritual_center, spiritual-center, place_of_worship, wayside_chapel], religion: christian }
-                    draw:   { icons: { sprite: church } }
-                z-spiritual-center-synagogue:
-                    filter: { kind: [spiritual_center, spiritual-center, place_of_worship, wayside_chapel], religion: jewish }
-                    draw:   { icons: { sprite: synagogue } }
-                z-spiritual-center-buddhist:
-                    filter: { kind: [spiritual_center, spiritual-center, place_of_worship, wayside_chapel], religion: buddhist }
-                    draw:   { icons: { sprite: buddhism } }
-                z-spiritual-center-mosque:
-                    filter: { kind: [spiritual_center, spiritual-center, place_of_worship, wayside_chapel], religion: muslim }
-                    draw:   { icons: { sprite: mosque } }
 
             bus-stop-bus-station-labels:
                 filter:
@@ -1088,6 +1146,11 @@ layers:
                     pier:
                         filter: { kind: pier }
                         draw:   { icons: { sprite: pier } }
+                        early:
+                            filter: { $zoom: { max: 14 } }
+                            draw:
+                                icons:
+                                    visible: false
 
                 # building-icon:
                 #     filter: { kind: [building, auditorium, terminal, hangar, retirement_home, manor, recreation_center, apartments] }
