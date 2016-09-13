@@ -101,6 +101,10 @@ layers:
                     priority: 5
                     text:
                         interactive: true
+                        # a larger buffer will impact POI labels like national parks
+                        # future solution would be smarter priority values between 
+                        # locality and park labels per population and scalerank
+                        buffer: 3px
                         font:
                             family: Play
 
