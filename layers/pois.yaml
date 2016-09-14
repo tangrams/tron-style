@@ -217,6 +217,7 @@ layers:
                         icons:
                             visible: global.icon_visible_pois_landuse
                             sprite: park
+                            size: [[7,18px],[11,18px],[12,36px]]
                             priority: 41
                             text:
                                 visible: global.text_visible_pois_landuse
@@ -243,6 +244,11 @@ layers:
                         draw:
                             icons:
                                 text: { font: { size: 10px } }
+                    z13-parks:
+                        filter: { $zoom: { min: 12 } }
+                        draw:
+                            icons:
+                                sprite: park-xl
 
             landuse-labels-green-areas-not-national-park:
                 filter:
@@ -412,6 +418,7 @@ layers:
                         sprite: airport
                         visible: global.icon_visible_pois_landuse
                         priority: 41
+                        size: [[10,18px],[12,28px],[13,36px]]
                         text:
                             visible: global.text_visible_pois_landuse
                             text_source: global.ux_language_text_source_iata
@@ -435,6 +442,12 @@ layers:
                                 font:
                                     family: Cairo
                                     size: 11px
+
+                z12-airport:
+                    filter: { $zoom: { min: 12 } }
+                    draw:
+                        icons:
+                            sprite: airport-xl
 
             text_colors:
                 restaurant:
@@ -491,14 +504,13 @@ layers:
                 hairdresser:
                     filter: { kind: [hairdresser,laundry,dry_cleaning] }
                     draw: { icons: { text: { font: { fill: [0.988,0.851,0.820] } } } }
-                airport:
-                    filter: { kind: [aerodrome] }
-                    draw:
-                        icons:
-                            size: 24px
-                            text:
-                                font:
-                                    fill: [0.977,0.830,1.000]
+                # airport:
+                #     filter: { kind: [aerodrome] }
+                #     draw:
+                #         icons:
+                #             text:
+                #                 font:
+                #                     fill: [0.977,0.830,1.000]
 
             university:
                 filter:

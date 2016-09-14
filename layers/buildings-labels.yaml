@@ -65,7 +65,7 @@ layers:
                 - kind: address
                 - { label_position: yes, addr_housenumber: true, name: false }
         draw:
-            text-blend-order:
+            text:
                 text_source: global.ux_language_text_source
                 interactive: true
                 order: 7
