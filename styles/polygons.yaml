@@ -3,7 +3,9 @@ import:
     - https://tangrams.github.io/blocks/elevation/stripes.yaml
     - https://tangrams.github.io/blocks/elevation/dash.yaml
     - https://tangrams.github.io/blocks/polygons/dots.yaml
-    - https://tangrams.github.io/blocks/polygons/shimmering.yaml
+    # - https://tangrams.github.io/blocks/polygons/shimmering.yaml
+    - https://tangrams.github.io/blocks/tiling/simplex.yaml
+    - https://tangrams.github.io/blocks/generative/noise.yaml
     - https://tangrams.github.io/blocks/polygons/stripes.yaml
     - https://tangrams.github.io/blocks/polygons/diagonal-stripes.yaml
     - https://tangrams.github.io/blocks/polygons/diagonal-grid.yaml
@@ -30,3 +32,36 @@ styles:
                     } else {
                         color = vec4(0.);
                     }
+    polygons-shimmering:
+        base: polygons
+        mix: [functions-zoom, tiling-simplex, generative-noise]
+        animated: true
+        shaders:
+            defines:
+                ZOOM_START: 11.
+                ZOOM_END: 20.
+                SHIMMERING_ZOOM_IN: 0.01
+                SHIMMERING_ZOOM_OUT: 30.
+                
+                SHIMMERING_SCALE: 1.
+                SHIMMERING_COLOR: color.rgb
+                SHIMMERING_BACKGROUND_COLOR: color.rgb*.5
+                SHIMMERING_SPEED: 0.1
+                SHIMMERING_AMOUNT: 1.
+                SHIMMERING_ANIMATED: true
+                
+                SPACE_CONSTANT_PIXEL_SCALE: 695.
+                SPACE_CONSTANT_DOT_WRAP: 1e4
+            blocks:
+                color: |
+                    float z = mix(SHIMMERING_ZOOM_IN, SHIMMERING_ZOOM_OUT, zoom());
+                    vec2 S = skew((worldPosition().xy*(floor(z)*0.001)*SHIMMERING_SCALE));
+                    vec2 S_f = fract(S);
+                    #ifdef SHIMMERING_ANIMATED
+                    float n = snoise(vec3(floor(S+step(S_f.x,S_f.y)*5.),u_time*SHIMMERING_SPEED));
+                    #else
+                    float n = snoise(floor(s+step(s_f.x,s_f.y)*5.));
+                    #endif
+                    color.rgb = mix(SHIMMERING_COLOR,
+                                    mix(SHIMMERING_BACKGROUND_COLOR,SHIMMERING_COLOR,n),
+                                    SHIMMERING_AMOUNT);
