@@ -60,7 +60,7 @@ styles:
                     #ifdef SHIMMERING_ANIMATED
                     float n = snoise(vec3(floor(S+step(S_f.x,S_f.y)*5.),u_time*SHIMMERING_SPEED));
                     #else
-                    float n = snoise(floor(s+step(s_f.x,s_f.y)*5.));
+                    float n = snoise(floor(S+step(S_f.x,S_f.y)*5.));
                     #endif
                     color.rgb = mix(SHIMMERING_COLOR,
                                     mix(SHIMMERING_BACKGROUND_COLOR,SHIMMERING_COLOR,n),
