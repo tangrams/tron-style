@@ -1213,16 +1213,7 @@ layers:
                         anchor: center
                         visible: global.text_visible_populated_places
                         font:
-                            weight: 600
                             fill: white
-                z14:
-                    filter:
-                        $zoom: [14]
-                    draw:
-                        text:
-                            font:
-                                weight: 600
-
                 z13places-1:
                     filter:
                         any:
@@ -1240,8 +1231,7 @@ layers:
                             visible: global.text_visible_populated_places
                             priority: 5
                             font:
-                                size: 14px
-                                #stroke: { color: global.text_stroke, width: 4 }
+                                size: 18px
 
                 z13places-3:
                     filter:
@@ -1253,7 +1243,6 @@ layers:
                             priority: 6
                             font:
                                 size: 12px
-                                #stroke: { color: global.text_stroke, width: 4 }
 
                 z13places-4:
                     filter:
@@ -1266,7 +1255,6 @@ layers:
                         text:
                             font:
                                 size: 12px
-                                #stroke: { color: global.text_stroke, width: 4 }
 
             populated-places-osm-z13-z14-no-population:
                 filter:
@@ -1284,7 +1272,6 @@ layers:
                         priority: 7
                         font:
                             size: 11px
-                            #stroke: { color: global.text_stroke, width: 4 }
 
             populated-places-natural-earth-z13-z14-backfill:
                 filter: { name: true, source: naturalearthdata.com, $zoom: [13,14], population: { max: 5000 } }
@@ -1293,7 +1280,6 @@ layers:
                         anchor: center
                         font:
                             fill: white
-                            weight: 400
 
                 z13places-1-ne:
                     filter: { scalerank: [0,1] }
@@ -1311,7 +1297,6 @@ layers:
                             visible: global.text_visible_populated_places
                             font:
                                 size: 13px
-                                #stroke: { color: global.text_stroke, width: 4 }
 
                 z13places-3-ne:
                     filter: { scalerank: [6,7,8,9,10,11,12] }
@@ -1321,7 +1306,6 @@ layers:
                             priority: 10
                             font:
                                 size: 12px
-                                #stroke: { color: global.text_stroke, width: 4 }
 
             neighborhood-z11:
                 filter:
@@ -1345,7 +1329,7 @@ layers:
                         font:
                             family: Audiowide
                             size: 9px
-                            fill: white
+                            fill: [0.796,0.812,0.835]
                             transform: uppercase
             neighborhood-z12:
                 filter:
@@ -1369,7 +1353,7 @@ layers:
                         font:
                             family: Audiowide
                             size: 9px
-                            fill: white
+                            fill: [0.796,0.812,0.835]
                             transform: uppercase
             neighborhood-z13:
                 filter:
@@ -1393,7 +1377,7 @@ layers:
                         font:
                             family: Audiowide
                             size: 10px
-                            fill: white
+                            fill: [0.796,0.812,0.835]
                             transform: uppercase
             neighborhood-z14:
                 filter:
@@ -1441,7 +1425,7 @@ layers:
                         font:
                             family: Audiowide
                             size: 13px
-                            fill: white
+                            fill: [0.796,0.812,0.835]
                             transform: uppercase
                 z15-new:
                     filter:
@@ -1473,5 +1457,5 @@ layers:
                         font:
                             family: Audiowide
                             size: 14px
-                            fill: white
+                            fill: [0.796,0.812,0.835]
                             transform: uppercase
