@@ -217,7 +217,7 @@ layers:
                         icons:
                             visible: global.icon_visible_pois_landuse
                             sprite: park
-                            size: [[7,18px],[11,18px],[12,36px]]
+                            size: [[7,16px],[9,18px],[10,36px]]
                             priority: 41
                             text:
                                 visible: global.text_visible_pois_landuse
@@ -228,12 +228,12 @@ layers:
                         draw:
                             icons:
                                 visible: false
-                                text: { font: { size: 10px } }
+                                text: { visible: false }
                     natl-park-labels-z7:
                         filter: { $zoom: [7] }
                         draw:
                             icons:
-                                text: { font: { size: 10px } }
+                                text: { visible: false }
                     natl-park-labels-z8:
                         filter: { $zoom: [8,9] }
                         draw:
@@ -245,7 +245,7 @@ layers:
                             icons:
                                 text: { font: { size: 10px } }
                     z13-parks:
-                        filter: { $zoom: { min: 12 } }
+                        filter: { $zoom: { min: 10 } }
                         draw:
                             icons:
                                 sprite: park-xl
@@ -287,13 +287,13 @@ layers:
                         draw:
                             icons:
                                 visible: false
-                                text: { font: { size: 10px } }
+                                text: { visible: false }
                     green-areas-z7:
                         filter: { $zoom: [7] }
                         draw:
                             icons:
                                 visible: false
-                                text: { font: { size: 10px } }
+                                text: { visible: false }
                     green-areas-z8-z9:
                         filter: { $zoom: { min: 8, max: 14 } }
                         draw:
@@ -504,13 +504,13 @@ layers:
                 hairdresser:
                     filter: { kind: [hairdresser,laundry,dry_cleaning] }
                     draw: { icons: { text: { font: { fill: [0.988,0.851,0.820] } } } }
-                # airport:
-                #     filter: { kind: [aerodrome] }
-                #     draw:
-                #         icons:
-                #             text:
-                #                 font:
-                #                     fill: [0.977,0.830,1.000]
+                airport:
+                    filter: { kind: [aerodrome] }
+                    draw:
+                        icons:
+                            text:
+                                font:
+                                    fill: [0.977,0.830,1.000]
 
             university:
                 filter:
