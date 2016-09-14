@@ -1345,10 +1345,8 @@ layers:
                         font:
                             family: Audiowide
                             size: 9px
-                            weight: 400
                             fill: white
                             transform: uppercase
-                            # stroke: { color: global.text_stroke, width: 4 }
             neighborhood-z12:
                 filter:
                     all:
@@ -1370,11 +1368,9 @@ layers:
                         visible: global.text_visible_neighbourhoods
                         font:
                             family: Audiowide
-                            size: 10px
-                            weight: 400
+                            size: 9px
                             fill: white
                             transform: uppercase
-                            # stroke: { color: global.text_stroke, width: 2 }
             neighborhood-z13:
                 filter:
                     all:
@@ -1396,11 +1392,9 @@ layers:
                         visible: global.text_visible_neighbourhoods
                         font:
                             family: Audiowide
-                            size: 11px
-                            weight: 400
+                            size: 10px
                             fill: white
                             transform: uppercase
-                            # stroke: { color: global.text_stroke, width: 2 }
             neighborhood-z14:
                 filter:
                     all:
@@ -1422,11 +1416,9 @@ layers:
                         visible: global.text_visible_neighbourhoods
                         font:
                             family: Audiowide
-                            size: 12px
-                            weight: 400
+                            size: 11px
                             fill: white
                             transform: uppercase
-                            # stroke: { color: global.text_stroke, width: 3 }
             neighborhood-z15:
                 filter:
                     all:
@@ -1448,11 +1440,9 @@ layers:
                         visible: global.text_visible_neighbourhoods
                         font:
                             family: Audiowide
-                            size: 14px
-                            weight: 300
+                            size: 13px
                             fill: white
                             transform: uppercase
-                            # stroke: { color: global.text_stroke, width: 3 }
                 z15-new:
                     filter:
                         all:
@@ -1483,7 +1473,5 @@ layers:
                         font:
                             family: Audiowide
                             size: 14px
-                            weight: 300
                             fill: white
                             transform: uppercase
-                            # stroke: { color: global.text_stroke, width: 3 }

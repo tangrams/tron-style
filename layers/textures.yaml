@@ -270,7 +270,7 @@ textures:
             sports: [136, 76, 36, 36]
             outdoor: [136, 76, 36, 36]
             spring: [444, 118, 36, 36]
-            stadium: [660, 160, 36, 36]
+            stadium: [661, 160, 36, 36]
             subway-entrance: [516, 0, 36, 36]
             synagogue: [44, 0, 36, 36]
             tailor-shop: [90, 76, 36, 36]
