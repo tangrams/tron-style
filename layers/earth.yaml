@@ -26,8 +26,6 @@ layers:
             polygons:
                 style: urban-early
                 order: global.order
-                # color: [[4,[0.031,0.973,1.000]],[6,[0.139,0.198,0.283]]]
-                # color: [0.031,0.973,1.000]
                 color: [0.267,0.365,0.502]
 
 styles:
