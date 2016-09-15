@@ -89,7 +89,7 @@ layers:
         #                     priority: 8
         #                     offset: [0, 3px]
         #                     font:
-        #                         family: Exo2
+        #                         family: Play
         #                         size: 11px
         #                         fill: white
 

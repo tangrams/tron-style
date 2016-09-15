@@ -270,7 +270,7 @@ map = (function () {
             scene.config.global.icon_visible_pois_landuse = value;
             if( value == 'false') {
                 scene.config.global.building_style = 'buildings_no_labels';
-                scene.config.global.building_lines_with_or_without_labels = '[0.512,0.594,0.840]';
+                scene.config.global.building_lines_with_or_without_labels = '[0.649,0.785,0.801]';
             } else {
                 scene.config.global.building_style = 'buildings_with_labels';
                 scene.config.global.building_lines_with_or_without_labels = '[0.512,0.594,0.840]';
