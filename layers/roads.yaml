@@ -202,6 +202,7 @@ layers:
                     width: 0.75px
                     outline:
                         width: 0px
+
             trunk_primary:
                 filter: { highway: [trunk, primary] }
                 draw:
@@ -300,7 +301,6 @@ layers:
                                 outline:
                                     color: [0.276,0.568,0.950]
 
-
             tertiary:
                 filter: { highway: [tertiary, tertiary_link] }
                 draw:
@@ -350,7 +350,13 @@ layers:
                         width: [[12,0px],[13,0px],[14,0.4px],[15,0.5px],[17,2px],[18,2px]]
 
             traffic:
-                filter: { $zoom: { min: 18 } }
+                filter: 
+                    $zoom: { min: 18 }
+                    not:
+                        - service: parking_aisle
+                        - aeroway: taxiway
+                        - aeroway: runway
+                        - highway: service
                 draw:
                     lines:
                         style: traffic-animation-twoways
