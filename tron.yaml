@@ -97,30 +97,16 @@ cameras:
 
 # Fonts
 fonts:
-    # Abel:
-    #     url: https://fonts.gstatic.com/s/abel/v6/wnJbeWILdr-ZMJJAMsiXsvesZW2xOQ-xsNqO47m55DA.woff
     Aldrich:
         url: https://fonts.gstatic.com/s/aldrich/v6/VWXaIPGrUapL_Y2vGs0lKALUuEpTyoUstqEm5AMlJo4.woff
     Audiowide:
         url: https://fonts.gstatic.com/s/audiowide/v4/8XtYtNKEyyZh481XVWfVOrO3LdcAZYWl9Si6vvxL-qU.woff
     Cairo:
         url: https://fonts.gstatic.com/s/cairo/v1/ZA_4ooaF_Dfdn26t_IoQOaCWcynf_cDxXwCLxiixG1c.woff
-    # Cairo-Light:
-    #     url: https://fonts.gstatic.com/s/cairo/v1/kjh52RWXSUbTPMXEhLHVFHYhjbSpvc47ee6xR_80Hnw.woff
-    # Exo2:
-    #     url: https://fonts.gstatic.com/s/exo2/v3/KzoFUeaQw_faskDsymvVJqCWcynf_cDxXwCLxiixG1c.woff
-    # Inconsolata:
-    #     url: https://fonts.gstatic.com/s/inconsolata/v12/BjAYBlHtW3CJxDcjzrnZCLrIa-7acMAeDBVuclsi6Gc.woff
-    # Offside:
-    #     url: https://fonts.gstatic.com/s/offside/v4/kXtToyuSIeDzSauH8LQwXALUuEpTyoUstqEm5AMlJo4.woff
     Orbitron:
         url: https://fonts.gstatic.com/s/orbitron/v7/94ug0rEgQO_WuI_xKJMFc3YhjbSpvc47ee6xR_80Hnw.woff
     Play:
         url: https://fonts.gstatic.com/s/play/v7/IkErdnKw9ItVkLeeur9GHfesZW2xOQ-xsNqO47m55DA.woff
-    # Spacemono:
-    #     url: https://fonts.gstatic.com/s/spacemono/v1/adVweg3BJhE6r8jYmXseHb3hpw3pgy2gAi-Ip7WPMi0.woff
-    # Ubuntu:
-    #     url: https://fonts.gstatic.com/s/ubuntu/v9/vRvZYZlUaogOuHbBTT1SNevvDin1pK8aKteLpeZ5c0A.woff
 
 global:
     animated: true

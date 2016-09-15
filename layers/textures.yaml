@@ -315,7 +315,7 @@ textures:
             search-active: [388, 320, 72, 108]
             ux-search-inactive: [468, 320, 72, 108]
             search-inactive: [468, 320, 72, 108]
-            ux-transit-stop: [702, 280, 20, 20]
+            ux-transit-stop: [702, 278, 20, 20]
             veterinarian: [132, 0, 36, 36]
             pet_care: [132, 0, 36, 36]
             veterinary: [132, 0, 36, 36]
