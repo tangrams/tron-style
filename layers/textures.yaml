@@ -26,7 +26,7 @@ textures:
             bank: [178, 236, 36, 36]
             bar: [444, 236, 36, 36]
             pub: [444, 236, 36, 36]
-            baseball-field: [624, 118, 36, 36]
+            baseball-field: [625, 118, 36, 36]
             basketball-court: [580, 118, 36, 36]
             beach: [758, 118, 36, 36]
             beer-garden: [442, 278, 36, 36]
