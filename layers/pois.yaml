@@ -575,6 +575,13 @@ layers:
                             font:
                                 fill: [0.530,0.835,1.000]
                 early:
+                    filter: { $zoom: 13 }
+                    draw:
+                        icons:
+                            visible: false
+                            text:
+                                visible: false
+                early2:
                     filter: { $zoom: { max: 15 } }
                     draw: { icons: { text: { visible: false } } }
 
@@ -611,7 +618,7 @@ layers:
                             text: 
                                 visible: false
                 early2:
-                    filter: { $zoom: { max: 15 } }
+                    filter: { $zoom: { max: 14 } }
                     draw: { icons: { text: { visible: false } } }
 
             winter_sports:

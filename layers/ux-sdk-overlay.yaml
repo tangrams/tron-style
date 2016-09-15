@@ -14,7 +14,7 @@ layers:
         data: { source: mz_dash_line }
         draw:
             ux-route-line-dash-overlay:
-                color: '#06a6d4'
+                color: [1.000,1.000,0.000]
                 order: 500
                 width: [[2,2px],[5,2.5px],[11,3px],[16,7px],[17,9px]]
     mz_route_line_transit:
@@ -133,14 +133,14 @@ layers:
         data: { source: mz_default_line }
         draw:
             sdk-line-overlay:
-                color: '#06a6d4'
+                color: [1.000,0.000,1.000]
                 order: 503
                 width: 3px
     mz_default_polygon:
         data: { source: mz_default_polygon }
         draw:
             sdk-polygon-overlay:
-                color: [0.02,0.65,0.82,0.5]  #'#06b1e2'
+                color: [1.000,0.000,1.000,0.5]  #'#06b1e2'
                 order: 501
             sdk-line-overlay:
                 color: '#06a6d4'

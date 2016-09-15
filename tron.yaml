@@ -33,10 +33,10 @@ sources:
         url: https://s3.amazonaws.com/elevation-tiles-prod/normal/{z}/{x}/{y}.png
         max_zoom: 15
 
-    # # Only enable this for local debug, should not be enabled for prod (app inserts these at runtime)
-    # # These are all in San Francisco, California
-    # #
-    # # Current location gem
+    # Only enable this for local debug, should not be enabled for prod (app inserts these at runtime)
+    # These are all in San Francisco, California
+    #
+    # Current location gem
     # mz_current_location:
     #    type: GeoJSON
     #    url: https://gist.githubusercontent.com/anonymous/9e9588228b0a604264a2/raw/b28be49bea0b7feb859eb65b588c28e9fee5ae2c/map.geojson
