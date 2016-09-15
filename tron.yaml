@@ -8,6 +8,7 @@ import:
     - layers/water.yaml
     - layers/water-labels.yaml
     - layers/earth.yaml
+    - layers/earth-labels.yaml
     - layers/roads.yaml
     - layers/roads-labels.yaml
     - layers/transit.yaml
