@@ -59,7 +59,7 @@ layers:
                     draw:
                         polygons:
                             style: polygons
-                            color: [0.020,0.616,1.000]
+                            color: [0.000,0.496,0.930]
 
         playas:
             filter: { kind: playa, $zoom: { min: 4 } }
@@ -74,8 +74,7 @@ layers:
             draw:
                 polygons:
                     style: polygons
-                    # color: [0.000,0.804,0.776]
-                    color: [0.020,0.616,1.000]
+                    color: [0.000,0.496,0.930]
 
         boundaries:
             filter: { boundary: yes, kind: ocean }
@@ -87,7 +86,6 @@ layers:
                         style: coastline-glow
                         order: global.order
                         width: [[4,0px],[11,2.5px],[14,6px],[16,10px]]
-                        # color: [0.091,0.329,0.692]
                         color: [0.370,0.622,1.000]
                         join: round
             animated:
@@ -137,7 +135,7 @@ layers:
                 draw:
                     lines:
                         style: swimming-pool-glow
-                        color: [0.557,0.996,1.000]
+                        color: [0.407,0.846,0.850]
                         width: [[8,0px],[13,3px],[15,4px],[20,12px]]
 
             boundaries-not_ocean-riverbank:
