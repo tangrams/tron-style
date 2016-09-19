@@ -4,7 +4,6 @@ import:
 layers:
     water-area-labels:
         data: { source: mapzen, layer: water }
-        visible: global.text_visible_water
         filter:
             all:
                 - name: true
@@ -31,6 +30,7 @@ layers:
             draw:
                 text:
                     text_source: global.ux_language_text_source
+                    visible: global.text_visible_water
                     font:
                         fill: [0.370,0.622,1.000]
                         family: Aldrich
@@ -51,10 +51,10 @@ layers:
 
     ocean-sea-labels:
         data: { source: mapzen, layer: water }
-        visible: global.text_visible_water
         filter: { name: true, kind: [sea, ocean] }
         draw:
             text:
+                visible: global.text_visible_water
                 text_source: global.ux_language_text_source
                 font:
                     fill: [0.370,0.622,1.000]
@@ -127,7 +127,6 @@ layers:
 
     playa-labels:
         data: { source: mapzen, layer: water }
-        visible: global.text_visible_water_labels
         filter:
             all:
                 - name: true
@@ -150,6 +149,7 @@ layers:
                 - { $zoom: { min: 17 } }
         draw:
             text:
+                visible: global.text_visible_water
                 text_source: global.ux_language_text_source
                 font:
                     fill: [0.351,0.770,0.950]
@@ -172,6 +172,7 @@ layers:
                 - $zoom: { min: 14 }
         draw:
             text:
+                visible: global.text_visible_water
                 text_source: global.ux_language_text_source
                 font:
                     fill: [0.370,0.622,1.000]

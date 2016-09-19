@@ -587,6 +587,7 @@ layers:
                     draw:
                         icons:
                             size: 6px
+                            visible: global.icon_visible_populated_places
                             sprite: townspot-m-rev
                             priority: 11
                             text:
@@ -799,6 +800,7 @@ layers:
                     draw:
                         icons:
                             size: 6px
+                            visible: global.icon_visible_populated_places
                             sprite: townspot-m-rev
                             priority: 7
                             text:
