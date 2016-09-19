@@ -102,7 +102,7 @@ layers:
                     text:
                         interactive: true
                         # a larger buffer will impact POI labels like national parks
-                        # future solution would be smarter priority values between 
+                        # future solution would be smarter priority values between
                         # locality and park labels per population and scalerank
                         buffer: 3px
                         font:
@@ -559,7 +559,7 @@ layers:
                     draw:
                         text:
                             anchor: center
-                            visible: global.icon_visible_populated_places
+                            visible: global.text_visible_populated_places
                             priority: 6
                             font:
                                 family: Play
@@ -573,7 +573,7 @@ layers:
                     draw:
                         text:
                             anchor: center
-                            visible: global.icon_visible_populated_places
+                            visible: global.text_visible_populated_places
                             priority: 8
                             font:
                                 family: Play

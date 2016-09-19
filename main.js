@@ -248,36 +248,53 @@ map = (function () {
             scene.updateConfig();
             //window.location.search = 'language=' + value;
         });
+
         // Language selector
         var labels = {
-            '(default)': 'true',
-            'Yes': 'true',
-            'None': 'false'
+            '(default)': true,
+            'Yes': true,
+            'No': false
         };
         // use query language, else default to English
-        gui.labels = query.labels || 'true';
+        gui.labels = query.labels || true;
         gui.add(gui, 'labels', labels).onChange(function(value) {
-            scene.config.global.text_visible_admin = value;
-            scene.config.global.text_visible_populated_places = value;
-            scene.config.global.icon_visible_populated_places = value;
-            scene.config.global.text_visible_neighbourhoods = value;
-            scene.config.global.text_visible_neighbourhoods_e = value;
-            scene.config.global.text_visible_water = value;
-            scene.config.global.text_visible_roads = value;
-            scene.config.global.text_visible_buildings = value;
-            scene.config.global.text_visible_addresses = value;
-            scene.config.global.text_visible_pois_landuse = value;
-            scene.config.global.icon_visible_pois_landuse = value;
-            if( value == 'false') {
-                scene.config.global.building_style = 'buildings_no_labels';
-                scene.config.global.building_lines_with_or_without_labels = '[0.649,0.785,0.801]';
-            } else {
+            var _val = (value === 'true' || value === true);
+            scene.config.global.text_visible_admin = _val;
+            scene.config.global.text_visible_populated_places = _val;
+            scene.config.global.icon_visible_populated_places = _val;
+            scene.config.global.text_visible_neighbourhoods = _val;
+            scene.config.global.text_visible_neighbourhoods_e = _val;
+            scene.config.global.text_visible_water = _val;
+            scene.config.global.text_visible_roads = _val;
+            scene.config.global.text_visible_buildings = _val;
+            scene.config.global.text_visible_addresses = _val;
+            scene.config.global.text_visible_pois_landuse = _val;
+            scene.config.global.icon_visible_pois_landuse = _val;
+            scene.config.global.text_visible_island = _val;
+            if( _val ) {
                 scene.config.global.building_style = 'buildings_with_labels';
                 scene.config.global.building_lines_with_or_without_labels = '[0.512,0.594,0.840]';
+            } else {
+                scene.config.global.building_style = 'buildings_no_labels';
+                scene.config.global.building_lines_with_or_without_labels = '[0.649,0.785,0.801]';
             }
             scene.updateConfig();
             //window.location.search = 'language=' + value;
         });
+
+        // Animation selector
+        var animated = {
+            '(default)': true,
+            'Yes': true,
+            'No': false
+        };
+        gui.animated = query.animated || true;
+        gui.add(gui, 'animated', animated).onChange(function(value) {
+            scene.config.global.animated = (value === 'true' || value === true); // dat.gui passes a string
+            scene.updateConfig();
+            //window.location.search = 'animated=' + value;
+        });
+
 
         // Take a screenshot and save to file
         gui.save_screenshot = function () {
