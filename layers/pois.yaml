@@ -1,3 +1,6 @@
+import:
+    - ../components/textures.yaml
+
 layers:
     pois_and_landuse_labels:
         data: { source: mapzen, layer: [pois,landuse] }

@@ -1,5 +1,5 @@
 import:
-    # Global Components
+    # Components
     - components/globals.yaml
     - components/fonts.yaml
     - components/textures.yaml
