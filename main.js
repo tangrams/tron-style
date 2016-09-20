@@ -132,32 +132,29 @@ map = (function () {
 
     // Feature selection
     function initFeatureSelection () {
-        map.getContainer().addEventListener('mousemove', function (event) {
-            picking = true;
-            latlng = map.mouseEventToLatLng(event);
+        layer.setSelectionEvents({
+            hover: function(selection) {
+                if (!picking) {
+                    if (!selection || selection.feature == null || selection.feature.properties == null) {
+                        picking = false;
+                        popup.style.visibility = 'hidden';
+                        return;
+                    }
 
-            var pixel = { x: event.clientX, y: event.clientY };
-
-            scene.getFeatureAt(pixel).then(function(selection) {
-                if (!selection || selection.feature == null || selection.feature.properties == null) {
-                    picking = false;
-                    popup.style.visibility = 'hidden';
-                    return;
+                    var properties = selection.feature.properties;
+                    popup.style.width = 'auto';
+                    popup.style.left = (selection.pixel.x + 0) + 'px';
+                    popup.style.top = (selection.pixel.y + 0) + 'px';
+                    popup.style.margin = '10px';
+                    if (properties.name) {
+                        popup.innerHTML = '<span class="labelInner">' + properties.name + '</span><br>';
+                    } else {
+                        popup.innerHTML = '<span class="labelInner">' + 'unnamed ' + properties.kind + '</span><br>';
+                    }
+                    popup.innerHTML += '<span class="labelInner" style="font-size:10px;">' + 'Click to view more...' + '</span><br>';
+                    popup.style.visibility = 'visible';
                 }
-                var properties = selection.feature.properties;
-
-                popup.style.width = 'auto';
-                popup.style.left = (pixel.x + 0) + 'px';
-                popup.style.top = (pixel.y + 0) + 'px';
-                popup.style.margin = '10px';
-                if (properties.name) {
-                    popup.innerHTML = '<span class="labelInner">' + properties.name + '</span><br>';
-                } else {
-                    popup.innerHTML = '<span class="labelInner">' + 'unnamed ' + properties.kind + '</span><br>';
-                }
-                popup.innerHTML += '<span class="labelInner" style="font-size:10px;">' + 'Click to view more...' + '</span><br>';
-                popup.style.visibility = 'visible';
-            });
+            }
         });
     }
 
@@ -318,20 +315,15 @@ map = (function () {
         });
 
         var timer;
-
-        map.getContainer().addEventListener('click', function (event) {
-            //console.log( 'click was had' );
-            if( timer ) { clearTimeout( timer ); timer = null; }
-            timer = setTimeout( function(){
-                picking = true;
-                latlng = map.mouseEventToLatLng(event);
-                var pixel = { x: event.clientX, y: event.clientY };
-
-                if( key.cmd || key.alt ) {
-                    window.open( mapzenTileURL(), '_blank' );
-                } else {
-                    var url = 'https://www.openstreetmap.org/edit?';
-                    scene.getFeatureAt(pixel).then(function(selection) {
+        layer.setSelectionEvents({
+            click: function(selection) {
+                if( timer ) { clearTimeout( timer ); timer = null; }
+                timer = setTimeout( function() {
+                    picking = true;
+                    if( key.cmd || key.alt ) {
+                        window.open( mapzenTileURL(), '_blank' );
+                    } else {
+                        var url = 'https://www.openstreetmap.org/edit?';
                         if (!selection || selection.feature == null || selection.feature.properties == null) {
                             picking = false;
                             popup.style.visibility = 'hidden';
@@ -370,8 +362,8 @@ map = (function () {
                             }
 
                             if (label != '') {
-                                popup.style.left = (pixel.x) + 'px';
-                                popup.style.top = (pixel.y) + 'px';
+                                popup.style.left = (selection.pixel.x) + 'px';
+                                popup.style.top = (selection.pixel.y) + 'px';
                                 popup.style.margin = '0px';
                                 popup.innerHTML = '<span class="labelInner">' + label + '</span>';
                             }
@@ -385,10 +377,10 @@ map = (function () {
                             //popup.appendChild(createEditLinkElement( josmUrl, 'JOSM', 'Edit with JOSM ➹') );
                             popup.style.visibility = 'visible';
                         }
-                    });
-                }
-                timer = null;
-            }, 200 );
+                    }
+                    timer = null;
+                }, 200 );
+            }
         });
     }
 
