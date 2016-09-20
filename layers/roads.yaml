@@ -613,6 +613,7 @@ styles:
                 DATASTREAM_MARGIN: z*.3
                 DATASTREAM_COLOR: palette( fract(floor(v_texcoord.x*DATASTREAM_ROADS)/DATASTREAM_ROADS+u_time*.1)*z )
                 DATASTREAM_AMOUNT: .8
+                DATASTREAM_ANIMATED: global.animated
             blocks:
                 global: |
                     float datastream_pattern(vec2 st, float v, float t) {
@@ -620,6 +621,7 @@ styles:
                         return step(t, (random(p*.000001)+random(p))*.5 );
                     }
                 color: |
+                    #ifdef DATASTREAM_ANIMATED
                     vec2 st = v_texcoord.xy;
                     float z = zoom();
                     float datastream_speed = (-.5 * random(floor(v_texcoord.x*DATASTREAM_ROADS)) - .5);
@@ -635,6 +637,7 @@ styles:
                                                         DATASTREAM_AMOUNT)*
                                                     smoothstep(DATASTREAM_MARGIN,1.,sin(fract(v_texcoord.x*DATASTREAM_ROADS)*3.1415))
                                     );
+                    #endif
     traffic-animation:
         base: lines
         mix: [generative-random, tron-palette, functions-zoom]
@@ -648,6 +651,7 @@ styles:
                 DATASTREAM_MARGIN: z*.3
                 DATASTREAM_COLOR: palette( fract(floor(v_texcoord.x*DATASTREAM_ROADS)/DATASTREAM_ROADS+u_time*.1)*z )
                 DATASTREAM_AMOUNT: .8
+                DATASTREAM_ANIMATED: global.animated
             blocks:
                 global: |
                     float datastream_pattern(vec2 st, float v, float t) {
@@ -655,6 +659,7 @@ styles:
                         return step(t, (random(p*.000001)+random(p))*.5 );
                     }
                 color: |
+                    #ifdef DATASTREAM_ANIMATED
                     float z = zoom();
                     float datastream_speed = (-.5 * random(floor(v_texcoord.x*DATASTREAM_ROADS)) - .5);
                     color.rgb = mix(color.rgb,
@@ -665,6 +670,7 @@ styles:
                                                         DATASTREAM_AMOUNT)*
                                                     smoothstep(DATASTREAM_MARGIN,1.,sin(fract(v_texcoord.x*DATASTREAM_ROADS)*3.1415))
                                     );
+                    #endif
 
     highway-dashed:
         base: lines

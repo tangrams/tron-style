@@ -165,7 +165,6 @@ styles:
     water-later:
         base: polygons
         mix: [functions-zoom, polygons-shimmering]
-        animated: true
         shaders:
             defines:
                 ZOOM_START: 11.
@@ -179,7 +178,6 @@ styles:
     water-boundaries-animated:
         base: lines
         mix: [lines-coast]
-        animated: true
         shaders:
             defines:
                 COAST_WAVES_ANIMATED: global.animated

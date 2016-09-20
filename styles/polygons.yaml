@@ -35,7 +35,6 @@ styles:
     polygons-shimmering:
         base: polygons
         mix: [functions-zoom, tiling-simplex, generative-noise]
-        animated: true
         shaders:
             defines:
                 ZOOM_START: 11.
