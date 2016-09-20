@@ -312,6 +312,13 @@ map = (function () {
         });
 
         var timer;
+
+        map.getContainer().addEventListener('mousemove', function (event) {
+            picking = false;
+            popup.style.visibility = 'hidden';
+            return;
+        });
+
         layer.setSelectionEvents({
             click: function(selection) {
                 if( timer ) { clearTimeout( timer ); timer = null; }
