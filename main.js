@@ -123,7 +123,7 @@ map = (function () {
             load: function (data) {
                 // TODO:
                 // - this is not really working yet
-                data.config.scene.animated = animated;
+                // data.config.scene.animated = animated;
                 data.config.global.animated = animated;
             }
         });
