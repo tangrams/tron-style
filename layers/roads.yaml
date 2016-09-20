@@ -606,7 +606,7 @@ styles:
         texcoords: true
         shaders:
             defines:
-                ZOOM_START: 15.
+                ZOOM_START: 14.
                 ZOOM_END: 18.
                 DATASTREAM_SPEED: 20.
                 DATASTREAM_ROADS: 5.0 
@@ -623,7 +623,7 @@ styles:
                 color: |
                     #ifdef DATASTREAM_ANIMATED
                     vec2 st = v_texcoord.xy;
-                    float z = zoom();
+                    float z = 1.;//zoom();
                     float datastream_speed = (-.5 * random(floor(v_texcoord.x*DATASTREAM_ROADS)) - .5);
                     if (st.x < 0.5) {
                       datastream_speed *= -1.;
@@ -644,7 +644,7 @@ styles:
         texcoords: true
         shaders:
             defines:
-                ZOOM_START: 15.
+                ZOOM_START: 14.
                 ZOOM_END: 18.
                 DATASTREAM_SPEED: 20.
                 DATASTREAM_ROADS: 5.0 
@@ -660,7 +660,7 @@ styles:
                     }
                 color: |
                     #ifdef DATASTREAM_ANIMATED
-                    float z = zoom();
+                    float z = 1.;//zoom();
                     float datastream_speed = (-.5 * random(floor(v_texcoord.x*DATASTREAM_ROADS)) - .5);
                     color.rgb = mix(color.rgb,
                                     DATASTREAM_COLOR,

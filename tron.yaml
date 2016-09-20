@@ -1,9 +1,13 @@
 import:
-    # Global variables
-    - layers/globals.yaml
+    # Global Components
+    - components/globals.yaml
+    - components/fonts.yaml
+    - components/textures.yaml
+
     # Styles
     - styles/lines.yaml
     - styles/polygons.yaml
+
     # Layers
     - layers/water.yaml
     - layers/water-labels.yaml
@@ -17,10 +21,8 @@ import:
     - layers/landuse.yaml
     - layers/boundaries.yaml
     - layers/places.yaml
-    # - layers/telecom.yaml
     - layers/pois.yaml
     - layers/ux-sdk-overlay.yaml
-
 
 # Sources
 sources:
@@ -89,57 +91,11 @@ sources:
     #    type: GeoJSON
     #    url: https://gist.githubusercontent.com/anonymous/88235c795bb44b8c45150bdd5561f947/raw/71d4fab97b6513833bf1a589167119e6169ef86d/map.geojson 
 
-
 # Camera
 cameras:
     cam:
         type: perspective
 
-# Fonts
-fonts:
-    Aldrich:
-        url: https://fonts.gstatic.com/s/aldrich/v6/VWXaIPGrUapL_Y2vGs0lKALUuEpTyoUstqEm5AMlJo4.woff
-    Audiowide:
-        url: https://fonts.gstatic.com/s/audiowide/v4/8XtYtNKEyyZh481XVWfVOrO3LdcAZYWl9Si6vvxL-qU.woff
-    Cairo:
-        url: https://fonts.gstatic.com/s/cairo/v1/ZA_4ooaF_Dfdn26t_IoQOaCWcynf_cDxXwCLxiixG1c.woff
-    Orbitron:
-        url: https://fonts.gstatic.com/s/orbitron/v7/94ug0rEgQO_WuI_xKJMFc3YhjbSpvc47ee6xR_80Hnw.woff
-    Play:
-        url: https://fonts.gstatic.com/s/play/v7/IkErdnKw9ItVkLeeur9GHfesZW2xOQ-xsNqO47m55DA.woff
-
-global:
-    animated: true
-    order_add_9: function () { return (feature.sort_key * 20 + 9); }
-    order_add_8: function () { return (feature.sort_key * 20 + 8); }
-    order_add_7: function () { return (feature.sort_key * 20 + 7); }
-    order_add_6: function () { return (feature.sort_key * 20 + 6); }
-    order_add_5: function () { return (feature.sort_key * 20 + 5); }
-    order_add_4: function () { return (feature.sort_key * 20 + 4); }
-    order_add_3: function () { return (feature.sort_key * 20 + 3); }
-    order_add_2: function () { return (feature.sort_key * 20 + 2); }
-    order_add_1: function () { return (feature.sort_key * 20 + 1); }
-    order: function () { return (feature.sort_key * 20); }
-    order_sub_1: function () { return (feature.sort_key * 20 - 1); }
-    order_sub_2: function () { return (feature.sort_key * 20 - 2); }
-    order_sub_3: function () { return (feature.sort_key * 20 - 3); }
-    order_sub_4: function () { return (feature.sort_key * 20 - 4); }
-    order_sub_5: function () { return (feature.sort_key * 20 - 5); }
-    order_sub_6: function () { return (feature.sort_key * 20 - 6); }
-    order_sub_7: function () { return (feature.sort_key * 20 - 7); }
-    order_sub_8: function () { return (feature.sort_key * 20 - 8); }
-    order_sub_9: function () { return (feature.sort_key * 20 - 9); }
-    pseudoRandomColor: |
-        function() {
-            return [
-                0.7 * (parseInt(feature.id, 16) / 100 % 1),     // jshint ignore:line
-                0.7 * (parseInt(feature.id, 16) / 10000 % 1),   // jshint ignore:line
-                0.7 * (parseInt(feature.id, 16) / 1000000 % 1), // jshint ignore:line
-                1
-            ];
-        }
-
-# Scene
 scene:
     animated: global.animated
     background:

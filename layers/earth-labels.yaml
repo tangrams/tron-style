@@ -1,6 +1,3 @@
-import:
-    - globals.yaml
-
 layers:
     earth-labels:
         data: { source: mapzen, layer: earth }

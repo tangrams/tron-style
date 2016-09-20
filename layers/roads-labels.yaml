@@ -1,6 +1,3 @@
-import:
-    - globals.yaml
-
 layers:
     roads:
         draw:

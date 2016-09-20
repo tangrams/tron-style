@@ -1,6 +1,3 @@
-import:
-    - textures.yaml
-
 layers:
 	# Map overlays for styling the server response (using special source layer names) for route line, current location, and search result pins
     mz_route_line:

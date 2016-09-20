@@ -1,6 +1,3 @@
-import:
-    - globals.yaml
-
 layers:
     water-area-labels:
         data: { source: mapzen, layer: water }
