@@ -11,24 +11,44 @@ import:
     - https://tangrams.github.io/blocks/polygons/diagonal-grid.yaml
     # Utils
     - https://tangrams.github.io/blocks/geometry/normal.yaml
-    # Custom Commons
-    - ./common.yaml
 
 styles:
-    polygons-linewall:
+    polygons-building-wall:
         base: polygons
-        mix: [geometry-normal]
+        mix: [functions-zoom, geometry-normal,generative-random, tron-palette, geometry-dynamic-height]
         texcoords: true
         blend: add
         shaders:
+            defines:
+                ZOOM_START: 16.
+                ZOOM_END: 20.
+                WALL_LINES_COLOR: vec3(0.181,0.259,0.370)
+                WALL_PCT: 1.
+                WALL_HEIGHT: .5
             blocks:
                 color: |
                     if (isWall()) {
-                        float lineWidth = 0.003*(u_tile_origin.z/20.0);
+                        float r = 0.1+random(color.r)*.9;
+                        float g = 0.1+random(color.g)*.9;
+                        float b = 0.1+random(color.b)*.9;
+                        float z = zoom();
+
+                        float lineWidth = 0.003*z;
                         color = mix(vec4(0.),
-                                    color,
+                                    vec4(WALL_LINES_COLOR,1.),
                                     1.0-(step(lineWidth,v_texcoord.x)-step(1.0-lineWidth,v_texcoord.x))*
                                         (step(lineWidth,v_texcoord.y)-step(1.0-lineWidth,v_texcoord.y)) );
+                        vec2 st = v_texcoord.xy;
+                        if (r > 0.5 ) st = vec2(v_texcoord.x, worldPosition().z*0.01);
+                        if (g > 0.5 ) st *= mix(10.,50.,random(g));
+                        if (b > 0.5 ) st.x += step(1., mod(st.y,2.0)) * 0.5;
+
+                        float n = random(floor(st));
+                        color = mix(color,
+                                    mix(vec4(WALL_LINES_COLOR, n),
+                                        vec4(palette(r), 1.)*n,
+                                        z),
+                                    mix(.15,WALL_PCT,z)-v_texcoord.y*WALL_HEIGHT);
                     } else {
                         color = vec4(0.);
                     }

@@ -2,9 +2,10 @@ import:
     # Components
     - components/globals.yaml
     - components/fonts.yaml
-    - components/textures.yaml
 
     # Styles
+    - styles/common.yaml
+    - styles/points.yaml
     - styles/lines.yaml
     - styles/polygons.yaml
 

@@ -1,5 +1,5 @@
 global:
-    building_style: buildings_with_labels #buildings_no_labels
+    building_style: buildings_with_labels
     building_lines_with_or_without_labels: [0.512,0.594,0.840]
 
 layers:
@@ -84,80 +84,22 @@ styles:
 
     buildings_with_labels:
         base: polygons
-        mix: [functions-zoom, geometry-normal,generative-random, tron-palette, geometry-dynamic-height]
+        mix: [polygons-building-wall]
         texcoords: true
         blend: add
         shaders:
             defines:
-                ZOOM_START: 16.
-                ZOOM_END: 20.
-                WALLLINES_COLOR: vec3(0.181,0.259,0.370)
-            blocks:
-                color: |
-                    if (isWall()) {
-                        float r = 0.1+random(color.r)*.9;
-                        float g = 0.1+random(color.g)*.9;
-                        float b = 0.1+random(color.b)*.9;
-                        float z = zoom();
-                        
-                        float lineWidth = 0.003*z;
-                        color = mix(vec4(0.),
-                                    vec4(WALLLINES_COLOR,1.),
-                                    1.0-(step(lineWidth,v_texcoord.x)-step(1.0-lineWidth,v_texcoord.x))*
-                                        (step(lineWidth,v_texcoord.y)-step(1.0-lineWidth,v_texcoord.y)) );
-
-                        vec2 st = v_texcoord.xy;
-                        if (r > 0.5 ) st = vec2(v_texcoord.x, worldPosition().z*0.01);
-                        if (g > 0.5 ) st *= mix(10.,50.,random(g));
-                        if (b > 0.5 ) st.x += step(1., mod(st.y,2.0)) * 0.5;
-
-                        float n = random(floor(st));
-                        color = mix(color,
-                                    mix(vec4(WALLLINES_COLOR, n),
-                                        vec4(palette(r), 1.)*n,
-                                        z),
-                                    mix(.15,0.85,z)-v_texcoord.y*.85);
-                    } else {
-                        color = vec4(0.);
-                    }
+                WALL_PCT: .85
+                WALL_HEIGHT: .85
 
     buildings_no_labels:
         base: polygons
-        mix: [functions-zoom, geometry-normal,generative-random, tron-palette, geometry-dynamic-height]
+        mix: [polygons-building-wall]
         texcoords: true
         blend: add
         shaders:
             defines:
-                ZOOM_START: 16.
-                ZOOM_END: 20.
-                WALLLINES_COLOR: vec3(0.181,0.259,0.370)
-            blocks:
-                color: |
-                    if (isWall()) {
-                        float r = 0.1+random(color.r)*.9;
-                        float g = 0.1+random(color.g)*.9;
-                        float b = 0.1+random(color.b)*.9;
-                        float z = zoom();
-
-                        float lineWidth = 0.003*z;
-                        color = mix(vec4(0.),
-                                    vec4(WALLLINES_COLOR,1.),
-                                    1.0-(step(lineWidth,v_texcoord.x)-step(1.0-lineWidth,v_texcoord.x))*
-                                        (step(lineWidth,v_texcoord.y)-step(1.0-lineWidth,v_texcoord.y)) );
-                        vec2 st = v_texcoord.xy;
-                        if (r > 0.5 ) st = vec2(v_texcoord.x, worldPosition().z*0.01);
-                        if (g > 0.5 ) st *= mix(10.,50.,random(g));
-                        if (b > 0.5 ) st.x += step(1., mod(st.y,2.0)) * 0.5;
-
-                        float n = random(floor(st));
-                        color = mix(color,
-                                    mix(vec4(WALLLINES_COLOR, n),
-                                        vec4(palette(r), 1.)*n,
-                                        z),
-                                    mix(.15,1.0,z)-v_texcoord.y*.5);
-                    } else {
-                        color = vec4(0.);
-                    }
+                WALL_PCT: 1.0
 
     buildings-lns:
         base: lines

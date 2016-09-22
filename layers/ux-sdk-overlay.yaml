@@ -170,19 +170,19 @@ styles:
                 GLOW_BRIGHTNESS: .5
     ux-location-gem-overlay:
         base: points
-        texture: pois
+        mix: icons
         interactive: true
         blend: overlay
         blend_order: 2
     ux-icons-overlay:
         base: points
-        texture: pois
+        mix: icons
         interactive: true
         blend: overlay
         blend_order: 3
     sdk-point-overlay:
         base: points
-        texture: pois
+        mix: icons
         interactive: true
         blend: overlay
         blend_order: 3

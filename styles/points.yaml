@@ -1,3 +1,8 @@
+styles:
+    icons:
+        base: points
+        texture: pois
+
 textures:
     pois:
         url: ../images/poi_icons_18@2x.png
