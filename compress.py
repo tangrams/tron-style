@@ -3,19 +3,30 @@
 import os, glob, yaml, zipfile
 
 # Append yaml dependences in yaml_file ('import' files) to another yaml file (full_yaml_file)
-def addDependencies(style_files, filename):
-    # print "Append all dependences of " + filename
-    style_files.append(os.path.normpath(filename))
+def addDependencies(file_list, filename):
+    # print 'Checking for dependencies on:', os.path.normpath(filename)
+    file_list.append(os.path.normpath(filename))
     folder = os.path.dirname(filename)
     yaml_file = yaml.safe_load(open(filename))
 
+    # Search for fonts or textures urls
+    if 'fonts' in yaml_file:
+        for font in yaml_file['fonts']:
+            if 'url' in yaml_file['fonts'][font]:
+                file_list.append(os.path.normpath(folder + '/' + yaml_file['fonts'][font]['url']))
+
+    if 'textures' in yaml_file:
+        for font in yaml_file['textures']:
+            if 'url' in yaml_file['textures'][font]:
+                file_list.append(os.path.normpath(folder + '/' + yaml_file['textures'][font]['url']))
+
+    # Search for inner dependemcies
     if 'import' in yaml_file:
-        
         if (type(yaml_file['import']) is str):
-            addDependencies(style_files, folder + '/' + yaml_file['import'])
+            addDependencies(file_list, folder + '/' + yaml_file['import'])
         else:
             for file in yaml_file['import']:
-                addDependencies(style_files, folder + '/' + file)
+                addDependencies(file_list, folder + '/' + file)
 
 def zip(files, dst):
     zf = zipfile.ZipFile("%s.zip" % (dst), "w", zipfile.ZIP_DEFLATED)
@@ -29,30 +40,16 @@ def zip(files, dst):
             zf.write(absname, arcname)
     zf.close()
 
-# ================================== Main functions
+# # ================================== Main functions
+main_scene_file = './tron.yaml'
 
-# Folders to compress
-folders = ['components', 'layers']
-
-# Styles to programatically add
-style_folder = 'styles'
-
-
-# GET all the style dependencies
-style_dependecies = []
-for filename in glob.glob(style_folder+'/*.yaml'):
-    addDependencies(style_dependecies, filename)
-
-files  = list(set(style_dependecies))
-# print files, len(files)
-
-for folder in folders:
-    for dirname, subdirs, files in os.walk(folder):
-        for filename in files:
-            absname = os.path.normpath(os.path.join(dirname, filename))
-            print absname
-            
-            # print dirname, subdirs, files
-#             files.append(absname)
+all_dependencies = [] 
+addDependencies(all_dependencies, main_scene_file)
+files = list(set(all_dependencies))
 
 print files, len(files)
+
+zipf = zipfile.ZipFile('tron.zip', 'w', zipfile.ZIP_DEFLATED)
+for file in files:
+    zipf.write(file)
+zipf.close()
