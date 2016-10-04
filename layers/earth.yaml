@@ -17,17 +17,6 @@ layers:
                     style: polygons
                     color: [[7,[0.242,0.332,0.456]],[8,[0.212,0.302,0.431]]]
 
-    landuse-urban-area-early:
-        data: { source: mapzen, layer: landuse }
-        filter:
-            kind: ['urban area']
-            $zoom: { max: 8 }
-        draw:
-            polygons:
-                style: urban-early
-                order: global.order
-                color: [0.267,0.365,0.502]
-
 styles:
     earth-early:
         base: polygons
@@ -41,25 +30,3 @@ styles:
                 STRIPES_ALPHA: 1.
                 STRIPES_SCALE: mix(25.,50.,smoothstep(0.,1.,1.-zoom()))
                 STRIPES_WIDTH: 1.-zoom()-.2
-
-    urban-early:
-        base: polygons
-        mix: [functions-zoom, polygons-diagonal-stripes]
-        shaders:
-            defines:
-                ZOOM_START: 0.
-                ZOOM_END: 6.5
-                ZOOM_MAX: 6.
-
-                STRIPES_ALPHA: 1.
-                STRIPES_SCALE: mix(25.,50.,smoothstep(0.,1.,1.-zoom()))
-                STRIPES_WIDTH: 1.-zoom()-.2
-
-                COLOR_A: color.rgb
-                # COLOR_B: vec3(0.031,0.973,1.000)
-                COLOR_B: vec3(0.000,0.676,0.767)
-            blocks:
-                color: |
-                    color.rgb = mix(COLOR_A, COLOR_B, sin(zoom()*3.1415));
-
-
