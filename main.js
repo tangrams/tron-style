@@ -83,7 +83,7 @@ map = (function () {
 
     var layer = Tangram.leafletLayer({
                     scene: 'tron.yaml',
-                    attribution: '| &copy; OSM contributors | <a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | <a href="https://twitter.com/sensescape" target="_blank">@sensescape</a> | <a href="https://twitter.com/patriciogv" target="_blank">@patriciogv</a>'
+                    attribution: '| <a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | &copy; <a href="http://www.openstreetmap.org/">OpenStreetMap</a> contributors'
                 });
 
     window.layer = layer;
