@@ -77,7 +77,7 @@ layers:
                     color: [0.000,0.496,0.930]
 
         boundaries:
-            filter: { boundary: yes, kind: ocean }
+            filter: { boundary: true, kind: ocean }
             # don't animate early, save the fan, save the planet!
             early:
                 filter: { $zoom: { max: 16 } }
@@ -101,9 +101,9 @@ layers:
         boundaries-not_ocean:
             filter:
                 all:
-                    - boundary: yes
+                    - boundary: true
                     - not: { kind: [ocean, playa] }
-                    - $zoom: { min: 8}
+                    - $zoom: { min: 8 }
                 # WARNING: any area filters here must match the area filters in the lakes layer
                 any:
                     # limit show smaller landuse areas to higher zooms
