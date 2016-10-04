@@ -13,6 +13,17 @@ import:
     - https://tangrams.github.io/blocks/geometry/normal.yaml
 
 styles:
+    polygons-diagonal-opaque-stripes:
+        base: polygons
+        mix: [polygons-diagonal-stripes]
+        shaders:
+            defines:
+                BACKGROUND_COLOR: vec3(0.)
+            blocks:
+                filter: |
+                    color.rgb = mix(BACKGROUND_COLOR,color.rgb, color.a);
+                    color.a = 1.;
+                    
     polygons-building-wall:
         base: polygons
         mix: [functions-zoom, geometry-normal,generative-random, tron-palette, geometry-dynamic-height]
