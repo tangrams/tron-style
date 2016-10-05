@@ -26,6 +26,7 @@ To use it you will:
 
 ```bash
 git clone https://github.com/tangrams/tron.git
+cd tron
 ```
 
 - Load the [Tangram Blocks](http://tangrams.github.io/blocks/) submodule:
