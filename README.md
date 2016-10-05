@@ -1,31 +1,72 @@
 ## TRON 2.0
 
-## Try new things
+Wellcome to TRON2.0 by [Geraldine Sarmiento](https://twitter.com/sensescape) and [Patricio Gonzalez Vivo](https://twitter.com/patriciogv). For this [Tangram (JS and ES)](https://mapzen.com/products/tangram/) style we were thinking on: scale transitions, bla bla bla....
 
-If you want to try something new with Tron 2.0 style:
+Beside the design challenges we want to make the source more approachable by dividing the scene file in multiple smaller pieces. So instead of having a single monolitical `.yaml` scene file you will find smaller modules that focus on a particular aspect of the map scene.
+
+## How it works? 
+
+The main elements are:
+
+- [`tron.yaml`](tron.yaml): is the main `.yaml` file that mix and hold all together. There you will find the definition of the `sources`, `cameras` and `scene:background:color`, together with the imports that glow and conects the `layers`, `styles` and `components` resources.
+
+- [`layers/` folder](layers/): [layers on Tangram](https://mapzen.com/documentation/tangram/Filters-Overview/) are the set of rules that filter the data (comming from the `sources`) into different **style rules**. Tell how each component on the map should be treat. If it's `text`, `points`, `lines` or `polygons`. What's the default `size` and `color`, etc. In this folder you will find different `.yaml` scene files that carefully make sense of the data and display it in a cartographical intuitive way. This meticulus work was made by [Geraldine Sarmiento](https://twitter.com/sensescape) and [Nathaniel V. KELSO](https://twitter.com/kelsosCorner). At the end of each one of this layer-files you will find also a `styles` secction where the **custom shaders** are defined and crafted by [me (Patricio Gonzalez Vivo).](https://twitter.com/patriciogv) Shaders are not a simple thing, but at [Mapzen](https://mapzen.com) we are trying to make them more aproachable. Tangram `styles` can be mix, so for this map style we try to use that property to reduce the complexity and size of the shader by reusing them as much as possible.
+
+- [`styles/` folder](styles): contain all the `styles` that are shared across layers. Is defenetly a more **abstract** layer. This folder sorts the `styles` by their `base` geoemtry (`points`, `lines` or `polygons`). Also for those `styles` common to all the other geometries can be found in `common.yaml`. You will note that most [shader styles](https://mapzen.com/documentation/tangram/Shaders-Overview/) "extends" from [blocks](http://tangrams.github.io/blocks/). As part of the efford on making GLSL Shaders more aproachable in Tangram. I had start a tool box library of shaders snippets that can be mix together, call [Tangram Blocks](http://tangrams.github.io/blocks/).
+
+- [`components/` folder](components): This folders holds some of the global resources use in the scene, like [`fonts`](components/fonts.yaml) and [`images/`](components/images). Also there you can find the [`globals.yaml`](components/globals.yaml). This particular file is very interesting because holds `globals` variables and JS functions that control the map. From it is possible to customize the map, like **turning on or off the animations** or **changing the language**.
+
+## Bundling
+
+Having the scene file distributed accross different smaller modules creates more network calls. To solve this you will find in this repository a `bundle.py` script that construct a ZIP file (`tron.zip`) that will hold all the files needed.
+
+To use it you will:
+
+- first to clone locally the repository:
+
+```bash
+git clone https://github.com/tangrams/tron.git
+```
+
+- Load the [Tangram Blocks](http://tangrams.github.io/blocks/) submodule:
+
+```bash
+git submodule update --init --recursive
+```
+
+- Install some Python modules:
+
+```bash
+pip install yaml
+```
+
+- Then finally run the script
+
+```bash
+./bundle.py
+```
+
+## Edit
+
+One of the nice things of running a local instance of a [Tangram](https://mapzen.com/products/tangram/) scene is the hability to modify it and learn from it! We defenetly encourage to do it. You can host the style by doing:
+
+```bash
+python -m SimpleHTTPServer 8000
+```
+
+Althought we also have been working on a way to edit [Tangram](https://mapzen.com/products/tangram/) scene files and see it change inmediatly. The project is call [TangramPlay](https://mapzen.com/tangram/play/) and can be found [here](https://mapzen.com/tangram/play/).
+
+A quick way to start playing with Tron2.0 is by importing the scene file and inmediatly start editing on top of the scene file. For that:
 
 1. [Click here to open Tron in TangramPlay](https://mapzen.com/tangram/play/?scene=https%3A%2F%2Fgist.githubusercontent.com%2Fanonymous%2F1ead441ee35e5a18741437dea7916f33%2Fraw%2F547146cf5a975a8b4e1eba84eba77df9b8a625b5%2Fscene.yaml#8/40.574/-74.051)
 
-2. Then, copy the content of the `.yaml` file you want to edit with `Cmd-a`, copy it with `Cmd-c` and then paste it to TangramPlay with `Cmd-v`.
+2. Once you finish you can download it or copy it back to your local file, but **remember** to take out the first line `import`.
 
-3. Edit.
+## About the process
 
-4. Once you finish you can download it or copy it back to your local file, but **remember** to take out the first line `import`.
-
-### Structure
-
-- [`tron.yaml`](scene/tron.yaml): Mostly a HUB that mix the `sources`, `layers` and the common `styles` together with some `cameras` and `lights` definitions. Here we put high level settings.
- - [`layers/`](scene/layers): The following rules apply
-    1. Each layer have individual `.yaml` file (`water.yaml`,`earth.yaml`, etc) where each layer is define and fitered. 
-    2. Unless the filtered layer introduce or use a custom layer that diferentiates from the parent style, and if that style extend from the `polygons` or `lines` base style will use a **custom style that shares the same name**, each style is initialited in the same `.yaml` file. Specifing the `base` style (`polygon` or `lines`) and, in case it needs an array of styles to `mix`. For namig the style if it's posible, keep track of the hierarchical logical dependencies: `[layer]-[filtered_element_layer]-[filtered_subelement_layer]`. **Note:** as a convention we *separate names* with a `-` (dash), while we reserve the `_` to *separate words* of a name like: `water-swimming_pool`. 
-    3. In the case to styles respond to the same filter but differ in the base style 3 extra letters are attach to the end of the name pointing if it is `-ply` for `polygons` or `-lns` for `lines`. So a same filter layer can point to two different drawing styles. For example: `building-ply` and `building-lns`.  
- - ['styles/'](scene/styles): Things on this folder as the **blocks** of trons. Styles that can be reuse are defined here and mixed on the `layers/[layer_name].yaml` files. This abstract styles, mean to be reuse, are named acording to if they are apply to `lines` or `polygons` followed by the name of the styling. For ex: `lines-glow` or `polygons-dots`. If the defined styles can be apply to both `lines` or `polygons` they should be under `commons.yaml` with out any word at the begining.  
-
-### Resources
+Here are some resource we share and sketch  [Geraldine Sarmiento](https://twitter.com/sensescape) and [I](https://twitter.com/patriciogv) during the development of TRON2.0. We hope you enjoy it.
 
 - [Inspiration Pintboard](https://www.pinterest.com/patriciogonzv/tron-20/)
-
-#### Some shaders prototypes that compose this map:
 
 [![](http://thebookofshaders.com/log/160726003844.png) Generative Tron Palette](http://player.thebookofshaders.com/?log=160726003844)
 [![](http://thebookofshaders.com/log/160726010850.png) Glow lines ](http://player.thebookofshaders.com/?log=160726010850)
@@ -45,9 +86,3 @@ If you want to try something new with Tron 2.0 style:
 [![](http://thebookofshaders.com/log/160805194757.png) Animated Icons](http://player.thebookofshaders.com/?log=160805194757)
 [![](http://thebookofshaders.com/log/160818140257.png) Animating Icons w POIs SDF's](http://player.thebookofshaders.com/?log=160818140257)
 [![](http://thebookofshaders.com/log/160817211857.png) Animating Icons w POIs SDF's](http://player.thebookofshaders.com/?log=160817211857)
-
-### Authors
-
-- [Geraldine Sarmiento](https://twitter.com/sensescape)
-
-- [Patricio Gonzalez Vivo](https://twitter.com/patriciogv)
