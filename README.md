@@ -38,13 +38,13 @@ git submodule update --init --recursive
 - Install some Python modules:
 
 ```bash
-pip install yaml
+pip install pyyaml
 ```
 
 - Then finally run the script
 
 ```bash
-./bundle.py
+python <(curl -s https://raw.githubusercontent.com/tangrams/bundler/master/bundler.py) 
 ```
 
 ## Edit
