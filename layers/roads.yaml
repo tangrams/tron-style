@@ -6,6 +6,7 @@ layers:
             lines:
                 width: 1px
                 order: global.order
+                interactive: true
                 outline:
                     order: 352
         early:
@@ -35,6 +36,8 @@ layers:
                     # outline:
                     #     color: [0.541,0.969,0.949]
                     #     width: [[5,0px],[6,0px]]
+
+            # TODO: bug at zoom 7 prevents most major_road features from drawing?!
             major_road:
                 filter: { kind: major_road }
                 draw:
@@ -43,6 +46,7 @@ layers:
                         width: [[5,0.5px],[6,0.75px]]
                         # outline:
                         #     width: 1px
+
             minor_road:
                 filter: { kind: minor_road }
                 draw:
