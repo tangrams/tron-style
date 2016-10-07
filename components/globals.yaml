@@ -191,4 +191,5 @@ global:
     text_visible_addresses: true
     text_visible_pois_landuse: true
     icon_visible_pois_landuse: true
+    text_visible_landuse_generic: true
     text_visible_island: true
