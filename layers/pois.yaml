@@ -250,7 +250,7 @@ layers:
                     all:
                         - area: true
                         - $geometry: point
-                        - kind: [park, national_park, "park or protected land", conservation, protected_area, nature_reserve, forest, grass]
+                        - kind: [park, national_park, protected_area, nature_reserve, forest, grass]
                     any:
                         # show labels for smaller landuse areas at higher zooms
                         - { $zoom: [5],    area: { min: 10000000000 } }
@@ -445,12 +445,17 @@ layers:
                             sprite: airport-xl
 
             text_colors:
+                landuse-labels-green-areas-not-national-park:
+                    filter: { kind: [park, national_park, protected_area, nature_reserve, forest, grass] }
+                    not-national-park:
+                        filter: function() { return feature.name && !((feature.name.indexOf("National Park") > -1) || feature.name.indexOf("National Monument") > -1); }
+                        draw: { icons: { text: { font: { fill: [0.356,0.990,0.789] } } } }
                 restaurant:
                     filter: { kind: [restaurant,cafe,fast_food,bakery,pub,bar,ice_cream,wine,biergarten,brewery] }
                     draw: { icons: { text: { font: { fill: [0.212,1.000,0.882] } } } }
                     # draw: { icons: { text: { font: { fill: [0.174,0.830,0.732] } } } }
                 hotel:
-                    filter: { kind: [hotel,hostel,motel,company,office,substation,plant,generator,wastewater_plant,bench,slipway,insurance,archaeological_site] }
+                    filter: { kind: [hotel,hostel,motel,company,office,substation,plant,generator,wastewater_plant,bench,slipway,insurance,archaeological_site,water_works] }
                     draw: { icons: { text: { font: { fill: [0.900,0.750,1.000] } } } }
                 pharmacy:
                     filter: { kind: pharmacy }
@@ -482,7 +487,7 @@ layers:
                     filter: { kind: [parking] }
                     draw: { icons: { text: { font: { fill: [1.000,0.714,0.976] } } } }
                 stadium:
-                    filter: { kind: [stadium,fitness,golf_course,winter_sports,recreation_ground] }
+                    filter: { kind: [stadium,fitness,golf_course,winter_sports,recreation_ground,pitch] }
                     draw: { icons: { text: { font: { fill: [1.000,0.766,0.460] } } } }
                 memorial:
                     filter: { kind: [memorial,monument] }
