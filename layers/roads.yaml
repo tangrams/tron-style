@@ -537,6 +537,7 @@ layers:
             filter: { kind: path, kind_detail: pier }
             draw:
                 lines:
+                    order: global.order
                     style: pier-overlay
                     # color: [0.212,0.302,0.427]
                     color: [0.267,0.498,0.843,0.5]
@@ -549,6 +550,7 @@ layers:
         #     filter: { kind: ferry }
         #     draw:
         #         lines:
+        #             style: ferry-overlay
         #             color: [0.259,0.878,0.980,0.75]
         #             width: [[12, 0.5px], [14, 1.0px], [15, 1.0px], [16, 1.25px]]
         #             outline:
@@ -711,7 +713,7 @@ styles:
 
     pier-overlay:
         base: lines
-        blend: overlay
+        #blend: overlay
 
     ferry-overlay:
         base: lines
