@@ -6,6 +6,51 @@ layers:
                 order: global.order
                 visible: false
 
+        landuse-labels:
+            filter:
+                all:
+                    - label_placement: true
+                    - name: true
+            draw:
+                text:
+                    text_source: global.ux_language_text_source
+                    interactive: true
+                    move_into_tile: true
+                    priority: 100
+                    visible: false #global.text_visible_landuse_generic
+                    font:
+                        fill: '#aaa'
+                        family: Cairo
+                        style: italic
+                        size: 11px
+                        #stroke: { color: global.text_stroke_address, width: 1 }
+
+            pier:
+                filter: { kind: [pier] }
+                draw:
+                    icons:
+                        size: 18px
+                        interactive: true
+                        sprite: function() { return feature.kind; }
+                        visible: global.icon_visible_pois_landuse
+                        priority: 65
+                        #buffer: 100px
+                        text:
+                            text_source: global.ux_language_text_source
+                            interactive: true
+                            move_into_tile: true
+                            priority: 100
+                            visible: global.text_visible_landuse_generic
+                            font:
+                                #fill: '#aaa'
+                                fill: [0.345,0.953,0.769]
+                                family: Cairo
+                                style: italic
+                                size: 11px
+                                #stroke: { color: global.text_stroke_address, width: 1 }
+
+
+
         stuff:
 #        tier1:
 #            filter:
@@ -70,22 +115,27 @@ layers:
                 filter:
                     all:
                         - $zoom: { min: 4 }
-                        - kind: [conservation, protected_area, nature_reserve, national_park]
+                        - kind: [protected_area, nature_reserve, national_park]
                         - not: { protect_class: ['2','3','5'] }
-
                 draw:
                     polygons:
                         style: landuse
                         color: [0.090,0.409,1.000]
                         visible: true
 
-                national_forest_level_6:
-                    filter: { protect_class: ['6'] }
-                    draw:
-                        polygons:
-                            style: landuse
-                            color: [0.149,0.353,0.714]
-                            visible: true
+            national_forest_level_6:
+                filter:
+                    all:
+                        - kind: forest
+                    any:
+                        - protect_class: ['6']
+                        - operator: ['United States Forest Service']
+                draw:
+                    polygons:
+                        style: landuse
+                        color: [0.149,0.353,0.714]
+                        visible: true
+
             farm:
                 filter:
                     kind: [farm, farmland]
@@ -96,17 +146,12 @@ layers:
                         color: [0.024,0.189,0.238]
                         visible: true
             forest:
-                filter: { kind: [forest, natural_forest, wood, natural_wood, natural_park], $zoom: { min: 6 } }
-
-                landuse-forest:
-                    filter:
-                        not: { operator: ["United States Forest Service"] }
-                        $zoom: { min: 10 }
-                    draw:
-                        polygons:
-                            style: landuse
-                            color: [0.238,0.529,0.820]
-                            visible: true
+                filter: { kind: [forest, natural_forest, wood, natural_wood, natural_park], $zoom: { min: 10 }, not: { operator: "United States Forest Service" } }
+                draw:
+                    polygons:
+                        style: landuse
+                        color: [0.238,0.529,0.820]
+                        visible: true
 
             parks_and_national_forests_not_national_park:
                 filter:
