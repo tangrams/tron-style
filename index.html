@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
+
     <title>Tron 2.0</title>
 
     <!-- 3rd party libraries -->
@@ -96,7 +96,7 @@
         .title {
             text-align: center;
             font-weight: bold;
-            color: white; 
+            color: white;
             margin-left: 6px;
         }
 
@@ -216,7 +216,7 @@
 
         var layer = Tangram.leafletLayer({
             scene: 'tron.yaml',
-            attribution: '| &copy; OSM contributors | <a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | <a href="https://twitter.com/sensescape" target="_blank">@sensescape</a> | <a href="https://twitter.com/patriciogv" target="_blank">@patriciogv</a>'
+            attribution: '| <a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | &copy; OSM contributors'
         });
 
         var scene = layer.scene;
@@ -329,7 +329,7 @@
 
         function mapzenTileURL() {
             // find minimum max_zoom of all sources
-            var max_zoom = 21;
+            var max_zoom = 16;
             for (source in scene.config.sources) {
                 if (scene.config.sources.hasOwnProperty(source)) {
                     if (scene.config.sources[source].max_zoom != "undefined") {
@@ -340,7 +340,7 @@
             var zoom = max_zoom < map.getZoom() ? max_zoom : Math.floor(map.getZoom());
             var tileCoords = { x : long2tile(latlng.lng,zoom), y: lat2tile(latlng.lat,zoom), z: zoom };
 
-            var url = 'http://vector.mapzen.com/osm/all/' + zoom + '/' + tileCoords.x  + '/' + tileCoords.y + '.topojson?api_key=vector-tiles-HqUVidw';
+            var url = 'http://vector.mapzen.com/osm/all/' + zoom + '/' + tileCoords.x  + '/' + tileCoords.y + '.topojson';
             return url;
         }
 
@@ -442,6 +442,28 @@
             };
             gui.add(gui, 'save_screenshot');
 
+            // Take a video capture and save to file
+            if (typeof window.MediaRecorder == 'function') {
+                gui.video = function () {
+                    if (!gui.video_capture) {
+                        if (scene.startVideoCapture()) {
+                            gui.video_capture = true;
+                            gui.video_button.name('stop video');
+                        }
+                    }
+                    else {
+                        return scene.stopVideoCapture().then(function(video) {
+                            gui.video_capture = false;
+                            gui.video_button.name('capture video');
+                            saveAs(video.blob, 'tangram-video-' + (+new Date()) + '.webm');
+                        });
+                    }
+                };
+                gui.video_button = gui.add(gui, 'video');
+                gui.video_button.name('capture video');
+                gui.video_capture = false;
+            }
+
             // Link to edit in OSM - hold 'e' and click
             map.getContainer().addEventListener('dblclick', function (event) {
                 //console.log( 'dblclick was had' );
@@ -462,6 +484,8 @@
                     if( timer ) { clearTimeout( timer ); timer = null; }
                     timer = setTimeout( function() {
                         picking = true;
+                        latlng = selection.leaflet_event.latlng;
+
                         if( key.cmd || key.alt ) {
                             window.open( mapzenTileURL(), '_blank' );
                         } else {
