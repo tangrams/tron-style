@@ -348,7 +348,7 @@ textures:
 
 layers:
     pois_and_landuse_labels:
-        data: { source: mapzen, layer: [pois,landuse] }
+        data: { source: mapzen, layer: [pois] }
         filter:
             all:
                 - not: { kind: [building,address,farm,tree,apron,residential,commercial,industrial] }
@@ -423,7 +423,7 @@ layers:
                 filter: { kind: [grass, pitch], $geometry: point, area: true, $zoom: { min: 17 } }
                 draw:
                     icons:
-                        sprite: function() { return feature.sport; }
+                        sprite: function() { return feature.kind_detail; }
                         sprite_default: generic-sport
                         visible: global.icon_visible_pois_landuse
                         priority: 69
@@ -431,7 +431,7 @@ layers:
                             font:
                                 fill: [1.000,0.766,0.460]
                 baseball:
-                        filter: { sport: baseball }
+                        filter: { kind_detail: baseball }
                         draw:
                             icons:
                                 sprite: baseball-field
@@ -439,7 +439,7 @@ layers:
                                     font:
                                         fill: [1.000,0.766,0.460]
                 basketball:
-                    filter: { sport: basketball }
+                    filter: { kind_detail: basketball }
                     draw:
                         icons:
                             sprite: basketball-court
@@ -447,7 +447,7 @@ layers:
                                 font:
                                     fill: [1.000,0.766,0.460]
                 football:
-                    filter: { sport: football }
+                    filter: { kind_detail: football }
                     draw:
                         icons:
                             sprite: football-stadium
@@ -455,7 +455,7 @@ layers:
                                 font:
                                     fill: [1.000,0.766,0.460]
                 hockey:
-                    filter: { sport: hockey-field }
+                    filter: { kind_detail: hockey-field }
                     draw:
                         icons:
                             sprite: hockey-field
@@ -463,7 +463,7 @@ layers:
                                 font:
                                     fill: [1.000,0.766,0.460]
                 soccer:
-                    filter: { sport: soccer }
+                    filter: { kind_detail: soccer }
                     draw:
                         icons:
                             sprite: soccer-field
@@ -471,7 +471,7 @@ layers:
                                 font:
                                     fill: [1.000,0.766,0.460]
                 tennis:
-                    filter: { sport: tennis }
+                    filter: { kind_detail: tennis }
                     draw:
                         icons:
                             sprite: tennis
@@ -779,7 +779,7 @@ layers:
                                     size: 14px
                 early2:
                     filter: { $zoom: { min: 15, max: 18 } }
-                    draw: 
+                    draw:
                         icons:
                             text:
                                 font:
@@ -958,7 +958,7 @@ layers:
                     draw:
                         icons:
                             visible: false
-                            text: 
+                            text:
                                 visible: false
                 early2:
                     filter: { $zoom: { max: 14 } }
@@ -1099,7 +1099,7 @@ layers:
                         priority: 42
                         text:
                             visible: global.text_visible_pois_landuse
-                            font: 
+                            font:
                                 fill: [0.965,0.929,0.341]
                                 size: 10px
                 high-priority-early:
@@ -1175,7 +1175,7 @@ layers:
                             - { $zoom: [14],    area: { max: 4000 } }
                             - { $zoom: [15],    area: { max: 3000 } }
                     draw:
-                        icons: 
+                        icons:
                             visible: false
                             text:
                                 visible: false
@@ -1190,7 +1190,7 @@ layers:
                             - { $zoom: [14],    area: { min: 4000 } }
                             - { $zoom: [15],    area: { min: 3000 } }
                     draw:
-                        icons: 
+                        icons:
                             visible: global.icon_visible_pois_landuse
                             text:
                                 visible: global.text_visible_pois_landuse
@@ -1233,7 +1233,7 @@ layers:
                             visible: global.text_visible_pois_landuse
                             font:
                                 # default area text color
-                                # (versus specific area text colors above, 
+                                # (versus specific area text colors above,
                                 #  and no-area text colors in style's root draw section)
                                 fill: [0.149,0.871,0.992]
                                 size: 10px
@@ -1399,6 +1399,18 @@ layers:
                         icons:
                             visible: false
                             text:  { visible: false }
+                garden-no-area-early2:
+                    filter: { kind: [garden, allotments], $zoom: { max: 16 }, area: false }
+                    draw:
+                        icons:
+                            visible: false
+                garden-no-area-early:
+                    filter: { kind: [garden, allotments], $zoom: [16], area: false }
+                    draw:
+                        icons:
+                            priority: 45
+                            size: 14px
+                            text:  { font: { size: 10px, style: italic } }
                 post-office-early:
                     filter: { kind: [post_office], $zoom: { max: 14 } }
                     draw:
@@ -1494,6 +1506,19 @@ layers:
                         icons:
                             text:
                                 visible: false
+                garden-area-early:
+                   filter:
+                       all:
+                           - kind: [garden, allotments]
+                       any:
+                           # limit show smaller landuse areas to higher zooms
+                           - { $zoom: [12], area: { max: 500000 } }
+                           - { $zoom: [13], area: { max: 100000 } }
+                           - { $zoom: [14], area: { max: 10000 } }
+                           - { $zoom: [15], area: { max: 5000 } }
+                   draw:
+                       icons:
+                           visible: false
                 sports-pitch:
                     filter: { kind: [grass, pitch], $zoom: { min: 17 } }
                     draw:
@@ -1519,7 +1544,6 @@ layers:
                     tennis:
                         filter: { sport: tennis }
                         draw: { icons: { sprite: tennis } }
-
                 # minor-z17-early:
                 #     filter:
                 #         kind: [accountant, administrative, advertising_agency, architect, association, atm, bakery, bed_and_breakfast, bicycle, bicycle_parking, bicycle_rental_station, books, butcher, car, car_repair, chalet, clothes, company, computer, consulting, convenience, doityourself, drinking_water, dry_cleaning, educational_institution, emergency_phone, employment_agency, estate_agent, fashion, financial, florist, foundation, gift, government, greengrocer, guest_house, hairdresser, hostel, hotel, insurance, it, jewelry, lawyer, mast, memorial, mobile_phone, motel, newspaper, ngo, notary, optician, parking, pet, physician, playground, political_party, post_box, religion, research, subway_entrance, tax_advisor, telecommunication, telephone, theatre, therapist, toilets, traffic_signals, travel_agent, water_tower, yes]
