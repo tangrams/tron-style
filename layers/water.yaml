@@ -149,7 +149,7 @@ layers:
 styles:
     water:
         base: polygons
-        mix: [functions-zoom, polygons-diagonal-stripes]
+        mix: [functions-zoom, polygons-diagonal-opaque-stripes]
         shaders:
             defines:
                 ZOOM_START: 3.

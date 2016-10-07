@@ -1,18 +1,28 @@
 import:
     # Blocks
-    - https://tangrams.github.io/blocks/elevation/stripes.yaml
-    - https://tangrams.github.io/blocks/elevation/dash.yaml
-    - https://tangrams.github.io/blocks/polygons/dots.yaml
-    # - https://tangrams.github.io/blocks/polygons/shimmering.yaml
-    - https://tangrams.github.io/blocks/tiling/simplex.yaml
-    - https://tangrams.github.io/blocks/generative/noise.yaml
-    - https://tangrams.github.io/blocks/polygons/stripes.yaml
-    - https://tangrams.github.io/blocks/polygons/diagonal-stripes.yaml
-    - https://tangrams.github.io/blocks/polygons/diagonal-grid.yaml
+    - ../blocks/elevation/stripes.yaml
+    - ../blocks/elevation/dash.yaml
+    - ../blocks/polygons/dots.yaml
+    - ../blocks/tiling/simplex.yaml
+    - ../blocks/generative/noise.yaml
+    - ../blocks/polygons/stripes.yaml
+    - ../blocks/polygons/diagonal-stripes.yaml
+    - ../blocks/polygons/diagonal-grid.yaml
     # Utils
-    - https://tangrams.github.io/blocks/geometry/normal.yaml
+    - ../blocks/geometry/normal.yaml
 
 styles:
+    polygons-diagonal-opaque-stripes:
+        base: polygons
+        mix: [polygons-diagonal-stripes]
+        shaders:
+            defines:
+                BACKGROUND_COLOR: vec3(0.)
+            blocks:
+                filter: |
+                    color.rgb = mix(BACKGROUND_COLOR,color.rgb, color.a);
+                    color.a = 1.;
+                    
     polygons-building-wall:
         base: polygons
         mix: [functions-zoom, geometry-normal,generative-random, tron-palette, geometry-dynamic-height]
