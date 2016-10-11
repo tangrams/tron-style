@@ -138,6 +138,7 @@ layers:
                             visible: true
                             color: [0.059,0.000,0.953]
                         highway-casing:
+                            color: [0.073,0.435,0.908]
                             visible: true
                     highway-tunnel-link:
                         filter:
@@ -158,6 +159,7 @@ layers:
                     highway-casing:
                         visible: true
                         order: global.order_sub_2
+                        color: [0.541,0.969,0.949]
                         width: [[8,0px],[16,10px],[17,18px],[18,34px],[19,45px]]
                     # highway-casing1:
                     #     style: lines
@@ -654,10 +656,12 @@ styles:
                 ZOOM_END: 19.
 
                 BACKGROUND_COLOR: vec3(0.086,0.135,0.260)
-                CAST_A_COLOR: vec3(0.541,0.969,0.949)
+                # CAST_A_COLOR: vec3(0.541,0.969,0.949)
+                CAST_A_COLOR: v_color.rgb
                 CAST_A_WIDTH: 0.03
                 CAST_A_DIST: mix(0.47,0.34,zoom())
-                CAST_B_COLOR: vec3(0.800,1.000,0.987)
+                # CAST_B_COLOR: vec3(0.800,1.000,0.987)
+                CAST_B_COLOR: v_color.rgb+vec3(0.259,0.031,0.038)
                 CAST_B_WIDTH: 0.07
                 CAST_B_DIST: 0.47   
             blocks:
