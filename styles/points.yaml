@@ -2,6 +2,7 @@ styles:
     icons:
         base: points
         texture: pois
+        blend_order: 1
 
 textures:
     pois:
