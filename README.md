@@ -1,6 +1,8 @@
 ## TRON 2.0
 
-Welcome to TRON2.0 by [Geraldine Sarmiento](https://twitter.com/sensescape) and [Patricio Gonzalez Vivo](https://twitter.com/patriciogv). Rebuilt from the ground up to take advantage of the latest features of [Tangram (JS and ES)](https://mapzen.com/products/tangram/) graphics engine and conventions. TRON is an exploration of scale transformations in the visual language of TRON with the use of Tangram [blocks](http://tangrams.github.io/blocks/). On this new version, visual forms and elements transform per zoom, revealing new cartographic details and a new experience of scale. 
+Welcome to TRON 2.0 by [Geraldine Sarmiento](https://twitter.com/sensescape) and [Patricio Gonzalez Vivo](https://twitter.com/patriciogv). Rebuilt from the ground up to take advantage of the latest features of [Tangram (JS and ES)](https://mapzen.com/products/tangram/) graphics engine and conventions. 
+
+TRON is an exploration of scale transformations in the visual language of TRON with the use of Tangram [blocks](http://tangrams.github.io/blocks/). On this new version, visual forms and elements transform per zoom, revealing new cartographic details and a new experience of scale. 
 
 Beside the design challenges we want to make the source more approachable by dividing the scene file in multiple smaller pieces. So instead of having a single monolitical `.yaml` scene file you will find smaller modules that focus on a particular aspect of the map scene.
 
