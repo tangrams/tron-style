@@ -29,12 +29,12 @@ import:
 sources:
     mapzen:
         type: TopoJSON
-        url: https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson?api_key=vector-tiles-uP4vdQc
+        url: https://tile.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson?api_key=mapzen-n22UFkv
         rasters: [normals-elevation]
         max_zoom: 16
     normals-elevation:
         type: Raster
-        url: https://s3.amazonaws.com/elevation-tiles-prod/normal/{z}/{x}/{y}.png
+        url: https://tile.mapzen.com/mapzen/terrain/v1/normal/{z}/{x}/{y}.png?api_key=mapzen-n22UFkv
         max_zoom: 15
 
     # Only enable this for local debug, should not be enabled for prod (app inserts these at runtime)
@@ -90,7 +90,7 @@ sources:
     # # Default polygon styling (SDK)
     # mz_default_polygon:
     #    type: GeoJSON
-    #    url: https://gist.githubusercontent.com/anonymous/88235c795bb44b8c45150bdd5561f947/raw/71d4fab97b6513833bf1a589167119e6169ef86d/map.geojson 
+    #    url: https://gist.githubusercontent.com/anonymous/88235c795bb44b8c45150bdd5561f947/raw/71d4fab97b6513833bf1a589167119e6169ef86d/map.geojson
 
 # Camera
 cameras:

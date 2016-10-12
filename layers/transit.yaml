@@ -48,12 +48,12 @@ layers:
             filter: { kind: platform }
             draw:
                 lines_transparent:
-                    order: function() { if($zoom<17) { return feature.sort_key; } else { return 435; } }
+                    order: function() { if($zoom<17) { return feature.sort_rank; } else { return 435; } }
                     color: [0.278,0.412,1.000,0.20]
                     width: 5m
                     visible: true
                 polygons_transparent:
-                    order: function() { if($zoom<17) { return feature.sort_key; } else { return 435; } }
+                    order: function() { if($zoom<17) { return feature.sort_rank; } else { return 435; } }
             polygon_geom:
                 filter: { $geometry: polygon }
                 draw:

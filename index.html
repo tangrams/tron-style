@@ -340,7 +340,7 @@
             var zoom = max_zoom < map.getZoom() ? max_zoom : Math.floor(map.getZoom());
             var tileCoords = { x : long2tile(latlng.lng,zoom), y: lat2tile(latlng.lat,zoom), z: zoom };
 
-            var url = 'http://vector.mapzen.com/osm/all/' + zoom + '/' + tileCoords.x  + '/' + tileCoords.y + '.topojson';
+            var url = 'http://tile.mapzen.com/mapzen/vector/v1/all/' + zoom + '/' + tileCoords.x  + '/' + tileCoords.y + '.topojson';
             return url;
         }
 
@@ -403,13 +403,15 @@
                 scene.config.global.text_visible_pois_landuse = _val;
                 scene.config.global.icon_visible_pois_landuse = _val;
                 scene.config.global.text_visible_island = _val;
-                if( _val ) {
-                    scene.config.global.building_style = 'buildings_with_labels';
-                    scene.config.global.building_lines_with_or_without_labels = '[0.512,0.594,0.840]';
-                } else {
-                    scene.config.global.building_style = 'buildings_no_labels';
-                    scene.config.global.building_lines_with_or_without_labels = '[0.649,0.785,0.801]';
-                }
+                // Oct. 7, 2016
+                //need to rework this, upon switching back to labels, buildings stay light and labels dont read 
+                // if( _val ) {
+                //     scene.config.global.building_style = 'buildings_with_labels';
+                //     scene.config.global.building_lines_with_or_without_labels = '[0.512,0.594,0.840]';
+                // } else {
+                //     scene.config.global.building_style = 'buildings_no_labels';
+                //     scene.config.global.building_lines_with_or_without_labels = '[0.567,0.658,0.930]';
+                // }
                 scene.updateConfig();
                 //window.location.search = 'language=' + value;
             });
@@ -579,7 +581,7 @@
                 layer.addTo(map);
             }
         });
-            
+
         </script>
 
         <!-- Mapzen map UI -->
