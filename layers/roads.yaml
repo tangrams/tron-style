@@ -97,7 +97,7 @@ layers:
                     filter: { is_link: true } # on- and off-ramps, etc
                     draw:
                         lines:
-                            order: global.order_sub_1
+                            order: global.order_add_1
                             width: [[8,0px],[9,0px],[11,0.25px],[12,0.25px],[13,1px],[14,1.5px],[15,2px],[17,3px],[18,9px],[19,12px],[20,20px]]
                             outline:
                                 color: [[8,[0.481,0.842,0.890]],[16,[0.481,0.842,0.890]],[18,[0.035,0.976,1.000]]]
