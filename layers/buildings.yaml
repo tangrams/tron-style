@@ -39,7 +39,6 @@ layers:
                 polygons:
                     color: [0.212,0.302,0.431]
                     visible: true
-                    interactive: true
                 lines:
                     color: [0.392,0.627,0.651]
                     width: [[14,0.55px],[16,0.5px]]
