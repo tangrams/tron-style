@@ -215,7 +215,7 @@
         map.setView(map_start_location.slice(0, 2), map_start_location[2]);
 
         var layer = Tangram.leafletLayer({
-            scene: 'tron.yaml',
+            scene: 'tron-style.yaml',
             attribution: '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a>, &copy; OSM contributors'
         });
 
@@ -404,7 +404,7 @@
                 scene.config.global.icon_visible_pois_landuse = _val;
                 scene.config.global.text_visible_island = _val;
                 // Oct. 7, 2016
-                //need to rework this, upon switching back to labels, buildings stay light and labels dont read 
+                //need to rework this, upon switching back to labels, buildings stay light and labels dont read
                 // if( _val ) {
                 //     scene.config.global.building_style = 'buildings_with_labels';
                 //     scene.config.global.building_lines_with_or_without_labels = '[0.512,0.594,0.840]';
