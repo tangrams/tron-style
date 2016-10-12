@@ -10,7 +10,7 @@ Beside the design challenges we want to make the source more approachable by div
 
 The main elements are:
 
-- [`tron.yaml`](tron.yaml): is the main `.yaml` file that mix and hold all together. There you will find the definition of the `sources`, `cameras` and `scene:background:color`, together with the imports that glow and conects the `layers`, `styles` and `components` resources.
+- [`tron-style.yaml`](tron-style.yaml): is the main `.yaml` file that mix and hold all together. There you will find the definition of the `sources`, `cameras` and `scene:background:color`, together with the imports that glow and conects the `layers`, `styles` and `components` resources.
 
 - [`layers/` folder](layers/): [layers on Tangram](https://mapzen.com/documentation/tangram/Filters-Overview/) are the set of rules that filter the data (comming from the `sources`) into different **style rules**. Tell how each component on the map should be treat. If it's `text`, `points`, `lines` or `polygons`. What's the default `size` and `color`, etc. In this folder you will find different `.yaml` scene files that carefully make sense of the data and display it in a cartographical intuitive way. This meticulus work was made by [Geraldine Sarmiento](https://twitter.com/sensescape) and [Nathaniel V. KELSO](https://twitter.com/kelsosCorner). At the end of each one of this layer-files you will find also a `styles` secction where the **custom shaders** are defined and crafted by [me (Patricio Gonzalez Vivo).](https://twitter.com/patriciogv) Shaders are not a simple thing, but at [Mapzen](https://mapzen.com) we are trying to make them more aproachable. Tangram `styles` can be mix, so for this map style we try to use that property to reduce the complexity and size of the shader by reusing them as much as possible.
 
@@ -27,7 +27,7 @@ To use it you will:
 - first to clone locally the repository:
 
 ```bash
-git clone https://github.com/tangrams/tron.git
+git clone https://github.com/tangrams/tron-style.git
 cd tron
 ```
 
@@ -61,7 +61,7 @@ Althought we also have been working on a way to edit [Tangram](https://mapzen.co
 
 A quick way to start playing with Tron2.0 is by importing the scene file and inmediatly start editing on top of the scene file. For that:
 
-1. [Click here to open Tron in TangramPlay](https://mapzen.com/tangram/play/?scene=https%3A%2F%2Fgist.githubusercontent.com%2Fanonymous%2F1ead441ee35e5a18741437dea7916f33%2Fraw%2F547146cf5a975a8b4e1eba84eba77df9b8a625b5%2Fscene.yaml#8/40.574/-74.051)
+1. [Click here to open Tron in TangramPlay](https://mapzen.com/tangram/play/?scene=https%3A%2F%2Fgist.githubusercontent.com%2Fanonymous%2F14f1c7495dde62cf831427dc9be89ec9%2Fraw%2F0b25fc8a0e90115090c90928d0fefa4423106b9b%2Fscene.yaml#8/40.574/-74.051)
 
 2. Once you finish you can download it or copy it back to your local file, but **remember** to take out the first line `import`.
 
@@ -73,6 +73,7 @@ Here are some resource we share and sketch  [Geraldine Sarmiento](https://twitte
 
 [![](http://thebookofshaders.com/log/160726003844.png) Generative Tron Palette](http://player.thebookofshaders.com/?log=160726003844)
 [![](http://thebookofshaders.com/log/160726010850.png) Glow lines ](http://player.thebookofshaders.com/?log=160726010850)
+[![](http://thebookofshaders.com/log/161011181616.png) Highways](http://player.thebookofshaders.com/?log=161011181616)
 [![](http://thebookofshaders.com/log/160706191515.png) Grid animation](http://player.thebookofshaders.com/?log=160706191515)
 [![](http://thebookofshaders.com/log/160705205611.png) Grid animation](http://player.thebookofshaders.com/?log=160705205611)
 [![](http://thebookofshaders.com/log/160229221706.png) Stripes](http://player.thebookofshaders.com/?log=160229221706)
