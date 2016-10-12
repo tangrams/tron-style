@@ -1,4 +1,5 @@
 layers:
+    # tuck this into existing roads layer
     roads:
         draw:
             text:
@@ -34,7 +35,7 @@ layers:
         major_road:
             filter: { kind: major_road }
             trunk_primary:
-                filter: { highway: [trunk, primary] }
+                filter: { kind_detail: [trunk, primary] }
                 routes:
                     filter: { ref: true }
                     labels-trunk-primary-route:
@@ -72,7 +73,7 @@ layers:
 
 
             secondary:
-                filter: { highway: secondary }
+                filter: { kind_detail: secondary }
                 labels-secondary:
                     draw:
                         text:
@@ -101,7 +102,7 @@ layers:
                                     fill: white
 
             tertiary:
-                filter: { highway: [tertiary, tertiary_link] }
+                filter: { kind_detail: [tertiary, tertiary_link] }
                 labels-tertiary:
                     draw:
                         text:
@@ -115,11 +116,11 @@ layers:
                     early-dont-draw:
                         filter: { $zoom: { min: 11 }, $zoom: { max: 15 } }
                         draw:
-                            text: 
+                            text:
                                 visible: false
 
         minor_road:
-            filter: { kind: minor_road, not: { highway: service, aeroway: [runway, taxiway] } }
+            filter: { kind: minor_road, not: { kind_detail: service } }
             labels-minor-road:
                 draw:
                     text:
@@ -133,6 +134,5 @@ layers:
                 early-dont-draw:
                     filter: { $zoom: { min: 11, max: 15 } }
                     draw:
-                        text: 
+                        text:
                             visible: false
-

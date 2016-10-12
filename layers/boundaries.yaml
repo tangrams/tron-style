@@ -4,44 +4,49 @@ layers:
         draw:
             lines:
                 order: global.order
-                color: black
+                interactive: true
 
         country:
             filter:
-                any:
-                    - type: country
-                    - kind: nation
-                    - admin_level: 2
+                kind: country
             draw:
                 lines:
                     width: [[1, 0px], [3, 0px], [4, 1.5px], [9, 2.5px], [14, 3.5px], [16, 4.5px], [17, 14m]]
+                    color: black
             water:
-                filter: { maritime_boundary: yes }
+                filter: { maritime_boundary: true }
                 draw:
                     lines:
                         visible: false
 
+        country_disputed:
+            filter: { kind: [disputed, indefinite, indeterminate, lease_limit, line_of_control, overlay_limit] }
+            draw:
+                dashed:
+                    order: global.order
+                    color: black
+                    width: [[1, 0.2px], [3, 0px], [4, 1.0px], [9, 1.5px], [14, 2.5px], [16, 3.5px], [17, 10m]]
+
         region:
             filter:
-                any:
-                    - type: state
-                    # territorial here is probably a hack
-                    - kind: [state, department, region, provincial, territorial]
-                    - admin_level: 4
-                not:
-                    # deal with bogus Hungary data
-                    - scalerank: 0
+                kind: region
             draw:
                 lines:
-                    color: black
                     width: [[0, 0px], [4, 0px], [5, 0.5px], [6, 0.5px], [8, 1px], [14, 1.5px], [16, 3.0px], [17, 10m]]
+                    color: black
             water:
-                filter: { maritime_boundary: yes }
+                filter: { maritime_boundary: true }
                 draw:
                     lines:
                         visible: false
             early:
-                filter: { scalerank: [0,3,4,5,6,7,8,9,10], $zoom: { max: 8 } }
+                filter: { not: { min_zoom: 2 }, $zoom: { max: 8 } }
                 draw:
                     lines:
                         visible: false
+
+styles:
+    dashed:
+        base: lines
+        dash: [1.25, 1.25]
+        #dash_background_color: [0.808,0.860,0.851]

@@ -1,5 +1,6 @@
 import:
     - ../blocks/functions/zoom.yaml
+    - ../blocks/functions/pulse.yaml
     - ../blocks/geometry/dynamic-width.yaml
     - ../blocks/geometry/dynamic-height.yaml
 

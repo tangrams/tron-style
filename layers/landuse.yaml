@@ -5,31 +5,60 @@ layers:
             polygons:
                 order: global.order
                 visible: false
-        tier1:
+
+        landuse-labels:
             filter:
-                any:
-                    # limit show smaller landuse areas to higher zooms
-                    - { $zoom: { min: 3 },  area: { min: 300000000 } }
-                    - { $zoom: { min: 4 },  area: { min: 300000000 } }
-                    - { $zoom: { min: 5 },  area: { min: 150000000 } }
-                    - { $zoom: { min: 6 },  area: { min: 150000000 } }
-                    - { $zoom: { min: 7 },  area: { min: 100000000 } }
-                    - { $zoom: { min: 8 },  area: { min: 10000000 } }
-                    - { $zoom: { min: 9 },  area: { min: 5000000 } }
-                    - { $zoom: { min: 10 }, area: { min: 1000000 } }
-                    - { $zoom: { min: 11 }, area: { min: 500000 } }
-                    - { $zoom: { min: 12 }, area: { min: 500000 } }
-                    - { $zoom: { min: 13 }, area: { min: 100000 } }
-                    - { $zoom: { min: 14 }, area: { min: 50000 } }
-                    - { $zoom: { min: 15 }, area: { min: 20000 } }
-                    - { $zoom: { min: 15 }, area: { min: 2000 } }
-                    - { $zoom: { min: 16 } }
+                all:
+                    - label_placement: true
+                    - name: true
+            draw:
+                text:
+                    text_source: global.ux_language_text_source
+                    interactive: true
+                    move_into_tile: true
+                    priority: 100
+                    visible: false #global.text_visible_landuse_generic
+                    font:
+                        fill: '#aaa'
+                        family: Cairo
+                        style: italic
+                        size: 11px
+                        #stroke: { color: global.text_stroke_address, width: 1 }
+
+            pier:
+                filter: { kind: [pier] }
+                draw:
+                    icons:
+                        size: 18px
+                        interactive: true
+                        sprite: function() { return feature.kind; }
+                        visible: global.icon_visible_pois_landuse
+                        priority: 65
+                        #buffer: 100px
+                        text:
+                            text_source: global.ux_language_text_source
+                            interactive: true
+                            move_into_tile: true
+                            priority: 100
+                            visible: global.text_visible_landuse_generic
+                            font:
+                                #fill: '#aaa'
+                                fill: [0.345,0.953,0.769]
+                                family: Cairo
+                                style: italic
+                                size: 11px
+                                #stroke: { color: global.text_stroke_address, width: 1 }
+
+
+
+        landuse-styling:
+#        tier1:
             national_park:
                 filter:
                     all:
                         - kind: [national_park,battlefield,protected_area]
                     any:
-                        - not: { operator: ["United States Forest Service", "US Forest Service", "U.S. Forest Service", "USDA Forest Service", "United States Department of Agriculture", "US National Forest Service", "United State Forest Service", "U.S. National Forest Service"] }
+                        - not: { operator: ["United States Forest Service"] }
                         - protect_class: ['2','3','5']
                 draw:
                     polygons:
@@ -40,50 +69,38 @@ layers:
                     # yosemite national park, death valley national park, grand canyon national park
                     filter:
                         any:
-                            - operator: [ "United States National Park Service", "National Park Service", "US National Park Service", "U.S. National Park Service", "US National Park service"]
+                            - operator: [ "United States National Park Service"]
                             - protect_class: ['2','3','5']
                     draw:
                         polygons:
                             color: [0.340,0.703,1.000]
                             visible: true
-        tier2:
-            filter:
-                any:
-                    # limit show smaller landuse areas to higher zooms
-                    - { $zoom: { min: 4 },  area: { min: 1000000000 } }
-                    - { $zoom: { min: 5 },  area: { min: 1000000000 } }
-                    - { $zoom: { min: 6 },  area: { min: 150000000 } }
-                    - { $zoom: { min: 7 },  area: { min: 100000000 } }
-                    - { $zoom: { min: 8 },  area: { min: 10000000 } }
-                    - { $zoom: { min: 9 },  area: { min: 5000000 } }
-                    - { $zoom: { min: 10 }, area: { min: 1000000 } }
-                    - { $zoom: { min: 11 }, area: { min: 500000 } }
-                    - { $zoom: { min: 12 }, area: { min: 250000 } }
-                    - { $zoom: { min: 13 }, area: { min: 100000 } }
-                    - { $zoom: { min: 14 }, area: { min: 50000 } }
-                    - { $zoom: { min: 15 }, area: { min: 20000 } }
-                    - { $zoom: { min: 15 }, area: { min: 2000 } }
-                    - { $zoom: { min: 16 } }
+#        tier2:
             conservation:
                 filter:
                     all:
                         - $zoom: { min: 4 }
-                        - kind: [conservation, protected_area, nature_reserve, national_park]
+                        - kind: [protected_area, nature_reserve, national_park]
                         - not: { protect_class: ['2','3','5'] }
-
                 draw:
                     polygons:
                         style: landuse
                         color: [0.090,0.409,1.000]
                         visible: true
 
-                national_forest_level_6:
-                    filter: { protect_class: ['6'] }
-                    draw:
-                        polygons:
-                            style: landuse
-                            color: [0.149,0.353,0.714]
-                            visible: true
+            national_forest_level_6:
+                filter:
+                    all:
+                        - kind: forest
+                    any:
+                        - protect_class: ['6']
+                        - operator: ['United States Forest Service']
+                draw:
+                    polygons:
+                        style: landuse
+                        color: [0.149,0.353,0.714]
+                        visible: true
+
             farm:
                 filter:
                     kind: [farm, farmland]
@@ -94,17 +111,12 @@ layers:
                         color: [0.024,0.189,0.238]
                         visible: true
             forest:
-                filter: { kind: [forest, natural_forest, wood, natural_wood, natural_park], $zoom: { min: 6 } }
-
-                landuse-forest:
-                    filter:
-                        not: { operator: ["United States Forest Service", "US Forest Service", "U.S. Forest Service", "USDA Forest Service", "United States Department of Agriculture", "US National Forest Service", "United State Forest Service", "U.S. National Forest Service"] }
-                        $zoom: { min: 10 }
-                    draw:
-                        polygons:
-                            style: landuse
-                            color: [0.238,0.529,0.820]
-                            visible: true
+                filter: { kind: [forest, natural_forest, wood, natural_wood, natural_park], $zoom: { min: 10 }, not: { operator: "United States Forest Service" } }
+                draw:
+                    polygons:
+                        style: landuse
+                        color: [0.238,0.529,0.820]
+                        visible: true
 
             parks_and_national_forests_not_national_park:
                 filter:
@@ -112,7 +124,7 @@ layers:
                         - $zoom: { min: 4 }
                         - kind: [park, national_park]
                     any:
-                        - not: { operator: ["United States National Park Service", "National Park Service", "US National Park Service", "U.S. National Park Service", "US National Park service"] }
+                        - not: { operator: ["United States National Park Service"] }
                         - not: { protect_class: ['2','3','5','6'] }
 
                 # default for national forests and more?
@@ -126,26 +138,13 @@ layers:
                     filter:
                         all:
                             - kind: national_park
-                            - not: { protect_class: ['2','3','5','6'], operator: ["United States National Park Service", "National Park Service", "US National Park Service", "U.S. National Park Service", "US National Park service"] }
+                            - not: { protect_class: ['2','3','5','6'], operator: ["United States National Park Service"] }
                     draw:
                         polygons:
                             style: landuse
                             color: [0.238,0.529,0.820]
                             visible: true
-        tier3:
-            filter:
-                any:
-                    # limit show smaller landuse areas to higher zooms
-                    - { $zoom: { min: 8 },  area: { min: 10000000 } }
-                    - { $zoom: { min: 9 },  area: { min: 5000000 } }
-                    - { $zoom: { min: 10 }, area: { min: 1000000 } }
-                    - { $zoom: { min: 11 }, area: { min: 500000 } }
-                    - { $zoom: { min: 12 }, area: { min: 500000 } }
-                    - { $zoom: { min: 13 }, area: { min: 100000 } }
-                    - { $zoom: { min: 14 }, area: { min: 50000 } }
-                    - { $zoom: { min: 15 }, area: { min: 20000 } }
-                    - { $zoom: { min: 15 }, area: { min: 2000 } }
-                    - { $zoom: { min: 16 } }
+#        tier3:
             university:
                 filter:
                     kind: [university, college]
@@ -154,18 +153,7 @@ layers:
                         style: landuse-tier3-university
                         color: [0.212,0.302,0.427]
                         visible: true
-        tier4:
-            filter:
-                any:
-                    # limit show smaller landuse areas to higher zooms
-                    - { $zoom: { min: 10 }, area: { min: 1000000 } }
-                    - { $zoom: { min: 11 }, area: { min: 500000 } }
-                    - { $zoom: { min: 12 }, area: { min: 500000 } }
-                    - { $zoom: { min: 13 }, area: { min: 100000 } }
-                    - { $zoom: { min: 14 }, area: { min: 50000 } }
-                    - { $zoom: { min: 15 }, area: { min: 20000 } }
-                    - { $zoom: { min: 15 }, area: { min: 2000 } }
-                    - { $zoom: { min: 16 } }
+#        tier4:
             golf_course:
                 filter:
                     kind: golf_course
@@ -204,7 +192,7 @@ layers:
                         visible: true
             man-made:
                 filter: { kind: [pier,wastewater_plant,works,bridge,tower,breakwater,water_works,groyne,dike,cutline] }
-                draw: 
+                draw:
                     polygons:
                         style: landuse-tier4-manmade
                         color: [[13,[0.212,0.302,0.427]],[16,[0.204,0.292,0.730]]]
@@ -215,16 +203,7 @@ layers:
                         polygons:
                             color: [[13,[0.212,0.302,0.427]],[16,[0.204,0.292,0.730]]]
                             visible: true
-        tier6:
-            filter:
-                any:
-                    # limit show smaller landuse areas to higher zooms
-                    - { $zoom: { min: 12 }, area: { min: 500000 } }
-                    - { $zoom: { min: 13 }, area: { min: 100000 } }
-                    - { $zoom: { min: 14 }, area: { min: 50000 } }
-                    - { $zoom: { min: 15 }, area: { min: 20000 } }
-                    - { $zoom: { min: 15 }, area: { min: 2000 } }
-                    - { $zoom: { min: 16 } }
+#        tier6:
             parking:
                 filter:
                     kind: parking
@@ -242,21 +221,50 @@ layers:
                         color: [0.167,0.242,0.450]
                         visible: true
 
-    landuse-not-filtered:
-        data: { source: mapzen, layer: landuse }
-        filter:
-            kind:
-                - runway
-        runway:
-            filter:
-                kind: runway
-            draw:
-                polygons:
-                    visible: true
-                    order: global.order
-                    color: [[9,[0.215,1.000,1.000]],[11,[0.215,1.000,1.000]],[13,[0.078,0.129,0.259]]]
+#        landuse-not-filtered:
+#            data: { source: mapzen, layer: landuse }
+#            filter:
+#                kind:
+#                    - runway
+            runway:
+                filter:
+                    kind: runway
+                draw:
+                    polygons:
+                        visible: true
+                        order: global.order
+                        color: [[9,[0.215,1.000,1.000]],[11,[0.215,1.000,1.000]],[13,[0.078,0.129,0.259]]]
+
+            urban_area-early:
+                filter:
+                    kind: [urban_area]
+                    $zoom: { max: 6 }
+                draw:
+                    polygons:
+                        style: urban-early
+                        color: [0.267,0.365,0.502]
+                        visible: true
 
 styles:
+    urban-early:
+        base: polygons
+        mix: [functions-zoom, polygons-diagonal-stripes]
+        shaders:
+            defines:
+                ZOOM_START: 0.
+                ZOOM_END: 6.5
+                ZOOM_MAX: 6.
+
+                STRIPES_ALPHA: 1.
+                STRIPES_SCALE: mix(25.,50.,smoothstep(0.,1.,1.-zoom()))
+                STRIPES_WIDTH: 1.-zoom()-.2
+
+                COLOR_A: color.rgb
+                # COLOR_B: vec3(0.031,0.973,1.000)
+                COLOR_B: vec3(0.000,0.676,0.767)
+            blocks:
+                color: |
+                    color.rgb = mix(COLOR_A, COLOR_B, sin(zoom()*3.1415));
     landuse:
         base: polygons
         mix: [functions-zoom, elevation-stripes]
@@ -312,9 +320,9 @@ styles:
             blocks:
                 color: |
                     float sdf = circleDF(vec2(0.5)-DOTS_TILE_STYLE(getTileCoords()*DOTS_SCALE,2.));
-                    
-                    color.rgb = mix(DOTS_BACKGROUND_COLOR, 
-                                    DOTS_COLOR, 
+
+                    color.rgb = mix(DOTS_BACKGROUND_COLOR,
+                                    DOTS_COLOR,
                                     DOTS_TYPE( DOTS_SIZE, sdf));
                     color.rgb += (DOTS_GLOW_COLOR*(1.-sdf*2.))*DOTS_GLOW_AMOUNT;
     landuse-tier4-hospital:
