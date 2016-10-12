@@ -29,7 +29,7 @@ import:
 sources:
     mapzen:
         type: TopoJSON
-        url: https://tile.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson?api_key=vector-tiles-uP4vdQc
+        url: https://tile.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson?api_key=mapzen-n22UFkv
         rasters: [normals-elevation]
         max_zoom: 16
     normals-elevation:
