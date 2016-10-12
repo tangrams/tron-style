@@ -191,7 +191,7 @@ layers:
                     all:
                         - area: true
                         - $geometry: point
-                        - kind: [national_park, "park or protected land"]
+                        - kind: [national_park]
                     any:
                         # show labels for smaller landuse areas at higher zooms
                         - { $zoom: [4],  area: { min: 3000000000 } }
@@ -865,7 +865,7 @@ layers:
                         - $zoom: { min: 6 }
                         - area: true
                         - $geometry: point
-                        - not: { kind: [park, national_park, "park or protected land", battlefield, conservation, protected_area, nature_reserve, forest, grass, beach, airport, aerodrome, university, college, school, kindergarten, winter_sports, zoo, theme_park, resort, aquarium, winery, maze, stadium, playground, allotments, attraction, landmark, glacier, station, spiritual_center, place_of_worship, wayside_chapel] }
+                        - not: { kind: [park, national_park, battlefield, conservation, protected_area, nature_reserve, forest, grass, beach, airport, aerodrome, university, college, school, kindergarten, winter_sports, zoo, theme_park, resort, aquarium, winery, maze, stadium, playground, allotments, attraction, landmark, glacier, station, spiritual_center, place_of_worship, wayside_chapel] }
                     any:
                         # show labels for smaller landuse areas at higher zooms
                         - { $zoom: [5,6,7], area: { min: 5000000000 } }
@@ -1098,6 +1098,11 @@ layers:
                         icons:
                             visible: false
                             text:  { visible: false }
+                park-no-area-early:
+                    filter: { kind: park, area: false, $zoom: [14] }
+                    draw:
+                        icons:
+                            visible: false
                 drinking-water-early:
                     filter: { kind: [drinking_water], $zoom: { max: 18 } }
                     draw:
