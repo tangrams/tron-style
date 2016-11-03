@@ -185,7 +185,7 @@ layers:
                                 }
                             }
                         font:
-                            family: Audiowide
+                            family: Aldrich
                             fill: [1.00,1.00,1.00]
                             size: [[11,7px],[15,10px]]
             not-special:
@@ -311,17 +311,17 @@ layers:
                         filter: function() { return (feature.shield_text.length === 3) }
                         draw:
                             icons:
-                                size: [[6,[20px,18px]],[13,[23px,20px]],[15,[29px,25px]]]
+                                size: [[6,[23px,18px]],[13,[26px,20px]],[15,[33px,25px]]]
                     width_4char:
                         filter: function() { return (feature.shield_text.length === 4) }
                         draw:
                             icons:
-                                size: [[6,[22px,18px]],[13,[25px,20px]],[15,[31px,25px]]]
+                                size: [[6,[25px,18px]],[13,[27px,20px]],[15,[35px,25px]]]
                     width_5char:
                         filter: function() { return (feature.shield_text.length === 5) }
                         draw:
                             icons:
-                                size: [[6,[23px,18px]],[13,[26px,20px]],[15,[32px,25px]]]
+                                size: [[6,[26px,18px]],[13,[30px,20px]],[15,[38px,25px]]]
                 # US Federal Routes
                 US-US:
                     filter:
