@@ -206,7 +206,7 @@ layers:
                     }
                 draw:
                     icons:
-                        size: [[6,[14px,14px]],[13,[16px,16px]],[16,[18px,18px]]]
+                        size: [[6,[14px,14px]],[13,[15px,15px]],[16,[18px,18px]]]
             width_2char:
                 filter: |
                     function() { 
@@ -361,12 +361,12 @@ layers:
                         filter: function() { return (feature.shield_text.length === 4) }
                         draw:
                             icons:
-                                size: [[6,[31px,18px]],[12,[34px,20px]],[16,[42px,24px]]]
+                                size: [[6,[30px,18px]],[12,[33px,20px]],[16,[41px,24px]]]
                     width_5char:
                         filter: function() { return (feature.shield_text.length === 5) }
                         draw:
                             icons:
-                                size: [[6,[33px,17px]],[12,[39px,20px]],[16,[50px,25px]]]
+                                size: [[6,[31px,18px]],[12,[35px,20px]],[16,[45px,25px]]]
                 # US State Routes
                 US-states:
                     # Match state highways: `US:??`
@@ -402,27 +402,27 @@ layers:
                         filter: function() { return (feature.shield_text.length === 1) }
                         draw:
                             icons:
-                                size: [[6,[14px,16px]],[13,[15px,18px]],[15,[18px,21px]]]
+                                size: [[6,[14px,16px]],[13,[15px,18px]],[15,[19px,22px]]]
                     width_2char:
                         filter: function() { return (feature.shield_text.length === 2) }
                         draw:
                             icons:
-                                size: [[6,[18px,18px]],[13,[20px,20px]],[15,[23px,23px]]]
+                                size: [[6,[19px,18px]],[13,[21px,20px]],[15,[25px,23px]]]
                     width_3char:
                         filter: function() { return (feature.shield_text.length === 3) }
                         draw:
                             icons:
-                                size: [[6,[21px,18px]],[13,[24px,20px]],[15,[28px,23px]]]
+                                size: [[6,[23px,18px]],[13,[26px,20px]],[15,[30px,23px]]]
                     width_4char:
                         filter: function() { return (feature.shield_text.length === 4) }
                         draw:
                             icons:
-                                size: [[6,[24px,18px]],[13,[26px,20px]],[15,[31px,23px]]]
+                                size: [[6,[28px,18px]],[13,[31px,20px]],[15,[36px,23px]]]
                     width_5char:
                         filter: function() { return (feature.shield_text.length === 5) }
                         draw:
                             icons:
-                                size: [[6,[25px,18px]],[13,[27px,20px]],[15,[32px,23px]]]
+                                size: [[6,[35px,18px]],[13,[39px,20px]],[15,[45px,23px]]]
                 US-NY:
                     # Match New York state highways: `US:NY`
                     filter: |
@@ -436,7 +436,7 @@ layers:
                             sprite: |
                                 function() { return ( 'US:NY_' + feature.shield_text.length + 'char'); }
                             text:
-                                # offset: [0px, 1px]
+                                offset: [0px, 0.5px]
                                 font:
                                     fill: [1.00,1.00,1.00]
                                     size: [[7,7px],[13,9px],[15,10px]]
@@ -485,12 +485,12 @@ layers:
                         filter: function() { return (feature.shield_text.length === 1) }
                         draw:
                             icons:
-                                size: [[6,[13px,17px]],[13,[15px,19px]],[16,[18px,22px]]]
+                                size: [[6,[14px,17px]],[13,[15px,19px]],[16,[18px,22px]]]
                     width_2char:
                         filter: function() { return (feature.shield_text.length === 2) }
                         draw:
                             icons:
-                                size: [[6,[17px,17px]],[13,[19px,19px]],[16,[22px,22px]]]
+                                size: [[6,[18px,17px]],[13,[20px,19px]],[16,[23px,22px]]]
                     width_3char:
                         filter: function() { return (feature.shield_text.length === 3) }
                         draw:
@@ -500,12 +500,12 @@ layers:
                         filter: function() { return (feature.shield_text.length === 4) }
                         draw:
                             icons:
-                                size: [[6,[21px,17px]],[13,[24px,19px]],[16,[29px,22px]]]
+                                size: [[6,[29px,17px]],[13,[32px,19px]],[16,[38px,22px]]]
                     width_5char:
                         filter: function() { return (feature.shield_text.length === 5) }
                         draw:
                             icons:
-                                size: [[6,[22px,17px]],[13,[25px,19px]],[16,[30px,22px]]]
+                                size: [[6,[34px,17px]],[13,[38px,19px]],[16,[45px,22px]]]
                 # USA County Routes
                 US-counties:
                     # Match state highways: `US:??:*`
@@ -556,24 +556,24 @@ layers:
                         filter: function() { return (feature.shield_text.length === 1) }
                         draw:
                             icons:
-                                size: [[6,[14px,14px]],[13,[16px,16px]],[15,[18px,18px]]]
+                                size: [[6,[14px,14px]],[13,[15px,15px]],[16,[18px,18px]]]
                     width_2char:
                         filter: function() { return (feature.shield_text.length === 2) }
                         draw:
                             icons:
-                                size: [[6,[18px,14px]],[13,[20px,15px]],[15,[24px,18px]]]
+                                size: [[6,[18px,14px]],[13,[20px,15px]],[16,[24px,18px]]]
                     width_3char:
                         filter: function() { return (feature.shield_text.length === 3) }
                         draw:
                             icons:
-                                size: [[6,[25px,14px]],[13,[27px,15px]],[15,[33px,18px]]]
+                                size: [[6,[25px,14px]],[13,[27px,15px]],[16,[33px,18px]]]
                     width_4char:
                         filter: function() { return (feature.shield_text.length === 4) }
                         draw:
                             icons:
-                                size: [[6,[29px,14px]],[13,[31px,15px]],[15,[38px,18px]]]
+                                size: [[6,[29px,14px]],[13,[31px,15px]],[16,[38px,18px]]]
                     width_5char:
                         filter: function() { return (feature.shield_text.length === 5) }
                         draw:
                             icons:
-                                size: [[6,[34px,14px]],[13,[37px,15px]],[15,[45px,18px]]]
+                                size: [[6,[34px,14px]],[13,[37px,15px]],[16,[45px,18px]]]
