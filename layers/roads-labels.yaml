@@ -301,27 +301,27 @@ layers:
                         filter: function() { return (feature.shield_text.length === 1) }
                         draw:
                             icons:
-                                size: [[6,[15px,18px]],[13,[17px,20px]],[15,[22px,25px]]]
+                                size: [[6,[15px,17px]],[13,[17px,19px]],[16,[21px,24px]]]
                     width_2char:
                         filter: function() { return (feature.shield_text.length === 2) }
                         draw:
                             icons:
-                                size: [[6,[18px,18px]],[13,[20px,20px]],[15,[25px,25px]]]
+                                size: [[6,[18px,18px]],[13,[20px,20px]],[16,[25px,25px]]]
                     width_3char:
                         filter: function() { return (feature.shield_text.length === 3) }
                         draw:
                             icons:
-                                size: [[6,[23px,18px]],[13,[27px,21px]],[15,[33px,25px]]]
+                                size: [[6,[23px,18px]],[13,[26px,20px]],[16,[33px,25px]]]
                     width_4char:
                         filter: function() { return (feature.shield_text.length === 4) }
                         draw:
                             icons:
-                                size: [[6,[25px,18px]],[13,[27px,20px]],[15,[35px,25px]]]
+                                size: [[6,[30px,18px]],[13,[33px,20px]],[16,[42px,25px]]]
                     width_5char:
                         filter: function() { return (feature.shield_text.length === 5) }
                         draw:
                             icons:
-                                size: [[6,[26px,18px]],[13,[30px,20px]],[15,[38px,25px]]]
+                                size: [[6,[32x,18px]],[13,[36px,20px]],[16,[45px,25px]]]
                 # US Federal Routes
                 US-US:
                     filter:
@@ -480,32 +480,32 @@ layers:
                                 offset: [0px, 1px]
                                 font:
                                     fill: [1.00,1.00,1.00]
-                                    size: [[7,7px],[13,9px],[15,10px]]
+                                    size: [[7,7px],[13,9px],[16,10px]]
                     width_1char:
                         filter: function() { return (feature.shield_text.length === 1) }
                         draw:
                             icons:
-                                size: [[6,[13px,17px]],[13,[15px,19px]],[15,[18px,22px]]]
+                                size: [[6,[13px,17px]],[13,[15px,19px]],[16,[18px,22px]]]
                     width_2char:
                         filter: function() { return (feature.shield_text.length === 2) }
                         draw:
                             icons:
-                                size: [[6,[17px,17px]],[13,[19px,19px]],[15,[22px,22px]]]
+                                size: [[6,[17px,17px]],[13,[19px,19px]],[16,[22px,22px]]]
                     width_3char:
                         filter: function() { return (feature.shield_text.length === 3) }
                         draw:
                             icons:
-                                size: [[6,[20px,17px]],[13,[22px,19px]],[15,[27px,22px]]]
+                                size: [[6,[25px,17px]],[13,[28px,19px]],[16,[33px,22px]]]
                     width_4char:
                         filter: function() { return (feature.shield_text.length === 4) }
                         draw:
                             icons:
-                                size: [[6,[21px,17px]],[13,[24px,19px]],[15,[29px,22px]]]
+                                size: [[6,[21px,17px]],[13,[24px,19px]],[16,[29px,22px]]]
                     width_5char:
                         filter: function() { return (feature.shield_text.length === 5) }
                         draw:
                             icons:
-                                size: [[6,[22px,17px]],[13,[25px,19px]],[15,[30px,22px]]]
+                                size: [[6,[22px,17px]],[13,[25px,19px]],[16,[30px,22px]]]
                 # USA County Routes
                 US-counties:
                     # Match state highways: `US:??:*`
