@@ -155,7 +155,7 @@ layers:
                     - all:
                         - shield_text: false    # some roads don't have shield text, deal with that later
                         - ref: true
-                        - kind: [motorway, trunk, primary, secondary, tertiary]
+                        - kind_detail: [motorway, trunk, primary, secondary, tertiary]
             # default
             draw:
                 icons:
@@ -304,6 +304,12 @@ layers:
                 draw:
                     icons:
                         size: [[6,[29px,14px]],[13,[31px,15px]],[16,[38px,18px]]]
+                # London sucks
+                early:
+                    filter: { $zoom: { max: 14 } }
+                    draw:
+                        icons:
+                            visible: false
             width_5char:
                 filter: |
                     function() { 
@@ -316,6 +322,12 @@ layers:
                 draw:
                     icons:
                         size: [[6,[34px,14px]],[13,[37px,15px]],[16,[45px,18px]]]
+                # London sucks
+                early:
+                    filter: { $zoom: { max: 14 } }
+                    draw:
+                        icons:
+                            visible: false
             # this is kinda a hack
             width_longggggg:
                 filter: |
@@ -615,7 +627,8 @@ layers:
                     filter: |
                         function() {
                             return feature.shield_text &&
-                                /^\w+:\w+:(!Alternate).+$/.test(feature.network)
+                                /^\w+:\w+:(!Alternate).+$/.test(feature.network) &&
+                                $zoom > 10
                         }
                     draw:
                         icons:
@@ -627,11 +640,11 @@ layers:
                                 font:
                                     fill: [1.00,1.00,1.00]
                                     #size: [[11,7px],[15,10px]]
-                    early:
-                        filter: { $zoom: { max: 11 } }
-                        draw:
-                            icons:
-                                visible: false
+                    # early:
+                    #     filter: { $zoom: { max: 11 } }
+                    #     draw:
+                    #         icons:
+                    #             visible: false
                     width_1char:
                         filter: function() { return (feature.shield_text.length === 1) }
                         draw:

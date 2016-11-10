@@ -26,6 +26,7 @@ layers:
                     repeat_group: abc
                     repeat_distance: 100px
                     buffer: 7px
+                    priority: 66
                     text_source: global.ux_language_text_source
                     visible: false    # labels are enabled by each layer below
                     move_into_tile: false # preserves text alignment w/icons in JS
