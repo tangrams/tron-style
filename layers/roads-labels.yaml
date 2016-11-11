@@ -171,7 +171,7 @@ layers:
                     sprite_default: generic_shield_5char
                     priority: 58
                     repeat_group: shields
-                    repeat_distance: 30px
+                    repeat_distance: [[8,90px],[10,40px],[13,30px]]
                     placement: midpoint
                     placement_min_length_ratio:
                         - [8, 0.1]
