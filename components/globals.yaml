@@ -193,3 +193,4 @@ global:
     icon_visible_pois_landuse: true        # default false, all true
     text_visible_landuse_generic: true     # default false, all true
     text_visible_island: true
+    text_visible_shields: true
