@@ -189,8 +189,8 @@ global:
     text_visible_roads: true
     text_visible_buildings: true
     text_visible_addresses: true
-    text_visible_pois_landuse: true        # default false, all true
-    icon_visible_pois_landuse: true        # default false, all true
-    text_visible_landuse_generic: true     # default false, all true
+    text_visible_pois_landuse: true        #false by default
+    icon_visible_pois_landuse: true        #false by default
+    text_visible_landuse_generic: true     #false by default
     text_visible_island: true
     text_visible_shields: true
