@@ -56,8 +56,8 @@ layers:
 
         highway:
             filter:
-                - kind: highway
-                - $zoom: { min: 8 }
+                kind: highway
+                $zoom: { min: 8 }
             highway-z8:
                 filter:
                     $zoom: { min: 8, max: 11 }
@@ -164,8 +164,8 @@ layers:
 
         major_road:
             filter:
-                - kind: major_road
-                - $zoom: { min: 8 }
+                kind: major_road
+                $zoom: { min: 8 }
             draw:
                 lines:
                     # color: [0.086,0.135,0.260]
@@ -321,9 +321,9 @@ layers:
 
         minor_road:
             filter:
-                - kind: minor_road
-                - not: { kind_detail: service }
-                - $zoom: { min: 8 }
+                kind: minor_road
+                not: { kind_detail: service }
+                $zoom: { min: 8 }
             draw:
                 lines:
                     color: [[12,[0.196,0.267,0.373]],[13,[0.173,0.224,0.318]],[14,[0.082,0.133,0.259]]]

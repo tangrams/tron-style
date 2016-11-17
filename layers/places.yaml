@@ -1333,7 +1333,7 @@ layers:
                 any:
                     - source: [openstreetmap, openstreetmap.org]
                     - source: [whosonfirst, whosonfirst.mapzen.com]
-                      all:
+                    - all:
                         - min_zoom: [11,12,13]
                         - max_zoom: { min: 14 }
                         - is_landuse_aoi: false
@@ -1381,7 +1381,7 @@ layers:
                 any:
                     - source: [openstreetmap, openstreetmap.org]
                     - source: [whosonfirst, whosonfirst.mapzen.com]
-                      all:
+                    - all:
                         - min_zoom: [11,12,13,14,15]
                         - max_zoom: { min: 16 }
                         - is_landuse_aoi: false
@@ -1412,7 +1412,7 @@ layers:
                     - kind: [macrohood, neighbourhood]
                     - $zoom: [16]
                 any:
-                      all:
+                    - all:
                         - min_zoom: [11,12,13,14,15,16]
                         - max_zoom: { min: 17 }
                         - is_landuse_aoi: false
