@@ -244,7 +244,7 @@ layers:
                         filter: { $zoom: { min: 10 } }
                         draw:
                             icons:
-                                sprite: park-xl
+                                sprite: park-l
 
             landuse-labels-green-areas-not-national-park:
                 filter:
@@ -443,7 +443,7 @@ layers:
                     filter: { $zoom: { min: 12 } }
                     draw:
                         icons:
-                            sprite: airport-xl
+                            sprite: airport-l
 
             text_colors:
                 landuse-labels-green-areas-not-national-park:
@@ -791,7 +791,7 @@ layers:
                     filter: { $zoom: { min: 18 } }
                     draw:
                         icons:
-                            sprite: train_station-xl
+                            sprite: train_station-l
 
             #icon_sourcing_from_not_kind:
                 # prefix with "z-" here to allow Tangram to sort the generic style 1st, allowing more specific religion tags to win later
