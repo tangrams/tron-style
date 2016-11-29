@@ -53,6 +53,11 @@ layers:
                     lines:
                         color: [0.333,0.518,0.612]
                         width: 0.5px
+            ferry:
+                filter: { kind: ferry }
+                draw:
+                    lines:
+                        visible: false
 
         highway:
             filter:
