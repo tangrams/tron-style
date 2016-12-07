@@ -1276,125 +1276,101 @@ layers:
                             font:
                                 size: 12px
 
-        neighborhood-z11:
+        neighborhood:
             filter:
                 name: true
                 kind: [macrohood, neighbourhood]
-                $zoom: [11]
-                min_zoom: [11]
-                max_zoom: { min: 12 }
+                $zoom: { min: 11 }
                 is_landuse_aoi: false
-                #kind_tile_rank: { max: 6 }
             draw:
                 text:
+                    visible: false
                     priority: 18
                     text_wrap: 10
-                    visible: global.text_visible_neighbourhoods
                     font:
                         family: Audiowide
-                        size: 9px
-                        fill: [0.796,0.812,0.835]
-                        transform: uppercase
-        neighborhood-z12:
-            filter:
-                name: true
-                kind: [macrohood, neighbourhood]
-                $zoom: [12]
-                min_zoom: [11,12]
-                max_zoom: { min: 13 }
-                is_landuse_aoi: false
-                #kind_tile_rank: { max: 8 }
-            draw:
-                text:
-                    priority: 18
-                    text_wrap: 10
-                    visible: global.text_visible_neighbourhoods
-                    font:
-                        family: Audiowide
-                        size: 9px
-                        fill: [0.846,0.862,0.885]
-                        transform: uppercase
-        neighborhood-z13:
-            filter:
-                name: true
-                kind: [macrohood, neighbourhood]
-                $zoom: [13]
-                min_zoom: [11,12,13]
-                max_zoom: { min: 14 }
-                is_landuse_aoi: false
-                kind_tile_rank: { max: 8 }
-            draw:
-                text:
-                    priority: 18
-                    text_wrap: 10
-                    visible: global.text_visible_neighbourhoods
-                    font:
-                        family: Audiowide
-                        size: 10px
-                        fill: [0.896,0.912,0.935]
-                        transform: uppercase
-        neighborhood-z14:
-            filter:
-                name: true
-                kind: [macrohood, neighbourhood]
-                $zoom: [14]
-                min_zoom: [11,12,13,14]
-                max_zoom: { min: 15 }
-                is_landuse_aoi: false
-                kind_tile_rank: { max: 8 }
-            draw:
-                text:
-                    priority: 18
-                    text_wrap: 12
-                    visible: global.text_visible_neighbourhoods
-                    font:
-                        family: Audiowide
-                        size: 11px
-                        fill: [0.896,0.912,0.935]
-                        transform: uppercase
-        neighborhood-z15:
-            filter:
-                name: true
-                kind: [macrohood, neighbourhood]
-                $zoom: [15]
-                min_zoom: [11,12,13,14,15]
-                max_zoom: { min: 16 }
-                is_landuse_aoi: false
-                kind_tile_rank: { max: 8 }
-            draw:
-                text:
-                    priority: 18
-                    text_wrap: 12
-                    visible: global.text_visible_neighbourhoods
-                    font:
-                        family: Audiowide
-                        size: 13px
                         fill: [1.00,1.00,1.00]
                         transform: uppercase
-            z15-new:
+
+            neighborhood-z11:
                 filter:
-                    all:
-                        - min_zoom: 15
+                    $zoom: [11]
+                    min_zoom: [11]
+                    max_zoom: { min: 12 }
+                    #kind_tile_rank: { max: 6 }
                 draw:
                     text:
-                        priority: 19
+                        visible: global.text_visible_neighbourhoods
+                        font:
+                            size: 9px
+                            fill: [0.796,0.812,0.835]
+            neighborhood-z12:
+                filter:
+                    $zoom: [12]
+                    min_zoom: [11,12]
+                    max_zoom: { min: 13 }
+                    #kind_tile_rank: { max: 8 }
+                draw:
+                    text:
+                        visible: global.text_visible_neighbourhoods
+                        font:
+                            size: 9px
+                            fill: [0.846,0.862,0.885]
+            neighborhood-z13:
+                filter:
+                    $zoom: [13]
+                    min_zoom: [11,12,13]
+                    max_zoom: { min: 14 }
+                    kind_tile_rank: { max: 8 }
+                draw:
+                    text:
+                        visible: global.text_visible_neighbourhoods
                         font:
                             size: 10px
-        neighborhood-z16:
-            filter:
-                name: true
-                kind: [macrohood, neighbourhood]
-                $zoom: [16]
-                min_zoom: [11,12,13,14,15,16]
-                max_zoom: { min: 17 }
-                is_landuse_aoi: false
-                kind_tile_rank: { max: 8 }
-            draw:
-                text:
-                    visible: global.text_visible_neighbourhoods
-                    priority: 18
-                    font:
-                        family: Audiowide
-                        size: 14px
-                        fill: [1.00,1.00,1.00]
-                        transform: uppercase
+                            fill: [0.896,0.912,0.935]
+            neighborhood-z14:
+                filter:
+                    $zoom: [14]
+                    min_zoom: [11,12,13,14]
+                    max_zoom: { min: 15 }
+                    kind_tile_rank: { max: 8 }
+                draw:
+                    text:
+                        text_wrap: 12
+                        visible: global.text_visible_neighbourhoods
+                        font:
+                            size: 11px
+                            fill: [0.896,0.912,0.935]
+            neighborhood-z15:
+                filter:
+                    $zoom: [15]
+                    min_zoom: [11,12,13,14,15]
+                    max_zoom: { min: 16 }
+                    kind_tile_rank: { max: 8 }
+                draw:
+                    text:
+                        text_wrap: 12
+                        visible: global.text_visible_neighbourhoods
+                        font:
+                            size: 13px
+                z15-new:
+                    filter:
+                        all:
+                            - min_zoom: 15
+                    draw:
+                        text:
+                            priority: 19
+                            font:
+                                size: 10px
+            neighborhood-z16:
+                filter:
+                    $zoom: [16]
+                    min_zoom: [11,12,13,14,15,16]
+                    max_zoom: { min: 17 }
+                    kind_tile_rank: { max: 8 }
+                draw:
+                    text:
+                        visible: global.text_visible_neighbourhoods
+                        text_wrap: 12
+                        font:
+                            size: 14px
