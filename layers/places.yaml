@@ -1278,18 +1278,13 @@ layers:
 
         neighborhood-z11:
             filter:
-                all:
-                    - name: true
-                    - kind: [macrohood, neighbourhood]
-                    - $zoom: [11]
-                any:
-                    - source: [openstreetmap, openstreetmap.org]
-                    - source: [whosonfirst, whosonfirst.mapzen.com]
-                      all:
-                        - min_zoom: [11]
-                        - max_zoom: { min: 12 }
-                        - is_landuse_aoi: false
-                        #- kind_tile_rank: { max: 6 }
+                name: true
+                kind: [macrohood, neighbourhood]
+                $zoom: [11]
+                min_zoom: [11]
+                max_zoom: { min: 12 }
+                is_landuse_aoi: false
+                #kind_tile_rank: { max: 6 }
             draw:
                 text:
                     priority: 18
@@ -1302,18 +1297,13 @@ layers:
                         transform: uppercase
         neighborhood-z12:
             filter:
-                all:
-                    - name: true
-                    - kind: [macrohood, neighbourhood]
-                    - $zoom: [12]
-                any:
-                    - source: [openstreetmap, openstreetmap.org]
-                    - source: [whosonfirst, whosonfirst.mapzen.com]
-                      all:
-                        - min_zoom: [11,12]
-                        - max_zoom: { min: 13 }
-                        - is_landuse_aoi: false
-                        #- kind_tile_rank: { max: 8 }
+                name: true
+                kind: [macrohood, neighbourhood]
+                $zoom: [12]
+                min_zoom: [11,12]
+                max_zoom: { min: 13 }
+                is_landuse_aoi: false
+                #kind_tile_rank: { max: 8 }
             draw:
                 text:
                     priority: 18
@@ -1326,18 +1316,13 @@ layers:
                         transform: uppercase
         neighborhood-z13:
             filter:
-                all:
-                    - name: true
-                    - kind: [macrohood, neighbourhood]
-                    - $zoom: [13]
-                any:
-                    - source: [openstreetmap, openstreetmap.org]
-                    - source: [whosonfirst, whosonfirst.mapzen.com]
-                    - all:
-                        - min_zoom: [11,12,13]
-                        - max_zoom: { min: 14 }
-                        - is_landuse_aoi: false
-                        - kind_tile_rank: { max: 8 }
+                name: true
+                kind: [macrohood, neighbourhood]
+                $zoom: [13]
+                min_zoom: [11,12,13]
+                max_zoom: { min: 14 }
+                is_landuse_aoi: false
+                kind_tile_rank: { max: 8 }
             draw:
                 text:
                     priority: 18
@@ -1350,18 +1335,13 @@ layers:
                         transform: uppercase
         neighborhood-z14:
             filter:
-                all:
-                    - name: true
-                    - kind: [macrohood, neighbourhood]
-                    - $zoom: [14]
-                any:
-                    - source: [openstreetmap, openstreetmap.org]
-                    - source: [whosonfirst, whosonfirst.mapzen.com]
-                      all:
-                        - min_zoom: [11,12,13,14]
-                        - max_zoom: { min: 15 }
-                        - is_landuse_aoi: false
-                        - kind_tile_rank: { max: 8 }
+                name: true
+                kind: [macrohood, neighbourhood]
+                $zoom: [14]
+                min_zoom: [11,12,13,14]
+                max_zoom: { min: 15 }
+                is_landuse_aoi: false
+                kind_tile_rank: { max: 8 }
             draw:
                 text:
                     priority: 18
@@ -1374,18 +1354,13 @@ layers:
                         transform: uppercase
         neighborhood-z15:
             filter:
-                all:
-                    - name: true
-                    - kind: [macrohood, neighbourhood]
-                    - $zoom: [15]
-                any:
-                    - source: [openstreetmap, openstreetmap.org]
-                    - source: [whosonfirst, whosonfirst.mapzen.com]
-                    - all:
-                        - min_zoom: [11,12,13,14,15]
-                        - max_zoom: { min: 16 }
-                        - is_landuse_aoi: false
-                        - kind_tile_rank: { max: 8 }
+                name: true
+                kind: [macrohood, neighbourhood]
+                $zoom: [15]
+                min_zoom: [11,12,13,14,15]
+                max_zoom: { min: 16 }
+                is_landuse_aoi: false
+                kind_tile_rank: { max: 8 }
             draw:
                 text:
                     priority: 18
@@ -1407,16 +1382,13 @@ layers:
                             size: 10px
         neighborhood-z16:
             filter:
-                all:
-                    - name: true
-                    - kind: [macrohood, neighbourhood]
-                    - $zoom: [16]
-                any:
-                    - all:
-                        - min_zoom: [11,12,13,14,15,16]
-                        - max_zoom: { min: 17 }
-                        - is_landuse_aoi: false
-                        - kind_tile_rank: { max: 8 }
+                name: true
+                kind: [macrohood, neighbourhood]
+                $zoom: [16]
+                min_zoom: [11,12,13,14,15,16]
+                max_zoom: { min: 17 }
+                is_landuse_aoi: false
+                kind_tile_rank: { max: 8 }
             draw:
                 text:
                     visible: global.text_visible_neighbourhoods
