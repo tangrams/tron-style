@@ -163,12 +163,12 @@ layers:
                     sprite: |
                         function() { 
                             if( feature.shield_text ) { 
-                                return ('generic_shield_' + feature.shield_text.length + 'char');
+                                return ('generic_shield-' + feature.shield_text.length + 'char');
                             } else {
-                                return ('generic_shield_' + feature.ref.length + 'char');
+                                return ('generic_shield-' + feature.ref.length + 'char');
                             }
                         }
-                    sprite_default: generic_shield_5char
+                    sprite_default: generic_shield-5char
                     priority: 58
                     repeat_group: shields
                     repeat_distance: [[8,90px],[10,40px],[13,30px]]
@@ -363,7 +363,7 @@ layers:
                     draw:
                         icons:
                             # you need to match any custom shield to the vector tile `network` values
-                            sprite: function() { return (feature.network + '_' + feature.shield_text.length + 'char'); }
+                            sprite: function() { return (feature.network + '-' + feature.shield_text.length + 'char'); }
                             priority: 46
                             visible: global.text_visible_shields
                             text:
@@ -405,7 +405,7 @@ layers:
                         icons:
                             # you need to match any custom shield to the vector tile `network` values
                             sprite: |
-                                function() { return ('US:US_' + feature.shield_text.length + 'char'); }
+                                function() { return ('US:US-' + feature.shield_text.length + 'char'); }
                             priority: 47
                             cull_from_tile: true
                             visible: global.text_visible_shields
@@ -468,7 +468,7 @@ layers:
                         }
                     draw:
                         icons:
-                            sprite: function() { return (feature.network + '_' + feature.shield_text.length + 'char'); }
+                            sprite: function() { return (feature.network + '-' + feature.shield_text.length + 'char'); }
                             text:
                                 offset: [0px, 1px]
                                 font:
@@ -525,7 +525,7 @@ layers:
                     draw:
                         icons:
                             sprite: |
-                                function() { return ( 'US:NY_' + feature.shield_text.length + 'char'); }
+                                function() { return ( 'US:NY-' + feature.shield_text.length + 'char'); }
                             text:
                                 offset: [0px, 0.5px]
                                 font:
@@ -566,7 +566,7 @@ layers:
                     draw:
                         icons:
                             sprite: |
-                                function() { return ( 'US:PA_' + feature.shield_text.length + 'char'); }
+                                function() { return ( 'US:PA-' + feature.shield_text.length + 'char'); }
                             text:
                                 offset: [0px, 1px]
                                 font:
@@ -633,7 +633,7 @@ layers:
                     draw:
                         icons:
                             # you need to match any custom shield to the vector tile `network` values
-                            sprite: function() { return ('county_shield_' + feature.shield_text.length + 'char'); }
+                            sprite: function() { return ('county_shield-' + feature.shield_text.length + 'char'); }
                             # priority: 19
                             visible: global.text_visible_shields
                             text:

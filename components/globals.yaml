@@ -194,3 +194,7 @@ global:
     text_visible_landuse_generic: true     #false by default
     text_visible_island: true
     text_visible_shields: true
+
+    # SHIELDS
+    sdk_shield_color: [1.000,0.855,0.365]
+    sdk_shield_text_color: [0.127,0.130,0.229]
