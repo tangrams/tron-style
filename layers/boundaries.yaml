@@ -11,7 +11,7 @@ layers:
                 kind: country
             draw:
                 lines:
-                    width: [[1, 0px], [3, 0px], [4, 1.5px], [9, 2.5px], [14, 3.5px], [16, 4.5px], [17, 14m]]
+                    width: [[1,0px],[2,0px],[3,0.5px],[9,2px],[16,4px],[17,14m]]
                     color: black
             water:
                 filter: { maritime_boundary: true }
@@ -32,7 +32,7 @@ layers:
                 kind: region
             draw:
                 lines:
-                    width: [[0, 0px], [4, 0px], [5, 0.5px], [6, 0.5px], [8, 1px], [14, 1.5px], [16, 3.0px], [17, 10m]]
+                    width: [[0,0px],[4,0px],[5,0.5px],[8,1px],[14,1.5px],[16,3.0px],[17,10m]]
                     color: black
             water:
                 filter: { maritime_boundary: true }
