@@ -269,11 +269,11 @@ layers:
                         priority: 6
                         text:
                             font:
-                                size: [[2,11px],[6,17px],[8,20px],[12,22px],[13,0px]]
+                                size: [[2,11px],[6,17px],[8,21px],[12,24px],[13,0px]]
                     text-blend-order:
                         priority: 6
                         font:
-                            size: [[2,11px],[6,17px],[8,20px],[12,22px],[13,0px]]
+                            size: [[2,11px],[6,17px],[8,21px],[12,24px],[13,0px]]
                 capital:
                     filter: { country_capital: true, $zoom: { min: 5 } }
                     draw:
@@ -293,11 +293,11 @@ layers:
                         priority: 7
                         text:
                             font:
-                                size: [[4,10px],[6,16px],[8,18px],[12,20px],[13,0px]]
+                                size: [[4,10px],[6,16px],[8,19px],[12,22px],[13,0px]]
                     text-blend-order:
                         priority: 7
                         font:
-                            size: [[4,10px],[6,16px],[8,18px],[12,20px],[13,0px]]
+                            size: [[4,10px],[6,16px],[8,19px],[12,22px],[13,0px]]
                 capital:
                     filter: { country_capital: true, $zoom: { min: 5 } }
                     draw:
@@ -317,11 +317,11 @@ layers:
                         priority: 9
                         text:
                             font:
-                                size: [[4,10px],[6,14px],[8,16px],[12,18px],[13,0px]]
+                                size: [[4,10px],[6,14px],[8,17px],[12,20px],[13,0px]]
                     text-blend-order:
                         priority: 9
                         font:
-                            size: [[4,10px],[6,14px],[8,16px],[12,18px],[13,0px]]
+                            size: [[4,10px],[6,14px],[8,17px],[12,20px],[13,0px]]
                 capital:
                     filter: { country_capital: true, $zoom: { min: 5 } }
                     draw:
@@ -341,11 +341,11 @@ layers:
                         priority: 11
                         text:
                             font:
-                                size: [[5,10px],[8,12px],[10,16px],[12,18px],[13,0px]]
+                                size: [[5,10px],[8,13px],[10,16px],[12,18px],[13,0px]]
                     text-blend-order:
                         priority: 11
                         font:
-                            size: [[5,10px],[8,12px],[10,16px],[12,18px],[13,0px]]
+                            size: [[5,10px],[8,13px],[10,16px],[12,18px],[13,0px]]
                 capital:
                     filter: { country_capital: true, $zoom: { min: 5 } }
                     draw:
@@ -366,11 +366,11 @@ layers:
                         collide: false  #debug
                         text:
                             font:
-                                size: [[6,10px],[8,12px],[10,14px],[12,16px],[13,0px]]
+                                size: [[6,10px],[8,13px],[10,15px],[12,17px],[13,0px]]
                     text-blend-order:
                         priority: 13
                         font:
-                            size: [[6,10px],[8,12px],[10,14px],[12,16px],[13,0px]]
+                            size: [[6,10px],[8,13px],[10,15px],[12,17px],[13,0px]]
                 capital:
                     filter: { country_capital: true, $zoom: { min: 5 } }
                     draw:
