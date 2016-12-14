@@ -49,6 +49,7 @@ layers:
                 filter: { population: true, $zoom: [4] }
                 draw:
                     text-blend-order:
+                        buffer: 8px
                         font:
                             size: 14px
                 early-ones-z4:
@@ -66,7 +67,7 @@ layers:
                 draw:
                     text-blend-order:
                         font:
-                            size: 17px
+                            size: 16px
                 early-ones-z5:
                     filter: { name: [Luxembourg,Liechtenstein,San Marino,Civitatis Vaticanæ,El Salvador,Belize,België - Belgique - Belgien], $zoom: {min: 5, max: 6} }
                     draw:
@@ -109,7 +110,7 @@ layers:
                     text_source: global.ux_language_text_source_short
                     font:
                         family: Orbitron
-                        fill: [0.780,0.812,0.851]
+                        fill: [0.570,0.632,0.740]
             region-z4:
                 filter: { $zoom: [4], not: { name: ["Western Cape","Eastern Cape","Northern Cape","North West","Limpopo","KwaZulu-Natal","Hamburg","Freie und Hansestadt Hamburg","Neuchâtel","Nordrhein-Westfalen","Haute-Normandie","Baden-Württemberg","Bayern","Sachsen-Anhalt","Berlin","Mecklenburg-Vorpommern","Schleswig-Holstein","Brandenburg","Niedersachsen","Saarland","Thüringen","Hessen","Sachsen"] } }
                 draw:
