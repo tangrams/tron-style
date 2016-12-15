@@ -1,6 +1,6 @@
 layers:
     boundaries:
-        data: { source: mapzen }
+        data: { source: mapzen, layer: boundaries }
         draw:
             lines:
                 order: global.order
@@ -18,6 +18,32 @@ layers:
                 draw:
                     lines:
                         visible: false
+            labels-z9-up:
+                filter: { name: true, $zoom: { min: 9 }, not: { maritime_boundary: true } }
+                draw:
+                    text:
+                        priority: 2
+                        visible: global.text_visible_admin
+                        text_source: global.ux_language_text_source
+                        # NOTE: there is a bug on feature order for country boundary names
+                        # text_source: |
+                        #     function() {
+                        #         if( feature['name:right'] && feature['name:left'] ) {
+                        #             if( feature['name:right'].includes(' ') || feature['name:left'].includes(' ') ) {
+                        #                 return feature['name'];
+                        #             } else {
+                        #                 return feature['name:left'] + '\n' + feature['name:right'];
+                        #             }
+                        #         } else {
+                        #             return feature['name'];
+                        #         }
+                        #     }
+                        text_wrap: 100px
+                        font:
+                            family: Aldrich
+                            size: 9px
+                            fill: [0.369,0.624,1.000]
+                            transform: uppercase
 
         country_disputed:
             filter: { kind: [disputed, indefinite, indeterminate, lease_limit, line_of_control, overlay_limit] }
@@ -44,6 +70,34 @@ layers:
                 draw:
                     lines:
                         visible: false
+
+            labels-z9-up:
+                filter: { name: true, $zoom: { min: 9 }, not: { maritime_boundary: true } }
+                draw:
+                    text-blend-order:
+                        priority: 3
+                        visible: global.text_visible_admin
+                        #text_source: global.ux_language_text_source
+                        text_source: |
+                            function() {
+                                if( feature['name:right'] && feature['name:left'] ) {
+                                    if( feature['name:right'].includes(' ') || feature['name:left'].includes(' ') ) {
+                                        return feature['name'];
+                                    } else {
+                                        return feature['name:right'] + '\n' + feature['name:left'];
+                                    }
+                                } else {
+                                    return feature['name'];
+                                }
+                            }
+                        text_wrap: 100px
+                        offset: 10px
+                        anchor: top
+                        font:
+                            family: Aldrich
+                            size: 9px
+                            fill: [0.369,0.624,1.000]
+                            transform: uppercase
 
 styles:
     dashed:
