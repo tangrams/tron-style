@@ -580,6 +580,7 @@ layers:
         neighbourhoods:
             filter:
                 kind: [macrohood, neighbourhood]
+                is_landuse_aoi: false
             draw:
                 text-blend-order:
                     priority: 18
@@ -587,13 +588,13 @@ layers:
                         family: Audiowide
                         fill: [1.00,1.00,1.00]
                         transform: uppercase
+                        fill: [0.896,0.912,0.935]
             neighborhood-z11:
                 filter:
                     all:
                         - $zoom: [11]
                         - min_zoom: [11]
                         - max_zoom: { min: 12 }
-                        - is_landuse_aoi: false
                         #- kind_tile_rank: { max: 6 }
                 draw:
                     text-blend-order:
@@ -608,10 +609,10 @@ layers:
                         - $zoom: [12]
                         - min_zoom: [11,12]
                         - max_zoom: { min: 13 }
-                        - is_landuse_aoi: false
                         #- kind_tile_rank: { max: 8 }
                 draw:
                     text-blend-order:
+                        buffer: 8px
                         text_wrap: 10
                         visible: global.text_visible_neighbourhoods_e
                         font:
@@ -623,7 +624,6 @@ layers:
                         - $zoom: [13]
                         - min_zoom: [11,12,13]
                         - max_zoom: { min: 14 }
-                        - is_landuse_aoi: false
                         - kind_tile_rank: { max: 8 }
                 draw:
                     text-blend-order:
@@ -631,14 +631,12 @@ layers:
                         visible: global.text_visible_neighbourhoods_e
                         font:
                             size: 10px
-                            fill: [0.896,0.912,0.935]
             neighborhood-z14:
                 filter:
                     all:
                         - $zoom: [14]
                         - min_zoom: [11,12,13,14]
                         - max_zoom: { min: 15 }
-                        - is_landuse_aoi: false
                         - kind_tile_rank: { max: 8 }
                 draw:
                     text-blend-order:
@@ -646,14 +644,12 @@ layers:
                         visible: global.text_visible_neighbourhoods
                         font:
                             size: 11px
-                            fill: [0.896,0.912,0.935]
             neighborhood-z15:
                 filter:
                     all:
                         - $zoom: [15]
                         - min_zoom: [11,12,13,14,15]
                         - max_zoom: { min: 16 }
-                        - is_landuse_aoi: false
                         - kind_tile_rank: { max: 8 }
                 draw:
                     text-blend-order:
@@ -676,7 +672,6 @@ layers:
                         - $zoom: [16]
                         - min_zoom: [11,12,13,14,15,16]
                         - max_zoom: { min: 17 }
-                        - is_landuse_aoi: false
                         - kind_tile_rank: { max: 8 }
                 draw:
                     text-blend-order:
