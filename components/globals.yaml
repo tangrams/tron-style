@@ -52,16 +52,24 @@ global:
     ux_language_text_source_ocean: |
         function() {
             var name = (global.ux_language && feature['name:'+global.ux_language]) || (global.ux_language_fallback && feature['name:'+global.ux_language_fallback]) || feature['name'] || '';
+            name = name.split(' ').join('\n');
             return name.split('').join('  ');
         }
     ux_language_text_source_sea: |
         function() {
             var name = (global.ux_language && feature['name:'+global.ux_language]) || (global.ux_language_fallback && feature['name:'+global.ux_language_fallback]) || feature['name'] || '';
+            name = name.split(' ').join('\n');
             return name.split('').join(' ');
+        }
+    ux_language_text_source_continent_stacked_only: |
+        function() {
+            var name = (global.ux_language && feature['name:'+global.ux_language]) || (global.ux_language_fallback && feature['name:'+global.ux_language_fallback]) || feature['name'] || '';
+            return name.split(' ').join('\n');
         }
     ux_language_text_source_continent: |
         function() {
             var name = (global.ux_language && feature['name:'+global.ux_language]) || (global.ux_language_fallback && feature['name:'+global.ux_language_fallback]) || feature['name'] || '';
+            name = name.split(' ').join('\n');
             return name.split('').join(' ');
         }
     ux_language_text_source_road_ref_and_name: |
