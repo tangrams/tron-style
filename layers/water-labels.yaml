@@ -99,6 +99,7 @@ layers:
                             size: [[4,9px],[8,14px]]
 
         playa-labels:
+            visible: global.text_visible_water_labels
             filter:
                 all:
                     - name: true
@@ -121,10 +122,9 @@ layers:
                     - { $zoom: { min: 17 } }
             draw:
                 text:
-                    visible: global.text_visible_water
                     text_source: global.ux_language_text_source
                     font:
-                        fill: [0.351,0.770,0.950]
+                        fill: red #[0.351,0.770,0.950]
                         family: Aldrich
                         size: 10px
             # debug only
@@ -135,6 +135,7 @@ layers:
 
 
         water-line-labels:
+            visible: global.text_visible_water_labels
             filter:
                 all:
                     - name: true
@@ -143,20 +144,17 @@ layers:
                     - $zoom: { min: 14 }
             draw:
                 text:
-                    visible: global.text_visible_water
                     text_source: global.ux_language_text_source
                     font:
                         fill: [0.370,0.622,1.000]
                         family: Aldrich
                         size: 12px
-            water-line-labels-z14:
+            water-line-labels:
                 filter: { $zoom: [14] }
                 draw:
-                    text: { font: { size: 10px } }
-            water-line-labels-z17:
-                filter: { $zoom: [17] }
-                draw:
-                    text: { font: { size: 14px } }
+                    text:
+                        font:
+                            size: [[14,10px],[17,14px]]
             not-river-not-stream:
                 filter: { kind: [canal,dam,ditch,drain], $zoom: { max: 16 } }
                 draw:
