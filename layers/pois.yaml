@@ -559,42 +559,27 @@ layers:
             draw:
                 icons:
                     visible: false
-                text-blend-order:
+                text:
                     visible: global.text_visible_airport_gate
                     text_source: ref
                     priority: 63
                     font:
                         fill: red #global.text_fill_exits
                         size: [[16,9px],[17,12px],[20,14px]]
-            later:
-                filter: { $zoom: { min: 19 } }
-                draw:
-                    icons:
-                        text:
-                            font:
-                                weight: 600
 
         highway-exit:
             filter: { kind: motorway_junction, $zoom: { min: 14 } }
             draw:
                 icons:
                     visible: false
-                text-blend-order:
+                text:
                     visible: global.text_visible_exits
                     text_source: ref
                     priority: 63
                     font:
-                        family: Montserrat
-                        fill: global.text_fill_exits
+                        family: Aldrich
+                        fill: white
                         size: [[12,9px],[15,12px],[17,14px]]
-                        stroke: { color: global.text_stroke, width: [[12,2px],[14,3px],[15,3px]] }
-            later:
-                filter: { $zoom: { min: 16 } }
-                draw:
-                    icons:
-                        text:
-                            font:
-                                weight: 600
 
         text_colors:
             landuse-labels-green-areas-not-national-park:
