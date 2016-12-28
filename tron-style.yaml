@@ -20,6 +20,7 @@ import:
     - layers/buildings.yaml
     - layers/buildings-labels.yaml
     - layers/landuse.yaml
+    - layers/landuse-labels.yaml
     - layers/boundaries.yaml
     - layers/places.yaml
     - layers/pois.yaml

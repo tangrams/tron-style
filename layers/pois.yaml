@@ -613,7 +613,7 @@ layers:
                 filter: { kind: [school,university,kindergarten,college] }
                 draw: { icons: { text: { font: { fill: [0.461,0.885,0.980] } } } }
             retail:
-                filter: { kind: [books,computer,outdoor,supermarket,department_store,electronics,mall,clothes,toys,fashion,jewelry,convenience,gift,music,bicycle,alcohol,sports,florist,mobile_phone,tailor,bicycle_rental,hardware,retail,confectionery,greengrocer,doityourself,butcher,bicycle_rental_station] }
+                filter: { kind: [books,computer,supermarket,department_store,electronics,mall,clothes,toys,fashion,jewelry,convenience,gift,music,bicycle,alcohol,sports,florist,mobile_phone,tailor,bicycle_rental,hardware,retail,confectionery,greengrocer,doityourself,butcher,bicycle_rental_station] }
                 draw: { icons: { text: { font: { fill: [1.000,0.714,0.976] } } } }
             place-of-worship:
                 filter: { kind: [place_of_worship,cemetery,grave_yard] }

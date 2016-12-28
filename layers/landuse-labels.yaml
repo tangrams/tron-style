@@ -1,0 +1,32 @@
+layers:
+    landuse:
+        data: { source: mapzen }
+        landuse-labels:
+            filter:
+                all:
+                    - label_placement: true
+                    - name: true
+            draw:
+                text:
+                    text_source: global.ux_language_text_source
+                    interactive: global.interactive
+                    move_into_tile: true
+                    priority: 100
+                    visible: global.text_visible_landuse_generic
+                    font:
+                        family: Cairo
+                        fill: [0.149,0.871,0.992]
+                        style: italic
+                        size: 11px
+            pier:
+                filter: { kind: [pier] }
+                draw:
+                    icons:
+                        size: 18px
+                        sprite: function() { return feature.kind; }
+                        priority: 65
+                        text:
+                            font:
+                                family: Cairo
+                                fill: [0.345,0.953,0.769]
+                                size: 11px
