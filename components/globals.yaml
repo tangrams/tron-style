@@ -1,5 +1,5 @@
 global:
-    animated: true
+    sdk_animated: true
 
     pseudoRandomColor: |
         function() {
