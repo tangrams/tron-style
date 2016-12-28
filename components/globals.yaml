@@ -191,9 +191,13 @@ global:
     text_visible_addresses: true
     text_visible_pois_landuse: true        #false by default
     icon_visible_pois_landuse: true        #false by default
+    icon_visible_poi_landuse_e: true
     text_visible_landuse_generic: true     #false by default
     text_visible_island: true
     text_visible_shields: true
+    text_visible_airport_gate: true
+    text_visible_exits: true
+    label_visible_poi_landuse: true
 
     # SHIELDS
     sdk_shield_color: [1.000,0.855,0.365]
