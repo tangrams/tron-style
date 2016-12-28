@@ -510,12 +510,8 @@ layers:
                 lines:
                     order: global.order
                     style: pier-overlay
-                    # color: [0.212,0.302,0.427]
                     color: [0.267,0.498,0.843,0.5]
                     width: [[13, 0px], [14, 0.5px],[15, 1.5px], [16, 2.5px],[17, 3px],[18, 3m]]
-                    # outline:
-                    #     color: [0.675,0.855,0.886]
-                    #     width: [[15, 0px],[16,0.65px], [17, 0.75px], [18, 1px], [19, 1.5px]]
 
         # ferry:
         #     filter: { kind: ferry }
@@ -528,7 +524,7 @@ layers:
         #                 width: 0px
 
         airport-lines:
-            filter: { kind: aeroway }
+            filter: { kind: aeroway, kind_detail: [runway,taxiway] }
             draw:
                 lines:
                     order: global.order
@@ -538,29 +534,12 @@ layers:
                 filter: { kind_detail: taxiway }
                 draw:
                     lines:
-                        # color: [[12,[1.000,0.518,0.424]],[16,[1.000,0.564,0.312]]]
                         color: [[9,[0.215,1.000,1.000]],[11,[0.215,1.000,1.000]],[13,[0.078,0.129,0.259]]]
                         width: [[12,0px],[13,1px],[15,1.5px],[17,6px],[20,20px]]
                         outline:
                             width: 0px
             runway:
                 filter: { kind_detail: runway }
-                # draw:
-                #     lines:
-                #         # color: [1.000,0.564,0.312]
-                #         color: [[9,[0.215,1.000,1.000]],[14,[0.000,0.259,0.694]],[16,[0.078,0.129,0.259]]]
-                #         width: [[9,0px],[11,2px],[13,6px],[15,12px],[17,60px],[20,70m]]
-                #         outline:
-                #             style: runway-glow
-                #             # color: [[9,[0.965,0.929,0.341]],[16,[1.000,0.247,0.239]]]
-                #             color: [[9,[0.215,1.000,1.000]],[15,[0.000,0.259,0.694]]]
-                #             width: [[9,1px],[11,1.5px],[20,22px]]
-                # runway-detail1:
-                #     filter: { $zoom: { min: 12 } }
-                #     draw:
-                #         runway-dots:
-                #             color: [0.215,1.000,1.000]
-                #             width: [[12,2px],[15,7px],[20,10px]]
                 draw:
                     lines:
                         color: [[9,[0.215,1.000,1.000]],[11,[0.215,1.000,1.000]],[13,[0.078,0.129,0.259]]]
