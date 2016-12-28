@@ -1,6 +1,6 @@
 layers:
+    # tuck this into existing landuse layer
     landuse:
-        data: { source: mapzen }
         landuse-labels:
             filter:
                 all:
