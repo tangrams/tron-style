@@ -36,7 +36,7 @@ layers:
                             size: 12px
 
             lakes-labels:
-                filter: 
+                filter:
                     $zoom: { min: 4 }
                 draw:
                     text:
@@ -124,15 +124,9 @@ layers:
                 text:
                     text_source: global.ux_language_text_source
                     font:
-                        fill: red #[0.351,0.770,0.950]
+                        fill: [0.351,0.770,0.950]
                         family: Aldrich
                         size: 10px
-            # debug only
-    #        icons:
-    #            size: [[13, 12px], [15, 18px]]
-    #            interactive: true
-    #            sprite: global.townspot_sprite
-
 
         water-line-labels:
             visible: global.text_visible_water_labels
