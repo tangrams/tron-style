@@ -25,7 +25,7 @@ layers:
         country:
             filter:
                 kind: country
-                $zoom: { min: 2, max: 9 }
+                $zoom: { min: 3, max: 9 }
             draw:
                 text-blend-order:
                     priority: 3
@@ -235,18 +235,18 @@ layers:
             #
             # NOTE: So instead we play a shell game with symbolizers per zoom
             #
-            _icons_later: 
+            _icons_later:
                 filter: { $zoom: { min: 11 } }
                 draw:
-                    icons: 
+                    icons:
                         visible: false
                     text-blend-order:
                         visible: global.text_visible_populated_places
 
-            _text_early: 
+            _text_early:
                 filter: { $zoom: { max: 11 } }
                 draw:
-                    text-blend-order: 
+                    text-blend-order:
                         visible: false
             # END HACK
 
