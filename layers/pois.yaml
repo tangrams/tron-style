@@ -481,25 +481,30 @@ layers:
                         font:
                             fill: [0.965,0.929,0.341]
                             size: 10px
-            station-early:
-                filter:
-                    $zoom: { max: 11 }
+            high-priority-early:
+                filter: { kind_tile_rank: { max: 4 }, $zoom: { min: 0, max: 13 } }
                 draw:
                     icons:
-                        visible: false
-            # for a transit style we'd want to see **all**, so don't move this above (it's special to this style)
+                        text: { visible: false }
             low-priority-early:
-                filter: { kind_tile_rank: { min: 5 }, $zoom: { min: 0, max: 13 } }
+                filter: { kind_tile_rank: { min: 4 }, $zoom: { min: 0, max: 13 } }
                 draw:
                     icons:
                         visible: false
+                        text: { visible: false }
+            high-priority-early-z13:
+                filter: { kind_tile_rank: { min: 2 }, $zoom: [13] }
+                draw:
+                    icons:
+                        text: { visible: false }
             low-priority-early-z13:
-                filter: { kind_tile_rank: { min: 5 }, $zoom: [13] }
+                filter: { kind_tile_rank: { min: 4 }, $zoom: [13] }
                 draw:
                     icons:
                         visible: false
+                        text: { visible: false }
             low-priority-early-z14:
-                filter: { kind_tile_rank: { min: 7 }, $zoom: [14] }
+                filter: { kind_tile_rank: { min: 4 }, $zoom: [14] }
                 draw:
                     icons:
                         text: { visible: false }
@@ -598,7 +603,7 @@ layers:
                 filter: { kind: [restaurant,cafe,fast_food,bakery,pub,bar,ice_cream,wine,biergarten,brewery] }
                 draw: { icons: { text: { font: { fill: [0.212,1.000,0.882] } } } }
             hotel:
-                filter: { kind: [hotel,hostel,motel,company,office,substation,plant,generator,wastewater_plant,bench,slipway,insurance,archaeological_site,water_works] }
+                filter: { kind: [hotel,hostel,motel,company,office,substation,plant,generator,wastewater_plant,works,bench,slipway,insurance,archaeological_site,water_works] }
                 draw: { icons: { text: { font: { fill: [0.900,0.750,1.000] } } } }
             pharmacy:
                 filter: { kind: pharmacy }
