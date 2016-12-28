@@ -17,7 +17,7 @@ layers:
                 interactive: global.interactive
                 priority: 65
                 repeat_group: abc
-                buffer: 3px
+                buffer: 20px
                 text:
                     visible: global.text_visible_poi_landuse
                     text_source: global.ux_language_text_source
@@ -121,9 +121,8 @@ layers:
                     priority: 100
                     text:
                         font:
-                            fill: '#666'
+                            fill: [0.356,0.990,0.789]
                             family: global.text_font_family
-                            style: italic
                             size: 11px
         suppress-icon-z17:
             filter:
@@ -132,8 +131,6 @@ layers:
             draw:
                 icons:
                     size: 0px
-                    #visible: false
-                    text: { font: { style: italic } }
 
         # the server should be setting better values here
         hide-until-z12-any:
@@ -363,16 +360,16 @@ layers:
             draw:
                 icons:
                     sprite: park
+                    size: [[7,16px],[12,18px],[15,36px]]
                     text:
+                        text_wrap: 12
                         font:
-                            fill: [0.200,0.409,0.398] #*text_fill_park
-                            style: italic
-            z14-parks:
-                filter: { $zoom: { min: 14 } }
+                            fill: [0.356,0.990,0.789]
+            z10-parks:
+                filter: { $zoom: { min: 13 } }
                 draw:
                     icons:
                         sprite: park-l
-                        size: [[14,24px],[16,32px]]
         parks:
             filter:
                 - kind: [park, conservation, nature_reserve, grass]
@@ -382,16 +379,13 @@ layers:
                     sprite: park
                     text:
                         font:
-                            fill: [0.181,0.370,0.361]
-                            style: italic
+                            fill: [0.356,0.990,0.789]
             only-text-later:
                 filter: { kind: [grass], $zoom: { min: 16 } }
                 draw:
                     icons:
                         size: 0px
-                        text:
-                            font:
-                                style: italic
+
         forest:
             filter:
                 - kind: forest
@@ -402,7 +396,6 @@ layers:
                     text:
                         font:
                             fill: [0.356,0.990,0.789]
-                            style: italic
         beach:
             filter:
                 kind: [beach]
@@ -417,11 +410,28 @@ layers:
             draw:
                 icons:
                     priority: 42
+                    size: [[10,18px],[12,28px],[13,36px]]
                     text:
                         text_source: global.ux_language_text_source_iata
+                        font:
+                            family: Orbitron
+                            size: 14px[[9,14px],[14,18px]]
             early:
-                filter: { $zoom: [9,10,11] }
+                filter: { $zoom: { min: 9, max: 15 } }
                 draw: { icons: { text: { text_source: iata } } }
+            early2:
+                filter: { $zoom: { min: 15, max: 18 } }
+                draw:
+                    icons:
+                        text:
+                            font:
+                                family: Cairo
+                                size: 11px
+            z12-airport:
+                filter: { $zoom: { min: 12 } }
+                draw:
+                    icons:
+                        sprite: airport-l
         enclosure-related:
             filter:
                 kind: [enclosure, animal]
@@ -432,9 +442,6 @@ layers:
                     #: dot-black
                     text:
                         text_wrap: 10
-                        font:
-                            style: italic
-                            weight: normal
         glacier:
             filter:
                 kind: glacier
@@ -447,9 +454,8 @@ layers:
                         priority: 44
                         text_wrap: 10
                         font:
-                            weight: normal
-                            style: italic
-                            fill: '#4ba3c5'
+                            fill: [0.290,0.902,0.910]
+
 
         landuse-labels-not-any-above:
             filter:
@@ -469,12 +475,14 @@ layers:
             draw:
                 icons:
                     visible: global.icon_visible_station
-                    size: [[13, 12px], [14, 12px], [15, 16px], [17, 18px], [18, 20px]]
+                    size: [[13,12px],[14,12px],[17,18px],[19,36px]]
                     priority: 42
                     text:
+                        text_wrap: 12
                         visible: global.text_visible_station
                         font:
                             fill: [0.965,0.929,0.341]
+                            size: 10px
             station-early:
                 filter:
                     $zoom: { max: 11 }
@@ -497,6 +505,11 @@ layers:
                 draw:
                     icons:
                         text: { visible: false }
+            z18-stations:
+                    filter: { $zoom: { min: 18 } }
+                    draw:
+                        icons:
+                            sprite: train_station-l
 
         garden-no-area-early:
             filter: { kind: [garden, allotments], $zoom: [16], area: false }
@@ -504,14 +517,14 @@ layers:
                 icons:
                     priority: 45
                     size: 14px
-                    text:  { font: { size: 10px, style: italic } }
+                    text:  { font: { size: 10px } }
         garden-no-area-later:
             filter: { kind: [garden, allotments], $zoom: { min: 17 }, area: false }
             draw:
                 icons:
                     priority: 45
                     size: 16px
-                    text:  { font: { size: 11px, style: italic } }
+                    text:  { font: { size: 11px } }
         gate:
             filter: { kind: gate, name: true  }
             draw: { icons: { sprite: generic } }
@@ -531,10 +544,6 @@ layers:
             draw:
                 icons:
                     size: 0px
-                    #visible: false
-                    text:
-                        font:
-                            style: italic
 
         # TODO: this isn't working, should see small icons near the transbay terminal in SF
         bus_stop:
@@ -546,7 +555,6 @@ layers:
                     text:
                         font:
                             size: 11px
-                            weight: normal
             later:
                 filter: { $zoom: { max: 19 } }
                 draw:
@@ -564,8 +572,9 @@ layers:
                     text_source: ref
                     priority: 63
                     font:
-                        fill: red #global.text_fill_exits
-                        size: [[16,9px],[17,12px],[20,14px]]
+                        family: Aldrich
+                        fill: [0.149,0.871,0.992]
+                        size: [[16,8px],[20,14px]]
 
         highway-exit:
             filter: { kind: motorway_junction, $zoom: { min: 14 } }
@@ -579,7 +588,7 @@ layers:
                     font:
                         family: Aldrich
                         fill: white
-                        size: [[12,9px],[15,12px],[17,14px]]
+                        size: [[12,8px],[17,14px]]
 
         text_colors:
             landuse-labels-green-areas-not-national-park:
