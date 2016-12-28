@@ -6,50 +6,6 @@ layers:
                 order: global.order
                 visible: false
 
-        landuse-labels:
-            filter:
-                all:
-                    - label_placement: true
-                    - name: true
-            draw:
-                text:
-                    text_source: global.ux_language_text_source
-                    interactive: true
-                    move_into_tile: true
-                    priority: 100
-                    visible: false #global.text_visible_landuse_generic
-                    font:
-                        fill: '#aaa'
-                        family: Cairo
-                        style: italic
-                        size: 11px
-                        #stroke: { color: global.text_stroke_address, width: 1 }
-
-            pier:
-                filter: { kind: [pier] }
-                draw:
-                    icons:
-                        size: 18px
-                        interactive: true
-                        sprite: function() { return feature.kind; }
-                        visible: global.icon_visible_pois_landuse
-                        priority: 65
-                        #buffer: 100px
-                        text:
-                            text_source: global.ux_language_text_source
-                            interactive: true
-                            move_into_tile: true
-                            priority: 100
-                            visible: global.text_visible_landuse_generic
-                            font:
-                                #fill: '#aaa'
-                                fill: [0.345,0.953,0.769]
-                                family: Cairo
-                                style: italic
-                                size: 11px
-                                #stroke: { color: global.text_stroke_address, width: 1 }
-
-
 
         landuse-styling:
 #        tier1:

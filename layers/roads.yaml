@@ -681,7 +681,7 @@ styles:
 
     pier-overlay:
         base: lines
-        #blend: overlay
+        blend: overlay
 
     ferry-overlay:
         base: lines

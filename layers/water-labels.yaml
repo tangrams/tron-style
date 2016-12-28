@@ -1,8 +1,7 @@
 layers:
-    # tuck this into existing earth layer
+    # tuck this into existing water layer
     water:
         water-area-labels:
-            data: { source: mapzen, layer: water }
             visible: global.text_visible_water_labels
             filter:
                 all:

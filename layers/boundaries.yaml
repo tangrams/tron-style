@@ -18,19 +18,6 @@ layers:
                 draw:
                     lines:
                         visible: false
-            labels-z9-up:
-                filter: { name: true, $zoom: { min: 9 }, not: { maritime_boundary: true } }
-                draw:
-                    text:
-                        priority: 2
-                        visible: global.text_visible_admin
-                        text_source: global.ux_language_text_source_boundary_lines
-                        text_wrap: 100px
-                        font:
-                            family: Aldrich
-                            size: 9px
-                            fill: [0.369,0.624,1.000]
-                            transform: uppercase
 
         country_disputed:
             filter: { kind: [disputed, indefinite, indeterminate, lease_limit, line_of_control, overlay_limit] }
@@ -57,22 +44,6 @@ layers:
                 draw:
                     lines:
                         visible: false
-
-            labels-z9-up:
-                filter: { name: true, $zoom: { min: 9 }, not: { maritime_boundary: true } }
-                draw:
-                    text-blend-order:
-                        priority: 3
-                        visible: global.text_visible_admin
-                        text_source: global.ux_language_text_source_boundary_lines
-                        text_wrap: 100px
-                        offset: 10px
-                        anchor: top
-                        font:
-                            family: Aldrich
-                            size: 9px
-                            fill: [0.369,0.624,1.000]
-                            transform: uppercase
 
 styles:
     dashed:
