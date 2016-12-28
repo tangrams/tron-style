@@ -112,7 +112,7 @@ layers:
                 draw: { icons: { visible: global.icon_visible_poi_landuse_e } }
 
         # NOTE: all natural_* should only be in landuse layer
-        suppress icon-always:
+        suppress-icon-always:
             filter:
                 kind: [natural_forest, natural_park, natural_wood]
             draw:
@@ -122,7 +122,6 @@ layers:
                     text:
                         font:
                             fill: [0.356,0.990,0.789]
-                            family: global.text_font_family
                             size: 11px
         suppress-icon-z17:
             filter:
@@ -415,7 +414,7 @@ layers:
                         text_source: global.ux_language_text_source_iata
                         font:
                             family: Orbitron
-                            size: 14px[[9,14px],[14,18px]]
+                            size: [[9,14px],[14,16px]]
             early:
                 filter: { $zoom: { min: 9, max: 15 } }
                 draw: { icons: { text: { text_source: iata } } }
@@ -439,7 +438,6 @@ layers:
                 icons:
                     priority: 43
                     size: 0px
-                    #: dot-black
                     text:
                         text_wrap: 10
         glacier:
@@ -599,14 +597,12 @@ layers:
             restaurant:
                 filter: { kind: [restaurant,cafe,fast_food,bakery,pub,bar,ice_cream,wine,biergarten,brewery] }
                 draw: { icons: { text: { font: { fill: [0.212,1.000,0.882] } } } }
-                # draw: { icons: { text: { font: { fill: [0.174,0.830,0.732] } } } }
             hotel:
                 filter: { kind: [hotel,hostel,motel,company,office,substation,plant,generator,wastewater_plant,bench,slipway,insurance,archaeological_site,water_works] }
                 draw: { icons: { text: { font: { fill: [0.900,0.750,1.000] } } } }
             pharmacy:
                 filter: { kind: pharmacy }
                 draw: { icons: { text: { font: { fill: [0.382,0.830,0.501] } } } }
-                # draw: { icons: { text: { font: { fill: [0.512,0.790,0.435] } } } }
             hospital:
                 filter: { kind: hospital }
                 draw: { icons: { text: { font: { fill: [0.932,0.737,0.932] } } } }
@@ -616,7 +612,6 @@ layers:
             school:
                 filter: { kind: [school,university,kindergarten,college] }
                 draw: { icons: { text: { font: { fill: [0.461,0.885,0.980] } } } }
-                # draw: { icons: { text: { font: { fill: [0.334,0.726,0.814] } } } }
             retail:
                 filter: { kind: [books,computer,outdoor,supermarket,department_store,electronics,mall,clothes,toys,fashion,jewelry,convenience,gift,music,bicycle,alcohol,sports,florist,mobile_phone,tailor,bicycle_rental,hardware,retail,confectionery,greengrocer,doityourself,butcher,bicycle_rental_station] }
                 draw: { icons: { text: { font: { fill: [1.000,0.714,0.976] } } } }
@@ -652,8 +647,4 @@ layers:
                 draw: { icons: { text: { font: { fill: [0.988,0.851,0.820] } } } }
             airport:
                 filter: { kind: [aerodrome] }
-                draw:
-                    icons:
-                        text:
-                            font:
-                                fill: [0.977,0.830,1.000]
+                draw: { icons: { text: { font: { fill: [0.977,0.830,1.000] } } } }
