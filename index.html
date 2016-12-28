@@ -19,9 +19,16 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.1/leaflet.js"></script>
         <!-- bog-standard leaflet URL hash -->
         <script type="text/javascript" src="https://cdn.rawgit.com/mlevans/leaflet-hash/master/leaflet-hash.js"></script>
+
         <!-- Main tangram library -->
-        <script type="text/javascript" src="https://mapzen.com/tangram/0.11/tangram.min.js"></script>
-        <!-- <script src="http://localhost:8000/dist/tangram.debug.js"></script> -->
+        <!-- production -->
+        <script src="https://mapzen.com/tangram/0.11/tangram.min.js"></script>
+        <!-- production debug -->
+        <!-- <script src="https://mapzen.com/tangram/0.11/tangram.debug.js"></script> -->
+        <!-- dev -->
+        <!-- <script src="https://precog.mapzen.com/tangrams/tangram/master/dist/tangram.debug.js"></script> -->
+        <!-- dev branch -->
+        <!-- <script src="https://precog.mapzen.com/tangrams/tangram/placement-min-ratio/dist/tangram.debug.js"></script> -->
 
         <!-- A lightweight graphical user interface for changing variables in JavaScript.  -->
         <script type="text/javascript" src="lib/dat.gui.min.js"></script>
@@ -250,7 +257,7 @@
             // Scene initialized
             layer.scene.subscribe({
                 load: function (data) {
-                    data.config.global.animated = animated;
+                    data.config.global.sdk_animated = animated;
                 }
             });
             layer.addTo(map);
@@ -424,11 +431,18 @@
             };
             gui.animated = query.animated || true;
             gui.add(gui, 'animated', animated).onChange(function(value) {
-                scene.config.global.animated = (value === 'true' || value === true); // dat.gui passes a string
+                scene.config.global.sdk_animated = (value === 'true' || value === true); // dat.gui passes a string
                 scene.updateConfig();
                 //window.location.search = 'animated=' + value;
             });
 
+            // Enable/disable interactivity for all features
+            var interactive_label = 'interactive';
+            gui[interactive_label] = false;
+            gui.add(gui, interactive_label).onChange(function(value) {
+                scene.setIntrospection(value);
+            });
+            scene.setIntrospection(gui[interactive_label]);
 
             // Take a screenshot and save to file
             gui.save_screenshot = function () {
@@ -570,10 +584,13 @@
                     map_start_location = [camera.position[1], camera.position[0], camera.position[2]]
                 }
                 map.setView([map_start_location[0], map_start_location[1]], map_start_location[2]);
+
+                if (!inIframe()) {
+                    addGUI();
+                }
             });
             if (!inIframe()) {
                 map.scrollWheelZoom.enable();
-                addGUI();
                 initFeatureSelection();
             }
 
