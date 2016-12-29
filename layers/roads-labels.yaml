@@ -149,7 +149,7 @@ layers:
                     # that makes United States look a bit funky with `(xxx)` and generic shields
                     # showing up in fields of custom state shields like US:CA and US:NY
                     #
-                    - function() { return global.sdk_shield_visible; }
+                    - function() { return global.sdk_road_shield; }
                     - any:
                         - shield_text: true    # some roads don't have shield text, deal with that later
                         - all:
@@ -207,7 +207,7 @@ layers:
                     icons:
                         priority: 47
                         #color: yellow
-                        visible: global.text_visible_shields
+                        visible: global.sdk_road_shields
 
             default_priority_trunk:
                 filter:
@@ -218,7 +218,7 @@ layers:
                     icons:
                         priority: 48
                         #color: red
-                        visible: global.text_visible_shields
+                        visible: global.sdk_road_shields
             default_priority_primary:
                 filter:
                     all:
@@ -228,7 +228,7 @@ layers:
                     icons:
                         priority: 49
                         #color: aqua
-                        visible: global.text_visible_shields
+                        visible: global.sdk_road_shields
             default_priority_trunk_secondary:
                 filter:
                     all:
@@ -238,7 +238,7 @@ layers:
                     icons:
                         priority: 53
                         #color: blue
-                        visible: global.text_visible_shields
+                        visible: global.sdk_road_shields
             default_priority_trunk_tertiary:
                 filter:
                     all:
@@ -248,7 +248,7 @@ layers:
                     icons:
                         priority: 55
                         #color: green
-                        visible: global.text_visible_shields
+                        visible: global.sdk_road_shields
             # not-special:
             #     filter:
             #         not: { network: ['US:I','US:US'] }
@@ -365,7 +365,7 @@ layers:
                             # you need to match any custom shield to the vector tile `network` values
                             sprite: function() { return (feature.network + '-' + feature.shield_text.length + 'char'); }
                             priority: 46
-                            visible: global.text_visible_shields
+                            visible: global.sdk_road_shields
                             text:
                                 offset: [0px, 0px]
                                 font:
@@ -408,7 +408,7 @@ layers:
                                 function() { return ('US:US-' + feature.shield_text.length + 'char'); }
                             priority: 47
                             cull_from_tile: true
-                            visible: global.text_visible_shields
+                            visible: global.sdk_road_shields
                             text:
                                 offset: [0.85px, 0px]
                                 font:
@@ -478,17 +478,17 @@ layers:
                         filter: { kind_detail: [motorway], $zoom: [7,8] }
                         draw:
                             icons:
-                                visible: global.text_visible_shields
+                                visible: global.sdk_road_shields
                     trunk:
                         filter: { kind_detail: [trunk], $zoom: [8,9] }
                         draw:
                             icons:
-                                visible: global.text_visible_shields
+                                visible: global.sdk_road_shields
                     primary:
                         filter: { kind_detail: primary, $zoom: [10,11] }
                         draw:
                             icons:
-                                visible: global.text_visible_shields
+                                visible: global.sdk_road_shields
                     width_1char:
                         filter: function() { return (feature.shield_text.length === 1) }
                         draw:
@@ -635,7 +635,7 @@ layers:
                             # you need to match any custom shield to the vector tile `network` values
                             sprite: function() { return ('county_shield-' + feature.shield_text.length + 'char'); }
                             # priority: 19
-                            visible: global.text_visible_shields
+                            visible: global.sdk_road_shields
                             text:
                                 font:
                                     fill: [1.00,1.00,1.00]

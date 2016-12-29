@@ -1,4 +1,8 @@
 global:
+    # Sign up for a Mapzen API key to enjoy higher rate limits
+    # https://mapzen.com/documentation/overview/#developer-accounts-and-api-keys
+    sdk_mapzen_api_key: mapzen-xxxxxx     # set this value to your Mapzen API key
+
     sdk_animated: true
     sdk_interactive: true
 
@@ -233,8 +237,9 @@ global:
     text_visible_island: true
     text_visible_aerialway: true
     text_visible_airport_gate: true
-    text_visible_shields: true
     text_visible_exits: true
+
+    sdk_road_shield: true
 
     sdk_building_extrude: true                  # building extrusion toggle
     building_extrude_height: |                  # building extrude height logic

@@ -222,7 +222,11 @@
         map.setView(map_start_location.slice(0, 2), map_start_location[2]);
 
         var layer = Tangram.leafletLayer({
+            // more: 'mapzen-n22UFkv'
+            // default (some): 'mapzen-iP15tWp'
+            // no: 'mapzen-7f8jPGR'
             scene: 'tron-style.yaml',
+            scene: { import: 'tron-style.yaml', global: { sdk_mapzen_api_key: 'mapzen-n22UFkv' } },
             attribution: '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a>, &copy; OSM contributors'
         });
 
@@ -398,28 +402,37 @@
             });
             gui.fallback_button.name('lang fallback');
 
+
             // Labels selector
             var labels = {
-                '(default)': 'some',
+                '(default)': 'more',
                 'More': 'more',
                 'Some': 'some',
+                'Some (no shields)': 'some_no_shields',
                 'None': 'none'
             };
-            // use query language, else default to English
             gui.labels = query.labels || 'more';
             gui.add(gui, 'labels', labels).onChange(function(value) {
                 var _default = true;
                 var _more = false;
+                var _road_shields = true;
 
                 if(value === 'more') {
                     _more = true;
                     _default = true;
+                    _road_shields = true;
                 } else if(value === 'some') {
                     _more = false;
                     _default = true;
+                    _road_shields = true;
+                } else if(value === 'some_no_shields') {
+                    _more = false;
+                    _default = true;
+                    _road_shields = false;
                 } else {
                     _more = false;
                     _default = false;
+                    _road_shields = false;
                 }
 
                 scene.config.global.text_visible_continent = _default;
@@ -432,7 +445,8 @@
                 scene.config.global.text_visible_water_labels = _default;
                 scene.config.global.text_visible_island = _default;
 
-                scene.config.global.sdk_shield_visible = _default;
+                scene.config.global.sdk_road_shields = _road_shields;
+
                 scene.config.global.text_visible_roads = _default;
                 scene.config.global.text_visible_highway = _default;
                 scene.config.global.text_visible_highway_e = _default;
@@ -483,7 +497,6 @@
                     scene.config.global.icon_size_green_airport = [[0, '0px']];
                     scene.config.global.icon_size_green_l = [[0, '0px']];
                 }
-
                 // Oct. 7, 2016
                 //need to rework this, upon switching back to labels, buildings stay light and labels dont read
                 // if( _val ) {
