@@ -389,7 +389,7 @@
             });
             gui.fallback_button.name('lang fallback');
 
-            // Language selector
+            // Labels selector
             var labels = {
                 '(default)': 'some',
                 'More': 'more',
@@ -413,6 +413,7 @@
                     _default = false;
                 }
 
+                scene.config.global.text_visible_continent = _default;
                 scene.config.global.text_visible_admin = _default;
                 scene.config.global.text_visible_populated_places = _default;
                 scene.config.global.icon_visible_populated_places = _default;
@@ -420,33 +421,58 @@
                 scene.config.global.text_visible_neighbourhoods_e = _default;
                 scene.config.global.text_visible_water = _default;
                 scene.config.global.text_visible_water_labels = _default;
-                scene.config.global.text_visible_roads = _default;
+                scene.config.global.text_visible_island = _default;
+
                 scene.config.global.sdk_shield_visible = _default;
+                scene.config.global.text_visible_roads = _default;
+                scene.config.global.text_visible_highway = _default;
+                scene.config.global.text_visible_highway_e = _default;
+                scene.config.global.text_visible_trunk_primary_route = _default;
+                scene.config.global.text_visible_trunk_primary = _default;
+                scene.config.global.text_visible_secondary = _default;
+                scene.config.global.text_visible_tertiary = _default;
+                scene.config.global.text_visible_minor_road = _default;
+                scene.config.global.text_visible_minor_road_e = _default;
+                scene.config.global.text_visible_service_road = _default;
+                scene.config.global.text_visible_path = _default;
+                scene.config.global.text_visible_piste = _default;
+                scene.config.global.text_visible_steps = _default;
+
+                scene.config.global.text_visible_highway_e = _default;
+                scene.config.global.text_visible_trunk_primary_e2 = _default;
+                scene.config.global.text_visible_trunk_primary_e = _default;
+                scene.config.global.text_visible_secondary_e = _default;
+                scene.config.global.text_visible_tertiary_e = _default;
+                scene.config.global.text_visible_minor_road_e = _default;
+                scene.config.global.text_visible_exits_e = _default;
+
                 scene.config.text_visible_aerialway = _default;
                 scene.config.global.text_visible_airport_gate = _default;
                 scene.config.global.text_visible_exits = _default;
+
                 scene.config.global.text_visible_buildings = _default;
                 scene.config.global.text_visible_addresses = _default;
-                scene.config.global.text_visible_island = _default;
 
                 scene.config.global.label_visible_poi_landuse = _more;
+                scene.config.global.label_visible_poi_landuse_e = _more;
                 scene.config.global.icon_visible_poi_landuse = _more;
-                scene.config.icon_visible_poi_landuse_e = _more;
+                scene.config.global.icon_visible_poi_landuse_e = _more;
+                scene.config.global.text_visible_poi_landuse_e = _more;
                 scene.config.global.icon_visible_station = _more;
 
                 scene.config.icon_visible_landuse_green = _default;
                 scene.config.text_visible_landuse_green = _default;
                 scene.config.text_visible_landuse_generic = _default;
                 if( _more ) {
-                    scene.config.global.icon_size_green = '[[13, 14px], [16, 18px], [18, 19px]]';
-                    scene.config.global.icon_size_green_nationl_park = '[[10,18px],[12,28px],[13,36px]]';
-                    scene.config.global.icon_size_green_airport = '[[13,12px],[14,12px],[17,18px],[19,36px]]';
-                    scene.config.global.icon_size_green_l = '[[14,24px],[16,32px]]';
+                    scene.config.global.icon_size_green = [[13, '14px'], [16, '18px'], [18, '19px']];
+                    scene.config.global.icon_size_green_nationl_park = [[10,'18px'],[12,'28px'],[13,'36px']];
+                    scene.config.global.icon_size_green_airport = [[13,'12px'],[14,'12px'],[17,'18px'],[19,'36px']];
+                    scene.config.global.icon_size_green_l = [[14,'24px'],[16,'32px']];
                 } else {
-                    scene.config.global.icon_size_green = '0px';
-                    scene.config.global.icon_size_green_nationl_park = '0px';
-                    scene.config.global.icon_size_green_airport = '0px';
-                    scene.config.global.icon_size_green_l = '0px';
+                    scene.config.global.icon_size_green = [[0, '0px']];
+                    scene.config.global.icon_size_green_nationl_park = [[0, '0px']];
+                    scene.config.global.icon_size_green_airport = [[0, '0px']];
+                    scene.config.global.icon_size_green_l = [[0, '0px']];
                 }
 
                 // Oct. 7, 2016
