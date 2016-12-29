@@ -382,34 +382,73 @@
                 //window.location.search = 'language=' + value;
             });
             gui.fallback_lang = query.language || false;
-            gui.add(gui, 'fallback_lang', langs).onChange(function(value) {
+            gui.fallback_button = gui.add(gui, 'fallback_lang', langs).onChange(function(value) {
                 scene.config.global.ux_language_fallback = value;
                 scene.updateConfig();
                 //window.location.search = 'language=' + value;
             });
+            gui.fallback_button.name('lang fallback');
 
             // Language selector
             var labels = {
-                '(default)': true,
-                'Yes': true,
-                'No': false
+                '(default)': 'some',
+                'More': 'more',
+                'Some': 'some',
+                'None': 'none'
             };
             // use query language, else default to English
-            gui.labels = query.labels || true;
+            gui.labels = query.labels || 'more';
             gui.add(gui, 'labels', labels).onChange(function(value) {
-                var _val = (value === 'true' || value === true);
-                scene.config.global.text_visible_admin = _val;
-                scene.config.global.text_visible_populated_places = _val;
-                scene.config.global.icon_visible_populated_places = _val;
-                scene.config.global.text_visible_neighbourhoods = _val;
-                scene.config.global.text_visible_neighbourhoods_e = _val;
-                scene.config.global.text_visible_water = _val;
-                scene.config.global.text_visible_roads = _val;
-                scene.config.global.text_visible_buildings = _val;
-                scene.config.global.text_visible_addresses = _val;
-                scene.config.global.text_visible_pois_landuse = _val;
-                scene.config.global.icon_visible_pois_landuse = _val;
-                scene.config.global.text_visible_island = _val;
+                var _default = true;
+                var _more = false;
+
+                if(value === 'more') {
+                    _more = true;
+                    _default = true;
+                } else if(value === 'some') {
+                    _more = false;
+                    _default = true;
+                } else {
+                    _more = false;
+                    _default = false;
+                }
+
+                scene.config.global.text_visible_admin = _default;
+                scene.config.global.text_visible_populated_places = _default;
+                scene.config.global.icon_visible_populated_places = _default;
+                scene.config.global.text_visible_neighbourhoods = _default;
+                scene.config.global.text_visible_neighbourhoods_e = _default;
+                scene.config.global.text_visible_water = _default;
+                scene.config.global.text_visible_water_labels = _default;
+                scene.config.global.text_visible_roads = _default;
+                scene.config.global.sdk_shield_visible = _default;
+                scene.config.text_visible_aerialway = _default;
+                scene.config.global.text_visible_airport_gate = _default;
+                scene.config.global.text_visible_exits = _default;
+                scene.config.global.text_visible_buildings = _default;
+                scene.config.global.text_visible_addresses = _default;
+                scene.config.global.text_visible_island = _default;
+
+                scene.config.global.label_visible_poi_landuse = _more;
+                scene.config.global.icon_visible_poi_landuse = _more;
+                scene.config.icon_visible_poi_landuse_e = _more;
+                scene.config.global.icon_visible_station = _more;
+
+                scene.config.icon_visible_landuse_green = _default;
+                scene.config.text_visible_landuse_green = _default;
+                scene.config.text_visible_landuse_generic = _default;
+                if( _more ) {
+                    scene.config.global.icon_size_green = '[[13, 14px], [16, 18px], [18, 19px]]';
+                    scene.config.global.icon_size_green_nationl_park = '[[10,18px],[12,28px],[13,36px]]';
+                    scene.config.global.icon_size_green_airport = '[[13,12px],[14,12px],[17,18px],[19,36px]]';
+                    scene.config.global.icon_size_green_l = '[[14,24px],[16,32px]]';
+                } else {
+                    scene.config.global.icon_size_green = '0px';
+                    scene.config.global.icon_size_green_nationl_park = '0px';
+                    scene.config.global.icon_size_green_airport = '0px';
+                    scene.config.global.icon_size_green_l = '0px';
+                }
+
                 // Oct. 7, 2016
                 //need to rework this, upon switching back to labels, buildings stay light and labels dont read
                 // if( _val ) {
@@ -422,6 +461,39 @@
                 scene.updateConfig();
                 //window.location.search = 'language=' + value;
             });
+
+            // Transit selector
+            var transit_overlay = {
+                '(default)': false,
+                'Show': true,
+                'Hide': false
+            };
+            // use transit ux, else default to false
+            gui.transit_overlay = query.transit_overlay || false;
+            gui.transit_button = gui.add(gui, 'transit_overlay', transit_overlay).onChange(function(value) {
+                scene.config.global.sdk_transit_overlay = (value === 'true' || value === true); // dat.gui passes a string
+                if (value === 'true' || value === true) {
+                    scene.config.global.sdk_shield_visible = false;
+                } else {
+                    scene.config.global.sdk_shield_visible = true;
+                }
+                scene.updateConfig();
+            });
+            gui.transit_button.name('transit');
+
+            // Building extrusion selector
+            var building_3d = {
+                '(default)': true,
+                'Yes': true,
+                'No': false
+            };
+            // use transit ux, else default to false
+            gui.building_3d = query.building_3d || true;
+            gui.building_button = gui.add(gui, 'building_3d', building_3d).onChange(function(value) {
+                scene.config.global.sdk_building_extrude = (value === 'true' || value === true); // dat.gui passes a string
+                scene.updateConfig();
+            });
+            gui.building_button.name( '3D buildings' );
 
             // Animation selector
             var animated = {
@@ -456,7 +528,8 @@
                     saveAs(screenshot.blob, 'tangram-' + map_location + '-' + prettydate + '.png');
                 });
             };
-            gui.add(gui, 'save_screenshot');
+            gui.screenshot = gui.add(gui, 'save_screenshot');
+            gui.screenshot.name('save screenshot');
 
             // Take a video capture and save to file
             if (typeof window.MediaRecorder == 'function') {
