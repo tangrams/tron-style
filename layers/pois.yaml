@@ -1,7 +1,7 @@
 layers:
     pois_and_landuse_labels:
         data: { source: mapzen, layer: pois }
-        visible: global.label_visible_poi_landuse
+        #visible: global.label_visible_poi_landuse
         filter:
             all:
                 - not: { kind: [building,address,farm,tree,apron,residential,commercial,industrial] }
@@ -14,7 +14,7 @@ layers:
                 size: 18px
                 sprite: function() { return feature.kind; }
                 sprite_default: generic
-                interactive: global.interactive
+                interactive: global.sdk_interactive
                 priority: 65
                 repeat_group: abc
                 buffer: 20px
@@ -28,6 +28,9 @@ layers:
                         family: Cairo
                         fill: [0.149,0.871,0.992]
                         size: 10px
+            text:
+                interactive: global.sdk_interactive
+
         poi-scale-z18:
             filter: { $zoom: { min: 18 } }
             draw:
@@ -358,8 +361,10 @@ layers:
                 kind: [national_park, battlefield]
             draw:
                 icons:
-                    sprite: park
+                    visible: global.icon_visible_landuse_green
+                    size: global.icon_size_green
                     size: [[7,16px],[12,18px],[15,36px]]
+                    sprite: park
                     text:
                         text_wrap: 12
                         font:

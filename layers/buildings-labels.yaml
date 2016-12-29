@@ -25,7 +25,7 @@ layers:
             draw:
                 text:
                     text_source: global.ux_language_text_source
-                    interactive: true
+                    interactive: global.sdk_interactive
                     move_into_tile: true
                     priority: 70
                     visible: global.text_visible_buildings
@@ -59,7 +59,7 @@ layers:
             draw:
                 text:
                     text_source: global.ux_language_text_source
-                    interactive: true
+                    interactive: global.sdk_interactive
                     order: 7
                     visible: global.text_visible_addresses
                     text_source: addr_housenumber
