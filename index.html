@@ -340,6 +340,8 @@
             for (source in scene.config.sources) {
                 if (scene.config.sources.hasOwnProperty(source)) {
                     if (scene.config.sources[source].max_zoom != "undefined") {
+                        // TODO: This will take 15 now, because the terrain source is
+                        // max_zoom 15, even though vector tiles are max_zoom 16
                         max_zoom = Math.min(max_zoom, scene.config.sources[source].max_zoom);
                     }
                 }
@@ -363,16 +365,23 @@
             // Language selector
             var langs = {
                 '(default)': false,
+                'العربية (Arabic)': 'ar',
+                '中文 (Chinese)': 'zh',
                 'English': 'en',
-                'Russian': 'ru',
-                'Chinese': 'zh',
-                'Japanese': 'ja',
-                'Korean': 'ko',
-                'German': 'de',
-                'French': 'fr',
-                'Arabic': 'ar',
-                'Spanish': 'es',
-                'Greek': 'gr'
+                'français (French)': 'fr',
+                'Русский (Russian)': 'ru',
+                'español (Spanish)': 'es',
+                'বাংলা (Bengali)': 'bn',
+                'Deutsch (German)': 'de',
+                'ελληνικά (Greek)': 'gr',
+                'हिन्दी (Hindi)': 'hi',
+                'Bahasa Indonesia (Indonesian)': 'id',
+                'italiano (Italian)': 'it',
+                '日本語 (Japanese)': 'ja',
+                '한국어 (Korean)': 'ko',
+                'Português (Portuguese)': 'pt',
+                'Türkçe (Turkish)': 'tr',
+                'Tiếng Việt (Vietnamese)': 'vi'
             };
             // use query language, else default to English
             gui.language = query.language || false;
