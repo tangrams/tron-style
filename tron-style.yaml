@@ -17,6 +17,7 @@ import:
     - layers/roads.yaml
     - layers/roads-labels.yaml
     - layers/transit.yaml
+    - layers/transit-overlay.yaml
     - layers/buildings.yaml
     - layers/buildings-labels.yaml
     - layers/landuse.yaml
