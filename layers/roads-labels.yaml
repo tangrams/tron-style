@@ -4,8 +4,6 @@ layers:
         draw:
             text:
                 visible: global.text_visible_roads
-            lines:
-                interactive: true
 
         highway:
             filter: { kind: highway }
@@ -139,30 +137,32 @@ layers:
 
         shields:
             filter:
-                $zoom: { min: 6 }
-                #
-                # United State looks great with shield_text alone, but...
-                #
-                #shield_text: true    # some roads don't have shield text, deal with that later
-                #
-                # Europe doesn't have many network relations set, so we could look for either
-                # shield_text or ref (with no shield_text) but...
-                # that makes United States look a bit funky with `(xxx)` and generic shields 
-                # showing up in fields of custom state shields like US:CA and US:NY
-                #
-                any:
-                    - shield_text: true    # some roads don't have shield text, deal with that later
-                    - all:
-                        - shield_text: false    # some roads don't have shield text, deal with that later
-                        - ref: true
-                        - kind_detail: [motorway, trunk, primary, secondary, tertiary]
+                all:
+                    - $zoom: { min: 6 }
+                    #
+                    # United State looks great with shield_text alone, but...
+                    #
+                    #shield_text: true    # some roads don't have shield text, deal with that later
+                    #
+                    # Europe doesn't have many network relations set, so we could look for either
+                    # shield_text or ref (with no shield_text) but...
+                    # that makes United States look a bit funky with `(xxx)` and generic shields
+                    # showing up in fields of custom state shields like US:CA and US:NY
+                    #
+                    - function() { return global.sdk_road_shield; }
+                    - any:
+                        - shield_text: true    # some roads don't have shield text, deal with that later
+                        - all:
+                            - shield_text: false    # some roads don't have shield text, deal with that later
+                            - ref: true
+                            - kind_detail: [motorway, trunk, primary, secondary, tertiary]
             # default
             draw:
                 icons:
                     # you need to match any custom shield to the vector tile `network` values
                     sprite: |
-                        function() { 
-                            if( feature.shield_text ) { 
+                        function() {
+                            if( feature.shield_text ) {
                                 return ('generic_shield-' + feature.shield_text.length + 'char');
                             } else {
                                 return ('generic_shield-' + feature.ref.length + 'char');
@@ -187,8 +187,8 @@ layers:
                         repeat_distance: 200px
                         anchor: center
                         text_source: |
-                            function() { 
-                                if( feature.shield_text ) { 
+                            function() {
+                                if( feature.shield_text ) {
                                     return feature.shield_text;
                                 } else {
                                     return feature.ref;
@@ -199,7 +199,7 @@ layers:
                             fill: [0.413,0.933,0.960]
                             size: [[7,7px],[12,8px],[16,9px]]
             default_priority_highway:
-                filter: 
+                filter:
                     all:
                         - kind_detail: motorway
                         - $zoom: { min: 9 }
@@ -207,10 +207,10 @@ layers:
                     icons:
                         priority: 47
                         #color: yellow
-                        visible: global.text_visible_shields
+                        visible: global.sdk_road_shields
 
             default_priority_trunk:
-                filter: 
+                filter:
                     all:
                         - kind_detail: [trunk]
                         - $zoom: { min: 10 }
@@ -218,9 +218,9 @@ layers:
                     icons:
                         priority: 48
                         #color: red
-                        visible: global.text_visible_shields
+                        visible: global.sdk_road_shields
             default_priority_primary:
-                filter: 
+                filter:
                     all:
                         - kind_detail: [primary]
                         - $zoom: { min: 12 }
@@ -228,7 +228,7 @@ layers:
                     icons:
                         priority: 49
                         #color: aqua
-                        visible: global.text_visible_shields
+                        visible: global.sdk_road_shields
             default_priority_trunk_secondary:
                 filter:
                     all:
@@ -238,7 +238,7 @@ layers:
                     icons:
                         priority: 53
                         #color: blue
-                        visible: global.text_visible_shields
+                        visible: global.sdk_road_shields
             default_priority_trunk_tertiary:
                 filter:
                     all:
@@ -248,7 +248,7 @@ layers:
                     icons:
                         priority: 55
                         #color: green
-                        visible: global.text_visible_shields
+                        visible: global.sdk_road_shields
             # not-special:
             #     filter:
             #         not: { network: ['US:I','US:US'] }
@@ -258,8 +258,8 @@ layers:
             #             visible: false
             width_1char:
                 filter: |
-                    function() { 
-                        if( feature.shield_text ) { 
+                    function() {
+                        if( feature.shield_text ) {
                             return (feature.shield_text.length === 1)
                         } else {
                             return (feature.ref.length === 1)
@@ -270,8 +270,8 @@ layers:
                         size: [[6,[14px,14px]],[13,[15px,15px]],[16,[18px,18px]]]
             width_2char:
                 filter: |
-                    function() { 
-                        if( feature.shield_text ) { 
+                    function() {
+                        if( feature.shield_text ) {
                             return (feature.shield_text.length === 2)
                         } else {
                             return (feature.ref.length === 2)
@@ -282,8 +282,8 @@ layers:
                         size: [[6,[18px,14px]],[13,[20px,15px]],[16,[24px,18px]]]
             width_3char:
                 filter: |
-                    function() { 
-                        if( feature.shield_text ) { 
+                    function() {
+                        if( feature.shield_text ) {
                             return (feature.shield_text.length === 3)
                         } else {
                             return (feature.ref.length === 3)
@@ -294,8 +294,8 @@ layers:
                         size: [[6,[25px,14px]],[13,[27px,15px]],[16,[33px,18px]]]
             width_4char:
                 filter: |
-                    function() { 
-                        if( feature.shield_text ) { 
+                    function() {
+                        if( feature.shield_text ) {
                             return (feature.shield_text.length === 4)
                         } else {
                             return (feature.ref.length === 4)
@@ -312,8 +312,8 @@ layers:
                             visible: false
             width_5char:
                 filter: |
-                    function() { 
-                        if( feature.shield_text ) { 
+                    function() {
+                        if( feature.shield_text ) {
                             return (feature.shield_text.length === 5)
                         } else {
                             return (feature.ref.length === 5)
@@ -331,8 +331,8 @@ layers:
             # this is kinda a hack
             width_longggggg:
                 filter: |
-                    function() { 
-                        if( feature.shield_text ) { 
+                    function() {
+                        if( feature.shield_text ) {
                             return (feature.shield_text.length > 5)
                         } else {
                             return (feature.ref.length > 5)
@@ -365,7 +365,7 @@ layers:
                             # you need to match any custom shield to the vector tile `network` values
                             sprite: function() { return (feature.network + '-' + feature.shield_text.length + 'char'); }
                             priority: 46
-                            visible: global.text_visible_shields
+                            visible: global.sdk_road_shields
                             text:
                                 offset: [0px, 0px]
                                 font:
@@ -408,7 +408,7 @@ layers:
                                 function() { return ('US:US-' + feature.shield_text.length + 'char'); }
                             priority: 47
                             cull_from_tile: true
-                            visible: global.text_visible_shields
+                            visible: global.sdk_road_shields
                             text:
                                 offset: [0.85px, 0px]
                                 font:
@@ -478,17 +478,17 @@ layers:
                         filter: { kind_detail: [motorway], $zoom: [7,8] }
                         draw:
                             icons:
-                                visible: global.text_visible_shields
+                                visible: global.sdk_road_shields
                     trunk:
                         filter: { kind_detail: [trunk], $zoom: [8,9] }
                         draw:
                             icons:
-                                visible: global.text_visible_shields
+                                visible: global.sdk_road_shields
                     primary:
                         filter: { kind_detail: primary, $zoom: [10,11] }
                         draw:
                             icons:
-                                visible: global.text_visible_shields
+                                visible: global.sdk_road_shields
                     width_1char:
                         filter: function() { return (feature.shield_text.length === 1) }
                         draw:
@@ -610,16 +610,16 @@ layers:
                     #     }
                     #
                     # this generic for any country with 3rd level networks (like county routes in USA)
-                    # BEWARE: 
+                    # BEWARE:
                     # US:US:Business  about 150
                     # US:US:Truck
                     # US:US:Alternate
-    # 
+    #
                     # STATE ROUTE
                     # ??:??:Loop  about 200
                     # ??:??:Spur  about 200
                     # ??:??:Business   about 100
-    # 
+    #
                     # STATE TEXAS SPECIAL ROUTE
                     # US:TX:FM -- probably just state? there are 3k of these
                     #
@@ -635,7 +635,7 @@ layers:
                             # you need to match any custom shield to the vector tile `network` values
                             sprite: function() { return ('county_shield-' + feature.shield_text.length + 'char'); }
                             # priority: 19
-                            visible: global.text_visible_shields
+                            visible: global.sdk_road_shields
                             text:
                                 font:
                                     fill: [1.00,1.00,1.00]

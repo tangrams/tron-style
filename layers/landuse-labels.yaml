@@ -9,10 +9,10 @@ layers:
             draw:
                 text:
                     text_source: global.ux_language_text_source
-                    interactive: global.interactive
                     move_into_tile: true
                     priority: 100
                     visible: global.text_visible_landuse_generic
+                    interactive: global.sdk_interactive
                     font:
                         family: Cairo
                         fill: [0.149,0.871,0.992]
@@ -25,6 +25,8 @@ layers:
                         size: 18px
                         sprite: function() { return feature.kind; }
                         priority: 65
+                        visible: global.icon_visible_poi_landuse
+                        interactive: global.sdk_interactive
                         text:
                             font:
                                 family: Cairo

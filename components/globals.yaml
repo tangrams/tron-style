@@ -1,5 +1,10 @@
 global:
-    animated: true
+    # Sign up for a Mapzen API key to enjoy higher rate limits
+    # https://mapzen.com/documentation/overview/#developer-accounts-and-api-keys
+    sdk_mapzen_api_key: mapzen-xxxxxx     # set this value to your Mapzen API key
+
+    sdk_animated: true
+    sdk_interactive: true
 
     pseudoRandomColor: |
         function() {
@@ -161,7 +166,7 @@ global:
     sdk_order_over_everything_but_text_7: 497
     sdk_order_over_everything_but_text_8: 498
     sdk_order_over_everything_but_text_9: 499
-    #
+
     # Your classic "underlay"
     # Under roads. Above borders, water, landuse, and earth.
     sdk_order_under_roads_0: 290
@@ -174,7 +179,7 @@ global:
     sdk_order_under_roads_7: 297
     sdk_order_under_roads_8: 298
     sdk_order_under_roads_9: 299
-    #
+
     # Under water.
     # Above earth and most landuse.
     sdk_order_under_water_0: 190
@@ -187,7 +192,7 @@ global:
     sdk_order_under_water_7: 197
     sdk_order_under_water_8: 198
     sdk_order_under_water_9: 199
-    #
+
     # Under everything.
     # Tip: disable earth layer.
     sdk_order_under_everything_0: 0
@@ -200,7 +205,7 @@ global:
     sdk_order_under_everything_7: 7
     sdk_order_under_everything_8: 8
     sdk_order_under_everything_9: 9
-    #
+
     #label visibility
     text_visible_admin: true
     text_visible_populated_places: true
@@ -214,6 +219,10 @@ global:
     text_visible_addresses: true
     label_visible_landuse_green: true
     icon_visible_landuse_green: true
+    icon_size_green: [[13, 14px], [16, 18px], [18, 19px]]               # 0px for no, default, more  [[13, 14px], [16, 18px], [18, 19px]]
+    icon_size_green_nationl_park: [[10,18px],[12,28px],[13,36px]]       # 0px for no, default, more  [[10,18px],[12,28px],[13,36px]]
+    icon_size_green_airport: [[13,12px],[14,12px],[17,18px],[19,36px]]  # 0px for no, default, more  [[13,12px],[14,12px],[17,18px],[19,36px]]
+    icon_size_green_l: [[14,24px],[16,32px]]                            # 0px for no, default, more  [[14,24px],[16,32px]]
     text_visible_landuse_green: true
     label_visible_poi_landuse: true        #false by default
     icon_visible_poi_landuse: true         #false by default
@@ -228,11 +237,21 @@ global:
     text_visible_island: true
     text_visible_aerialway: true
     text_visible_airport_gate: true
-    text_visible_shields: true
     text_visible_exits: true
-    label_visible_poi_landuse: true
 
+    sdk_road_shield: true
+
+    sdk_building_extrude: true                  # building extrusion toggle
+    building_extrude_height: |                  # building extrude height logic
+        function() { return feature.height || 20; }
+
+    #
+    # TRANSIT OVERLAY
+    # should default to "auto", with SDK overriding it to true or false,
+    # or app logic sets other booleans that triggers auto behavior later
+    sdk_transit_overlay: false
 
     # SHIELDS
     sdk_shield_color: [1.000,0.855,0.365]
     sdk_shield_text_color: [0.127,0.130,0.229]
+    sdk_shield_visible: true

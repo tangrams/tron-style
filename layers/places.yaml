@@ -217,7 +217,6 @@ layers:
                 text-blend-order:
                     visible: global.text_visible_populated_places
                     buffer: 10px
-                    interactive: true
                     font:
                         family: Play
                         size: [[5,9px],[8,10px],[12,11px]]

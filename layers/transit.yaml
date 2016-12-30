@@ -1,12 +1,11 @@
 layers:
     transit:
-        data: { source: mapzen }
+        data: { source: mapzen, layer: transit }
         transit-lines:
             filter: { not: { kind: [platform] } }
             draw:
                 lines:
                     order: global.order
-                    interactive: true
             railway:
                 filter: { kind: [railway,train] }
                 draw:

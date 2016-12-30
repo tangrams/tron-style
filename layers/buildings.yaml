@@ -23,8 +23,6 @@ layers:
                 width: 1px
         footprints:
             filter:
-                all:
-                    - $zoom: [14, 15]
                 any:
                     # show footprints for buildings at least one zoom level before they will be extruded
                     - { $zoom: [14], scale_rank: [0,1,2,3] }
@@ -35,6 +33,7 @@ layers:
                     - { $zoom: [15], area: { min: 2500 } }
                     - { $zoom: [15], volume: { min: 100000 } }
                     - { $zoom: [15], scale_rank: [0,1,2,3] }
+                    - { $zoom: { min: 16 }, area: true }
             draw:
                 polygons:
                     color: [0.212,0.302,0.431]
@@ -54,28 +53,29 @@ layers:
                     lines:
                         order: 5820 #291 * 20
 
-        extrude:
-            filter:
-                all:
-                    - $zoom: { min: 16 }
-                any:
-                    - { $zoom: [16], height: { min: 60 } }
-                    - { $zoom: [16], area: { min: 1200 } }
-                    - { $zoom: [16], volume: { min: 70000 } }
-                    - { $zoom: { min: 17 } }
-            draw:
-                polygons:
-                    visible: true
-                    style: global.building_style
-                    color: global.pseudoRandomColor
-                    # color: [0.592,0.827,0.851]
-                    extrude: function() { return feature.height || 20; }
-                lines:
-                    visible: true
-                    style: buildings-lns
-                    color: [[16,[0.428,0.687,0.717]],[18,global.building_lines_with_or_without_labels]]
-                    width: [[12, .1px], [14, 0.1px], [16, 0.75px], [17, 0.85px], [18, 1.0px]]
-                    extrude: function() { return feature.height || 20; }
+            extrude:
+                filter:
+                    all:
+                        - function() { return global.sdk_building_extrude; }
+                        - $zoom: { min: 16 }
+                        - any:
+                            - { $zoom: [16], height: { min: 60 } }
+                            - { $zoom: [16], area: { min: 1200 } }
+                            - { $zoom: [16], volume: { min: 70000 } }
+                            - { $zoom: { min: 17 } }
+                draw:
+                    polygons:
+                        visible: true
+                        style: global.building_style
+                        color: global.pseudoRandomColor
+                        # color: [0.592,0.827,0.851]
+                        extrude: global.building_extrude_height
+                    lines:
+                        visible: true
+                        style: buildings-lns
+                        color: [[16,[0.428,0.687,0.717]],[18,global.building_lines_with_or_without_labels]]
+                        width: [[12, .1px], [14, 0.1px], [16, 0.75px], [17, 0.85px], [18, 1.0px]]
+                        extrude: global.building_extrude_height
 
 styles:
     geometry-dynamic-height:

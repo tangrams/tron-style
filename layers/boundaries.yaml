@@ -4,7 +4,6 @@ layers:
         draw:
             lines:
                 order: global.order
-                interactive: true
 
         country:
             filter:

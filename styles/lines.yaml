@@ -40,7 +40,7 @@ styles:
                 DATASTREAM_MARGIN: z*.3
                 DATASTREAM_COLOR: palette( fract(floor(v_texcoord.x*DATASTREAM_ROADS)/DATASTREAM_ROADS+u_time*.1)*z )
                 DATASTREAM_AMOUNT: .8
-                DATASTREAM_ANIMATED: global.animated
+                DATASTREAM_ANIMATED: global.sdk_animated
             blocks:
                 global: |
                     float datastream_pattern(vec2 st, float v, float t) {

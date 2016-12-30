@@ -6,7 +6,6 @@ layers:
             lines:
                 width: 1px
                 order: global.order
-                interactive: true
                 outline:
                     order: 352
         early:
@@ -585,7 +584,7 @@ styles:
                 DATASTREAM_SPEED: 7.
                 DATASTREAM_TWOWAYS: true
 
-    
+
     roads-glow:
         base: lines
         mix: [functions-zoom, lines-glow]
@@ -622,7 +621,7 @@ styles:
                 # CAST_B_COLOR: vec3(0.800,1.000,0.987)
                 CAST_B_COLOR: v_color.rgb+vec3(0.259,0.031,0.038)
                 CAST_B_WIDTH: 0.07
-                CAST_B_DIST: 0.47   
+                CAST_B_DIST: 0.47
             blocks:
                 color: |
                     float x = abs(v_texcoord.x-.5);
