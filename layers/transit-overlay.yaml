@@ -4,7 +4,7 @@ layers:
             filter:
                 all:
                     - landuse_kind: [station]
-                    - function() { retrun global.sdk_transit_overlay; }
+                    - function() { return global.sdk_transit_overlay; }
             draw:
                 polygons:
                     color: '#bdadbf'
