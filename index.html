@@ -523,7 +523,9 @@
                 if (value === 'true' || value === true) {
                     scene.config.global.sdk_shield_visible = false;
                 } else {
-                    scene.config.global.sdk_shield_visible = true;
+                    if( scene.config.global.text_visible_roads ) {
+                        scene.config.global.sdk_road_shields = true;
+                    }
                 }
                 scene.updateConfig();
             });
