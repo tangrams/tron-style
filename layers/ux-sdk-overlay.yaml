@@ -126,9 +126,7 @@ layers:
                 sprite_default: sdk_shield-1char
                 color: global.sdk_shield_color
                 collide: false
-                transition:
-                    [show, hide]:
-                        time: 0s
+                transition: { show: { time: 0s }, hide: { time: 0s } }
                 text:
                     # offset: [0px, -1px]
                     text_source: |
