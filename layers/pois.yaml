@@ -87,6 +87,14 @@ layers:
             draw:
                 icons:
                     visible: false
+            # eg park polygons in SF that have area but no name, sigh
+            no-name-no-area:
+                filter:
+                    kind: true
+                    name: false
+                draw:
+                    icons:
+                        visible: false
             sports-pitch:
                 filter:
                     $zoom: { min: 17 }
@@ -377,7 +385,7 @@ layers:
                         sprite: park-l
         parks:
             filter:
-                - kind: [park, conservation, nature_reserve, grass]
+                - kind: [park, conservation, grass]
                 - { kind: protected_area, not: { protect_class: [6, '6'] } }
             draw:
                 icons:

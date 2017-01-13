@@ -149,7 +149,7 @@ layers:
                     # that makes United States look a bit funky with `(xxx)` and generic shields
                     # showing up in fields of custom state shields like US:CA and US:NY
                     #
-                    - function() { return global.sdk_road_shield; }
+                    - function() { return global.sdk_road_shields; }
                     - any:
                         - shield_text: true    # some roads don't have shield text, deal with that later
                         - all:

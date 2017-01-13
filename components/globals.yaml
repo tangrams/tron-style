@@ -215,8 +215,8 @@ global:
     text_visible_water: true
     text_visible_water_labels: true
     text_visible_roads: true
-    text_visible_buildings: true
-    text_visible_addresses: true
+    text_visible_building: true
+    text_visible_address: true
     label_visible_landuse_green: true
     icon_visible_landuse_green: true
     icon_size_green: [[13, 14px], [16, 18px], [18, 19px]]               # 0px for no, default, more  [[13, 14px], [16, 18px], [18, 19px]]
@@ -239,7 +239,7 @@ global:
     text_visible_airport_gate: true
     text_visible_exits: true
 
-    sdk_road_shield: true
+    sdk_road_shields: true
 
     sdk_building_extrude: true                  # building extrusion toggle
     building_extrude_height: |                  # building extrude height logic

@@ -8,6 +8,7 @@ layers:
                     - $geometry: point
                     - not: { location: underground, kind: address }
                     - name: true
+                    - function() { return global.text_visible_building; }
     #                - kind: [false, building, university, college, school, kindergarten]
                 any:
                     - { $zoom: [16], area: { min: 5000 } }
@@ -28,7 +29,6 @@ layers:
                     interactive: global.sdk_interactive
                     move_into_tile: true
                     priority: 70
-                    visible: global.text_visible_buildings
                     order: 7
                     font:
                         fill: [0.882,0.894,0.914]
@@ -52,7 +52,9 @@ layers:
         address-labels:
             data: { source: mapzen, layer: buildings }
             filter:
-                $zoom: { min: 20 }
+                all:
+                    - $zoom: { min: 20 }
+                    - function() { return global.text_visible_address; }
                 any:
                     - kind: address
                     - { label_position: yes, addr_housenumber: true, name: false }
@@ -61,7 +63,6 @@ layers:
                     text_source: global.ux_language_text_source
                     interactive: global.sdk_interactive
                     order: 7
-                    visible: global.text_visible_addresses
                     text_source: addr_housenumber
                     font:
                         fill: [0.882,0.894,0.914]
