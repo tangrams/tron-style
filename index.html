@@ -225,8 +225,7 @@
             // more: 'mapzen-n22UFkv'
             // default (some): 'mapzen-iP15tWp'
             // no: 'mapzen-7f8jPGR'
-            scene: 'tron-style.yaml',
-            scene: { import: 'tron-style.yaml', global: { sdk_mapzen_api_key: 'mapzen-n22UFkv' } },
+            scene: { import: 'tron-style.yaml', global: { sdk_mapzen_api_key: 'mapzen-iP15tWp' } },
             attribution: '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a>, &copy; OSM contributors'
         });
 
@@ -410,7 +409,7 @@
                 'Some (no shields)': 'some_no_shields',
                 'None': 'none'
             };
-            gui.labels = query.labels || 'more';
+            gui.labels = query.labels || 'some';
             gui.add(gui, 'labels', labels).onChange(function(value) {
                 var _default = true;
                 var _more = false;
@@ -727,9 +726,9 @@
         <!-- Mapzen map UI -->
         <script src='https://mapzen.com/common/ui/mapzen-ui.min.js'></script>
         <script>
-                MPZN.bug({
+            MPZN.bug({
                 name: 'Tron 2.0',
-                link: 'https://github.com/tangrams/tron/'
+                link: 'https://github.com/tangrams/tron/',
                 tweet: 'Tron 2.0',
                 repo: 'https://github.com/tangrams/tron/'
             });
