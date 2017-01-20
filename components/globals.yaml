@@ -219,21 +219,21 @@ global:
     text_visible_address: true
     label_visible_landuse_green: true
     icon_visible_landuse_green: true
-    icon_size_green: [[13, 14px], [16, 18px], [18, 19px]]               # 0px for no, default, more  [[13, 14px], [16, 18px], [18, 19px]]
-    icon_size_green_nationl_park: [[10,18px],[12,28px],[13,36px]]       # 0px for no, default, more  [[10,18px],[12,28px],[13,36px]]
-    icon_size_green_airport: [[13,12px],[14,12px],[17,18px],[19,36px]]  # 0px for no, default, more  [[13,12px],[14,12px],[17,18px],[19,36px]]
-    icon_size_green_l: [[14,24px],[16,32px]]                            # 0px for no, default, more  [[14,24px],[16,32px]]
+    icon_size_green: [[0, '0px']]                       # 0px for no, default, more  [[13, '14px'], [16, '18px'], [18, '19px']]
+    icon_size_green_nationl_park: [[0, '0px']]          # 0px for no, default, more  [[10, '18px'], [12, '28px'], [13, '36px']]
+    icon_size_green_airport: [[0, '0px']]               # 0px for no, default, more  [[13, '12px'], [14, '12px'], [17, '18px'], [19, '36px']]
+    icon_size_green_l: [[0, '0px']]                     # 0px for no, default, more  [[14, '24px'], [16, '32px']]
     text_visible_landuse_green: true
-    label_visible_poi_landuse: true        #false by default
-    icon_visible_poi_landuse: true         #false by default
-    text_visible_poi_landuse: true         #false by default
+    label_visible_poi_landuse: false        #false by default
+    icon_visible_poi_landuse: false         #false by default
+    text_visible_poi_landuse: false         #false by default
     label_visible_poi_landuse_e: true
     icon_visible_poi_landuse_e: true
     text_visible_poi_landuse_e: true
-    text_visible_landuse_generic: true     #false by default
-    label_visible_station: true
-    icon_visible_station: true
-    text_visible_station: true
+    text_visible_landuse_generic: false     #false by default
+    label_visible_station: false            #false by default
+    icon_visible_station:  false            #false by default
+    text_visible_station:  true
     text_visible_island: true
     text_visible_aerialway: true
     text_visible_airport_gate: true
