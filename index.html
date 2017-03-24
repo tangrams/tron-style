@@ -22,9 +22,9 @@
 
         <!-- Main tangram library -->
         <!-- production -->
-        <script src="https://mapzen.com/tangram/0.11/tangram.min.js"></script>
+        <script src="https://mapzen.com/tangram/0.12/tangram.min.js"></script>
         <!-- production debug -->
-        <!-- <script src="https://mapzen.com/tangram/0.11/tangram.debug.js"></script> -->
+        <!-- <script src="https://mapzen.com/tangram/0.12/tangram.debug.js"></script> -->
         <!-- dev -->
         <!-- <script src="https://precog.mapzen.com/tangrams/tangram/master/dist/tangram.debug.js"></script> -->
         <!-- dev branch -->
@@ -637,7 +637,9 @@
                             // enable iD to show properties sidebar for selected feature
                             osm_type = 'node';
                             osm_zoom = '19'
-                            if( selection.feature.properties.sort_key ) {
+                            // tilezen adds sort_rank for any way or relation thing, but because we generate
+                            // label positions for area features, we need to do two tests
+                            if( selection.feature.properties.sort_rank || selection.feature.properties.area ) {
                                 osm_type = 'way';
                                 osm_zoom = Math.max( 17, map.getZoom() );
                             }
@@ -645,6 +647,8 @@
                             if( osm_id < 0 ) {
                                 osm_type = 'relation'
                                 osm_id = Math.abs( osm_id );
+                                // zoom out a bit because we assume this is a larger feature
+                                // but don't zoom out too far, as iD breaks
                                 osm_zoom = Math.max( 16, map.getZoom() );
                             }
                             url += osm_type + '=' + osm_id;
