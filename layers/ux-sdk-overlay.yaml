@@ -221,6 +221,7 @@ layers:
         data: { source: mz_default_line }
         draw:
             sdk-line-overlay:
+                interactive: global.sdk_interactive
                 color: [1.000,0.000,1.000]
                 order: 503
                 width: 3px
@@ -228,6 +229,7 @@ layers:
         data: { source: mz_default_polygon }
         draw:
             sdk-polygon-overlay:
+                interactive: global.sdk_interactive
                 color: [1.000,0.000,1.000,0.5]  #'#06b1e2'
                 order: 501
             sdk-line-overlay:
