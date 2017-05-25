@@ -139,7 +139,7 @@ global:
     order_add_3: function () { return (feature.sort_rank * 20 + 3); }
     order_add_2: function () { return (feature.sort_rank * 20 + 2); }
     order_add_1: function () { return (feature.sort_rank * 20 + 1); }
-    order: function () { return (feature.sort_rank * 20); }
+    order: function () { return (feature.sort_rank * 20) || 0; }
     order_sub_1: function () { return (feature.sort_rank * 20 - 1); }
     order_sub_2: function () { return (feature.sort_rank * 20 - 2); }
     order_sub_3: function () { return (feature.sort_rank * 20 - 3); }
