@@ -4,6 +4,7 @@ layers:
         data: { source: mz_route_line }
         draw:
             ux-route-line-overlay:
+                interactive: global.sdk_interactive
                 color: [1.000, 1.000, 0.000, 1.00]
                 order: 500
                 width: [[0,5px],[5,12px],[11,12px],[13,14px],[14,18px],[15,24px],[16,28px],[17,30px],[18,30px]]
@@ -11,6 +12,7 @@ layers:
         data: { source: mz_dash_line }
         draw:
             ux-route-line-dash-overlay:
+                interactive: global.sdk_interactive
                 color: [1.000,1.000,0.000]
                 order: 500
                 width: [[2,2px],[5,2.5px],[11,3px],[16,7px],[17,9px]]
@@ -21,6 +23,7 @@ layers:
                 # each transit route segment could be a different "line" each with it's own color
                 # but some transit lines don't define a color, in those cases default to blue
                 # and since the color is coming from Transit.land they call it "color" instead of "colour"
+                interactive: global.sdk_interactive
                 color: function() { return feature.color || '#06a6d4'; }
                 order: 500
                 width: [[0,5px],[5,12px],[11,12px],[13,14px],[14,18px],[15,24px],[16,28px],[17,30px],[18,30px]]
@@ -221,6 +224,7 @@ layers:
         data: { source: mz_default_line }
         draw:
             sdk-line-overlay:
+                interactive: global.sdk_interactive
                 color: [1.000,0.000,1.000]
                 order: 503
                 width: 3px
@@ -228,6 +232,7 @@ layers:
         data: { source: mz_default_polygon }
         draw:
             sdk-polygon-overlay:
+                interactive: global.sdk_interactive
                 color: [1.000,0.000,1.000,0.5]  #'#06b1e2'
                 order: 501
             sdk-line-overlay:
@@ -262,25 +267,21 @@ styles:
     ux-location-gem-overlay:
         base: points
         mix: icons
-        interactive: global.sdk_interactive
         blend: overlay
         blend_order: 2
     ux-icons-overlay:
         base: points
         mix: icons
-        interactive: global.sdk_interactive
         blend: overlay
         blend_order: 3
     sdk-point-overlay:
         base: points
         mix: icons
-        interactive: global.sdk_interactive
         blend: overlay
         blend_order: 3
     sdk-shield-overlay:
         base: points
         mix: icons
-        interactive: global.sdk_interactive
         blend: overlay
         blend_order: 3
     sdk-line-overlay:
