@@ -63,6 +63,8 @@ layers:
                             - { $zoom: [16], area: { min: 1200 } }
                             - { $zoom: [16], volume: { min: 70000 } }
                             - { $zoom: { min: 17 } }
+                        - not:
+                            - layer: [-1, -2, -3, -4, -5]
                 draw:
                     polygons:
                         visible: true
@@ -76,6 +78,27 @@ layers:
                         color: [[16,[0.428,0.687,0.717]],[18,global.building_lines_with_or_without_labels]]
                         width: [[12, .1px], [14, 0.1px], [16, 0.75px], [17, 0.85px], [18, 1.0px]]
                         extrude: global.building_extrude_height
+            basement:
+                filter:
+                    all:
+                        - layer: [-1, -2, -3, -4, -5]
+                draw:
+                    polygons:
+                        style: global.building_style
+                        extrude: false
+                        order: 329
+                    lines:
+                        style: buildings-lns
+                        extrude: false
+                        order: 330
+                early:
+                    filter:
+                        - $zoom: { max: 17 }
+                    draw:
+                        polygons:
+                            visible: false
+                        lines:
+                            visible: false
 
 styles:
     geometry-dynamic-height:
