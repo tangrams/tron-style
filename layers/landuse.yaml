@@ -170,7 +170,7 @@ layers:
                         visible: true
             pedestrian:
                 filter:
-                    kind: [pedestrian,common]
+                    kind: [pedestrian,common,footway]
                 draw:
                     polygons:
                         style: landuse-tier6-pedestrian
