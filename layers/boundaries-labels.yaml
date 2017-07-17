@@ -1,13 +1,14 @@
 layers:
     boundaries:
         country:
-            labels-z9-up:
+            country-labels:
                 filter: { name: true, $zoom: { min: 9 }, not: { maritime_boundary: true } }
                 draw:
                     text:
                         priority: 2
                         visible: global.text_visible_admin
-                        text_source: global.ux_language_text_source_boundary_lines
+                        text_source: global.ux_language_text_source_boundary_lines_left_right
+                        offset: [[8,[0, 7px]],[11,[0, 8px]],[12,[0, 9px]]]
                         text_wrap: 100px
                         font:
                             family: Aldrich
@@ -16,16 +17,17 @@ layers:
                             transform: uppercase
 
         region:
-            labels-z9-up:
+            region-labels:
                 filter: { name: true, $zoom: { min: 9 }, not: { maritime_boundary: true } }
                 draw:
                     text-blend-order:
                         priority: 3
                         visible: global.text_visible_admin
-                        text_source: global.ux_language_text_source_boundary_lines
+                        text_source: global.ux_language_text_source_boundary_lines_left_right
+                        offset: [[8,[0, 5px]], [11, [0, 6px]], [12,[0, 7px]]]
                         text_wrap: 100px
-                        offset: 10px
-                        anchor: top
+                        # offset: 10px
+                        # anchor: top
                         font:
                             family: Aldrich
                             size: 9px
