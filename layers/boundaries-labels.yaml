@@ -8,23 +8,29 @@ layers:
                         priority: 2
                         visible: global.text_visible_admin
                         text_source: global.ux_language_text_source_boundary_lines_left_right
-                        offset: [[8,[0, 7px]],[11,[0, 8px]],[12,[0, 9px]]]
+                        offset: [0, 6px]
                         text_wrap: 100px
                         font:
                             family: Aldrich
                             size: 9px
                             fill: [0.369,0.624,1.000]
                             transform: uppercase
+                no-left-right:
+                    filter: { "name:left": false, "name:right": false }
+                    draw:
+                        text:
+                            text_source: global.ux_language_text_source_boundary_lines
+                            offset: 0px
 
         region:
             region-labels:
                 filter: { name: true, $zoom: { min: 9 }, not: { maritime_boundary: true } }
                 draw:
-                    text-blend-order:
+                    text:
                         priority: 3
                         visible: global.text_visible_admin
                         text_source: global.ux_language_text_source_boundary_lines_left_right
-                        offset: [[8,[0, 5px]], [11, [0, 6px]], [12,[0, 7px]]]
+                        offset: [0, 5px]
                         text_wrap: 100px
                         # offset: 10px
                         # anchor: top
@@ -33,3 +39,9 @@ layers:
                             size: 9px
                             fill: [0.369,0.624,1.000]
                             transform: uppercase
+                no-left-right:
+                    filter: { "name:left": false, "name:right": false }
+                    draw:
+                        text:
+                            text_source: global.ux_language_text_source_boundary_lines
+                            offset: 0px
