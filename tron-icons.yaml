@@ -1,7 +1,7 @@
 styles:
     mapzen_icon_library:
         base: points
-        texture: mapzen_icon_spritesheet
+        texture: mapzen_icon_library
         blend_order: 1
         draw:
             size: 18px
@@ -19,7 +19,7 @@ styles:
 
 
 textures:
-    mapzen_icon_spritesheet:
+    mapzen_icon_library:
         url: ../components/images/tron@2x.png
         filtering: mipmap
         sprites:
