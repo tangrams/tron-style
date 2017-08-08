@@ -5,6 +5,7 @@ layers:
             name: true
         draw:
             mapzen_icon_library:
+                visible: false
                 text:
                     text_source: global.ux_language_text_source
                     visible: false
