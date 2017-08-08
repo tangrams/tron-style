@@ -5,7 +5,6 @@ import:
 
     # Styles
     - styles/common.yaml
-    - styles/points.yaml
     - styles/lines.yaml
     - styles/polygons.yaml
 
@@ -27,6 +26,9 @@ import:
     - layers/places.yaml
     - layers/pois.yaml
     - layers/ux-sdk-overlay.yaml
+
+    # Icons
+    - tron-icons.yaml
 
 # Sources
 sources:
