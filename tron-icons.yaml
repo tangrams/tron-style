@@ -3,6 +3,20 @@ styles:
         base: points
         texture: mapzen_icon_spritesheet
         blend_order: 1
+        draw:
+            size: 18px
+            sprite: function() { return feature.kind; }
+            sprite_default: generic
+            buffer: 20px
+            text:
+                buffer: 7px
+                text_wrap: 18
+                max_lines: 3
+                font:
+                    family: Cairo
+                    fill: [0.149,0.871,0.992]
+                    size: 10px
+
 
 textures:
     mapzen_icon_spritesheet:
