@@ -4,7 +4,8 @@ layers:
         filter:
             name: true
         draw:
-            icons:
+            mapzen_icon_library:
+                visible: false
                 text:
                     text_source: global.ux_language_text_source
                     visible: false
@@ -202,7 +203,7 @@ layers:
             filter:
                 kind: locality
             draw:
-                icons:
+                mapzen_icon_library:
                     visible: global.icon_visible_populated_places
                     size: [[10,4px],[11,0px]]
                     sprite: townspot-xs-rev
@@ -227,7 +228,7 @@ layers:
             # no-townspot:
             #     filter: { $zoom: { min: 11 } }
             #     draw:
-            #         icons:
+            #         mapzen_icon_library:
             #             size: 0px
             #             text:
             #                 anchor: center
@@ -237,7 +238,7 @@ layers:
             _icons_later:
                 filter: { $zoom: { min: 11 } }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         visible: false
                     text-blend-order:
                         visible: global.text_visible_populated_places
@@ -252,21 +253,21 @@ layers:
             z8-50k-below:
                 filter: { $zoom: [8,9], population: { min: 10000, max: 50000 } }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         buffer: 25px
                         #color: red
                         #visible: false
             z9-10k-below:
                 filter: { $zoom: [8,9], population: { max: 10000 } }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         buffer: 18px
                         #color: blue
                         #visible: false
             z9-no-population:
                 filter: { $zoom: [8,9], population: false }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         buffer: 10px
                         #color: yellow
                         #visible: false
@@ -276,7 +277,7 @@ layers:
                     $zoom: [3]
                     name: [Denver]
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         visible: false
 
             # HACK
@@ -312,7 +313,7 @@ layers:
                 filter:
                     population: { min: 10000000 }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         size: [[4,5px],[8,6px],[9,0px]]
                         sprite: townspot-m-rev
                         priority: 6
@@ -326,7 +327,7 @@ layers:
                 capital:
                     filter: { country_capital: true, $zoom: { min: 5 } }
                     draw:
-                        icons:
+                        mapzen_icon_library:
                             size: [[10,8px],[11,0px]]
                             sprite: capital-l
                             priority: 5
@@ -336,7 +337,7 @@ layers:
                 filter:
                     population: { min: 5000000, max: 10000000 }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         size: [[4,5px],[8,6px],[9,0px]]
                         sprite: townspot-m-rev
                         priority: 7
@@ -350,7 +351,7 @@ layers:
                 capital:
                     filter: { country_capital: true, $zoom: { min: 5 } }
                     draw:
-                        icons:
+                        mapzen_icon_library:
                             size: [[10,8px],[11,0px]]
                             sprite: capital-l
                             priority: 6
@@ -360,7 +361,7 @@ layers:
                 filter:
                     population: { min: 1000000, max: 5000000 }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         size: [[4,5px],[8,6px],[9,0px]]
                         sprite: townspot-m-rev
                         priority: 9
@@ -374,7 +375,7 @@ layers:
                 capital:
                     filter: { country_capital: true, $zoom: { min: 5 } }
                     draw:
-                        icons:
+                        mapzen_icon_library:
                             size: [[10,8px],[11,0px]]
                             sprite: capital-l
                             priority: 8
@@ -384,7 +385,7 @@ layers:
                 filter:
                     population: { min: 500000, max: 1000000 }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         size: [[8,6px],[9,0px]]
                         sprite: townspot-m-rev
                         priority: 11
@@ -398,7 +399,7 @@ layers:
                 capital:
                     filter: { country_capital: true, $zoom: { min: 5 } }
                     draw:
-                        icons:
+                        mapzen_icon_library:
                             size: [[10,6px],[11,0px]]
                             sprite: capital-m
                             priority: 10
@@ -408,7 +409,7 @@ layers:
                 filter:
                     population: { min: 200000, max: 500000 }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         size: [[8,6px],[9,6px],[10,6px],[11,0px]]
                         sprite: townspot-m-rev
                         priority: 13
@@ -422,7 +423,7 @@ layers:
                 capital:
                     filter: { country_capital: true, $zoom: { min: 5 } }
                     draw:
-                        icons:
+                        mapzen_icon_library:
                             size: [[10,6px],[11,0px]]
                             sprite: capital-m
                             priority: 12
@@ -432,7 +433,7 @@ layers:
                 filter:
                     population: { min: 100000, max: 200000 }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         size: [[8,6px],[9,6px],[10,6px],[11,0px]]
                         sprite: townspot-m-rev
                         priority: 15
@@ -446,7 +447,7 @@ layers:
                 capital:
                     filter: { country_capital: true, $zoom: { min: 5 } }
                     draw:
-                        icons:
+                        mapzen_icon_library:
                             size: [[10,6px],[11,0px]]
                             sprite: capital-m
                             priority: 14
@@ -456,7 +457,7 @@ layers:
                 filter:
                     population: { min: 50000, max: 100000 }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         size: [[8,5px],[9,5px],[10,6px],[11,0px]]
                         sprite: townspot-s-rev
                         priority: 17
@@ -470,7 +471,7 @@ layers:
                 capital:
                     filter: { country_capital: true, $zoom: { min: 5 } }
                     draw:
-                        icons:
+                        mapzen_icon_library:
                             size: [[10,5px],[11,0px]]
                             sprite: capital-m
                             priority: 16
@@ -480,7 +481,7 @@ layers:
                 filter:
                     population: { min: 20000, max: 50000 }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         size: [[8,5px],[9,5px],[10,5px],[11,0px]]
                         sprite: townspot-s-rev
                         priority: 19
@@ -494,7 +495,7 @@ layers:
                 capital:
                     filter: { country_capital: true, $zoom: { min: 5 } }
                     draw:
-                        icons:
+                        mapzen_icon_library:
                             size: [[10,5px],[11,0px]]
                             sprite: capital-s
                             priority: 18
@@ -504,7 +505,7 @@ layers:
                 filter:
                     population: { min: 10000, max: 20000 }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         size: [[8,4px],[9,4px],[10,4px],[11,0px]]
                         sprite: townspot-xs-rev
                         priority: 21
@@ -518,7 +519,7 @@ layers:
                 capital:
                     filter: { country_capital: true, $zoom: { min: 5 } }
                     draw:
-                        icons:
+                        mapzen_icon_library:
                             size: [[10,5px],[11,0px]]
                             sprite: capital-s
                             priority: 20
@@ -528,7 +529,7 @@ layers:
                 filter:
                     population: { min: 5000, max: 10000 }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         size: [[8,4px],[9,4px],[10,4px],[11,0px]]
                         sprite: townspot-xs-rev
                         priority: 23
@@ -542,7 +543,7 @@ layers:
                 capital:
                     filter: { country_capital: true, $zoom: { min: 5 } }
                     draw:
-                        icons:
+                        mapzen_icon_library:
                             size: [[10,5px],[11,0px]]
                             sprite: capital-s
                             priority: 22
@@ -552,7 +553,7 @@ layers:
                 filter:
                     population: { min: 2000, max: 5000 }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         size: [[8,4px],[9,4px],[10,4px],[11,0px]]
                         sprite: townspot-xs-rev
                         priority: 25
@@ -566,7 +567,7 @@ layers:
                 capital:
                     filter: { country_capital: true, $zoom: { min: 5 } }
                     draw:
-                        icons:
+                        mapzen_icon_library:
                             size: [[10,5px],[11,0px]]
                             sprite: capital-s
                             priority: 24
@@ -576,7 +577,7 @@ layers:
                 filter:
                     population: { min: 1000, max: 2000 }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         size: [[8,4px],[9,4px],[10,4px],[11,0px]]
                         sprite: townspot-xs-rev
                         priority: 27
@@ -590,7 +591,7 @@ layers:
                 capital:
                     filter: { country_capital: true, $zoom: { min: 5 } }
                     draw:
-                        icons:
+                        mapzen_icon_library:
                             size: [[10,5px],[11,0px]]
                             sprite: capital-s
                             priority: 26
@@ -600,7 +601,7 @@ layers:
                 filter:
                     population: { min: 200, max: 1000 }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         size: [[8,4px],[9,4px],[10,4px],[11,0px]]
                         sprite: townspot-xs-rev
                         priority: 28
@@ -614,7 +615,7 @@ layers:
                 capital:
                     filter: { country_capital: true, $zoom: { min: 5 } }
                     draw:
-                        icons:
+                        mapzen_icon_library:
                             size: [[10,5px],[11,0px]]
                             sprite: capital-s
                             priority: 27

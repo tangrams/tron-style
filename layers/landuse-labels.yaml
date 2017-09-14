@@ -21,7 +21,7 @@ layers:
             pier:
                 filter: { kind: [pier] }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         size: 18px
                         sprite: function() { return feature.kind; }
                         priority: 65

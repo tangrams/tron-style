@@ -1,11 +1,25 @@
 styles:
-    icons:
+    mapzen_icon_library:
         base: points
-        texture: pois
+        texture: mapzen_icon_library
         blend_order: 1
+        draw:
+            size: 18px
+            sprite: function() { return feature.kind; }
+            sprite_default: generic
+            buffer: 20px
+            text:
+                buffer: 7px
+                text_wrap: 18
+                max_lines: 3
+                font:
+                    family: Cairo
+                    fill: [0.149,0.871,0.992]
+                    size: 10px
+
 
 textures:
-    pois:
+    mapzen_icon_library:
         url: ../components/images/tron@2x.png
         filtering: mipmap
         sprites:

@@ -115,7 +115,7 @@ layers:
                         - $zoom: { min: 13 }
                         - ref: true
             draw:
-                icons:
+                mapzen_icon_library:
                     priority: 20
                     # you need to match any custom shield to the vector tile `network` values
                     sprite: function() { return ('sdk_shield-' + feature.ref.length + 'char'); }
@@ -149,45 +149,45 @@ layers:
             width_1char:
                 filter: function() { return (feature.ref.length === 1); }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         size: [[6,[16px,16px]],[13,[18px,18px]],[16,[21px,21px]]]
             width_2char:
                 filter: function() { return (feature.ref.length === 2); }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         size: [[6,[21px,16px]],[13,[24px,18px]],[16,[28px,21px]]]
             width_3char:
                 filter: function() { return (feature.ref.length === 3); }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         size: [[6,[27px,16px]],[13,[31px,18px]],[16,[36px,21px]]]
             width_4char:
                 filter: function() { return (feature.ref.length === 4); }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         size: [[6,[32px,16px]],[13,[36px,18px]],[16,[41px,21px]]]
                 # London sucks
                 early:
                     filter: { $zoom: { max: 14 } }
                     draw:
-                        icons:
+                        mapzen_icon_library:
                             visible: false
             width_5char:
                 filter: function() { return (feature.ref.length === 5); }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         size: [[6,[37px,16px]],[13,[41px,18px]],[16,[48px,21px]]]
                 # London sucks
                 early:
                     filter: { $zoom: { max: 14 } }
                     draw:
-                        icons:
+                        mapzen_icon_library:
                             visible: false
             # this is kinda a hack
             width_longggggg:
                 filter: function() { return (feature.ref.length > 5); }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         visible: false
 
         z19-show-long-route-name:
@@ -229,7 +229,7 @@ layers:
                       - $geometry: point
                       - kind: true
         draw:
-            icons:
+            mapzen_icon_library:
                 visible: global.sdk_transit_overlay
                 size: [[13, 12px], [16, 16px], [19, 20px]]
                 interactive: global.sdk_interactive
@@ -248,20 +248,20 @@ layers:
                         stroke: { color: white, width: 3 }
         poi_labels-z14:
             filter: { $zoom: [14] }
-            draw: { icons: { text: { font: { size: 11px } } } }
+            draw: { mapzen_icon_library: { text: { font: { size: 11px } } } }
         poi_labels-z15:
             filter: { $zoom: [15,16,17] }
-            draw: { icons: { text: { font: { size: 12px, stroke: { width: 2 } } } } }
+            draw: { mapzen_icon_library: { text: { font: { size: 12px, stroke: { width: 2 } } } } }
         poi_labels-z18:
             filter: { $zoom: [18,19] }
-            draw: { icons: { text: { font: { size: 12px, weight: 600, stroke: { width: 3 } } } } }
+            draw: { mapzen_icon_library: { text: { font: { size: 12px, weight: 600, stroke: { width: 3 } } } } }
         poi_labels-z20-up:
             filter: { $zoom: { min: 20 } }
-            draw: { icons: { text: { font: { size: 14px, weight: 600, stroke: { width: 3 }  } } } }
+            draw: { mapzen_icon_library: { text: { font: { size: 14px, weight: 600, stroke: { width: 3 }  } } } }
         station-train-subway:
             filter: { kind: [station, train-station, train_station] } #, $zoom: { min: 13 }
             draw:
-                icons:
+                mapzen_icon_library:
                     sprite: train_station
                     size: [[13, 12px], [14, 14px], [15, 16px], [17, 20px]]
                     priority: 11
@@ -271,19 +271,19 @@ layers:
             low-priority-early:
                 filter: { kind_tile_rank: { min: 3 }, $zoom: { min: 0, max: 12 } }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         size: [[12, 5px], [14, 6px], [15, 16px]]
                         text:
                             visible: false
                 long-tail:
                     filter: { kind_tile_rank: { min: 10 }, $zoom: [10] }
                     draw:
-                        icons:
+                        mapzen_icon_library:
                             visible: false
             low-priority-early-z12:
                 filter: { kind_tile_rank: { min: 8 }, $zoom: [12] }
                 draw:
-                    icons:
+                    mapzen_icon_library:
 #                        visible: false
                         size: [[12, 5px], [14, 6px], [15, 16px]]
                         text:
@@ -291,7 +291,7 @@ layers:
             low-priority-early-z13:
                 filter: { kind_tile_rank: { min: 8 }, $zoom: [13] }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         #visible: false
                         size: [[12, 8px], [14, 6px], [15, 16px]]
                         text:
@@ -299,7 +299,7 @@ layers:
             low-priority-early-z14:
                 filter: { kind_tile_rank: { min: 7 }, $zoom: [14] }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         size: [[12, 10px], [14, 11px], [15, 16px]]
                         #visible: false
                         text:
@@ -307,7 +307,7 @@ layers:
             late:
                 filter: { $zoom: { min: 16 } }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         text:
                             font:
                                 weight: 600
@@ -315,14 +315,14 @@ layers:
         subway-early:
             filter: { is_subway: true, is_train: false, $zoom: { max: 12 } }
             draw:
-                icons:
+                mapzen_icon_library:
                     visible: false
                     text:
                         visible: false
         halt-early:
             filter: { kind: [halt,stop], $zoom: { max: 15 } }
             draw:
-                icons:
+                mapzen_icon_library:
                     size: [[15, 8px], [16, 18px]]
                     visible: global.sdk_transit_overlay
                     sprite: light_rail
@@ -331,7 +331,7 @@ layers:
         platform-early:
             filter: { kind: [platform] }
             draw:
-                icons:
+                mapzen_icon_library:
                     size: [[15, 8px], [16, 18px]]
                     visible: global.sdk_transit_overlay
                     sprite: generic
@@ -340,7 +340,7 @@ layers:
         tram-stop-early:
             filter: { kind: [tram_stop], $zoom: { max: 16 } }
             draw:
-                icons:
+                mapzen_icon_library:
                     size: [[13, 0px], [14, 7px], [15, 8px]]
                     visible: global.sdk_transit_overlay
                     sprite: light_rail
@@ -349,7 +349,7 @@ layers:
         tram-stop:
             filter: { kind: tram_stop, $zoom: { min: 16 } }
             draw:
-                icons:
+                mapzen_icon_library:
                     size: [[16, 12px], [17, 14px], [18, 18px]]
                     sprite: light_rail
                     #text:
@@ -358,7 +358,7 @@ layers:
             filter:
                 kind: [platform, stop_position]
             draw:
-                icons:
+                mapzen_icon_library:
                     size: [[13, 8px], [16, 10px], [17, 12px], [18, 18px]]
                     sprite: bus_station
                     text:
@@ -372,7 +372,7 @@ layers:
                 kind: [bus_station, bus_stop]
                 $zoom: { min: 16 }
             draw:
-                icons:
+                mapzen_icon_library:
                     size: [[13, 12px], [16, 18px]]
                     sprite: bus_station
                     priority: 17
@@ -388,7 +388,7 @@ layers:
                     kind: [bus_stop]
                     $zoom: { max: 19 }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         size: [[13, 8px], [19, 18px]]
                         text:
                             visible: false
@@ -396,7 +396,7 @@ layers:
             filter:
                 kind: [subway_entrance]
             draw:
-                icons:
+                mapzen_icon_library:
                     sprite: subway_entrance
                     size: [[17, 12px], [19, 14px]]
                     priority: 19

@@ -158,7 +158,7 @@ layers:
                             - kind_detail: [motorway, trunk, primary, secondary, tertiary]
             # default
             draw:
-                icons:
+                mapzen_icon_library:
                     # you need to match any custom shield to the vector tile `network` values
                     sprite: |
                         function() {
@@ -204,7 +204,7 @@ layers:
                         - kind_detail: motorway
                         - $zoom: { min: 9 }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         priority: 47
                         #color: yellow
                         visible: global.sdk_road_shields
@@ -215,7 +215,7 @@ layers:
                         - kind_detail: [trunk]
                         - $zoom: { min: 10 }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         priority: 48
                         #color: red
                         visible: global.sdk_road_shields
@@ -225,7 +225,7 @@ layers:
                         - kind_detail: [primary]
                         - $zoom: { min: 12 }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         priority: 49
                         #color: aqua
                         visible: global.sdk_road_shields
@@ -235,7 +235,7 @@ layers:
                         - kind_detail: [secondary]
                         - $zoom: { min: 12 }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         priority: 53
                         #color: blue
                         visible: global.sdk_road_shields
@@ -245,7 +245,7 @@ layers:
                         - kind_detail: tertiary
                         - $zoom: { min: 13 }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         priority: 55
                         #color: green
                         visible: global.sdk_road_shields
@@ -254,7 +254,7 @@ layers:
             #         not: { network: ['US:I','US:US'] }
             #         $zoom: { max: 9 }
             #     draw:
-            #         icons:
+            #         mapzen_icon_library:
             #             visible: false
             width_1char:
                 filter: |
@@ -266,7 +266,7 @@ layers:
                         }
                     }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         size: [[6,[14px,14px]],[13,[15px,15px]],[16,[18px,18px]]]
             width_2char:
                 filter: |
@@ -278,7 +278,7 @@ layers:
                         }
                     }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         size: [[6,[18px,14px]],[13,[20px,15px]],[16,[24px,18px]]]
             width_3char:
                 filter: |
@@ -290,7 +290,7 @@ layers:
                         }
                     }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         size: [[6,[25px,14px]],[13,[27px,15px]],[16,[33px,18px]]]
             width_4char:
                 filter: |
@@ -302,13 +302,13 @@ layers:
                         }
                     }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         size: [[6,[29px,14px]],[13,[31px,15px]],[16,[38px,18px]]]
                 # London sucks
                 early:
                     filter: { $zoom: { max: 14 } }
                     draw:
-                        icons:
+                        mapzen_icon_library:
                             visible: false
             width_5char:
                 filter: |
@@ -320,13 +320,13 @@ layers:
                         }
                     }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         size: [[6,[34px,14px]],[13,[37px,15px]],[16,[45px,18px]]]
                 # London sucks
                 early:
                     filter: { $zoom: { max: 14 } }
                     draw:
-                        icons:
+                        mapzen_icon_library:
                             visible: false
             # this is kinda a hack
             width_longggggg:
@@ -339,7 +339,7 @@ layers:
                         }
                     }
                 draw:
-                    icons:
+                    mapzen_icon_library:
                         visible: false
             # missing-route-relations:
             #     filter: { shield_text: false }
@@ -354,14 +354,14 @@ layers:
             legit-shields:
                 filter: { shield_text: true }
                 # draw:
-                #     icons:
+                #     mapzen_icon_library:
                 #         color: red
                 # US Interstate roads
                 US-I:
                     filter:
                         network: 'US:I'
                     draw:
-                        icons:
+                        mapzen_icon_library:
                             # you need to match any custom shield to the vector tile `network` values
                             sprite: function() { return (feature.network + '-' + feature.shield_text.length + 'char'); }
                             priority: 46
@@ -374,27 +374,27 @@ layers:
                     width_1char:
                         filter: function() { return (feature.shield_text.length === 1) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[15px,17px]],[13,[17px,19px]],[16,[21px,24px]]]
                     width_2char:
                         filter: function() { return (feature.shield_text.length === 2) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[18px,18px]],[13,[20px,20px]],[16,[25px,25px]]]
                     width_3char:
                         filter: function() { return (feature.shield_text.length === 3) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[23px,18px]],[13,[26px,20px]],[16,[33px,25px]]]
                     width_4char:
                         filter: function() { return (feature.shield_text.length === 4) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[30px,18px]],[13,[33px,20px]],[16,[42px,25px]]]
                     width_5char:
                         filter: function() { return (feature.shield_text.length === 5) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[32x,18px]],[13,[36px,20px]],[16,[45px,25px]]]
                 # US Federal Routes
                 US-US:
@@ -402,7 +402,7 @@ layers:
                         network: ['US:US','US:US:Business', 'US:US:Truck', 'US:US:Alternate']
                         $zoom: { min: 7 }
                     draw:
-                        icons:
+                        mapzen_icon_library:
                             # you need to match any custom shield to the vector tile `network` values
                             sprite: |
                                 function() { return ('US:US-' + feature.shield_text.length + 'char'); }
@@ -416,32 +416,32 @@ layers:
                                     size: [[7,8px],[12,9px],[16,10px]]
                     # early:
                     #     filter: { $zoom: [7] }
-                    #     icons:
+                    #     mapzen_icon_library:
                     #         visible: false
                     width_1char:
                         filter: function() { return (feature.shield_text.length === 1) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[15px,17px]],[12,[17px,19px]],[16,[22px,24px]]]
                     width_2char:
                         filter: function() { return (feature.shield_text.length === 2) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[22px,17px]],[12,[25px,20px]],[16,[30px,24px]]]
                     width_3char:
                         filter: function() { return (feature.shield_text.length === 3) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[25px,18px]],[12,[28px,20px]],[16,[34px,24px]]]
                     width_4char:
                         filter: function() { return (feature.shield_text.length === 4) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[30px,18px]],[12,[33px,20px]],[16,[41px,24px]]]
                     width_5char:
                         filter: function() { return (feature.shield_text.length === 5) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[31px,18px]],[12,[35px,20px]],[16,[45px,25px]]]
                 # US State Routes
                 # US-states:
@@ -452,12 +452,12 @@ layers:
                 #                 /^US:(?!US)\w\w$/.test(feature.network)
                 #         }
                 #     draw:
-                #         icons:
+                #         mapzen_icon_library:
                 #             # you need to match any custom shield to the vector tile `network` values
                 #             priority: 18
                 #     early:
                 #         filter: { $zoom: [7,8,9] }
-                #         icons:
+                #         mapzen_icon_library:
                 #             visible: false
                 US-CA:
                     # Match California state highways: `US:CA`
@@ -467,7 +467,7 @@ layers:
                                 /^US:CA$/.test(feature.network)
                         }
                     draw:
-                        icons:
+                        mapzen_icon_library:
                             sprite: function() { return (feature.network + '-' + feature.shield_text.length + 'char'); }
                             text:
                                 offset: [0px, 1px]
@@ -477,42 +477,42 @@ layers:
                     motorway:
                         filter: { kind_detail: [motorway], $zoom: [7,8] }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 visible: global.sdk_road_shields
                     trunk:
                         filter: { kind_detail: [trunk], $zoom: [8,9] }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 visible: global.sdk_road_shields
                     primary:
                         filter: { kind_detail: primary, $zoom: [10,11] }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 visible: global.sdk_road_shields
                     width_1char:
                         filter: function() { return (feature.shield_text.length === 1) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[14px,16px]],[13,[15px,18px]],[15,[19px,22px]]]
                     width_2char:
                         filter: function() { return (feature.shield_text.length === 2) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[19px,18px]],[13,[21px,20px]],[15,[25px,23px]]]
                     width_3char:
                         filter: function() { return (feature.shield_text.length === 3) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[23px,18px]],[13,[26px,20px]],[15,[30px,23px]]]
                     width_4char:
                         filter: function() { return (feature.shield_text.length === 4) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[28px,18px]],[13,[31px,20px]],[15,[36px,23px]]]
                     width_5char:
                         filter: function() { return (feature.shield_text.length === 5) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[35px,18px]],[13,[39px,20px]],[15,[45px,23px]]]
                 US-NY:
                     # Match New York state highways: `US:NY`
@@ -523,7 +523,7 @@ layers:
                                 /* (/^US:NY$/.test(feature.network) || /^NY:US$/.test(feature.network)) */
                         }
                     draw:
-                        icons:
+                        mapzen_icon_library:
                             sprite: |
                                 function() { return ( 'US:NY-' + feature.shield_text.length + 'char'); }
                             text:
@@ -534,27 +534,27 @@ layers:
                     width_1char:
                         filter: function() { return (feature.shield_text.length === 1) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[13px,17px]],[13,[15px,19px]],[15,[18px,22px]]]
                     width_2char:
                         filter: function() { return (feature.shield_text.length === 2) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[17px,17px]],[13,[19px,19px]],[15,[22px,22px]]]
                     width_3char:
                         filter: function() { return (feature.shield_text.length === 3) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[20px,17px]],[13,[22px,19px]],[15,[27px,22px]]]
                     width_4char:
                         filter: function() { return (feature.shield_text.length === 4) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[21px,17px]],[13,[24px,19px]],[15,[29px,22px]]]
                     width_5char:
                         filter: function() { return (feature.shield_text.length === 5) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[22px,17px]],[13,[25px,19px]],[15,[30px,22px]]]
                 US-PA:
                     # Match Pennsylvania state highways
@@ -564,7 +564,7 @@ layers:
                                 /^US:PA$/.test(feature.network)
                         }
                     draw:
-                        icons:
+                        mapzen_icon_library:
                             sprite: |
                                 function() { return ( 'US:PA-' + feature.shield_text.length + 'char'); }
                             text:
@@ -575,27 +575,27 @@ layers:
                     width_1char:
                         filter: function() { return (feature.shield_text.length === 1) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[14px,17px]],[13,[15px,19px]],[16,[18px,22px]]]
                     width_2char:
                         filter: function() { return (feature.shield_text.length === 2) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[18px,17px]],[13,[20px,19px]],[16,[23px,22px]]]
                     width_3char:
                         filter: function() { return (feature.shield_text.length === 3) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[25px,17px]],[13,[28px,19px]],[16,[33px,22px]]]
                     width_4char:
                         filter: function() { return (feature.shield_text.length === 4) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[29px,17px]],[13,[32px,19px]],[16,[38px,22px]]]
                     width_5char:
                         filter: function() { return (feature.shield_text.length === 5) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[34px,17px]],[13,[38px,19px]],[16,[45px,22px]]]
                 # USA County Routes
                 US-counties:
@@ -631,7 +631,7 @@ layers:
                                 $zoom > 10
                         }
                     draw:
-                        icons:
+                        mapzen_icon_library:
                             # you need to match any custom shield to the vector tile `network` values
                             sprite: function() { return ('county_shield-' + feature.shield_text.length + 'char'); }
                             # priority: 19
@@ -643,30 +643,30 @@ layers:
                     # early:
                     #     filter: { $zoom: { max: 11 } }
                     #     draw:
-                    #         icons:
+                    #         mapzen_icon_library:
                     #             visible: false
                     width_1char:
                         filter: function() { return (feature.shield_text.length === 1) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[14px,14px]],[13,[15px,15px]],[16,[18px,18px]]]
                     width_2char:
                         filter: function() { return (feature.shield_text.length === 2) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[18px,14px]],[13,[20px,15px]],[16,[24px,18px]]]
                     width_3char:
                         filter: function() { return (feature.shield_text.length === 3) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[25px,14px]],[13,[27px,15px]],[16,[33px,18px]]]
                     width_4char:
                         filter: function() { return (feature.shield_text.length === 4) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[29px,14px]],[13,[31px,15px]],[16,[38px,18px]]]
                     width_5char:
                         filter: function() { return (feature.shield_text.length === 5) }
                         draw:
-                            icons:
+                            mapzen_icon_library:
                                 size: [[6,[34px,14px]],[13,[37px,15px]],[16,[45px,18px]]]
