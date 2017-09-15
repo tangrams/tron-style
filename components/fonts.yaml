@@ -20,3 +20,7 @@ fonts:
         - weight: normal # Regular
           # url: https://fonts.gstatic.com/s/play/v7/IkErdnKw9ItVkLeeur9GHfesZW2xOQ-xsNqO47m55DA.woff
           url: fonts/IkErdnKw9ItVkLeeur9GHfesZW2xOQ-xsNqO47m55DA.woff
+    Montserrat:
+        - weight: 700
+          #url: https://fonts.gstatic.com/s/montserrat/v10/IQHow_FEYlDC4Gzy_m8fcnbFhgvWbfSbdVg11QabG8w.woff
+          url: fonts/Montserrat-Bold.woff
