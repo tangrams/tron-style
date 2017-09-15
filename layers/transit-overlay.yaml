@@ -142,9 +142,10 @@ layers:
                         text_source: function() { if( feature.ref.length < 6 ) { return feature.ref; } else { return ''; } }
                         font:
                             family: Montserrat
+                            weight: 700
                             fill: function() { if(feature.colour === 'yellow' || feature.colour === 'white') { return '#555'; } else { return 'white'; } }
-                            style: bold
                             size: [[7,7px],[12,8px],[16,11px]]
+                            stroke: { width: 0px }
 
             width_1char:
                 filter: function() { return (feature.ref.length === 1); }
@@ -236,7 +237,7 @@ layers:
                 priority: 15
                 text:
                     buffer: 4px
-                    move_into_tile: false # preserves text alignment w/icons in JS
+                    #move_into_tile: false # preserves text alignment w/icons in JS
                     #anchor: bottom
                     #offset: [[13, [0, 6px]], [16, [0, 8px]], [19, [0, 10px]]] # offset tracks alongside icon size (half icon height)
                     interactive: global.sdk_interactive

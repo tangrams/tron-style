@@ -28,7 +28,7 @@ import:
     - layers/ux-sdk-overlay.yaml
 
     # Icons
-    - tron-icons.yaml
+    - themes/tron-icons.yaml
 
 # Sources
 sources:

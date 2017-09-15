@@ -28,8 +28,6 @@ layers:
                         family: Cairo
                         fill: [0.149,0.871,0.992]
                         size: 10px
-            text:
-                interactive: global.sdk_interactive
 
         poi-scale-z18:
             filter: { $zoom: { min: 18 } }

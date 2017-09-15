@@ -1,6 +1,5 @@
 import:
     - tron-style.yaml
-    - tron-icons.yaml
 
 global:
     text_visible_building:          true        # false for default
