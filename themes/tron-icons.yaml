@@ -20,7 +20,7 @@ styles:
 
 textures:
     mapzen_icon_library:
-        url: ../components/images/tron@2x.png
+        url: images/tron@2x.png
         filtering: mipmap
         sprites:
             # define sprites: [x origin, y origin, width, height]
