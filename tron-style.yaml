@@ -46,7 +46,7 @@ sources:
         url_params:
             api_key: global.sdk_mapzen_api_key
         tile_size: 512
-        max_zoom: 15
+        max_zoom: 14
 
     # Only enable this for local debug, should not be enabled for prod (app inserts these at runtime)
     # These are all in San Francisco, California
