@@ -221,11 +221,23 @@
         );
         map.setView(map_start_location.slice(0, 2), map_start_location[2]);
 
+        var tg_baseScene = 'tron-style.yaml';
+
+        var dev_or_prod = 'prod';
+        // prod
+        var mapzen_api_key = 'vector-tiles-h6AbVZA';
+
+        if( dev_or_prod == 'dev' ) {
+            mapzen_api_key = 'mapzen-iP15tWp';
+        }
+
+        var tg_global = { sdk_mapzen_api_key: mapzen_api_key };
+
         var layer = Tangram.leafletLayer({
             // more: 'mapzen-n22UFkv'
             // default (some): 'mapzen-iP15tWp'
             // no: 'mapzen-7f8jPGR'
-            scene: { import: 'tron-style.yaml', global: { sdk_mapzen_api_key: 'mapzen-iP15tWp' } },
+            scene: { import: [tg_baseScene], global: tg_global },
             attribution: '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a>, &copy; OSM contributors'
         });
 
@@ -401,111 +413,37 @@
             });
             gui.fallback_button.name('lang fallback');
 
-            // Labels selector
-            var labels = {
-                '(default)': 'more',
-                'More': 'more',
-                'Some': 'some',
-                'Some (no shields)': 'some_no_shields',
-                'None': 'none'
-            };
-            gui.labels = query.labels || 'some';
-            gui.add(gui, 'labels', labels).onChange(function(value) {
-                var _default = true;
-                var _more = false;
-                var _road_shields = true;
+            // So many themes
+            var all_theme_imports = { color: null, detail: null, label: null };
 
-                if(value === 'more') {
-                    _more = true;
-                    _default = true;
-                    _road_shields = true;
-                } else if(value === 'some') {
-                    _more = false;
-                    _default = true;
-                    _road_shields = true;
-                } else if(value === 'some_no_shields') {
-                    _more = false;
-                    _default = true;
-                    _road_shields = false;
-                } else {
-                    _more = false;
-                    _default = false;
-                    _road_shields = false;
+            function update_scene_with_themes() {
+                //console.log( all_theme_imports );
+
+                // construct the import array
+                themes_as_array = [tg_baseScene];
+
+                if( all_theme_imports.color ) {
+                    themes_as_array.push( all_theme_imports.color );
+                }
+                if( all_theme_imports.label ) {
+                    themes_as_array.push( all_theme_imports.label );
                 }
 
-                scene.config.global.text_visible_continent = _default;
-                scene.config.global.text_visible_admin = _default;
-                scene.config.global.text_visible_populated_places = _default;
-                scene.config.global.icon_visible_populated_places = _default;
-                scene.config.global.text_visible_neighbourhoods = _default;
-                scene.config.global.text_visible_neighbourhoods_e = _default;
-                scene.config.global.text_visible_water = _default;
-                scene.config.global.text_visible_water_labels = _default;
-                scene.config.global.text_visible_island = _default;
-
-                scene.config.global.sdk_road_shields = _road_shields;
-
-                scene.config.global.text_visible_roads = _default;
-                scene.config.global.text_visible_highway = _default;
-                scene.config.global.text_visible_highway_e = _default;
-                scene.config.global.text_visible_trunk_primary_route = _default;
-                scene.config.global.text_visible_trunk_primary = _default;
-                scene.config.global.text_visible_secondary = _default;
-                scene.config.global.text_visible_tertiary = _default;
-                scene.config.global.text_visible_minor_road = _default;
-                scene.config.global.text_visible_minor_road_e = _default;
-                scene.config.global.text_visible_service_road = _default;
-                scene.config.global.text_visible_path = _default;
-                scene.config.global.text_visible_piste = _default;
-                scene.config.global.text_visible_steps = _default;
-
-                scene.config.global.text_visible_highway_e = _default;
-                scene.config.global.text_visible_trunk_primary_e2 = _default;
-                scene.config.global.text_visible_trunk_primary_e = _default;
-                scene.config.global.text_visible_secondary_e = _default;
-                scene.config.global.text_visible_tertiary_e = _default;
-                scene.config.global.text_visible_minor_road_e = _default;
-                scene.config.global.text_visible_exits_e = _default;
-
-                scene.config.global.text_visible_aerialway = _default;
-                scene.config.global.text_visible_airport_gate = _default;
-                scene.config.global.text_visible_exits = _default;
-
-                scene.config.global.text_visible_building = _more;
-                scene.config.global.text_visible_address = _more;
-
-                scene.config.global.label_visible_poi_landuse = _more;
-                scene.config.global.text_visible_poi_landuse = _more;
-                scene.config.global.label_visible_poi_landuse_e = _more;
-                scene.config.global.icon_visible_poi_landuse = _more;
-                scene.config.global.icon_visible_poi_landuse_e = _more;
-                scene.config.global.text_visible_poi_landuse_e = _more;
-                scene.config.global.icon_visible_station = _more;
-
-                scene.config.global.icon_visible_landuse_green = _default;
-                scene.config.global.text_visible_landuse_green = _default;
-                scene.config.global.text_visible_landuse_generic = _more;
-                if( _more ) {
-                    scene.config.global.icon_size_green = [[13, '14px'], [16, '18px'], [18, '19px']];
-                    scene.config.global.icon_size_green_nationl_park = [[10,'18px'],[12,'28px'],[13,'36px']];
-                    scene.config.global.icon_size_green_airport = [[13,'12px'],[14,'12px'],[17,'18px'],[19,'36px']];
-                    scene.config.global.icon_size_green_l = [[14,'24px'],[16,'32px']];
-                } else {
-                    scene.config.global.icon_size_green = [[0, '0px']];
-                    scene.config.global.icon_size_green_nationl_park = [[0, '0px']];
-                    scene.config.global.icon_size_green_airport = [[0, '0px']];
-                    scene.config.global.icon_size_green_l = [[0, '0px']];
-                }
-                // Oct. 7, 2016
-                //need to rework this, upon switching back to labels, buildings stay light and labels dont read
-                // if( _val ) {
-                //     scene.config.global.building_style = 'buildings_with_labels';
-                //     scene.config.global.building_lines_with_or_without_labels = '[0.512,0.594,0.840]';
-                // } else {
-                //     scene.config.global.building_style = 'buildings_no_labels';
-                //     scene.config.global.building_lines_with_or_without_labels = '[0.567,0.658,0.930]';
-                // }
+                scene.load({ import: themes_as_array, global: tg_global });
+                //console.log( scene.config );
                 scene.updateConfig();
+                //scene.rebuild();
+            }
+
+
+            // Labels selector
+            gui.label = query.label || 5;
+            gui.add(gui, 'label', 0, 11).step(1).onChange(function(value) {
+                var import_theme = 'themes/label-'+ value + '.yaml'
+                all_theme_imports.label = import_theme;
+
+                update_scene_with_themes();
+
                 //window.location.search = 'language=' + value;
             });
 
@@ -668,6 +606,12 @@
                                     var val = properties[x]
                                     label += "<span class='labelLine' key="+x+" value="+val+"'>"+x+" : "+val+"</span><br>"
                                 }
+
+                                var layers = selection.feature.layers;
+                                label += "<span class='labelLine'>Layers:</span><br>"
+                                layers.forEach(function(val) {
+                                    label += "<span class='labelLine' value="+val+"'>  "+val+"</span><br>"
+                                });
 
                                 if (label != '') {
                                     popup.style.left = (selection.pixel.x) + 'px';

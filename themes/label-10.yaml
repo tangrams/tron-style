@@ -1,0 +1,34 @@
+global:
+    #label visibility
+    text_visible_admin:                     true
+    text_visible_populated_places:          true
+    icon_visible_populated_places:          true
+    text_visible_neighbourhoods:            true
+    text_visible_neighbourhoods_e:          true
+    text_visible_water_labels:              true
+    text_visible_roads:                     true
+    text_visible_building:                  true     # false for default
+    text_visible_address:                   true     # false for default
+    icon_visible_landuse_green:             true
+    icon_size_green:                        [[13, '14px'], [16, '18px'], [18, '19px']]
+    icon_size_green_nationl_park:           [[10, '18px'], [12, '28px'], [13, '36px']]
+    icon_size_green_airport:                [[13, '12px'], [14, '12px'], [17, '18px'], [19, '36px']]
+    text_visible_landuse_green:             true
+    icon_visible_poi_landuse:               true     #false by default
+    text_visible_poi_landuse:               true     #false by default
+    icon_visible_poi_landuse_e:             true
+    text_visible_landuse_generic:           true     #false by default
+    icon_visible_station:                   true     #false by default
+    text_visible_station:                   true
+    text_visible_highway:                   true
+    text_visible_trunk_primary:             true
+    text_visible_secondary:                 true
+    text_visible_tertiary:                  true
+    text_visible_minor_road:                true
+    text_visible_service_road:              true
+    text_visible_island:                    true
+    text_visible_aerialway:                 true
+    text_visible_airport_gate:              true
+    text_visible_exits:                     true
+
+    sdk_road_shields:                       true

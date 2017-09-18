@@ -3,27 +3,19 @@ layers:
     roads:
         draw:
             text:
-                visible: global.text_visible_roads
+                text_source: global.ux_language_text_source
+                visible: false
+                font:
+                    family: Cairo
 
         highway:
-            filter: { kind: highway }
-            # labels-highway-z8:
-            #     filter: { $zoom: { min: 8 }, $zoom: { max: 15 } }
-            #     draw:
-            #         text:
-            #             priority: 50
-            #             text_source: ref
-            #             font:
-            #                 family: Aldrich
-            #                 size: [[8,8px],[12,10px]]
-            #                 fill: [0.082,0.133,0.259]
-            #                 stroke: { color: [0.000,0.533,1.000], width: 4px }
             labels-highway-z14:
                 filter: { $zoom: { min: 15 } }
                 draw:
                     text:
                         priority: 50
                         text_source: global.ux_language_text_source
+                        visible: global.text_visible_highway
                         font:
                             family: Aldrich
                             size: [[15,12px],[20,14px]]
@@ -31,30 +23,16 @@ layers:
                             stroke: { color: [0.000,0.533,1.000], width: 6px }
 
         major_road:
-            filter: { kind: major_road }
             trunk_primary:
                 filter: { kind_detail: [trunk, primary] }
-                # routes:
-                #     filter: { ref: true }
-                #     labels-trunk-primary-route:
-                #         filter: { $zoom: { min: 13 } }
-                #         draw:
-                #             text:
-                #                 priority: 50
-                #                 text_source: global.ux_language_text_source
-                #                 font:
-                #                     family: Aldrich
-                #                     size: [[13,10px],[15,12px],[19,14px]]
-                #                     fill: [0.027,0.805,0.939]
-                #                     stroke: { color: [0.212,0.302,0.427], width: 5px }
                 labels-trunk-primary-z14:
                     filter: { $zoom: [13,14] }
                     draw:
                         text:
                             priority: 51
                             text_source: global.ux_language_text_source
+                            visible: global.text_visible_trunk_primary
                             font:
-                                family: Cairo
                                 size: 10px
                                 fill: white
 
@@ -64,21 +42,20 @@ layers:
                         text:
                             priority: 51
                             text_source: global.ux_language_text_source_road_ref_and_name_short
+                            visible: global.text_visible_trunk_primary
                             font:
-                                family: Cairo
                                 size: [[15,13px],[18,14px]]
                                 fill: white
 
 
             secondary:
-                filter: { kind_detail: secondary }
                 labels-secondary:
                     draw:
                         text:
                             priority: 56
                             text_source: global.ux_language_text_source_road_ref_and_name_short
+                            visible: global.text_visible_secondary
                             font:
-                                family: Cairo
                                 size: [[15,13px],[18,14px]]
                                 # fill: [[15,[0.750,0.888,1.000]],[18,[1.00,1.00,1.00]]]
                                 fill: [0.750,0.888,1.000]
@@ -94,21 +71,19 @@ layers:
                                 #visible: true
                                 priority: 56
                                 text_source: global.ux_language_text_source_road_ref_and_name_short
+                                visible: global.text_visible_secondary
                                 font:
-                                    family: Cairo
                                     size: [[13,10px],[15,13px],[18,14px]]
                                     fill: white
 
             tertiary:
-                filter: { kind_detail: [tertiary, tertiary_link] }
                 labels-tertiary:
                     draw:
                         text:
-                            visible: global.text_visible_roads
+                            visible: global.text_visible_tertiary
                             priority: 57
                             text_source: global.ux_language_text_source_road_ref_and_name_short
                             font:
-                                family: Cairo
                                 size: [[15,10px],[18,14px]]
                                 fill: [0.581,0.718,0.830]
                     early-dont-draw:
@@ -118,22 +93,29 @@ layers:
                                 visible: false
 
         minor_road:
-            filter: { kind: minor_road, not: { kind_detail: service } }
-            labels-minor-road:
+            labels-minor_road:
+                filter: { $zoom: { min: 15 } }
                 draw:
                     text:
-                        visible: global.text_visible_roads
+                        visible: global.text_visible_minor_road
                         priority: 59
                         text_source: name
                         font:
-                            family: Cairo
                             size: [[15,10px],[18,14px]]
                             fill: [0.581,0.718,0.830]
-                early-dont-draw:
-                    filter: { $zoom: { min: 11, max: 15 } }
-                    draw:
-                        text:
-                            visible: false
+
+        service_road:
+            labels-service_road:
+                filter: { $zoom: { min: 17 } }
+                draw:
+                    text:
+                        priority: 60
+                        visible: global.text_visible_service_road
+                        text_source: name
+                        font:
+                            size: [[15,10px], [18,14px]]
+                            fill: [0.581,0.718,0.830]
+
 
         shields:
             filter:

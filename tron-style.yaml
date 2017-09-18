@@ -30,6 +30,9 @@ import:
     # Icons
     - themes/tron-icons.yaml
 
+    # Label
+    - themes/label-5.yaml
+
 # Sources
 sources:
     mapzen:

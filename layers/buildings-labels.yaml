@@ -14,14 +14,14 @@ layers:
                     - { $zoom: [16], area: { min: 5000 } }
                     - { $zoom: [16], area: { min: 5000 } }
                     - { $zoom: [16], area: { min: 10000 }, landuse_kind: true }
-                    - { $zoom: [16], area: { min: 7000 }, kind: [university, college, school, kindergarten] }
+                    - { $zoom: [16], area: { min: 7000 }, kind_detail: [university, college, school, kindergarten] }
                     - { $zoom: [16], volume: { min: 50000 }, name: true }
                     - { $zoom: [17], area: { min: 3000 } }
-                    - { $zoom: [17], area: { min: 2000 }, kind: [university, college, school, kindergarten] }
+                    - { $zoom: [17], area: { min: 2000 }, kind_detail: [university, college, school, kindergarten] }
                     - { $zoom: [18], area: { min: 1000 } }
-                    - { $zoom: [18], kind: [university, college, school, kindergarten] }
+                    - { $zoom: [18], kind_detail: [university, college, school, kindergarten] }
                     - { $zoom: [19], area: { min: 200 } }
-                    - { $zoom: { min: 19 }, kind: [university, college, school, kindergarten] }
+                    - { $zoom: { min: 19 }, kind_detail: [university, college, school, kindergarten] }
                     - { $zoom: { min: 20 }, area: true }
             draw:
                 text:

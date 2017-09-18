@@ -1,0 +1,34 @@
+global:
+    #label visibility
+    text_visible_admin:                     false
+    text_visible_populated_places:          false
+    icon_visible_populated_places:          false
+    text_visible_neighbourhoods:            false
+    text_visible_neighbourhoods_e:          false
+    text_visible_water_labels:              false
+    text_visible_roads:                     false
+    text_visible_building:                  false     # false for default
+    text_visible_address:                   false     # false for default
+    icon_visible_landuse_green:             false
+    icon_size_green:                        [[0, '0px']]                       # 0px for no, default, more  [[13, '14px'], [16, '18px'], [18, '19px']]
+    icon_size_green_nationl_park:           [[0, '0px']]          # 0px for no, default, more  [[10, '18px'], [12, '28px'], [13, '36px']]
+    icon_size_green_airport:                [[0, '0px']]               # 0px for no, default, more  [[13, '12px'], [14, '12px'], [17, '18px'], [19, '36px']]
+    text_visible_landuse_green:             false
+    icon_visible_poi_landuse:               false    #false by default
+    text_visible_poi_landuse:               false    #false by default
+    icon_visible_poi_landuse_e:             false
+    text_visible_landuse_generic:           false    #false by default
+    icon_visible_station:                   false    #false by default
+    text_visible_station:                   false
+    text_visible_highway:                   false
+    text_visible_trunk_primary:             false
+    text_visible_secondary:                 false
+    text_visible_tertiary:                  false
+    text_visible_minor_road:                false
+    text_visible_service_road:              false
+    text_visible_island:                    false
+    text_visible_aerialway:                 false
+    text_visible_airport_gate:              false
+    text_visible_exits:                     false
+
+    sdk_road_shields:                       false
