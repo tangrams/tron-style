@@ -7,23 +7,13 @@ layers:
 
         highway:
             filter: { kind: highway }
-            # labels-highway-z8:
-            #     filter: { $zoom: { min: 8 }, $zoom: { max: 15 } }
-            #     draw:
-            #         text:
-            #             priority: 50
-            #             text_source: ref
-            #             font:
-            #                 family: Aldrich
-            #                 size: [[8,8px],[12,10px]]
-            #                 fill: [0.082,0.133,0.259]
-            #                 stroke: { color: [0.000,0.533,1.000], width: 4px }
             labels-highway-z14:
                 filter: { $zoom: { min: 15 } }
                 draw:
                     text:
                         priority: 50
                         text_source: global.ux_language_text_source
+                        visible: global.text_visible_highway
                         font:
                             family: Aldrich
                             size: [[15,12px],[20,14px]]
@@ -34,25 +24,13 @@ layers:
             filter: { kind: major_road }
             trunk_primary:
                 filter: { kind_detail: [trunk, primary] }
-                # routes:
-                #     filter: { ref: true }
-                #     labels-trunk-primary-route:
-                #         filter: { $zoom: { min: 13 } }
-                #         draw:
-                #             text:
-                #                 priority: 50
-                #                 text_source: global.ux_language_text_source
-                #                 font:
-                #                     family: Aldrich
-                #                     size: [[13,10px],[15,12px],[19,14px]]
-                #                     fill: [0.027,0.805,0.939]
-                #                     stroke: { color: [0.212,0.302,0.427], width: 5px }
                 labels-trunk-primary-z14:
                     filter: { $zoom: [13,14] }
                     draw:
                         text:
                             priority: 51
                             text_source: global.ux_language_text_source
+                            visible: global.text_visible_trunk_primary
                             font:
                                 family: Cairo
                                 size: 10px
@@ -64,6 +42,7 @@ layers:
                         text:
                             priority: 51
                             text_source: global.ux_language_text_source_road_ref_and_name_short
+                            visible: global.text_visible_trunk_primary
                             font:
                                 family: Cairo
                                 size: [[15,13px],[18,14px]]
@@ -77,6 +56,7 @@ layers:
                         text:
                             priority: 56
                             text_source: global.ux_language_text_source_road_ref_and_name_short
+                            visible: global.text_visible_secondary
                             font:
                                 family: Cairo
                                 size: [[15,13px],[18,14px]]
@@ -94,6 +74,7 @@ layers:
                                 #visible: true
                                 priority: 56
                                 text_source: global.ux_language_text_source_road_ref_and_name_short
+                                visible: global.text_visible_secondary
                                 font:
                                     family: Cairo
                                     size: [[13,10px],[15,13px],[18,14px]]
@@ -104,7 +85,7 @@ layers:
                 labels-tertiary:
                     draw:
                         text:
-                            visible: global.text_visible_roads
+                            visible: global.text_visible_tertiary
                             priority: 57
                             text_source: global.ux_language_text_source_road_ref_and_name_short
                             font:

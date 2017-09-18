@@ -1,7 +1,6 @@
 layers:
-    pois_and_landuse_labels:
+    pois:
         data: { source: mapzen, layer: pois }
-        #visible: global.label_visible_poi_landuse
         filter:
             all:
                 - not: { kind: [building,address,farm,tree,apron,residential,commercial,industrial] }
