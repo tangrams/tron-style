@@ -25,6 +25,7 @@ global:
     text_visible_secondary:                 true
     text_visible_tertiary:                  true
     text_visible_minor_road:                true
+    text_visible_service_road:              true
     text_visible_island:                    true
     text_visible_aerialway:                 true
     text_visible_airport_gate:              true

@@ -25,9 +25,30 @@ global:
     text_visible_secondary:                 true
     text_visible_tertiary:                  true
     text_visible_minor_road:                true
+    text_visible_service_road:              true
     text_visible_island:                    true
     text_visible_aerialway:                 true
     text_visible_airport_gate:              true
     text_visible_exits:                     true
 
     sdk_road_shields:                       true
+
+layers:
+    pois:
+        draw:
+            mapzen_icon_library:
+                buffer: 42px
+
+        # new for this labels variant
+        poi_labels-z17:
+            filter: { $zoom: [17,18] }
+            draw:
+                mapzen_icon_library:
+                    buffer: 28px
+
+        # new for this labels variant
+        poi_labels-z19:
+            filter: { $zoom: { min: 19 } }
+            draw:
+                mapzen_icon_library:
+                    buffer: 3px

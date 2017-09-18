@@ -25,9 +25,19 @@ global:
     text_visible_secondary:                 true
     text_visible_tertiary:                  true
     text_visible_minor_road:                true
+    text_visible_service_road:              true
     text_visible_island:                    true
     text_visible_aerialway:                 true
     text_visible_airport_gate:              true
     text_visible_exits:                     true
 
     sdk_road_shields:                       true
+
+layers:
+    pois:
+        filter:
+            all:
+                - not: { kind: [building,address,farm,tree,apron,residential,commercial,industrial] }
+                # White list a few kinds to "always" show per the tile zoom inclusion, else test feature's min_zoom
+                #- function() { return feature.min_zoom <= $zoom }
+                - function() { return feature.min_zoom <= ($zoom - 1) }

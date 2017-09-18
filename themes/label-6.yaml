@@ -25,9 +25,54 @@ global:
     text_visible_secondary:                 true
     text_visible_tertiary:                  true
     text_visible_minor_road:                true
+    text_visible_service_road:              true
     text_visible_island:                    true
     text_visible_aerialway:                 true
     text_visible_airport_gate:              true
     text_visible_exits:                     true
 
     sdk_road_shields:                       true
+
+layers:
+    pois:
+        filter:
+            all:
+                - not: { kind: [building,address,farm,tree,apron,residential,commercial,industrial] }
+                # White list a few kinds to "always" show per the tile zoom inclusion, else test feature's min_zoom
+                #- function() { return feature.min_zoom <= $zoom }
+                - function() { return feature.min_zoom <= ($zoom - 1) }
+
+        draw:
+            mapzen_icon_library:
+                buffer: 56px
+
+        # new for this labels variant
+        poi_labels-z17:
+            filter: { $zoom: [17,18,19] }
+            draw:
+                mapzen_icon_library:
+                    buffer: 26px
+
+        # new for this labels variant
+        poi_labels-z19:
+            filter: { $zoom: { min: 20 } }
+            draw:
+                mapzen_icon_library:
+                    buffer: 3px
+
+    buildings:
+        building-labels:
+            filter:
+                all:
+                    - { $zoom: { min: 19 } }
+                    - $geometry: point
+                    - landuse_kind: [university, college, school, kindergarten]
+                    - function() { return global.text_visible_building; }
+                any:
+                    - { $zoom: [17], area: { min: 3000 }, name: true }
+                    - { $zoom: [17], area: { min: 2000 }, kind_detail: [university, college, school, kindergarten] }
+                    - { $zoom: [18], area: { min: 1000 }, name: true }
+                    - { $zoom: [18], kind_detail: [university, college, school, kindergarten] }
+                    - { $zoom: [19], area: { min: 200 }, name: true }
+                    - { $zoom: { min: 19 }, kind_detail: [university, college, school, kindergarten] }
+                    - { $zoom: { min: 20 }, name: true }

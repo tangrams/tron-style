@@ -607,6 +607,12 @@
                                     label += "<span class='labelLine' key="+x+" value="+val+"'>"+x+" : "+val+"</span><br>"
                                 }
 
+                                var layers = selection.feature.layers;
+                                label += "<span class='labelLine'>Layers:</span><br>"
+                                layers.forEach(function(val) {
+                                    label += "<span class='labelLine' value="+val+"'>  "+val+"</span><br>"
+                                });
+
                                 if (label != '') {
                                     popup.style.left = (selection.pixel.x) + 'px';
                                     popup.style.top = (selection.pixel.y) + 'px';
