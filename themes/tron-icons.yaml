@@ -3,7 +3,6 @@ styles:
         base: points
         texture: mapzen_icon_library
         # To make Refill's colorize-able icons play nice with other styles
-        mix:             # intentionally blank, is parsed as null (no mix)
         blend_order: 1
         draw:
             size: 18px
