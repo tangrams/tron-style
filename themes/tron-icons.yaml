@@ -13,15 +13,13 @@ global:
     # To make Refill's colorize-able icons play nice with other styles.
     # Tron defaults to "" null (don't color). If colorized icons are desired
     # than set sdk_icon_color_style property value to "colorized_icons",
-    # or import the Refill color theme *after* Tron icons
+    # or import the Refill color theme *after* Tron icons.
     sdk_icon_color_style:
 
 styles:
     mapzen_icon_library:
         base: points
         texture: mapzen_icon_library
-        # To make Refill's colorize-able icons play nice with other styles
-        mix: global.sdk_icon_color_style
         blend_order: 1
         draw:
             size: global.icon_size
