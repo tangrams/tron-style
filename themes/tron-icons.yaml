@@ -1,12 +1,30 @@
+global:
+    # To allow standalone icon use let's define core terms that
+    # are otherwise defined in the root {style}-style.yaml,
+    # themes/color-{theme}.yaml or themes/label-{step} files.
+    # This also means {style}-icons.yaml should be imported first.
+    icon_size:          18px
+    text_font_family:   'Cairo'
+    #black_color:        [0.00,0.00,0.00]
+    #dark_color:         [0.250,0.250,0.250]
+    #white_color:        [1.00,1.00,1.00]
+    #text_stroke:        '#e4e1de'
+    #
+    # To make Refill's colorize-able icons play nice with other styles.
+    # Tron defaults to "" null (don't color). If colorized icons are desired
+    # than set sdk_icon_color_style property value to "colorized_icons",
+    # or import the Refill color theme *after* Tron icons
+    sdk_icon_color_style:
+
 styles:
     mapzen_icon_library:
         base: points
         texture: mapzen_icon_library
         # To make Refill's colorize-able icons play nice with other styles
-        mix:             # intentionally blank, is parsed as null (no mix)
+        mix: global.sdk_icon_color_style
         blend_order: 1
         draw:
-            size: 18px
+            size: global.icon_size
             sprite: function() { return feature.kind; }
             sprite_default: generic
             buffer: 20px
@@ -15,7 +33,7 @@ styles:
                 text_wrap: 18
                 max_lines: 3
                 font:
-                    family: Cairo
+                    family: global.text_font_family
                     fill: [0.149,0.871,0.992]
                     size: 10px
 
