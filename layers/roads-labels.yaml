@@ -180,6 +180,8 @@ layers:
                             family: Aldrich
                             fill: [0.413,0.933,0.960]
                             size: [[7,7px],[12,8px],[16,9px]]
+                            stroke: { width: 0px }
+
             default_priority_highway:
                 filter:
                     all:
