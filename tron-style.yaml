@@ -37,18 +37,18 @@ import:
 sources:
     mapzen:
         type: MVT
-        url: https://tile.mapzen.com/mapzen/vector/v1/512/all/{z}/{x}/{y}.mvt
+        url: https://tile.nextzen.org/tilezen/vector/v1/256/all/{z}/{x}/{y}.mvt
         url_params:
-            api_key: global.sdk_mapzen_api_key
+            api_key: global.sdk_api_key
         rasters: [normals-elevation]
-        tile_size: 512
+        tile_size: 256
         max_zoom: 16
     normals-elevation:
         type: Raster
-        url: https://tile.mapzen.com/mapzen/terrain/v1/512/normal/{z}/{x}/{y}.png
+        url: https://tile.nextzen.org/tilezen/terrain/v1/256/normal/{z}/{x}/{y}.png
         url_params:
-            api_key: global.sdk_mapzen_api_key
-        tile_size: 512
+            api_key: global.sdk_api_key
+        tile_size: 256
         max_zoom: 14
 
     # Only enable this for local debug, should not be enabled for prod (app inserts these at runtime)
