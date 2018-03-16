@@ -24,7 +24,7 @@
         <!-- production -->
         <script src="https://www.nextzen.org/tangram/0.14/tangram.min.js"></script>
         <!-- production debug -->
-        <!-- <script src="https://mapzen.com/tangram/0.14/tangram.debug.js"></script> -->
+        <!-- <script src="https://www.nextzen.org/tangram/0.14/tangram.debug.js"></script> -->
         <!-- dev -->
         <!-- <script src="https://precog.mapzen.com/tangrams/tangram/master/dist/tangram.debug.js"></script> -->
         <!-- dev branch -->
@@ -364,7 +364,7 @@
             var zoom = max_zoom < map.getZoom() ? max_zoom : Math.floor(map.getZoom());
             var tileCoords = { x : long2tile(latlng.lng,zoom), y: lat2tile(latlng.lat,zoom), z: zoom };
 
-            var url = 'http://tile.mapzen.com/mapzen/vector/v1/all/' + zoom + '/' + tileCoords.x  + '/' + tileCoords.y + '.topojson';
+            var url = 'http://tile.nextzen.org/tilezen/vector/v1/all/' + zoom + '/' + tileCoords.x  + '/' + tileCoords.y + '.topojson';
             return url;
         }
 
