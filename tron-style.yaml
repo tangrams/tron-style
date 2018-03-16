@@ -41,7 +41,7 @@ sources:
         url_params:
             api_key: global.sdk_api_key
         rasters: [normals-elevation]
-        tile_size: 512
+        tile_size: 256
         max_zoom: 16
     normals-elevation:
         type: Raster
