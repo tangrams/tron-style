@@ -22,10 +22,10 @@ import:
     - layers/landuse.yaml
     - layers/landuse-labels.yaml
     - layers/boundaries.yaml
-    # - layers/boundaries-labels.yaml
-    # - layers/places.yaml
-    # - layers/pois.yaml
-    # - layers/ux-sdk-overlay.yaml
+    - layers/boundaries-labels.yaml
+    - layers/places.yaml
+    - layers/pois.yaml
+    - layers/ux-sdk-overlay.yaml
 
     # Icons
     - themes/tron-icons.yaml
@@ -37,17 +37,17 @@ import:
 sources:
     mapzen:
         type: MVT
-        url: https://tile.mapzen.com/mapzen/vector/v1/512/all/{z}/{x}/{y}.mvt
+        url: https://tile.nextzen.org/tilezen/vector/v1/256/all/{z}/{x}/{y}.mvt
         url_params:
-            api_key: global.sdk_mapzen_api_key
+            api_key: global.sdk_api_key
         rasters: [normals-elevation]
         tile_size: 512
         max_zoom: 16
     normals-elevation:
         type: Raster
-        url: https://tile.mapzen.com/mapzen/terrain/v1/512/normal/{z}/{x}/{y}.png
+        url: https://tile.nextzen.org/tilezen/terrain/v1/256/normal/{z}/{x}/{y}.png
         url_params:
-            api_key: global.sdk_mapzen_api_key
+            api_key: global.sdk_api_key
         tile_size: 512
         max_zoom: 14
 
