@@ -9,9 +9,9 @@ global:
     pseudoRandomColor: |
         function() {
             return [
-                0.7 * (parseInt(feature.id, 16) / 100 % 1),     // jshint ignore:line
-                0.7 * (parseInt(feature.id, 16) / 10000 % 1),   // jshint ignore:line
-                0.7 * (parseInt(feature.id, 16) / 1000000 % 1), // jshint ignore:line
+                0.5 * (parseInt(feature.id, 12) / 100 % 1),     // jshint ignore:line
+                0.5 * (parseInt(feature.id, 12) / 10000 % 1),   // jshint ignore:line
+                0.5 * (parseInt(feature.id, 12) / 1000000 % 1), // jshint ignore:line
                 1
             ];
         }
@@ -221,7 +221,7 @@ global:
 
     sdk_building_extrude: true                  # building extrusion toggle
     building_extrude_height: |                  # building extrude height logic
-        function() { return feature.height || 20; }
+        function() { return feature.height || 70; }
 
     #
     # TRANSIT OVERLAY

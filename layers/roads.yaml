@@ -545,7 +545,7 @@ layers:
                 draw:
                     lines:
                         color: [[9,[0.215,1.000,1.000]],[11,[0.215,1.000,1.000]],[13,[0.078,0.129,0.259]]]
-                        width: [[9,0px],[11,1px],[13,5px],[15,18px],[17,60px],[20,70m]]
+                        width: [[9,0px],[11,1px],[13,5px],[15,30px],[20,100m]]
                         outline:
                             style: runway-glow
                             color: [[9,[0.215,1.000,1.000]],[15,[0.078,0.129,0.259]]]
@@ -555,7 +555,7 @@ layers:
                     draw:
                         runway-dots:
                             color: [0.215,1.000,1.000]
-                            width: [[12,2px],[15,5px],[20,25px]]
+                            width: [[12,2px],[15,15px],[20,100px]]
 
 styles:
     fast-traffic-animation:
@@ -669,7 +669,7 @@ styles:
         mix: [lines-dots-glow]
         shaders:
             defines:
-                DOTS_ANIMATE: color.a *=abs(sin(v_texcoord.y+u_time))*.9
+                DOTS_ANIMATE: color.a *=abs(sin(v_texcoord.y+u_time))*1.0
             blocks:
                 filter: |
                     #ifdef DOTS_ANIMATE
