@@ -30,17 +30,17 @@ styles:
         blend: add
         shaders:
             defines:
-                ZOOM_START: 16.
+                ZOOM_START: 12.
                 ZOOM_END: 20.
                 WALL_LINES_COLOR: vec3(0.181,0.259,0.370)
                 WALL_PCT: 1.
-                WALL_HEIGHT: .5
+                WALL_HEIGHT: .7
             blocks:
                 color: |
                     if (isWall()) {
-                        float r = 0.1+random(color.r)*.9;
-                        float g = 0.1+random(color.g)*.9;
-                        float b = 0.1+random(color.b)*.9;
+                        float r = 0.5+random(color.r)*.9;
+                        float g = 0.5+random(color.g)*.9;
+                        float b = 0.5+random(color.b)*.9;
                         float z = zoom();
 
                         float lineWidth = 0.003*z;
