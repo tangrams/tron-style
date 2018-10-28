@@ -667,6 +667,7 @@ styles:
     runway-dots:
         base: lines
         mix: [lines-dots-glow]
+        animated: true
         shaders:
             defines:
                 DOTS_ANIMATE: color.a *=abs(sin(v_texcoord.y+u_time))*1.0

@@ -7,6 +7,7 @@ import:
 styles:
     lines-coast:
         base: lines
+        animated: true
         texcoords: true
         blend: add
         shaders:
@@ -29,6 +30,7 @@ styles:
                     color *= pct;
     lines-traffic-animation:
         base: lines
+        animated: true
         mix: [generative-random, tron-palette, functions-zoom]
         texcoords: true
         shaders:
@@ -36,7 +38,7 @@ styles:
                 ZOOM_START: 11.
                 ZOOM_END: 18.
                 DATASTREAM_SPEED: 50.
-                DATASTREAM_ROADS: 5.0 
+                DATASTREAM_ROADS: 5.0
                 DATASTREAM_MARGIN: z*.3
                 DATASTREAM_COLOR: palette( fract(floor(v_texcoord.x*DATASTREAM_ROADS)/DATASTREAM_ROADS+u_time*.1)*z )
                 DATASTREAM_AMOUNT: .8
@@ -58,11 +60,11 @@ styles:
                       datastream_speed *= -1.;
                     }
                     #endif
-                    
+
                     color.rgb = mix(color.rgb,
                                     DATASTREAM_COLOR,
                                     z*
-                                    datastream_pattern( st, 
+                                    datastream_pattern( st,
                                                         (u_time*DATASTREAM_SPEED)*datastream_speed,
                                                         DATASTREAM_AMOUNT)*
                                                     smoothstep(DATASTREAM_MARGIN,1.,sin(fract(v_texcoord.x*DATASTREAM_ROADS)*3.1415))
