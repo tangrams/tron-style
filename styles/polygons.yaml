@@ -22,7 +22,7 @@ styles:
                 filter: |
                     color.rgb = mix(BACKGROUND_COLOR,color.rgb, color.a);
                     color.a = 1.;
-                    
+
     polygons-building-wall:
         base: polygons
         mix: [functions-zoom, geometry-normal,generative-random, tron-palette, geometry-dynamic-height]
@@ -65,20 +65,21 @@ styles:
     polygons-shimmering:
         base: polygons
         mix: [functions-zoom, tiling-simplex, generative-noise]
+        animated: true
         shaders:
             defines:
                 ZOOM_START: 11.
                 ZOOM_END: 20.
                 SHIMMERING_ZOOM_IN: 0.01
                 SHIMMERING_ZOOM_OUT: 30.
-                
+
                 SHIMMERING_SCALE: 1.
                 SHIMMERING_COLOR: color.rgb
                 SHIMMERING_BACKGROUND_COLOR: color.rgb*.5
                 SHIMMERING_SPEED: 0.1
                 SHIMMERING_AMOUNT: 1.
                 SHIMMERING_ANIMATED: true
-                
+
                 SPACE_CONSTANT_PIXEL_SCALE: 695.
                 SPACE_CONSTANT_DOT_WRAP: 1e4
             blocks:
