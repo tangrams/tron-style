@@ -221,14 +221,14 @@
         );
         map.setView(map_start_location.slice(0, 2), map_start_location[2]);
 
-        var tg_baseScene = 'tron-style.yaml';
+        var tg_baseScene = 'https://www.nextzen.org/carto/tron-style/6/tron-style.zip';
 
         var dev_or_prod = 'prod';
         // prod
-        var sdk_api_key = '8HNQZsjzTJyNhnoyr_7yrQ';
+        var sdk_api_key = 'd161Q8KATMOhSOcVGNyQ8g';
 
         if( dev_or_prod == 'dev' ) {
-            sdk_api_key = '8HNQZsjzTJyNhnoyr_7yrQ';
+            sdk_api_key = 'd161Q8KATMOhSOcVGNyQ8g';
         }
 
         var tg_global = { sdk_api_key: sdk_api_key };
@@ -669,17 +669,6 @@
             }
         });
 
-        </script>
-
-        <!-- Mapzen map UI -->
-        <script src='https://mapzen.com/common/ui/mapzen-ui.min.js'></script>
-        <script>
-            MPZN.bug({
-                name: 'Tron 2.0',
-                link: 'https://github.com/tangrams/tron/',
-                tweet: 'Tron 2.0',
-                repo: 'https://github.com/tangrams/tron/'
-            });
         </script>
 
   </body>
